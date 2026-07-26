@@ -98,11 +98,11 @@ uhbs-standard/
 ├── web/                  # GitHub Pages landing (from UHBS-Web)
 ├── docs/                 # Specification Docs-as-Code (MkDocs → /specification/)
 ├── schemas/              # JSON Schemas for profiles & scorecards
-├── templates/            # Starter profile.yaml for adopters
-├── src/uhbs_cli/         # Official validation CLI
-├── GOVERNANCE.md         # RFC process & steering committee
+├── templates/            # Starter profile.yaml for framework users
+├── src/uhbs_cli/         # Validation CLI
+├── GOVERNANCE.md         # Project notes (personal maintainer; not a committee)
 ├── SECURITY.md           # Vulnerability disclosure policy
-└── CITATION.cff          # Academic / enterprise citation metadata
+└── CITATION.cff          # Citation metadata
 ```
 
 ## Modules at a Glance
