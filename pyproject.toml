@@ -9,7 +9,7 @@ description = "Universal Honeypot Benchmarking Standard (UHBS) — validators an
 readme = "README.md"
 license = { text = "Apache-2.0" }
 requires-python = ">=3.11"
-authors = [{ name = "UHBS Project Stewards" }]
+authors = [{ name = "Moran Zavdi", email = "security@uhbs.dev" }]
 keywords = ["honeypot", "benchmarking", "cybersecurity", "deception", "uhbs"]
 dependencies = [
   "jsonschema>=4.22",

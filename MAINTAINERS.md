@@ -1,19 +1,16 @@
-# Maintainers & Stewards
+# Maintainers
 
-UHBS is stewarded by the following interim roles (ROADMAP Phase 6). Replace
-placeholders with named individuals as the project graduates.
+UHBS is a **personal project**. One person maintains the repository today.
 
-| Role | Responsibility | Contact |
+| Role | Person | Contact |
 | --- | --- | --- |
-| **Spec Steward** | Normative docs, RFC acceptance, version bumps | GitHub: `@mziqudhd92` (interim) |
-| **Harness Steward** | `uhbs_core` Modules A–F, protocol plugins, UHQS math | GitHub: `@mziqudhd92` (interim) |
-| **Security Steward** | Vulnerability reports, scorecard integrity, release signing | See [SECURITY.md](SECURITY.md) |
+| Author & maintainer | Moran Zavdi | GitHub: [@mziqudhd92](https://github.com/mziqudhd92) · see [SECURITY.md](SECURITY.md) for vulnerability reports |
 
-Until three distinct humans fill these seats, CODEOWNERS remains `@mziqudhd92` and
-all normative RFCs require that owner's approval.
+There is **no** multi-role steward roster and **no** Steering Committee.
+Placeholders for those roles would be misleading.
 
-## Adding stewards
+## Future (roadmap only)
 
-1. Open an RFC under `docs/rfcs/` with label `governance`
-2. Update this file and `.github/CODEOWNERS`
-3. Announce in the GitHub Release notes for the next minor version
+Recruiting additional maintainers from other organizations, transferring to a
+neutral GitHub org, and publishing an adopter list are **aspirational** items on
+[ROADMAP.md](ROADMAP.md) — not current claims.

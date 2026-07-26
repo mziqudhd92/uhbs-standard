@@ -39,13 +39,19 @@ An implementation claiming **UHBS-Lab** conformance **MUST** satisfy UHBS-Core a
 The reference harness that implements UHBS-Lab is described in
 [reference-implementation.md](../reference-implementation.md).
 
+## Project posture
+
+UHBS is a **personal open-source draft framework**. It is **not** a standards
+body, consortium, or multi-party committee. Claims about committees, neutral
+org hosting, and independent adopters belong only on
+[ROADMAP.md](../roadmap.md) (Phase 6) until they are real.
+
 ## Production Baseline Profile (RECOMMENDED)
 
-Until UHBS has independent adopters and completed governance graduation
-([ROADMAP.md](../roadmap.md) Phase 6), language such as "mandatory industry
-standard" is **Informative marketing only**.
+Language such as "mandatory industry standard" **MUST NOT** be used for UHBS
+today. Organizations **MAY** adopt the draft as an **internal** gate.
 
-For organizations adopting UHBS as an internal gate, it is **RECOMMENDED** that:
+For that use, it is **RECOMMENDED** that:
 
 - Active decoys **SHOULD NOT** be deployed to production networks unless
   **UHQS > 80** and Module D Safety Gate passes (C ≥ 95 → δ_C = 1.0)

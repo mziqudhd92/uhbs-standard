@@ -1,51 +1,52 @@
-# UHBS Governance
+# UHBS Project Notes (not institutional governance)
 
-This document describes how the Universal Honeypot Benchmarking Standard (UHBS) is stewarded so the framework retains institutional credibility for enterprise and academic adopters.
+> **Honesty notice.** UHBS is a **personal open-source project** and a **draft
+> evaluation framework**. It is **not** a standards body, consortium, or
+> multi-party committee. There is no Steering Committee and no independent
+> adopter roster today.
+>
+> Aspirations for multi-steward governance, a neutral GitHub organization, and
+> independent academic/enterprise adopters live in [ROADMAP.md](ROADMAP.md)
+> (Phase 6+). Do not read this file as evidence that those exist yet.
 
-## 1. Principles
+## 1. What this project is
 
-1. **Normative stability** — Breaking changes to scoring, modules, or TPS semantics are rare and versioned.
-2. **Transparency** — Material decisions are recorded via RFCs and public GitHub discussion.
-3. **Safety primacy** — The Module D Safety Gate (\(\delta_C\)) may not be weakened without an explicit RFC and steward approval.
-4. **Protocol neutrality** — UHBS remains architecture-agnostic across IT, OT/ICS, Cloud, and GenAI decoys.
-5. **Vendor neutrality** — Normative text, templates, CLI help, and marketing MUST describe
-   decoy **classes** and **protocols** only. Specific product or brand names MAY appear
-   solely under `docs/conformance/` and explicit evaluation-proof tables, as evidence that
-   the published tools discriminate — never as UHBS requirements or endorsements.
-
-## 2. Roles
-
-| Role | Responsibility |
+| Claim | Reality today |
 | --- | --- |
-| **Maintainers** | Day-to-day merge authority for docs, schemas, CLI, and CI |
-| **Steering Committee** | Approves RFCs that change normative specification text |
-| **Contributors** | Propose changes via issues, PRs, and RFCs |
-| **Adopters** | Publish scorecards; may submit TPS profile classes for review |
+| Evaluation **framework** (spec + schemas + harness + fixtures) | Yes — Draft / Experimental |
+| Vendor-neutral class/protocol methodology | Intentional design goal |
+| Industry / academic **standard** with institutional backing | **No** — personal project |
+| Multi-organization stewards / Steering Committee | **No** — see ROADMAP |
+| Independent external adopters | **Not yet** — see ROADMAP |
 
-Until a formal committee roster is published, see [MAINTAINERS.md](MAINTAINERS.md).
-Repository CODEOWNERS act as interim stewards. RFC-0001 accepts the UHBS 4.0.0
-baseline.
+## 2. Who decides (today)
 
-## 3. RFC Process (Request for Comments)
+One maintainer owns this repository and all merge/RFC decisions:
 
-### When an RFC is required
+| Role | Person | Notes |
+| --- | --- | --- |
+| Author & maintainer | [@mziqudhd92](https://github.com/mziqudhd92) (Moran Zavdi) | Sole decision-maker |
+
+See [MAINTAINERS.md](MAINTAINERS.md).
+
+## 3. How changes are proposed
+
+Contributions are welcome via issues and pull requests ([CONTRIBUTING.md](CONTRIBUTING.md)).
+
+For material changes to scoring, modules, or TPS semantics, open a proposal under
+`docs/rfcs/` so the rationale is public. **Acceptance is by the maintainer** —
+not by a committee. Public comment is encouraged; there is no formal 14-day
+committee vote because no committee exists.
+
+### When a written RFC is useful
 
 - Changes to Modules A–F objectives or mandatory steps
 - Changes to the UHQS formula or \(\delta_C\) Safety Gate
 - New or altered profile weight tables
 - New mandatory TPS fields
-- License or patent-policy changes
+- License changes
 
-### Lifecycle
-
-1. **Draft** — Open an issue with label `rfc` and a markdown proposal under `docs/rfcs/` (or link a gist/PR).
-2. **Discussion** — Minimum **14 days** of public comment for normative RFCs.
-3. **Revision** — Author updates the proposal based on feedback.
-4. **Decision** — Steering Committee (or interim maintainers) accepts, rejects, or defers.
-5. **Implementation** — Merged PR updates specification docs, schemas, CLI, and `CITATION.cff` / version badges as needed.
-6. **Versioning** — Normative accepted RFCs bump the specification version appropriately (`MAJOR.MINOR.PATCH`).
-
-### RFC template (minimum)
+### Minimal RFC shape
 
 ```markdown
 # RFC-NNNN: Title
@@ -59,22 +60,25 @@ baseline.
 - Security & safety implications
 ```
 
-## 4. Releases
+## 4. Design principles (project intent)
 
-- Specification releases are tagged (`v4.0.0`, `v4.1.0`, …).
-- Prefer signed tags (`git tag -s`) for official specification cuts.
-- GitHub Releases must summarize normative vs. non-normative changes.
+1. **Normative stability** — Breaking changes to scoring are rare and versioned.
+2. **Transparency** — Prefer public issues/PRs/RFCs over private decisions.
+3. **Safety primacy** — Do not weaken the Module D Safety Gate without a clear,
+   public rationale and a version bump.
+4. **Protocol neutrality** — Stay architecture-agnostic across IT, OT/ICS, Cloud, GenAI.
+5. **Vendor neutrality** — Normative text and templates use **classes and
+   protocols** only; product names only in conformance proof fixtures.
 
-## 5. Scorecard Integrity
+## 5. Releases & scorecards
 
-Published official scorecards must:
+- Releases are tagged (`v4.0.0`, …). Prefer signed tags when practical.
+- Published scorecards should validate against the schemas and disclose date,
+  target class, and Safety Gate outcome.
+- Disputes about misleading public claims: open an issue with label
+  `scorecard-dispute`. The maintainer responds as capacity allows.
 
-- Reference a TPS `profile.yaml` conforming to `schemas/profile.schema.json`
-- Emit results conforming to `schemas/scorecard.schema.json`
-- Disclose evaluation date, target class, and Safety Gate outcome
+## 6. Changing this document
 
-Falsified or misleading scorecard claims may be disputed via a public issue labeled `scorecard-dispute`.
-
-## 6. Amendments to Governance
-
-Changes to this GOVERNANCE.md follow the RFC process with label `governance`.
+Updates to this file are ordinary PRs. Larger structural changes (e.g., forming
+a real multi-steward body) belong on the [ROADMAP](ROADMAP.md) first.

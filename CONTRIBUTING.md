@@ -1,13 +1,14 @@
 # Contributing to UHBS
 
-Thank you for helping establish the Universal Honeypot Benchmarking Standard as a trusted,
-vendor-neutral, production-grade open-source project.
+Thank you for contributing to UHBS — a **personal open-source draft framework**
+for vendor-neutral honeypot / deception evaluation.
 
-## Vendor neutrality
+## Honesty rules
 
+- Do **not** add language implying a standards committee, consortium, or public
+  adopter list unless those exist (see [ROADMAP.md](ROADMAP.md) Phase 6).
 - Spec, templates, and scorecard *examples* use **classes and protocols** only.
 - Named products belong only in `docs/conformance/` as evaluation **proof**.
-- Do not add product endorsements to README, normative docs, or marketing copy.
 
 ## Ways to Contribute
 
@@ -33,7 +34,7 @@ pytest
 2. Keep changes focused (one concern per PR).
 3. Ensure CI passes: schema validation, lint, and unit tests.
 4. Fill out the pull request template completely.
-5. Request review from CODEOWNERS.
+5. Request review from the maintainer ([MAINTAINERS.md](MAINTAINERS.md)).
 
 ### Commit Messages
 

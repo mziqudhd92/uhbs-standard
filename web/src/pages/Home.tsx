@@ -127,7 +127,7 @@ const ScopeAndApplicability = () => {
                 The UHBS v4.0 framework provides a rigorous technical foundation for evaluating the efficacy, safety, and realism of deception assets prior to deployment.
               </p>
               <p className="mt-4">
-                Historically, deception technology has been evaluated subjectively. This standard introduces a verifiable, deterministic mathematical model designed to expose flaws in protocol state machines, containment boundaries, and behavioral realism.
+                Historically, deception technology has been evaluated subjectively. This draft framework introduces a verifiable, deterministic mathematical model designed to expose flaws in protocol state machines, containment boundaries, and behavioral realism.
               </p>
             </div>
             
@@ -135,9 +135,9 @@ const ScopeAndApplicability = () => {
               <div className="flex items-start gap-4">
                 <Shield className="w-6 h-6 text-primary shrink-0 mt-1" />
                 <div>
-                  <h4 className="text-primary font-semibold font-mono mb-2 uppercase tracking-wide text-sm">Objective Baseline Standard</h4>
+                  <h4 className="text-primary font-semibold font-mono mb-2 uppercase tracking-wide text-sm">Draft Evaluation Framework</h4>
                   <p className="text-secondary-foreground text-sm">
-                    UHBS v4.0 gives cybersecurity professionals a vendor-neutral, mathematically reproducible baseline for comparing and grading honeypots and deception technology — removing subjectivity from evaluation and enabling consistent, evidence-based decisions.
+                    UHBS v4.0 is a personal open-source project: a vendor-neutral, mathematically reproducible draft framework for comparing and grading honeypots and deception technology by class and protocol — not a consortium or multi-party standards body.
                   </p>
                 </div>
               </div>
@@ -146,9 +146,9 @@ const ScopeAndApplicability = () => {
             <div className="mt-6 border border-danger/40 bg-danger/5 p-5 flex gap-4 items-start">
               <AlertTriangle className="w-6 h-6 text-danger shrink-0 mt-0.5" />
               <div>
-                <h4 className="font-mono text-danger text-xs uppercase tracking-wider mb-2">Executive Mandate</h4>
+                <h4 className="font-mono text-danger text-xs uppercase tracking-wider mb-2">Suggested Production Baseline</h4>
                 <p className="text-sm text-secondary-foreground leading-relaxed">
-                  This is the mandatory enterprise and academic standard before deploying any active decoys to production networks. Failure to meet baseline scores (<span className="text-foreground font-semibold">UHQS &gt; 80</span>) exposes internal networks to lateral movement risks from compromised containment shells.
+                  Organizations <span className="text-foreground font-semibold">MAY</span> use UHBS as an internal evaluation gate. It is <span className="text-foreground font-semibold">RECOMMENDED</span> that active decoys meet <span className="text-foreground font-semibold">UHQS &gt; 80</span> with a passing Safety Gate before production deployment — a draft recommendation, not a mandate from any standards body. Failure to meet that baseline can increase lateral-movement risk from compromised containment shells.
                 </p>
               </div>
             </div>

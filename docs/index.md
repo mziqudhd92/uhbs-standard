@@ -2,11 +2,19 @@
 
 # UHBS v4.0 (2026)
 
-An objective, repeatable, quantitative methodology for deception technology evaluation — providing cybersecurity professionals with a non-biased baseline for comparing and grading honeypots and decoy systems.
+An objective, repeatable, quantitative methodology for deception technology
+evaluation — a **personal open-source draft framework** for comparing and grading
+honeypots and decoy systems by class and protocol. Not a consortium standard;
+see [ROADMAP](roadmap.md) for community-maturity goals.
+
+!!! warning "Project posture"
+    UHBS is maintained by one author today. There is no Steering Committee or
+    independent adopter list yet.
 
 !!! danger "Production Baseline Profile (RECOMMENDED)"
-    It is **RECOMMENDED** that active decoys meet **UHQS &gt; 80** with a passing
-    Safety Gate before production deployment. See [Status](specification/status.md).
+    Organizations **MAY** use UHBS as an *internal* gate. It is **RECOMMENDED**
+    that active decoys meet **UHQS &gt; 80** with a passing Safety Gate before
+    production deployment. See [Status](specification/status.md).
 
 <div class="grid cards" markdown>
 
@@ -32,7 +40,7 @@ An objective, repeatable, quantitative methodology for deception technology eval
 
     ---
 
-    UHQS &gt; 80 required before any active decoy reaches production
+    UHQS &gt; 80 suggested as an internal draft recommendation
 
 </div>
 

@@ -2,22 +2,25 @@
 
 > **Lock document.** Execution must follow this roadmap. Do not invent parallel plans.
 > Spec version: **4.0.0** · Status: **Draft / Experimental** · Last updated: 2026-07-26
+>
+> **What this is today:** a **personal open-source project** publishing a draft,
+> vendor-neutral **evaluation framework** (spec + schemas + harness + fixtures).
+> It is **not** yet an industry or academic standard, a consortium, or a
+> multi-party governed body.
 
-This roadmap turns UHBS from a scoring specification + schema validator into an
-industry-credible **evaluation framework** (spec + contracts + reference
-implementation + conformance suite), modeled on practices from IETF/W3C-style
-standards work, OpenSSF, and NIST/MITRE-style frameworks.
+This roadmap records how the project could mature toward something enterprise and
+academic communities might adopt — without pretending those milestones are done.
 
-**Vendor neutrality:** UHBS is product- and brand-agnostic. Normative text,
-templates, and marketing describe **classes and protocols** only. Named products
-appear solely in [conformance fixtures](conformance/index.md) as proof that
-the published tools produce discriminating scores.
+**Vendor neutrality:** Normative text, templates, and marketing describe
+**classes and protocols** only. Named products appear solely in
+[conformance fixtures](conformance/index.md) as proof that the published tools
+produce discriminating scores.
 
 ---
 
 ## North star
 
-A mature UHBS has all five pillars:
+A mature UHBS would have all five pillars:
 
 | # | Pillar | Current state |
 | --- | --- | --- |
@@ -25,7 +28,7 @@ A mature UHBS has all five pillars:
 | 2 | Machine-readable contracts (profile, scorecard, evidence) | Done |
 | 3 | Reference implementation (runnable harness) | Done — `uhbs_core` / `uhbs[lab]` |
 | 4 | Conformance suite (golden inputs → expected UHQS) | Done — public fixtures |
-| 5 | Independent adoption (≥2 implementations) | Not yet |
+| 5 | Independent adoption (≥2 external evaluations / implementations) | **Not yet** |
 
 **Critical insight:** Pillar 3 was proven in lab before extraction into this
 repository. The public package is the vendor-neutral reference harness; private
@@ -87,7 +90,7 @@ tables only. Do not publish proprietary lab signal overlays or private host path
 
 | Repo | Role |
 | --- | --- |
-| `uhbs-standard` (public) | Spec, schemas, `uhbs_core`, conformance fixtures, docs, CLI |
+| `uhbs-standard` (public, personal account today) | Spec, schemas, `uhbs_core`, conformance fixtures, docs, CLI |
 | Private lab (optional) | Site inventory, product-specific signal overlays; consumes `uhbs[lab]` |
 
 ---
@@ -131,24 +134,55 @@ tables only. Do not publish proprietary lab signal overlays or private host path
 ### Phase 5 — Interoperability mappings
 
 - [x] ATT&CK / NIST CSF / IEC 62443 mappings under `docs/mappings/`
-- [x] Named editors in `CITATION.cff` + Zenodo DOI placeholder notes
-- [ ] Actual Zenodo DOI deposit (manual maintainer step)
+- [x] Citation metadata (`CITATION.cff`) + Zenodo DOI placeholder notes
+- [ ] Actual Zenodo DOI deposit (manual step)
 
-### Phase 6 — Governance
+### Phase 6 — Community maturity (aspirational — **not done**)
 
-- [x] Stewards roster (`MAINTAINERS.md`); accepted RFC-0001 baseline; `VERSIONING.md`
-- [x] Attested scorecard registry rules (`docs/registry.md`)
-- [ ] Neutral org transfer when ready (manual)
+These items are **future goals**. The repo must **not** claim they are complete.
+
+#### Multi-party governance
+
+- [ ] Recruit **≥3 maintainers from different organizations** (not the same employer)
+- [ ] Publish a real steward/maintainer roster (replace single-author `MAINTAINERS.md`)
+- [ ] Define a lightweight decision process (who can accept RFCs; public notes)
+- [ ] Keep public decision records (short meeting notes or Discussion posts)
+
+#### Neutral hosting
+
+- [ ] Transfer the repository to a **neutral GitHub organization** (e.g. `uhbs-standard`)
+- [ ] Update clone URLs, Pages, badges, and `CITATION.cff` after transfer
+
+#### Independent adopters & evaluations
+
+- [ ] Publish an **ADOPTERS.md** (or similar) only when real external users consent
+- [ ] At least **one independent reproduction** of a public fixture by someone other
+      than the author
+- [ ] Expand the evaluation corpus (≥5 open-source deception targets across classes)
+- [ ] Optional: peer-reviewed or workshop paper / preprint with weight sensitivity notes
+
+#### Registry & distribution
+
+- [ ] Working attested scorecard submission path (PR + CI recompute)
+- [ ] PyPI Trusted Publishing + Sigstore signing
+- [ ] Do **not** claim "industry-mandatory standard" until the above governance and
+      adoption bars are met
 
 ---
 
-## Exit criteria ("mature")
+## Exit criteria ("community-mature")
 
-- [x] Spec uses RFC 2119; status + UHBS-Core / UHBS-Lab levels published
-- [x] Schemas for profile / scorecard / evidence; validator recomputes scores
-- [x] `uhbs_core` in-repo (`uhbs[lab]`); class-based fixtures document conformance
-- [x] Release SBOM workflow + DCO + OpenSSF Scorecard (Sigstore/PyPI publish pending)
-- [x] Mappings + named stewards + accepted RFC-0001 (Zenodo DOI + org transfer pending)
+Technical scaffolding for a draft framework is largely in place. **Community
+maturity** additionally requires:
+
+- [ ] Multi-organization maintainers (≥3)
+- [ ] Neutral GitHub org hosting
+- [ ] ≥1 independent external evaluation or second implementation
+- [ ] Published adopter list (with consent) **or** clear "no public adopters yet"
+- [ ] Zenodo DOI + signed PyPI releases
+
+Until then, describe UHBS as a **personal draft framework**, not as an adopted
+industry or academic standard.
 
 ---
 
@@ -159,4 +193,6 @@ tables only. Do not publish proprietary lab signal overlays or private host path
    products only in `docs/conformance/` proof fixtures and explicit proof tables.
 3. Keep UHQS math identical across `uhbs_cli.scoring` and `uhbs_core.models`.
 4. Every phase PR must update the checkboxes in this file.
-5. Do not claim "production-mandatory industry standard" until Phase 6 exit criteria.
+5. **Do not invent committees, stewards, or adopters in docs** — put those goals
+   only in this ROADMAP until they are real.
+6. Do not claim "production-mandatory industry standard" until Phase 6 exit criteria.

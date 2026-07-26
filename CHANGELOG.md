@@ -28,7 +28,13 @@ share version **4.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`).
 - Vendor-neutrality pass: product names confined to conformance proof fixtures;
   Module F signals profile renamed to `low_interaction_ssh_signals.yaml`
 
-### Pending (manual / ops)
+### Changed (honesty / posture)
+- Docs state clearly that UHBS is a **personal draft framework**, not a
+  multi-party standards body; committee, neutral org, and adopters moved to
+  ROADMAP Phase 6 as aspirational (unchecked) goals
+
+### Pending (manual / ops / community — see ROADMAP Phase 6)
 - PyPI Trusted Publishing + Sigstore signing
 - Zenodo DOI deposit
 - Neutral GitHub organization transfer
+- Multi-organization maintainers and independent adopters

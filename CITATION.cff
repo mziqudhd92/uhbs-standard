@@ -1,12 +1,10 @@
 cff-version: 1.2.0
 title: "Universal Honeypot Benchmarking Standard (UHBS)"
 message: "If you use UHBS, please cite it using the metadata from this file."
-type: standard
+type: software
 authors:
-  - name: "UHBS Project Stewards"
-    alias: "Spec / Harness / Security Stewards"
-    website: "https://github.com/mziqudhd92/uhbs-standard"
-  - name: "Moran Zavdi"
+  - family-names: "Zavdi"
+    given-names: "Moran"
     email: "security@uhbs.dev"
     website: "https://github.com/mziqudhd92"
 version: "4.0.0"
@@ -15,30 +13,31 @@ license: Apache-2.0
 repository-code: "https://github.com/mziqudhd92/uhbs-standard"
 url: "https://mziqudhd92.github.io/uhbs-standard/"
 abstract: >-
-  UHBS v4.0 is a vendor-neutral, objective, repeatable, and quantitative
-  methodology for evaluating honeypots and deception technology. It defines six
-  evaluation modules (A–F), a composite UHQS score (0–100) with production
-  baseline UHQS > 80, a non-linear Safety Gate, machine-readable schemas, and a
-  UHBS-Lab reference harness (uhbs_core) with a vendor-neutral conformance
-  suite for reproducible UHQS verification.
+  UHBS v4.0 is a personal open-source draft framework for vendor-neutral,
+  objective, repeatable evaluation of honeypots and deception technology. It
+  defines six evaluation modules (A–F), a composite UHQS score (0–100) with a
+  recommended production baseline UHQS > 80, a non-linear Safety Gate,
+  machine-readable schemas, and a UHBS-Lab reference harness (uhbs_core) with
+  conformance fixtures. It is not an industry consortium standard.
 keywords:
   - honeypot
   - deception-technology
   - cybersecurity
   - benchmarking
-  - security-standard
+  - evaluation-framework
   - OT
   - ICS
   - GenAI
 preferred-citation:
-  type: standard
+  type: software
   title: "Universal Honeypot Benchmarking Standard (UHBS) v4.0 (2026)"
   authors:
-    - name: "UHBS Project Stewards"
-    - name: "Moran Zavdi"
+    - family-names: "Zavdi"
+      given-names: "Moran"
   year: 2026
   version: "4.0.0"
   url: "https://github.com/mziqudhd92/uhbs-standard"
   notes: >-
-    Deposit this tagged release on Zenodo to obtain a DOI; update this file when
-    the DOI is available (ROADMAP Phase 5).
+    Personal draft framework. Deposit a tagged release on Zenodo for a DOI when
+    ready (ROADMAP Phase 5). Multi-party governance and adopters are ROADMAP
+    Phase 6 aspirations, not current claims.

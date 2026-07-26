@@ -7,18 +7,17 @@
 [![Spec](https://img.shields.io/badge/Specification-v4.0.0-indigo.svg)](docs/specification/core-principles.md)
 [![UHQS](https://img.shields.io/badge/UHQS-0%E2%80%93100-success.svg)](docs/specification/scoring-formula.md)
 
-> An objective, repeatable, quantitative methodology for deception technology evaluation — providing cybersecurity professionals with a non-biased baseline for comparing and grading honeypots and decoy systems.
+> An objective, repeatable, quantitative methodology for deception technology evaluation — a **personal open-source draft framework** for comparing and grading honeypots and decoy systems by class and protocol.
 
-**UHBS v4.0** is a protocol-agnostic, **vendor-neutral** production baseline for measuring deception realism, safety containment, operational scale, and telemetry quality **before** decoys are deployed to production.
+**UHBS v4.0** is a protocol-agnostic, **vendor-neutral** evaluation framework for measuring deception realism, safety containment, operational scale, and telemetry quality. It is **not** an industry consortium standard or multi-party governed body — see [ROADMAP.md](ROADMAP.md) for what maturity would require.
 
-## Executive Mandate
+## Project status
 
-**Status:** Informative / RECOMMENDED adoption profile (see [specification status](docs/specification/status.md)).
+**Status:** Draft / Experimental · personal project ([specification status](docs/specification/status.md)).
 
-It is **RECOMMENDED** that organizations use UHBS as an evaluation gate before
-deploying any active decoys to production networks. Failure to meet baseline
-scores (**UHQS > 80** with a passing Safety Gate) exposes internal networks to
-lateral movement risks from compromised containment shells.
+- **Author / maintainer:** [@mziqudhd92](https://github.com/mziqudhd92) — see [MAINTAINERS.md](MAINTAINERS.md)
+- **Governance claims:** no Steering Committee, no independent adopter list yet — those are [roadmap goals](ROADMAP.md#phase-6--community-maturity-aspirational--not-done)
+- **Suggested use:** organizations **MAY** use the Production Baseline Profile (**UHQS > 80** + passing Safety Gate) as an *internal* evaluation gate; that is a recommendation in the draft, not a mandate from any standards body
 
 ## Why UHBS?
 
@@ -28,13 +27,12 @@ lateral movement risks from compromised containment shells.
 | **Vendor-Neutral** | Class- and protocol-based evaluation — no product or brand endorsements |
 | **Quantitative Scoring** | Normalized **UHQS 0–100** composite with a non-linear Safety Gate |
 | **Six Evaluation Modules** | Modules A–F covering fidelity, behavior, telemetry, safety, scale, and audit |
-| **Production Baseline** | **UHQS > 80** required before any active decoy reaches production |
+| **Production Baseline** | **UHQS > 80** suggested as an internal gate (RECOMMENDED in the draft) |
 
-> **Status:** Draft / Experimental — [specification status](docs/specification/status.md).
-> **Vendor-neutral** framework: compare any deception by class and protocol.
+> **Vendor-neutral** draft framework: compare any deception by class and protocol.
 > UHBS-Lab harness: `pip install -e '.[lab]'` → `uhbs-lab` / `uhbs lab`.
 > Named product proof lives only under [conformance fixtures](docs/conformance/index.md).
-> Remaining ops: [ROADMAP.md](ROADMAP.md) (PyPI signing, Zenodo DOI, org transfer).
+> Maturity goals (committee, adopters, neutral org): [ROADMAP.md](ROADMAP.md).
 
 ## Quickstart
 

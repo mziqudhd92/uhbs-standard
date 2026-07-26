@@ -1,20 +1,26 @@
 # Scorecard Registry Rules
 
-**Status:** Normative (registry policy) / Draft until independent auditors exist
+**Status:** Informative draft policy (aspirational until Phase 6)
+
+UHBS is a personal draft framework. There is **no** live public registry of
+attested third-party scorecards yet. The checklist below describes how such a
+registry *could* work once independent submitters and maintainers exist
+([ROADMAP.md](roadmap.md) Phase 6).
 
 ## Goals
 
-Prevent self-minted “Grade A” badges from undermining trust.
+Prevent self-minted “Grade A” badges from undermining trust — if and when a
+public registry is stood up.
 
-## Official vs illustrative
+## Kinds of scorecards (today)
 
-| Kind | Requirements | Badge allowed? |
+| Kind | Where | Badge? |
 | --- | --- | --- |
-| **Illustrative** | Schema-valid; labeled non-official | No |
-| **Conformance fixture** | Checked into `docs/conformance/fixtures/` | Docs only |
-| **Attested (registry)** | UHBS-Lab run + `MANIFEST.json` digests + evidence pack | Yes |
+| **Illustrative** | `docs/scorecards/` — labeled non-official | No |
+| **Conformance fixture** | `docs/conformance/fixtures/` — math/proof only | Docs only |
+| **Attested (registry)** | Not operated yet | N/A |
 
-## Attested submission checklist
+## Future attested submission checklist (roadmap)
 
 1. TPS validates (`uhbs validate-profile --strict`)
 2. Scorecard validates (`uhbs validate-scorecard --strict`)
@@ -25,13 +31,14 @@ Prevent self-minted “Grade A” badges from undermining trust.
 
 ## Disputes
 
-Label: `scorecard-dispute`. Stewards respond within 14 days. Outcomes: uphold,
-amend, or retract registry entry.
+Until a multi-maintainer process exists, open an issue with label
+`scorecard-dispute`. The project maintainer responds as capacity allows.
 
-## Badge snippet (attested only)
+## Badge snippet (do not use yet)
 
 ```markdown
 ![UHBS v4.0 attested](https://img.shields.io/badge/UHBS%20v4.0-attested-blue)
 ```
 
-Do **not** publish grade badges for unattested runs.
+Do **not** publish grade or “attested” badges for unattested runs, and do not
+imply a UHBS registry endorsement that does not exist.
