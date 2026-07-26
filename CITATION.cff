@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+title: "Universal Honeypot Benchmarking Standard (UHBS)"
+message: "If you use UHBS, please cite it using the metadata from this file."
+type: standard
+authors:
+  - name: "UHBS Project Contributors"
+    website: "https://github.com/mziqudhd92/uhbs-standard"
+version: "4.0.0"
+date-released: "2026-07-26"
+license: Apache-2.0
+repository-code: "https://github.com/mziqudhd92/uhbs-standard"
+url: "https://mziqudhd92.github.io/uhbs-standard/"
+abstract: >-
+  UHBS v4.0 is an objective, repeatable, and quantitative methodology for
+  benchmarking honeypots, decoys, and deception technology. It defines six
+  evaluation modules (A–F), a composite UHQS score (0–100), and a non-linear
+  Safety Gate multiplier derived from containment controls.
+keywords:
+  - honeypot
+  - deception-technology
+  - cybersecurity
+  - benchmarking
+  - security-standard
+  - OT
+  - ICS
+  - GenAI
+preferred-citation:
+  type: standard
+  title: "Universal Honeypot Benchmarking Standard (UHBS) v4.0 (2026)"
+  authors:
+    - name: "UHBS Project Contributors"
+  year: 2026
+  version: "4.0.0"
+  url: "https://github.com/mziqudhd92/uhbs-standard"

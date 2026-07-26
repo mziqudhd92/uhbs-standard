@@ -1,0 +1,38 @@
+# UHBS Target Profile Specification (TPS) — example
+# Copy and adapt before evaluating a honeypot. All module weights,
+# latency thresholds, and safety boundaries are derived from this profile.
+
+uhbs_version: "4.0.0"
+
+target_metadata:
+  name: "Example POSIX Shell Decoy"
+  class: "POSIX-Shell" # POSIX-Shell | ICS-SCADA | Web-API | Database | GenAI-Shell | Low-Interaction
+  protocol: "ssh"
+  description: "Interactive SSH decoy for enterprise deception benchmarking."
+  vendor: "Example Corp"
+  version: "1.0.0"
+
+performance_baseline:
+  p95_latency_ms: 150
+  strict_rfc_enforcement: true
+  gold_baseline: "OpenSSH 9.x on Ubuntu 24.04 LTS"
+
+safety_boundary:
+  air_gapped: true
+  allowed_outbound: [] # deny-all except auditing egress gateway
+  allow_local_code_execution: false
+  notes: "No outbound Internet; DNS and ICMP blocked at sandbox edge."
+
+# Profile-adaptive weights for POSIX / Interactive Shells (must sum to 1.00)
+module_weights:
+  w_A: 0.20 # Protocol Fidelity
+  w_B: 0.25 # Behavioral Realism
+  w_C: 0.20 # Telemetry Quality
+  w_E: 0.15 # Scale & Latency
+  w_F: 0.20 # Static Audit
+
+telemetry:
+  formats:
+    - STIX-2.1
+    - OpenTelemetry
+  mitre_attack_mapping: true

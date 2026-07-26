@@ -1,0 +1,57 @@
+name: Profile / Scorecard Submission
+description: Submit a TPS profile class example or official scorecard for review
+title: "[scorecard]: "
+labels: ["scorecard"]
+body:
+  - type: dropdown
+    id: submission_type
+    attributes:
+      label: Submission type
+      options:
+        - Target Profile Specification (profile.yaml)
+        - Benchmark Scorecard
+        - Both
+    validations:
+      required: true
+  - type: input
+    id: target_name
+    attributes:
+      label: Target / decoy name
+    validations:
+      required: true
+  - type: dropdown
+    id: profile_class
+    attributes:
+      label: Profile class
+      options:
+        - POSIX-Shell
+        - ICS-SCADA
+        - Web-API
+        - Database
+        - GenAI-Shell
+        - Low-Interaction
+    validations:
+      required: true
+  - type: input
+    id: evaluated_at
+    attributes:
+      label: Evaluation date (YYYY-MM-DD)
+      placeholder: "2026-07-26"
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: Artifacts
+      description: Paste profile.yaml / scorecard JSON, or link to a PR branch
+    validations:
+      required: true
+  - type: checkboxes
+    id: attest
+    attributes:
+      label: Attestation
+      options:
+        - label: Results were produced following UHBS v4.0 dual-plane audit requirements (isolated sandbox + static audit).
+          required: true
+        - label: Scorecard validates against schemas/scorecard.schema.json (or will after PR updates).
+          required: true
+        - label: I understand false or misleading scorecards may be disputed publicly.
+          required: true

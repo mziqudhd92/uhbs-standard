@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://uhbs.dev/schemas/profile.schema.json",
+  "title": "UHBS Target Profile Specification (TPS)",
+  "description": "Machine-readable Target Profile Specification (profile.yaml) required before UHBS evaluation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "uhbs_version",
+    "target_metadata",
+    "performance_baseline",
+    "safety_boundary",
+    "module_weights"
+  ],
+  "properties": {
+    "uhbs_version": {
+      "type": "string",
+      "const": "4.0.0",
+      "description": "Specification version this profile targets."
+    },
+    "target_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "class", "protocol"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Human-readable decoy / honeypot name."
+        },
+        "class": {
+          "type": "string",
+          "enum": [
+            "POSIX-Shell",
+            "ICS-SCADA",
+            "Web-API",
+            "Database",
+            "GenAI-Shell",
+            "Low-Interaction"
+          ],
+          "description": "TPS profile class driving adaptive UHQS weights."
+        },
+        "protocol": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Primary protocol identifier (e.g., ssh, modbus-tcp, https)."
+        },
+        "description": {
+          "type": "string"
+        },
+        "vendor": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "performance_baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["p95_latency_ms", "strict_rfc_enforcement"],
+      "properties": {
+        "p95_latency_ms": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "default": 150,
+          "description": "Maximum allowed P95 latency in milliseconds under peak concurrent load."
+        },
+        "strict_rfc_enforcement": {
+          "type": "boolean",
+          "description": "When true, protocol FSM deviations fail Module A hard."
+        },
+        "gold_baseline": {
+          "type": "string",
+          "description": "Reference native system for side-channel and fingerprint comparison."
+        }
+      }
+    },
+    "safety_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["allowed_outbound", "allow_local_code_execution"],
+      "properties": {
+        "allowed_outbound": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Explicit allow-list of outbound destinations or CIDR/service labels. Empty means deny-all except audit gateway."
+        },
+        "allow_local_code_execution": {
+          "type": "boolean",
+          "description": "Whether the decoy class intentionally executes attacker-supplied code in-process."
+        },
+        "air_gapped": {
+          "type": "boolean",
+          "default": true
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "module_weights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["w_A", "w_B", "w_C", "w_E", "w_F"],
+      "description": "Profile-adaptive UHQS weights. Must sum to 1.0 (±0.001).",
+      "properties": {
+        "w_A": { "type": "number", "minimum": 0, "maximum": 1 },
+        "w_B": { "type": "number", "minimum": 0, "maximum": 1 },
+        "w_C": { "type": "number", "minimum": 0, "maximum": 1 },
+        "w_E": { "type": "number", "minimum": 0, "maximum": 1 },
+        "w_F": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "telemetry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "formats": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["STIX-2.1", "OpenTelemetry", "ECS"]
+          }
+        },
+        "mitre_attack_mapping": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

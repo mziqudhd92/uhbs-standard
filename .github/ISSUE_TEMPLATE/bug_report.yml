@@ -1,0 +1,43 @@
+name: Bug Report
+description: Report a defect in schemas, CLI, docs, or CI
+title: "[bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve UHBS. **Do not** report security vulnerabilities here — use [SECURITY.md](../SECURITY.md).
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - CLI
+        - Schemas
+        - Documentation
+        - CI / GitHub Actions
+        - Scoring / UHQS
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What went wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Commands, inputs, and expected vs actual behavior
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: UHBS / CLI version
+      placeholder: "4.0.0"
+    validations:
+      required: true
