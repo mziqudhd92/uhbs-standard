@@ -12,7 +12,6 @@ import re
 import socket
 import time
 from dataclasses import dataclass, field
-from typing import List, Optional, Tuple
 
 from .models import CheckResult
 
@@ -21,16 +20,16 @@ from .models import CheckResult
 class ProtoPorts:
     """Per-protocol decoy ports on a target host."""
 
-    ssh: Optional[int] = None
-    smtp: Optional[int] = None
-    http: Optional[int] = None
+    ssh: int | None = None
+    smtp: int | None = None
+    http: int | None = None
 
 
 @dataclass
 class RFCSuiteResult:
     protocol: str
     rfc: str
-    checks: List[CheckResult] = field(default_factory=list)
+    checks: list[CheckResult] = field(default_factory=list)
     skipped: bool = False
     skip_reason: str = ""
 
@@ -55,7 +54,7 @@ class RFCSuiteResult:
 
 def _recv_some(sock: socket.socket, timeout: float = 3.0, max_bytes: int = 65535) -> bytes:
     sock.settimeout(timeout)
-    chunks: List[bytes] = []
+    chunks: list[bytes] = []
     try:
         while True:
             data = sock.recv(4096)
@@ -66,7 +65,7 @@ def _recv_some(sock: socket.socket, timeout: float = 3.0, max_bytes: int = 65535
                 break
             # short linger for pipelined banners
             sock.settimeout(0.35)
-    except socket.timeout:
+    except TimeoutError:
         pass
     return b"".join(chunks)
 
@@ -78,7 +77,7 @@ def _transact(
     *,
     timeout: float = 4.0,
     recv_first: bool = False,
-) -> Tuple[bytes, float, str]:
+) -> tuple[bytes, float, str]:
     t0 = time.perf_counter()
     try:
         with socket.create_connection((host, port), timeout=timeout) as s:
@@ -206,7 +205,7 @@ def probe_ssh_rfc4253(host: str, port: int) -> RFCSuiteResult:
 _SMTP_CODE = re.compile(rb"(?m)^(\d{3})[\s-]")
 
 
-def _smtp_codes(data: bytes) -> List[int]:
+def _smtp_codes(data: bytes) -> list[int]:
     return [int(m.group(1)) for m in _SMTP_CODE.finditer(data)]
 
 
@@ -318,7 +317,7 @@ def probe_smtp_rfc5321(host: str, port: int) -> RFCSuiteResult:
 # RFC 9110 / 9112 — HTTP
 # ---------------------------------------------------------------------------
 
-_HTTP_STATUS = re.compile(rb"^HTTP/1\.[01] (\d{3})", re.M)
+_HTTP_STATUS = re.compile(rb"^HTTP/1\.[01] (\d{3})", re.MULTILINE)
 
 
 def probe_http_rfc9110(host: str, port: int) -> RFCSuiteResult:
@@ -414,8 +413,8 @@ def probe_http_rfc9110(host: str, port: int) -> RFCSuiteResult:
     return suite
 
 
-def run_rfc_suites(host: str, ports: ProtoPorts) -> List[RFCSuiteResult]:
-    suites: List[RFCSuiteResult] = []
+def run_rfc_suites(host: str, ports: ProtoPorts) -> list[RFCSuiteResult]:
+    suites: list[RFCSuiteResult] = []
     if ports.ssh:
         suites.append(probe_ssh_rfc4253(host, ports.ssh))
     if ports.smtp:
@@ -425,10 +424,10 @@ def run_rfc_suites(host: str, ports: ProtoPorts) -> List[RFCSuiteResult]:
     return suites
 
 
-def aggregate_rfc_score(suites: List[RFCSuiteResult]) -> Tuple[float, List[CheckResult], dict]:
+def aggregate_rfc_score(suites: list[RFCSuiteResult]) -> tuple[float, list[CheckResult], dict]:
     """Average P_RFC across non-skipped protocol suites (0–100)."""
     active = [s for s in suites if not s.skipped]
-    checks: List[CheckResult] = []
+    checks: list[CheckResult] = []
     for s in suites:
         if s.skipped:
             checks.append(

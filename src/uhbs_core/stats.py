@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from typing import List, Sequence, Tuple
+from collections.abc import Sequence
 
 
-def ks_2samp(a: Sequence[float], b: Sequence[float]) -> Tuple[float, float]:
+def ks_2samp(a: Sequence[float], b: Sequence[float]) -> tuple[float, float]:
     """Two-sample Kolmogorov–Smirnov statistic and asymptotic p-value approx.
 
     Returns (D, p_approx). p_approx is a rough bound for gating (not scipy-grade).
@@ -49,12 +49,12 @@ def ks_2samp(a: Sequence[float], b: Sequence[float]) -> Tuple[float, float]:
 
 def sample_connect_latencies(
     host: str, port: int, samples: int, timeout: float = 3.0
-) -> Tuple[List[float], int]:
+) -> tuple[list[float], int]:
     """TCP connect RTT samples in milliseconds."""
     import socket
     import time
 
-    lat: List[float] = []
+    lat: list[float] = []
     errors = 0
     for _ in range(max(1, samples)):
         t0 = time.perf_counter()

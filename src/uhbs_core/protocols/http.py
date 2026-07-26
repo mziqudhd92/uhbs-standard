@@ -1,11 +1,10 @@
 from __future__ import annotations
 
-from typing import List, Optional
+from uhbs_core.protocols.base import ProtocolPlugin
 
 from ..models import CheckResult, TargetSpec
 from ..rfc_probes import _transact, probe_http_rfc9110
 from ..tps import TPS
-from uhbs_core.protocols.base import ProtocolPlugin
 
 
 class HTTPPlugin(ProtocolPlugin):
@@ -13,8 +12,8 @@ class HTTPPlugin(ProtocolPlugin):
     families = ("it", "web", "api")
 
     def probe_fsm(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         suite = probe_http_rfc9110(host, port)
         if suite.skipped:
             return [
@@ -33,14 +32,14 @@ class HTTPPlugin(ProtocolPlugin):
         ]
 
     def probe_negotiation(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         suite = probe_http_rfc9110(host, port)
         return [c for c in suite.checks if "valid_get" in c.id]
 
     def probe_state(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         # Cookie / path echo style: PUT-ish then GET (many decoys only GET)
         raw1, _, _ = _transact(
             host,

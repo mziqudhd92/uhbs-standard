@@ -19,20 +19,23 @@ Examples:
 from __future__ import annotations
 
 import argparse
-import sys
+import os
+from collections.abc import Sequence
 from pathlib import Path
-from typing import Dict, List, Optional, Sequence, Tuple
 
-from uhbs_core import test_realism  # noqa: E402
-from uhbs_core import test_safety  # noqa: E402
-from uhbs_core import test_scale  # noqa: E402
-from uhbs_core import test_static_code  # noqa: E402
-from uhbs_core import test_stealth  # noqa: E402
-from uhbs_core import test_telemetry  # noqa: E402
-from uhbs_core import sandbox_preflight  # noqa: E402
-from uhbs_core.hqs import scores_from_modules  # noqa: E402
-from uhbs_core.inventory import load_inventory, resolve_target  # noqa: E402
-from uhbs_core.models import (  # noqa: E402
+from uhbs_core import (
+    sandbox_preflight,
+    test_realism,
+    test_safety,
+    test_scale,
+    test_static_code,
+    test_stealth,
+    test_telemetry,
+)
+from uhbs_core.hqs import scores_from_modules
+from uhbs_core.inventory import load_inventory, resolve_target
+from uhbs_core.manifest import write_manifest
+from uhbs_core.models import (
     DIM_A,
     DIM_B,
     DIM_C,
@@ -42,17 +45,16 @@ from uhbs_core.models import (  # noqa: E402
     TargetSpec,
     compute_uhqs,
 )
-from uhbs_core.protocols import list_protocols  # noqa: E402
-from uhbs_core.report import render_card, write_report  # noqa: E402
-from uhbs_core.source_scan import scan_source  # noqa: E402
-from uhbs_core.tps import TPS, apply_tps, default_tps_for_class, load_tps, resolve_tps_path  # noqa: E402
-from uhbs_core.manifest import write_manifest  # noqa: E402
+from uhbs_core.protocols import list_protocols
+from uhbs_core.report import render_card, write_report
+from uhbs_core.source_scan import scan_source
+from uhbs_core.tps import TPS, apply_tps, default_tps_for_class, load_tps, resolve_tps_path
 
 DYNAMIC_DIMS = (DIM_A, DIM_B, DIM_C, DIM_D, DIM_E)
 
 
-def _normalize_phases(phases: Sequence[str]) -> List[str]:
-    out: List[str] = []
+def _normalize_phases(phases: Sequence[str]) -> list[str]:
+    out: list[str] = []
     for raw in phases:
         p = raw.strip().lower()
         if p in {"1", "profile", "setup", "tps"}:
@@ -68,7 +70,7 @@ def _normalize_phases(phases: Sequence[str]) -> List[str]:
         elif p:
             out.append(p)
     seen = set()
-    ordered: List[str] = []
+    ordered: list[str] = []
     for p in out:
         if p not in seen:
             seen.add(p)
@@ -106,8 +108,8 @@ def _run_dynamic(
     modules: Sequence[str],
     scale_conc: int,
     scale_req: int,
-) -> List[ModuleResult]:
-    out: List[ModuleResult] = []
+) -> list[ModuleResult]:
+    out: list[ModuleResult] = []
     mods = {m.upper() if len(m) == 1 else m.lower() for m in modules}
     if "A" in mods or "stealth" in mods or "protocol" in mods:
         out.append(test_stealth.run(target, tps=tps))
@@ -133,10 +135,10 @@ def evaluate_one(
     scale_req: int,
     out_dir: Path,
     skip_sast_tools: bool,
-) -> Tuple[List[ModuleResult], Dict[str, float]]:
+) -> tuple[list[ModuleResult], dict[str, float]]:
     phases_n = _normalize_phases(phases)
-    all_mods: List[ModuleResult] = []
-    dyn_mods: List[ModuleResult] = []
+    all_mods: list[ModuleResult] = []
+    dyn_mods: list[ModuleResult] = []
 
     run_static = "static" in phases_n
     run_dynamic = "dynamic" in phases_n
@@ -174,7 +176,7 @@ def evaluate_one(
     return all_mods, scores
 
 
-def main() -> int:
+def main(argv: Sequence[str] | None = None) -> int:
     p = argparse.ArgumentParser(description="UHBS v4.0 Universal Honeypot Benchmark")
     p.add_argument("--inventory", type=Path)
     p.add_argument("--target", required=False, help="required unless --list-protocols")
@@ -208,11 +210,9 @@ def main() -> int:
         "--environment",
         default="Isolated Sandbox / air-gapped lab",
     )
-    args = p.parse_args()
+    args = p.parse_args(list(argv) if argv is not None else None)
 
     if args.quick:
-        import os
-
         os.environ["UHBS_QUICK"] = "1"
 
     if args.list_protocols:
@@ -245,7 +245,7 @@ def main() -> int:
         )
         apply_tps(target, tps)
 
-    baseline: Optional[TargetSpec] = None
+    baseline: TargetSpec | None = None
     baseline_tps = tps
     if args.baseline:
         baseline = resolve_target(

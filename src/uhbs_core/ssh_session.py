@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
+import contextlib
 import socket
 import time
 from dataclasses import dataclass
-from typing import List, Optional, Tuple
 
 
 @dataclass
@@ -17,7 +17,7 @@ class ExecOutcome:
     error: str = ""
 
 
-def tcp_connect(host: str, port: int, timeout: float = 5.0) -> Tuple[bool, float, str]:
+def tcp_connect(host: str, port: int, timeout: float = 5.0) -> tuple[bool, float, str]:
     t0 = time.perf_counter()
     try:
         with socket.create_connection((host, port), timeout=timeout):
@@ -27,7 +27,7 @@ def tcp_connect(host: str, port: int, timeout: float = 5.0) -> Tuple[bool, float
         return False, (time.perf_counter() - t0) * 1000.0, str(exc)
 
 
-def ssh_banner(host: str, port: int, timeout: float = 5.0) -> Tuple[str, float, str]:
+def ssh_banner(host: str, port: int, timeout: float = 5.0) -> tuple[str, float, str]:
     """Read SSH identification string (pre-auth)."""
     t0 = time.perf_counter()
     try:
@@ -85,7 +85,7 @@ def run_ssh_command(
             err = stderr.read().decode("utf-8", errors="replace")
             latency = (time.perf_counter() - t0) * 1000.0
             return ExecOutcome(ok=True, stdout=out, stderr=err, latency_ms=latency)
-        except Exception as exec_exc:  # noqa: BLE001
+        except Exception as exec_exc:
             # Some limited-interaction decoys reject non-interactive exec.
             msg = str(exec_exc).lower()
             if "channel closed" not in msg and "channel open" not in msg:
@@ -108,10 +108,8 @@ def run_ssh_command(
             ok=False, stdout="", stderr="", latency_ms=latency, error=str(exc)
         )
     finally:
-        try:
+        with contextlib.suppress(Exception):
             client.close()
-        except Exception:  # noqa: BLE001
-            pass
 
 
 def run_ssh_shell_commands(
@@ -119,7 +117,7 @@ def run_ssh_shell_commands(
     port: int,
     user: str,
     password: str,
-    commands: List[str],
+    commands: list[str],
     timeout: float = 20.0,
 ) -> ExecOutcome:
     """Open an interactive shell channel and send commands sequentially."""
@@ -137,7 +135,7 @@ def run_ssh_shell_commands(
     client = paramiko.SSHClient()
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     t0 = time.perf_counter()
-    chunks: List[str] = []
+    chunks: list[str] = []
     try:
         client.connect(
             hostname=host,
@@ -172,7 +170,5 @@ def run_ssh_shell_commands(
             ok=False, stdout="".join(chunks), stderr="", latency_ms=latency, error=str(exc)
         )
     finally:
-        try:
+        with contextlib.suppress(Exception):
             client.close()
-        except Exception:  # noqa: BLE001
-            pass

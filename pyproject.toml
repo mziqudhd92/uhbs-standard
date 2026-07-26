@@ -7,10 +7,22 @@ name = "uhbs"
 version = "4.0.0"
 description = "Universal Honeypot Benchmarking Standard (UHBS) — validators and UHBS-Lab reference core"
 readme = "README.md"
-license = { text = "Apache-2.0" }
+license = "Apache-2.0"
+license-files = ["LICENSE"]
 requires-python = ">=3.11"
 authors = [{ name = "Moran Zavdi" }]
 keywords = ["honeypot", "benchmarking", "cybersecurity", "deception", "uhbs"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Information Technology",
+  "Intended Audience :: Science/Research",
+  "Topic :: Security",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
 dependencies = [
   "jsonschema>=4.22",
   "PyYAML>=6.0",
@@ -50,7 +62,19 @@ uhbs_core = [
 [tool.ruff]
 line-length = 100
 target-version = "py311"
-extend-exclude = ["src/uhbs_core/test_*.py"]
+# Module A–F scripts retain lab-harness style; lint shared/core surfaces tightly.
+extend-exclude = [
+  "src/uhbs_core/test_*.py",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.ruff.lint.per-file-ignores]
+# Lab harness protocol plugins retain long probe detail strings / socket patterns.
+"src/uhbs_core/protocols/**/*.py" = ["E501", "SIM105"]
+"src/uhbs_core/sandbox_preflight.py" = ["E402", "E501"]
+"src/uhbs_core/test_*.py" = ["E", "F", "I", "UP", "B", "SIM"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

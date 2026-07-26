@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import os
 from abc import ABC, abstractmethod
-from typing import List, Optional
 
 from ..models import CheckResult, TargetSpec
 from ..stats import ks_2samp, sample_connect_latencies
@@ -19,14 +18,14 @@ class ProtocolPlugin(ABC):
 
     @abstractmethod
     def probe_fsm(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         """A1 — out-of-order / invalid verbs vs mandated status codes."""
 
     @abstractmethod
     def probe_negotiation(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         """A2 — capability / banner / cipher negotiation parity."""
 
     def probe_timing(
@@ -34,9 +33,9 @@ class ProtocolPlugin(ABC):
         host: str,
         port: int,
         target: TargetSpec,
-        tps: Optional[TPS],
+        tps: TPS | None,
         samples: int = 1000,
-    ) -> List[CheckResult]:
+    ) -> list[CheckResult]:
         """A3 — IAT distribution + optional Kolmogorov–Smirnov vs gold baseline."""
         import statistics
 
@@ -59,7 +58,7 @@ class ProtocolPlugin(ABC):
 
         med = statistics.median(lat)
         jitter = statistics.pstdev(lat) if len(lat) > 1 else 0.0
-        checks: List[CheckResult] = [
+        checks: list[CheckResult] = [
             CheckResult(
                 id=f"{self.name}.timing.sample_size",
                 team="blue",
@@ -137,8 +136,8 @@ class ProtocolPlugin(ABC):
         return checks
 
     def probe_state(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         return [
             CheckResult(
                 id=f"{self.name}.state.unsupported",
@@ -150,8 +149,8 @@ class ProtocolPlugin(ABC):
         ]
 
     def probe_payload(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         return [
             CheckResult(
                 id=f"{self.name}.payload.unsupported",
@@ -163,8 +162,8 @@ class ProtocolPlugin(ABC):
         ]
 
     def probe_fuzz(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         import socket
 
         try:
@@ -173,7 +172,7 @@ class ProtocolPlugin(ABC):
                 s.sendall(b"\x00\xff\xfe" + bytes(range(256))[:64])
                 try:
                     s.recv(1024)
-                except socket.timeout:
+                except TimeoutError:
                     pass
             return [
                 CheckResult(
@@ -196,7 +195,7 @@ class ProtocolPlugin(ABC):
             ]
 
     def probe_load_once(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
     ) -> float:
         """Single request latency (ms) for Module E — override for protocol-native load."""
         lat, err = sample_connect_latencies(host, port, 1)

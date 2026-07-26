@@ -3,14 +3,14 @@
 from __future__ import annotations
 
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any
 
 from .models import DIM_LABELS, DIMS, UHQS_ATTR, ModuleResult, TargetSpec, UHQSResult
 
 
-def _status_line(mod: Optional[ModuleResult], score: float) -> str:
+def _status_line(mod: ModuleResult | None, score: float) -> str:
     if mod is None:
         return "N/A"
     if mod.status == "SKIPPED":
@@ -28,13 +28,13 @@ def _status_line(mod: Optional[ModuleResult], score: float) -> str:
 
 def render_card(
     target: TargetSpec,
-    baseline: Optional[TargetSpec],
+    baseline: TargetSpec | None,
     uhqs: UHQSResult,
-    modules: List[ModuleResult],
+    modules: list[ModuleResult],
     environment: str = "Isolated Sandbox",
     evaluation_type: str = "Full-Spectrum (Static Audit + Dynamic Sandbox)",
 ) -> str:
-    by_dim: Dict[str, ModuleResult] = {}
+    by_dim: dict[str, ModuleResult] = {}
     for m in modules:
         if m.module == "SOURCE":
             by_dim.setdefault(m.dimension, m)
@@ -49,7 +49,7 @@ def render_card(
         f"Target System         : {target.label}",
         f"System Profile Class  : {uhqs.profile_class}",
         f"Protocols             : {', '.join(target.protocol_list())}",
-        f"Evaluation Date       : {datetime.now(timezone.utc).strftime('%Y-%m-%d')}",
+        f"Evaluation Date       : {datetime.now(UTC).strftime('%Y-%m-%d')}",
         f"Evaluation Type       : {evaluation_type}",
         f"Environment           : {environment}",
         "------------------------------------------------------------------------------------",
@@ -59,10 +59,7 @@ def render_card(
     for dim in DIMS:
         label = DIM_LABELS[dim]
         score = getattr(uhqs, UHQS_ATTR[dim])
-        if dim == "containment":
-            wtxt = "GATE"
-        else:
-            wtxt = f"{weights.get(dim, 0):.2f}"
+        wtxt = "GATE" if dim == "containment" else f"{weights.get(dim, 0):.2f}"
         status = _status_line(by_dim.get(dim), score)
         lines.append(f"{label:<36}: {score:>5.1f}/100       {wtxt:<6}   {status}")
     if not uhqs.containment_measured:
@@ -86,10 +83,10 @@ def render_card(
 def write_report(
     out_dir: Path,
     target: TargetSpec,
-    baseline: Optional[TargetSpec],
+    baseline: TargetSpec | None,
     uhqs: UHQSResult,
-    modules: List[ModuleResult],
-    extras: Optional[Dict[str, Any]] = None,
+    modules: list[ModuleResult],
+    extras: dict[str, Any] | None = None,
     evaluation_type: str = "Full-Spectrum (Static Audit + Dynamic Sandbox)",
 ) -> Path:
     out_dir.mkdir(parents=True, exist_ok=True)

@@ -1,11 +1,11 @@
 from __future__ import annotations
 
 import socket
-from typing import List, Optional
+
+from uhbs_core.protocols.base import ProtocolPlugin
 
 from ..models import CheckResult, TargetSpec
 from ..tps import TPS
-from uhbs_core.protocols.base import ProtocolPlugin
 
 
 class SMBPlugin(ProtocolPlugin):
@@ -15,8 +15,8 @@ class SMBPlugin(ProtocolPlugin):
     families = ("it",)
 
     def probe_fsm(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         # Truncated NetBIOS/SMB header — should not hang forever
         try:
             with socket.create_connection((host, port), timeout=3.0) as s:
@@ -24,7 +24,7 @@ class SMBPlugin(ProtocolPlugin):
                 s.sendall(b"\x00\x00\x00\x01\xff")
                 try:
                     data = s.recv(256)
-                except socket.timeout:
+                except TimeoutError:
                     data = b""
             return [
                 CheckResult(
@@ -47,8 +47,8 @@ class SMBPlugin(ProtocolPlugin):
             ]
 
     def probe_negotiation(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         # SMB2 NEGOTIATE (best-effort presence)
         try:
             with socket.create_connection((host, port), timeout=3.0) as s:
@@ -57,7 +57,7 @@ class SMBPlugin(ProtocolPlugin):
                 s.sendall(b"\x00\x00\x00\x00")
                 try:
                     data = s.recv(256)
-                except socket.timeout:
+                except TimeoutError:
                     data = b""
             ok = True
             return [

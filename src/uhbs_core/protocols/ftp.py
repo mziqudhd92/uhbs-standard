@@ -1,11 +1,10 @@
 from __future__ import annotations
 
-from typing import List, Optional
+from uhbs_core.protocols.base import ProtocolPlugin
 
 from ..models import CheckResult, TargetSpec
 from ..rfc_probes import _transact
 from ..tps import TPS
-from uhbs_core.protocols.base import ProtocolPlugin
 
 
 class FTPPlugin(ProtocolPlugin):
@@ -13,8 +12,8 @@ class FTPPlugin(ProtocolPlugin):
     families = ("it",)
 
     def probe_fsm(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         # RETR before login → 530
         raw, _, err = _transact(host, port, b"RETR secret\r\nQUIT\r\n", recv_first=True)
         text = raw.decode("utf-8", "replace")
@@ -30,8 +29,8 @@ class FTPPlugin(ProtocolPlugin):
         ]
 
     def probe_negotiation(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         raw, _, err = _transact(host, port, b"", recv_first=True)
         text = raw.decode("utf-8", "replace")
         ok = text.startswith("220")
@@ -46,8 +45,8 @@ class FTPPlugin(ProtocolPlugin):
         ]
 
     def probe_state(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         raw, _, err = _transact(
             host,
             port,

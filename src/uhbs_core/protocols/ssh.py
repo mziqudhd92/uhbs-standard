@@ -1,13 +1,12 @@
 from __future__ import annotations
 
-from typing import List, Optional
+from uhbs_core.protocols.base import ProtocolPlugin
 
 from ..hassh import parse_server_hassh
 from ..models import CheckResult, TargetSpec
 from ..rfc_probes import probe_ssh_rfc4253
 from ..ssh_session import run_ssh_command
 from ..tps import TPS
-from uhbs_core.protocols.base import ProtocolPlugin
 
 
 class SSHPlugin(ProtocolPlugin):
@@ -15,8 +14,8 @@ class SSHPlugin(ProtocolPlugin):
     families = ("it", "posix", "genai")
 
     def probe_fsm(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         suite = probe_ssh_rfc4253(host, port)
         if suite.skipped:
             return [
@@ -31,9 +30,9 @@ class SSHPlugin(ProtocolPlugin):
         return [c for c in suite.checks if c.id.startswith("rfc4253.")]
 
     def probe_negotiation(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
-        checks: List[CheckResult] = []
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
+        checks: list[CheckResult] = []
         suite = probe_ssh_rfc4253(host, port)
         checks.extend([c for c in suite.checks if "kex" in c.id or "identification" in c.id])
 
@@ -73,8 +72,8 @@ class SSHPlugin(ProtocolPlugin):
         return checks
 
     def probe_state(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         # B1: cross-session persistence — write in session 1, read in session 2
         marker = "UHBS_CROSS_SESSION_OK"
         path = "/tmp/uhbs_cross_session_marker"
@@ -109,8 +108,8 @@ class SSHPlugin(ProtocolPlugin):
         ]
 
     def probe_payload(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         out = run_ssh_command(host, port, target.user, target.password, "echo PAYLOAD_OK")
         ok = out.ok and "PAYLOAD_OK" in out.stdout
         return [
@@ -124,8 +123,8 @@ class SSHPlugin(ProtocolPlugin):
         ]
 
     def probe_fuzz(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         out = run_ssh_command(
             host, port, target.user, target.password, "head -c 1000 /dev/urandom | wc -c"
         )
@@ -141,7 +140,7 @@ class SSHPlugin(ProtocolPlugin):
         ]
 
     def probe_load_once(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
     ) -> float:
         out = run_ssh_command(host, port, target.user, target.password, "true", timeout=20)
         if not out.ok:

@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import re
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any
 
 from uhbs_core.hqs import pass_status
 from uhbs_core.models import (
@@ -50,17 +50,17 @@ except ImportError:  # pragma: no cover
 PROFILES_DIR = Path(__file__).resolve().parent / "profiles"
 
 
-def _load_yaml(path: Path) -> Dict[str, Any]:
+def _load_yaml(path: Path) -> dict[str, Any]:
     if yaml is None:
         raise RuntimeError("PyYAML required: pip install pyyaml")
     with path.open("r", encoding="utf-8") as f:
         data = yaml.safe_load(f) or {}
     if not isinstance(data, dict):
-        raise ValueError(f"invalid signals profile: {path}")
+        raise TypeError(f"invalid signals profile: {path}")
     return data
 
 
-def resolve_profile(kind: str, override: Optional[str] = None) -> Path:
+def resolve_profile(kind: str, override: str | None = None) -> Path:
     stem = override or kind
     path = PROFILES_DIR / f"{stem}_signals.yaml"
     if path.is_file():
@@ -76,8 +76,8 @@ def resolve_profile(kind: str, override: Optional[str] = None) -> Path:
 _SKIP_PARTS = {".git", "node_modules", ".venv", "venv", "dist", "build", ".local"}
 
 
-def _match_paths(root: Path, patterns: List[str], limit: int = 40) -> List[str]:
-    hits: List[str] = []
+def _match_paths(root: Path, patterns: list[str], limit: int = 40) -> list[str]:
+    hits: list[str] = []
     for pattern in patterns:
         for p in root.glob(pattern):
             if any(part in _SKIP_PARTS for part in p.parts):
@@ -89,12 +89,12 @@ def _match_paths(root: Path, patterns: List[str], limit: int = 40) -> List[str]:
     return hits
 
 
-def _content_matches(root: Path, rel_paths: List[str], regex: str, max_files: int = 25) -> bool:
+def _content_matches(root: Path, rel_paths: list[str], regex: str, max_files: int = 25) -> bool:
     cre = re.compile(regex, re.IGNORECASE | re.MULTILINE)
     checked = 0
     for rel in rel_paths:
         path = root / rel
-        files: List[Path]
+        files: list[Path]
         if path.is_dir():
             files = [p for p in path.rglob("*") if p.is_file()][:10]
         elif path.is_file():
@@ -114,11 +114,11 @@ def _content_matches(root: Path, rel_paths: List[str], regex: str, max_files: in
     return False
 
 
-def _score_dimension(root: Path, name: str, dim: Dict[str, Any]) -> ModuleResult:
+def _score_dimension(root: Path, name: str, dim: dict[str, Any]) -> ModuleResult:
     signals = dim.get("signals") or []
     earned = 0
     max_pts = 0
-    checks: List[CheckResult] = []
+    checks: list[CheckResult] = []
 
     for sig in signals:
         sid = str(sig.get("id", "unnamed"))
@@ -156,7 +156,7 @@ def _score_dimension(root: Path, name: str, dim: Dict[str, Any]) -> ModuleResult
     )
 
 
-def scan_source(target: TargetSpec) -> List[ModuleResult]:
+def scan_source(target: TargetSpec) -> list[ModuleResult]:
     """Return one ModuleResult per dimension from static source signals."""
     if not target.source_root:
         return [
@@ -199,7 +199,7 @@ def scan_source(target: TargetSpec) -> List[ModuleResult]:
         ]
 
     dims = profile.get("dimensions") or {}
-    results: List[ModuleResult] = []
+    results: list[ModuleResult] = []
     for yaml_key in YAML_DIM_KEYS:
         dim_id = YAML_TO_DIM[yaml_key]
         if yaml_key not in dims and dim_id not in dims:

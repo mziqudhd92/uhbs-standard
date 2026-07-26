@@ -2,21 +2,21 @@
 
 from __future__ import annotations
 
-from typing import Dict, Iterable
+from collections.abc import Iterable
 
 from uhbs_core.models import DIMS, ModuleResult, average_scores, compute_hqs, compute_uhqs
 
 __all__ = [
+    "average_scores",
     "compute_hqs",
     "compute_uhqs",
-    "average_scores",
-    "scores_from_modules",
     "pass_status",
+    "scores_from_modules",
 ]
 
 
-def scores_from_modules(modules: Iterable[ModuleResult]) -> Dict[str, float]:
-    scores: Dict[str, float] = {d: 0.0 for d in DIMS}
+def scores_from_modules(modules: Iterable[ModuleResult]) -> dict[str, float]:
+    scores: dict[str, float] = {d: 0.0 for d in DIMS}
     # Legacy → new
     alias = {
         "stealth": "protocol",

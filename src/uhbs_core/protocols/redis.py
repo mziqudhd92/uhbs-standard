@@ -1,11 +1,10 @@
 from __future__ import annotations
 
-from typing import List, Optional
+from uhbs_core.protocols.base import ProtocolPlugin
 
 from ..models import CheckResult, TargetSpec
 from ..rfc_probes import _transact
 from ..tps import TPS
-from uhbs_core.protocols.base import ProtocolPlugin
 
 
 class RedisPlugin(ProtocolPlugin):
@@ -13,8 +12,8 @@ class RedisPlugin(ProtocolPlugin):
     families = ("it", "database")
 
     def probe_fsm(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         # Nested/invalid RESP should error, not crash
         raw, _, err = _transact(host, port, b"Garbage\r\n", recv_first=False)
         text = raw.decode("utf-8", "replace")
@@ -30,8 +29,8 @@ class RedisPlugin(ProtocolPlugin):
         ]
 
     def probe_negotiation(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         raw, _, err = _transact(host, port, b"PING\r\n", recv_first=False)
         text = raw.decode("utf-8", "replace")
         ok = "PONG" in text or text.startswith("+")
@@ -46,8 +45,8 @@ class RedisPlugin(ProtocolPlugin):
         ]
 
     def probe_state(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         raw, _, err = _transact(
             host,
             port,

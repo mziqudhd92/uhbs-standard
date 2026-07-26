@@ -6,19 +6,14 @@ from __future__ import annotations
 import argparse
 import os
 import socket
-import sys
 from pathlib import Path
-from typing import List
 
-ROOT = Path(__file__).resolve().parent
-sys.path.insert(0, str(ROOT))
-
-from uhbs_core.hqs import pass_status  # noqa: E402
-from uhbs_core.models import CheckResult, ModuleResult, TargetSpec  # noqa: E402
+from uhbs_core.hqs import pass_status
+from uhbs_core.models import CheckResult, ModuleResult, TargetSpec
 
 
 def run(target: TargetSpec) -> ModuleResult:
-    checks: List[CheckResult] = []
+    checks: list[CheckResult] = []
     if not target.host:
         return ModuleResult(
             module="SANDBOX",

@@ -1,11 +1,10 @@
 from __future__ import annotations
 
-from typing import List, Optional
+from uhbs_core.protocols.base import ProtocolPlugin
 
 from ..models import CheckResult, TargetSpec
 from ..rfc_probes import probe_smtp_rfc5321
 from ..tps import TPS
-from uhbs_core.protocols.base import ProtocolPlugin
 
 
 class SMTPPlugin(ProtocolPlugin):
@@ -13,8 +12,8 @@ class SMTPPlugin(ProtocolPlugin):
     families = ("it", "mail")
 
     def probe_fsm(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         suite = probe_smtp_rfc5321(host, port)
         if suite.skipped:
             return [
@@ -33,16 +32,16 @@ class SMTPPlugin(ProtocolPlugin):
         ]
 
     def probe_negotiation(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         suite = probe_smtp_rfc5321(host, port)
         return [c for c in suite.checks if "greeting" in c.id or "ehlo" in c.id]
 
     def probe_state(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         # MAIL transaction then RSET — state reset is realism signal
-        from ..rfc_probes import _transact, _smtp_codes
+        from ..rfc_probes import _smtp_codes, _transact
 
         raw, _, err = _transact(
             host,

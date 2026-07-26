@@ -34,6 +34,9 @@ share version **4.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`).
   ROADMAP Phase 6 as aspirational (unchecked) goals
 - Dropped React `web/` landing; GitHub Pages is MkDocs at site root
   (`https://mziqudhd92.github.io/uhbs-standard/`)
+- Unified UHQS math into `uhbs_core.uhqs_math` (CLI + harness); missing scores
+  raise instead of silent 0.0; Actions pinned by SHA; CI uses `constraints.txt`;
+  PEP 639 license metadata; expanded integrity/CLI tests
 
 ### Pending (manual / ops / community — see ROADMAP Phase 6)
 - PyPI Trusted Publishing + Sigstore signing

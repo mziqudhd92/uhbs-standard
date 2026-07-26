@@ -188,9 +188,12 @@ def score_cmd(
     )
 
 
-@main.command("lab")
-@click.argument("args", nargs=-1, type=click.UNPROCESSED)
-def lab_cmd(args: tuple[str, ...]) -> None:
+@main.command(
+    "lab",
+    context_settings={"ignore_unknown_options": True, "allow_extra_args": True},
+)
+@click.pass_context
+def lab_cmd(ctx: click.Context) -> None:
     """Run the UHBS-Lab reference harness (requires: pip install 'uhbs[lab]')."""
     try:
         from uhbs_core.run_benchmark import main as lab_main
@@ -198,11 +201,7 @@ def lab_cmd(args: tuple[str, ...]) -> None:
         raise click.ClickException(
             "uhbs-core lab harness unavailable. Install with: pip install 'uhbs[lab]'"
         ) from exc
-    # Reconstruct argv for argparse inside run_benchmark
-    import sys
-
-    sys.argv = ["uhbs-lab", *args]
-    raise SystemExit(lab_main())
+    raise SystemExit(lab_main(tuple(ctx.args)))
 
 
 if __name__ == "__main__":

@@ -2,9 +2,8 @@
 
 from __future__ import annotations
 
-from typing import Dict, List, Type
-
 from uhbs_core.protocols.base import ProtocolPlugin
+
 from .ftp import FTPPlugin
 from .generic import GenericTCPPlugin
 from .http import HTTPPlugin
@@ -15,7 +14,7 @@ from .smtp import SMTPPlugin
 from .ssh import SSHPlugin
 from .telnet import TelnetPlugin
 
-_REGISTRY: Dict[str, ProtocolPlugin] = {}
+_REGISTRY: dict[str, ProtocolPlugin] = {}
 
 
 def register(plugin: ProtocolPlugin) -> None:
@@ -33,7 +32,7 @@ def get_plugin(name: str) -> ProtocolPlugin:
     return GenericTCPPlugin(name=key)
 
 
-def list_protocols() -> List[str]:
+def list_protocols() -> list[str]:
     return sorted(_REGISTRY.keys())
 
 

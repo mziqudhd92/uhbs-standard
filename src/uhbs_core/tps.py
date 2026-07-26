@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any
 
 from .models import TargetSpec
 
@@ -21,30 +21,30 @@ class TPS:
     name: str
     profile_class: str = "POSIX-Shell"
     protocol: str = "ssh"
-    protocols: List[str] = field(default_factory=list)
+    protocols: list[str] = field(default_factory=list)
     expected_p95_latency_ms: float = 150.0
     strict_rfc_enforcement: bool = True
     allowed_outbound_traffic: bool = False
     allow_local_code_execution: bool = False
     timing_samples: int = 1000  # UHBS A3 formal default; UHBS_QUICK=1 shortens
-    gold_baseline_host: Optional[str] = None
-    gold_baseline_port: Optional[int] = None
+    gold_baseline_host: str | None = None
+    gold_baseline_port: int | None = None
     # Protocols that should KS/HASSH-compare against the gold host (default: ssh only).
-    gold_baseline_protocols: List[str] = field(default_factory=lambda: ["ssh"])
-    raw: Dict[str, Any] = field(default_factory=dict)
+    gold_baseline_protocols: list[str] = field(default_factory=lambda: ["ssh"])
+    raw: dict[str, Any] = field(default_factory=dict)
 
-    def protocol_list(self) -> List[str]:
+    def protocol_list(self) -> list[str]:
         if self.protocols:
             return [p.lower() for p in self.protocols]
         return [self.protocol.lower()]
 
 
-def _load_yaml(path: Path) -> Dict[str, Any]:
+def _load_yaml(path: Path) -> dict[str, Any]:
     if yaml is None:
         raise RuntimeError("PyYAML required: pip install pyyaml")
     data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
     if not isinstance(data, dict):
-        raise ValueError(f"invalid TPS: {path}")
+        raise TypeError(f"invalid TPS: {path}")
     return data
 
 
@@ -84,7 +84,7 @@ def load_tps(path: Path) -> TPS:
     )
 
 
-def resolve_tps_path(name_or_path: Optional[str]) -> Optional[Path]:
+def resolve_tps_path(name_or_path: str | None) -> Path | None:
     if not name_or_path:
         return None
     p = Path(name_or_path).expanduser()

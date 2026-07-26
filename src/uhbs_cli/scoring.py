@@ -1,8 +1,7 @@
-"""UHQS scoring helpers for UHBS v4.0.
+"""UHQS scoring helpers for UHBS v4.0 (CLI / scorecard validation).
 
-Normative math MUST match the reference harness `lib/models.py` compute_uhqs:
-  UHQS = δ_C · (w_A·S_A + w_B·S_B + w_C·S_C + w_E·S_E + w_F·S_F)
-  δ_C = 1.0 if C ≥ 95 else (C/100)²
+Normative math lives in ``uhbs_core.uhqs_math`` — this module re-exports the
+CLI-facing API and adds scorecard integrity checks.
 """
 
 from __future__ import annotations
@@ -10,18 +9,31 @@ from __future__ import annotations
 from collections.abc import Mapping
 from dataclasses import dataclass
 
-WEIGHT_KEYS = ("w_A", "w_B", "w_C", "w_E", "w_F")
-SCORE_KEYS = ("A", "B", "C", "D", "E", "F")
+from uhbs_core.uhqs_math import (
+    PROFILE_WEIGHTS,
+    SCORE_KEYS,
+    WEIGHT_KEYS,
+    letter_grade,
+    safety_gate,
+    validate_weights,
+    weights_for_class,
+)
+from uhbs_core.uhqs_math import (
+    compute_uhqs as _compute_uhqs,
+)
 
-# Profile-adaptive weights (§5.3) — MUST match reference harness PROFILE_WEIGHTS
-PROFILE_WEIGHTS: dict[str, dict[str, float]] = {
-    "POSIX-Shell": {"w_A": 0.20, "w_B": 0.25, "w_C": 0.20, "w_E": 0.15, "w_F": 0.20},
-    "GenAI-Shell": {"w_A": 0.20, "w_B": 0.25, "w_C": 0.20, "w_E": 0.15, "w_F": 0.20},
-    "Low-Interaction": {"w_A": 0.30, "w_B": 0.15, "w_C": 0.25, "w_E": 0.10, "w_F": 0.20},
-    "ICS-SCADA": {"w_A": 0.35, "w_B": 0.20, "w_C": 0.15, "w_E": 0.10, "w_F": 0.20},
-    "Web-API": {"w_A": 0.25, "w_B": 0.20, "w_C": 0.20, "w_E": 0.15, "w_F": 0.20},
-    "Database": {"w_A": 0.25, "w_B": 0.25, "w_C": 0.20, "w_E": 0.10, "w_F": 0.20},
-}
+__all__ = [
+    "PROFILE_WEIGHTS",
+    "SCORE_KEYS",
+    "WEIGHT_KEYS",
+    "UhqsResult",
+    "assert_scorecard_integrity",
+    "compute_uhqs",
+    "letter_grade",
+    "safety_gate",
+    "validate_weights",
+    "weights_for_class",
+]
 
 
 @dataclass(frozen=True)
@@ -32,64 +44,17 @@ class UhqsResult:
     safety_gate_passed: bool
 
 
-def weights_for_class(profile_class: str) -> dict[str, float]:
-    return dict(PROFILE_WEIGHTS.get(profile_class, PROFILE_WEIGHTS["POSIX-Shell"]))
-
-
-def validate_weights(weights: Mapping[str, float], tol: float = 0.001) -> tuple[bool, float]:
-    total = float(sum(float(weights[k]) for k in WEIGHT_KEYS))
-    return abs(total - 1.0) <= tol, total
-
-
-def safety_gate(containment_score: float) -> tuple[float, bool]:
-    """Return (δ_C, passed) from Module D containment score C."""
-    c = float(containment_score)
-    if c >= 95:
-        return 1.0, True
-    return (c / 100.0) ** 2, False
-
-
 def compute_uhqs(
     scores: Mapping[str, float],
     weights: Mapping[str, float],
 ) -> UhqsResult:
-    missing = [k for k in SCORE_KEYS if k not in scores]
-    if missing:
-        raise KeyError(f"Missing module scores: {', '.join(missing)}")
-
-    ok, total = validate_weights(weights)
-    if not ok:
-        raise ValueError(f"module_weights must sum to 1.0 (±0.001); got {total}")
-
-    weighted = (
-        float(weights["w_A"]) * float(scores["A"])
-        + float(weights["w_B"]) * float(scores["B"])
-        + float(weights["w_C"]) * float(scores["C"])
-        + float(weights["w_E"]) * float(scores["E"])
-        + float(weights["w_F"]) * float(scores["F"])
-    )
-    delta_c, passed = safety_gate(float(scores["D"]))
-    # Two decimals — MUST match reference harness round(..., 2)
-    uhqs = round(delta_c * weighted, 2)
+    result = _compute_uhqs(scores, weights)
     return UhqsResult(
-        weighted_sum=round(weighted, 6),
-        delta_c=round(delta_c, 6),
-        uhqs=uhqs,
-        safety_gate_passed=passed,
+        weighted_sum=result.weighted_sum,
+        delta_c=result.delta_c,
+        uhqs=result.uhqs,
+        safety_gate_passed=result.safety_gate_passed,
     )
-
-
-def letter_grade(uhqs: float) -> str:
-    """Letter grade bands — MUST match reference harness grade_for()."""
-    if uhqs >= 90:
-        return "A"
-    if uhqs >= 80:
-        return "B"
-    if uhqs >= 70:
-        return "C"
-    if uhqs >= 50:
-        return "D"
-    return "F"
 
 
 def assert_scorecard_integrity(
@@ -122,6 +87,13 @@ def assert_scorecard_integrity(
     except (KeyError, TypeError, ValueError) as exc:
         return [f"modules incomplete: {exc}"]
 
+    d_mod = modules.get("D") or {}
+    containment_measured = bool(scorecard.get("containment_measured", True))
+    if str(d_mod.get("status", "")).upper() in {"SKIPPED", "N/A", "NOT_RUN"}:
+        containment_measured = False
+    if scorecard.get("containment_measured") is False:
+        containment_measured = False
+
     # Class→weight enforcement when both present
     if profile_class and profile_class in PROFILE_WEIGHTS:
         expected = PROFILE_WEIGHTS[profile_class]
@@ -132,7 +104,9 @@ def assert_scorecard_integrity(
                     f"(expected {expected[k]})"
                 )
 
-    result = compute_uhqs(scores, weights)
+    result = _compute_uhqs(
+        scores, weights, containment_measured=containment_measured
+    )
     declared_uhqs = float(scorecard.get("uhqs", -1))
     if abs(declared_uhqs - result.uhqs) > uhqs_tol:
         errors.append(f"uhqs={declared_uhqs} != recomputed {result.uhqs}")
@@ -144,7 +118,11 @@ def assert_scorecard_integrity(
         errors.append(
             f"safety_gate.passed={gate['passed']} != recomputed {result.safety_gate_passed}"
         )
-    if "containment_score" in gate and abs(float(gate["containment_score"]) - scores["D"]) > 0.01:
+    if (
+        containment_measured
+        and "containment_score" in gate
+        and abs(float(gate["containment_score"]) - scores["D"]) > 0.01
+    ):
         errors.append("safety_gate.containment_score != modules.D.score")
 
     declared_grade = str(scorecard.get("grade", ""))

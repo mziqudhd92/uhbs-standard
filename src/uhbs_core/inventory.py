@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any
 
 from .models import TargetSpec
 from .tps import apply_tps, load_tps, resolve_tps_path
@@ -14,7 +14,7 @@ except ImportError:  # pragma: no cover
     yaml = None
 
 
-def _site_to_spec(name: str, raw: Dict[str, Any]) -> TargetSpec:
+def _site_to_spec(name: str, raw: dict[str, Any]) -> TargetSpec:
     ports = raw.get("ports") or {}
     ssh_port = raw.get("ssh_port", ports.get("ssh"))
     smtp_port = raw.get("smtp_port", ports.get("smtp"))
@@ -71,7 +71,7 @@ def _site_to_spec(name: str, raw: Dict[str, Any]) -> TargetSpec:
     return t
 
 
-def load_inventory(path: Path) -> Dict[str, TargetSpec]:
+def load_inventory(path: Path) -> dict[str, TargetSpec]:
     if yaml is None:
         raise RuntimeError("PyYAML required: pip install pyyaml")
     data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
@@ -80,15 +80,15 @@ def load_inventory(path: Path) -> Dict[str, TargetSpec]:
 
 
 def resolve_target(
-    inventory: Dict[str, TargetSpec],
+    inventory: dict[str, TargetSpec],
     name_or_addr: str,
     *,
-    kind: Optional[str] = None,
-    source_root: Optional[str] = None,
-    port: Optional[int] = None,
-    protocol: Optional[str] = None,
-    tps: Optional[str] = None,
-    profile_class: Optional[str] = None,
+    kind: str | None = None,
+    source_root: str | None = None,
+    port: int | None = None,
+    protocol: str | None = None,
+    tps: str | None = None,
+    profile_class: str | None = None,
 ) -> TargetSpec:
     if name_or_addr in inventory:
         t = inventory[name_or_addr]

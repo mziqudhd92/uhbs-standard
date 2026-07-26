@@ -5,10 +5,9 @@ from __future__ import annotations
 import hashlib
 import socket
 import struct
-from typing import Optional, Tuple
 
 
-def _read_name_list(buf: bytes, off: int) -> Tuple[str, int]:
+def _read_name_list(buf: bytes, off: int) -> tuple[str, int]:
     if off + 4 > len(buf):
         return "", off
     (n,) = struct.unpack(">I", buf[off : off + 4])
@@ -19,7 +18,7 @@ def _read_name_list(buf: bytes, off: int) -> Tuple[str, int]:
     return raw, off + n
 
 
-def parse_server_hassh(host: str, port: int, timeout: float = 5.0) -> Tuple[str, str, str]:
+def parse_server_hassh(host: str, port: int, timeout: float = 5.0) -> tuple[str, str, str]:
     """Return (hassh_md5, kex_algos, banner). Empty hassh on failure."""
     try:
         with socket.create_connection((host, port), timeout=timeout) as s:
@@ -37,7 +36,7 @@ def parse_server_hassh(host: str, port: int, timeout: float = 5.0) -> Tuple[str,
             while len(data) < 1500:
                 try:
                     chunk = s.recv(4096)
-                except socket.timeout:
+                except TimeoutError:
                     break
                 if not chunk:
                     break

@@ -2,11 +2,11 @@ from __future__ import annotations
 
 import socket
 import struct
-from typing import List, Optional
+
+from uhbs_core.protocols.base import ProtocolPlugin
 
 from ..models import CheckResult, TargetSpec
 from ..tps import TPS
-from uhbs_core.protocols.base import ProtocolPlugin
 
 
 def _mbap_read_holding(trans_id: int = 1, unit: int = 1, address: int = 0, count: int = 1) -> bytes:
@@ -23,8 +23,8 @@ class ModbusPlugin(ProtocolPlugin):
     families = ("ot", "ics", "scada")
 
     def probe_fsm(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         # Invalid function code should yield exception response (0x80|fc) or close
         try:
             with socket.create_connection((host, port), timeout=3.0) as s:
@@ -33,7 +33,7 @@ class ModbusPlugin(ProtocolPlugin):
                 s.sendall(bad)
                 try:
                     resp = s.recv(256)
-                except socket.timeout:
+                except TimeoutError:
                     resp = b""
                 # Exception: function code has high bit set, or connection closed
                 ok = (len(resp) >= 9 and resp[7] >= 0x80) or resp == b""
@@ -58,8 +58,8 @@ class ModbusPlugin(ProtocolPlugin):
             ]
 
     def probe_negotiation(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         # Valid read holding registers
         try:
             with socket.create_connection((host, port), timeout=3.0) as s:
@@ -88,8 +88,8 @@ class ModbusPlugin(ProtocolPlugin):
             ]
 
     def probe_state(
-        self, host: str, port: int, target: TargetSpec, tps: Optional[TPS]
-    ) -> List[CheckResult]:
+        self, host: str, port: int, target: TargetSpec, tps: TPS | None
+    ) -> list[CheckResult]:
         # Write single register (FC 0x06) then read back (best-effort)
         try:
             with socket.create_connection((host, port), timeout=3.0) as s:
@@ -99,7 +99,7 @@ class ModbusPlugin(ProtocolPlugin):
                 s.sendall(req)
                 try:
                     s.recv(256)
-                except socket.timeout:
+                except TimeoutError:
                     pass
                 s.sendall(_mbap_read_holding(trans_id=3))
                 resp = s.recv(256)
