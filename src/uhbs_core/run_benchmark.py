@@ -13,7 +13,7 @@ Examples:
     --source-root . --phases profile,static,dynamic,score \\
     --out .local/bench-reports/uhbs-v4
 
-  uhbs lab --inventory inventory.yaml --target cowrie-local --phases profile,static,dynamic
+  uhbs lab --inventory inventory.yaml --target lab-ssh-01 --phases profile,static,dynamic
 """
 
 from __future__ import annotations

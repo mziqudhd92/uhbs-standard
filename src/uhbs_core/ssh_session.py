@@ -51,7 +51,7 @@ def run_ssh_command(
     """Run a remote command over SSH. Requires paramiko.
 
     Prefers SSH exec; if the peer closes the exec channel (common for
-    shell-only honeypots such as Cowrie), falls back to an interactive shell.
+    shell-only / limited-interaction decoys), falls back to an interactive shell.
     """
     try:
         import paramiko  # type: ignore
@@ -86,7 +86,7 @@ def run_ssh_command(
             latency = (time.perf_counter() - t0) * 1000.0
             return ExecOutcome(ok=True, stdout=out, stderr=err, latency_ms=latency)
         except Exception as exec_exc:  # noqa: BLE001
-            # Cowrie and similar decoys often reject non-interactive exec.
+            # Some limited-interaction decoys reject non-interactive exec.
             msg = str(exec_exc).lower()
             if "channel closed" not in msg and "channel open" not in msg:
                 raise

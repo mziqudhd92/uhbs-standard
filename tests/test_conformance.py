@@ -1,4 +1,4 @@
-"""Conformance fixtures from UHBS-Lab harness runs (Cowrie + POSIX lab)."""
+"""Conformance fixtures from UHBS-Lab harness runs (class math + named proof labels)."""
 
 from __future__ import annotations
 

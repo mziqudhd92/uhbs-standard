@@ -30,5 +30,5 @@
   },
   "uhqs": 46.97,
   "grade": "F",
-  "notes": "Sanitized fixture from UHBS-Lab run against Cowrie (Docker loopback). Demonstrates Low-Interaction class discrimination."
+  "notes": "Sanitized UHBS-Lab proof fixture for Cowrie (Docker loopback). Demonstrates Low-Interaction class discrimination. Product name is evaluation proof only — not a UHBS requirement."
 }

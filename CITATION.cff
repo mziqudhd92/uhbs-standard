@@ -19,8 +19,8 @@ abstract: >-
   methodology for evaluating honeypots and deception technology. It defines six
   evaluation modules (A–F), a composite UHQS score (0–100) with production
   baseline UHQS > 80, a non-linear Safety Gate, machine-readable schemas, and a
-  UHBS-Lab reference harness (uhbs_core) with conformance fixtures including
-  Cowrie and POSIX-Shell lab evaluations.
+  UHBS-Lab reference harness (uhbs_core) with a vendor-neutral conformance
+  suite for reproducible UHQS verification.
 keywords:
   - honeypot
   - deception-technology

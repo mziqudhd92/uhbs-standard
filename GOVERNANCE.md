@@ -8,6 +8,10 @@ This document describes how the Universal Honeypot Benchmarking Standard (UHBS) 
 2. **Transparency** — Material decisions are recorded via RFCs and public GitHub discussion.
 3. **Safety primacy** — The Module D Safety Gate (\(\delta_C\)) may not be weakened without an explicit RFC and steward approval.
 4. **Protocol neutrality** — UHBS remains architecture-agnostic across IT, OT/ICS, Cloud, and GenAI decoys.
+5. **Vendor neutrality** — Normative text, templates, CLI help, and marketing MUST describe
+   decoy **classes** and **protocols** only. Specific product or brand names MAY appear
+   solely under `docs/conformance/` and explicit evaluation-proof tables, as evidence that
+   the published tools discriminate — never as UHBS requirements or endorsements.
 
 ## 2. Roles
 

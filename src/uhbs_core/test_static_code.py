@@ -35,7 +35,7 @@ SKIP_DIRS = {
     "__pycache__",
     ".cursor",
     "testdata",
-    "honeyfs",  # cowrie honeyfs content is expected fake FS data
+    "honeyfs",  # fake FS content trees are expected decoy data
 }
 
 TEXT_SUFFIXES = {
@@ -94,7 +94,6 @@ def _iter_files(root: Path, limit: int = 8000) -> Iterable[Path]:
         if p.suffix and p.suffix.lower() not in TEXT_SUFFIXES and p.name not in (
             "Dockerfile",
             "Makefile",
-            "Cowrie",
         ):
             # still scan key-like filenames without suffix filter bypass for *.pem
             if p.suffix.lower() not in {".pem", ".key", ".pub"}:

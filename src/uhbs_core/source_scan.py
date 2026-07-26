@@ -65,8 +65,9 @@ def resolve_profile(kind: str, override: Optional[str] = None) -> Path:
     path = PROFILES_DIR / f"{stem}_signals.yaml"
     if path.is_file():
         return path
-    if kind == "generic":
-        alt = PROFILES_DIR / "cowrie_signals.yaml"
+    # Class-oriented default for OSS low-interaction SSH decoy source trees.
+    if kind in {"generic", "cowrie", "low_interaction", "low-interaction"}:
+        alt = PROFILES_DIR / "low_interaction_ssh_signals.yaml"
         if alt.is_file():
             return alt
     raise FileNotFoundError(f"no signals profile for kind={kind!r}: expected {path}")

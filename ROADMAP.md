@@ -8,6 +8,11 @@ industry-credible **evaluation framework** (spec + contracts + reference
 implementation + conformance suite), modeled on practices from IETF/W3C-style
 standards work, OpenSSF, and NIST/MITRE-style frameworks.
 
+**Vendor neutrality:** UHBS is product- and brand-agnostic. Normative text,
+templates, and marketing describe **classes and protocols** only. Named products
+appear solely in [conformance fixtures](conformance/index.md) as proof that
+the published tools produce discriminating scores.
+
 ---
 
 ## North star
@@ -16,67 +21,65 @@ A mature UHBS has all five pillars:
 
 | # | Pillar | Current state |
 | --- | --- | --- |
-| 1 | Normative spec (RFC 2119, document status) | Partial — prose exists, keywords informal |
-| 2 | Machine-readable contracts (profile, scorecard, evidence) | Partial — profile + scorecard schemas only |
-| 3 | Reference implementation (runnable harness) | **Exists privately** — see [Existing harness](#existing-harness-do-not-reinvent) |
-| 4 | Conformance suite (golden inputs → expected UHQS) | Missing in public repo |
+| 1 | Normative spec (RFC 2119, document status) | Done for v4.0.0 Draft |
+| 2 | Machine-readable contracts (profile, scorecard, evidence) | Done |
+| 3 | Reference implementation (runnable harness) | Done — `uhbs_core` / `uhbs[lab]` |
+| 4 | Conformance suite (golden inputs → expected UHQS) | Done — public fixtures |
 | 5 | Independent adoption (≥2 implementations) | Not yet |
 
-**Critical insight:** Pillar 3 is already built and battle-tested against **Cowrie**
-(open-source low-interaction baseline) and a **POSIX/GenAI research decoy** (private
-lab target). This roadmap **incorporates that harness**; it does not rebuild it.
+**Critical insight:** Pillar 3 was proven in lab before extraction into this
+repository. The public package is the vendor-neutral reference harness; private
+lab inventory and product-specific signal overlays stay out of tree.
 
 ---
 
-## Existing harness (do not reinvent)
+## Reference harness (do not reinvent)
 
-### Location (lab / private)
+### Public package (`src/uhbs_core/`)
 
-| Path | Role |
+| Component | Role |
 | --- | --- |
-| `CyberHalluciNet/scripts/benchmarks/run_benchmark.py` | UHBS v4.0 orchestrator (phases 1–5) |
-| `…/test_stealth.py` | Module A — Protocol & Syntax Fidelity |
-| `…/test_realism.py` | Module B — Behavioral & Stateful Realism |
-| `…/test_telemetry.py` | Module C — Telemetry Quality |
-| `…/test_safety.py` | Module D — Safety Gate (δ_C) |
-| `…/test_scale.py` | Module E — Scalability & Latency |
-| `…/test_static_code.py` | Module F — White-Box Static Audit |
-| `…/lib/models.py` | UHQS formula + profile weights + δ_C |
-| `…/lib/report.py` | Scorecard layout (`SCORECARD.txt` / `report.json`) |
-| `…/lib/protocols/` | Protocol plugins (ssh, http, ftp, redis, modbus, smb, smtp, telnet, generic) |
-| `…/lib/tps.py`, `profiles/tps/*.yaml` | Target Profile Specification |
-| `…/calculate_uhqs_v4.py` | Standalone UHQS recomputation helper |
-| `…/sandbox_preflight.py` | Phase 3 air-gap / sandbox attestation |
-| `CyberHalluciNet/deploy/benchmarking/FRAMEWORK.md` | Spec ↔ script compliance map |
-| `…/docker-compose.yml` | Cowrie lab target |
-| `…/inventory.example.yaml` | Multi-target inventory (Cowrie, ICS, research decoy) |
+| `run_benchmark.py` | UHBS v4.0 orchestrator (phases 1–5) |
+| `test_stealth.py` | Module A — Protocol & Syntax Fidelity |
+| `test_realism.py` | Module B — Behavioral & Stateful Realism |
+| `test_telemetry.py` | Module C — Telemetry Quality |
+| `test_safety.py` | Module D — Safety Gate (δ_C) |
+| `test_scale.py` | Module E — Scalability & Latency |
+| `test_static_code.py` | Module F — White-Box Static Audit |
+| `models.py` | UHQS formula + profile weights + δ_C |
+| `report.py` | Scorecard layout |
+| `protocols/` | Protocol plugins (ssh, http, ftp, redis, modbus, smb, smtp, telnet, generic) |
+| `tps.py`, `profiles/tps/*.yaml` | Target Profile Specification |
+| `manifest.py` | Per-run SHA-256 attestation digests |
 
-### Spec alignment (already proven)
+### Spec alignment
 
-| Spec (PDF / public docs) | Implementation |
+| Spec | Implementation |
 | --- | --- |
-| TPS (`profile.yaml`) | `profiles/tps/*.yaml` + inventory |
-| Modules A–F objectives | `test_stealth` / plugins, `test_realism`, `test_telemetry`, `test_safety`, `test_scale`, `test_static_code` |
-| UHQS + δ_C = 1 if C≥95 else (C/100)² | `lib/models.py` → `compute_uhqs` |
-| Profile weights (§5.3) | Same numbers in `PROFILE_WEIGHTS` |
-| Phases 1–5 | `run_benchmark.py` phases `profile,static,sandbox,dynamic,score` |
-| Scorecard layout | `lib/report.py` |
+| TPS (`profile.yaml`) | `profiles/tps/*.yaml` |
+| Modules A–F | `test_*` modules + protocol plugins |
+| UHQS + δ_C | `models.compute_uhqs` |
+| Profile weights (§5.3) | `PROFILE_WEIGHTS` |
+| Phases 1–5 | `run_benchmark.py` |
+| Scorecard layout | `report.py` |
 
-### Produced lab artifacts (evidence of maturity)
+### Published evaluation proof (named targets OK here)
 
-| Target | Class | Artifact | UHQS (example) | Grade |
-| --- | --- | --- | --- | --- |
-| Cowrie (Docker loopback) | Low-Interaction | `.local/bench-reports/cowrie-local/full3/` | **46.97** | F |
-| POSIX research decoy (lab) | POSIX-Shell | `.local/bench-reports/chn-live/modular4/final/` | **80.32** | B (production baseline) |
-| Same decoy (earlier) | POSIX-Shell | `chn-live/modular3/final/` | 73.09 → improved to 80.32 | C → B |
+Sanitized scorecards that prove the tools discriminate across classes. Full
+artifacts: [docs/conformance/](conformance/index.md).
 
-These runs prove the framework is **executable and discriminating**: a mature
-low-interaction baseline (Cowrie) scores below production gate; a hardened
-interactive decoy can clear UHQS > 80.
+| Target (proof only) | Class | UHQS | Grade |
+| --- | --- | --- | --- |
+| Cowrie (OSS low-interaction baseline) | Low-Interaction | **46.97** | F |
+| CyberHalluciNet (lab, post-hardening) | POSIX-Shell | **80.33** | B |
 
-**Public repo policy:** Vendor-neutral sanitized fixtures only. Do not publish
-proprietary signal profiles (`chn_signals.yaml`) or private host paths. Cowrie
-(OSS) may be named as an open-source baseline target.
+These runs show a mature low-interaction baseline below the production gate and
+a hardened interactive decoy clearing UHQS > 80 — without endorsing either
+product as a UHBS requirement.
+
+**Public repo policy:** Framework docs, templates, and schemas MUST remain
+class-/protocol-based. Named products belong in conformance fixtures and proof
+tables only. Do not publish proprietary lab signal overlays or private host paths.
 
 ---
 
@@ -84,15 +87,14 @@ proprietary signal profiles (`chn_signals.yaml`) or private host paths. Cowrie
 
 | Repo | Role |
 | --- | --- |
-| `uhbs-standard` (this repo, public) | Spec, schemas, conformance fixtures, docs site, thin CLI validator |
-| `uhbs-core` (public, extract later) | Vendor-neutral reference harness from `scripts/benchmarks/lib` + `test_*.py` |
-| Lab repo (private) | Cowrie/compose inventory, proprietary signals, consumes `uhbs-core` |
+| `uhbs-standard` (public) | Spec, schemas, `uhbs_core`, conformance fixtures, docs, CLI |
+| Private lab (optional) | Site inventory, product-specific signal overlays; consumes `uhbs[lab]` |
 
 ---
 
 ## Phases
 
-### Phase 1 — Specification rigor ✅ (this milestone)
+### Phase 1 — Specification rigor ✅
 
 - [x] Publish this `ROADMAP.md` as the lock document
 - [x] RFC 2119 / BCP 14 keywords; Normative vs Informative markers
@@ -100,31 +102,31 @@ proprietary signal profiles (`chn_signals.yaml`) or private host paths. Cowrie
 - [x] Conformance levels: **UHBS-Core** vs **UHBS-Lab**
 - [x] Align grade bands with harness `grade_for()` (A≥90, B≥80, C≥70, D≥50, F&lt;50)
 - [x] Add **Database** + **GenAI-Shell** weight rows (match harness)
-- [x] Demote "mandatory standard" marketing → **Production Baseline Profile (RECOMMENDED)** until adopters exist
-- [x] Document existing harness + Cowrie/lab runs in `docs/reference-implementation.md`
+- [x] Demote "mandatory standard" marketing → **Production Baseline Profile (RECOMMENDED)**
+- [x] Document reference harness + conformance proof in `docs/reference-implementation.md`
 
-### Phase 2 — Contracts + conformance ✅ (this milestone)
+### Phase 2 — Contracts + conformance ✅
 
-- [x] `schemas/evidence-pack.schema.json` (check-id, team, evidence digests)
+- [x] `schemas/evidence-pack.schema.json`
 - [x] Extend scorecard schema for optional step-level checks (`PARTIAL` status)
 - [x] CLI: enforce class→weights; **recompute** UHQS/δ_C/grade on validate
-- [x] Round UHQS to **2 decimals** (match harness reports)
-- [x] Golden fixtures from sanitized Cowrie + lab decoy scorecards
+- [x] Round UHQS to **2 decimals**
+- [x] Golden fixtures from sanitized lab scorecards (named only under conformance/)
 - [x] Conformance tests in CI
 
-### Phase 3 — Reference implementation (`uhbs-core`)
+### Phase 3 — Reference implementation (`uhbs-core`) ✅
 
-- [x] Extract vendor-neutral core from `scripts/benchmarks/` (protocols, models, modules)
+- [x] Extract vendor-neutral core (protocols, models, modules)
 - [x] Leave proprietary signals / lab inventory private
-- [x] Package as installable `uhbs[lab]` / `uhbs-lab` entry point, version == spec `4.0.0`
-- [x] Wire public docs to `uhbs-core` quickstart; keep CHN/Cowrie lab recipes in private `deploy/benchmarking/`
+- [x] Package as installable `uhbs[lab]` / `uhbs-lab`, version == spec `4.0.0`
+- [x] Wire public docs to class-/protocol-based quickstart
 
 ### Phase 4 — Integrity (OpenSSF / SLSA)
 
 - [x] Per-run `MANIFEST.json` SHA-256 digests (`uhbs_core.manifest`)
 - [x] Release workflow with wheel/sdist + CycloneDX SBOM artifact
 - [x] DCO required CI check; OpenSSF Scorecard action
-- [ ] Sigstore/cosign keyless signing on PyPI Trusted Publishing (follow-up when publishing)
+- [ ] Sigstore/cosign keyless signing on PyPI Trusted Publishing (follow-up)
 
 ### Phase 5 — Interoperability mappings
 
@@ -144,7 +146,7 @@ proprietary signal profiles (`chn_signals.yaml`) or private host paths. Cowrie
 
 - [x] Spec uses RFC 2119; status + UHBS-Core / UHBS-Lab levels published
 - [x] Schemas for profile / scorecard / evidence; validator recomputes scores
-- [x] `uhbs_core` in-repo (`uhbs[lab]`); Cowrie + POSIX fixtures document conformance
+- [x] `uhbs_core` in-repo (`uhbs[lab]`); class-based fixtures document conformance
 - [x] Release SBOM workflow + DCO + OpenSSF Scorecard (Sigstore/PyPI publish pending)
 - [x] Mappings + named stewards + accepted RFC-0001 (Zenodo DOI + org transfer pending)
 
@@ -153,7 +155,8 @@ proprietary signal profiles (`chn_signals.yaml`) or private host paths. Cowrie
 ## Execution notes (anti-drift)
 
 1. Prefer extracting/sanitizing the existing harness over rewriting Modules A–F.
-2. Public examples use **Cowrie** (OSS) and **vendor-neutral decoy labels** only.
-3. Keep UHQS math identical to `lib/models.py` (`compute_uhqs`).
+2. **Naming:** normative docs and templates = classes/protocols only; named
+   products only in `docs/conformance/` proof fixtures and explicit proof tables.
+3. Keep UHQS math identical across `uhbs_cli.scoring` and `uhbs_core.models`.
 4. Every phase PR must update the checkboxes in this file.
 5. Do not claim "production-mandatory industry standard" until Phase 6 exit criteria.

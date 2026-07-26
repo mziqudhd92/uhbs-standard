@@ -5,10 +5,13 @@
 
 UHBS is not only a document. A full **UHBS-Lab** evaluation requires an executable
 harness that implements Modules A–F, applies the UHQS formula with δ_C, and emits
-a scorecard. That harness is now published in this repository as **`uhbs_core`**
-(extracted from the lab `scripts/benchmarks/` tree).
+a scorecard. That harness ships in this repository as **`uhbs_core`** — a
+**vendor-neutral** reference anyone can run against any deception target.
 
-## Install (public)
+Named products appear only under [Conformance](conformance/index.md) as proof
+artifacts, not as requirements of the standard.
+
+## Install
 
 ```bash
 pip install -e ".[lab]"
@@ -37,6 +40,8 @@ uhbs lab --list-protocols
 
 ## Quick lab run
 
+Point the harness at **any** reachable target and optional source tree:
+
 ```bash
 export UHBS_QUICK=1
 export UHBS_AIRGAP_ATTESTED=1
@@ -44,10 +49,10 @@ export UHBS_AIRGAP_ATTESTED=1
 uhbs lab \
   --tps low_interaction \
   --target 127.0.0.1 --port 2200 \
-  --source-root /path/to/cowrie \
+  --source-root /path/to/your-decoy-sources \
   --phases profile,static,sandbox,dynamic,score \
   --quick \
-  --out .local/bench-reports/cowrie-local
+  --out .local/bench-reports/my-target
 ```
 
 Validate outputs:
@@ -56,18 +61,21 @@ Validate outputs:
 uhbs validate-scorecard path/to/scorecard.json --strict
 ```
 
-## Proven evaluations (sanitized fixtures)
+## Published evaluation proof
 
-| Target | Class | UHQS | Grade | Fixture |
+Sanitized fixtures that prove the tools discriminate across classes. Product
+names are **proof labels only** — UHBS does not require or endorse them.
+
+| Target (proof) | Class | UHQS | Grade | Fixture |
 | --- | --- | --- | --- | --- |
-| Cowrie (OSS) | Low-Interaction | 46.97 | F | [`conformance/fixtures/cowrie-low-interaction.scorecard.json`](conformance/fixtures/cowrie-low-interaction.scorecard.json) |
-| POSIX-Shell research decoy | POSIX-Shell | 80.33 | B | [`conformance/fixtures/posix-shell-lab.scorecard.json`](conformance/fixtures/posix-shell-lab.scorecard.json) |
+| Cowrie | Low-Interaction | 46.97 | F | [`cowrie-low-interaction.scorecard.json`](conformance/fixtures/cowrie-low-interaction.scorecard.json) |
+| CyberHalluciNet | POSIX-Shell | 80.33 | B | [`posix-shell-lab.scorecard.json`](conformance/fixtures/posix-shell-lab.scorecard.json) |
 
-## Private lab leftovers
+## Signal profiles
 
-Proprietary signal profiles and multi-site inventory remain in the private lab
-repo (`deploy/benchmarking/`, `*_signals.yaml` for product-specific trees). The
-public package ships OSS-oriented `cowrie_signals.yaml` only.
+Module F uses **class-oriented** signal YAML under `uhbs_core/profiles/` (for
+example `low_interaction_ssh_signals.yaml`). Product-specific overlays and
+multi-site inventory stay in private lab repos.
 
 ## Conformance levels
 

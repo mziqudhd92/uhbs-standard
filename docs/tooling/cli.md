@@ -52,6 +52,9 @@ uhbs validate-scorecard docs/conformance/fixtures/posix-shell-lab.scorecard.json
 Strict mode (default) **recomputes** UHQS, δ_C, and letter grade and **MUST** fail
 if declared values diverge from the normative formula.
 
+Conformance fixtures may name specific products as **evaluation proof** only;
+see [Conformance](../conformance/index.md).
+
 ### Validate an evidence pack
 
 ```bash
@@ -78,7 +81,7 @@ Where `scores.json` contains module scores:
 }
 ```
 
-Expected for the Cowrie fixture weights: **UHQS = 46.97** (Grade F).
+Expected for the Low-Interaction conformance fixture weights: **UHQS = 46.97** (Grade F).
 
 ## CI Integration
 

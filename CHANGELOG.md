@@ -11,8 +11,8 @@ share version **4.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`).
 - `ROADMAP.md` — locked maturity plan incorporating the existing UHBS-Lab harness
 - Document status, RFC 2119 keywords, UHBS-Core / UHBS-Lab conformance levels
 - `schemas/evidence-pack.schema.json`
-- Conformance fixtures from real lab runs: **Cowrie** (UHQS 46.97) and POSIX-Shell
-  research decoy (UHQS 80.33)
+- Conformance fixtures (proof labels only): Low-Interaction UHQS 46.97,
+  POSIX-Shell UHQS 80.33 — see `docs/conformance/`
 - Class→weight tables including `Database` and `GenAI-Shell`
 - CLI `--strict` integrity checks (recompute UHQS / δ_C / grade)
 - **`uhbs_core`** reference harness (Modules A–F, protocol plugins, `uhbs-lab`)
@@ -25,6 +25,8 @@ share version **4.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`).
 - Letter grade band D starts at **50** (aligned with reference harness)
 - UHQS rounding to **two** decimal places (aligned with harness reports)
 - Production gate language demoted to **RECOMMENDED** Production Baseline Profile
+- Vendor-neutrality pass: product names confined to conformance proof fixtures;
+  Module F signals profile renamed to `low_interaction_ssh_signals.yaml`
 
 ### Pending (manual / ops)
 - PyPI Trusted Publishing + Sigstore signing

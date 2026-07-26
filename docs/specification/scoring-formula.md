@@ -84,8 +84,9 @@ networks. See [Status of This Document](status.md).
 
 ## Reference computation
 
-These normative numbers **MUST** match `uhbs score` and the lab harness
-`lib/models.py` / `calculate_uhqs_v4.py`. Conformance fixtures:
+These normative numbers **MUST** match `uhbs score` and `uhbs_core.models.compute_uhqs`.
+Worked class examples (anonymous in the normative formula; named proof targets
+are listed only under [Conformance](../conformance/index.md)):
 
-- Cowrie Low-Interaction → UHQS **46.97** (Grade F)
-- POSIX-Shell lab decoy → UHQS **80.33** (Grade B)
+- Low-Interaction class → UHQS **46.97** (Grade F)
+- POSIX-Shell class → UHQS **80.33** (Grade B)

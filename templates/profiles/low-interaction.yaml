@@ -1,4 +1,4 @@
-# UHBS Target Profile — Low-Interaction (e.g. Cowrie-class SSH decoys)
+# UHBS Target Profile — Low-Interaction (SSH / limited shell decoys)
 uhbs_version: "4.0.0"
 
 target_metadata:

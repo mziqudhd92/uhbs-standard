@@ -40,7 +40,7 @@ def test_uhqs_matches_cli_math() -> None:
         "scale": 55.0,
         "static": 69.0,
     }
-    result = compute_uhqs(scores, target="cowrie", profile_class="Low-Interaction")
+    result = compute_uhqs(scores, target="li-baseline", profile_class="Low-Interaction")
     assert result.uhqs == 46.97
     assert result.delta_c == 1.0
 

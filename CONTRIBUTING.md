@@ -1,6 +1,13 @@
 # Contributing to UHBS
 
-Thank you for helping establish the Universal Honeypot Benchmarking Standard as a trusted, production-grade open-source project.
+Thank you for helping establish the Universal Honeypot Benchmarking Standard as a trusted,
+vendor-neutral, production-grade open-source project.
+
+## Vendor neutrality
+
+- Spec, templates, and scorecard *examples* use **classes and protocols** only.
+- Named products belong only in `docs/conformance/` as evaluation **proof**.
+- Do not add product endorsements to README, normative docs, or marketing copy.
 
 ## Ways to Contribute
 

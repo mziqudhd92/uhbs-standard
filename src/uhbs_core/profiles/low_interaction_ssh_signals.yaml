@@ -1,5 +1,8 @@
-# Source-phase signals for Cowrie (mapped to HQS dimensions).
-name: cowrie
+# Source-phase signals for low-interaction SSH decoy trees (Module F).
+# Path globs match common OSS LI layouts (including Cowrie-style trees and forks).
+# This is a class-oriented scanner profile — not a product endorsement.
+name: low_interaction_ssh
+
 dimensions:
   stealth:
     weight: 1.0

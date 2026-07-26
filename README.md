@@ -31,9 +31,10 @@ lateral movement risks from compromised containment shells.
 | **Production Baseline** | **UHQS > 80** required before any active decoy reaches production |
 
 > **Status:** Draft / Experimental — [specification status](docs/specification/status.md).
+> **Vendor-neutral** framework: compare any deception by class and protocol.
 > UHBS-Lab harness: `pip install -e '.[lab]'` → `uhbs-lab` / `uhbs lab`.
-> Proven fixtures: **Cowrie** UHQS 46.97 · POSIX-Shell lab UHQS 80.33.
-> Remaining ops: see [ROADMAP.md](ROADMAP.md) (PyPI signing, Zenodo DOI, org transfer).
+> Named product proof lives only under [conformance fixtures](docs/conformance/index.md).
+> Remaining ops: [ROADMAP.md](ROADMAP.md) (PyPI signing, Zenodo DOI, org transfer).
 
 ## Quickstart
 
