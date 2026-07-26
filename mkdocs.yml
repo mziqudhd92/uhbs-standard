@@ -1,10 +1,10 @@
 site_name: Universal Honeypot Benchmarking Standard (UHBS)
-site_description: Objective, repeatable, quantitative benchmarking for honeypots and deception technology.
+site_description: An objective, repeatable, quantitative methodology for deception technology evaluation — providing cybersecurity professionals with a non-biased baseline for comparing and grading honeypots and decoy systems.
 site_url: https://mziqudhd92.github.io/uhbs-standard/
 repo_url: https://github.com/mziqudhd92/uhbs-standard
 repo_name: mziqudhd92/uhbs-standard
 edit_uri: edit/main/docs/
-copyright: Copyright &copy; 2026 UHBS Project Contributors — Apache License 2.0
+copyright: An objective, repeatable, quantitative methodology for deception technology evaluation — providing cybersecurity professionals with a non-biased baseline for comparing and grading honeypots and decoy systems.
 
 theme:
   name: material
@@ -72,7 +72,7 @@ nav:
       - CLI & Validator: tooling/cli.md
   - Scorecards:
       - Official Examples: scorecards/index.md
-      - CyberHalluciNet Example: scorecards/cyberhallucinet.md
+      - Illustrative POSIX / GenAI: scorecards/illustrative-posix-genai.md
   - Governance:
       - RFCs: rfcs/README.md
       - RFC Template: rfcs/0000-template.md

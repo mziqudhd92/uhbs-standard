@@ -2,9 +2,11 @@
 
 Auditors must publish results using the standard scorecard layout validated by [`schemas/scorecard.schema.json`](https://github.com/mziqudhd92/uhbs-standard/blob/main/schemas/scorecard.schema.json).
 
+UHBS is **vendor-neutral**. Scorecard examples use generic decoy class labels (e.g., POSIX-Shell, ICS-SCADA) — never product or brand names.
+
 ## Examples
 
-- [CyberHalluciNet Decoy (POSIX-Shell / GenAI-Augmented)](cyberhallucinet.md) — illustrative scorecard from the UHBS v4.0 specification (evaluated 2026-07-26)
+- [Illustrative POSIX-Shell / GenAI-Augmented Decoy](illustrative-posix-genai.md) — vendor-neutral reference scorecard (evaluated 2026-07-26)
 
 ## Badge Snippets
 

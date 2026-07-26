@@ -29,7 +29,7 @@ Checks:
 ### Validate a scorecard
 
 ```bash
-uhbs validate-scorecard docs/scorecards/examples/cyberhallucinet.scorecard.json
+uhbs validate-scorecard docs/scorecards/examples/illustrative-posix-genai.scorecard.json
 ```
 
 ### Compute UHQS

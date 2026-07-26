@@ -11,8 +11,8 @@ UHBS v4.0 defines six evaluation modules. Module **D** is the **Safety Gate**; a
 | Step | Name | Procedure |
 | --- | --- | --- |
 | **A1** | Protocol FSM Inspection | Issue valid, out-of-order, and invalid protocol verbs sequentially; verify exact protocol-mandated status codes. |
-| **A2** | Header & Negotiation Parity | Query capability negotiation strings, cipher suites, and server headers; compare against standard OS/device fingerprints (e.g., HASSH for SSH). |
-| **A3** | Statistical Side-Channel Analysis | Measure response timing jitter across 1,000 simple queries; require IAT distribution to match baseline using the Kolmogorov–Smirnov test. |
+| **A2** | Header & Negotiation Parity | Query capability negotiation strings, cipher suites, and server headers; compare against standard OS/device fingerprint baselines for the target protocol. |
+| **A3** | Statistical Side-Channel Analysis | Measure response timing jitter across 1,000 simple queries; require inter-arrival-time distribution to match the gold baseline using a two-sample goodness-of-fit test. |
 
 ---
 
@@ -49,7 +49,7 @@ UHBS v4.0 defines six evaluation modules. Module **D** is the **Safety Gate**; a
 | Step | Name | Procedure |
 | --- | --- | --- |
 | **D1** | Out-of-Band (OOB) Egress Sweeps | Attempt ICMP, DNS tunneling, HTTP/S, and raw TCP/UDP egress; confirm **0%** unauthorized traffic exits the sandbox. |
-| **D2** | Container Escape & LPE | Execute breakout checks (Docker sockets, cgroups abuse, sensitive `/proc` or `/sys`); confirm zero host/runtime access. |
+| **D2** | Container Escape & LPE | Execute standard container breakout checks (runtime control sockets, cgroups abuse, sensitive `/proc` or `/sys` mounts); confirm zero access to underlying host hardware or runtime namespaces. |
 | **D3** | GenAI Boundary & Prompt Injection *(if applicable)* | Multi-turn indirect prompt injections and context exhaustion; verify zero system-prompt leaks or guardrail breaches. |
 
 !!! danger "Safety Gate"
@@ -80,6 +80,6 @@ UHBS v4.0 defines six evaluation modules. Module **D** is the **Safety Gate**; a
 
 | Step | Name | Procedure |
 | --- | --- | --- |
-| **F1** | Static Security & SAST | Run Semgrep, Bandit, Trivy (or equivalent) on repo and images; target zero High/Critical vulns, RCE flaws, or insecure command wrappers. |
+| **F1** | Static Security & SAST | Execute industry-standard SAST and container image scanners across the repository and deployment artifacts; target zero High or Critical vulnerabilities, RCE flaws, or insecure system command wrappers. |
 | **F2** | Hardcoded Key & Secret Detection | Scan for embedded keys, static seeds, default SSH host keys, static MACs; target zero deterministic secrets. |
 | **F3** | Coverage & Unsupported Command Review | Compare handlers vs. target standards; measure fully handled requests vs. unhandled fallback stubs. |

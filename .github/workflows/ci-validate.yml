@@ -39,4 +39,4 @@ jobs:
       - name: Validate example profile and scorecard
         run: |
           uhbs validate-profile templates/profile.yaml
-          uhbs validate-scorecard docs/scorecards/examples/cyberhallucinet.scorecard.json
+          uhbs validate-scorecard docs/scorecards/examples/illustrative-posix-genai.scorecard.json

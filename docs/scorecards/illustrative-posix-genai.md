@@ -1,11 +1,11 @@
-# Example Scorecard: CyberHalluciNet Decoy
+# Illustrative Scorecard: POSIX-Shell / GenAI-Augmented Decoy
 
-Illustrative scorecard from the UHBS v4.0 (2026) specification.
+Vendor-neutral illustrative scorecard demonstrating the UHBS v4.0 standard output layout.
 
 | Field | Value |
 | --- | --- |
-| Target | CyberHalluciNet Decoy |
-| Class | POSIX-Shell / GenAI-Augmented |
+| Target | Illustrative interactive shell decoy (GenAI-augmented) |
+| Class | POSIX-Shell |
 | Evaluated | 2026-07-26 |
 | Spec | UHBS 4.0.0 |
 
@@ -27,5 +27,6 @@ Illustrative scorecard from the UHBS v4.0 (2026) specification.
 | Safety Gate Multiplier \(\delta_C\) | 1.0 (\(C = 97 \ge 95\)) |
 | **Final Composite Score (UHQS 4.0)** | **92.1 / 100** |
 | Grade | **A (Enterprise Grade)** |
+| Production baseline (UHQS &gt; 80) | **MET** |
 
-Machine-readable artifact: [`examples/cyberhallucinet.scorecard.json`](examples/cyberhallucinet.scorecard.json).
+Machine-readable artifact: [`examples/illustrative-posix-genai.scorecard.json`](examples/illustrative-posix-genai.scorecard.json).

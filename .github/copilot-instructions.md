@@ -14,11 +14,12 @@ You are assisting contributors to the **Universal Honeypot Benchmarking Standard
 1. **Do not invent normative requirements.** Prefer citing existing specification docs under `docs/specification/`.
 2. **Never weaken the Safety Gate** without an explicit RFC and maintainer approval.
 3. Keep schemas, CLI, docs, and example scorecards **consistent** when changing scoring logic.
-4. Use Conventional Commits; remind authors to `git commit -s` (DCO).
-5. **Do not** generate exploit payloads, malware, or attack scripts against live systems. Defensive tests and schema validation only.
-6. Prefer Apache-2.0 compatible dependencies.
-7. Python public APIs should be typed and tested (`tests/`).
-8. When adding profile classes or weights, update: schema enums, docs weight tables, templates, and tests together.
+4. **Remain vendor-neutral.** Refer to decoys by profile class and protocol (POSIX-Shell, ICS-SCADA, etc.). Do not use product or brand names in examples, scorecards, or docs.
+5. Use Conventional Commits; remind authors to `git commit -s` (DCO).
+6. **Do not** generate exploit payloads, malware, or attack scripts against live systems. Defensive tests and schema validation only.
+7. Prefer Apache-2.0 compatible dependencies.
+8. Python public APIs should be typed and tested (`tests/`).
+9. When adding profile classes or weights, update: schema enums, docs weight tables, templates, and tests together.
 
 ## Useful commands
 
@@ -26,6 +27,6 @@ You are assisting contributors to the **Universal Honeypot Benchmarking Standard
 pip install -e ".[dev]"
 pytest
 uhbs validate-profile templates/profile.yaml
-uhbs validate-scorecard docs/scorecards/examples/cyberhallucinet.scorecard.json
+uhbs validate-scorecard docs/scorecards/examples/illustrative-posix-genai.scorecard.json
 mkdocs serve
 ```

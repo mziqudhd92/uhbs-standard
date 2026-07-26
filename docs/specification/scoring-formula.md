@@ -53,9 +53,12 @@ Industrial/OT/SCADA profiles assign the highest protocol fidelity weight (**0.35
 | UHQS | Grade | Label |
 | ---: | :---: | --- |
 | 90 – 100 | A | Enterprise Grade |
-| 80 – 89.9 | B | Production Candidate |
-| 70 – 79.9 | C | Conditional |
+| 80 – 89.9 | B | Production Baseline (minimum for deployment) |
+| 70 – 79.9 | C | Conditional — **not** approved for production |
 | 60 – 69.9 | D | Needs Remediation |
 | &lt; 60 | F | Fail |
 
-Bands are advisory for communication; the normative result is the numeric UHQS and Safety Gate outcome.
+!!! danger "Executive Mandate"
+    **UHQS > 80** is the mandatory production baseline. Failure to meet it exposes internal networks to lateral movement risks from compromised containment shells.
+
+Bands communicate status; the normative gate for production deployment is **UHQS > 80** plus a passing Safety Gate outcome.

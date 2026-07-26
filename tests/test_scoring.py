@@ -22,15 +22,15 @@ def test_safety_gate_fail_quadratic() -> None:
     assert abs(delta - 0.49) < 1e-9
 
 
-def test_cyberhallucinet_uhqs() -> None:
+def test_illustrative_posix_genai_uhqs() -> None:
     weights = {"w_A": 0.20, "w_B": 0.25, "w_C": 0.20, "w_E": 0.15, "w_F": 0.20}
     scores = {"A": 88, "B": 94, "C": 98, "D": 97, "E": 88, "F": 91}
     result = compute_uhqs(scores, weights)
     assert result.safety_gate_passed
     assert result.delta_c == 1.0
-    # Spec PDF listed 91.8; formula yields 92.1 for these inputs.
     assert result.uhqs == 92.1
     assert letter_grade(result.uhqs) == "A"
+    assert result.uhqs > 80  # executive production baseline
 
 
 def test_safety_gate_penalizes_composite() -> None:

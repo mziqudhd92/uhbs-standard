@@ -7,18 +7,23 @@
 [![Spec](https://img.shields.io/badge/Specification-v4.0.0-indigo.svg)](docs/specification/core-principles.md)
 [![UHQS](https://img.shields.io/badge/UHQS-0%E2%80%93100-success.svg)](docs/specification/scoring-formula.md)
 
-> An objective, repeatable, and quantitative methodology for benchmarking honeypots, decoys, and deception technology across enterprise and academic environments.
+> An objective, repeatable, quantitative methodology for deception technology evaluation — providing cybersecurity professionals with a non-biased baseline for comparing and grading honeypots and decoy systems.
 
-**UHBS v4.0** is a protocol-agnostic production baseline for measuring deception realism, safety containment, operational scale, and telemetry quality **before** decoys are deployed to production.
+**UHBS v4.0** is a protocol-agnostic, **vendor-neutral** production baseline for measuring deception realism, safety containment, operational scale, and telemetry quality **before** decoys are deployed to production.
+
+## Executive Mandate
+
+This is the **mandatory** enterprise and academic standard before deploying any active decoys to production networks. Failure to meet baseline scores (**UHQS > 80**) exposes internal networks to lateral movement risks from compromised containment shells.
 
 ## Why UHBS?
 
 | Pillar | What it delivers |
 | --- | --- |
 | **Protocol-Agnostic** | Architecture-neutral testing across IT, OT/ICS, AI, and Cloud |
+| **Vendor-Neutral** | Class- and protocol-based evaluation — no product or brand endorsements |
 | **Quantitative Scoring** | Normalized **UHQS 0–100** composite with a non-linear Safety Gate |
 | **Six Evaluation Modules** | Modules A–F covering fidelity, behavior, telemetry, safety, scale, and audit |
-| **Production Baseline** | Enterprise and academic standard prior to production deployment |
+| **Production Baseline** | **UHQS > 80** required before any active decoy reaches production |
 
 ## Quickstart
 
@@ -57,7 +62,7 @@ The **Universal Honeypot Quality Score (UHQS)** is a normalized composite from *
 - \(\delta_C\) — **Safety Gate** from Module D (Containment):  
   \(\delta_C = 1.0\) if \(C \ge 95\); otherwise \(\delta_C = (C/100)^2\)
 
-A decoy with excellent deception scores can still fail evaluation if Module D falls below the gate. See [Scoring Formula](docs/specification/scoring-formula.md).
+Production deployment requires **UHQS > 80** and a passing Safety Gate. A decoy with excellent deception scores can still fail evaluation if Module D falls below the gate. See [Scoring Formula](docs/specification/scoring-formula.md).
 
 ## Audit Workflow (5 Phases)
 
@@ -70,7 +75,7 @@ A decoy with excellent deception scores can still fail evaluation if Module D fa
 ```
 
 1. **Configuration & Profile Setup** — Define `profile.yaml`, protocol expectations, baselines  
-2. **Static Audit Execution** — Analyze repository, Dockerfiles, and system prompts  
+2. **Static Audit Execution** — Analyze repository, container build manifests, and system prompts  
 3. **Sandbox Environment Provisioning** — Isolated runtime with egress monitors  
 4. **Dynamic Adversarial Execution** — Modules A–E via automated harnesses  
 5. **Score Computation & Reporting** — Apply \(\delta_C\) and emit the standard scorecard  
@@ -79,7 +84,7 @@ A decoy with excellent deception scores can still fail evaluation if Module D fa
 
 ```text
 uhbs-standard/
-├── docs/                 # Docs-as-Code (GitHub Pages / MkDocs Material)
+├── docs/                 # Docs-as-Code (GitHub Pages)
 ├── schemas/              # JSON Schemas for profiles & scorecards
 ├── templates/            # Starter profile.yaml for adopters
 ├── src/uhbs_cli/         # Official validation CLI
@@ -101,7 +106,7 @@ uhbs-standard/
 
 ## Embed Your Grade
 
-After publishing an official scorecard, honeypot maintainers can embed:
+After publishing an official scorecard, maintainers can embed:
 
 ```markdown
 ![UHBS v4.0](https://img.shields.io/badge/UHBS%20v4.0-Grade%20A-brightgreen)
@@ -126,3 +131,7 @@ Or use the machine-readable [`CITATION.cff`](CITATION.cff).
 ## License
 
 Licensed under the [Apache License 2.0](LICENSE).
+
+---
+
+An objective, repeatable, quantitative methodology for deception technology evaluation — providing cybersecurity professionals with a non-biased baseline for comparing and grading honeypots and decoy systems.

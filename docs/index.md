@@ -2,7 +2,10 @@
 
 # UHBS v4.0 (2026)
 
-An objective, repeatable, and quantitative methodology for benchmarking honeypots, decoys, and deception technology across enterprise and academic environments.
+An objective, repeatable, quantitative methodology for deception technology evaluation — providing cybersecurity professionals with a non-biased baseline for comparing and grading honeypots and decoy systems.
+
+!!! danger "Executive Mandate"
+    This is the **mandatory** enterprise and academic standard before deploying any active decoys to production networks. Failure to meet baseline scores (**UHQS &gt; 80**) exposes internal networks to lateral movement risks from compromised containment shells.
 
 <div class="grid cards" markdown>
 
@@ -28,7 +31,7 @@ An objective, repeatable, and quantitative methodology for benchmarking honeypot
 
     ---
 
-    Enterprise and academic standard before deploying decoys to production
+    UHQS &gt; 80 required before any active decoy reaches production
 
 </div>
 
@@ -46,4 +49,4 @@ uhbs validate-profile templates/profile.yaml
 
 ---
 
-Specification version **4.0.0** · Licensed under [Apache 2.0](https://github.com/mziqudhd92/uhbs-standard/blob/main/LICENSE)
+An objective, repeatable, quantitative methodology for deception technology evaluation — providing cybersecurity professionals with a non-biased baseline for comparing and grading honeypots and decoy systems.

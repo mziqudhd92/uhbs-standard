@@ -1,7 +1,7 @@
 {
   "uhbs_version": "4.0.0",
   "target": {
-    "name": "CyberHalluciNet Decoy",
+    "name": "Illustrative POSIX-Shell GenAI Decoy",
     "class": "POSIX-Shell",
     "profile_ref": "templates/profile.yaml"
   },
@@ -30,5 +30,5 @@
   },
   "uhqs": 92.1,
   "grade": "A",
-  "notes": "Illustrative scorecard from UHBS v4.0. UHQS recomputed from published module scores via the normative formula (PDF printed 91.8; correct weighted sum is 92.1)."
+  "notes": "Vendor-neutral illustrative scorecard. UHQS computed from module scores via the normative formula."
 }

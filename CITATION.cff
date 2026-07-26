@@ -11,10 +11,11 @@ license: Apache-2.0
 repository-code: "https://github.com/mziqudhd92/uhbs-standard"
 url: "https://mziqudhd92.github.io/uhbs-standard/"
 abstract: >-
-  UHBS v4.0 is an objective, repeatable, and quantitative methodology for
-  benchmarking honeypots, decoys, and deception technology. It defines six
-  evaluation modules (A–F), a composite UHQS score (0–100), and a non-linear
-  Safety Gate multiplier derived from containment controls.
+  UHBS v4.0 is a vendor-neutral, objective, repeatable, and quantitative
+  methodology for evaluating honeypots and deception technology. It defines six
+  evaluation modules (A–F), a composite UHQS score (0–100) with production
+  baseline UHQS > 80, and a non-linear Safety Gate multiplier derived from
+  containment controls.
 keywords:
   - honeypot
   - deception-technology
