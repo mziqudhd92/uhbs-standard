@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://uhbs.dev/schemas/evidence-pack.schema.json",
+  "$id": "https://github.com/mziqudhd92/uhbs-standard/raw/main/schemas/evidence-pack.schema.json",
   "title": "UHBS Evidence Pack",
   "description": "Step-level evidence for UHBS-Lab evaluations. Aligns with reference harness ModuleResult.checks[].",
   "type": "object",

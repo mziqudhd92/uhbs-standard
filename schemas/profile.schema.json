@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://uhbs.dev/schemas/profile.schema.json",
+  "$id": "https://github.com/mziqudhd92/uhbs-standard/raw/main/schemas/profile.schema.json",
   "title": "UHBS Target Profile Specification (TPS)",
   "description": "Machine-readable Target Profile Specification (profile.yaml) required before UHBS evaluation.",
   "type": "object",

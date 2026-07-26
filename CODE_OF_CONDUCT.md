@@ -56,8 +56,10 @@ an individual is officially representing the community in public spaces.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the community leaders responsible for enforcement at
-`conduct@uhbs.dev` or via GitHub private contact to repository maintainers.
+reported privately to the repository maintainer via
+[GitHub](https://github.com/mziqudhd92) (use a private message / contact path
+available on the profile, or open a confidential discussion with the maintainer).
+Do not report Code of Conduct incidents in public issues.
 
 All complaints will be reviewed and investigated promptly and fairly.
 

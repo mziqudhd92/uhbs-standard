@@ -11,10 +11,16 @@
 
 Do **not** open a public GitHub issue for security vulnerabilities in this repository, the UHBS CLI, schemas, or documentation tooling.
 
-Please report vulnerabilities privately via one of:
+Please report vulnerabilities privately via:
 
-1. **GitHub Security Advisories** — use [Private vulnerability reporting](https://github.com/mziqudhd92/uhbs-standard/security/advisories/new) on this repository.
-2. **Email** — `security@uhbs.dev` (replace with your operational security contact before public launch if different).
+1. **GitHub Security Advisories** — preferred:
+   [Private vulnerability reporting](https://github.com/mziqudhd92/uhbs-standard/security/advisories/new)
+   on this repository.
+2. If advisory reporting is unavailable, contact the maintainer privately via
+   [GitHub](https://github.com/mziqudhd92) (profile contact / private message).
+   Do **not** open a public issue.
+
+There is no project security email address at this time.
 
 Include:
 

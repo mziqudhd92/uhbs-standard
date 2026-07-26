@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://uhbs.dev/schemas/scorecard.schema.json",
+  "$id": "https://github.com/mziqudhd92/uhbs-standard/raw/main/schemas/scorecard.schema.json",
   "title": "UHBS Benchmark Scorecard",
   "description": "Standardized UHBS v4.0 evaluation scorecard output.",
   "type": "object",
