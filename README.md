@@ -56,9 +56,8 @@ uhbs validate-scorecard path/to/scorecard.json
 uhbs score --profile my-honeypot.profile.yaml --scores scores.json
 ```
 
-Documentation site: **[https://mziqudhd92.github.io/uhbs-standard/](https://mziqudhd92.github.io/uhbs-standard/)**  
-Specification docs: **[https://mziqudhd92.github.io/uhbs-standard/specification/](https://mziqudhd92.github.io/uhbs-standard/specification/)**  
-Maturity roadmap: **[ROADMAP.md](ROADMAP.md)** · Reference harness map: **[docs/reference-implementation.md](docs/reference-implementation.md)**
+Documentation site: **[https://mziqudhd92.github.io/uhbs-standard/](https://mziqudhd92.github.io/uhbs-standard/)** (MkDocs)  
+Maturity roadmap: **[ROADMAP.md](ROADMAP.md)** · Reference harness: **[docs/reference-implementation.md](docs/reference-implementation.md)**
 
 ## Scoring Summary (UHQS 4.0)
 
@@ -95,11 +94,11 @@ Production deployment requires **UHQS > 80** and a passing Safety Gate. A decoy 
 
 ```text
 uhbs-standard/
-├── web/                  # GitHub Pages landing (from UHBS-Web)
-├── docs/                 # Specification Docs-as-Code (MkDocs → /specification/)
+├── docs/                 # Website + Docs-as-Code (MkDocs → GitHub Pages)
 ├── schemas/              # JSON Schemas for profiles & scorecards
 ├── templates/            # Starter profile.yaml for framework users
 ├── src/uhbs_cli/         # Validation CLI
+├── src/uhbs_core/        # UHBS-Lab reference harness
 ├── GOVERNANCE.md         # Project notes (personal maintainer; not a committee)
 ├── SECURITY.md           # Vulnerability disclosure policy
 └── CITATION.cff          # Citation metadata

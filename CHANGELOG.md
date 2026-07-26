@@ -32,6 +32,8 @@ share version **4.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`).
 - Docs state clearly that UHBS is a **personal draft framework**, not a
   multi-party standards body; committee, neutral org, and adopters moved to
   ROADMAP Phase 6 as aspirational (unchecked) goals
+- Dropped React `web/` landing; GitHub Pages is MkDocs at site root
+  (`https://mziqudhd92.github.io/uhbs-standard/`)
 
 ### Pending (manual / ops / community — see ROADMAP Phase 6)
 - PyPI Trusted Publishing + Sigstore signing
