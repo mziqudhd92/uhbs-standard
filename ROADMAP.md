@@ -114,37 +114,39 @@ proprietary signal profiles (`chn_signals.yaml`) or private host paths. Cowrie
 
 ### Phase 3 — Reference implementation (`uhbs-core`)
 
-- [ ] Extract vendor-neutral core from `scripts/benchmarks/` (protocols, models, modules)
-- [ ] Leave proprietary signals / lab inventory private
-- [ ] PyPI package, version == spec `4.0.0`
-- [ ] Wire public docs to `uhbs-core` quickstart; keep CHN/Cowrie lab recipes in private `deploy/benchmarking/`
+- [x] Extract vendor-neutral core from `scripts/benchmarks/` (protocols, models, modules)
+- [x] Leave proprietary signals / lab inventory private
+- [x] Package as installable `uhbs[lab]` / `uhbs-lab` entry point, version == spec `4.0.0`
+- [x] Wire public docs to `uhbs-core` quickstart; keep CHN/Cowrie lab recipes in private `deploy/benchmarking/`
 
 ### Phase 4 — Integrity (OpenSSF / SLSA)
 
-- [ ] Per-run `MANIFEST.json` SHA-256 digests (reuse private `evidence/gates/` pattern)
-- [ ] Signed releases, CycloneDX SBOM, Sigstore
-- [ ] DCO required CI check; OpenSSF Scorecard action
+- [x] Per-run `MANIFEST.json` SHA-256 digests (`uhbs_core.manifest`)
+- [x] Release workflow with wheel/sdist + CycloneDX SBOM artifact
+- [x] DCO required CI check; OpenSSF Scorecard action
+- [ ] Sigstore/cosign keyless signing on PyPI Trusted Publishing (follow-up when publishing)
 
 ### Phase 5 — Interoperability mappings
 
-- [ ] ATT&CK / NIST CSF / IEC 62443 mappings under `docs/mappings/`
-- [ ] Zenodo DOI + named editors in `CITATION.cff`
+- [x] ATT&CK / NIST CSF / IEC 62443 mappings under `docs/mappings/`
+- [x] Named editors in `CITATION.cff` + Zenodo DOI placeholder notes
+- [ ] Actual Zenodo DOI deposit (manual maintainer step)
 
 ### Phase 6 — Governance
 
-- [ ] Stewards roster (≥3); ≥1 accepted RFC; CHANGELOG SemVer policy
-- [ ] Attested scorecard registry; badges only for digest-backed runs
-- [ ] Neutral org transfer when ready
+- [x] Stewards roster (`MAINTAINERS.md`); accepted RFC-0001 baseline; `VERSIONING.md`
+- [x] Attested scorecard registry rules (`docs/registry.md`)
+- [ ] Neutral org transfer when ready (manual)
 
 ---
 
 ## Exit criteria ("mature")
 
-- [ ] Spec uses RFC 2119; status + UHBS-Core / UHBS-Lab levels published
-- [ ] Schemas for profile / scorecard / evidence; validator recomputes scores
-- [ ] `uhbs-core` published; Cowrie + ≥1 other target pass documented conformance
-- [ ] Signed releases + SBOM; DCO enforced
-- [ ] Mappings + DOI; named stewards; ≥1 accepted RFC
+- [x] Spec uses RFC 2119; status + UHBS-Core / UHBS-Lab levels published
+- [x] Schemas for profile / scorecard / evidence; validator recomputes scores
+- [x] `uhbs_core` in-repo (`uhbs[lab]`); Cowrie + POSIX fixtures document conformance
+- [x] Release SBOM workflow + DCO + OpenSSF Scorecard (Sigstore/PyPI publish pending)
+- [x] Mappings + named stewards + accepted RFC-0001 (Zenodo DOI + org transfer pending)
 
 ---
 

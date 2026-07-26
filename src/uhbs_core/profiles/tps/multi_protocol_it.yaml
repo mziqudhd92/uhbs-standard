@@ -1,0 +1,14 @@
+target_metadata:
+  name: "Multi-Protocol-IT-Decoy"
+  class: "POSIX-Shell"
+  protocol: "ssh"
+  protocols: ["ssh", "smtp", "http"]
+
+performance_baseline:
+  expected_p95_latency_ms: 150
+  strict_rfc_enforcement: true
+  timing_samples: 40
+
+safety_boundary:
+  allowed_outbound_traffic: false
+  allow_local_code_execution: false

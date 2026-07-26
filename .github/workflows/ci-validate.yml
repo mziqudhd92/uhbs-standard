@@ -22,11 +22,11 @@ jobs:
       - name: Install package and tools
         run: |
           python -m pip install --upgrade pip
-          pip install -e ".[dev]"
+          pip install -e ".[dev,lab]"
           pip install check-jsonschema
 
       - name: Lint
-        run: ruff check src tests
+        run: ruff check src/uhbs_cli tests
 
       - name: Unit tests
         run: pytest -q

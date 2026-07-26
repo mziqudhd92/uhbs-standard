@@ -18,7 +18,9 @@ This document describes how the Universal Honeypot Benchmarking Standard (UHBS) 
 | **Contributors** | Propose changes via issues, PRs, and RFCs |
 | **Adopters** | Publish scorecards; may submit TPS profile classes for review |
 
-Until a formal committee roster is published, repository CODEOWNERS act as interim stewards.
+Until a formal committee roster is published, see [MAINTAINERS.md](MAINTAINERS.md).
+Repository CODEOWNERS act as interim stewards. RFC-0001 accepts the UHBS 4.0.0
+baseline.
 
 ## 3. RFC Process (Request for Comments)
 

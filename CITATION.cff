@@ -3,8 +3,12 @@ title: "Universal Honeypot Benchmarking Standard (UHBS)"
 message: "If you use UHBS, please cite it using the metadata from this file."
 type: standard
 authors:
-  - name: "UHBS Project Contributors"
+  - name: "UHBS Project Stewards"
+    alias: "Spec / Harness / Security Stewards"
     website: "https://github.com/mziqudhd92/uhbs-standard"
+  - name: "Moran Zavdi"
+    email: "security@uhbs.dev"
+    website: "https://github.com/mziqudhd92"
 version: "4.0.0"
 date-released: "2026-07-26"
 license: Apache-2.0
@@ -14,8 +18,9 @@ abstract: >-
   UHBS v4.0 is a vendor-neutral, objective, repeatable, and quantitative
   methodology for evaluating honeypots and deception technology. It defines six
   evaluation modules (A–F), a composite UHQS score (0–100) with production
-  baseline UHQS > 80, and a non-linear Safety Gate multiplier derived from
-  containment controls.
+  baseline UHQS > 80, a non-linear Safety Gate, machine-readable schemas, and a
+  UHBS-Lab reference harness (uhbs_core) with conformance fixtures including
+  Cowrie and POSIX-Shell lab evaluations.
 keywords:
   - honeypot
   - deception-technology
@@ -29,7 +34,11 @@ preferred-citation:
   type: standard
   title: "Universal Honeypot Benchmarking Standard (UHBS) v4.0 (2026)"
   authors:
-    - name: "UHBS Project Contributors"
+    - name: "UHBS Project Stewards"
+    - name: "Moran Zavdi"
   year: 2026
   version: "4.0.0"
   url: "https://github.com/mziqudhd92/uhbs-standard"
+  notes: >-
+    Deposit this tagged release on Zenodo to obtain a DOI; update this file when
+    the DOI is available (ROADMAP Phase 5).

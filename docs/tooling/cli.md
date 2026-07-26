@@ -5,7 +5,7 @@
 The `uhbs` CLI validates Target Profile Specifications and scorecards against the
 official JSON Schemas, enforces class→weight tables, and recomputes UHQS.
 
-For the full executable Modules A–F harness (`run_benchmark.py`), see
+For the full executable Modules A–F harness, see
 [Reference Implementation](../reference-implementation.md).
 
 ## Install
@@ -17,6 +17,14 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -e ".[dev]"
 uhbs --help
+```
+
+### UHBS-Lab harness
+
+```bash
+pip install -e ".[lab]"
+uhbs lab --list-protocols
+uhbs-lab --help
 ```
 
 ## Commands

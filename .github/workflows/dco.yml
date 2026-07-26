@@ -1,0 +1,39 @@
+name: DCO
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  dco:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify Signed-off-by on PR commits
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          missing=0
+          while IFS= read -r commit; do
+            author=$(git log -1 --format='%an' "$commit")
+            case "$author" in
+              dependabot[bot]|github-actions[bot]) continue ;;
+            esac
+            if ! git log -1 --format=%B "$commit" | grep -qE '^Signed-off-by: .+ <.+>$'; then
+              echo "MISSING DCO: $commit ($(git log -1 --oneline "$commit"))"
+              missing=1
+            fi
+          done < <(git rev-list --no-merges "${BASE}..${HEAD}")
+          if [ "$missing" -ne 0 ]; then
+            echo "Add Signed-off-by trailer (git commit -s)."
+            exit 1
+          fi
+          echo "DCO OK"

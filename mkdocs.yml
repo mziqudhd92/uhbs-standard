@@ -73,6 +73,12 @@ nav:
   - Reference Implementation: reference-implementation.md
   - Conformance:
       - Overview: conformance/index.md
+  - Mappings:
+      - Index: mappings/index.md
+      - ATT&CK: mappings/attack.md
+      - NIST: mappings/nist.md
+      - IEC 62443: mappings/iec-62443.md
+  - Registry: registry.md
   - Tooling:
       - CLI & Validator: tooling/cli.md
   - Scorecards:
@@ -80,6 +86,7 @@ nav:
       - Illustrative POSIX / GenAI: scorecards/illustrative-posix-genai.md
   - Governance:
       - RFCs: rfcs/README.md
+      - RFC-0001 Baseline: rfcs/0001-uhbs-4.0-baseline.md
       - RFC Template: rfcs/0000-template.md
 
 extra:

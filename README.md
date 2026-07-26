@@ -30,13 +30,18 @@ lateral movement risks from compromised containment shells.
 | **Six Evaluation Modules** | Modules A–F covering fidelity, behavior, telemetry, safety, scale, and audit |
 | **Production Baseline** | **UHQS > 80** required before any active decoy reaches production |
 
+> **Status:** Draft / Experimental — [specification status](docs/specification/status.md).
+> UHBS-Lab harness: `pip install -e '.[lab]'` → `uhbs-lab` / `uhbs lab`.
+> Proven fixtures: **Cowrie** UHQS 46.97 · POSIX-Shell lab UHQS 80.33.
+> Remaining ops: see [ROADMAP.md](ROADMAP.md) (PyPI signing, Zenodo DOI, org transfer).
+
 ## Quickstart
 
 Validate a honeypot against a Target Profile Specification (`profile.yaml`) in three steps:
 
 ```bash
-# 1. Install the CLI
-pip install -e .
+# 1. Install the CLI (add [lab] for the Modules A–F harness)
+pip install -e ".[lab]"
 
 # 2. Create or adapt a target profile
 cp templates/profile.yaml ./my-honeypot.profile.yaml
@@ -55,11 +60,6 @@ uhbs score --profile my-honeypot.profile.yaml --scores scores.json
 Documentation site: **[https://mziqudhd92.github.io/uhbs-standard/](https://mziqudhd92.github.io/uhbs-standard/)**  
 Specification docs: **[https://mziqudhd92.github.io/uhbs-standard/specification/](https://mziqudhd92.github.io/uhbs-standard/specification/)**  
 Maturity roadmap: **[ROADMAP.md](ROADMAP.md)** · Reference harness map: **[docs/reference-implementation.md](docs/reference-implementation.md)**
-
-> **Status:** Draft / Experimental. See [docs/specification/status.md](docs/specification/status.md).
-> The executable UHBS-Lab harness (Modules A–F) already exists and has been run against
-> **Cowrie** (UHQS 46.97) and a POSIX-Shell lab decoy (UHQS 80.33). Phase 3 extracts it
-> as public `uhbs-core`.
 
 ## Scoring Summary (UHQS 4.0)
 

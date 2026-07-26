@@ -1,0 +1,19 @@
+# Common Modbus function codes / register concepts for ICS coverage (Module F3).
+read_coils
+read_discrete_inputs
+read_holding_registers
+read_input_registers
+write_single_coil
+write_single_register
+write_multiple_coils
+write_multiple_registers
+mask_write_register
+read_write_multiple_registers
+diagnostic
+exception
+holding
+coil
+input_register
+mbap
+unit_id
+function_code

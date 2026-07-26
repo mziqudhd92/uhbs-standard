@@ -1,0 +1,88 @@
+# Source-phase signals for Cowrie (mapped to HQS dimensions).
+name: cowrie
+dimensions:
+  stealth:
+    weight: 1.0
+    signals:
+      - id: ssh_transport
+        paths: ["**/cowrie/ssh/*.py", "**/src/cowrie/ssh/*.py"]
+        points: 25
+      - id: fingerprint_tweaks
+        paths: ["**/cowrie/**/*.py", "**/src/cowrie/**/*.py"]
+        content: "hassh|ServerVersion|versionString|fingerprint"
+        points: 20
+      - id: telnet_stack
+        paths: ["**/cowrie/telnet/*.py", "**/src/cowrie/telnet/*.py"]
+        points: 15
+      - id: twisted_proxy
+        paths: ["**/cowrie/**/*.py"]
+        content: "twisted|SSHFactory"
+        points: 15
+  realism:
+    weight: 1.0
+    signals:
+      - id: honeyfs
+        paths: ["**/honeyfs/**", "**/share/cowrie/honeyfs/**"]
+        points: 25
+      - id: command_emulation
+        paths: ["**/commands/*.py", "**/cowrie/commands/*.py", "**/src/cowrie/commands/*.py"]
+        points: 25
+      - id: fake_proc
+        paths: ["**/honeyfs/proc/**", "**/share/cowrie/honeyfs/proc/**"]
+        points: 20
+      - id: download_pool
+        paths: ["**/cowrie/**/*.py"]
+        content: "download|wget|curl|Artifact"
+        points: 15
+  telemetry:
+    weight: 1.0
+    signals:
+      - id: json_output
+        paths: ["**/output_json.py", "**/cowrie/output/*.py", "**/src/cowrie/output/*.py"]
+        points: 25
+      - id: elasticsearch
+        paths: ["**/output_elasticsearch.py", "**/cowrie/output/*elastic*"]
+        points: 15
+      - id: virustotal
+        paths: ["**/output_virustotal.py", "**/cowrie/output/*virus*"]
+        points: 10
+      - id: session_logging
+        paths: ["**/cowrie/**/*.py"]
+        content: "logDispatch|sessionid|eventid"
+        points: 25
+      - id: mitre_stix
+        paths: ["**/*stix*", "**/*mitre*", "**/*attack*"]
+        points: 10
+  containment:
+    weight: 1.0
+    signals:
+      - id: no_real_shell
+        paths: ["**/cowrie/shell/*.py", "**/src/cowrie/shell/*.py", "**/commands/*.py"]
+        content: "HoneyPotShell|emulate|fake"
+        points: 25
+      - id: filesystem_jail
+        paths: ["**/cowrie/fs.py", "**/src/cowrie/fs.py", "**/honeyfs/**"]
+        points: 25
+      - id: docker_isolation_docs
+        paths: ["**/docs/**", "**/README*"]
+        content: "docker|contain|isolat"
+        points: 15
+      - id: egress_controls
+        paths: ["**/*"]
+        content: "egress|default.?deny|nftables|iptables"
+        points: 15
+  efficiency:
+    weight: 1.0
+    signals:
+      - id: connection_limits
+        paths: ["**/cowrie/**/*.py", "**/etc/cowrie.cfg*"]
+        content: "max_conn|connection_limit|backlog"
+        points: 30
+      - id: async_twisted
+        paths: ["**/cowrie/**/*.py"]
+        content: "defer|inlineCallbacks|twisted"
+        points: 25
+      - id: pool_config
+        paths: ["**/cowrie.cfg*", "**/etc/**"]
+        content: "pool|timeout|limit"
+        points: 20
