@@ -59,6 +59,15 @@ uhbs score --profile my-honeypot.profile.yaml --scores scores.json
 Documentation site: **[https://mziqudhd92.github.io/uhbs-standard/](https://mziqudhd92.github.io/uhbs-standard/)** (MkDocs)  
 Maturity roadmap: **[ROADMAP.md](ROADMAP.md)** · Reference harness: **[docs/reference-implementation.md](docs/reference-implementation.md)**
 
+### Discovery for search & AI agents (SEO / AEO / GEO)
+
+| File | Purpose |
+| --- | --- |
+| [llms.txt](llms.txt) (repo) · [site llms.txt](https://mziqudhd92.github.io/uhbs-standard/llms.txt) | Curated index for coding / answer agents |
+| [AGENTS.md](AGENTS.md) | Rules for assistants editing this repo |
+| [CITATION.cff](CITATION.cff) | Formal citation metadata |
+| Site [robots.txt](https://mziqudhd92.github.io/uhbs-standard/robots.txt) · [sitemap.xml](https://mziqudhd92.github.io/uhbs-standard/sitemap.xml) | Crawler hints |
+
 ## Scoring Summary (UHQS 4.0)
 
 The **Universal Honeypot Quality Score (UHQS)** is a normalized composite from **0 to 100**:

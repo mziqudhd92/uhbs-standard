@@ -37,6 +37,8 @@ share version **4.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`).
 - Unified UHQS math into `uhbs_core.uhqs_math` (CLI + harness); missing scores
   raise instead of silent 0.0; Actions pinned by SHA; CI uses `constraints.txt`;
   PEP 639 license metadata; expanded integrity/CLI tests
+- SEO / AEO / GEO discovery: site `llms.txt`, `llms-full.txt`, `robots.txt`,
+  `humans.txt`, `.well-known/security.txt`, JSON-LD; repo `llms.txt` + `AGENTS.md`
 
 ### Pending (manual / ops / community — see ROADMAP Phase 6)
 - PyPI Trusted Publishing + Sigstore signing

@@ -1,5 +1,5 @@
 site_name: Universal Honeypot Benchmarking Standard (UHBS)
-site_description: A personal open-source draft framework for vendor-neutral honeypot and deception evaluation (UHQS 0–100).
+site_description: Personal open-source draft framework for vendor-neutral honeypot and deception evaluation (UHQS 0–100, Safety Gate). Not a consortium standard.
 site_url: https://mziqudhd92.github.io/uhbs-standard/
 repo_url: https://github.com/mziqudhd92/uhbs-standard
 repo_name: mziqudhd92/uhbs-standard
@@ -8,6 +8,7 @@ copyright: UHBS v4.0 — personal draft evaluation framework (Apache-2.0)
 
 theme:
   name: material
+  custom_dir: docs/overrides
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -36,6 +37,9 @@ theme:
 plugins:
   - search
 
+hooks:
+  - hooks.py
+
 markdown_extensions:
   - admonition
   - attr_list
@@ -60,6 +64,12 @@ markdown_extensions:
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/mziqudhd92/uhbs-standard
+      name: GitHub
 
 nav:
   - Home: index.md
@@ -88,8 +98,3 @@ nav:
       - RFCs: rfcs/README.md
       - RFC-0001 Baseline: rfcs/0001-uhbs-4.0-baseline.md
       - RFC Template: rfcs/0000-template.md
-
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/mziqudhd92/uhbs-standard

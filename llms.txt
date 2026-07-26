@@ -1,0 +1,34 @@
+# Universal Honeypot Benchmarking Standard (UHBS)
+
+> Personal open-source draft framework (v4.0.0, Apache-2.0) for vendor-neutral honeypot / deception evaluation (UHQS 0–100 + Safety Gate). Not a consortium standard.
+
+This file is the **repository** agent index (AEO/GEO for coding assistants). The published docs site mirror is https://mziqudhd92.github.io/uhbs-standard/llms.txt
+
+## Essential
+
+- [README](https://github.com/mziqudhd92/uhbs-standard/blob/main/README.md): Project posture and quickstart
+- [ROADMAP](https://github.com/mziqudhd92/uhbs-standard/blob/main/ROADMAP.md): Maturity plan; Phase 6 community goals unchecked
+- [MAINTAINERS](https://github.com/mziqudhd92/uhbs-standard/blob/main/MAINTAINERS.md): Single maintainer today
+- [Docs site](https://mziqudhd92.github.io/uhbs-standard/): MkDocs documentation
+- [CITATION.cff](https://github.com/mziqudhd92/uhbs-standard/blob/main/CITATION.cff): How to cite
+
+## Normative / machine-readable
+
+- [Scoring formula](https://github.com/mziqudhd92/uhbs-standard/blob/main/docs/specification/scoring-formula.md): UHQS + δ_C
+- [uhqs_math.py](https://github.com/mziqudhd92/uhbs-standard/blob/main/src/uhbs_core/uhqs_math.py): Single source of UHQS math
+- [profile.schema.json](https://github.com/mziqudhd92/uhbs-standard/blob/main/schemas/profile.schema.json): TPS schema
+- [scorecard.schema.json](https://github.com/mziqudhd92/uhbs-standard/blob/main/schemas/scorecard.schema.json): Scorecard schema
+- [evidence-pack.schema.json](https://github.com/mziqudhd92/uhbs-standard/blob/main/schemas/evidence-pack.schema.json): Evidence pack schema
+
+## Implementation
+
+- [uhbs_cli](https://github.com/mziqudhd92/uhbs-standard/tree/main/src/uhbs_cli): Validator CLI
+- [uhbs_core](https://github.com/mziqudhd92/uhbs-standard/tree/main/src/uhbs_core): UHBS-Lab Modules A–F harness
+- [CLI guide](https://github.com/mziqudhd92/uhbs-standard/blob/main/docs/tooling/cli.md): Commands and integrity checks
+- [Conformance fixtures](https://github.com/mziqudhd92/uhbs-standard/tree/main/docs/conformance/fixtures): Proof scorecards only
+
+## Optional
+
+- [AGENTS.md](https://github.com/mziqudhd92/uhbs-standard/blob/main/AGENTS.md): Guidance for coding agents working in this repo
+- [GOVERNANCE.md](https://github.com/mziqudhd92/uhbs-standard/blob/main/GOVERNANCE.md): Honest project notes (no fake committee)
+- [SECURITY.md](https://github.com/mziqudhd92/uhbs-standard/blob/main/SECURITY.md): Report vulns via GitHub Security Advisories

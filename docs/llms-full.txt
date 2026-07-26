@@ -1,0 +1,70 @@
+# UHBS — full agent digest (llms-full.txt)
+
+> Curated plain-text digest of UHBS v4.0.0 for answer engines and coding agents. Prefer the live docs and GitHub sources when they disagree with this file. Last aligned: 2026-07-26.
+
+## What UHBS is
+
+UHBS (Universal Honeypot Benchmarking Standard) is a **personal open-source draft evaluation framework** for comparing honeypots and deception systems by **decoy class** and **protocol**, not by vendor brand. Version **4.0.0**. License **Apache-2.0**. Author/maintainer: Moran Zavdi (@mziqudhd92).
+
+It is **not** a consortium standard, not multi-party governed, and not a mandatory industry requirement. Suggested Production Baseline Profile (RECOMMENDED for internal use): **UHQS > 80** with Module D Safety Gate pass (containment C ≥ 95 → δ_C = 1.0).
+
+Primary URLs:
+- Docs: https://mziqudhd92.github.io/uhbs-standard/
+- Repo: https://github.com/mziqudhd92/uhbs-standard
+- Spec status: https://mziqudhd92.github.io/uhbs-standard/specification/status/
+
+## Normative UHQS formula
+
+UHQS = δ_C · (w_A·S_A + w_B·S_B + w_C·S_C + w_E·S_E + w_F·S_F)
+
+- S_A…S_F: module scores 0–100 (A protocol, B behavior, C telemetry, D containment, E scale, F static)
+- Weights w_* depend on profile class and sum to 1.00
+- δ_C = 1.0 if C ≥ 95; else δ_C = (C/100)²
+- UHQS rounded to **two** decimal places
+- Letter grades: A≥90, B≥80, C≥70, D≥50, F&lt;50
+
+Single source of scoring math in package: `uhbs_core.uhqs_math` (CLI and harness must agree).
+
+## Profile classes (weights)
+
+| Class | w_A | w_B | w_C | w_E | w_F |
+| --- | --- | --- | --- | --- | --- |
+| POSIX-Shell / GenAI-Shell | 0.20 | 0.25 | 0.20 | 0.15 | 0.20 |
+| Low-Interaction | 0.30 | 0.15 | 0.25 | 0.10 | 0.20 |
+| ICS-SCADA | 0.35 | 0.20 | 0.15 | 0.10 | 0.20 |
+| Web-API | 0.25 | 0.20 | 0.20 | 0.15 | 0.20 |
+| Database | 0.25 | 0.25 | 0.20 | 0.10 | 0.20 |
+
+## Conformance levels
+
+- **UHBS-Core:** valid TPS + scorecard schemas; recomputed UHQS/δ_C/grade integrity
+- **UHBS-Lab:** UHBS-Core + Modules A–F harness (`uhbs[lab]` / `uhbs-lab`) + MANIFEST digests
+
+## Install & commands
+
+```bash
+pip install -e ".[lab]"
+uhbs validate-profile templates/profile.yaml
+uhbs validate-scorecard path/to/scorecard.json --strict
+uhbs score --class Low-Interaction --scores scores.json
+uhbs lab --list-protocols
+```
+
+## Vendor neutrality
+
+Normative docs and templates use **classes and protocols** only. Named products appear only under conformance fixtures as evaluation **proof**, not as UHBS requirements.
+
+Published proof (sanitized fixtures):
+- Cowrie (Low-Interaction): UHQS **46.97** (Grade F)
+- CyberHalluciNet (POSIX-Shell lab): UHQS **80.33** (Grade B)
+
+## Machine-readable artifacts
+
+- Schemas: https://github.com/mziqudhd92/uhbs-standard/tree/main/schemas
+- CITATION.cff: https://github.com/mziqudhd92/uhbs-standard/blob/main/CITATION.cff
+- ROADMAP: https://github.com/mziqudhd92/uhbs-standard/blob/main/ROADMAP.md
+- Repo llms.txt: https://github.com/mziqudhd92/uhbs-standard/blob/main/llms.txt
+
+## Citation note
+
+Cite as a personal draft software/framework (see CITATION.cff). Do not describe UHBS as an adopted industry or academic standard unless Phase 6 roadmap exit criteria are met.

@@ -1,3 +1,8 @@
+---
+title: UHBS — Universal Honeypot Benchmarking Standard
+description: Personal open-source draft framework for vendor-neutral honeypot and deception evaluation (UHQS 0–100 with Safety Gate). Spec v4.0.0. Not a consortium standard.
+---
+
 # Universal Honeypot Benchmarking Standard
 
 # UHBS v4.0 (2026)

@@ -1,0 +1,11 @@
+# https://mziqudhd92.github.io/uhbs-standard/robots.txt
+User-agent: *
+Allow: /
+
+# Prefer the curated AI index for agents (AEO / coding assistants).
+# Note: Google Search does not use llms.txt as a ranking signal; it remains
+# useful for documentation-oriented agents and RAG pipelines.
+# See https://llmstxt.org/
+
+Sitemap: https://mziqudhd92.github.io/uhbs-standard/sitemap.xml
+Host: https://mziqudhd92.github.io/uhbs-standard/
