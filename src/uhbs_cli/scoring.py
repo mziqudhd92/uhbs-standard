@@ -2,9 +2,8 @@
 
 from __future__ import annotations
 
+from collections.abc import Mapping
 from dataclasses import dataclass
-from typing import Mapping
-
 
 WEIGHT_KEYS = ("w_A", "w_B", "w_C", "w_E", "w_F")
 SCORE_KEYS = ("A", "B", "C", "D", "E", "F")
