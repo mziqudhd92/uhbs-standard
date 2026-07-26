@@ -19,8 +19,10 @@ htmlcov/
 .ruff_cache/
 .tox/
 
-# MkDocs
+# MkDocs / web
 site/
+web/dist/
+web/node_modules/
 
 # IDE / OS
 .idea/

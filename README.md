@@ -47,7 +47,8 @@ uhbs validate-scorecard path/to/scorecard.json
 uhbs score --profile my-honeypot.profile.yaml --scores scores.json
 ```
 
-Documentation site: **[https://mziqudhd92.github.io/uhbs-standard/](https://mziqudhd92.github.io/uhbs-standard/)**
+Documentation site: **[https://mziqudhd92.github.io/uhbs-standard/](https://mziqudhd92.github.io/uhbs-standard/)**  
+Specification docs: **[https://mziqudhd92.github.io/uhbs-standard/specification/](https://mziqudhd92.github.io/uhbs-standard/specification/)**
 
 ## Scoring Summary (UHQS 4.0)
 
@@ -84,7 +85,8 @@ Production deployment requires **UHQS > 80** and a passing Safety Gate. A decoy 
 
 ```text
 uhbs-standard/
-├── docs/                 # Docs-as-Code (GitHub Pages)
+├── web/                  # GitHub Pages landing (from UHBS-Web)
+├── docs/                 # Specification Docs-as-Code (MkDocs → /specification/)
 ├── schemas/              # JSON Schemas for profiles & scorecards
 ├── templates/            # Starter profile.yaml for adopters
 ├── src/uhbs_cli/         # Official validation CLI

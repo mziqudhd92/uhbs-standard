@@ -49,4 +49,6 @@ uhbs validate-profile templates/profile.yaml
 
 ---
 
+[← Return to UHBS landing site](https://mziqudhd92.github.io/uhbs-standard/) · Specification version **4.0.0**
+
 An objective, repeatable, quantitative methodology for deception technology evaluation — providing cybersecurity professionals with a non-biased baseline for comparing and grading honeypots and decoy systems.
