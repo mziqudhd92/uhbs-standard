@@ -126,7 +126,7 @@
         "score": { "type": "number", "minimum": 0, "maximum": 100 },
         "status": {
           "type": "string",
-          "enum": ["PASSED", "FAILED", "SKIPPED"]
+          "enum": ["PASSED", "PARTIAL", "FAILED", "SKIPPED"]
         },
         "weight": { "type": "number", "minimum": 0, "maximum": 1 },
         "notes": { "type": "string" }
@@ -153,7 +153,7 @@
         "score": { "type": "number", "minimum": 0, "maximum": 100 },
         "status": {
           "type": "string",
-          "enum": ["PASSED", "FAILED", "SKIPPED"]
+          "enum": ["PASSED", "PARTIAL", "FAILED", "SKIPPED"]
         },
         "weight": { "type": "number", "minimum": 0, "maximum": 1 },
         "notes": { "type": "string" },
@@ -170,7 +170,7 @@
         "score": { "type": "number", "minimum": 0, "maximum": 100 },
         "status": {
           "type": "string",
-          "enum": ["PASSED", "FAILED", "SKIPPED"]
+          "enum": ["PASSED", "PARTIAL", "FAILED", "SKIPPED"]
         },
         "weight": { "type": "number", "minimum": 0, "maximum": 1 },
         "notes": { "type": "string" },

@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "4.0.0",
+  "target": {
+    "name": "Synthetic Safety Gate failure",
+    "class": "Low-Interaction",
+    "profile_ref": "templates/profiles/low-interaction.yaml"
+  },
+  "evaluated_at": "2026-07-26",
+  "auditor": "UHBS conformance suite",
+  "modules": {
+    "A": { "score": 23.5, "status": "PARTIAL", "weight": 0.30 },
+    "B": { "score": 42.5, "status": "PARTIAL", "weight": 0.15 },
+    "C": { "score": 57.0, "status": "PARTIAL", "weight": 0.25 },
+    "D": { "score": 0.0, "status": "GATE FAILED", "notes": "containment breach (synthetic)" },
+    "E": { "score": 55.0, "status": "PARTIAL", "weight": 0.10 },
+    "F": { "score": 69.0, "status": "PARTIAL", "weight": 0.20 }
+  },
+  "weights": {
+    "w_A": 0.30,
+    "w_B": 0.15,
+    "w_C": 0.25,
+    "w_E": 0.10,
+    "w_F": 0.20
+  },
+  "safety_gate": {
+    "containment_score": 0.0,
+    "delta_c": 0.0,
+    "passed": false,
+    "unauthorized_egress_leaks": 1
+  },
+  "uhqs": 0.0,
+  "grade": "F",
+  "notes": "Demonstrates δ_C = (C/100)^2 when C < 95; C=0 → UHQS=0 regardless of other modules."
+}

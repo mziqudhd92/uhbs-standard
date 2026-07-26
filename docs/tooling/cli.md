@@ -1,6 +1,12 @@
 # CLI & Validator Guide
 
-The `uhbs` CLI validates Target Profile Specifications and scorecards against the official JSON Schemas, and computes UHQS from module scores.
+**Status:** Normative (CLI behavior for UHBS-Core)
+
+The `uhbs` CLI validates Target Profile Specifications and scorecards against the
+official JSON Schemas, enforces class→weight tables, and recomputes UHQS.
+
+For the full executable Modules A–F harness (`run_benchmark.py`), see
+[Reference Implementation](../reference-implementation.md).
 
 ## Install
 
@@ -19,22 +25,35 @@ uhbs --help
 
 ```bash
 uhbs validate-profile templates/profile.yaml
+uhbs validate-profile templates/profiles/low-interaction.yaml
 ```
 
 Checks:
 
 - JSON Schema conformance (`schemas/profile.schema.json`)
 - Module weights sum to \(1.00 \pm 0.001\)
+- Class→weight table match (strict mode, default on)
 
-### Validate a scorecard
+### Validate a scorecard (with integrity)
 
 ```bash
-uhbs validate-scorecard docs/scorecards/examples/illustrative-posix-genai.scorecard.json
+uhbs validate-scorecard docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
+uhbs validate-scorecard docs/conformance/fixtures/posix-shell-lab.scorecard.json
+```
+
+Strict mode (default) **recomputes** UHQS, δ_C, and letter grade and **MUST** fail
+if declared values diverge from the normative formula.
+
+### Validate an evidence pack
+
+```bash
+uhbs validate-evidence path/to/evidence-pack.json
 ```
 
 ### Compute UHQS
 
 ```bash
+uhbs score --class Low-Interaction --scores scores.json
 uhbs score --profile templates/profile.yaml --scores scores.json
 ```
 
@@ -42,23 +61,18 @@ Where `scores.json` contains module scores:
 
 ```json
 {
-  "A": 88,
-  "B": 94,
-  "C": 98,
-  "D": 97,
-  "E": 88,
-  "F": 91
+  "A": 23.5,
+  "B": 42.5,
+  "C": 57.0,
+  "D": 100,
+  "E": 55.0,
+  "F": 69.0
 }
 ```
 
-The CLI applies the Safety Gate:
-
-\[
-\delta_C = 1.0 \text{ if } C \ge 95,\quad \text{else } (C/100)^2
-\]
-
-…and prints the composite UHQS plus recommended letter grade.
+Expected for the Cowrie fixture weights: **UHQS = 46.97** (Grade F).
 
 ## CI Integration
 
-The repository workflow `.github/workflows/ci-validate.yml` runs schema validation on every push and pull request. Adopters can vendor the schemas or call `uhbs` from their own pipelines.
+`.github/workflows/ci-validate.yml` runs schema validation and conformance
+fixtures on every push and pull request.

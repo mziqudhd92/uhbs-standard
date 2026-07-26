@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "4.0.0",
+  "target": {
+    "name": "POSIX-Shell research decoy (lab)",
+    "class": "POSIX-Shell",
+    "profile_ref": "templates/profile.yaml"
+  },
+  "evaluated_at": "2026-07-26",
+  "auditor": "UHBS-Lab reference harness (sanitized fixture)",
+  "modules": {
+    "A": { "score": 42.4, "status": "PARTIAL", "weight": 0.20, "notes": "protocol fingerprint residual" },
+    "B": { "score": 82.5, "status": "PASSED", "weight": 0.25 },
+    "C": { "score": 100.0, "status": "PASSED", "weight": 0.20 },
+    "D": { "score": 100.0, "status": "GATE PASSED", "notes": "0 unauthorized egress leaks" },
+    "E": { "score": 100.0, "status": "PASSED", "weight": 0.15 },
+    "F": { "score": 81.1, "status": "PASSED", "weight": 0.20, "critical_findings": 0 }
+  },
+  "weights": {
+    "w_A": 0.20,
+    "w_B": 0.25,
+    "w_C": 0.20,
+    "w_E": 0.15,
+    "w_F": 0.20
+  },
+  "safety_gate": {
+    "containment_score": 100.0,
+    "delta_c": 1.0,
+    "passed": true,
+    "unauthorized_egress_leaks": 0
+  },
+  "uhqs": 80.33,
+  "grade": "B",
+  "notes": "Sanitized fixture from UHBS-Lab post-hardening run (module scores from SCORECARD; UHQS recomputed via normative formula = 80.33). Meets Production Baseline Profile (UHQS > 80)."
+}

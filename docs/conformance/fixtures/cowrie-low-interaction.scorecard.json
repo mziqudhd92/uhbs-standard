@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "4.0.0",
+  "target": {
+    "name": "Cowrie (open-source low-interaction baseline)",
+    "class": "Low-Interaction",
+    "profile_ref": "templates/profiles/low-interaction.yaml"
+  },
+  "evaluated_at": "2026-07-26",
+  "auditor": "UHBS-Lab reference harness (sanitized fixture)",
+  "modules": {
+    "A": { "score": 23.5, "status": "PARTIAL", "weight": 0.30, "notes": "accepted null ID" },
+    "B": { "score": 42.5, "status": "PARTIAL", "weight": 0.15, "notes": "marker missing across sessions" },
+    "C": { "score": 57.0, "status": "PARTIAL", "weight": 0.25, "notes": "malformed telemetry records" },
+    "D": { "score": 100.0, "status": "GATE PASSED", "notes": "stable containment" },
+    "E": { "score": 55.0, "status": "PARTIAL", "weight": 0.10, "p50_ms": 1682.3, "p95_ms": 1845.3, "p99_ms": 1860.0 },
+    "F": { "score": 69.0, "status": "PARTIAL", "weight": 0.20, "notes": "POSIX coverage incomplete" }
+  },
+  "weights": {
+    "w_A": 0.30,
+    "w_B": 0.15,
+    "w_C": 0.25,
+    "w_E": 0.10,
+    "w_F": 0.20
+  },
+  "safety_gate": {
+    "containment_score": 100.0,
+    "delta_c": 1.0,
+    "passed": true,
+    "unauthorized_egress_leaks": 0
+  },
+  "uhqs": 46.97,
+  "grade": "F",
+  "notes": "Sanitized fixture from UHBS-Lab run against Cowrie (Docker loopback). Demonstrates Low-Interaction class discrimination."
+}

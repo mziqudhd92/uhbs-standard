@@ -1,0 +1,31 @@
+# UHBS Target Profile — ICS / SCADA (Modbus-class)
+uhbs_version: "4.0.0"
+
+target_metadata:
+  name: "Example ICS Modbus Decoy"
+  class: "ICS-SCADA"
+  protocol: "modbus"
+  description: "Industrial Modbus TCP decoy profile."
+  version: "1.0.0"
+
+performance_baseline:
+  p95_latency_ms: 150
+  strict_rfc_enforcement: true
+  gold_baseline: "Genuine industrial controller / Modbus endpoint under identical constraints"
+
+safety_boundary:
+  air_gapped: true
+  allowed_outbound: []
+  allow_local_code_execution: false
+
+module_weights:
+  w_A: 0.35
+  w_B: 0.20
+  w_C: 0.15
+  w_E: 0.10
+  w_F: 0.20
+
+telemetry:
+  formats:
+    - STIX-2.1
+  mitre_attack_mapping: true

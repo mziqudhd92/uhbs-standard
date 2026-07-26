@@ -63,11 +63,16 @@ extra_javascript:
 
 nav:
   - Home: index.md
+  - Roadmap: roadmap.md
   - Specification:
+      - Status of This Document: specification/status.md
       - Core Principles: specification/core-principles.md
       - Modules A–F: specification/modules.md
       - Scoring Formula: specification/scoring-formula.md
       - Target Profiles (TPS): specification/target-profiles.md
+  - Reference Implementation: reference-implementation.md
+  - Conformance:
+      - Overview: conformance/index.md
   - Tooling:
       - CLI & Validator: tooling/cli.md
   - Scorecards:

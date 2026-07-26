@@ -39,4 +39,10 @@ jobs:
       - name: Validate example profile and scorecard
         run: |
           uhbs validate-profile templates/profile.yaml
+          uhbs validate-profile templates/profiles/low-interaction.yaml
+          uhbs validate-profile templates/profiles/ics-scada.yaml
           uhbs validate-scorecard docs/scorecards/examples/illustrative-posix-genai.scorecard.json
+          uhbs validate-scorecard docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
+          uhbs validate-scorecard docs/conformance/fixtures/posix-shell-lab.scorecard.json
+          uhbs validate-scorecard docs/conformance/fixtures/safety-gate-fail.scorecard.json
+          check-jsonschema --check-metaschema schemas/evidence-pack.schema.json

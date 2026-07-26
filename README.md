@@ -13,7 +13,12 @@
 
 ## Executive Mandate
 
-This is the **mandatory** enterprise and academic standard before deploying any active decoys to production networks. Failure to meet baseline scores (**UHQS > 80**) exposes internal networks to lateral movement risks from compromised containment shells.
+**Status:** Informative / RECOMMENDED adoption profile (see [specification status](docs/specification/status.md)).
+
+It is **RECOMMENDED** that organizations use UHBS as an evaluation gate before
+deploying any active decoys to production networks. Failure to meet baseline
+scores (**UHQS > 80** with a passing Safety Gate) exposes internal networks to
+lateral movement risks from compromised containment shells.
 
 ## Why UHBS?
 
@@ -48,7 +53,13 @@ uhbs score --profile my-honeypot.profile.yaml --scores scores.json
 ```
 
 Documentation site: **[https://mziqudhd92.github.io/uhbs-standard/](https://mziqudhd92.github.io/uhbs-standard/)**  
-Specification docs: **[https://mziqudhd92.github.io/uhbs-standard/specification/](https://mziqudhd92.github.io/uhbs-standard/specification/)**
+Specification docs: **[https://mziqudhd92.github.io/uhbs-standard/specification/](https://mziqudhd92.github.io/uhbs-standard/specification/)**  
+Maturity roadmap: **[ROADMAP.md](ROADMAP.md)** · Reference harness map: **[docs/reference-implementation.md](docs/reference-implementation.md)**
+
+> **Status:** Draft / Experimental. See [docs/specification/status.md](docs/specification/status.md).
+> The executable UHBS-Lab harness (Modules A–F) already exists and has been run against
+> **Cowrie** (UHQS 46.97) and a POSIX-Shell lab decoy (UHQS 80.33). Phase 3 extracts it
+> as public `uhbs-core`.
 
 ## Scoring Summary (UHQS 4.0)
 

@@ -1,0 +1,31 @@
+# UHBS Target Profile — Low-Interaction (e.g. Cowrie-class SSH decoys)
+uhbs_version: "4.0.0"
+
+target_metadata:
+  name: "Example Low-Interaction SSH Decoy"
+  class: "Low-Interaction"
+  protocol: "ssh"
+  description: "Low-interaction SSH emulator baseline profile."
+  version: "1.0.0"
+
+performance_baseline:
+  p95_latency_ms: 100
+  strict_rfc_enforcement: true
+  gold_baseline: "Native SSH service on a mainstream Linux distribution"
+
+safety_boundary:
+  air_gapped: true
+  allowed_outbound: []
+  allow_local_code_execution: false
+
+module_weights:
+  w_A: 0.30
+  w_B: 0.15
+  w_C: 0.25
+  w_E: 0.10
+  w_F: 0.20
+
+telemetry:
+  formats:
+    - ECS
+  mitre_attack_mapping: true

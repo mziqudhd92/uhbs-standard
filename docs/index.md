@@ -4,8 +4,9 @@
 
 An objective, repeatable, quantitative methodology for deception technology evaluation — providing cybersecurity professionals with a non-biased baseline for comparing and grading honeypots and decoy systems.
 
-!!! danger "Executive Mandate"
-    This is the **mandatory** enterprise and academic standard before deploying any active decoys to production networks. Failure to meet baseline scores (**UHQS &gt; 80**) exposes internal networks to lateral movement risks from compromised containment shells.
+!!! danger "Production Baseline Profile (RECOMMENDED)"
+    It is **RECOMMENDED** that active decoys meet **UHQS &gt; 80** with a passing
+    Safety Gate before production deployment. See [Status](specification/status.md).
 
 <div class="grid cards" markdown>
 
