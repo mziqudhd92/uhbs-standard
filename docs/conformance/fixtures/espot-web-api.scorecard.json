@@ -9,10 +9,10 @@
   "auditor": "UHBS-Lab detailed Docker run (RFC9110 + 1000-sample A3 + SAST + telemetry)",
   "modules": {
     "A": {
-      "score": 20.0,
-      "status": "PARTIAL",
+      "score": 86.75,
+      "status": "PASSED",
       "weight": 0.25,
-      "notes": "RFC9110 unknown HTTP/9.9 still returns 200; 1000-sample timing OK"
+      "notes": "RFC9110 unknown HTTP/9.9 still returns 200; 1000-sample timing OK; CheckResult scores on 0\u2013100 scale"
     },
     "B": {
       "score": 82.5,
@@ -36,9 +36,9 @@
       "status": "PASSED",
       "weight": 0.15,
       "notes": "200 req @25 concurrency; P95=8.8ms",
-      "p50_ms": 2.82,
-      "p95_ms": 8.8,
-      "p99_ms": 10.83
+      "p50_ms": 2.97,
+      "p95_ms": 8.28,
+      "p99_ms": 10.31
     },
     "F": {
       "score": 70.0,
@@ -60,7 +60,7 @@
     "passed": false,
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 49.82,
-  "grade": "F",
+  "uhqs": 63.33,
+  "grade": "D",
   "notes": "Detailed evaluation proof only. ESPot product name is not a UHBS requirement. Full Docker lab artifacts (scorecard, report.json, SAST, logs, tutorial) live under docs/conformance/reports/espot/. Ran without --quick; source-root + telemetry_dir + bandit/semgrep enabled."
 }

@@ -1,7 +1,7 @@
 {
   "uhbs_version": "4.0.0",
   "run_mode": "full",
-  "evaluated_at": "2026-07-27T09:45:00Z",
+  "evaluated_at": "2026-07-27T18:14:31Z",
   "proof_label": "ESPot (mycert Elasticsearch honeypot)",
   "target": {
     "repository": "https://github.com/mycert/ESPot",
@@ -15,9 +15,9 @@
   },
   "grader": {
     "package_version": "4.0.0",
-    "uhbs_git_commit": "9c6e9cf730cb7099699ce4479997881034cf2544",
+    "uhbs_git_commit": "12192d04d58b8d1feb5128d1a708c133c91b4a80",
     "docker_image": "uhbs:4.0.0-full",
-    "docker_image_id": "sha256:1da71d92d4a9ee39b1e774fdbd623b83671cf07f78c7a299a7ed6d6505e9ad35",
+    "docker_image_id": "sha256:8caf886c2e6f53a3d2d3a73d2529b018cbdd3dc343cbde10043cc3ac96e87e21",
     "inventory": "docs/conformance/labs/espot/inventory.yaml",
     "tps": "docs/conformance/labs/espot/web_api_full.yaml"
   },
@@ -26,8 +26,21 @@
     "UHBS_AIRGAP_ATTESTED": true,
     "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
     "skip_sast_tools": false,
-    "phases": ["profile", "static", "sandbox", "dynamic", "score"],
-    "modules": ["A", "B", "C", "D", "E", "F"],
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
     "concurrency": 25,
     "requests": 200,
     "timing_samples": 1000,
@@ -36,11 +49,11 @@
     "telemetry_dir": "/telemetry"
   },
   "results": {
-    "uhqs": 49.82,
-    "grade": "F",
+    "uhqs": 63.33,
+    "grade": "D",
     "delta_c": 0.81,
     "module_scores": {
-      "A": 20.0,
+      "A": 86.75,
       "B": 82.5,
       "C": 55.0,
       "D": 90.0,
@@ -59,10 +72,10 @@
     "static/semgrep-report.json"
   ],
   "limitations": [
-    "Module D: HTTP-only decoy (no ports.ssh) — shell probes skipped; containment uses airgap attestation + gateway canary; C=90 so Safety Gate not fully cleared.",
-    "Telemetry is Express access.log text — not STIX/OTel/ECS; Module C is intentionally capped when schema evidence is absent.",
+    "Module D: HTTP-only decoy (no ports.ssh) \u2014 shell probes skipped; containment uses airgap attestation + gateway canary; C=90 so Safety Gate not fully cleared.",
+    "Telemetry is Express access.log text \u2014 not STIX/OTel/ECS; Module C is intentionally capped when schema evidence is absent.",
     "Trivy binary was not present in the grader image for this run (bandit + semgrep ran).",
     "Operator attested air-gap (UHBS_AIRGAP_ATTESTED=1); this is not a substitute for a physically air-gapped lab.",
-    "Product name is evaluation proof only — not a UHBS requirement or endorsement."
+    "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement."
   ]
 }

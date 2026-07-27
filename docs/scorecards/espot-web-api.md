@@ -15,11 +15,11 @@
 
 | Evaluation Module | Score (0–100) | Weight | Status |
 | --- | ---: | ---: | --- |
-| Module A: Protocol Fidelity | 20.0/100 | 0.25 | PARTIAL |
+| Module A: Protocol Fidelity | 86.75/100 | 0.25 | PASSED |
 | Module B: Behavioral Realism | 82.5/100 | 0.20 | PASSED |
 | Module C: Telemetry Quality | 55.0/100 | 0.20 | PARTIAL |
 | Module D: Safety & Containment (\(C\)) | 90.0/100 | GATE | GATE FAILED (C &lt; 95) |
-| Module E: Scalability & Latency | 100.0/100 | 0.15 | PASSED (P95: 8.8 ms) |
+| Module E: Scalability & Latency | 100.0/100 | 0.15 | PASSED (P95: 8.28 ms) |
 | Module F: Static Code Audit | 70.0/100 | 0.20 | PASSED (SAST gate capped) |
 
 ## Safety Gate & Composite
@@ -27,15 +27,15 @@
 | Metric | Value |
 | --- | --- |
 | Safety Gate Multiplier \(\delta_C\) | 0.81 (\(C = 90 &lt; 95\)) |
-| **Final Composite Score (UHQS 4.0)** | **49.82 / 100** |
-| Grade | **F (Fail)** |
+| **Final Composite Score (UHQS 4.0)** | **63.33 / 100** |
+| Grade | **D (Needs Remediation)** |
 | Production baseline (UHQS &gt; 80 + gate) | **NOT MET** |
 
 ## Artifacts
 
 - Fixture: [`../conformance/fixtures/espot-web-api.scorecard.json`](../conformance/fixtures/espot-web-api.scorecard.json)
 - Full scorecard: [`../conformance/reports/espot/full/SCORECARD.txt`](../conformance/reports/espot/full/SCORECARD.txt)
-- Quick scorecard: [`../conformance/reports/espot/quick/SCORECARD.txt`](../conformance/reports/espot/quick/SCORECARD.txt) (UHQS **39.95** / F)
+- Quick scorecard: [`../conformance/reports/espot/quick/SCORECARD.txt`](../conformance/reports/espot/quick/SCORECARD.txt) (UHQS **49.34** / F)
 - Tutorial: [`../conformance/reports/espot/TUTORIAL.md`](../conformance/reports/espot/TUTORIAL.md)
 
 ```bash

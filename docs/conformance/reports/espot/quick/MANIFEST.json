@@ -3,29 +3,28 @@
   "artifacts": [
     {
       "path": "REPORT.txt",
-      "sha256": "8622045bb2c75995cba2d60bfa5e5967427cfb29be66644b618bccf608caa340"
+      "sha256": "4857cceb42b17d927da4d60a72469d25041124e32f5a4186245664c3cf13f689"
     },
     {
       "path": "SCORECARD.txt",
-      "sha256": "8622045bb2c75995cba2d60bfa5e5967427cfb29be66644b618bccf608caa340"
+      "sha256": "4857cceb42b17d927da4d60a72469d25041124e32f5a4186245664c3cf13f689"
     },
     {
       "path": "report.json",
-      "sha256": "320cb059324c2bba9c9ea9284ef8c0d50f238354c5b1b41edac9144741fc5fed"
+      "sha256": "ae598a6937b4a2bc43bab46ca34df46e7ef75b42f2c8046a0be9865b102575b5"
     },
     {
       "path": "uhbs-run.log",
-      "sha256": "8aabb6edbf2ce1db65e9411c35d271929e01a625e9f4cac250c82912f5a29f57"
+      "sha256": "4857cceb42b17d927da4d60a72469d25041124e32f5a4186245664c3cf13f689"
     },
     {
       "path": "run-meta.json",
-      "sha256": "881924a064ca39340a3250c63c8d5918084032e1850a9c7855b023e4d666b392"
+      "sha256": "d6b6baa88153aa51027e6e03be24defb7400a010ce05c938be3a0b9469f89419"
     }
   ],
   "extra": {
-    "target": "Web-API-Decoy",
-    "uhqs": 39.95,
-    "grade": "GRADE F (Fail)",
-    "run_meta": "run-meta.json"
+    "target": "espot",
+    "uhqs": 49.34,
+    "grade": "GRADE F (Fail)"
   }
 }

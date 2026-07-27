@@ -133,11 +133,11 @@ docker run --rm \
     --environment "Quick Docker lab demo (UHBS_QUICK=1, SAST skipped)"
 ```
 
-Published result for this tree: **UHQS 39.95 / Grade F** — see [`quick/SCORECARD.txt`](quick/SCORECARD.txt).
+Published result for this tree: **UHQS 49.34 / Grade F** — see [`quick/SCORECARD.txt`](quick/SCORECARD.txt).
 
 Why it still fails despite “HTTP 200 works”:
 
-- Module A protocol fidelity remains weak.  
+- Module A is improved on the 0–100 CheckResult scale (86.75) but still flags illegal `HTTP/9.9` → 200.  
 - Module D cannot clear the Safety Gate without stronger containment evidence.  
 - δ_C = 0.5625 multiplies the weighted sum.
 
@@ -196,7 +196,7 @@ docker run --rm \
     --environment "Detailed Docker lab: RFC9110 + 1000-sample A3 + SAST + telemetry"
 ```
 
-Published result: **UHQS 49.82 / Grade F** — see [`full/SCORECARD.txt`](full/SCORECARD.txt).
+Published result: **UHQS 63.33 / Grade D** — see [`full/SCORECARD.txt`](full/SCORECARD.txt).
 
 After the run, add/update provenance:
 
@@ -262,11 +262,11 @@ uhbs validate-scorecard docs/conformance/fixtures/espot-web-api.scorecard.json -
 | Observation | Meaning |
 | --- | --- |
 | HTTP root returns 200 + ES banner | Liveness ≠ UHBS quality |
-| Module A = 20 | Decoy accepts illegal HTTP versions |
+| Module A = 86.75 | Decoy still accepts illegal HTTP versions (partial credit on 0–100 scale) |
 | Full C = 55 | Real logs lack STIX/OTel/ECS schema |
 | D &lt; 95 | Safety Gate applies exponential δ_C |
-| Full UHQS 49.82 / F | Below beta Production Baseline (UHQS &gt; 80 + gate) |
-| Quick UHQS 39.95 / F | Even lower once δ_C is harsh and D is weak |
+| Full UHQS 63.33 / D | Below beta Production Baseline (UHQS &gt; 80 + gate) |
+| Quick UHQS 49.34 / F | Lower once δ_C is harsh and D is weak |
 
 For trust-facing narrative, cite **full/** and [METHODOLOGY.md](METHODOLOGY.md).
 

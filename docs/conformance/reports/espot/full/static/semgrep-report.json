@@ -5,14 +5,14 @@
       "check_id": "dockerfile.security.missing-user.missing-user",
       "path": "Dockerfile",
       "start": {
-        "line": 13,
+        "line": 7,
         "col": 1,
-        "offset": 423
+        "offset": 164
       },
       "end": {
-        "line": 13,
+        "line": 7,
         "col": 23,
-        "offset": 445
+        "offset": 186
       },
       "extra": {
         "message": "By not specifying a USER, a program in the container may run as 'root'. This is a security hazard. If an attacker can control a process running as root, they may have control over the container. Ensure that the last USER in a Dockerfile is a USER other than 'root'.",
@@ -349,12 +349,12 @@
   },
   "time": {
     "rules": [],
-    "rules_parse_time": 0.8273298740386963,
+    "rules_parse_time": 2.1369900703430176,
     "profiling_times": {
-      "config_time": 1.6445410251617432,
-      "core_time": 2.082343816757202,
-      "ignores_time": 0.001318216323852539,
-      "total_time": 3.7335495948791504
+      "config_time": 3.6603236198425293,
+      "core_time": 4.310145854949951,
+      "ignores_time": 0.002034425735473633,
+      "total_time": 7.987117290496826
     },
     "parsing_time": {
       "total_time": 0.0,
@@ -369,10 +369,10 @@
       "very_slow_files": []
     },
     "scanning_time": {
-      "total_time": 0.9819357395172119,
+      "total_time": 0.8680071830749512,
       "per_file_time": {
-        "mean": 0.016097307205200195,
-        "std_dev": 0.002144888174900159
+        "mean": 0.01422962595204838,
+        "std_dev": 0.0016590769176791954
       },
       "very_slow_stats": {
         "time_ratio": 0.0,
@@ -415,7 +415,7 @@
     },
     "targets": [],
     "total_bytes": 0,
-    "max_memory_bytes": 949432704
+    "max_memory_bytes": 920157952
   },
   "engine_requested": "OSS",
   "skipped_rules": [],

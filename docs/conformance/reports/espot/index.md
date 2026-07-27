@@ -10,15 +10,15 @@ ESPot is an old Node.js Elasticsearch honeypot aimed at CVE-2014-3120. These rep
 
 | Mode | UHQS | Grade | δ_C | Safety Gate | Folder |
 | --- | --- | --- | --- | --- | --- |
-| **Quick** | **39.95** | F | 0.5625 | not cleared (C=75) | [`quick/`](quick/) |
-| **Full** | **49.82** | F | 0.81 | not cleared (C=90) | [`full/`](full/) |
+| **Quick** | **49.34** | F | 0.5625 | not cleared (C=75) | [`quick/`](quick/) |
+| **Full** | **63.33** | D | 0.81 | not cleared (C=90) | [`full/`](full/) |
 
 Sanitized fixture (full run): [`../../fixtures/espot-web-api.scorecard.json`](../../fixtures/espot-web-api.scorecard.json)
 
 ### Why full can score *higher* than quick
 
 Quick skips telemetry + SAST and shortens timing, but Module C can look **optimistically high** (100) while Module D stays weak (75) without a gateway log — so δ_C bites harder (0.5625).  
-Full measures telemetry honestly (C=55), runs SAST (F capped at 70), and records a clean gateway canary (D=90) — δ_C improves to 0.81 even though protocol fidelity remains poor (A=20).
+Full measures telemetry honestly (C=55), runs SAST (F capped at 70), and records a clean gateway canary (D=90) — δ_C improves to 0.81. Module A is **86.75** on both modes after 0–100 CheckResult normalization (illegal `HTTP/9.9` still returns 200).
 
 **Takeaway for readers:** compare modes carefully; **full/** is the claim-grade run.
 
@@ -40,7 +40,7 @@ Full measures telemetry honestly (C=55), runs SAST (F capped at 70), and records
 
 | Module | Score | Evidence highlight |
 | --- | --- | --- |
-| A Protocol | 20.0 | RFC 9110: `HTTP/9.9` still returns **200**; **n=1000** timing samples |
+| A Protocol | 86.75 | RFC 9110: `HTTP/9.9` still returns **200**; **n=1000** timing samples |
 | B Behavior | 82.5 | Consistent GET; survived binary blast |
 | C Telemetry | 55.0 | `access.log` only — no STIX/OTel/ECS (schema-capped) |
 | D Containment | 90.0 | HTTP-only decoy (no shell-exec port); airgap + gateway canary; gate not cleared |

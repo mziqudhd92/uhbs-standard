@@ -1,17 +1,7 @@
-# Full run artifacts
+# ESPot — full lab report
 
-Claim-grade UHBS-Lab output (1000-sample timing, RFC, source, SAST, telemetry).
+Claim-grade Docker evaluation (RFC9110 + 1000-sample A3 + SAST + telemetry).
 
-| File | Role |
-| --- | --- |
-| [SCORECARD.txt](SCORECARD.txt) | Human scorecard |
-| [report.json](report.json) | Per-check evidence |
-| [MANIFEST.json](MANIFEST.json) | SHA-256 digests |
-| [uhbs-run.log](uhbs-run.log) | Console transcript |
-| [run-meta.json](run-meta.json) | Provenance / flags |
-| [static/bandit-report.json](static/bandit-report.json) | Module F Bandit |
-| [static/semgrep-report.json](static/semgrep-report.json) | Module F Semgrep |
+**Result:** UHQS **63.33** · Grade **D** · δ_C **0.81**
 
-**Result:** UHQS **49.82** · Grade **F** · δ_C **0.81**
-
-Tutorial: [`../TUTORIAL.md`](../TUTORIAL.md) · Methodology: [`../METHODOLOGY.md`](../METHODOLOGY.md) · Hub: [`../index.md`](../index.md)
+See [../TUTORIAL.md](../TUTORIAL.md) and [SCORECARD.txt](SCORECARD.txt).

@@ -1,7 +1,7 @@
 {
   "uhbs_version": "4.0.0",
   "run_mode": "quick",
-  "evaluated_at": "2026-07-27T10:17:00Z",
+  "evaluated_at": "2026-07-27T18:14:30Z",
   "proof_label": "ESPot (mycert Elasticsearch honeypot)",
   "target": {
     "repository": "https://github.com/mycert/ESPot",
@@ -15,32 +15,46 @@
   },
   "grader": {
     "package_version": "4.0.0",
-    "uhbs_git_commit": "9c6e9cf730cb7099699ce4479997881034cf2544",
+    "uhbs_git_commit": "12192d04d58b8d1feb5128d1a708c133c91b4a80",
     "docker_image": "uhbs:4.0.0",
     "tps": "web_api (builtin profiles/tps/web_api.yaml)",
-    "notes": "CLI flags instead of inventory; no telemetry_dir; SAST skipped"
+    "notes": "CLI flags instead of inventory; no telemetry_dir; SAST skipped",
+    "docker_image_id": "sha256:3e84c069ad1e343752d5245c7e2189555f6f19db00b8319764fbb08044cd2a16"
   },
   "flags": {
     "UHBS_QUICK": true,
     "UHBS_AIRGAP_ATTESTED": true,
     "UHBS_EGRESS_GATEWAY_LOG": null,
     "skip_sast_tools": true,
-    "phases": ["profile", "static", "sandbox", "dynamic", "score"],
-    "modules": ["A", "B", "C", "D", "E", "F"],
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
     "source_root": "/honeypot",
     "telemetry_dir": null
   },
   "results": {
-    "uhqs": 39.95,
+    "uhqs": 49.34,
     "grade": "F",
     "delta_c": 0.5625,
     "module_scores": {
-      "A": 20.0,
+      "A": 86.75,
       "B": 82.5,
       "C": 100.0,
       "D": 75.0,
       "E": 100.0,
-      "F": 72.6
+      "F": 72.64
     },
     "safety_gate_passed": false
   },
@@ -53,10 +67,10 @@
   ],
   "limitations": [
     "UHBS_QUICK=1 shortens Module A timing samples and lightens Module E.",
-    "telemetry_dir unset → Module C C1 schema gates largely skipped (headline C can look optimistic).",
-    "--skip-sast-tools → Module F does not run bandit/semgrep/trivy.",
+    "telemetry_dir unset \u2192 Module C C1 schema gates largely skipped (headline C can look optimistic).",
+    "--skip-sast-tools \u2192 Module F does not run bandit/semgrep/trivy.",
     "HTTP-only target (no ports.ssh): Module D skips shell probes; C=75 with airgap attestation only.",
     "Prefer the full/ report for realistic evaluation claims.",
-    "Product name is evaluation proof only — not a UHBS requirement or endorsement."
+    "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement."
   ]
 }

@@ -18,14 +18,14 @@
   "baseline": null,
   "uhqs": {
     "target": "Web-API-Decoy",
-    "S_A": 20.0,
+    "S_A": 86.75,
     "S_B": 82.5,
     "S_C": 100.0,
     "C": 75.0,
     "S_E": 100.0,
     "S_F": 72.64,
     "delta_c": 0.5625,
-    "uhqs": 39.95,
+    "uhqs": 49.34,
     "weights": {
       "protocol": 0.25,
       "behavior": 0.2,
@@ -41,14 +41,14 @@
   },
   "hqs": {
     "target": "Web-API-Decoy",
-    "S_A": 20.0,
+    "S_A": 86.75,
     "S_B": 82.5,
     "S_C": 100.0,
     "C": 75.0,
     "S_E": 100.0,
     "S_F": 72.64,
     "delta_c": 0.5625,
-    "uhqs": 39.95,
+    "uhqs": 49.34,
     "weights": {
       "protocol": 0.25,
       "behavior": 0.2,
@@ -75,7 +75,8 @@
           "passed": true,
           "detail": "espot-lab:9200 open",
           "score": 25.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "sandbox.airgap_attested",
@@ -83,7 +84,8 @@
           "passed": true,
           "detail": "operator attested air-gapped sandbox (UHBS_AIRGAP_ATTESTED=1)",
           "score": 25.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "sandbox.egress_deny_tooling",
@@ -91,7 +93,8 @@
           "passed": false,
           "detail": "host-egress-deny.sh not found",
           "score": 10.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "sandbox.gateway_log_configured",
@@ -99,7 +102,8 @@
           "passed": false,
           "detail": "gateway log path not set",
           "score": 10.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {
@@ -122,7 +126,8 @@
           "passed": true,
           "detail": "0 static private keys",
           "score": 10.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.hardcoded_ssh_banners",
@@ -130,7 +135,8 @@
           "passed": true,
           "detail": "0 hardcoded SSH banners",
           "score": 5.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.predictable_seeds",
@@ -138,7 +144,8 @@
           "passed": true,
           "detail": "0 predictable PRNG seeds",
           "score": 5.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.hardcoded_macs",
@@ -146,7 +153,8 @@
           "passed": true,
           "detail": "0 hardcoded MAC addresses",
           "score": 5.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.prompt_corpus_present",
@@ -154,7 +162,8 @@
           "passed": true,
           "detail": "no prompt corpus (N/A for non-LLM)",
           "score": 5.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.prompt_boundaries",
@@ -162,7 +171,8 @@
           "passed": true,
           "detail": "no weak delimiter/extract patterns",
           "score": 10.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.fallback_strings",
@@ -170,7 +180,8 @@
           "passed": true,
           "detail": "no plain-text LLM fallback artifacts",
           "score": 10.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.sast_tools",
@@ -178,7 +189,8 @@
           "passed": true,
           "detail": "SAST tools skipped by flag",
           "score": 15.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.vfs_posix_coverage",
@@ -198,7 +210,8 @@
             "uname",
             "wget",
             "whoami"
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "white.blocking_calls",
@@ -206,7 +219,8 @@
           "passed": true,
           "detail": "sleep/blocking markers in non-test code\u22480",
           "score": 5.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {
@@ -220,87 +234,87 @@
     {
       "module": "A",
       "dimension": "protocol",
-      "score": 20.0,
-      "status": "PARTIAL",
+      "score": 86.75,
+      "status": "PASSED",
       "checks": [
         {
           "id": "rfc9110.reject_body_before_headers",
           "team": "red",
           "passed": true,
           "detail": "status=400",
-          "score": 25.0,
+          "score": 100.0,
           "evidence": [
             "HTTP/1.1 400 Bad Request\r\nConnection: close\r\n\r\n"
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "rfc9112.bare_lf_framing",
           "team": "blue",
           "passed": true,
           "detail": "HTTP/1.1 200",
-          "score": 15.0,
-          "evidence": []
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "rfc9110.invalid_header_syntax",
           "team": "red",
           "passed": true,
           "detail": "status=400",
-          "score": 20.0,
-          "evidence": []
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "rfc9110.unknown_http_version",
           "team": "blue",
           "passed": false,
           "detail": "status=200 (want 400/505 or close)",
-          "score": 5.0,
-          "evidence": []
+          "score": 20.0,
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "rfc9110.valid_get_status",
           "team": "blue",
           "passed": true,
           "detail": "HTTP/1.1 200",
-          "score": 20.0,
-          "evidence": []
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "http.timing.sample_size",
           "team": "blue",
           "passed": true,
           "detail": "n=50 requested=50 errors=0",
-          "score": 20.0,
-          "evidence": []
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "http.timing.iat_jitter",
           "team": "red",
           "passed": true,
-          "detail": "median=0.163ms pstdev=0.415ms (target jitter often <2ms vs native)",
-          "score": 30.0,
-          "evidence": []
-        },
-        {
-          "id": "http.timing.ks_vs_gold",
-          "team": "blue",
-          "passed": false,
-          "detail": "no gold_baseline_host in TPS \u2014 KS compare skipped (set performance_baseline.gold_baseline_host)",
-          "score": 25.0,
-          "evidence": []
+          "detail": "median=0.313ms pstdev=0.129ms (target jitter often <2ms vs native)",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "http.module_a.composite",
           "team": "blue",
-          "passed": false,
-          "detail": "fsm=16 nego=20 timing=25",
-          "score": 20.0,
-          "evidence": []
+          "passed": true,
+          "detail": "fsm=67 nego=100 timing=100",
+          "score": 86.7496,
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {
         "per_protocol": {
-          "http": 20.0
+          "http": 86.75
         },
         "protocols": [
           "http"
@@ -309,13 +323,21 @@
         "available_plugins": [
           "ftp",
           "generic",
+          "git",
           "http",
           "modbus",
+          "mysql",
+          "ntp",
+          "rdp",
           "redis",
+          "sip",
           "smb",
           "smtp",
+          "snmp",
           "ssh",
-          "telnet"
+          "telnet",
+          "tftp",
+          "vnc"
         ]
       },
       "notes": [
@@ -336,7 +358,8 @@
           "passed": true,
           "detail": "consistent HTTP responses",
           "score": 100.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "http.payload.unsupported",
@@ -344,7 +367,8 @@
           "passed": true,
           "detail": "no payload probe \u2014 skipped",
           "score": 50.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "http.fuzz.binary",
@@ -352,7 +376,8 @@
           "passed": true,
           "detail": "survived binary blast",
           "score": 100.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {
@@ -378,7 +403,8 @@
           "passed": true,
           "detail": "survived binary blast",
           "score": 100.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "c1.telemetry_dir",
@@ -386,7 +412,8 @@
           "passed": false,
           "detail": "telemetry_dir missing \u2014 set TPS/inventory telemetry_dir for C1 schema gates",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {},
@@ -402,12 +429,13 @@
       "status": "PARTIAL",
       "checks": [
         {
-          "id": "d1.ssh_exec_unavailable",
+          "id": "d1.shell_exec_unavailable",
           "team": "blue",
           "passed": true,
-          "detail": "no SSH port in inventory \u2014 shell egress/LPE probes skipped",
+          "detail": "no explicit SSH listener (ports.ssh / ssh_port) \u2014 remote shell egress/LPE probes skipped for this protocol",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "d1.egress_gateway_log",
@@ -415,24 +443,29 @@
           "passed": true,
           "detail": "UHBS_EGRESS_GATEWAY_LOG unset \u2014 gateway evidence not attached (lab)",
           "score": 10.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "d1.airgap_attested",
           "team": "blue",
           "passed": true,
-          "detail": "UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes)",
+          "detail": "UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes on SSH decoys)",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {
         "breakout": false,
         "allowed_outbound_traffic": false,
-        "ssh_exec": false
+        "shell_exec": false,
+        "protocols": [
+          "http"
+        ]
       },
       "notes": [
-        "Module D limited: target has no SSH port \u2014 Safety Gate cannot fully clear without shell exec probes or UHBS_EGRESS_GATEWAY_LOG evidence"
+        "Module D (protocol-agnostic): no SSH exec surface configured \u2014 Safety Gate cannot fully clear without shell probes or UHBS_EGRESS_GATEWAY_LOG evidence. Non-SSH decoys are graded on gateway/airgap attestation only."
       ],
       "error": null
     },
@@ -446,9 +479,10 @@
           "id": "e1.p95_vs_tps",
           "team": "blue",
           "passed": true,
-          "detail": "P50=0.5ms P95=1.9ms P99=2.1ms TPS_limit=150.0ms proto=http",
+          "detail": "P50=0.9ms P95=2.0ms P99=2.4ms TPS_limit=150.0ms proto=http",
           "score": 45.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "e1.error_rate",
@@ -456,7 +490,8 @@
           "passed": true,
           "detail": "errors=0/15 rate=0.00%",
           "score": 20.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "e2.exhaustion_input",
@@ -464,21 +499,23 @@
           "passed": true,
           "detail": "completed exhaustion/fuzz blast",
           "score": 15.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "e2.circuit_breaker_alive",
           "team": "blue",
           "passed": true,
-          "detail": "service alive after load (connect 0.1ms)",
+          "detail": "service alive after load (connect 0.5ms)",
           "score": 20.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {
-        "p50_ms": 0.54,
-        "p95_ms": 1.89,
-        "p99_ms": 2.08,
+        "p50_ms": 0.87,
+        "p95_ms": 1.96,
+        "p99_ms": 2.44,
         "p95_limit_ms": 150.0,
         "errors": 0,
         "concurrency": 5,
@@ -492,7 +529,7 @@
   ],
   "extras": {
     "target_scores": {
-      "protocol": 20.0,
+      "protocol": 86.75,
       "behavior": 82.5,
       "telemetry": 100.0,
       "containment": 75.0,
