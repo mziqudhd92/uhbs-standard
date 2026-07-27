@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "6db4ce778b6f2d507f1243bf84379504ecd858520c19af77d5bd60cb5d949572"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "6db4ce778b6f2d507f1243bf84379504ecd858520c19af77d5bd60cb5d949572"
+    },
+    {
+      "path": "report.json",
+      "sha256": "6797df61fb6c729ba75131b390955c47a605b87a9cf353e0cd1b8b709a20bc86"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "40f3c527cc917814d029f6c13f094d63ce21096e4625bc6061e6275a14bf7d60"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "dcddccb86ec80a5f04058f9f08c6c83c969b35661930c1a75c4fc4197221286d"
+    },
+    {
+      "path": "uhbs-run.console.log",
+      "sha256": "9b27cc19254c55619b2d3da80fc8c65091b476937a029836c3d648b77111f7db"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-rdp",
+    "uhqs": 61.01,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}
