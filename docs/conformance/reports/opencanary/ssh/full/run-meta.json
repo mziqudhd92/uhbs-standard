@@ -1,0 +1,69 @@
+{
+  "uhbs_version": "4.0.0",
+  "run_mode": "full",
+  "evaluated_at": "2026-07-27T14:40:00Z",
+  "proof_label": "opencanary (thinkst OpenCanary ssh)",
+  "target": {
+    "repository": "https://github.com/thinkst/opencanary",
+    "git_commit": "bc231423aa40242cbd0bf34801f8788e23420dee",
+    "class": "Low-Interaction",
+    "protocol": "ssh",
+    "host": "opencanary-lab",
+    "port": 2222,
+    "container_image": "thinkst/opencanary:latest",
+    "container_image_id": "sha256:558c508742ebc768d979f545bf1889be9d7d58377bd0144058c7df713a88763f"
+  },
+  "grader": {
+    "package_version": "4.0.0",
+    "uhbs_git_commit": "e566119c90826d2dcd5ad0b6a48a062a88f95e16",
+    "docker_image": "uhbs:4.0.0-full",
+    "docker_image_id": "sha256:1da71d92d4a9ee39b1e774fdbd623b83671cf07f78c7a299a7ed6d6505e9ad35",
+    "inventory": "docs/conformance/labs/opencanary/inventory.yaml",
+    "tps": "docs/conformance/labs/opencanary/low_interaction_ssh_full.yaml"
+  },
+  "flags": {
+    "UHBS_QUICK": false,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": false,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry",
+    "plugin": "ssh",
+    "auth": "root/root (auth alerts only)"
+  },
+  "results": {
+    "uhqs": 28.44,
+    "grade": "F",
+    "delta_c": 1.0,
+    "module_scores": {
+      "A": 17.5,
+      "B": 6.25,
+      "C": 25.0,
+      "D": 100.0,
+      "E": 20.0,
+      "F": 70.0
+    },
+    "safety_gate_passed": true
+  },
+  "limitations": [
+    "Multi-protocol OpenCanary lab; each protocol graded separately.",
+    "SMB (Samba) and non-UHBS modules (MySQL, RDP, SIP, SNMP, \u2026) not graded.",
+    "SSH canary rejects interactive auth by design \u2014 low Module A/B/C expected.",
+    "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement."
+  ]
+}

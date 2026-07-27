@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "38bbf36aa0982ef8ef1355053b15488d8577ffa699726e71c8e79af40b482acf"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "38bbf36aa0982ef8ef1355053b15488d8577ffa699726e71c8e79af40b482acf"
+    },
+    {
+      "path": "report.json",
+      "sha256": "4decd3711311278cba4a4bb721c7147849d4d6d74cf87d7879219eb6dfff6872"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "cf902b9a129d73001c5e7e2afb6128d20f0afedd12efae9d7edd7027c7f8350c"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-telnet",
+    "uhqs": 47.35,
+    "grade": "GRADE F (Fail)"
+  }
+}

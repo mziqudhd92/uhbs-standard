@@ -1,50 +1,47 @@
 {
   "uhbs_version": "4.0.0",
   "target": {
-    "name": "OpenCanary (thinkst HTTP canary)",
+    "name": "OpenCanary (HTTP :80)",
     "class": "Web-API",
     "profile_ref": "docs/conformance/labs/opencanary/web_api_http_full.yaml"
   },
   "evaluated_at": "2026-07-27",
-  "auditor": "UHBS-Lab detailed Docker run (RFC9110 + 1000-sample A3 + SAST + telemetry)",
+  "auditor": "UHBS-Lab detailed Docker run (opencanary/http)",
   "modules": {
     "A": {
       "score": 21.5,
-      "status": "PARTIAL",
+      "status": "FAILED",
       "weight": 0.25,
-      "notes": "RFC9110/9112 partial (bare LF framing); 1000-sample timing OK"
+      "notes": ""
     },
     "B": {
       "score": 82.5,
       "status": "PASSED",
       "weight": 0.2,
-      "notes": "survived binary blast; consistent GET"
+      "notes": ""
     },
     "C": {
       "score": 55.0,
       "status": "PARTIAL",
       "weight": 0.2,
-      "notes": "opencanary.log JSON lines only — no STIX/OTel/ECS schema evidence (capped)"
+      "notes": ""
     },
     "D": {
       "score": 90.0,
       "status": "GATE FAILED",
-      "notes": "HTTP-only: no SSH exec surface; airgap+gateway attested; Safety Gate not fully cleared (C<95)"
+      "notes": ""
     },
     "E": {
       "score": 100.0,
       "status": "PASSED",
       "weight": 0.15,
-      "notes": "200 req @25 concurrency; P95=7.5ms",
-      "p50_ms": 2.6,
-      "p95_ms": 7.5,
-      "p99_ms": 9.8
+      "notes": ""
     },
     "F": {
       "score": 70.0,
       "status": "PASSED",
       "weight": 0.2,
-      "notes": "bandit HIGH=21; SAST gate capped Module F at 70"
+      "notes": ""
     }
   },
   "weights": {
@@ -62,5 +59,5 @@
   },
   "uhqs": 50.12,
   "grade": "D",
-  "notes": "Detailed evaluation proof only. OpenCanary product name is not a UHBS requirement. Full Docker lab artifacts (scorecard, report.json, SAST, logs, tutorial) live under docs/conformance/reports/opencanary/. HTTP :80 graded; FTP enabled in lab config but not scored."
+  "notes": "Evaluation proof only. OpenCanary HTTP :80. Artifacts: docs/conformance/reports/opencanary/http/."
 }

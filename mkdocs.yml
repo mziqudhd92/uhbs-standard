@@ -129,6 +129,10 @@ nav:
       - Low-Interaction / Telnet (Cowrie proof): scorecards/cowrie-telnet.md
       - Low-Interaction / SSH tarpit (Endlessh proof): scorecards/endlessh-ssh-tarpit.md
       - Web-API / HTTP (OpenCanary proof): scorecards/opencanary-web-api.md
+      - OpenCanary FTP: scorecards/opencanary-ftp.md
+      - OpenCanary SSH: scorecards/opencanary-ssh.md
+      - OpenCanary Telnet: scorecards/opencanary-telnet.md
+      - OpenCanary Redis: scorecards/opencanary-redis.md
       - Beelzebub HTTP: scorecards/beelzebub-http.md
       - Beelzebub SSH: scorecards/beelzebub-ssh.md
       - Beelzebub Telnet: scorecards/beelzebub-telnet.md

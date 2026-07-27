@@ -1,0 +1,69 @@
+{
+  "uhbs_version": "4.0.0",
+  "run_mode": "quick",
+  "evaluated_at": "2026-07-27T14:40:00Z",
+  "proof_label": "opencanary (thinkst OpenCanary redis)",
+  "target": {
+    "repository": "https://github.com/thinkst/opencanary",
+    "git_commit": "bc231423aa40242cbd0bf34801f8788e23420dee",
+    "class": "Low-Interaction",
+    "protocol": "redis",
+    "host": "opencanary-lab",
+    "port": 6379,
+    "container_image": "thinkst/opencanary:latest",
+    "container_image_id": "sha256:558c508742ebc768d979f545bf1889be9d7d58377bd0144058c7df713a88763f"
+  },
+  "grader": {
+    "package_version": "4.0.0",
+    "uhbs_git_commit": "e566119c90826d2dcd5ad0b6a48a062a88f95e16",
+    "docker_image": "uhbs:4.0.0",
+    "docker_image_id": "sha256:d326a451699575c745c65ca6b5b9b72d4692fc3bb0e4c9207ca0b567fda5dcd8",
+    "inventory": "docs/conformance/labs/opencanary/inventory.yaml",
+    "tps": "docs/conformance/labs/opencanary/low_interaction_redis_quick.yaml"
+  },
+  "flags": {
+    "UHBS_QUICK": true,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": null,
+    "skip_sast_tools": true,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "source_root": "/honeypot",
+    "telemetry_dir": null,
+    "plugin": "redis",
+    "auth": null
+  },
+  "results": {
+    "uhqs": 41.27,
+    "grade": "F",
+    "delta_c": 0.5625,
+    "module_scores": {
+      "A": 47.5,
+      "B": 50.5,
+      "C": 100.0,
+      "D": 75.0,
+      "E": 100.0,
+      "F": 82.74
+    },
+    "safety_gate_passed": false
+  },
+  "limitations": [
+    "Multi-protocol OpenCanary lab; each protocol graded separately.",
+    "SMB (Samba) and non-UHBS modules (MySQL, RDP, SIP, SNMP, \u2026) not graded.",
+    "SSH canary rejects interactive auth by design \u2014 low Module A/B/C expected.",
+    "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement."
+  ]
+}

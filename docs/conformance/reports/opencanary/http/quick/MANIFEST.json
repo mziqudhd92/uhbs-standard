@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "b4dedeafa79f17a77dd0a2cf7975a39722f9f403663527154429bd30d6141faa"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "b4dedeafa79f17a77dd0a2cf7975a39722f9f403663527154429bd30d6141faa"
+    },
+    {
+      "path": "report.json",
+      "sha256": "fc3d38dcb4a5c419b87a21840da5aec07816ebaaf76ada70a4e57d892eca9bb8"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "f993b110cd71f6d3fef136262f6b0bc4eb4706f76d6659c526b99db67077fdd3"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-http",
+    "uhqs": 41.3,
+    "grade": "GRADE F (Fail)"
+  }
+}

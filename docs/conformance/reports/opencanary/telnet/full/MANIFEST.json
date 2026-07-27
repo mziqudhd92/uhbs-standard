@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "249da5d918505fa0c173f5eeaf6d3b509792a5c50e91ec2364a9b3df5200d160"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "249da5d918505fa0c173f5eeaf6d3b509792a5c50e91ec2364a9b3df5200d160"
+    },
+    {
+      "path": "report.json",
+      "sha256": "c519c2cb973981221e4ecd5e8539e1740e62d2c5f83723b335e18fa272ba8574"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "3b10c2f620bc2d4b071a032a6fdb6b009c3a9f2f2b753b9fecd3b2130f06efe7"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "187d0943712ccabf0d378c399101bc87f89fa1ed189caeba32fdbf328e8d8703"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "d0eddf331123b0ed0e892f6191fc543f8fc7c4c2f643378a4db8007b28fde402"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-telnet",
+    "uhqs": 57.0,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

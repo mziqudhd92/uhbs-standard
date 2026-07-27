@@ -1,0 +1,597 @@
+{
+  "framework": "Universal Honeypot Benchmarking Standard (UHBS) v4.0",
+  "evaluation_type": "Full-Spectrum (Static Audit + Dynamic Sandbox)",
+  "target": {
+    "name": "opencanary-http",
+    "kind": "generic",
+    "host": "opencanary-lab",
+    "port": 80,
+    "source_root": "/honeypot",
+    "profile_class": "Web-API",
+    "protocols": [
+      "http"
+    ],
+    "ports_map": {
+      "http": 80
+    }
+  },
+  "baseline": null,
+  "uhqs": {
+    "target": "opencanary-http",
+    "S_A": 21.5,
+    "S_B": 82.5,
+    "S_C": 55.0,
+    "C": 90.0,
+    "S_E": 100.0,
+    "S_F": 70.0,
+    "delta_c": 0.81,
+    "uhqs": 50.12,
+    "weights": {
+      "protocol": 0.25,
+      "behavior": 0.2,
+      "telemetry": 0.2,
+      "scale": 0.15,
+      "static": 0.2
+    },
+    "profile_class": "Web-API",
+    "grade": "GRADE D (Needs Remediation)",
+    "phase": "profile+static+sandbox+dynamic+score",
+    "version": "4.0",
+    "containment_measured": true
+  },
+  "hqs": {
+    "target": "opencanary-http",
+    "S_A": 21.5,
+    "S_B": 82.5,
+    "S_C": 55.0,
+    "C": 90.0,
+    "S_E": 100.0,
+    "S_F": 70.0,
+    "delta_c": 0.81,
+    "uhqs": 50.12,
+    "weights": {
+      "protocol": 0.25,
+      "behavior": 0.2,
+      "telemetry": 0.2,
+      "scale": 0.15,
+      "static": 0.2
+    },
+    "profile_class": "Web-API",
+    "grade": "GRADE D (Needs Remediation)",
+    "phase": "profile+static+sandbox+dynamic+score",
+    "version": "4.0",
+    "containment_measured": true
+  },
+  "modules": [
+    {
+      "module": "SANDBOX",
+      "dimension": "sandbox",
+      "score": 85.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "sandbox.reach.http",
+          "team": "blue",
+          "passed": true,
+          "detail": "opencanary-lab:80 open",
+          "score": 25.0,
+          "evidence": []
+        },
+        {
+          "id": "sandbox.airgap_attested",
+          "team": "blue",
+          "passed": true,
+          "detail": "operator attested air-gapped sandbox (UHBS_AIRGAP_ATTESTED=1)",
+          "score": 25.0,
+          "evidence": []
+        },
+        {
+          "id": "sandbox.egress_deny_tooling",
+          "team": "blue",
+          "passed": false,
+          "detail": "host-egress-deny.sh not found",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "sandbox.gateway_log_configured",
+          "team": "blue",
+          "passed": true,
+          "detail": "UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log",
+          "score": 25.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "reachable_protocols": 1
+      },
+      "notes": [
+        "Phase 3 preflight \u2014 does not replace real air-gap deployment"
+      ],
+      "error": null
+    },
+    {
+      "module": "F",
+      "dimension": "static",
+      "score": 70.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "white.static_private_keys",
+          "team": "white",
+          "passed": true,
+          "detail": "0 static private keys",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "white.hardcoded_ssh_banners",
+          "team": "white",
+          "passed": true,
+          "detail": "0 hardcoded SSH banners",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "white.predictable_seeds",
+          "team": "white",
+          "passed": true,
+          "detail": "0 predictable PRNG seeds",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "white.hardcoded_macs",
+          "team": "white",
+          "passed": true,
+          "detail": "0 hardcoded MAC addresses",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "white.prompt_corpus_present",
+          "team": "white",
+          "passed": true,
+          "detail": "no prompt corpus (N/A for non-LLM)",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "white.prompt_boundaries",
+          "team": "white",
+          "passed": true,
+          "detail": "no weak delimiter/extract patterns",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "white.fallback_strings",
+          "team": "white",
+          "passed": true,
+          "detail": "no plain-text LLM fallback artifacts",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "white.bandit",
+          "team": "white",
+          "passed": false,
+          "detail": "bandit HIGH=21",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "white.semgrep",
+          "team": "white",
+          "passed": false,
+          "detail": "semgrep error/critical=1 total=27",
+          "score": 7.0,
+          "evidence": []
+        },
+        {
+          "id": "white.trivy",
+          "team": "white",
+          "passed": true,
+          "detail": "trivy not installed (skipped)",
+          "score": 4.0,
+          "evidence": []
+        },
+        {
+          "id": "white.sast_gate",
+          "team": "white",
+          "passed": false,
+          "detail": "22 high/critical findings",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "white.vfs_posix_coverage",
+          "team": "white",
+          "passed": true,
+          "detail": "POSIX coverage 51% (53/104)",
+          "score": 12.74,
+          "evidence": [
+            "apt",
+            "apt-get",
+            "base64",
+            "bash",
+            "cat",
+            "cd",
+            "chmod",
+            "chown",
+            "cp",
+            "date",
+            "docker",
+            "echo",
+            "env",
+            "export",
+            "file",
+            "find",
+            "free",
+            "git",
+            "head",
+            "id",
+            "ip",
+            "iptables",
+            "kill",
+            "ln",
+            "ls",
+            "mkdir",
+            "more",
+            "mv",
+            "nc",
+            "openssl",
+            "passwd",
+            "ping",
+            "pip",
+            "pwd",
+            "python",
+            "python3",
+            "rm",
+            "service",
+            "sh",
+            "sleep"
+          ]
+        },
+        {
+          "id": "white.blocking_calls",
+          "team": "white",
+          "passed": true,
+          "detail": "sleep/blocking markers in non-test code\u22480",
+          "score": 5.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "source_root": "/honeypot"
+      },
+      "notes": [
+        "Module F white-box audit (keys/prompts/SAST/VFS)"
+      ],
+      "error": null
+    },
+    {
+      "module": "A",
+      "dimension": "protocol",
+      "score": 21.5,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "rfc9110.reject_body_before_headers",
+          "team": "red",
+          "passed": true,
+          "detail": "status=400",
+          "score": 25.0,
+          "evidence": [
+            "HTTP/1.1 400 Bad Request\r\n\r\n"
+          ]
+        },
+        {
+          "id": "rfc9112.bare_lf_framing",
+          "team": "blue",
+          "passed": true,
+          "detail": "accepted/closed without HTTP status",
+          "score": 15.0,
+          "evidence": []
+        },
+        {
+          "id": "rfc9110.invalid_header_syntax",
+          "team": "red",
+          "passed": true,
+          "detail": "status=400",
+          "score": 20.0,
+          "evidence": []
+        },
+        {
+          "id": "rfc9110.unknown_http_version",
+          "team": "blue",
+          "passed": true,
+          "detail": "status=400 (want 400/505 or close)",
+          "score": 20.0,
+          "evidence": []
+        },
+        {
+          "id": "rfc9110.valid_get_status",
+          "team": "blue",
+          "passed": true,
+          "detail": "HTTP/1.1 302",
+          "score": 20.0,
+          "evidence": []
+        },
+        {
+          "id": "http.timing.sample_size",
+          "team": "blue",
+          "passed": true,
+          "detail": "n=1000 requested=1000 errors=0",
+          "score": 20.0,
+          "evidence": []
+        },
+        {
+          "id": "http.timing.iat_jitter",
+          "team": "red",
+          "passed": true,
+          "detail": "median=0.119ms pstdev=0.057ms (target jitter often <2ms vs native)",
+          "score": 30.0,
+          "evidence": []
+        },
+        {
+          "id": "http.timing.ks_vs_gold",
+          "team": "blue",
+          "passed": false,
+          "detail": "no gold_baseline_host in TPS \u2014 KS compare skipped (set performance_baseline.gold_baseline_host)",
+          "score": 25.0,
+          "evidence": []
+        },
+        {
+          "id": "http.module_a.composite",
+          "team": "blue",
+          "passed": false,
+          "detail": "fsm=20 nego=20 timing=25",
+          "score": 21.5,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "http": 21.5
+        },
+        "protocols": [
+          "http"
+        ],
+        "timing_samples": 1000,
+        "available_plugins": [
+          "ftp",
+          "generic",
+          "http",
+          "modbus",
+          "redis",
+          "smb",
+          "smtp",
+          "ssh",
+          "telnet"
+        ]
+      },
+      "notes": [
+        "UHBS Module A \u2014 plugins=['http']",
+        "class=Web-API strict_rfc=True"
+      ],
+      "error": null
+    },
+    {
+      "module": "B",
+      "dimension": "behavior",
+      "score": 82.5,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "http.state.consistent_get",
+          "team": "blue",
+          "passed": true,
+          "detail": "consistent HTTP responses",
+          "score": 100.0,
+          "evidence": []
+        },
+        {
+          "id": "http.payload.unsupported",
+          "team": "red",
+          "passed": true,
+          "detail": "no payload probe \u2014 skipped",
+          "score": 50.0,
+          "evidence": []
+        },
+        {
+          "id": "http.fuzz.binary",
+          "team": "red",
+          "passed": true,
+          "detail": "survived binary blast",
+          "score": 100.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "http": 82.5
+        },
+        "class": "Web-API"
+      },
+      "notes": [
+        "UHBS Module B class=Web-API"
+      ],
+      "error": null
+    },
+    {
+      "module": "C",
+      "dimension": "telemetry",
+      "score": 55.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "http.fuzz.binary",
+          "team": "red",
+          "passed": true,
+          "detail": "survived binary blast",
+          "score": 100.0,
+          "evidence": []
+        },
+        {
+          "id": "c1.json_parse_clean",
+          "team": "blue",
+          "passed": true,
+          "detail": "0 malformed / 34 records",
+          "score": 20.0,
+          "evidence": []
+        },
+        {
+          "id": "c1.stix_2_1",
+          "team": "blue",
+          "passed": false,
+          "detail": "no STIX objects found",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "c1.otel_or_ecs",
+          "team": "blue",
+          "passed": false,
+          "detail": "otel_docs=0 ecs_docs=0",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "c1.payload_hashes",
+          "team": "blue",
+          "passed": false,
+          "detail": "no md5/sha256 fields",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "c1.mitre_mapping",
+          "team": "blue",
+          "passed": false,
+          "detail": "no MITRE tags",
+          "score": 0.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {},
+      "notes": [
+        "UHBS C1 schema: STIX 2.1 / OTel / ECS best-effort validators"
+      ],
+      "error": null
+    },
+    {
+      "module": "D",
+      "dimension": "containment",
+      "score": 90.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "d1.ssh_exec_unavailable",
+          "team": "blue",
+          "passed": true,
+          "detail": "no SSH port in inventory \u2014 shell egress/LPE probes skipped",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "d1.egress_gateway_log",
+          "team": "blue",
+          "passed": true,
+          "detail": "0 gateway canary hits",
+          "score": 20.0,
+          "evidence": []
+        },
+        {
+          "id": "d1.airgap_attested",
+          "team": "blue",
+          "passed": true,
+          "detail": "UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes)",
+          "score": 0.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "breakout": false,
+        "allowed_outbound_traffic": false,
+        "ssh_exec": false
+      },
+      "notes": [
+        "Module D limited: target has no SSH port \u2014 Safety Gate cannot fully clear without shell exec probes or UHBS_EGRESS_GATEWAY_LOG evidence"
+      ],
+      "error": null
+    },
+    {
+      "module": "E",
+      "dimension": "scale",
+      "score": 100.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "e1.p95_vs_tps",
+          "team": "blue",
+          "passed": true,
+          "detail": "P50=2.5ms P95=6.2ms P99=8.4ms TPS_limit=150.0ms proto=http",
+          "score": 45.0,
+          "evidence": []
+        },
+        {
+          "id": "e1.error_rate",
+          "team": "blue",
+          "passed": true,
+          "detail": "errors=0/200 rate=0.00%",
+          "score": 20.0,
+          "evidence": []
+        },
+        {
+          "id": "e2.exhaustion_input",
+          "team": "red",
+          "passed": true,
+          "detail": "completed exhaustion/fuzz blast",
+          "score": 15.0,
+          "evidence": []
+        },
+        {
+          "id": "e2.circuit_breaker_alive",
+          "team": "blue",
+          "passed": true,
+          "detail": "service alive after load (connect 0.6ms)",
+          "score": 20.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "p50_ms": 2.53,
+        "p95_ms": 6.24,
+        "p99_ms": 8.44,
+        "p95_limit_ms": 150.0,
+        "errors": 0,
+        "concurrency": 25,
+        "requests": 200,
+        "wall_s": 0.04,
+        "protocol": "http"
+      },
+      "notes": [],
+      "error": null
+    }
+  ],
+  "extras": {
+    "target_scores": {
+      "protocol": 21.5,
+      "behavior": 82.5,
+      "telemetry": 55.0,
+      "containment": 90.0,
+      "scale": 100.0,
+      "static": 70.0
+    },
+    "uhqs_version": "4.0",
+    "tps": {
+      "name": "Web-API-Decoy",
+      "class": "Web-API",
+      "protocols": [
+        "http"
+      ],
+      "expected_p95_latency_ms": 150.0
+    }
+  }
+}

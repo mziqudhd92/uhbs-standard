@@ -20,7 +20,7 @@ Published quick + full Docker grades, tutorials, and provenance:
 | [Conpot](reports/conpot/index.md) | [44.62 / F](reports/conpot/quick/) | [55.51 / D](reports/conpot/full/) | [TUTORIAL](reports/conpot/TUTORIAL.md) |
 | [Cowrie](reports/cowrie/index.md) | [63.52 / D](reports/cowrie/quick/) | [48.70 / F](reports/cowrie/full/) | [TUTORIAL](reports/cowrie/TUTORIAL.md) |
 | [Endlessh](reports/endlessh/index.md) | [42.75 / F](reports/endlessh/quick/) | [51.90 / D](reports/endlessh/full/) | [TUTORIAL](reports/endlessh/TUTORIAL.md) |
-| [OpenCanary](reports/opencanary/index.md) | [41.30 / F](reports/opencanary/quick/) | [50.12 / D](reports/opencanary/full/) | [TUTORIAL](reports/opencanary/TUTORIAL.md) |
+| [OpenCanary](reports/opencanary/index.md) | see hub | see hub | [TUTORIAL](reports/opencanary/TUTORIAL.md) |
 
 ## Fixtures
 
@@ -32,6 +32,10 @@ Published quick + full Docker grades, tutorials, and provenance:
 | [`fixtures/miniprint-low-interaction.scorecard.json`](fixtures/miniprint-low-interaction.scorecard.json) | miniprint (PJL / Low-Interaction, **full**) | 47.77 | F |
 | [`fixtures/conpot-ics-scada.scorecard.json`](fixtures/conpot-ics-scada.scorecard.json) | Conpot (ICS-SCADA / Modbus, **full**) | 55.51 | D |
 | [`fixtures/opencanary-web-api.scorecard.json`](fixtures/opencanary-web-api.scorecard.json) | OpenCanary (Web-API / HTTP, **full**) | 50.12 | D |
+| [`fixtures/opencanary-ftp.scorecard.json`](fixtures/opencanary-ftp.scorecard.json) | OpenCanary (FTP, **full**) | 59.43 | D |
+| [`fixtures/opencanary-ssh.scorecard.json`](fixtures/opencanary-ssh.scorecard.json) | OpenCanary (SSH, **full**) | 28.44 | F |
+| [`fixtures/opencanary-telnet.scorecard.json`](fixtures/opencanary-telnet.scorecard.json) | OpenCanary (Telnet, **full**) | 57.0 | D |
+| [`fixtures/opencanary-redis.scorecard.json`](fixtures/opencanary-redis.scorecard.json) | OpenCanary (Redis, **full**) | 48.26 | F |
 | [`fixtures/endlessh-low-interaction.scorecard.json`](fixtures/endlessh-low-interaction.scorecard.json) | Endlessh (SSH tarpit / `ssh_tarpit`, **full**) | 51.9 | D |
 | [`fixtures/safety-gate-fail.scorecard.json`](fixtures/safety-gate-fail.scorecard.json) | Synthetic δ_C penalty case | 0.0 | F |
 

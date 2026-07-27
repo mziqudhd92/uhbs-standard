@@ -17,6 +17,10 @@ Published **full** UHBS-Lab scorecards (evaluated 2026-07-27):
 | [Low-Interaction / Telnet decoy (Cowrie proof)](cowrie-telnet.md) | Low-Interaction · Telnet `:2223` | **56.52** | D | [`cowrie-telnet.scorecard.json`](../conformance/fixtures/cowrie-telnet.scorecard.json) |
 | [Low-Interaction / SSH tarpit (Endlessh proof)](endlessh-ssh-tarpit.md) | Low-Interaction · `ssh_tarpit` `:2222` | **51.90** | D | [`endlessh-low-interaction.scorecard.json`](../conformance/fixtures/endlessh-low-interaction.scorecard.json) |
 | [Web-API / HTTP decoy (OpenCanary proof)](opencanary-web-api.md) | Web-API · HTTP `:80` | **50.12** | D | [`opencanary-web-api.scorecard.json`](../conformance/fixtures/opencanary-web-api.scorecard.json) |
+| [OpenCanary FTP](opencanary-ftp.md) | Low-Interaction · FTP `:21` | **59.43** | D | [`opencanary-ftp.scorecard.json`](../conformance/fixtures/opencanary-ftp.scorecard.json) |
+| [OpenCanary SSH](opencanary-ssh.md) | Low-Interaction · SSH `:2222` | **28.44** | F | [`opencanary-ssh.scorecard.json`](../conformance/fixtures/opencanary-ssh.scorecard.json) |
+| [OpenCanary Telnet](opencanary-telnet.md) | Low-Interaction · Telnet `:23` | **57.00** | D | [`opencanary-telnet.scorecard.json`](../conformance/fixtures/opencanary-telnet.scorecard.json) |
+| [OpenCanary Redis](opencanary-redis.md) | Low-Interaction · Redis `:6379` | **48.26** | F | [`opencanary-redis.scorecard.json`](../conformance/fixtures/opencanary-redis.scorecard.json) |
 | [Beelzebub HTTP](beelzebub-http.md) | Web-API · HTTP `:8080` | **50.12** | D | [`beelzebub-http.scorecard.json`](../conformance/fixtures/beelzebub-http.scorecard.json) |
 | [Beelzebub SSH](beelzebub-ssh.md) | Low-Interaction · SSH `:2222` | **45.74** | F | [`beelzebub-ssh.scorecard.json`](../conformance/fixtures/beelzebub-ssh.scorecard.json) |
 | [Beelzebub Telnet](beelzebub-telnet.md) | Low-Interaction · Telnet `:23` | **57.00** | D | [`beelzebub-telnet.scorecard.json`](../conformance/fixtures/beelzebub-telnet.scorecard.json) |

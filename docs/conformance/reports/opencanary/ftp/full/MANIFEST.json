@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "cfc4e570b35cbedd39e04028ac6909ff967e24775aad3924ab0d101d3b339db8"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "cfc4e570b35cbedd39e04028ac6909ff967e24775aad3924ab0d101d3b339db8"
+    },
+    {
+      "path": "report.json",
+      "sha256": "af6dd9278eb2922dceb537d42ac3dec63c9e58dc9d889ba73bdd3f6a42678412"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "a48c9d37122f27195c7c7af2d96585e8c9e50daa7e077094d130a33e4001583b"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "10c9c022422145b6954439c606f20fc26661a7cd3876d182d816a1d0a9e2874f"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "c5ef8344cd50fb49aaab7f63895f5ef470cb3c92aeedc521b87efcbfc9096baf"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-ftp",
+    "uhqs": 59.43,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

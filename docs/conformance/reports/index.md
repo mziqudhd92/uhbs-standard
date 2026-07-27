@@ -24,7 +24,7 @@
 | [Conpot (mushorg)](conpot/index.md) | ICS-SCADA | Modbus `:5020` | [44.62 / F](conpot/quick/) | [55.51 / D](conpot/full/) | [Step-by-step](conpot/TUTORIAL.md) |
 | [Cowrie](cowrie/index.md) | Low-Interaction | SSH `:2222` + Telnet `:2223` (SFTP via SSH) | see hub | see hub | [Step-by-step](cowrie/TUTORIAL.md) |
 | [Endlessh (skeeto)](endlessh/index.md) | Low-Interaction | `ssh_tarpit` `:2222` | [42.75 / F](endlessh/quick/) | [51.90 / D](endlessh/full/) | [Step-by-step](endlessh/TUTORIAL.md) |
-| [OpenCanary (thinkst)](opencanary/index.md) | Web-API | HTTP `:80` | [41.30 / F](opencanary/quick/) | [50.12 / D](opencanary/full/) | [Step-by-step](opencanary/TUTORIAL.md) |
+| [OpenCanary (thinkst)](opencanary/index.md) | multi | HTTP / FTP / SSH / Telnet / Redis | see hub | see hub | [Step-by-step](opencanary/TUTORIAL.md) |
 | [Beelzebub](beelzebub/index.md) | multi | SSH / HTTP / Telnet / Redis | see hub | see hub | [Step-by-step](beelzebub/TUTORIAL.md) |
 | [Trapster Community](trapster/index.md) | multi | SSH / HTTP / FTP / Telnet | see hub | see hub | [Step-by-step](trapster/TUTORIAL.md) |
 | [Dionaea](dionaea/index.md) | multi | FTP / HTTP / SMB | see hub | see hub | [Step-by-step](dionaea/TUTORIAL.md) |
