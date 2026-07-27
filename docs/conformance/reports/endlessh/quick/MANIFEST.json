@@ -3,30 +3,28 @@
   "artifacts": [
     {
       "path": "REPORT.txt",
-      "sha256": "48491ae12cf78b181c80b3d01f1a1632a83b1da9907a2895a634b8dfb73234d1"
+      "sha256": "eb61a9d0f57f69b008bd62ba21508e6142533ccfa75e06babf2db4d36b7d4d3b"
     },
     {
       "path": "SCORECARD.txt",
-      "sha256": "48491ae12cf78b181c80b3d01f1a1632a83b1da9907a2895a634b8dfb73234d1"
+      "sha256": "eb61a9d0f57f69b008bd62ba21508e6142533ccfa75e06babf2db4d36b7d4d3b"
     },
     {
       "path": "report.json",
-      "sha256": "89376243111f222370e54907fd2b79197e50e74bcfd7593693be4766944b00b0"
+      "sha256": "e6f2338a14029c1f61580663f10788a2484b10c3508640773d53f9e6eae9b975"
     },
     {
       "path": "uhbs-run.log",
-      "sha256": "0c4197fac6229b7c24013a4c0805d25e5a28b41262a9b9ec35d4e18a32beccd9"
+      "sha256": "eb61a9d0f57f69b008bd62ba21508e6142533ccfa75e06babf2db4d36b7d4d3b"
     },
     {
       "path": "run-meta.json",
-      "sha256": "f0b237852c2b63443cc6856b8ee4d9924574224cb7a760a338fce978bb95c87c"
+      "sha256": "2ebb7d0225653ad05b25ad2e97e9d638ac0dd145d79f836741bad33d39e8a37b"
     }
   ],
   "extra": {
     "target": "endlessh",
-    "uhqs": 42.75,
-    "grade": "GRADE F (Fail)",
-    "run_meta": "run-meta.json",
-    "protocol": "ssh_tarpit"
+    "uhqs": 46.55,
+    "grade": "GRADE F (Fail)"
   }
 }

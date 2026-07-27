@@ -9,7 +9,7 @@
   "auditor": "UHBS-Lab detailed Docker run (ssh_tarpit/generic :2222 + 1000-sample A3 + SAST + telemetry)",
   "modules": {
     "A": {
-      "score": 56.5,
+      "score": 65.43,
       "status": "PARTIAL",
       "weight": 0.3,
       "notes": "generic TCP connect/banner/timing n=1000; not RFC4253 SSH"
@@ -24,7 +24,7 @@
       "score": 55.0,
       "status": "PARTIAL",
       "weight": 0.25,
-      "notes": "text/Docker logs only — no STIX/OTel/ECS (capped)"
+      "notes": "text/Docker logs only \u2014 no STIX/OTel/ECS (capped)"
     },
     "D": {
       "score": 90.0,
@@ -36,9 +36,9 @@
       "status": "PASSED",
       "weight": 0.1,
       "notes": "200 TCP connects @25 concurrency; P95=7.2ms",
-      "p50_ms": 2.6,
-      "p95_ms": 7.2,
-      "p99_ms": 8.8
+      "p50_ms": 10.71,
+      "p95_ms": 64.34,
+      "p99_ms": 86.71
     },
     "F": {
       "score": 70.0,
@@ -60,7 +60,7 @@
     "passed": false,
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 51.9,
+  "uhqs": 54.07,
   "grade": "D",
-  "notes": "Detailed evaluation proof only. Graded with generic plugin protocol id ssh_tarpit — not SSH/Paramiko. Full Docker lab artifacts live under docs/conformance/reports/endlessh/."
+  "notes": "Detailed evaluation proof only. Graded with generic plugin protocol id ssh_tarpit \u2014 not SSH/Paramiko. Full Docker lab artifacts live under docs/conformance/reports/endlessh/."
 }

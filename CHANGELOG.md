@@ -43,6 +43,8 @@ share version **4.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[
   **47.77 → 50.43** / D
 - **Regraded Conpot** (Modbus quick+full); quick **44.62 → 44.55** / F, full
   **55.51 → 55.4** / D
+- **Regraded Endlessh** (`ssh_tarpit` quick+full); quick **42.75 → 46.55** / F,
+  full **51.90 → 54.07** / D
 - **Protocol-agnostic lab binding:** TPS no longer silently overwrites inventory/CLI
   protocols; conflicting TPS vs `--protocol` raises `ProtocolConflictError`
 - Builtin `low_interaction` is **class-only**; SSH/Telnet profile moved to

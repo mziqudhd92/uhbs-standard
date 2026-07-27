@@ -91,7 +91,7 @@ docker run --rm \
     --environment "Quick Docker lab: Endlessh ssh_tarpit :2222 generic plugin, UHBS_QUICK=1, SAST skipped"
 ```
 
-**Published quick result:** UHQS **42.75** · Grade **F** · δ_C **0.5625**  
+**Published quick result:** UHQS **46.55** · Grade **F** · δ_C **0.5625**  
 See [`quick/SCORECARD.txt`](quick/SCORECARD.txt).
 
 ---
@@ -149,7 +149,7 @@ docker run --rm \
     --environment "Full Docker lab: Endlessh ssh_tarpit :2222 + 1000-sample A3 + SAST + telemetry"
 ```
 
-**Published full result:** UHQS **51.90** · Grade **D** · δ_C **0.81**  
+**Published full result:** UHQS **54.07** · Grade **D** · δ_C **0.81**  
 See [`full/SCORECARD.txt`](full/SCORECARD.txt).
 
 ---
@@ -171,7 +171,7 @@ ls docs/conformance/reports/endlessh/full/static/
 | --- | --- |
 | Protocol `ssh_tarpit` | Generic TCP — tarpit-safe |
 | No `ports.ssh` | Module D skips Paramiko shell probes |
-| Module A ≈ 56.5 | Connect/banner/timing only (not RFC4253 SSH) |
+| Module A ≈ 65.4 | Connect/banner/timing only (not RFC4253 SSH) |
 | Module E = 100 | Short TCP connects stay fast |
 | Quick &lt; Full UHQS | Full improves δ_C via gateway evidence |
 

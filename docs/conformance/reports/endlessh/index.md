@@ -13,8 +13,8 @@ but **never** emits a valid `SSH-2.0-…` identification string. This grade uses
 
 | Mode | UHQS | Grade | δ_C | Safety Gate | Folder |
 | --- | --- | --- | --- | --- | --- |
-| **Quick** | **42.75** | F | 0.5625 | not cleared (C=75) | [`quick/`](quick/) |
-| **Full** | **51.90** | D | 0.81 | not cleared (C=90) | [`full/`](full/) |
+| **Quick** | **46.55** | F | 0.5625 | not cleared (C=75) | [`quick/`](quick/) |
+| **Full** | **54.07** | D | 0.81 | not cleared (C=90) | [`full/`](full/) |
 
 Sanitized fixture (full): [`../../fixtures/endlessh-low-interaction.scorecard.json`](../../fixtures/endlessh-low-interaction.scorecard.json)
 
@@ -40,7 +40,7 @@ SAST (F capped at 70), and records a clean gateway canary (D=90, δ_C=0.81).
 
 | Module | Score | Evidence highlight |
 | --- | --- | --- |
-| A Protocol | 56.5 | Generic connect/banner/timing (n=1000); no SSH RFC suite |
+| A Protocol | 65.43 | Generic connect/banner/timing (n=1000); no SSH RFC suite |
 | B Behavior | 62.5 | Survived binary blast |
 | C Telemetry | 55.0 | Docker/log text — no STIX/OTel/ECS (capped) |
 | D Containment | 90.0 | No `ports.ssh` → shell probes skipped; airgap + gateway |

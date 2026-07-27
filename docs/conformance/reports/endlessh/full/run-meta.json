@@ -1,7 +1,7 @@
 {
   "uhbs_version": "4.0.0",
   "run_mode": "full",
-  "evaluated_at": "2026-07-27T13:02:00Z",
+  "evaluated_at": "2026-07-27T18:24:21Z",
   "proof_label": "endlessh (skeeto SSH tarpit)",
   "target": {
     "repository": "https://github.com/skeeto/endlessh",
@@ -15,9 +15,9 @@
   },
   "grader": {
     "package_version": "4.0.0",
-    "uhbs_git_commit": "24cbfa157f93c0de0a716f931051896c9bdf6a96",
+    "uhbs_git_commit": "c1631a4f0daef5553491017bc9aa44f66d776c58",
     "docker_image": "uhbs:4.0.0-full",
-    "docker_image_id": "sha256:1da71d92d4a9ee39b1e774fdbd623b83671cf07f78c7a299a7ed6d6505e9ad35",
+    "docker_image_id": "sha256:8caf886c2e6f53a3d2d3a73d2529b018cbdd3dc343cbde10043cc3ac96e87e21",
     "inventory": "docs/conformance/labs/endlessh/inventory.yaml",
     "tps": "docs/conformance/labs/endlessh/low_interaction_full.yaml"
   },
@@ -26,8 +26,21 @@
     "UHBS_AIRGAP_ATTESTED": true,
     "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
     "skip_sast_tools": false,
-    "phases": ["profile", "static", "sandbox", "dynamic", "score"],
-    "modules": ["A", "B", "C", "D", "E", "F"],
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
     "source_root": "/honeypot",
     "telemetry_dir": "/telemetry",
     "concurrency": 25,
@@ -38,29 +51,24 @@
     "lab_msdelay_ms": 200
   },
   "results": {
-    "uhqs": 51.9,
+    "uhqs": 54.07,
     "grade": "D",
     "delta_c": 0.81,
     "module_scores": {
-      "A": 56.5,
+      "A": 65.43,
       "B": 62.5,
       "C": 55.0,
       "D": 90.0,
       "E": 100.0,
       "F": 70.0
     },
-    "safety_gate_passed": false,
-    "latency_ms": {
-      "p50": 2.6,
-      "p95": 7.2,
-      "p99": 8.8
-    }
+    "safety_gate_passed": false
   },
   "limitations": [
-    "Protocol ssh_tarpit (generic TCP) — Endlessh never completes SSH identification.",
-    "No ports.ssh → Module D shell egress/LPE probes skipped; Safety Gate not fully cleared (C=90).",
+    "Protocol ssh_tarpit (generic TCP) \u2014 Endlessh never completes SSH identification.",
+    "No ports.ssh \u2192 Module D shell egress/LPE probes skipped; Safety Gate not fully cleared (C=90).",
     "MSDELAY=200 for lab practicality (upstream default often 10000).",
-    "Telemetry is text/Docker logs — not STIX/OTel/ECS.",
+    "Telemetry is text/Docker logs \u2014 not STIX/OTel/ECS.",
     "Product name is evaluation proof only."
   ]
 }

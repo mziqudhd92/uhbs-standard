@@ -3,38 +3,36 @@
   "artifacts": [
     {
       "path": "REPORT.txt",
-      "sha256": "bd60032a9734b0e4b038413aef535448b0ab632b4f47d8f0ceceb256bc7595bc"
+      "sha256": "0437934fcc6bdb964f7e4bffe77ab9dc8770c767460ad8f3b2a1b52ea9cc63f8"
     },
     {
       "path": "SCORECARD.txt",
-      "sha256": "bd60032a9734b0e4b038413aef535448b0ab632b4f47d8f0ceceb256bc7595bc"
+      "sha256": "0437934fcc6bdb964f7e4bffe77ab9dc8770c767460ad8f3b2a1b52ea9cc63f8"
     },
     {
       "path": "report.json",
-      "sha256": "bd16ea88dfba3da3d71cc426e36451cc6c8a3f916b995325facac21354194084"
+      "sha256": "a9c2bbeb8e6da9b40c7f4f53221c5122b36cda98e11d0c39ff1ba1d64685952c"
     },
     {
       "path": "uhbs-run.log",
-      "sha256": "8f948a40e632a1ad739d21ed23801d83e56c7f2d62f127f7fc88227b306bfda3"
+      "sha256": "0437934fcc6bdb964f7e4bffe77ab9dc8770c767460ad8f3b2a1b52ea9cc63f8"
     },
     {
       "path": "run-meta.json",
-      "sha256": "3a7a8c986949a4620fa2d44481f5fcfebea220c99d3220e2da1fd25436aeb599"
+      "sha256": "63610003d1f11652a06e2248a92356e0539c0c3141af95fd112bfcd87bcd97b7"
     },
     {
       "path": "static/bandit-report.json",
-      "sha256": "58cc80e0de6d2779d31224bed85b9f425cae01a52cc01299aa432f74d189770b"
+      "sha256": "3739682812814365832f8653cfc94f844cd6dafda68c93e89f6719cfcc4ed58c"
     },
     {
       "path": "static/semgrep-report.json",
-      "sha256": "40a1e56144f26db6c9149ce7b1ffa5bc3b90e672aead6f2b7e6486116d558b98"
+      "sha256": "ee744bce904b7655f36f63f50965e64e5342d03b03a9403f4567cb09da68b3f5"
     }
   ],
   "extra": {
     "target": "endlessh",
-    "uhqs": 51.9,
-    "grade": "GRADE D (Needs Remediation)",
-    "run_meta": "run-meta.json",
-    "protocol": "ssh_tarpit"
+    "uhqs": 54.07,
+    "grade": "GRADE D (Needs Remediation)"
   }
 }
