@@ -3,16 +3,22 @@
 All notable changes to the UHBS specification and tooling are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/). Spec and CLI
-share version **4.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`).
+share version **4.0.1** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`).
 
 ## [Unreleased]
+
+## [4.0.1] — 2026-07-27
+
+Patch release for Zenodo DOI deposit and post-`v4.0.0` harness/docs work.
+Historical lab fixtures/reports retain `uhbs_version: 4.0.0` as the grading
+tooling that produced them.
 
 ### Added
 - **MCP server** (`uhbs[mcp]` / `uhbs-mcp`): local stdio tools for AI hosts
   (validate / UHQS / fixtures / schemas); `server.json` registry metadata;
   docs + landing `#mcp` section
 - Published lab reports + landing Results: ESPot, miniprint, Conpot, Cowrie,
-  OpenCanary (quick + full)
+  OpenCanary, Beelzebub, Trapster, Dionaea, Endlessh (quick + full where applicable)
 - Site-root AEO discovery: `llms-full.txt`, `humans.txt`, `.well-known/security.txt`,
   `server.json` (in addition to root `llms.txt`)
 - Protocol plugins for git, mysql, ntp, rdp, sip, snmp, tftp, vnc; plugin SDK,
@@ -35,27 +41,9 @@ share version **4.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[
 - **CI fix:** sync `tests/test_conformance.py` / `tests/test_mcp.py` fixture
   expectations to regraded UHQS values; add MkDocs `{#proto}` anchors on lab
   TUTORIALs; retarget architecture/plugin-authoring docs links to absolute
-  GitHub URLs so `mkdocs build --strict` (Deploy Documentation) passes.
-
-- **Regraded Cowrie SSH/Telnet** after scoring-scale fixes: SSH quick **82.76 / B**,
-  full **61.37 / D**; Telnet quick **53.41 / D**, full **64.90 / D**
-- **Regraded OpenCanary** across HTTP/FTP/SSH/Telnet/Redis/MySQL/RDP/SIP/SNMP/
-  NTP/TFTP/VNC/Git/SMB (quick+full) under the same scoring-scale fixes; HTTP full
-  **50.12 → 66.02**, SSH full **28.44 → 35.64**
-- **Regraded ESPot** (HTTP quick+full) under the same scoring-scale fixes; quick
-  **39.95 → 49.34** / F, full **49.82 → 63.33** / D
-- **Regraded miniprint** (PJL quick+full); quick **39.99 → 41.83** / F, full
-  **47.77 → 50.43** / D
-- **Regraded Conpot** (Modbus quick+full); quick **44.62 → 44.55** / F, full
-  **55.51 → 55.4** / D
-- **Regraded Endlessh** (`ssh_tarpit` quick+full); quick **42.75 → 46.55** / F,
-  full **51.90 → 54.07** / D
-- **Regraded Beelzebub** (HTTP/Redis/SSH/Telnet quick+full); HTTP full **50.12 → 66.02**,
-  SSH full **45.74 → 59.88**, Telnet full **57.00 → 47.89**
-- **Regraded Trapster** (FTP/HTTP/SSH/Telnet quick+full); HTTP full **49.82 → 63.33**,
-  SSH full **30.24 → 44.38**, Telnet full **57.00 → 64.90**
-- **Regraded Dionaea** (FTP/HTTP/SMB quick+full); FTP full **55.30 → 57.96**,
-  HTTP full **43.54 → 51.14**, SMB full **48.74 → 54.07**
+  GitHub URLs so `mkdocs build --strict` (Deploy Documentation) passes
+- **Regraded** Cowrie, OpenCanary, ESPot, miniprint, Conpot, Endlessh, Beelzebub,
+  Trapster, Dionaea under scoring-scale fixes (see prior Unreleased notes)
 - **Protocol-agnostic lab binding:** TPS no longer silently overwrites inventory/CLI
   protocols; conflicting TPS vs `--protocol` raises `ProtocolConflictError`
 - Builtin `low_interaction` is **class-only**; SSH/Telnet profile moved to
