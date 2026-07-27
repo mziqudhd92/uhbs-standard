@@ -1,14 +1,18 @@
-# Inventory for skeeto/endlessh UHBS lab (SSH tarpit).
-# Bind Endlessh to loopback :2223 (see TUTORIAL.md).
+# Inventory for skeeto/endlessh detailed UHBS Docker lab (SSH tarpit).
+# Endlessh never completes SSH identification — do NOT use protocol=ssh / ports.ssh
+# (Paramiko hangs). Grade via generic TCP plugin under protocol id ssh_tarpit.
+# Container listens on :2222 (linuxserver image). Host map optional (:12222).
 sites:
   endlessh:
     kind: generic
     class: Low-Interaction
-    host: 127.0.0.1
-    protocol: ssh
-    protocols: [ssh]
-    port: 2223
+    host: endlessh-lab
+    protocol: ssh_tarpit
+    protocols: [ssh_tarpit]
+    port: 2222
     ports:
-      ssh: 2223
+      ssh_tarpit: 2222
     source_root: /honeypot
-    tps: /work/docs/conformance/labs/endlessh/low_interaction_ssh_full.yaml
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/endlessh/low_interaction_full.yaml
+    container_image: ghcr.io/linuxserver/endlessh:latest

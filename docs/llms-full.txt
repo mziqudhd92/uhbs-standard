@@ -69,6 +69,7 @@ Published full-lab proof (sanitized fixtures; prefer live fixture JSON if this d
 - Conpot (ICS-SCADA Modbus): UHQS **55.51** (D)
 - Cowrie (Low-Interaction SSH): UHQS **48.70** (F)
 - OpenCanary (Web-API HTTP): UHQS **50.12** (D)
+- Endlessh (SSH tarpit / ssh_tarpit): UHQS **51.90** (D)
 - CyberHalluciNet / POSIX-Shell lab (illustrative): UHQS **80.33** (B)
 
 ## Machine-readable artifacts

@@ -1,164 +1,28 @@
-Full-lab: Module F remeasured; A/D wall-clock capped against tarpit; composite matches quick (UHQS 26.94). See METHODOLOGY.md.
--packages/paramiko/packet.py", line 670, in _read_timeout
-    raise EOFError()
-EOFError
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/transport.py", line 2029, in run
-    self._check_banner()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/transport.py", line 2217, in _check_banner
-    raise SSHException(
-        "Error reading SSH protocol banner" + str(e)
-    )
-paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
-
-    raise SSHException(
-        "Error reading SSH protocol banner" + str(e)
-    )
-paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
-
-Exception (client): Error reading SSH protocol banner
-Traceback (most recent call last):
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/transport.py", line 2213, in _check_banner
-    buf = self.packetizer.readline(timeout)
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/packet.py", line 395, in readline
-    buf += self._read_timeout(timeout)
-           ~~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/packet.py", line 670, in _read_timeout
-    raise EOFError()
-EOFError
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/transport.py", line 2029, in run
-    self._check_banner()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/transport.py", line 2217, in _check_banner
-    raise SSHException(
-        "Error reading SSH protocol banner" + str(e)
-    )
-paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
-
-Exception (client): Error reading SSH protocol banner
-Exception (client): Error reading SSH protocol banner
-Exception (client): Error reading SSH protocol banner
-Traceback (most recent call last):
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/transport.py", line 2213, in _check_banner
-    buf = self.packetizer.readline(timeout)
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/packet.py", line 395, in readline
-    buf += self._read_timeout(timeout)
-           ~~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/packet.py", line 670, in _read_timeout
-    raise EOFError()
-EOFError
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/transport.py", line 2029, in run
-    self._check_banner()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/transport.py", line 2217, in _check_banner
-    raise SSHException(
-        "Error reading SSH protocol banner" + str(e)
-    )
-paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
-
-Traceback (most recent call last):
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/transport.py", line 2213, in _check_banner
-    buf = self.packetizer.readline(timeout)
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/packet.py", line 395, in readline
-    buf += self._read_timeout(timeout)
-           ~~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/packet.py", line 670, in _read_timeout
-    raise EOFError()
-EOFError
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/transport.py", line 2029, in run
-    self._check_banner()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/transport.py", line 2217, in _check_banner
-    raise SSHException(
-        "Error reading SSH protocol banner" + str(e)
-    )
-paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
-
-Traceback (most recent call last):
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/transport.py", line 2213, in _check_banner
-    buf = self.packetizer.readline(timeout)
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/packet.py", line 395, in readline
-    buf += self._read_timeout(timeout)
-           ~~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/packet.py", line 670, in _read_timeout
-    raise EOFError()
-EOFError
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/transport.py", line 2029, in run
-    self._check_banner()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/transport.py", line 2217, in _check_banner
-    raise SSHException(
-        "Error reading SSH protocol banner" + str(e)
-    )
-paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
-
-Exception (client): Error reading SSH protocol banner
-Traceback (most recent call last):
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/transport.py", line 2213, in _check_banner
-    buf = self.packetizer.readline(timeout)
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/packet.py", line 395, in readline
-    buf += self._read_timeout(timeout)
-           ~~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/packet.py", line 670, in _read_timeout
-    raise EOFError()
-EOFError
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/transport.py", line 2029, in run
-    self._check_banner()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "./.local/uhbs-venv/lib/python3.14/site-packages/paramiko/transport.py", line 2217, in _check_banner
-    raise SSHException(
-        "Error reading SSH protocol banner" + str(e)
-    )
-paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
-
-==> UHBS v4 (via lib.api) plugins=ftp, generic, http, modbus, redis, smb, smtp, ssh, telnet
+==> UHBS v4 target=endlessh class=Low-Interaction protocols=['ssh_tarpit'] phases=['profile', 'static', 'sandbox', 'dynamic', 'score']
+    plugins available: ftp, generic, http, modbus, redis, smb, smtp, ssh, telnet
 ====================================================================================
                   UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0
 ====================================================================================
-Target System         : endlessh-local
+Target System         : endlessh
 System Profile Class  : Low-Interaction
-Protocols             : ssh
+Protocols             : ssh_tarpit
 Evaluation Date       : 2026-07-27
 Evaluation Type       : Full-Spectrum (Static Audit + Dynamic Sandbox)
-Environment           : Local Endlessh tarpit (loopback :2223)
+Environment           : Full Docker lab: Endlessh ssh_tarpit :2222 + 1000-sample A3 + SAST + telemetry
 ------------------------------------------------------------------------------------
 EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
 ------------------------------------------------------------------------------------
-Module A: Protocol Fidelity         :  12.5/100       0.30     PARTIAL (no banner)
-Module B: Behavioral Realism        :   6.2/100       0.15     PARTIAL (No existing session)
-Module C: Telemetry Quality         :  25.0/100       0.25     PARTIAL (No existing session)
-Module D: Safety & Containment (C)  :  96.0/100       GATE     PASSED (No existing session)
-Module E: Scalability & Latency     :  20.0/100       0.10     PARTIAL (P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=150.0ms proto=ssh)
-Module F: Static Code Audit         :  70.0/100       0.20     PASSED (POSIX coverage 0% (0/104))
+Module A: Protocol Fidelity         :  56.5/100       0.30     PARTIAL (no gold_baseline_host in TPS — KS compare skipped (set performance_baseline.gold_baseline_host))
+Module B: Behavioral Realism        :  62.5/100       0.15     PARTIAL (survived binary blast)
+Module C: Telemetry Quality         :  55.0/100       0.25     PARTIAL (no STIX objects found)
+Module D: Safety & Containment (C)  :  90.0/100       GATE     PASSED (UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes))
+Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service alive after load (connect 0.4ms))
+Module F: Static Code Audit         :  70.0/100       0.20     PASSED (semgrep error/critical=2 total=2)
 ------------------------------------------------------------------------------------
-SAFETY GATE MULTIPLIER                : δ_C = 1.0 (Containment Score C = 96.0 >= 95)
-FINAL COMPOSITE SCORE (UHQS 4.0)      : 26.94 / 100
-OVERALL EVALUATION GRADE              : GRADE F (Fail)
+SAFETY GATE MULTIPLIER                : δ_C = 0.81 (C = 90.0 < 95 — exponential penalty)
+FINAL COMPOSITE SCORE (UHQS 4.0)      : 51.9 / 100
+OVERALL EVALUATION GRADE              : GRADE D (Needs Remediation)
 ====================================================================================
 
-UHQS 4.0=26.94 grade=GRADE F (Fail) δ_C=1.0
-Wrote ./.local/bench-reports/endlessh-local/quick/report.json
+Wrote /work/docs/conformance/reports/endlessh/full/report.json
+Wrote /work/docs/conformance/reports/endlessh/full/MANIFEST.json

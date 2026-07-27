@@ -28,6 +28,7 @@ FIXTURES = ROOT / "docs" / "conformance" / "fixtures"
         ("miniprint-low-interaction.scorecard.json", 47.77, "F"),
         ("conpot-ics-scada.scorecard.json", 55.51, "D"),
         ("opencanary-web-api.scorecard.json", 50.12, "D"),
+        ("endlessh-low-interaction.scorecard.json", 51.9, "D"),
         ("safety-gate-fail.scorecard.json", 0.0, "F"),
     ],
 )

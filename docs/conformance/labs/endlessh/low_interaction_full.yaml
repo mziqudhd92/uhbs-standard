@@ -1,15 +1,15 @@
-# Full TPS for Endlessh — Low-Interaction SSH tarpit.
-# Note: large timing_samples still cannot produce a valid SSH IAT match.
+# Formal Low-Interaction TPS for Endlessh (SSH tarpit) deep UHBS-Lab grading.
+# Protocol id "ssh_tarpit" → generic TCP plugin. Never use protocol=ssh here.
 target_metadata:
   name: "Low-Interaction-SSH-Tarpit"
   class: "Low-Interaction"
-  protocol: "ssh"
-  protocols: ["ssh"]
+  protocol: "ssh_tarpit"
+  protocols: ["ssh_tarpit"]
 
 performance_baseline:
   expected_p95_latency_ms: 150
   strict_rfc_enforcement: true
-  timing_samples: 40
+  timing_samples: 1000
 
 safety_boundary:
   allowed_outbound_traffic: false

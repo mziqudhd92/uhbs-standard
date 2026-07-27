@@ -1,0 +1,371 @@
+{
+  "version": "1.171.0",
+  "results": [
+    {
+      "check_id": "dockerfile.security.missing-user-entrypoint.missing-user-entrypoint",
+      "path": "Dockerfile",
+      "start": {
+        "line": 13,
+        "col": 1,
+        "offset": 165
+      },
+      "end": {
+        "line": 13,
+        "col": 25,
+        "offset": 189
+      },
+      "extra": {
+        "message": "By not specifying a USER, a program in the container may run as 'root'. This is a security hazard. If an attacker can control a process running as root, they may have control over the container. Ensure that the last USER in a Dockerfile is a USER other than 'root'.",
+        "fix": "USER non-root\nENTRYPOINT [\"/endlessh\"]",
+        "metadata": {
+          "cwe": [
+            "CWE-269: Improper Privilege Management"
+          ],
+          "category": "security",
+          "technology": [
+            "dockerfile"
+          ],
+          "confidence": "MEDIUM",
+          "owasp": [
+            "A04:2021 - Insecure Design",
+            "A06:2025 - Insecure Design"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A04_2021-Insecure_Design"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/dockerfile.security.missing-user-entrypoint.missing-user-entrypoint",
+          "shortlink": "https://sg.run/k281"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "dockerfile.security.missing-user.missing-user",
+      "path": "Dockerfile",
+      "start": {
+        "line": 15,
+        "col": 1,
+        "offset": 191
+      },
+      "end": {
+        "line": 15,
+        "col": 11,
+        "offset": 201
+      },
+      "extra": {
+        "message": "By not specifying a USER, a program in the container may run as 'root'. This is a security hazard. If an attacker can control a process running as root, they may have control over the container. Ensure that the last USER in a Dockerfile is a USER other than 'root'.",
+        "fix": "USER non-root\nCMD [\"-v\"]",
+        "metadata": {
+          "cwe": [
+            "CWE-250: Execution with Unnecessary Privileges"
+          ],
+          "category": "security",
+          "technology": [
+            "dockerfile"
+          ],
+          "confidence": "MEDIUM",
+          "owasp": [
+            "A04:2021 - Insecure Design",
+            "A06:2025 - Insecure Design"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A04_2021-Insecure_Design"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/dockerfile.security.missing-user.missing-user",
+          "shortlink": "https://sg.run/Gbvn"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": "endlessh.c",
+            "start": {
+              "line": 523,
+              "col": 16,
+              "offset": 0
+            },
+            "end": {
+              "line": 524,
+              "col": 32,
+              "offset": 73
+            }
+          },
+          {
+            "path": "endlessh.c",
+            "start": {
+              "line": 526,
+              "col": 13,
+              "offset": 0
+            },
+            "end": {
+              "line": 526,
+              "col": 32,
+              "offset": 19
+            }
+          },
+          {
+            "path": "endlessh.c",
+            "start": {
+              "line": 528,
+              "col": 16,
+              "offset": 0
+            },
+            "end": {
+              "line": 529,
+              "col": 42,
+              "offset": 92
+            }
+          },
+          {
+            "path": "endlessh.c",
+            "start": {
+              "line": 530,
+              "col": 16,
+              "offset": 0
+            },
+            "end": {
+              "line": 531,
+              "col": 38,
+              "offset": 79
+            }
+          },
+          {
+            "path": "endlessh.c",
+            "start": {
+              "line": 532,
+              "col": 16,
+              "offset": 0
+            },
+            "end": {
+              "line": 532,
+              "col": 65,
+              "offset": 49
+            }
+          },
+          {
+            "path": "endlessh.c",
+            "start": {
+              "line": 541,
+              "col": 10,
+              "offset": 0
+            },
+            "end": {
+              "line": 541,
+              "col": 21,
+              "offset": 11
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line endlessh.c:523:\n `\"  -d INT    Message millisecond delay [\"\n            XSTR(DEFAULT_DELAY)` was unexpected",
+      "path": "endlessh.c",
+      "spans": [
+        {
+          "file": "endlessh.c",
+          "start": {
+            "line": 523,
+            "col": 16,
+            "offset": 0
+          },
+          "end": {
+            "line": 524,
+            "col": 32,
+            "offset": 73
+          }
+        },
+        {
+          "file": "endlessh.c",
+          "start": {
+            "line": 526,
+            "col": 13,
+            "offset": 0
+          },
+          "end": {
+            "line": 526,
+            "col": 32,
+            "offset": 19
+          }
+        },
+        {
+          "file": "endlessh.c",
+          "start": {
+            "line": 528,
+            "col": 16,
+            "offset": 0
+          },
+          "end": {
+            "line": 529,
+            "col": 42,
+            "offset": 92
+          }
+        },
+        {
+          "file": "endlessh.c",
+          "start": {
+            "line": 530,
+            "col": 16,
+            "offset": 0
+          },
+          "end": {
+            "line": 531,
+            "col": 38,
+            "offset": 79
+          }
+        },
+        {
+          "file": "endlessh.c",
+          "start": {
+            "line": 532,
+            "col": 16,
+            "offset": 0
+          },
+          "end": {
+            "line": 532,
+            "col": 65,
+            "offset": 49
+          }
+        },
+        {
+          "file": "endlessh.c",
+          "start": {
+            "line": 541,
+            "col": 10,
+            "offset": 0
+          },
+          "end": {
+            "line": 541,
+            "col": 21,
+            "offset": 11
+          }
+        }
+      ]
+    }
+  ],
+  "paths": {
+    "scanned": [
+      ".gitignore",
+      "Dockerfile",
+      "Makefile",
+      "README.md",
+      "UNLICENSE",
+      "endlessh.1",
+      "endlessh.c",
+      "util/endlessh.service",
+      "util/openbsd/README.md",
+      "util/openbsd/endlessh",
+      "util/pivot.py",
+      "util/schema.sql",
+      "util/smf/README",
+      "util/smf/endlessh.conf",
+      "util/smf/endlessh.xml",
+      "util/smf/init.endlessh"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 0.35579991340637207,
+    "profiling_times": {
+      "config_time": 2.2157065868377686,
+      "core_time": 0.9158105850219727,
+      "ignores_time": 0.0027933120727539062,
+      "total_time": 3.1440982818603516
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 0.5277297496795654,
+      "per_file_time": {
+        "mean": 0.014262966207555825,
+        "std_dev": 0.0013956519841416125
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.9941234084231146,
+      "rules_selected_ratio": 0.014691478942213516,
+      "rules_matched_ratio": 0.014691478942213516
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 859602304
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

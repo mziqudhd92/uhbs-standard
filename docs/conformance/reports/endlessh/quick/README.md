@@ -1,4 +1,6 @@
-# Quick run artifacts (Endlessh)
+# Quick run artifacts
+
+Smoke-grade UHBS-Lab output (`UHBS_QUICK=1`, SAST skipped, protocol `ssh_tarpit`).
 
 | File | Role |
 | --- | --- |
@@ -8,6 +10,7 @@
 | [uhbs-run.log](uhbs-run.log) | Console transcript |
 | [run-meta.json](run-meta.json) | Provenance / flags |
 
-**Result:** UHQS **26.94** · Grade **F** · δ_C **1.0**
+**Result:** UHQS **42.75** · Grade **F** · δ_C **0.5625**
 
-Tutorial: [`../TUTORIAL.md`](../TUTORIAL.md) · Methodology: [`../METHODOLOGY.md`](../METHODOLOGY.md)
+Prefer [`../full/`](../full/) for claim-grade evaluation.  
+Tutorial: [`../TUTORIAL.md`](../TUTORIAL.md) · Hub: [`../index.md`](../index.md)

@@ -1,4 +1,6 @@
-# Full run artifacts (Endlessh)
+# Full run artifacts
+
+Claim-grade UHBS-Lab output (1000-sample timing, generic `ssh_tarpit`, SAST, telemetry).
 
 | File | Role |
 | --- | --- |
@@ -7,7 +9,9 @@
 | [MANIFEST.json](MANIFEST.json) | SHA-256 digests |
 | [uhbs-run.log](uhbs-run.log) | Console transcript |
 | [run-meta.json](run-meta.json) | Provenance / flags |
+| [static/bandit-report.json](static/bandit-report.json) | Module F Bandit |
+| [static/semgrep-report.json](static/semgrep-report.json) | Module F Semgrep |
 
-**Result:** UHQS **26.94** · Grade **F** · δ_C **1.0**
+**Result:** UHQS **51.90** · Grade **D** · δ_C **0.81**
 
-Tutorial: [`../TUTORIAL.md`](../TUTORIAL.md) · Methodology: [`../METHODOLOGY.md`](../METHODOLOGY.md)
+Tutorial: [`../TUTORIAL.md`](../TUTORIAL.md) · Methodology: [`../METHODOLOGY.md`](../METHODOLOGY.md) · Hub: [`../index.md`](../index.md)

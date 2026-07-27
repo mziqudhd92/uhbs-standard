@@ -1,3 +1,4 @@
+import { useMemo, useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import {
   Shield,
@@ -692,111 +693,162 @@ const AuditWorkflow = () => {
 };
 
 // Section 7: Results — published tutorials, runs, scorecards
+type LabResult = {
+  name: string;
+  classLabel: string;
+  protocol: string;
+  protocolLabel: string;
+  repo: string;
+  uhqsQuick: number;
+  uhqsFull: number;
+  gradeQuick: string;
+  gradeFull: string;
+  hub: string;
+  tutorial: string;
+  methodology: string;
+  scorecard: string;
+  quick: string;
+  full: string;
+  quickCard: string;
+  fullCard: string;
+};
+
+const PROTOCOL_FILTERS = [
+  { id: "all", label: "All" },
+  { id: "http", label: "HTTP" },
+  { id: "ssh", label: "SSH" },
+  { id: "ssh_tarpit", label: "SSH tarpit" },
+  { id: "pjl", label: "PJL" },
+  { id: "modbus", label: "Modbus" },
+] as const;
+
+const LAB_RESULTS: LabResult[] = [
+  {
+    name: "ESPot",
+    classLabel: "Web-API · HTTP :9200",
+    protocol: "http",
+    protocolLabel: "HTTP",
+    repo: "https://github.com/mycert/ESPot",
+    uhqsQuick: 39.95,
+    uhqsFull: 49.82,
+    gradeQuick: "F",
+    gradeFull: "F",
+    hub: "mkdocs/conformance/reports/espot/",
+    tutorial: "mkdocs/conformance/reports/espot/TUTORIAL/",
+    methodology: "mkdocs/conformance/reports/espot/METHODOLOGY/",
+    scorecard: "mkdocs/scorecards/espot-web-api/",
+    quick: "mkdocs/conformance/reports/espot/quick/",
+    full: "mkdocs/conformance/reports/espot/full/",
+    quickCard: "mkdocs/conformance/reports/espot/quick/SCORECARD.txt",
+    fullCard: "mkdocs/conformance/reports/espot/full/SCORECARD.txt",
+  },
+  {
+    name: "miniprint",
+    classLabel: "Low-Interaction · PJL :9100",
+    protocol: "pjl",
+    protocolLabel: "PJL",
+    repo: "https://github.com/sa7mon/miniprint",
+    uhqsQuick: 39.99,
+    uhqsFull: 47.77,
+    gradeQuick: "F",
+    gradeFull: "F",
+    hub: "mkdocs/conformance/reports/miniprint/",
+    tutorial: "mkdocs/conformance/reports/miniprint/TUTORIAL/",
+    methodology: "mkdocs/conformance/reports/miniprint/METHODOLOGY/",
+    scorecard: "mkdocs/scorecards/miniprint-low-interaction/",
+    quick: "mkdocs/conformance/reports/miniprint/quick/",
+    full: "mkdocs/conformance/reports/miniprint/full/",
+    quickCard: "mkdocs/conformance/reports/miniprint/quick/SCORECARD.txt",
+    fullCard: "mkdocs/conformance/reports/miniprint/full/SCORECARD.txt",
+  },
+  {
+    name: "Conpot",
+    classLabel: "ICS-SCADA · Modbus :5020",
+    protocol: "modbus",
+    protocolLabel: "Modbus",
+    repo: "https://github.com/mushorg/conpot",
+    uhqsQuick: 44.62,
+    uhqsFull: 55.51,
+    gradeQuick: "F",
+    gradeFull: "D",
+    hub: "mkdocs/conformance/reports/conpot/",
+    tutorial: "mkdocs/conformance/reports/conpot/TUTORIAL/",
+    methodology: "mkdocs/conformance/reports/conpot/METHODOLOGY/",
+    scorecard: "mkdocs/scorecards/conpot-ics-scada/",
+    quick: "mkdocs/conformance/reports/conpot/quick/",
+    full: "mkdocs/conformance/reports/conpot/full/",
+    quickCard: "mkdocs/conformance/reports/conpot/quick/SCORECARD.txt",
+    fullCard: "mkdocs/conformance/reports/conpot/full/SCORECARD.txt",
+  },
+  {
+    name: "Cowrie",
+    classLabel: "Low-Interaction · SSH :2222",
+    protocol: "ssh",
+    protocolLabel: "SSH",
+    repo: "https://github.com/cowrie/cowrie",
+    uhqsQuick: 63.52,
+    uhqsFull: 48.7,
+    gradeQuick: "D",
+    gradeFull: "F",
+    hub: "mkdocs/conformance/reports/cowrie/",
+    tutorial: "mkdocs/conformance/reports/cowrie/TUTORIAL/",
+    methodology: "mkdocs/conformance/reports/cowrie/METHODOLOGY/",
+    scorecard: "mkdocs/scorecards/cowrie-ssh/",
+    quick: "mkdocs/conformance/reports/cowrie/quick/",
+    full: "mkdocs/conformance/reports/cowrie/full/",
+    quickCard: "mkdocs/conformance/reports/cowrie/quick/SCORECARD.txt",
+    fullCard: "mkdocs/conformance/reports/cowrie/full/SCORECARD.txt",
+  },
+  {
+    name: "Endlessh",
+    classLabel: "Low-Interaction · ssh_tarpit :2222",
+    protocol: "ssh_tarpit",
+    protocolLabel: "SSH tarpit",
+    repo: "https://github.com/skeeto/endlessh",
+    uhqsQuick: 42.75,
+    uhqsFull: 51.9,
+    gradeQuick: "F",
+    gradeFull: "D",
+    hub: "mkdocs/conformance/reports/endlessh/",
+    tutorial: "mkdocs/conformance/reports/endlessh/TUTORIAL/",
+    methodology: "mkdocs/conformance/reports/endlessh/METHODOLOGY/",
+    scorecard: "mkdocs/scorecards/endlessh-ssh-tarpit/",
+    quick: "mkdocs/conformance/reports/endlessh/quick/",
+    full: "mkdocs/conformance/reports/endlessh/full/",
+    quickCard: "mkdocs/conformance/reports/endlessh/quick/SCORECARD.txt",
+    fullCard: "mkdocs/conformance/reports/endlessh/full/SCORECARD.txt",
+  },
+  {
+    name: "OpenCanary",
+    classLabel: "Web-API · HTTP :80",
+    protocol: "http",
+    protocolLabel: "HTTP",
+    repo: "https://github.com/thinkst/opencanary",
+    uhqsQuick: 41.3,
+    uhqsFull: 50.12,
+    gradeQuick: "F",
+    gradeFull: "D",
+    hub: "mkdocs/conformance/reports/opencanary/",
+    tutorial: "mkdocs/conformance/reports/opencanary/TUTORIAL/",
+    methodology: "mkdocs/conformance/reports/opencanary/METHODOLOGY/",
+    scorecard: "mkdocs/scorecards/opencanary-web-api/",
+    quick: "mkdocs/conformance/reports/opencanary/quick/",
+    full: "mkdocs/conformance/reports/opencanary/full/",
+    quickCard: "mkdocs/conformance/reports/opencanary/quick/SCORECARD.txt",
+    fullCard: "mkdocs/conformance/reports/opencanary/full/SCORECARD.txt",
+  },
+];
+
 const Results = () => {
-  const labs = [
-    {
-      name: "ESPot",
-      classLabel: "Web-API · HTTP :9200",
-      repo: "https://github.com/mycert/ESPot",
-      uhqsQuick: 39.95,
-      uhqsFull: 49.82,
-      gradeQuick: "F",
-      gradeFull: "F",
-      hub: "mkdocs/conformance/reports/espot/",
-      tutorial: "mkdocs/conformance/reports/espot/TUTORIAL/",
-      methodology: "mkdocs/conformance/reports/espot/METHODOLOGY/",
-      scorecard: "mkdocs/scorecards/espot-web-api/",
-      quick: "mkdocs/conformance/reports/espot/quick/",
-      full: "mkdocs/conformance/reports/espot/full/",
-      quickCard: "mkdocs/conformance/reports/espot/quick/SCORECARD.txt",
-      fullCard: "mkdocs/conformance/reports/espot/full/SCORECARD.txt",
-    },
-    {
-      name: "miniprint",
-      classLabel: "Low-Interaction · PJL :9100",
-      repo: "https://github.com/sa7mon/miniprint",
-      uhqsQuick: 39.99,
-      uhqsFull: 47.77,
-      gradeQuick: "F",
-      gradeFull: "F",
-      hub: "mkdocs/conformance/reports/miniprint/",
-      tutorial: "mkdocs/conformance/reports/miniprint/TUTORIAL/",
-      methodology: "mkdocs/conformance/reports/miniprint/METHODOLOGY/",
-      scorecard: "mkdocs/scorecards/miniprint-low-interaction/",
-      quick: "mkdocs/conformance/reports/miniprint/quick/",
-      full: "mkdocs/conformance/reports/miniprint/full/",
-      quickCard: "mkdocs/conformance/reports/miniprint/quick/SCORECARD.txt",
-      fullCard: "mkdocs/conformance/reports/miniprint/full/SCORECARD.txt",
-    },
-    {
-      name: "Conpot",
-      classLabel: "ICS-SCADA · Modbus :5020",
-      repo: "https://github.com/mushorg/conpot",
-      uhqsQuick: 44.62,
-      uhqsFull: 55.51,
-      gradeQuick: "F",
-      gradeFull: "D",
-      hub: "mkdocs/conformance/reports/conpot/",
-      tutorial: "mkdocs/conformance/reports/conpot/TUTORIAL/",
-      methodology: "mkdocs/conformance/reports/conpot/METHODOLOGY/",
-      scorecard: "mkdocs/scorecards/conpot-ics-scada/",
-      quick: "mkdocs/conformance/reports/conpot/quick/",
-      full: "mkdocs/conformance/reports/conpot/full/",
-      quickCard: "mkdocs/conformance/reports/conpot/quick/SCORECARD.txt",
-      fullCard: "mkdocs/conformance/reports/conpot/full/SCORECARD.txt",
-    },
-    {
-      name: "Cowrie",
-      classLabel: "Low-Interaction · SSH :2222",
-      repo: "https://github.com/cowrie/cowrie",
-      uhqsQuick: 63.52,
-      uhqsFull: 48.7,
-      gradeQuick: "D",
-      gradeFull: "F",
-      hub: "mkdocs/conformance/reports/cowrie/",
-      tutorial: "mkdocs/conformance/reports/cowrie/TUTORIAL/",
-      methodology: "mkdocs/conformance/reports/cowrie/METHODOLOGY/",
-      scorecard: "mkdocs/scorecards/cowrie-ssh/",
-      quick: "mkdocs/conformance/reports/cowrie/quick/",
-      full: "mkdocs/conformance/reports/cowrie/full/",
-      quickCard: "mkdocs/conformance/reports/cowrie/quick/SCORECARD.txt",
-      fullCard: "mkdocs/conformance/reports/cowrie/full/SCORECARD.txt",
-    },
-    {
-      name: "Endlessh",
-      classLabel: "Low-Interaction · SSH tarpit :2223",
-      repo: "https://github.com/skeeto/endlessh",
-      uhqsQuick: 26.94,
-      uhqsFull: 26.94,
-      gradeQuick: "F",
-      gradeFull: "F",
-      hub: "mkdocs/conformance/reports/endlessh/",
-      tutorial: "mkdocs/conformance/reports/endlessh/TUTORIAL/",
-      methodology: "mkdocs/conformance/reports/endlessh/METHODOLOGY/",
-      scorecard: "mkdocs/scorecards/endlessh-ssh-tarpit/",
-      quick: "mkdocs/conformance/reports/endlessh/quick/",
-      full: "mkdocs/conformance/reports/endlessh/full/",
-      quickCard: "mkdocs/conformance/reports/endlessh/quick/SCORECARD.txt",
-      fullCard: "mkdocs/conformance/reports/endlessh/full/SCORECARD.txt",
-    },
-    {
-      name: "OpenCanary",
-      classLabel: "Web-API · HTTP :80",
-      repo: "https://github.com/thinkst/opencanary",
-      uhqsQuick: 41.3,
-      uhqsFull: 50.12,
-      gradeQuick: "F",
-      gradeFull: "D",
-      hub: "mkdocs/conformance/reports/opencanary/",
-      tutorial: "mkdocs/conformance/reports/opencanary/TUTORIAL/",
-      methodology: "mkdocs/conformance/reports/opencanary/METHODOLOGY/",
-      scorecard: "mkdocs/scorecards/opencanary-web-api/",
-      quick: "mkdocs/conformance/reports/opencanary/quick/",
-      full: "mkdocs/conformance/reports/opencanary/full/",
-      quickCard: "mkdocs/conformance/reports/opencanary/quick/SCORECARD.txt",
-      fullCard: "mkdocs/conformance/reports/opencanary/full/SCORECARD.txt",
-    },
-  ];
+  const [protocolFilter, setProtocolFilter] = useState<string>("all");
+
+  const filteredLabs = useMemo(
+    () =>
+      protocolFilter === "all"
+        ? LAB_RESULTS
+        : LAB_RESULTS.filter((lab) => lab.protocol === protocolFilter),
+    [protocolFilter],
+  );
 
   return (
     <section id="results" className="py-24 border-t border-border/50">
@@ -807,7 +859,7 @@ const Results = () => {
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerContainer}
       >
-        <motion.div variants={fadeUpVariant} className="mb-12">
+        <motion.div variants={fadeUpVariant} className="mb-8">
           <h2 className="text-3xl md:text-4xl font-bold font-sans mb-4 flex items-center gap-3">
             <Terminal className="text-primary w-8 h-8" />
             Results
@@ -818,8 +870,39 @@ const Results = () => {
           </p>
         </motion.div>
 
+        <motion.div variants={fadeUpVariant} className="mb-10">
+          <div className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground mb-3">
+            Filter by protocol
+          </div>
+          <div className="flex flex-wrap gap-2" role="group" aria-label="Filter honeypot results by protocol">
+            {PROTOCOL_FILTERS.map((opt) => {
+              const active = protocolFilter === opt.id;
+                  const count =
+                    opt.id === "all"
+                      ? LAB_RESULTS.length
+                      : LAB_RESULTS.filter((l) => l.protocol === opt.id).length;
+              return (
+                <button
+                  key={opt.id}
+                  type="button"
+                  onClick={() => setProtocolFilter(opt.id)}
+                  aria-pressed={active}
+                  className={
+                    active
+                      ? "font-mono text-xs px-3 py-1.5 border border-primary bg-primary/15 text-primary"
+                      : "font-mono text-xs px-3 py-1.5 border border-border text-secondary-foreground hover:border-primary/50 hover:text-primary transition-colors"
+                  }
+                >
+                  {opt.label}
+                  <span className="ml-1.5 text-muted-foreground">({count})</span>
+                </button>
+              );
+            })}
+          </div>
+        </motion.div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-12">
-          {labs.map((lab) => (
+          {filteredLabs.map((lab) => (
             <motion.div
               key={lab.name}
               variants={fadeUpVariant}
@@ -891,11 +974,18 @@ const Results = () => {
           ))}
         </div>
 
+        {filteredLabs.length === 0 && (
+          <motion.p variants={fadeUpVariant} className="font-mono text-sm text-muted-foreground mb-10">
+            No published labs for this protocol filter.
+          </motion.p>
+        )}
+
         <motion.div variants={fadeUpVariant} className="overflow-x-auto border border-border mb-10">
           <table className="w-full text-left text-sm font-mono">
             <thead>
               <tr className="border-b border-border bg-card text-muted-foreground text-xs uppercase tracking-wider">
                 <th className="py-3 px-4 font-normal">Target</th>
+                <th className="py-3 px-4 font-normal">Protocol</th>
                 <th className="py-3 px-4 font-normal">Project</th>
                 <th className="py-3 px-4 font-normal">Tutorial</th>
                 <th className="py-3 px-4 font-normal">Quick</th>
@@ -904,12 +994,13 @@ const Results = () => {
               </tr>
             </thead>
             <tbody className="divide-y divide-border/40">
-              {labs.map((lab) => (
+              {filteredLabs.map((lab) => (
                 <tr key={`row-${lab.name}`} className="hover:bg-card/80">
                   <td className="py-3 px-4 text-foreground font-semibold">
                     <a href={lab.hub} className="hover:text-primary">{lab.name}</a>
                     <div className="text-[10px] text-muted-foreground font-normal mt-0.5">{lab.classLabel}</div>
                   </td>
+                  <td className="py-3 px-4 text-secondary-foreground">{lab.protocolLabel}</td>
                   <td className="py-3 px-4">
                     <a href={lab.repo} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">GitHub</a>
                   </td>

@@ -1,47 +1,50 @@
 {
   "uhbs_version": "4.0.0",
   "target": {
-    "name": "endlessh (skeeto SSH tarpit)",
+    "name": "Endlessh (skeeto SSH tarpit)",
     "class": "Low-Interaction",
-    "profile_ref": "docs/conformance/labs/endlessh/low_interaction_ssh_full.yaml"
+    "profile_ref": "docs/conformance/labs/endlessh/low_interaction_full.yaml"
   },
   "evaluated_at": "2026-07-27",
-  "auditor": "UHBS-Lab loopback run (SSH tarpit :2223)",
+  "auditor": "UHBS-Lab detailed Docker run (ssh_tarpit/generic :2222 + 1000-sample A3 + SAST + telemetry)",
   "modules": {
     "A": {
-      "score": 12.5,
+      "score": 56.5,
       "status": "PARTIAL",
       "weight": 0.3,
-      "notes": "no valid SSH-2.0 banner / KEXINIT (tarpit drip)"
+      "notes": "generic TCP connect/banner/timing n=1000; not RFC4253 SSH"
     },
     "B": {
-      "score": 6.25,
+      "score": 62.5,
       "status": "PARTIAL",
       "weight": 0.15,
-      "notes": "no SSH session — cross-session/payload N/A"
+      "notes": "survived binary blast"
     },
     "C": {
-      "score": 25.0,
+      "score": 55.0,
       "status": "PARTIAL",
       "weight": 0.25,
-      "notes": "no session inject / structured CTI pipeline"
+      "notes": "text/Docker logs only — no STIX/OTel/ECS (capped)"
     },
     "D": {
-      "score": 96.0,
-      "status": "GATE PASSED",
-      "notes": "no interactive shell breakout surface; C>=95"
+      "score": 90.0,
+      "status": "GATE FAILED",
+      "notes": "No ports.ssh (tarpit-safe); airgap+gateway attested; Safety Gate not fully cleared (C<95)"
     },
     "E": {
-      "score": 20.0,
-      "status": "PARTIAL",
+      "score": 100.0,
+      "status": "PASSED",
       "weight": 0.1,
-      "notes": "100% SSH client errors under load; P95 undefined"
+      "notes": "200 TCP connects @25 concurrency; P95=7.2ms",
+      "p50_ms": 2.6,
+      "p95_ms": 7.2,
+      "p99_ms": 8.8
     },
     "F": {
       "score": 70.0,
       "status": "PASSED",
       "weight": 0.2,
-      "notes": "small C tree; POSIX VFS coverage N/A; SAST skipped in publication"
+      "notes": "semgrep error/critical present; SAST gate capped Module F at 70"
     }
   },
   "weights": {
@@ -52,12 +55,12 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 96.0,
-    "delta_c": 1.0,
-    "passed": true,
+    "containment_score": 90.0,
+    "delta_c": 0.81,
+    "passed": false,
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 26.94,
-  "grade": "F",
-  "notes": "Evaluation proof only. Endlessh is an SSH tarpit (negative control for interactive honeypot rubrics). Artifacts: docs/conformance/reports/endlessh/."
+  "uhqs": 51.9,
+  "grade": "D",
+  "notes": "Detailed evaluation proof only. Graded with generic plugin protocol id ssh_tarpit — not SSH/Paramiko. Full Docker lab artifacts live under docs/conformance/reports/endlessh/."
 }

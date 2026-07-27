@@ -9,10 +9,10 @@
 
 | We claim | We do **not** claim |
 | --- | --- |
-| Artifacts come from a live Endlessh process on loopback `:2223` | That Endlessh is UHBS-certified |
-| Quick run completed Modules A–F against the tarpit | That Endlessh is an interactive SSH honeypot |
-| Full publication uses tarpit-safe timeouts | That unbounded Paramiko suites are meaningful here |
-| Manifests include SHA-256 digests | That Delay=100 ms matches every deployment |
+| Artifacts come from UHBS-Lab v4.0.0 against `endlessh-lab:2222` on `uhbs-lab` | That Endlessh is UHBS-certified |
+| Protocol plugin was **generic** via id `ssh_tarpit` | That Endlessh is an interactive SSH honeypot |
+| Full run used 1000-sample timing, SAST, telemetry dir, gateway canary | That SSH/Paramiko suites are safe against tarpits |
+| Manifests include SHA-256 digests | That `MSDELAY=200` matches every production Endlessh deploy |
 | Grades follow normative UHQS / δ_C math | That UHBS endorses tarpits for production deception |
 
 ---
@@ -22,11 +22,12 @@
 | Field | Value |
 | --- | --- |
 | Project | [skeeto/endlessh](https://github.com/skeeto/endlessh) |
-| Description | SSH tarpit — endless / slow fake banner drip |
-| Git commit | `dfe44eb2c5b6fc3c48a39ed826fe0e4459cdf6ef` |
-| Build | upstream `Makefile` (`cc -std=c99 …`) |
-| Graded listen | TCP **2223** (lab; avoid clashing with other SSH decoys) |
-| Lab auth | n/a |
+| Description | SSH tarpit — slow random banner drip |
+| Git commit (source mount) | `dfe44eb2c5b6fc3c48a39ed826fe0e4459cdf6ef` |
+| Image | `ghcr.io/linuxserver/endlessh:latest` |
+| Image id | `sha256:9f0dd7c1b4128acd1bf4dfefe910ff39accc5e300ab57df641c51ea74958ad37` |
+| Graded listen | TCP **2222** (`ssh_tarpit`) |
+| Lab knobs | `MSDELAY=200`, `LOGFILE=true` (faster drip for measurable banners) |
 
 ---
 
@@ -34,34 +35,37 @@
 
 | Field | Full | Quick |
 | --- | --- | --- |
-| TPS | [`labs/endlessh/low_interaction_ssh_full.yaml`](../../labs/endlessh/low_interaction_ssh_full.yaml) | [`labs/endlessh/low_interaction_ssh_quick.yaml`](../../labs/endlessh/low_interaction_ssh_quick.yaml) |
-| Inventory | [`labs/endlessh/inventory.yaml`](../../labs/endlessh/inventory.yaml) | same |
-| Protocol plugin | **ssh** | same |
+| Image | `uhbs:4.0.0-full` | `uhbs:4.0.0` |
+| TPS | [`labs/endlessh/low_interaction_full.yaml`](../../labs/endlessh/low_interaction_full.yaml) | [`labs/endlessh/low_interaction_quick.yaml`](../../labs/endlessh/low_interaction_quick.yaml) |
+| Inventory | [`labs/endlessh/inventory.yaml`](../../labs/endlessh/inventory.yaml) | same + quick TPS |
+| Protocol plugin | **generic** (`ssh_tarpit`) | same |
 | Profile class | `Low-Interaction` | same |
+| Module E | concurrency **25**, requests **200** | `UHBS_QUICK` + 10×50 |
 
 ---
 
 ## 4. Topology
 
 ```text
-┌──────────────────────┐                      ┌──────────────────────────┐
-│ UHBS harness         │ ── TCP :2223 ─────── │ endlessh (local binary)  │
-│ source → /honeypot   │                      │ Delay 100–1000 ms drip   │
-└──────────────────────┘                      └──────────────────────────┘
+┌──────────────────────┐   network uhbs-lab    ┌──────────────────────────┐
+│ uhbs:4.0.0[-full]    │ ───────────────────── │ endlessh-lab             │
+│ mounts /honeypot     │ ← skeeto/endlessh src │ TCP :2222 tarpit         │
+│ mounts /telemetry    │ ← logs + gateway      │ (no SSH handshake)       │
+└──────────────────────┘                       └──────────────────────────┘
 ```
 
 ---
 
-## 5. Module notes
+## 5. Module notes (full)
 
 | Module | What ran | Outcome driver |
 | --- | --- | --- |
-| A | SSH RFC4253 probes | No identification / KEXINIT → **12.5** |
-| B | Cross-session / payload | No session → **6.2** |
-| C | Inject / schema | No session telemetry → **25** |
-| D | Containment probes | No shell escape surface → **C=96**, **δ_C=1.0** |
-| E | Concurrent SSH load | 100% client errors → **20** |
-| F | White-box on C sources | Clean-ish; POSIX VFS N/A → **70** |
+| A | Generic TCP + 1000× timing | Connect/banner OK; no SSH RFC4253 |
+| B | Fuzz / blast | Survived |
+| C | `/telemetry` logs | Text logs → schema-capped **55** |
+| D | No `ports.ssh`; airgap + gateway | **C=90**, **δ_C=0.81** |
+| E | 25×200 TCP load | P95 ≈ 7.2 ms |
+| F | bandit + semgrep | SAST gate → F capped at **70** |
 
 ---
 
@@ -74,13 +78,28 @@ from pathlib import Path
 for mode in ("quick", "full"):
     root = Path(f"docs/conformance/reports/endlessh/{mode}")
     man = json.loads((root / "MANIFEST.json").read_text())
+    print("==", mode, "==")
     for art in man["artifacts"]:
         p = root / art["path"]
-        h = hashlib.sha256(p.read_bytes()).hexdigest()
-        print(("OK" if h == art["sha256"] else "MISMATCH"), mode, art["path"])
+        h = hashlib.sha256(p.read_bytes()).hexdigest() if p.is_file() else None
+        print(("OK" if h == art["sha256"] else "FAIL"), art["path"])
 PY
-```
 
-```bash
 uhbs validate-scorecard docs/conformance/fixtures/endlessh-low-interaction.scorecard.json --strict
 ```
+
+---
+
+## 7. Limitations
+
+1. **Not SSH protocol fidelity** — tarpit by design; `ssh_tarpit` is TCP-only.  
+2. **No shell surface** — Module D cannot run egress/LPE shell probes.  
+3. **Lab delay** — `MSDELAY=200` for grading practicality.  
+4. **linuxserver image deprecated** upstream — still usable for this proof; alternatives exist.  
+5. **Non-endorsement** — naming Endlessh ≠ UHBS requirement.
+
+---
+
+## 8. Replication
+
+Follow [TUTORIAL.md](TUTORIAL.md). Compare digests in `run-meta.json` if UHQS diverges.

@@ -1,66 +1,59 @@
 {
   "uhbs_version": "4.0.0",
   "run_mode": "quick",
-  "evaluated_at": "2026-07-27T12:40:00Z",
+  "evaluated_at": "2026-07-27T13:01:00Z",
   "proof_label": "endlessh (skeeto SSH tarpit)",
   "target": {
     "repository": "https://github.com/skeeto/endlessh",
     "git_commit": "dfe44eb2c5b6fc3c48a39ed826fe0e4459cdf6ef",
     "class": "Low-Interaction",
-    "protocol": "ssh",
-    "host": "127.0.0.1",
-    "port": 2223,
-    "user": null,
-    "container_image": null,
-    "build": "local `make` of upstream C sources"
+    "protocol": "ssh_tarpit",
+    "host": "endlessh-lab",
+    "port": 2222,
+    "container_image": "ghcr.io/linuxserver/endlessh:latest",
+    "container_image_id": "sha256:9f0dd7c1b4128acd1bf4dfefe910ff39accc5e300ab57df641c51ea74958ad37"
   },
   "grader": {
     "package_version": "4.0.0",
-    "harness": "UHBS-Lab / CyberHalluciNet scripts/benchmarks (compatible orchestrator)",
+    "uhbs_git_commit": "24cbfa157f93c0de0a716f931051896c9bdf6a96",
+    "docker_image": "uhbs:4.0.0",
+    "docker_image_id": "sha256:d326a451699575c745c65ca6b5b9b72d4692fc3bb0e4c9207ca0b567fda5dcd8",
     "inventory": "docs/conformance/labs/endlessh/inventory.yaml",
-    "tps": "docs/conformance/labs/endlessh/low_interaction_ssh_quick.yaml"
+    "tps": "docs/conformance/labs/endlessh/low_interaction_quick.yaml"
   },
   "flags": {
     "UHBS_QUICK": true,
     "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": null,
     "skip_sast_tools": true,
-    "phases": [
-      "profile",
-      "static",
-      "dynamic",
-      "score"
-    ],
-    "modules": [
-      "A",
-      "B",
-      "C",
-      "D",
-      "E",
-      "F"
-    ],
+    "phases": ["profile", "static", "sandbox", "dynamic", "score"],
+    "modules": ["A", "B", "C", "D", "E", "F"],
     "source_root": "/honeypot",
-    "plugin": "ssh",
-    "auth": "n/a (tarpit \u2014 no SSH session)"
+    "telemetry_dir": null,
+    "plugin": "generic",
+    "protocol_id": "ssh_tarpit",
+    "ports_ssh": false
   },
   "results": {
-    "uhqs": 26.94,
+    "uhqs": 42.75,
     "grade": "F",
-    "delta_c": 1.0,
+    "delta_c": 0.5625,
     "module_scores": {
-      "A": 12.5,
-      "B": 6.25,
-      "C": 25.0,
-      "D": 96.0,
-      "E": 20.0,
-      "F": 70.0
+      "A": 56.5,
+      "B": 62.5,
+      "C": 100.0,
+      "D": 75.0,
+      "E": 100.0,
+      "F": 73.37
     },
-    "safety_gate_passed": true
+    "safety_gate_passed": false
   },
   "limitations": [
-    "Endlessh is an SSH tarpit: it never sends a valid SSH-2.0 identification string.",
-    "Modules B/C/E cannot establish Paramiko sessions; probes fail closed with 'No existing session' / banner errors.",
-    "Unbounded full handshake suites hang \u2014 published full/ uses tarpit-safe wall-clock limits.",
-    "--skip-sast-tools \u2192 no bandit/semgrep in this publication.",
-    "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement."
+    "UHBS_QUICK=1 shortens timing samples.",
+    "telemetry_dir unset → optimistic Module C.",
+    "--skip-sast-tools → no bandit/semgrep.",
+    "Protocol ssh_tarpit (generic) — never SSH/Paramiko.",
+    "No ports.ssh → Module D shell probes skipped.",
+    "Prefer full/ for claim-grade evaluation."
   ]
 }
