@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "d07702b8e51e2ca80c23224d794815569f6a9de997d26d518c50afb9e15e5be0"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "d07702b8e51e2ca80c23224d794815569f6a9de997d26d518c50afb9e15e5be0"
+    },
+    {
+      "path": "report.json",
+      "sha256": "7a86262a2dfa595b7f5e8646a7329dd750e27b9a59d11d28b7503a86ece5560e"
+    },
+    {
+      "path": "uhbs-run.console.log",
+      "sha256": "0895a17698b6de774243cae0fced12a18b5ebe38c019cb85ed1c5e7cae37bb2b"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-vnc",
+    "uhqs": 50.81,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

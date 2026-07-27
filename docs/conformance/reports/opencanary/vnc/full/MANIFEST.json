@@ -1,0 +1,30 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "ae774433bcda4c61c66cc2f9485b997d5e8aaa7c56238b0d027aa3f2c1229ba2"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "ae774433bcda4c61c66cc2f9485b997d5e8aaa7c56238b0d027aa3f2c1229ba2"
+    },
+    {
+      "path": "report.json",
+      "sha256": "25ee6448de7cbe0034844f85d03d0778133adde225529d275ea69d2d4d3fef16"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "29042e974198547c54b61d0ff81c3580b17c97b6592cc91e321a7a755509a2b7"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "5d1b3427215be295328c7d612c93eae0d33cb8e89af42a0f51dd0dac618bf5b5"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-vnc",
+    "uhqs": 61.99,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}
