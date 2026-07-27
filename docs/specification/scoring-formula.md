@@ -84,9 +84,15 @@ networks. See [Status of This Document](status.md).
 
 ## Reference computation
 
-These normative numbers **MUST** match `uhbs score` and `uhbs_core.models.compute_uhqs`.
-Worked class examples (anonymous in the normative formula; named proof targets
-are listed only under [Conformance](../conformance/index.md)):
+These normative numbers **MUST** match `uhbs score` and `uhbs_core.uhqs_math.compute_uhqs`
+(CLI / MCP / harness wrappers).
 
-- Low-Interaction class → UHQS **46.97** (Grade F)
-- POSIX-Shell class → UHQS **80.33** (Grade B)
+**Worked examples** (anonymous module scores used in unit tests — not live product fixtures):
+
+| Class | Example scores | UHQS | Grade |
+| --- | --- | ---: | --- |
+| Low-Interaction | A=23.5, B=42.5, C=57.0, D=100, E=55.0, F=69.0 | **46.97** | F |
+| POSIX-Shell | (see `posix-shell-lab` fixture path below) | **80.33** | B |
+
+**Live published fixtures** (evaluation proof only) are listed under
+[Conformance](../conformance/index.md) — e.g. Cowrie full lab **48.70** / F, not 46.97.

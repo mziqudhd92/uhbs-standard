@@ -1,6 +1,9 @@
 # UHBS grading toolkit — validate TPS/scorecards and run the UHBS-Lab harness.
 # Build:  docker build -t uhbs:4.0.0 .
 # Run:    docker run --rm -v "$PWD:/work" -w /work uhbs:4.0.0 validate-scorecard ./scorecard.json
+#
+# MCP (uhbs-mcp) is intentionally NOT in this image — AI hosts should install
+# uhbs[mcp] on the host. See docs/tooling/mcp.md.
 FROM python:3.12-slim-bookworm
 
 LABEL org.opencontainers.image.title="UHBS"

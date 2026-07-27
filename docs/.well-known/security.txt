@@ -2,4 +2,4 @@ Contact: https://github.com/mziqudhd92/uhbs-standard/security/advisories/new
 Policy: https://github.com/mziqudhd92/uhbs-standard/blob/main/SECURITY.md
 Acknowledgments: https://github.com/mziqudhd92/uhbs-standard/security/advisories
 Preferred-Languages: en
-Canonical: https://mziqudhd92.github.io/uhbs-standard/mkdocs/.well-known/security.txt
+Canonical: https://mziqudhd92.github.io/uhbs-standard/.well-known/security.txt

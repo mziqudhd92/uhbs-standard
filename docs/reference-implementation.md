@@ -72,8 +72,15 @@ names are **proof labels only** — UHBS does not require or endorse them.
 
 | Target (proof) | Class | UHQS | Grade | Fixture |
 | --- | --- | --- | --- | --- |
-| Cowrie | Low-Interaction | 46.97 | F | [`cowrie-low-interaction.scorecard.json`](conformance/fixtures/cowrie-low-interaction.scorecard.json) |
-| CyberHalluciNet | POSIX-Shell | 80.33 | B | [`posix-shell-lab.scorecard.json`](conformance/fixtures/posix-shell-lab.scorecard.json) |
+| Cowrie | Low-Interaction · SSH | **48.70** | F | [`cowrie-low-interaction.scorecard.json`](conformance/fixtures/cowrie-low-interaction.scorecard.json) |
+| ESPot | Web-API · HTTP | **49.82** | F | [`espot-web-api.scorecard.json`](conformance/fixtures/espot-web-api.scorecard.json) |
+| miniprint | Low-Interaction · PJL | **47.77** | F | [`miniprint-low-interaction.scorecard.json`](conformance/fixtures/miniprint-low-interaction.scorecard.json) |
+| Conpot | ICS-SCADA · Modbus | **55.51** | D | [`conpot-ics-scada.scorecard.json`](conformance/fixtures/conpot-ics-scada.scorecard.json) |
+| OpenCanary | Web-API · HTTP | **50.12** | D | [`opencanary-web-api.scorecard.json`](conformance/fixtures/opencanary-web-api.scorecard.json) |
+| CyberHalluciNet | POSIX-Shell | **80.33** | B | [`posix-shell-lab.scorecard.json`](conformance/fixtures/posix-shell-lab.scorecard.json) |
+
+A separate **worked example** (anonymous module scores A=23.5…F=69.0 under Low-Interaction
+weights) yields UHQS **46.97** — that number is **not** the live Cowrie fixture.
 
 ## Signal profiles
 

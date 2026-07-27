@@ -51,4 +51,9 @@ jobs:
           uhbs validate-scorecard docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
           uhbs validate-scorecard docs/conformance/fixtures/posix-shell-lab.scorecard.json
           uhbs validate-scorecard docs/conformance/fixtures/safety-gate-fail.scorecard.json
+          uhbs validate-scorecard docs/conformance/fixtures/espot-web-api.scorecard.json
+          uhbs validate-scorecard docs/conformance/fixtures/miniprint-low-interaction.scorecard.json
+          uhbs validate-scorecard docs/conformance/fixtures/conpot-ics-scada.scorecard.json
+          uhbs validate-scorecard docs/conformance/fixtures/opencanary-web-api.scorecard.json
           check-jsonschema --check-metaschema schemas/evidence-pack.schema.json
+          python -c "import json; json.load(open('server.json'))"

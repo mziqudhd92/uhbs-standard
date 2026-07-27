@@ -17,7 +17,8 @@ from uhbs_core.uhqs_math import letter_grade as shared_letter
 
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURES = ROOT / "docs" / "conformance" / "fixtures"
-COWRIE_SCORES = {
+# Anonymous Low-Interaction worked example (NOT the live Cowrie fixture).
+LI_WORKED_SCORES = {
     "A": 23.5,
     "B": 42.5,
     "C": 57.0,
@@ -25,7 +26,7 @@ COWRIE_SCORES = {
     "E": 55.0,
     "F": 69.0,
 }
-COWRIE_DIMS = {
+LI_WORKED_DIMS = {
     "protocol": 23.5,
     "behavior": 42.5,
     "telemetry": 57.0,
@@ -37,8 +38,8 @@ COWRIE_DIMS = {
 
 def test_cli_and_core_uhqs_agree() -> None:
     weights = weights_for_class("Low-Interaction")
-    cli = cli_compute(COWRIE_SCORES, weights)
-    core = core_compute(COWRIE_DIMS, target="x", profile_class="Low-Interaction")
+    cli = cli_compute(LI_WORKED_SCORES, weights)
+    core = core_compute(LI_WORKED_DIMS, target="x", profile_class="Low-Interaction")
     assert cli.uhqs == core.uhqs == 46.97
     assert cli.delta_c == pytest.approx(core.delta_c)
     assert shared_letter(cli.uhqs) == letter_grade(cli.uhqs) == "F"
@@ -55,7 +56,7 @@ def test_missing_module_score_raises() -> None:
 
 
 def test_containment_not_measured_skips_gate() -> None:
-    scores = {**COWRIE_DIMS, "containment": 10.0}
+    scores = {**LI_WORKED_DIMS, "containment": 10.0}
     gated = core_compute(scores, target="x", profile_class="Low-Interaction")
     ungated = core_compute(
         scores,
@@ -145,7 +146,7 @@ def test_cli_validate_profile_ok() -> None:
 def test_cli_score_command() -> None:
     runner = CliRunner()
     with runner.isolated_filesystem():
-        Path("scores.json").write_text(json.dumps(COWRIE_SCORES), encoding="utf-8")
+        Path("scores.json").write_text(json.dumps(LI_WORKED_SCORES), encoding="utf-8")
         result = runner.invoke(
             main, ["score", "--class", "Low-Interaction", "--scores", "scores.json"]
         )

@@ -133,7 +133,9 @@ Where `scores.json` contains module scores:
 }
 ```
 
-Expected for the Low-Interaction conformance fixture weights: **UHQS = 46.97** (Grade F).
+Expected for this **worked example** under Low-Interaction weights: **UHQS = 46.97**
+(Grade F). That is **not** the live Cowrie fixture (UHQS **48.70** — see
+[`docs/conformance/fixtures/cowrie-low-interaction.scorecard.json`](../conformance/fixtures/cowrie-low-interaction.scorecard.json)).
 
 ## CI Integration
 

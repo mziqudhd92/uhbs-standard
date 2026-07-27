@@ -55,7 +55,8 @@ def test_posix_lab_meets_production_baseline() -> None:
     assert letter_grade(data["uhqs"]) == "B"
 
 
-def test_harness_formula_cowrie_recompute() -> None:
+def test_harness_formula_low_interaction_worked_example() -> None:
+    """Anonymous LI scores A=23.5…F=69.0 → 46.97 (not the live Cowrie fixture)."""
     weights = weights_for_class("Low-Interaction")
     scores = {"A": 23.5, "B": 42.5, "C": 57.0, "D": 100.0, "E": 55.0, "F": 69.0}
     result = compute_uhqs(scores, weights)

@@ -73,12 +73,20 @@ artifacts: [docs/conformance/](conformance/index.md).
 
 | Target (proof only) | Class | UHQS | Grade |
 | --- | --- | --- | --- |
-| Cowrie (OSS low-interaction baseline) | Low-Interaction | **46.97** | F |
+| Cowrie (OSS SSH baseline) | Low-Interaction | **48.70** | F |
+| ESPot (HTTP Elasticsearch decoy) | Web-API | **49.82** | F |
+| miniprint (PJL printer decoy) | Low-Interaction | **47.77** | F |
+| Conpot (Modbus ICS) | ICS-SCADA | **55.51** | D |
+| OpenCanary (HTTP canary) | Web-API | **50.12** | D |
 | CyberHalluciNet (lab, post-hardening) | POSIX-Shell | **80.33** | B |
 
-These runs show a mature low-interaction baseline below the production gate and
-a hardened interactive decoy clearing UHQS > 80 — without endorsing either
-product as a UHBS requirement.
+Live full-lab artifacts: [docs/conformance/reports/](conformance/reports/index.md).
+An anonymous Low-Interaction **worked example** (A=23.5…F=69.0) still equals UHQS
+**46.97** in unit tests — do not confuse that with the Cowrie fixture.
+
+These runs show mature decoys near or below the production gate and one hardened
+interactive decoy clearing UHQS > 80 — without endorsing any product as a UHBS
+requirement.
 
 **Public repo policy:** Framework docs, templates, and schemas MUST remain
 class-/protocol-based. Named products belong in conformance fixtures and proof
@@ -158,7 +166,7 @@ These items are **future goals**. The repo must **not** claim they are complete.
 - [ ] Publish an **ADOPTERS.md** (or similar) only when real external users consent
 - [ ] At least **one independent reproduction** of a public fixture by someone other
       than the author
-- [ ] Expand the evaluation corpus (≥5 open-source deception targets across classes)
+- [x] Expand the evaluation corpus (≥5 open-source deception targets across classes)
 - [ ] Optional: peer-reviewed or workshop paper / preprint with weight sensitivity notes
 
 #### Registry & distribution

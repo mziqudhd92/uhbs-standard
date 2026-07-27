@@ -6,7 +6,8 @@ Allow: /
 # Note: Google Search does not use llms.txt as a ranking signal; it remains
 # useful for documentation-oriented agents and RAG pipelines.
 # See https://llmstxt.org/
-# MCP tooling for AI hosts: https://mziqudhd92.github.io/uhbs-standard/mkdocs/tooling/mcp/
+# Site-root mirrors (also copied by deploy-docs): /llms.txt /llms-full.txt /humans.txt /server.json
+# MCP tooling: https://mziqudhd92.github.io/uhbs-standard/mkdocs/tooling/mcp/
 
 Sitemap: https://mziqudhd92.github.io/uhbs-standard/mkdocs/sitemap.xml
 Host: https://mziqudhd92.github.io/uhbs-standard/

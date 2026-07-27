@@ -31,6 +31,7 @@ def test_tps_profiles_packaged() -> None:
 
 
 def test_uhqs_matches_cli_math() -> None:
+    # Anonymous Low-Interaction worked example (NOT live Cowrie fixture 48.70).
     # models.weights_for_class returns DIM_* keys consumed by compute_uhqs
     scores = {
         "protocol": 23.5,

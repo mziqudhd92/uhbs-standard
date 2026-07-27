@@ -46,14 +46,20 @@ jobs:
 
       - name: Publish root discovery files
         run: |
+          # AEO / GEO / SEO entrypoints advertised by AGENTS.md and humans.txt
           cp llms.txt web/dist/llms.txt
+          cp docs/llms-full.txt web/dist/llms-full.txt
+          cp docs/humans.txt web/dist/humans.txt
+          cp server.json web/dist/server.json
+          mkdir -p web/dist/.well-known
+          cp docs/.well-known/security.txt web/dist/.well-known/security.txt
           printf '%s\n' \
             '# https://mziqudhd92.github.io/uhbs-standard/robots.txt' \
             'User-agent: *' \
             'Allow: /' \
             '' \
-            '# AEO: curated agent index + MCP tooling docs' \
-            '# llms.txt (this site root) · mkdocs/llms.txt · mkdocs/tooling/mcp/' \
+            '# AEO: llms.txt · llms-full.txt · humans.txt · server.json (MCP) · mkdocs/' \
+            '# Prefer https://mziqudhd92.github.io/uhbs-standard/llms.txt for agents' \
             'Sitemap: https://mziqudhd92.github.io/uhbs-standard/mkdocs/sitemap.xml' \
             'Host: https://mziqudhd92.github.io/uhbs-standard/' \
             > web/dist/robots.txt

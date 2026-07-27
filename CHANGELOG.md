@@ -3,14 +3,24 @@
 All notable changes to the UHBS specification and tooling are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/). Spec and CLI
-share version **4.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`).
+share version **4.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`).
 
 ## [Unreleased]
 
+### Added
+- **MCP server** (`uhbs[mcp]` / `uhbs-mcp`): local stdio tools for AI hosts
+  (validate / UHQS / fixtures / schemas); `server.json` registry metadata;
+  docs + landing `#mcp` section
+- Published lab reports + landing Results: ESPot, miniprint, Conpot, Cowrie,
+  OpenCanary (quick + full)
+- Site-root AEO discovery: `llms-full.txt`, `humans.txt`, `.well-known/security.txt`,
+  `server.json` (in addition to root `llms.txt`)
+
 ### Changed
-- GitHub Pages root is the React landing hub again; MkDocs deploys under `/mkdocs/`
-- Landing shows published ESPot / miniprint / Conpot lab scorecards and beta posture wording
-- Project maturity wording: **draft** → **beta** (status, landing, docs, AGENTS, ROADMAP)
+- GitHub Pages root is the React landing hub; MkDocs deploys under `/mkdocs/`
+- Project maturity wording: **draft** → **beta**
+- Cowrie live fixture documented as UHQS **48.70** (worked-example **46.97** kept in tests)
+- ROADMAP evaluation corpus ≥5 OSS targets marked complete
 
 ### Fixed
 - **Protocol-agnostic lab binding:** TPS no longer silently overwrites inventory/CLI
@@ -19,6 +29,7 @@ share version **4.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`).
   `low_interaction_ssh`
 - Module D never Paramikos the primary application port unless `ports.ssh` /
   `ssh_port` is explicit (HTTP/PJL/… decoys safe)
+- Stale docs that labeled Cowrie / the Low-Interaction fixture as UHQS 46.97
 
 ## [4.0.0] — 2026-07-26
 
@@ -26,8 +37,9 @@ share version **4.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`).
 - `ROADMAP.md` — locked maturity plan incorporating the existing UHBS-Lab harness
 - Document status, RFC 2119 keywords, UHBS-Core / UHBS-Lab conformance levels
 - `schemas/evidence-pack.schema.json`
-- Conformance fixtures (proof labels only): Low-Interaction UHQS 46.97,
-  POSIX-Shell UHQS 80.33 — see `docs/conformance/`
+- Conformance fixtures (proof labels only), including an anonymous Low-Interaction
+  worked example UHQS **46.97** and POSIX-Shell lab UHQS **80.33** — see
+  `docs/conformance/` (live Cowrie full lab later published as **48.70**)
 - Class→weight tables including `Database` and `GenAI-Shell`
 - CLI `--strict` integrity checks (recompute UHQS / δ_C / grade)
 - **`uhbs_core`** reference harness (Modules A–F, protocol plugins, `uhbs-lab`)
@@ -47,8 +59,6 @@ share version **4.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`).
 - Docs state clearly that UHBS is a **personal beta framework**, not a
   multi-party standards body; committee, neutral org, and adopters moved to
   ROADMAP Phase 6 as aspirational (unchecked) goals
-- Dropped React `web/` landing; GitHub Pages is MkDocs at site root
-  (`https://mziqudhd92.github.io/uhbs-standard/`)
 - Unified UHQS math into `uhbs_core.uhqs_math` (CLI + harness); missing scores
   raise instead of silent 0.0; Actions pinned by SHA; CI uses `constraints.txt`;
   PEP 639 license metadata; expanded integrity/CLI tests
@@ -56,7 +66,7 @@ share version **4.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`).
   `humans.txt`, `.well-known/security.txt`, JSON-LD; repo `llms.txt` + `AGENTS.md`
 
 ### Pending (manual / ops / community — see ROADMAP Phase 6)
-- PyPI Trusted Publishing + Sigstore signing
+- PyPI Trusted Publishing + Sigstore signing (blocks MCP Registry `uvx` path)
 - Zenodo DOI deposit
 - Neutral GitHub organization transfer
 - Multi-organization maintainers and independent adopters

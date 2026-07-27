@@ -45,5 +45,7 @@ docker run --rm -v "$PWD:/work" -w /work uhbs:4.0.0 validate-scorecard docs/conf
 
 ## Discovery files
 
-- Site: `/llms.txt`, `/llms-full.txt`, `/robots.txt`, `/humans.txt`, `/sitemap.xml`
-- Repo: `/llms.txt`, this `AGENTS.md`, `CITATION.cff`, `server.json` (MCP Registry metadata)
+- Site root: `/llms.txt`, `/llms-full.txt`, `/robots.txt`, `/humans.txt`,
+  `/.well-known/security.txt`, `/server.json` (MCP metadata)
+- MkDocs: `/mkdocs/llms.txt`, `/mkdocs/llms-full.txt`, `/mkdocs/tooling/mcp/`
+- Repo: `/llms.txt`, this `AGENTS.md`, `CITATION.cff`, `server.json`

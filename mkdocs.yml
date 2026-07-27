@@ -83,6 +83,7 @@ nav:
   - Conformance:
       - Overview: conformance/index.md
       - Lab reports index: conformance/reports/index.md
+      - ESPot lab tutorial (moved): conformance/lab-espot-web-api.md
       - ESPot report hub: conformance/reports/espot/index.md
       - ESPot tutorial: conformance/reports/espot/TUTORIAL.md
       - ESPot methodology: conformance/reports/espot/METHODOLOGY.md
