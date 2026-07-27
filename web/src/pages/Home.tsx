@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import {
   Shield,
@@ -14,6 +14,10 @@ import {
   Globe,
   Cpu,
   ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  LayoutGrid,
+  List,
   GitCommit,
   Layers,
   Check,
@@ -863,6 +867,9 @@ const LAB_RESULTS: LabResult[] = [
 
 const Results = () => {
   const [protocolFilter, setProtocolFilter] = useState<string>("all");
+  const [viewMode, setViewMode] = useState<"cards" | "list">("cards");
+  const [page, setPage] = useState(0);
+  const pageSize = 3;
 
   const filteredLabs = useMemo(
     () =>
@@ -871,6 +878,19 @@ const Results = () => {
         : LAB_RESULTS.filter((lab) => lab.protocol === protocolFilter),
     [protocolFilter],
   );
+
+  const pageCount = Math.max(1, Math.ceil(filteredLabs.length / pageSize));
+  const safePage = Math.min(page, pageCount - 1);
+  const pageLabs = filteredLabs.slice(safePage * pageSize, safePage * pageSize + pageSize);
+
+  useEffect(() => {
+    if (page !== safePage) setPage(safePage);
+  }, [page, safePage]);
+
+  const setFilter = (id: string) => {
+    setProtocolFilter(id);
+    setPage(0);
+  };
 
   return (
     <section id="results" className="py-24 border-t border-border/50">
@@ -892,109 +912,72 @@ const Results = () => {
           </p>
         </motion.div>
 
-        <motion.div variants={fadeUpVariant} className="mb-10">
-          <div className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground mb-3">
-            Filter by protocol
+        <motion.div variants={fadeUpVariant} className="mb-6 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+          <div>
+            <div className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground mb-3">
+              Filter by protocol
+            </div>
+            <div className="flex flex-wrap gap-2" role="group" aria-label="Filter honeypot results by protocol">
+              {PROTOCOL_FILTERS.map((opt) => {
+                const active = protocolFilter === opt.id;
+                const count =
+                  opt.id === "all"
+                    ? LAB_RESULTS.length
+                    : LAB_RESULTS.filter((l) => l.protocol === opt.id).length;
+                return (
+                  <button
+                    key={opt.id}
+                    type="button"
+                    onClick={() => setFilter(opt.id)}
+                    aria-pressed={active}
+                    className={
+                      active
+                        ? "font-mono text-xs px-3 py-1.5 border border-primary bg-primary/15 text-primary"
+                        : "font-mono text-xs px-3 py-1.5 border border-border text-secondary-foreground hover:border-primary/50 hover:text-primary transition-colors"
+                    }
+                  >
+                    {opt.label}
+                    <span className="ml-1.5 text-muted-foreground">({count})</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
-          <div className="flex flex-wrap gap-2" role="group" aria-label="Filter honeypot results by protocol">
-            {PROTOCOL_FILTERS.map((opt) => {
-              const active = protocolFilter === opt.id;
-                  const count =
-                    opt.id === "all"
-                      ? LAB_RESULTS.length
-                      : LAB_RESULTS.filter((l) => l.protocol === opt.id).length;
-              return (
-                <button
-                  key={opt.id}
-                  type="button"
-                  onClick={() => setProtocolFilter(opt.id)}
-                  aria-pressed={active}
-                  className={
-                    active
-                      ? "font-mono text-xs px-3 py-1.5 border border-primary bg-primary/15 text-primary"
-                      : "font-mono text-xs px-3 py-1.5 border border-border text-secondary-foreground hover:border-primary/50 hover:text-primary transition-colors"
-                  }
-                >
-                  {opt.label}
-                  <span className="ml-1.5 text-muted-foreground">({count})</span>
-                </button>
-              );
-            })}
+
+          <div>
+            <div className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground mb-3">
+              View
+            </div>
+            <div className="inline-flex border border-border" role="group" aria-label="Results view mode">
+              <button
+                type="button"
+                onClick={() => setViewMode("cards")}
+                aria-pressed={viewMode === "cards"}
+                className={
+                  viewMode === "cards"
+                    ? "inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 bg-primary/15 text-primary border-r border-border"
+                    : "inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 text-secondary-foreground hover:text-primary border-r border-border"
+                }
+              >
+                <LayoutGrid className="w-3.5 h-3.5" aria-hidden />
+                Cards
+              </button>
+              <button
+                type="button"
+                onClick={() => setViewMode("list")}
+                aria-pressed={viewMode === "list"}
+                className={
+                  viewMode === "list"
+                    ? "inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 bg-primary/15 text-primary"
+                    : "inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 text-secondary-foreground hover:text-primary"
+                }
+              >
+                <List className="w-3.5 h-3.5" aria-hidden />
+                List
+              </button>
+            </div>
           </div>
         </motion.div>
-
-        {/* Plain divs: motion variants stay opacity:0 when filter remounts after whileInView once */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-12">
-          {filteredLabs.map((lab) => (
-            <div
-              key={lab.name}
-              className="bg-card border border-border p-6 terminal-card flex flex-col"
-            >
-              <div className="font-mono text-xs text-primary uppercase tracking-wider mb-2">{lab.classLabel}</div>
-              <h3 className="text-xl font-bold mb-1">
-                <a href={lab.hub} className="hover:text-primary transition-colors">{lab.name}</a>
-              </h3>
-              <a
-                href={lab.repo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-mono text-xs text-secondary-foreground hover:text-primary transition-colors mb-4 inline-flex items-center gap-1"
-              >
-                Original project <ArrowRight className="w-3 h-3" />
-              </a>
-
-              <div className="grid grid-cols-2 gap-3 mb-6 font-mono text-sm">
-                <div className="border border-border/60 p-3">
-                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">Quick</div>
-                  <div className="text-primary font-bold text-lg">{lab.uhqsQuick.toFixed(2)}</div>
-                  <div className="text-xs text-secondary-foreground">Grade {lab.gradeQuick}</div>
-                </div>
-                <div className="border border-primary/30 bg-primary/5 p-3">
-                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">Full</div>
-                  <div className="text-primary font-bold text-lg">{lab.uhqsFull.toFixed(2)}</div>
-                  <div className="text-xs text-secondary-foreground">Grade {lab.gradeFull}</div>
-                </div>
-              </div>
-
-              <div className="mt-auto space-y-4 font-mono text-xs">
-                <div>
-                  <div className="text-muted-foreground uppercase tracking-wider text-[10px] mb-2">Guides</div>
-                  <div className="flex flex-col gap-1.5">
-                    <a href={lab.tutorial} className="text-primary hover:underline flex items-center gap-1">
-                      Tutorial <ArrowRight className="w-3 h-3" />
-                    </a>
-                    <a href={lab.methodology} className="text-secondary-foreground hover:text-primary transition-colors flex items-center gap-1">
-                      Methodology <ArrowRight className="w-3 h-3" />
-                    </a>
-                    <a href={lab.hub} className="text-secondary-foreground hover:text-primary transition-colors flex items-center gap-1">
-                      Report hub <ArrowRight className="w-3 h-3" />
-                    </a>
-                  </div>
-                </div>
-                <div>
-                  <div className="text-muted-foreground uppercase tracking-wider text-[10px] mb-2">Runs & scorecards</div>
-                  <div className="flex flex-col gap-1.5">
-                    <a href={lab.scorecard} className="text-primary hover:underline flex items-center gap-1">
-                      Published scorecard page <ArrowRight className="w-3 h-3" />
-                    </a>
-                    <a href={lab.full} className="text-secondary-foreground hover:text-primary transition-colors flex items-center gap-1">
-                      Full run artifacts <ArrowRight className="w-3 h-3" />
-                    </a>
-                    <a href={lab.fullCard} className="text-secondary-foreground hover:text-primary transition-colors flex items-center gap-1">
-                      Full SCORECARD.txt <ArrowRight className="w-3 h-3" />
-                    </a>
-                    <a href={lab.quick} className="text-secondary-foreground hover:text-primary transition-colors flex items-center gap-1">
-                      Quick run artifacts <ArrowRight className="w-3 h-3" />
-                    </a>
-                    <a href={lab.quickCard} className="text-secondary-foreground hover:text-primary transition-colors flex items-center gap-1">
-                      Quick SCORECARD.txt <ArrowRight className="w-3 h-3" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
 
         {filteredLabs.length === 0 && (
           <p className="font-mono text-sm text-muted-foreground mb-10">
@@ -1002,47 +985,159 @@ const Results = () => {
           </p>
         )}
 
-        <motion.div variants={fadeUpVariant} className="overflow-x-auto border border-border mb-10">
-          <table className="w-full text-left text-sm font-mono">
-            <thead>
-              <tr className="border-b border-border bg-card text-muted-foreground text-xs uppercase tracking-wider">
-                <th className="py-3 px-4 font-normal">Target</th>
-                <th className="py-3 px-4 font-normal">Protocol</th>
-                <th className="py-3 px-4 font-normal">Project</th>
-                <th className="py-3 px-4 font-normal">Tutorial</th>
-                <th className="py-3 px-4 font-normal">Quick</th>
-                <th className="py-3 px-4 font-normal">Full</th>
-                <th className="py-3 px-4 font-normal">Scorecard</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border/40">
-              {filteredLabs.map((lab) => (
-                <tr key={`row-${lab.name}`} className="hover:bg-card/80">
-                  <td className="py-3 px-4 text-foreground font-semibold">
-                    <a href={lab.hub} className="hover:text-primary">{lab.name}</a>
-                    <div className="text-[10px] text-muted-foreground font-normal mt-0.5">{lab.classLabel}</div>
-                  </td>
-                  <td className="py-3 px-4 text-secondary-foreground">{lab.protocolLabel}</td>
-                  <td className="py-3 px-4">
-                    <a href={lab.repo} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">GitHub</a>
-                  </td>
-                  <td className="py-3 px-4">
-                    <a href={lab.tutorial} className="text-primary hover:underline">Open</a>
-                  </td>
-                  <td className="py-3 px-4">
-                    <a href={lab.quickCard} className="text-secondary-foreground hover:text-primary">{lab.uhqsQuick.toFixed(2)} / {lab.gradeQuick}</a>
-                  </td>
-                  <td className="py-3 px-4">
-                    <a href={lab.fullCard} className="text-secondary-foreground hover:text-primary">{lab.uhqsFull.toFixed(2)} / {lab.gradeFull}</a>
-                  </td>
-                  <td className="py-3 px-4">
-                    <a href={lab.scorecard} className="text-primary hover:underline">Page</a>
-                  </td>
+        {viewMode === "cards" && filteredLabs.length > 0 && (
+          <div className="mb-12">
+            <div className="flex items-stretch gap-2 sm:gap-3">
+              <button
+                type="button"
+                onClick={() => setPage((p) => Math.max(0, Math.min(p, pageCount - 1) - 1))}
+                disabled={safePage <= 0}
+                aria-label="Previous three results"
+                className="shrink-0 self-center w-10 h-10 flex items-center justify-center border border-border text-secondary-foreground hover:border-primary/50 hover:text-primary disabled:opacity-25 disabled:hover:border-border disabled:hover:text-secondary-foreground transition-colors"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 flex-1 min-w-0">
+                {pageLabs.map((lab) => (
+                  <div
+                    key={lab.name}
+                    className="bg-card border border-border p-6 terminal-card flex flex-col"
+                  >
+                    <div className="font-mono text-xs text-primary uppercase tracking-wider mb-2">{lab.classLabel}</div>
+                    <h3 className="text-xl font-bold mb-1">
+                      <a href={lab.hub} className="hover:text-primary transition-colors">{lab.name}</a>
+                    </h3>
+                    <a
+                      href={lab.repo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-mono text-xs text-secondary-foreground hover:text-primary transition-colors mb-4 inline-flex items-center gap-1"
+                    >
+                      Original project <ArrowRight className="w-3 h-3" />
+                    </a>
+
+                    <div className="grid grid-cols-2 gap-3 mb-6 font-mono text-sm">
+                      <div className="border border-border/60 p-3">
+                        <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">Quick</div>
+                        <div className="text-primary font-bold text-lg">{lab.uhqsQuick.toFixed(2)}</div>
+                        <div className="text-xs text-secondary-foreground">Grade {lab.gradeQuick}</div>
+                      </div>
+                      <div className="border border-primary/30 bg-primary/5 p-3">
+                        <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">Full</div>
+                        <div className="text-primary font-bold text-lg">{lab.uhqsFull.toFixed(2)}</div>
+                        <div className="text-xs text-secondary-foreground">Grade {lab.gradeFull}</div>
+                      </div>
+                    </div>
+
+                    <div className="mt-auto space-y-4 font-mono text-xs">
+                      <div>
+                        <div className="text-muted-foreground uppercase tracking-wider text-[10px] mb-2">Guides</div>
+                        <div className="flex flex-col gap-1.5">
+                          <a href={lab.tutorial} className="text-primary hover:underline flex items-center gap-1">
+                            Tutorial <ArrowRight className="w-3 h-3" />
+                          </a>
+                          <a href={lab.methodology} className="text-secondary-foreground hover:text-primary transition-colors flex items-center gap-1">
+                            Methodology <ArrowRight className="w-3 h-3" />
+                          </a>
+                          <a href={lab.hub} className="text-secondary-foreground hover:text-primary transition-colors flex items-center gap-1">
+                            Report hub <ArrowRight className="w-3 h-3" />
+                          </a>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="text-muted-foreground uppercase tracking-wider text-[10px] mb-2">Runs & scorecards</div>
+                        <div className="flex flex-col gap-1.5">
+                          <a href={lab.scorecard} className="text-primary hover:underline flex items-center gap-1">
+                            Published scorecard page <ArrowRight className="w-3 h-3" />
+                          </a>
+                          <a href={lab.full} className="text-secondary-foreground hover:text-primary transition-colors flex items-center gap-1">
+                            Full run artifacts <ArrowRight className="w-3 h-3" />
+                          </a>
+                          <a href={lab.fullCard} className="text-secondary-foreground hover:text-primary transition-colors flex items-center gap-1">
+                            Full SCORECARD.txt <ArrowRight className="w-3 h-3" />
+                          </a>
+                          <a href={lab.quick} className="text-secondary-foreground hover:text-primary transition-colors flex items-center gap-1">
+                            Quick run artifacts <ArrowRight className="w-3 h-3" />
+                          </a>
+                          <a href={lab.quickCard} className="text-secondary-foreground hover:text-primary transition-colors flex items-center gap-1">
+                            Quick SCORECARD.txt <ArrowRight className="w-3 h-3" />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setPage((p) => Math.min(pageCount - 1, Math.min(p, pageCount - 1) + 1))}
+                disabled={safePage >= pageCount - 1}
+                aria-label="Next three results"
+                className="shrink-0 self-center w-10 h-10 flex items-center justify-center border border-border text-secondary-foreground hover:border-primary/50 hover:text-primary disabled:opacity-25 disabled:hover:border-border disabled:hover:text-secondary-foreground transition-colors"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+
+            {pageCount > 1 && (
+              <div className="mt-4 flex items-center justify-center gap-2 font-mono text-[10px] text-muted-foreground tracking-wide">
+                <span>
+                  {safePage + 1} / {pageCount}
+                </span>
+                <span className="text-border">·</span>
+                <span>
+                  {safePage * pageSize + 1}–{Math.min(filteredLabs.length, (safePage + 1) * pageSize)} of {filteredLabs.length}
+                </span>
+              </div>
+            )}
+          </div>
+        )}
+
+        {viewMode === "list" && filteredLabs.length > 0 && (
+          <div className="overflow-x-auto border border-border mb-12">
+            <table className="w-full text-left text-sm font-mono">
+              <thead>
+                <tr className="border-b border-border bg-card text-muted-foreground text-xs uppercase tracking-wider">
+                  <th className="py-3 px-4 font-normal">Target</th>
+                  <th className="py-3 px-4 font-normal">Protocol</th>
+                  <th className="py-3 px-4 font-normal">Project</th>
+                  <th className="py-3 px-4 font-normal">Tutorial</th>
+                  <th className="py-3 px-4 font-normal">Quick</th>
+                  <th className="py-3 px-4 font-normal">Full</th>
+                  <th className="py-3 px-4 font-normal">Scorecard</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </motion.div>
+              </thead>
+              <tbody className="divide-y divide-border/40">
+                {filteredLabs.map((lab) => (
+                  <tr key={`row-${lab.name}`} className="hover:bg-card/80">
+                    <td className="py-3 px-4 text-foreground font-semibold">
+                      <a href={lab.hub} className="hover:text-primary">{lab.name}</a>
+                      <div className="text-[10px] text-muted-foreground font-normal mt-0.5">{lab.classLabel}</div>
+                    </td>
+                    <td className="py-3 px-4 text-secondary-foreground">{lab.protocolLabel}</td>
+                    <td className="py-3 px-4">
+                      <a href={lab.repo} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">GitHub</a>
+                    </td>
+                    <td className="py-3 px-4">
+                      <a href={lab.tutorial} className="text-primary hover:underline">Open</a>
+                    </td>
+                    <td className="py-3 px-4">
+                      <a href={lab.quickCard} className="text-secondary-foreground hover:text-primary">{lab.uhqsQuick.toFixed(2)} / {lab.gradeQuick}</a>
+                    </td>
+                    <td className="py-3 px-4">
+                      <a href={lab.fullCard} className="text-secondary-foreground hover:text-primary">{lab.uhqsFull.toFixed(2)} / {lab.gradeFull}</a>
+                    </td>
+                    <td className="py-3 px-4">
+                      <a href={lab.scorecard} className="text-primary hover:underline">Page</a>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
 
         <motion.div variants={fadeUpVariant} className="flex flex-wrap gap-4 font-mono text-sm">
           <a href="mkdocs/conformance/reports/" className="inline-flex items-center gap-2 border border-border px-4 py-2 hover:border-primary/50 transition-colors">
