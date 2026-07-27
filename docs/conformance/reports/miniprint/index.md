@@ -10,8 +10,8 @@ miniprint is a **medium-interaction printer honeypot** that speaks Printer Job L
 
 | Mode | UHQS | Grade | δ_C | Safety Gate | Folder |
 | --- | --- | --- | --- | --- | --- |
-| **Quick** | **39.99** | F | 0.5625 | not cleared (C=75) | [`quick/`](quick/) |
-| **Full** | **47.77** | F | 0.81 | not cleared (C=90) | [`full/`](full/) |
+| **Quick** | **41.83** | F | 0.5625 | not cleared (C=75) | [`quick/`](quick/) |
+| **Full** | **50.43** | D | 0.81 | not cleared (C=90) | [`full/`](full/) |
 
 Sanitized fixture (full): [`../../fixtures/miniprint-low-interaction.scorecard.json`](../../fixtures/miniprint-low-interaction.scorecard.json)
 
@@ -30,7 +30,7 @@ Sanitized fixture (full): [`../../fixtures/miniprint-low-interaction.scorecard.j
 
 | Module | Score | Highlight |
 | --- | --- | --- |
-| A Protocol | 54.5 | Generic PJL/TCP; high IAT jitter; **n=1000** samples |
+| A Protocol | 65.4 | Generic PJL/TCP; high IAT jitter; **n=1000** samples |
 | B Behavior | 62.5 | Survived binary blast; limited PJL state probes |
 | C Telemetry | 55.0 | `miniprint.log` text — no STIX/OTel/ECS (capped) |
 | D Containment | 90.0 | No remote shell listener configured; airgap + gateway; gate not cleared |

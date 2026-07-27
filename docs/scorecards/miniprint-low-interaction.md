@@ -15,11 +15,11 @@
 
 | Evaluation Module | Score (0–100) | Weight | Status |
 | --- | ---: | ---: | --- |
-| Module A: Protocol Fidelity | 54.5/100 | 0.30 | PARTIAL |
+| Module A: Protocol Fidelity | 65.4/100 | 0.30 | PARTIAL |
 | Module B: Behavioral Realism | 62.5/100 | 0.15 | PARTIAL |
 | Module C: Telemetry Quality | 55.0/100 | 0.25 | PARTIAL |
 | Module D: Safety & Containment (\(C\)) | 90.0/100 | GATE | GATE FAILED (C &lt; 95) |
-| Module E: Scalability & Latency | 55.0/100 | 0.10 | PARTIAL (P95: ~1055 ms) |
+| Module E: Scalability & Latency | 55.0/100 | 0.10 | PARTIAL (P95: ~1127 ms) |
 | Module F: Static Code Audit | 70.0/100 | 0.20 | PASSED (SAST gate capped) |
 
 ## Safety Gate & Composite
@@ -27,15 +27,15 @@
 | Metric | Value |
 | --- | --- |
 | Safety Gate Multiplier \(\delta_C\) | 0.81 (\(C = 90 &lt; 95\)) |
-| **Final Composite Score (UHQS 4.0)** | **47.77 / 100** |
-| Grade | **F (Fail)** |
+| **Final Composite Score (UHQS 4.0)** | **50.43 / 100** |
+| Grade | **D (Needs Remediation)** |
 | Production baseline (UHQS &gt; 80 + gate) | **NOT MET** |
 
 ## Artifacts
 
 - Fixture: [`../conformance/fixtures/miniprint-low-interaction.scorecard.json`](../conformance/fixtures/miniprint-low-interaction.scorecard.json)
 - Full scorecard: [`../conformance/reports/miniprint/full/SCORECARD.txt`](../conformance/reports/miniprint/full/SCORECARD.txt)
-- Quick scorecard: [`../conformance/reports/miniprint/quick/SCORECARD.txt`](../conformance/reports/miniprint/quick/SCORECARD.txt) (UHQS **39.99** / F)
+- Quick scorecard: [`../conformance/reports/miniprint/quick/SCORECARD.txt`](../conformance/reports/miniprint/quick/SCORECARD.txt) (UHQS **41.83** / F)
 - Tutorial: [`../conformance/reports/miniprint/TUTORIAL.md`](../conformance/reports/miniprint/TUTORIAL.md)
 
 ```bash

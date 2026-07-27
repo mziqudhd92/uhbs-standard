@@ -9,7 +9,7 @@
   "auditor": "UHBS-Lab detailed Docker run (PJL/generic :9100 + 1000-sample A3 + SAST + telemetry)",
   "modules": {
     "A": {
-      "score": 54.5,
+      "score": 65.43,
       "status": "PARTIAL",
       "weight": 0.3,
       "notes": "generic TCP/PJL plugin; high IAT jitter vs native-printer expectation; n=1000 timing"
@@ -36,9 +36,9 @@
       "status": "PARTIAL",
       "weight": 0.1,
       "notes": "P95>>100ms under load (single-threaded handler)",
-      "p50_ms": 1024.6,
-      "p95_ms": 1054.8,
-      "p99_ms": 1056.6
+      "p50_ms": 1055.08,
+      "p95_ms": 1127.1,
+      "p99_ms": 2112.47
     },
     "F": {
       "score": 70.0,
@@ -60,7 +60,7 @@
     "passed": false,
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 47.77,
-  "grade": "F",
+  "uhqs": 50.43,
+  "grade": "D",
   "notes": "Evaluation proof only. miniprint product name is not a UHBS requirement. PJL spoken over raw :9100 via generic TCP plugin (no first-class PJL RFC suite yet). Artifacts: docs/conformance/reports/miniprint/."
 }

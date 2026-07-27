@@ -1,7 +1,7 @@
 {
   "uhbs_version": "4.0.0",
   "run_mode": "full",
-  "evaluated_at": "2026-07-27T10:26:00Z",
+  "evaluated_at": "2026-07-27T18:18:44Z",
   "proof_label": "miniprint (sa7mon PJL printer honeypot)",
   "target": {
     "repository": "https://github.com/sa7mon/miniprint",
@@ -15,9 +15,9 @@
   },
   "grader": {
     "package_version": "4.0.0",
-    "uhbs_git_commit": "9c6e9cf730cb7099699ce4479997881034cf2544",
+    "uhbs_git_commit": "d0917e31e481078ca95f4e2b1477b6fe0fedaa4f",
     "docker_image": "uhbs:4.0.0-full",
-    "docker_image_id": "sha256:1da71d92d4a9ee39b1e774fdbd623b83671cf07f78c7a299a7ed6d6505e9ad35",
+    "docker_image_id": "sha256:8caf886c2e6f53a3d2d3a73d2529b018cbdd3dc343cbde10043cc3ac96e87e21",
     "inventory": "docs/conformance/labs/miniprint/inventory.yaml",
     "tps": "docs/conformance/labs/miniprint/low_interaction_full.yaml"
   },
@@ -50,11 +50,11 @@
     "plugin": "generic (protocol id pjl)"
   },
   "results": {
-    "uhqs": 47.77,
-    "grade": "F",
+    "uhqs": 50.43,
+    "grade": "D",
     "delta_c": 0.81,
     "module_scores": {
-      "A": 54.5,
+      "A": 65.43,
       "B": 62.5,
       "C": 55.0,
       "D": 90.0,

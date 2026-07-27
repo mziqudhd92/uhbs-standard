@@ -10,14 +10,14 @@ Environment           : Isolated Sandbox
 ------------------------------------------------------------------------------------
 EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
 ------------------------------------------------------------------------------------
-Module A: Protocol Fidelity         :  54.5/100       0.30     PARTIAL (median=0.527ms pstdev=355.974ms (target jitter often <2ms vs native))
+Module A: Protocol Fidelity         :  65.4/100       0.30     PARTIAL (median=0.791ms pstdev=346.816ms (target jitter often <2ms vs native))
 Module B: Behavioral Realism        :  62.5/100       0.15     PARTIAL (survived binary blast)
 Module C: Telemetry Quality         :  55.0/100       0.25     PARTIAL (no STIX objects found)
-Module D: Safety & Containment (C)  :  90.0/100       GATE     PASSED (UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes))
-Module E: Scalability & Latency     :  55.0/100       0.10     PARTIAL (P50=1024.6ms P95=1054.8ms P99=1056.6ms TPS_limit=100.0ms proto=pjl)
+Module D: Safety & Containment (C)  :  90.0/100       GATE     PASSED (UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes on SSH decoys))
+Module E: Scalability & Latency     :  55.0/100       0.10     PARTIAL (P50=1055.1ms P95=1127.1ms P99=2112.5ms TPS_limit=100.0ms proto=pjl)
 Module F: Static Code Audit         :  70.0/100       0.20     PASSED (semgrep error/critical=1 total=1)
 ------------------------------------------------------------------------------------
 SAFETY GATE MULTIPLIER                : δ_C = 0.81 (C = 90.0 < 95 — exponential penalty)
-FINAL COMPOSITE SCORE (UHQS 4.0)      : 47.77 / 100
-OVERALL EVALUATION GRADE              : GRADE F (Fail)
+FINAL COMPOSITE SCORE (UHQS 4.0)      : 50.43 / 100
+OVERALL EVALUATION GRADE              : GRADE D (Needs Remediation)
 ====================================================================================

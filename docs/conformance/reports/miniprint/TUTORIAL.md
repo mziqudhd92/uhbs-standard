@@ -89,7 +89,7 @@ docker run --rm \
     --environment "Quick Docker lab: PJL/generic :9100, UHBS_QUICK=1, SAST skipped"
 ```
 
-**Published quick result:** UHQS **39.99** · Grade **F** · δ_C **0.5625**  
+**Published quick result:** UHQS **41.83** · Grade **F** · δ_C **0.5625**  
 See [`quick/SCORECARD.txt`](quick/SCORECARD.txt).
 
 ---
@@ -153,7 +153,7 @@ docker run --rm \
 
 Expect ~2–3 minutes (1000 timing samples + Semgrep).
 
-**Published full result:** UHQS **47.77** · Grade **F** · δ_C **0.81**  
+**Published full result:** UHQS **50.43** · Grade **D** · δ_C **0.81**  
 See [`full/SCORECARD.txt`](full/SCORECARD.txt).
 
 ---
@@ -174,11 +174,11 @@ ls docs/conformance/reports/miniprint/full/static/
 | Signal | Meaning |
 | --- | --- |
 | PJL `INFO ID` works | Liveness OK — necessary but not sufficient |
-| Module A ≈ 54.5 | Generic TCP timing/jitter, **not** full PJL dialect scoring |
+| Module A ≈ 65.4 | Generic TCP timing/jitter, **not** full PJL dialect scoring |
 | Module E ≈ 55 | Accept queue stalls under concurrent connects |
 | Module C = 55 (full) | Text logs without STIX/OTel/ECS |
 | δ_C &lt; 1 | Safety Gate not cleared (no remote shell exec surface on this decoy) |
-| UHQS 47.77 / F | Below beta Production Baseline (UHQS &gt; 80 + gate) |
+| UHQS 50.43 / D | Below beta Production Baseline (UHQS &gt; 80 + gate) |
 
 ---
 
