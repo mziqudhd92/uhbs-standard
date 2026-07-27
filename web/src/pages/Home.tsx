@@ -901,11 +901,11 @@ const Results = () => {
           </div>
         </motion.div>
 
+        {/* Plain divs: motion variants stay opacity:0 when filter remounts after whileInView once */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-12">
           {filteredLabs.map((lab) => (
-            <motion.div
+            <div
               key={lab.name}
-              variants={fadeUpVariant}
               className="bg-card border border-border p-6 terminal-card flex flex-col"
             >
               <div className="font-mono text-xs text-primary uppercase tracking-wider mb-2">{lab.classLabel}</div>
@@ -970,14 +970,14 @@ const Results = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {filteredLabs.length === 0 && (
-          <motion.p variants={fadeUpVariant} className="font-mono text-sm text-muted-foreground mb-10">
+          <p className="font-mono text-sm text-muted-foreground mb-10">
             No published labs for this protocol filter.
-          </motion.p>
+          </p>
         )}
 
         <motion.div variants={fadeUpVariant} className="overflow-x-auto border border-border mb-10">
