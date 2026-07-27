@@ -1,0 +1,17 @@
+# Inventory for mushorg/conpot detailed UHBS Docker lab (Modbus primary).
+# Inside the uhbs-lab network, Conpot listens on container port 5020 (not host-mapped 502).
+# Mounts: source → /honeypot, logs → /telemetry
+sites:
+  conpot:
+    kind: generic
+    class: ICS-SCADA
+    host: conpot-lab
+    protocol: modbus
+    protocols: [modbus]
+    port: 5020
+    ports:
+      modbus: 5020
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/conpot/ics_modbus_full.yaml
+    container_image: conpot:lab-fixed

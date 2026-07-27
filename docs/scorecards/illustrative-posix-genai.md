@@ -1,6 +1,9 @@
 # Illustrative Scorecard: POSIX-Shell / GenAI-Augmented Decoy
 
+**Status:** Synthetic layout sample only — **not** a live UHBS-Lab Docker run.
+
 Vendor-neutral illustrative scorecard demonstrating the UHBS v4.0 standard output layout.
+For published lab scorecards, see [Official Examples](index.md).
 
 | Field | Value |
 | --- | --- |

@@ -413,7 +413,7 @@ def _sast_checks(root: Path, image: Optional[str], out_dir: Optional[Path]) -> L
 
 
 def _posix_list() -> List[str]:
-    path = ROOT / "profiles" / "posix_commands.txt"
+    path = ROOT / "profiles" / "coverage" / "posix_commands.txt"
     cmds: List[str] = []
     for line in path.read_text(encoding="utf-8").splitlines():
         line = line.strip()
@@ -424,7 +424,7 @@ def _posix_list() -> List[str]:
 
 
 def _ot_list() -> List[str]:
-    path = ROOT / "profiles" / "ot_modbus_coverage.txt"
+    path = ROOT / "profiles" / "coverage" / "ot_modbus_coverage.txt"
     items: List[str] = []
     for line in path.read_text(encoding="utf-8").splitlines():
         line = line.strip()

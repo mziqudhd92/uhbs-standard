@@ -1,0 +1,1293 @@
+{
+  "version": "1.171.0",
+  "results": [
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/black.yml",
+      "start": {
+        "line": 9,
+        "col": 7,
+        "offset": 112
+      },
+      "end": {
+        "line": 9,
+        "col": 32,
+        "offset": 137
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/black.yml",
+      "start": {
+        "line": 11,
+        "col": 7,
+        "offset": 166
+      },
+      "end": {
+        "line": 11,
+        "col": 29,
+        "offset": 188
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/python.yml",
+      "start": {
+        "line": 9,
+        "col": 9,
+        "offset": 91
+      },
+      "end": {
+        "line": 9,
+        "col": 34,
+        "offset": 116
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/python.yml",
+      "start": {
+        "line": 11,
+        "col": 9,
+        "offset": 150
+      },
+      "end": {
+        "line": 11,
+        "col": 36,
+        "offset": 177
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/python.yml",
+      "start": {
+        "line": 15,
+        "col": 9,
+        "offset": 257
+      },
+      "end": {
+        "line": 15,
+        "col": 38,
+        "offset": 286
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/xmllint.yml",
+      "start": {
+        "line": 9,
+        "col": 7,
+        "offset": 89
+      },
+      "end": {
+        "line": 9,
+        "col": 32,
+        "offset": 114
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/xmllint.yml",
+      "start": {
+        "line": 11,
+        "col": 7,
+        "offset": 145
+      },
+      "end": {
+        "line": 11,
+        "col": 45,
+        "offset": 183
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.lang.security.audit.eval-detected.eval-detected",
+      "path": "conpot/core/databus.py",
+      "start": {
+        "line": 90,
+        "col": 37,
+        "offset": 3423
+      },
+      "end": {
+        "line": 90,
+        "col": 48,
+        "offset": 3434
+      },
+      "extra": {
+        "message": "Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.",
+        "metadata": {
+          "source-rule-url": "https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b307-eval",
+          "cwe": [
+            "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "asvs": {
+            "control_id": "5.2.4 Dyanmic Code Execution Features",
+            "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x13-V5-Validation-Sanitization-Encoding.md#v52-sanitization-and-sandboxing-requirements",
+            "section": "V5: Validation, Sanitization and Encoding Verification Requirements",
+            "version": "4"
+          },
+          "category": "security",
+          "technology": [
+            "python"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Code Injection"
+          ],
+          "source": "https://semgrep.dev/r/python.lang.security.audit.eval-detected.eval-detected",
+          "shortlink": "https://sg.run/ZvrD"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.lang.security.audit.eval-detected.eval-detected",
+      "path": "conpot/core/databus.py",
+      "start": {
+        "line": 98,
+        "col": 30,
+        "offset": 3824
+      },
+      "end": {
+        "line": 98,
+        "col": 45,
+        "offset": 3839
+      },
+      "extra": {
+        "message": "Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.",
+        "metadata": {
+          "source-rule-url": "https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b307-eval",
+          "cwe": [
+            "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "asvs": {
+            "control_id": "5.2.4 Dyanmic Code Execution Features",
+            "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x13-V5-Validation-Sanitization-Encoding.md#v52-sanitization-and-sandboxing-requirements",
+            "section": "V5: Validation, Sanitization and Encoding Verification Requirements",
+            "version": "4"
+          },
+          "category": "security",
+          "technology": [
+            "python"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Code Injection"
+          ],
+          "source": "https://semgrep.dev/r/python.lang.security.audit.eval-detected.eval-detected",
+          "shortlink": "https://sg.run/ZvrD"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.lang.security.audit.eval-detected.eval-detected",
+      "path": "conpot/core/log_worker.py",
+      "start": {
+        "line": 62,
+        "col": 24,
+        "offset": 2281
+      },
+      "end": {
+        "line": 62,
+        "col": 65,
+        "offset": 2322
+      },
+      "extra": {
+        "message": "Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.",
+        "metadata": {
+          "source-rule-url": "https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b307-eval",
+          "cwe": [
+            "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "asvs": {
+            "control_id": "5.2.4 Dyanmic Code Execution Features",
+            "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x13-V5-Validation-Sanitization-Encoding.md#v52-sanitization-and-sandboxing-requirements",
+            "section": "V5: Validation, Sanitization and Encoding Verification Requirements",
+            "version": "4"
+          },
+          "category": "security",
+          "technology": [
+            "python"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Code Injection"
+          ],
+          "source": "https://semgrep.dev/r/python.lang.security.audit.eval-detected.eval-detected",
+          "shortlink": "https://sg.run/ZvrD"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.lang.security.audit.eval-detected.eval-detected",
+      "path": "conpot/protocols/http/command_responder.py",
+      "start": {
+        "line": 194,
+        "col": 32,
+        "offset": 6420
+      },
+      "end": {
+        "line": 194,
+        "col": 41,
+        "offset": 6429
+      },
+      "extra": {
+        "message": "Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.",
+        "metadata": {
+          "source-rule-url": "https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b307-eval",
+          "cwe": [
+            "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "asvs": {
+            "control_id": "5.2.4 Dyanmic Code Execution Features",
+            "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x13-V5-Validation-Sanitization-Encoding.md#v52-sanitization-and-sandboxing-requirements",
+            "section": "V5: Validation, Sanitization and Encoding Verification Requirements",
+            "version": "4"
+          },
+          "category": "security",
+          "technology": [
+            "python"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Code Injection"
+          ],
+          "source": "https://semgrep.dev/r/python.lang.security.audit.eval-detected.eval-detected",
+          "shortlink": "https://sg.run/ZvrD"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.lang.security.audit.eval-detected.eval-detected",
+      "path": "conpot/protocols/http/command_responder.py",
+      "start": {
+        "line": 1031,
+        "col": 34,
+        "offset": 36742
+      },
+      "end": {
+        "line": 1031,
+        "col": 43,
+        "offset": 36751
+      },
+      "extra": {
+        "message": "Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.",
+        "metadata": {
+          "source-rule-url": "https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b307-eval",
+          "cwe": [
+            "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "asvs": {
+            "control_id": "5.2.4 Dyanmic Code Execution Features",
+            "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x13-V5-Validation-Sanitization-Encoding.md#v52-sanitization-and-sandboxing-requirements",
+            "section": "V5: Validation, Sanitization and Encoding Verification Requirements",
+            "version": "4"
+          },
+          "category": "security",
+          "technology": [
+            "python"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Code Injection"
+          ],
+          "source": "https://semgrep.dev/r/python.lang.security.audit.eval-detected.eval-detected",
+          "shortlink": "https://sg.run/ZvrD"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.lang.security.audit.logging.logger-credential-leak.python-logger-credential-disclosure",
+      "path": "conpot/protocols/ipmi/ipmi_server.py",
+      "start": {
+        "line": 563,
+        "col": 13,
+        "offset": 22427
+      },
+      "end": {
+        "line": 565,
+        "col": 14,
+        "offset": 22539
+      },
+      "extra": {
+        "message": "Detected a python logger call with a potential hardcoded secret \"IPMI response sent (Set User Password) to %s\" being logged. This may lead to secret credentials being exposed. Make sure that the logger is not logging  sensitive information.",
+        "metadata": {
+          "cwe": [
+            "CWE-532: Insertion of Sensitive Information into Log File"
+          ],
+          "category": "security",
+          "technology": [
+            "python"
+          ],
+          "owasp": [
+            "A09:2021 - Security Logging and Monitoring Failures",
+            "A09:2025 - Security Logging & Alerting Failures"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/python.lang.security.audit.logging.logger-credential-leak.python-logger-credential-disclosure",
+          "shortlink": "https://sg.run/ydNx"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.lang.security.audit.eval-detected.eval-detected",
+      "path": "conpot/protocols/modbus/modbus_server.py",
+      "start": {
+        "line": 76,
+        "col": 36,
+        "offset": 2585
+      },
+      "end": {
+        "line": 76,
+        "col": 79,
+        "offset": 2628
+      },
+      "extra": {
+        "message": "Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.",
+        "metadata": {
+          "source-rule-url": "https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b307-eval",
+          "cwe": [
+            "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "asvs": {
+            "control_id": "5.2.4 Dyanmic Code Execution Features",
+            "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x13-V5-Validation-Sanitization-Encoding.md#v52-sanitization-and-sandboxing-requirements",
+            "section": "V5: Validation, Sanitization and Encoding Verification Requirements",
+            "version": "4"
+          },
+          "category": "security",
+          "technology": [
+            "python"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Code Injection"
+          ],
+          "source": "https://semgrep.dev/r/python.lang.security.audit.eval-detected.eval-detected",
+          "shortlink": "https://sg.run/ZvrD"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "generic.secrets.security.detected-private-key.detected-private-key",
+      "path": "conpot/templates/default/ssl/ssl.key",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 2,
+        "col": 65,
+        "offset": 96
+      },
+      "extra": {
+        "message": "Private Key detected. This is a sensitive credential and should not be hardcoded here. Instead, store this in a separate, private file.",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "source-rule-url": "https://github.com/grab/secret-scanner/blob/master/scanner/signatures/pattern.go",
+          "category": "security",
+          "technology": [
+            "secrets"
+          ],
+          "confidence": "LOW",
+          "owasp": [
+            "A07:2021 - Identification and Authentication Failures",
+            "A07:2025 - Authentication Failures"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Hard-coded Secrets"
+          ],
+          "source": "https://semgrep.dev/r/generic.secrets.security.detected-private-key.detected-private-key",
+          "shortlink": "https://sg.run/b7dr"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "generic.secrets.security.detected-private-key.detected-private-key",
+      "path": "conpot/templates/kamstrup_382/ssl/ssl.key",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 2,
+        "col": 65,
+        "offset": 96
+      },
+      "extra": {
+        "message": "Private Key detected. This is a sensitive credential and should not be hardcoded here. Instead, store this in a separate, private file.",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "source-rule-url": "https://github.com/grab/secret-scanner/blob/master/scanner/signatures/pattern.go",
+          "category": "security",
+          "technology": [
+            "secrets"
+          ],
+          "confidence": "LOW",
+          "owasp": [
+            "A07:2021 - Identification and Authentication Failures",
+            "A07:2025 - Authentication Failures"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Hard-coded Secrets"
+          ],
+          "source": "https://semgrep.dev/r/generic.secrets.security.detected-private-key.detected-private-key",
+          "shortlink": "https://sg.run/b7dr"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.lang.security.audit.insecure-transport.ssl.no-set-ciphers.no-set-ciphers",
+      "path": "conpot/utils/networking.py",
+      "start": {
+        "line": 69,
+        "col": 13,
+        "offset": 1748
+      },
+      "end": {
+        "line": 69,
+        "col": 41,
+        "offset": 1776
+      },
+      "extra": {
+        "message": "The 'ssl' module disables insecure cipher suites by default. Therefore, use of 'set_ciphers()' should only be used when you have very specialized requirements. Otherwise, you risk lowering the security of the SSL channel.",
+        "metadata": {
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "cwe": [
+            "CWE-326: Inadequate Encryption Strength"
+          ],
+          "asvs": {
+            "control_id": "9.1.3 Weak TLS",
+            "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x17-V9-Communications.md#v91-client-communications-security-requirements",
+            "section": "V9 Communications Verification Requirements",
+            "version": "4"
+          },
+          "references": [
+            "https://docs.python.org/3/library/ssl.html#cipher-selection",
+            "https://docs.python.org/3/library/ssl.html#ssl.SSLContext.set_ciphers"
+          ],
+          "category": "security",
+          "technology": [
+            "ssl"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues"
+          ],
+          "source": "https://semgrep.dev/r/python.lang.security.audit.insecure-transport.ssl.no-set-ciphers.no-set-ciphers",
+          "shortlink": "https://sg.run/0Q0v"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [],
+  "paths": {
+    "scanned": [
+      ".coveragerc",
+      ".dockerignore",
+      ".github/FUNDING.yml",
+      ".github/ISSUE_TEMPLATE/bug_report.md",
+      ".github/ISSUE_TEMPLATE/feature_request.md",
+      ".github/ISSUE_TEMPLATE/general-issue-template.md",
+      ".github/workflows/black.yml",
+      ".github/workflows/python.yml",
+      ".github/workflows/xmllint.yml",
+      ".gitignore",
+      ".python-version",
+      ".readthedocs.yaml",
+      "Changelog.txt",
+      "Dockerfile",
+      "LICENSE.txt",
+      "MANIFEST.in",
+      "Makefile",
+      "README.md",
+      "bin/conpot",
+      "bin/conpot_cloner",
+      "bin/conpot_hpf_client",
+      "bin/conpot_playback",
+      "bin/kamstrup_prober.py",
+      "bin/start_protocol.py",
+      "conpot/__init__.py",
+      "conpot/core/__init__.py",
+      "conpot/core/attack_session.py",
+      "conpot/core/databus.py",
+      "conpot/core/filesystem.py",
+      "conpot/core/fs_utils.py",
+      "conpot/core/internal_interface.py",
+      "conpot/core/log_worker.py",
+      "conpot/core/loggers/__init__.py",
+      "conpot/core/loggers/helpers.py",
+      "conpot/core/loggers/hpfriends.py",
+      "conpot/core/loggers/json_log.py",
+      "conpot/core/loggers/sqlite_log.py",
+      "conpot/core/loggers/stix_transform.py",
+      "conpot/core/loggers/syslog.py",
+      "conpot/core/loggers/taxii_log.py",
+      "conpot/core/protocol_wrapper.py",
+      "conpot/core/session_manager.py",
+      "conpot/core/virtual_fs.py",
+      "conpot/data.tar",
+      "conpot/emulators/__init__.py",
+      "conpot/emulators/kamstrup/__init__.py",
+      "conpot/emulators/kamstrup/usage_simulator.py",
+      "conpot/emulators/misc/__init__.py",
+      "conpot/emulators/misc/random.py",
+      "conpot/emulators/misc/sysinfo.py",
+      "conpot/emulators/misc/uptime.py",
+      "conpot/emulators/sensors/__init__.py",
+      "conpot/protocols/IEC104/DeviceDataController.py",
+      "conpot/protocols/IEC104/IEC104.py",
+      "conpot/protocols/IEC104/IEC104.xsd",
+      "conpot/protocols/IEC104/IEC104_server.py",
+      "conpot/protocols/IEC104/__init__.py",
+      "conpot/protocols/IEC104/errors.py",
+      "conpot/protocols/IEC104/frames.py",
+      "conpot/protocols/IEC104/i_frames_check.py",
+      "conpot/protocols/IEC104/register.py",
+      "conpot/protocols/__init__.py",
+      "conpot/protocols/bacnet/__init__.py",
+      "conpot/protocols/bacnet/bacnet.xsd",
+      "conpot/protocols/bacnet/bacnet_app.py",
+      "conpot/protocols/bacnet/bacnet_server.py",
+      "conpot/protocols/enip/__init__.py",
+      "conpot/protocols/enip/enip.xsd",
+      "conpot/protocols/enip/enip_server.py",
+      "conpot/protocols/ftp/__init__.py",
+      "conpot/protocols/ftp/ftp.xsd",
+      "conpot/protocols/ftp/ftp_base_handler.py",
+      "conpot/protocols/ftp/ftp_handler.py",
+      "conpot/protocols/ftp/ftp_server.py",
+      "conpot/protocols/ftp/ftp_utils.py",
+      "conpot/protocols/guardian_ast/__init__.py",
+      "conpot/protocols/guardian_ast/guardian_ast.xsd",
+      "conpot/protocols/guardian_ast/guardian_ast_server.py",
+      "conpot/protocols/http/__init__.py",
+      "conpot/protocols/http/command_responder.py",
+      "conpot/protocols/http/http.xsd",
+      "conpot/protocols/http/web_server.py",
+      "conpot/protocols/ipmi/__init__.py",
+      "conpot/protocols/ipmi/fakebmc.py",
+      "conpot/protocols/ipmi/fakesession.py",
+      "conpot/protocols/ipmi/ipmi.xsd",
+      "conpot/protocols/ipmi/ipmi_server.py",
+      "conpot/protocols/kamstrup_management/__init__.py",
+      "conpot/protocols/kamstrup_management/command_responder.py",
+      "conpot/protocols/kamstrup_management/commands.py",
+      "conpot/protocols/kamstrup_management/kamstrup_management.xsd",
+      "conpot/protocols/kamstrup_management/kamstrup_management_server.py",
+      "conpot/protocols/kamstrup_meter/__init__.py",
+      "conpot/protocols/kamstrup_meter/command_responder.py",
+      "conpot/protocols/kamstrup_meter/decoder_382.py",
+      "conpot/protocols/kamstrup_meter/kamstrup_constants.py",
+      "conpot/protocols/kamstrup_meter/kamstrup_meter.xsd",
+      "conpot/protocols/kamstrup_meter/kamstrup_server.py",
+      "conpot/protocols/kamstrup_meter/messages.py",
+      "conpot/protocols/kamstrup_meter/register.py",
+      "conpot/protocols/kamstrup_meter/request_parser.py",
+      "conpot/protocols/modbus/__init__.py",
+      "conpot/protocols/modbus/modbus.xsd",
+      "conpot/protocols/modbus/modbus_block_databus_mediator.py",
+      "conpot/protocols/modbus/modbus_server.py",
+      "conpot/protocols/modbus/slave.py",
+      "conpot/protocols/modbus/slave_db.py",
+      "conpot/protocols/proxy/__init__.py",
+      "conpot/protocols/proxy/ascii_decoder.py",
+      "conpot/protocols/proxy/proxy.py",
+      "conpot/protocols/proxy/proxy.xsd",
+      "conpot/protocols/s7comm/__init__.py",
+      "conpot/protocols/s7comm/cotp.py",
+      "conpot/protocols/s7comm/exceptions.py",
+      "conpot/protocols/s7comm/s7.py",
+      "conpot/protocols/s7comm/s7_server.py",
+      "conpot/protocols/s7comm/s7comm.xsd",
+      "conpot/protocols/s7comm/tpkt.py",
+      "conpot/protocols/snmp/__init__.py",
+      "conpot/protocols/snmp/command_responder.py",
+      "conpot/protocols/snmp/conpot_cmdrsp.py",
+      "conpot/protocols/snmp/databus_mediator.py",
+      "conpot/protocols/snmp/gevent_transport.py",
+      "conpot/protocols/snmp/snmp.xsd",
+      "conpot/protocols/snmp/snmp_server.py",
+      "conpot/protocols/tftp/__init__.py",
+      "conpot/protocols/tftp/tftp.xsd",
+      "conpot/protocols/tftp/tftp_handler.py",
+      "conpot/protocols/tftp/tftp_server.py",
+      "conpot/template.xsd",
+      "conpot/templates/IEC104/IEC104/IEC104.xml",
+      "conpot/templates/IEC104/snmp/snmp.xml",
+      "conpot/templates/IEC104/template.xml",
+      "conpot/templates/default/bacnet/bacnet.xml",
+      "conpot/templates/default/enip/enip.xml",
+      "conpot/templates/default/ftp/ftp.xml",
+      "conpot/templates/default/http/htdocs/index.html",
+      "conpot/templates/default/http/http.xml",
+      "conpot/templates/default/http/statuscodes/400.status",
+      "conpot/templates/default/http/statuscodes/403.status",
+      "conpot/templates/default/http/statuscodes/404.status",
+      "conpot/templates/default/http/statuscodes/501.status",
+      "conpot/templates/default/http/statuscodes/503.status",
+      "conpot/templates/default/ipmi/ipmi.xml",
+      "conpot/templates/default/modbus/modbus.xml",
+      "conpot/templates/default/s7comm/s7comm.xml",
+      "conpot/templates/default/snmp/snmp.xml",
+      "conpot/templates/default/ssl/ssl.crt",
+      "conpot/templates/default/ssl/ssl.key",
+      "conpot/templates/default/template.xml",
+      "conpot/templates/default/tftp/tftp.xml",
+      "conpot/templates/guardian_ast/guardian_ast/guardian_ast.xml",
+      "conpot/templates/guardian_ast/template.xml",
+      "conpot/templates/ipmi/ipmi/ipmi.xml",
+      "conpot/templates/ipmi/template.xml",
+      "conpot/templates/kamstrup_382/kamstrup_management/kamstrup_management.xml",
+      "conpot/templates/kamstrup_382/kamstrup_meter/kamstrup_meter.xml",
+      "conpot/templates/kamstrup_382/ssl/ssl.crt",
+      "conpot/templates/kamstrup_382/ssl/ssl.key",
+      "conpot/templates/kamstrup_382/template.xml",
+      "conpot/templates/proxy/proxy/proxy.xml",
+      "conpot/templates/proxy/template.xml",
+      "conpot/templates/snmp/snmp/snmp.xml",
+      "conpot/templates/snmp/template.xml",
+      "conpot/testing.cfg",
+      "conpot/utils/__init__.py",
+      "conpot/utils/ext_ip.py",
+      "conpot/utils/greenlet.py",
+      "conpot/utils/networking.py",
+      "docker-compose.yml",
+      "docs/Makefile",
+      "docs/source/api/index.rst",
+      "docs/source/api/reference/conpot.core.loggers.rst",
+      "docs/source/api/reference/conpot.core.rst",
+      "docs/source/api/reference/conpot.emulators.kamstrup.rst",
+      "docs/source/api/reference/conpot.emulators.misc.rst",
+      "docs/source/api/reference/conpot.emulators.rst",
+      "docs/source/api/reference/conpot.emulators.sensors.rst",
+      "docs/source/api/reference/conpot.protocols.IEC104.rst",
+      "docs/source/api/reference/conpot.protocols.bacnet.rst",
+      "docs/source/api/reference/conpot.protocols.enip.rst",
+      "docs/source/api/reference/conpot.protocols.ftp.rst",
+      "docs/source/api/reference/conpot.protocols.guardian_ast.rst",
+      "docs/source/api/reference/conpot.protocols.http.rst",
+      "docs/source/api/reference/conpot.protocols.ipmi.rst",
+      "docs/source/api/reference/conpot.protocols.kamstrup_management.rst",
+      "docs/source/api/reference/conpot.protocols.kamstrup_meter.rst",
+      "docs/source/api/reference/conpot.protocols.modbus.rst",
+      "docs/source/api/reference/conpot.protocols.proxy.rst",
+      "docs/source/api/reference/conpot.protocols.rst",
+      "docs/source/api/reference/conpot.protocols.s7comm.rst",
+      "docs/source/api/reference/conpot.protocols.snmp.rst",
+      "docs/source/api/reference/conpot.protocols.tftp.rst",
+      "docs/source/api/reference/conpot.rst",
+      "docs/source/api/reference/conpot.tests.helpers.rst",
+      "docs/source/api/reference/conpot.tests.rst",
+      "docs/source/api/reference/conpot.utils.rst",
+      "docs/source/concepts/databus.rst",
+      "docs/source/concepts/file_system.rst",
+      "docs/source/concepts/internal_interface.rst",
+      "docs/source/concepts/protocols.rst",
+      "docs/source/concepts/proxy_mode.rst",
+      "docs/source/concepts/templates.rst",
+      "docs/source/conf.py",
+      "docs/source/development/guidelines.rst",
+      "docs/source/faq.rst",
+      "docs/source/index.rst",
+      "docs/source/installation/configuration.rst",
+      "docs/source/installation/install.rst",
+      "docs/source/installation/quick_install.rst",
+      "docs/source/usage/customization.rst",
+      "docs/source/usage/index.rst",
+      "docs/source/usage/usage.rst",
+      "pyproject.toml",
+      "pytest.ini",
+      "tox.ini",
+      "uv.lock"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 0.3742048740386963,
+    "profiling_times": {
+      "config_time": 1.0195767879486084,
+      "core_time": 3.3568954467773438,
+      "ignores_time": 0.0010008811950683594,
+      "total_time": 4.3822619915008545
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 16.367381811141968,
+      "per_file_time": {
+        "mean": 0.030309966316929567,
+        "std_dev": 0.017455440711929976
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at conpot/protocols/enip/enip_server.py:170:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "conpot/protocols/enip/enip_server.py",
+          "start": {
+            "line": 170,
+            "col": 9,
+            "offset": 6000
+          },
+          "end": {
+            "line": 170,
+            "col": 19,
+            "offset": 6010
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at conpot/protocols/enip/enip_server.py:378:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "conpot/protocols/enip/enip_server.py",
+          "start": {
+            "line": 378,
+            "col": 9,
+            "offset": 17916
+          },
+          "end": {
+            "line": 378,
+            "col": 19,
+            "offset": 17926
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at conpot/protocols/guardian_ast/guardian_ast_server.py:47:8 [rules: 5, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "conpot/protocols/guardian_ast/guardian_ast_server.py",
+          "start": {
+            "line": 47,
+            "col": 9,
+            "offset": 1620
+          },
+          "end": {
+            "line": 47,
+            "col": 15,
+            "offset": 1626
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at conpot/protocols/s7comm/s7_server.py:69:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "conpot/protocols/s7comm/s7_server.py",
+          "start": {
+            "line": 69,
+            "col": 9,
+            "offset": 2432
+          },
+          "end": {
+            "line": 69,
+            "col": 15,
+            "offset": 2438
+          }
+        }
+      }
+    ],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.985778530545497,
+      "rules_selected_ratio": 0.036327531830393646,
+      "rules_matched_ratio": 0.036327531830393646
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 1239488256
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

@@ -1,0 +1,15 @@
+# Formal ICS-SCADA TPS for Conpot (Modbus) deep UHBS-Lab grading.
+target_metadata:
+  name: "ICS-Modbus-Decoy"
+  class: "ICS-SCADA"
+  protocol: "modbus"
+  protocols: ["modbus"]
+
+performance_baseline:
+  expected_p95_latency_ms: 100
+  strict_rfc_enforcement: true
+  timing_samples: 1000
+
+safety_boundary:
+  allowed_outbound_traffic: false
+  allow_local_code_execution: false

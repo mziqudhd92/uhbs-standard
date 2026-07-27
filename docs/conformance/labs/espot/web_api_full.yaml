@@ -1,0 +1,15 @@
+# Formal Web-API TPS for deep UHBS-Lab grading (RFC + 1000-sample A3 timing).
+target_metadata:
+  name: "Web-API-Decoy"
+  class: "Web-API"
+  protocol: "http"
+  protocols: ["http"]
+
+performance_baseline:
+  expected_p95_latency_ms: 150
+  strict_rfc_enforcement: true
+  timing_samples: 1000
+
+safety_boundary:
+  allowed_outbound_traffic: false
+  allow_local_code_execution: false

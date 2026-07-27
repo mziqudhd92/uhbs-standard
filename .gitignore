@@ -34,3 +34,4 @@ Thumbs.db
 *.key
 secrets/
 scorecards/local/
+.local/

@@ -1,0 +1,16 @@
+# Inventory for sa7mon/miniprint detailed UHBS Docker lab.
+# Mounts: source → /honeypot, logs → /telemetry
+sites:
+  miniprint:
+    kind: generic
+    class: Low-Interaction
+    host: miniprint-lab
+    protocol: pjl
+    protocols: [pjl]
+    port: 9100
+    ports:
+      pjl: 9100
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/miniprint/low_interaction_full.yaml
+    container_image: miniprint:lab

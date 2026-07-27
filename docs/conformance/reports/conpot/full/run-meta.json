@@ -1,0 +1,76 @@
+{
+  "uhbs_version": "4.0.0",
+  "run_mode": "full",
+  "evaluated_at": "2026-07-27T11:08:00Z",
+  "proof_label": "conpot (mushorg ICS/SCADA honeypot, Modbus)",
+  "target": {
+    "repository": "https://github.com/mushorg/conpot",
+    "git_commit": "b82b7a7fae8866c648f7be37f7033481a1b93482",
+    "class": "ICS-SCADA",
+    "protocol": "modbus",
+    "host": "conpot-lab",
+    "port": 5020,
+    "container_image": "conpot:lab-fixed",
+    "container_image_id": "sha256:a59010a7d6b449906612343cb36e762e4d0f6f2cd1d3e7e0174381d9926f4abe"
+  },
+  "grader": {
+    "package_version": "4.0.0",
+    "uhbs_git_commit": "9c6e9cf730cb7099699ce4479997881034cf2544",
+    "docker_image": "uhbs:4.0.0-full",
+    "docker_image_id": "sha256:1da71d92d4a9ee39b1e774fdbd623b83671cf07f78c7a299a7ed6d6505e9ad35",
+    "inventory": "docs/conformance/labs/conpot/inventory.yaml",
+    "tps": "docs/conformance/labs/conpot/ics_modbus_full.yaml"
+  },
+  "flags": {
+    "UHBS_QUICK": false,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": false,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "concurrency": 5,
+    "requests": 50,
+    "timing_samples": 1000,
+    "strict_rfc_enforcement": true,
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry",
+    "plugin": "modbus"
+  },
+  "results": {
+    "uhqs": 55.51,
+    "grade": "D",
+    "delta_c": 0.81,
+    "module_scores": {
+      "A": 56.5,
+      "B": 82.5,
+      "C": 55.0,
+      "D": 90.0,
+      "E": 100.0,
+      "F": 70.0
+    },
+    "safety_gate_passed": false
+  },
+  "limitations": [
+    "Default Conpot Modbus map has no holding registers at addr 0 — Module A FC03 nego fails with exception 0x02.",
+    "conpot.log is text — Module C capped without STIX/OTel/ECS.",
+    "Module E published at concurrency 5 / requests 50; higher load wedged Conpot (CLOSE_WAIT) in this lab.",
+    "Modbus-only decoy grade (no ports.ssh): Module D skips shell probes; Safety Gate not fully cleared (C=90).",
+    "Air-gap attested via UHBS_AIRGAP_ATTESTED=1 (Docker Desktop lab).",
+    "Bandit HIGH findings + template SSL keys → F capped at 70.",
+    "Other default listeners (HTTP/S7/SNMP/…) not included in UHQS.",
+    "Product name is evaluation proof only — not a UHBS requirement or endorsement."
+  ]
+}

@@ -19,7 +19,6 @@ def _site_to_spec(name: str, raw: dict[str, Any]) -> TargetSpec:
     ssh_port = raw.get("ssh_port", ports.get("ssh"))
     smtp_port = raw.get("smtp_port", ports.get("smtp"))
     http_port = raw.get("http_port", ports.get("http"))
-    primary = int(raw.get("port", ssh_port or 2222))
     ports_map = {str(k).lower(): int(v) for k, v in ports.items()}
     if ssh_port is not None:
         ports_map.setdefault("ssh", int(ssh_port))
@@ -27,8 +26,6 @@ def _site_to_spec(name: str, raw: dict[str, Any]) -> TargetSpec:
         ports_map.setdefault("smtp", int(smtp_port))
     if http_port is not None:
         ports_map.setdefault("http", int(http_port))
-    if "ssh" not in ports_map:
-        ports_map["ssh"] = primary
 
     protocols = raw.get("protocols") or []
     if isinstance(protocols, str):
@@ -38,6 +35,23 @@ def _site_to_spec(name: str, raw: dict[str, Any]) -> TargetSpec:
         protocols = [protocol]
     if not protocols:
         protocols = list(ports_map.keys())
+    protocols = [str(p) for p in protocols]
+    proto_l = {p.lower() for p in protocols}
+
+    # Prefer explicit port, then protocol-native ports — never invent SSH for HTTP-only.
+    if raw.get("port") is not None:
+        primary = int(raw["port"])
+    elif "http" in proto_l and ports_map.get("http") is not None:
+        primary = int(ports_map["http"])
+    elif "ssh" in proto_l and ports_map.get("ssh") is not None:
+        primary = int(ports_map["ssh"])
+    elif ports_map:
+        primary = int(next(iter(ports_map.values())))
+    else:
+        primary = 2222
+
+    if "ssh" not in ports_map and "ssh" in proto_l:
+        ports_map["ssh"] = primary
 
     t = TargetSpec(
         name=name,
@@ -51,12 +65,12 @@ def _site_to_spec(name: str, raw: dict[str, Any]) -> TargetSpec:
         profile=raw.get("profile"),
         baseline_native_host=raw.get("baseline_native_host"),
         container_image=raw.get("container_image"),
-        ssh_port=int(ssh_port) if ssh_port is not None else primary,
-        smtp_port=int(smtp_port) if smtp_port is not None else None,
-        http_port=int(http_port) if http_port is not None else None,
+        ssh_port=int(ssh_port) if ssh_port is not None else ports_map.get("ssh"),
+        smtp_port=int(smtp_port) if smtp_port is not None else ports_map.get("smtp"),
+        http_port=int(http_port) if http_port is not None else ports_map.get("http"),
         tps_path=raw.get("tps") or raw.get("tps_path"),
-        protocol=str(protocol or (protocols[0] if protocols else "ssh")),
-        protocols=[str(p) for p in protocols],
+        protocol=str(protocol or (protocols[0] if protocols else "")) or None,
+        protocols=protocols,
         profile_class=str(raw.get("class") or raw.get("profile_class") or "POSIX-Shell"),
         ports_map=ports_map,
     )
@@ -96,13 +110,20 @@ def resolve_target(
             t.kind = kind
         if source_root:
             t.source_root = source_root
-        if port:
-            t.port = port
-            t.ports_map["ssh"] = port
-            t.ssh_port = port
         if protocol:
             t.protocol = protocol
             t.protocols = [protocol]
+        if port:
+            t.port = port
+            proto = (protocol or t.protocol or "").lower()
+            if proto:
+                t.ports_map[proto] = port
+                if proto == "ssh":
+                    t.ssh_port = port
+                elif proto in {"http", "https"}:
+                    t.http_port = port
+                elif proto == "smtp":
+                    t.smtp_port = port
         if profile_class:
             t.profile_class = profile_class
         if tps:
@@ -124,7 +145,9 @@ def resolve_target(
             p = int(ps)
         else:
             host = hostport
-    proto = protocol or "ssh"
+    # Do not default to ssh — require --protocol or a TPS that declares protocols.
+    proto = protocol
+    ports_map = {proto: p} if proto else {}
     t = TargetSpec(
         name=name_or_addr,
         kind=kind_part or "generic",
@@ -132,9 +155,11 @@ def resolve_target(
         host=host,
         port=p,
         protocol=proto,
-        protocols=[proto],
-        ports_map={proto: p},
+        protocols=[proto] if proto else [],
+        ports_map=ports_map,
         ssh_port=p if proto == "ssh" else None,
+        http_port=p if proto in {"http", "https"} else None,
+        smtp_port=p if proto == "smtp" else None,
         profile_class=profile_class or "POSIX-Shell",
     )
     if tps:

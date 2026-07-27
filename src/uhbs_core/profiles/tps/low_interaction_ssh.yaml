@@ -1,0 +1,14 @@
+target_metadata:
+  name: "Low-Interaction-SSH-Telnet-Emulator"
+  class: "Low-Interaction"
+  protocol: "ssh"
+  protocols: ["ssh", "telnet"]
+
+performance_baseline:
+  expected_p95_latency_ms: 100
+  strict_rfc_enforcement: true
+  timing_samples: 30
+
+safety_boundary:
+  allowed_outbound_traffic: false
+  allow_local_code_execution: false

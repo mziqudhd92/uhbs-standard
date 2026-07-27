@@ -1,0 +1,62 @@
+{
+  "uhbs_version": "4.0.0",
+  "run_mode": "quick",
+  "evaluated_at": "2026-07-27T10:17:00Z",
+  "proof_label": "ESPot (mycert Elasticsearch honeypot)",
+  "target": {
+    "repository": "https://github.com/mycert/ESPot",
+    "git_commit": "0b126a7783da69d543239606df59211c5d21f1db",
+    "class": "Web-API",
+    "protocol": "http",
+    "host": "espot-lab",
+    "port": 9200,
+    "container_image": "espot:lab",
+    "container_image_id": "sha256:7186a31a5ce7e9b806e17ad08164e13bd6c2fd6f3dd8bdeb8286da6476e1f869"
+  },
+  "grader": {
+    "package_version": "4.0.0",
+    "uhbs_git_commit": "9c6e9cf730cb7099699ce4479997881034cf2544",
+    "docker_image": "uhbs:4.0.0",
+    "tps": "web_api (builtin profiles/tps/web_api.yaml)",
+    "notes": "CLI flags instead of inventory; no telemetry_dir; SAST skipped"
+  },
+  "flags": {
+    "UHBS_QUICK": true,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": null,
+    "skip_sast_tools": true,
+    "phases": ["profile", "static", "sandbox", "dynamic", "score"],
+    "modules": ["A", "B", "C", "D", "E", "F"],
+    "source_root": "/honeypot",
+    "telemetry_dir": null
+  },
+  "results": {
+    "uhqs": 39.95,
+    "grade": "F",
+    "delta_c": 0.5625,
+    "module_scores": {
+      "A": 20.0,
+      "B": 82.5,
+      "C": 100.0,
+      "D": 75.0,
+      "E": 100.0,
+      "F": 72.6
+    },
+    "safety_gate_passed": false
+  },
+  "artifacts": [
+    "SCORECARD.txt",
+    "REPORT.txt",
+    "report.json",
+    "MANIFEST.json",
+    "uhbs-run.log"
+  ],
+  "limitations": [
+    "UHBS_QUICK=1 shortens Module A timing samples and lightens Module E.",
+    "telemetry_dir unset → Module C C1 schema gates largely skipped (headline C can look optimistic).",
+    "--skip-sast-tools → Module F does not run bandit/semgrep/trivy.",
+    "HTTP-only target (no ports.ssh): Module D skips shell probes; C=75 with airgap attestation only.",
+    "Prefer the full/ report for realistic evaluation claims.",
+    "Product name is evaluation proof only — not a UHBS requirement or endorsement."
+  ]
+}

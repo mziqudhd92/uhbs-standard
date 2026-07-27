@@ -27,6 +27,45 @@ uhbs lab --list-protocols
 uhbs-lab --help
 ```
 
+### Docker image
+
+Build once from the repository root:
+
+```bash
+docker build -t uhbs:4.0.0 .
+```
+
+The image entrypoint is `uhbs`. Mount your project at `/work`:
+
+```bash
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.0.0 --help
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.0.0 \
+  validate-scorecard ./docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.0.0 lab --list-protocols
+```
+
+For live Modules A–E probes, point `--target` at a host reachable from the
+container (`host.docker.internal` on Docker Desktop, or a shared compose
+network). Prefer an isolated lab; do not point the harness at production.
+
+Optional compose wrapper: `docker compose run --rm uhbs <command>…`.
+
+Published honeypot lab reports (quick + full artifacts, tutorials):  
+[docs/conformance/reports/](../conformance/reports/index.md).
+
+Schema discovery inside the image uses `UHBS_ROOT` / `UHBS_SCHEMA_DIR`
+(defaults set in the Dockerfile).
+
+### Protocol-agnostic lab tips
+
+- Always pass `--protocol <id>` (or inventory `protocols`) for the decoy’s real
+  listener (`http`, `pjl`, `ssh`, `modbus`, …).
+- Builtin `low_interaction` is **class-only** (weights). Use `low_interaction_ssh`
+  only for SSH/Telnet decoys.
+- Mixing an SSH TPS with `--protocol pjl` (etc.) fails fast with
+  `ProtocolConflictError` instead of hanging on Paramiko.
+- Module D shell probes run only when `ports.ssh` / `ssh_port` is explicit.
+
 ## Commands
 
 ### Validate a profile

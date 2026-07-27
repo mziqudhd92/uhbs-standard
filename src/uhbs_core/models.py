@@ -126,36 +126,71 @@ class TargetSpec:
         return self.name or self.host or self.source_root or "unknown"
 
     def effective_ssh_port(self) -> int:
+        """Legacy helper — prefer ``shell_exec_port()`` for Module D.
+
+        Only returns an explicit SSH listener. Does **not** invent SSH on the
+        primary application port (e.g. PJL :9100 or HTTP :9200).
+        """
+        port = self.shell_exec_port()
+        if port is not None:
+            return port
+        raise ValueError(
+            "no explicit SSH listener configured "
+            "(set ports.ssh / ssh_port, or --protocol ssh --port …)"
+        )
+
+    def shell_exec_port(self) -> int | None:
+        """Port for remote shell / containment probes (Module D).
+
+        Protocol-agnostic rule: shell probes run **only** when SSH is
+        explicitly configured. Never treat the primary decoy port as SSH
+        just because a TPS mentioned ssh elsewhere.
+        """
         if "ssh" in self.ports_map:
             return int(self.ports_map["ssh"])
-        return int(self.ssh_port or self.port or 2222)
+        if self.ssh_port is not None:
+            return int(self.ssh_port)
+        return None
 
     def port_for(self, protocol: str) -> int | None:
         p = protocol.lower()
         if p in self.ports_map:
             return int(self.ports_map[p])
         if p == "ssh":
-            return self.effective_ssh_port()
+            return self.shell_exec_port()
         if p == "smtp":
-            return self.smtp_port
+            if self.smtp_port is not None:
+                return self.smtp_port
+            if self.protocol and self.protocol.lower() == "smtp":
+                return int(self.port)
+            return None
         if p in {"http", "https"}:
-            return self.http_port
-        return self.port if self.protocol and self.protocol.lower() == p else None
+            if self.http_port is not None:
+                return self.http_port
+            if self.protocol and self.protocol.lower() in {"http", "https"}:
+                return int(self.port)
+            return None
+        # Unknown / custom protocols (pjl, redis, …): map primary port when it matches
+        if self.protocol and self.protocol.lower() == p:
+            return int(self.port)
+        return None
 
     def protocol_list(self) -> list[str]:
         if self.protocols:
-            return [x.lower() for x in self.protocols]
+            return [x.lower() for x in self.protocols if x]
         if self.protocol:
             return [self.protocol.lower()]
-        # Infer from configured ports
+        # Infer from configured ports — never invent SSH by default
         found: list[str] = []
-        if self.port_for("ssh"):
+        for key in sorted(self.ports_map.keys()):
+            found.append(key.lower())
+        if not found and self.shell_exec_port() is not None:
             found.append("ssh")
-        if self.port_for("smtp"):
-            found.append("smtp")
-        if self.port_for("http"):
+        if not found and self.http_port is not None:
             found.append("http")
-        return found or ["ssh"]
+        if not found and self.smtp_port is not None:
+            found.append("smtp")
+        return found
 
 
 @dataclass

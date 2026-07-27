@@ -48,12 +48,16 @@ export UHBS_AIRGAP_ATTESTED=1
 
 uhbs lab \
   --tps low_interaction \
+  --protocol ssh \
   --target 127.0.0.1 --port 2200 \
   --source-root /path/to/your-decoy-sources \
   --phases profile,static,sandbox,dynamic,score \
   --quick \
   --out .local/bench-reports/my-target
 ```
+
+For SSH/Telnet decoys you may also use `--tps low_interaction_ssh` (declares those protocols).  
+For HTTP / PJL / other non-shell decoys, pass `--protocol http` / `--protocol pjl` (or inventory) with a **class-only** TPS such as `low_interaction` / `web_api` — never silently reuse an SSH profile.
 
 Validate outputs:
 

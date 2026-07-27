@@ -1,0 +1,23 @@
+# UHBS grading toolkit
+#
+# Build:  docker compose build
+# CLI:    docker compose run --rm uhbs validate-scorecard ./docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
+# Lab:    docker compose run --rm uhbs lab --list-protocols
+#
+# Mount the current directory at /work so profiles, scorecards, and source trees
+# are visible. For live probes against a honeypot on the host, prefer the host's
+# LAN IP or host.docker.internal (Docker Desktop) as --target.
+services:
+  uhbs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: uhbs:4.0.0
+    working_dir: /work
+    volumes:
+      - ./:/work
+    environment:
+      UHBS_QUICK: ${UHBS_QUICK:-}
+      UHBS_AIRGAP_ATTESTED: ${UHBS_AIRGAP_ATTESTED:-}
+    # Pass-through: docker compose run --rm uhbs <args...>
+    entrypoint: ["uhbs"]

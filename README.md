@@ -56,8 +56,44 @@ uhbs validate-scorecard path/to/scorecard.json
 uhbs score --profile my-honeypot.profile.yaml --scores scores.json
 ```
 
+### Docker (grade without a local Python install)
+
+Build the grading image (CLI + UHBS-Lab harness):
+
+```bash
+docker build -t uhbs:4.0.0 .
+# or: docker compose build
+```
+
+Mount your working directory at `/work` and pass the same `uhbs` commands:
+
+```bash
+# Validate a scorecard on disk
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.0.0 \
+  validate-scorecard ./docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
+
+# Compute UHQS from module scores
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.0.0 \
+  score --class Low-Interaction --scores ./scores.json
+
+# List protocol plugins / run a lab probe against a reachable honeypot
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.0.0 lab --list-protocols
+docker run --rm -v "$PWD:/work" -w /work \
+  -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 \
+  uhbs:4.0.0 lab \
+    --tps low_interaction \
+    --protocol ssh \
+    --target host.docker.internal --port 2222 \
+    --source-root /work \
+    --phases profile,static,dynamic,score \
+    --quick \
+    --out /work/.local/bench-reports/my-target
+```
+
+Compose shorthand: `docker compose run --rm uhbs validate-profile ./my-honeypot.profile.yaml`.
+
 Documentation site: **[https://mziqudhd92.github.io/uhbs-standard/](https://mziqudhd92.github.io/uhbs-standard/)** (MkDocs)  
-Maturity roadmap: **[ROADMAP.md](ROADMAP.md)** · Reference harness: **[docs/reference-implementation.md](docs/reference-implementation.md)**
+Maturity roadmap: **[ROADMAP.md](ROADMAP.md)** · Reference harness: **[docs/reference-implementation.md](docs/reference-implementation.md)** · CLI guide: **[docs/tooling/cli.md](docs/tooling/cli.md)**
 
 ### Discovery for search & AI agents (SEO / AEO / GEO)
 
@@ -104,10 +140,16 @@ Production deployment requires **UHQS > 80** and a passing Safety Gate. A decoy 
 ```text
 uhbs-standard/
 ├── docs/                 # Website + Docs-as-Code (MkDocs → GitHub Pages)
+│   └── conformance/
+│       ├── fixtures/     # Sanitized scorecard JSON
+│       └── reports/      # Quick + full lab artifacts + tutorials (named proof)
 ├── schemas/              # JSON Schemas for profiles & scorecards
 ├── templates/            # Starter profile.yaml for framework users
 ├── src/uhbs_cli/         # Validation CLI
 ├── src/uhbs_core/        # UHBS-Lab reference harness
+├── Dockerfile            # Grading image (uhbs CLI + lab)
+├── Dockerfile.full       # Grading image + Module F SAST tools
+├── docker-compose.yml    # Mount-cwd helper for the grading image
 ├── GOVERNANCE.md         # Project notes (personal maintainer; not a committee)
 ├── SECURITY.md           # Vulnerability disclosure policy
 └── CITATION.cff          # Citation metadata

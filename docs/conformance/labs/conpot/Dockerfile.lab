@@ -1,0 +1,7 @@
+# Lab wrapper: pyfilesystem still imports pkg_resources (removed in setuptools 82+).
+FROM conpot:lab
+USER root
+RUN pip install --no-cache-dir 'setuptools<81'
+USER conpot
+ENTRYPOINT ["conpot"]
+CMD ["--template", "default", "--logfile", "/var/log/conpot/conpot.log", "-f", "--temp_dir", "/tmp"]

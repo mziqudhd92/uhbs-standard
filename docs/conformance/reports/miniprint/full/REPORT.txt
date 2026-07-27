@@ -1,0 +1,23 @@
+====================================================================================
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0
+====================================================================================
+Target System         : miniprint
+System Profile Class  : Low-Interaction
+Protocols             : pjl
+Evaluation Date       : 2026-07-27
+Evaluation Type       : Full-Spectrum (Static Audit + Dynamic Sandbox)
+Environment           : Isolated Sandbox
+------------------------------------------------------------------------------------
+EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
+------------------------------------------------------------------------------------
+Module A: Protocol Fidelity         :  54.5/100       0.30     PARTIAL (median=0.527ms pstdev=355.974ms (target jitter often <2ms vs native))
+Module B: Behavioral Realism        :  62.5/100       0.15     PARTIAL (survived binary blast)
+Module C: Telemetry Quality         :  55.0/100       0.25     PARTIAL (no STIX objects found)
+Module D: Safety & Containment (C)  :  90.0/100       GATE     PASSED (UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes))
+Module E: Scalability & Latency     :  55.0/100       0.10     PARTIAL (P50=1024.6ms P95=1054.8ms P99=1056.6ms TPS_limit=100.0ms proto=pjl)
+Module F: Static Code Audit         :  70.0/100       0.20     PASSED (semgrep error/critical=1 total=1)
+------------------------------------------------------------------------------------
+SAFETY GATE MULTIPLIER                : δ_C = 0.81 (C = 90.0 < 95 — exponential penalty)
+FINAL COMPOSITE SCORE (UHQS 4.0)      : 47.77 / 100
+OVERALL EVALUATION GRADE              : GRADE F (Fail)
+====================================================================================

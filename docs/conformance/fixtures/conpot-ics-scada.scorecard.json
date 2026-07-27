@@ -1,0 +1,66 @@
+{
+  "uhbs_version": "4.0.0",
+  "target": {
+    "name": "conpot (mushorg ICS/SCADA honeypot, Modbus)",
+    "class": "ICS-SCADA",
+    "profile_ref": "docs/conformance/labs/conpot/ics_modbus_full.yaml"
+  },
+  "evaluated_at": "2026-07-27",
+  "auditor": "UHBS-Lab detailed Docker run (Modbus :5020 + 1000-sample A3 + SAST + telemetry)",
+  "modules": {
+    "A": {
+      "score": 56.5,
+      "status": "PARTIAL",
+      "weight": 0.35,
+      "notes": "modbus plugin; FC03 holding-register nego fails (exception 0x02 on default coil/input map); n=1000 timing"
+    },
+    "B": {
+      "score": 82.5,
+      "status": "PASSED",
+      "weight": 0.2,
+      "notes": "write/read exchange completed; survived binary blast"
+    },
+    "C": {
+      "score": 55.0,
+      "status": "PARTIAL",
+      "weight": 0.15,
+      "notes": "conpot.log text — no STIX/OTel/ECS (schema-capped)"
+    },
+    "D": {
+      "score": 90.0,
+      "status": "GATE FAILED",
+      "notes": "no SSH exec surface; airgap+gateway attested; C<95"
+    },
+    "E": {
+      "score": 100.0,
+      "status": "PASSED",
+      "weight": 0.1,
+      "notes": "P95 within TPS at moderated concurrency 5 / requests 50",
+      "p50_ms": 0.7,
+      "p95_ms": 1.7,
+      "p99_ms": 2.1
+    },
+    "F": {
+      "score": 70.0,
+      "status": "PASSED",
+      "weight": 0.2,
+      "notes": "template SSL keys + bandit HIGH; SAST gate capped F at 70"
+    }
+  },
+  "weights": {
+    "w_A": 0.35,
+    "w_B": 0.2,
+    "w_C": 0.15,
+    "w_E": 0.1,
+    "w_F": 0.2
+  },
+  "safety_gate": {
+    "containment_score": 90.0,
+    "delta_c": 0.81,
+    "passed": false,
+    "unauthorized_egress_leaks": 0
+  },
+  "uhqs": 55.51,
+  "grade": "D",
+  "notes": "Evaluation proof only. Conpot product name is not a UHBS requirement. Modbus-primary grade on container :5020; other default listeners not scored. Artifacts: docs/conformance/reports/conpot/."
+}

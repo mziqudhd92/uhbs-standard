@@ -1,0 +1,68 @@
+{
+  "uhbs_version": "4.0.0",
+  "run_mode": "full",
+  "evaluated_at": "2026-07-27T09:45:00Z",
+  "proof_label": "ESPot (mycert Elasticsearch honeypot)",
+  "target": {
+    "repository": "https://github.com/mycert/ESPot",
+    "git_commit": "0b126a7783da69d543239606df59211c5d21f1db",
+    "class": "Web-API",
+    "protocol": "http",
+    "host": "espot-lab",
+    "port": 9200,
+    "container_image": "espot:lab",
+    "container_image_id": "sha256:7186a31a5ce7e9b806e17ad08164e13bd6c2fd6f3dd8bdeb8286da6476e1f869"
+  },
+  "grader": {
+    "package_version": "4.0.0",
+    "uhbs_git_commit": "9c6e9cf730cb7099699ce4479997881034cf2544",
+    "docker_image": "uhbs:4.0.0-full",
+    "docker_image_id": "sha256:1da71d92d4a9ee39b1e774fdbd623b83671cf07f78c7a299a7ed6d6505e9ad35",
+    "inventory": "docs/conformance/labs/espot/inventory.yaml",
+    "tps": "docs/conformance/labs/espot/web_api_full.yaml"
+  },
+  "flags": {
+    "UHBS_QUICK": false,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": false,
+    "phases": ["profile", "static", "sandbox", "dynamic", "score"],
+    "modules": ["A", "B", "C", "D", "E", "F"],
+    "concurrency": 25,
+    "requests": 200,
+    "timing_samples": 1000,
+    "strict_rfc_enforcement": true,
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry"
+  },
+  "results": {
+    "uhqs": 49.82,
+    "grade": "F",
+    "delta_c": 0.81,
+    "module_scores": {
+      "A": 20.0,
+      "B": 82.5,
+      "C": 55.0,
+      "D": 90.0,
+      "E": 100.0,
+      "F": 70.0
+    },
+    "safety_gate_passed": false
+  },
+  "artifacts": [
+    "SCORECARD.txt",
+    "REPORT.txt",
+    "report.json",
+    "MANIFEST.json",
+    "uhbs-run.log",
+    "static/bandit-report.json",
+    "static/semgrep-report.json"
+  ],
+  "limitations": [
+    "Module D: HTTP-only decoy (no ports.ssh) — shell probes skipped; containment uses airgap attestation + gateway canary; C=90 so Safety Gate not fully cleared.",
+    "Telemetry is Express access.log text — not STIX/OTel/ECS; Module C is intentionally capped when schema evidence is absent.",
+    "Trivy binary was not present in the grader image for this run (bandit + semgrep ran).",
+    "Operator attested air-gap (UHBS_AIRGAP_ATTESTED=1); this is not a substitute for a physically air-gapped lab.",
+    "Product name is evaluation proof only — not a UHBS requirement or endorsement."
+  ]
+}

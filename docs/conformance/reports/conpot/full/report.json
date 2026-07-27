@@ -1,0 +1,597 @@
+{
+  "framework": "Universal Honeypot Benchmarking Standard (UHBS) v4.0",
+  "evaluation_type": "Full-Spectrum (Static Audit + Dynamic Sandbox)",
+  "target": {
+    "name": "conpot",
+    "kind": "generic",
+    "host": "conpot-lab",
+    "port": 5020,
+    "source_root": "/honeypot",
+    "profile_class": "ICS-SCADA",
+    "protocols": [
+      "modbus"
+    ],
+    "ports_map": {
+      "modbus": 5020
+    }
+  },
+  "baseline": null,
+  "uhqs": {
+    "target": "conpot",
+    "S_A": 56.5,
+    "S_B": 82.5,
+    "S_C": 55.0,
+    "C": 90.0,
+    "S_E": 100.0,
+    "S_F": 70.0,
+    "delta_c": 0.81,
+    "uhqs": 55.51,
+    "weights": {
+      "protocol": 0.35,
+      "behavior": 0.2,
+      "telemetry": 0.15,
+      "scale": 0.1,
+      "static": 0.2
+    },
+    "profile_class": "ICS-SCADA",
+    "grade": "GRADE D (Needs Remediation)",
+    "phase": "profile+static+sandbox+dynamic+score",
+    "version": "4.0",
+    "containment_measured": true
+  },
+  "hqs": {
+    "target": "conpot",
+    "S_A": 56.5,
+    "S_B": 82.5,
+    "S_C": 55.0,
+    "C": 90.0,
+    "S_E": 100.0,
+    "S_F": 70.0,
+    "delta_c": 0.81,
+    "uhqs": 55.51,
+    "weights": {
+      "protocol": 0.35,
+      "behavior": 0.2,
+      "telemetry": 0.15,
+      "scale": 0.1,
+      "static": 0.2
+    },
+    "profile_class": "ICS-SCADA",
+    "grade": "GRADE D (Needs Remediation)",
+    "phase": "profile+static+sandbox+dynamic+score",
+    "version": "4.0",
+    "containment_measured": true
+  },
+  "modules": [
+    {
+      "module": "SANDBOX",
+      "dimension": "sandbox",
+      "score": 85.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "sandbox.reach.modbus",
+          "team": "blue",
+          "passed": true,
+          "detail": "conpot-lab:5020 open",
+          "score": 25.0,
+          "evidence": []
+        },
+        {
+          "id": "sandbox.airgap_attested",
+          "team": "blue",
+          "passed": true,
+          "detail": "operator attested air-gapped sandbox (UHBS_AIRGAP_ATTESTED=1)",
+          "score": 25.0,
+          "evidence": []
+        },
+        {
+          "id": "sandbox.egress_deny_tooling",
+          "team": "blue",
+          "passed": false,
+          "detail": "host-egress-deny.sh not found",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "sandbox.gateway_log_configured",
+          "team": "blue",
+          "passed": true,
+          "detail": "UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log",
+          "score": 25.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "reachable_protocols": 1
+      },
+      "notes": [
+        "Phase 3 preflight \u2014 does not replace real air-gap deployment"
+      ],
+      "error": null
+    },
+    {
+      "module": "F",
+      "dimension": "static",
+      "score": 70.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "white.static_private_keys",
+          "team": "white",
+          "passed": false,
+          "detail": "2 static private keys: conpot/templates/default/ssl/ssl.key, conpot/templates/kamstrup_382/ssl/ssl.key",
+          "score": 0.0,
+          "evidence": [
+            "conpot/templates/default/ssl/ssl.key",
+            "conpot/templates/kamstrup_382/ssl/ssl.key"
+          ]
+        },
+        {
+          "id": "white.hardcoded_ssh_banners",
+          "team": "white",
+          "passed": true,
+          "detail": "0 hardcoded SSH banners",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "white.predictable_seeds",
+          "team": "white",
+          "passed": true,
+          "detail": "0 predictable PRNG seeds",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "white.hardcoded_macs",
+          "team": "white",
+          "passed": true,
+          "detail": "0 hardcoded MAC addresses",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "white.prompt_corpus_present",
+          "team": "white",
+          "passed": true,
+          "detail": "no prompt corpus (N/A for non-LLM)",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "white.prompt_boundaries",
+          "team": "white",
+          "passed": true,
+          "detail": "no weak delimiter/extract patterns",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "white.fallback_strings",
+          "team": "white",
+          "passed": true,
+          "detail": "no plain-text LLM fallback artifacts",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "white.bandit",
+          "team": "white",
+          "passed": false,
+          "detail": "bandit HIGH=9",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "white.semgrep",
+          "team": "white",
+          "passed": false,
+          "detail": "semgrep error/critical=2 total=17",
+          "score": 6.0,
+          "evidence": []
+        },
+        {
+          "id": "white.trivy",
+          "team": "white",
+          "passed": true,
+          "detail": "trivy not installed (skipped)",
+          "score": 4.0,
+          "evidence": []
+        },
+        {
+          "id": "white.sast_gate",
+          "team": "white",
+          "passed": false,
+          "detail": "11 high/critical findings",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "white.vfs_posix_coverage",
+          "team": "white",
+          "passed": true,
+          "detail": "POSIX coverage 43% (45/104)",
+          "score": 10.82,
+          "evidence": [
+            "adduser",
+            "apt",
+            "apt-get",
+            "cd",
+            "chmod",
+            "chown",
+            "clear",
+            "date",
+            "docker",
+            "echo",
+            "env",
+            "file",
+            "find",
+            "free",
+            "git",
+            "head",
+            "id",
+            "ip",
+            "kill",
+            "less",
+            "ln",
+            "ls",
+            "mkdir",
+            "more",
+            "mount",
+            "passwd",
+            "ping",
+            "pip",
+            "pwd",
+            "python",
+            "python3",
+            "rm",
+            "service",
+            "sh",
+            "sleep",
+            "sort",
+            "ss",
+            "stat",
+            "sudo",
+            "tar"
+          ]
+        },
+        {
+          "id": "white.ot_register_coverage",
+          "team": "white",
+          "passed": true,
+          "detail": "OT/Modbus coverage 78% (14/18)",
+          "score": 19.44,
+          "evidence": [
+            "coil",
+            "diagnostic",
+            "exception",
+            "function_code",
+            "holding",
+            "input_register",
+            "read_coils",
+            "read_discrete_inputs",
+            "read_holding_registers",
+            "read_input_registers",
+            "write_multiple_coils",
+            "write_multiple_registers",
+            "write_single_coil",
+            "write_single_register"
+          ]
+        },
+        {
+          "id": "white.blocking_calls",
+          "team": "white",
+          "passed": true,
+          "detail": "sleep/blocking markers in non-test code\u22481",
+          "score": 5.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "source_root": "/honeypot"
+      },
+      "notes": [
+        "Module F white-box audit (keys/prompts/SAST/VFS)"
+      ],
+      "error": null
+    },
+    {
+      "module": "A",
+      "dimension": "protocol",
+      "score": 56.5,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "modbus.fsm.illegal_function",
+          "team": "blue",
+          "passed": true,
+          "detail": "resp=00010000000301ff01",
+          "score": 100.0,
+          "evidence": []
+        },
+        {
+          "id": "modbus.nego.read_holding",
+          "team": "blue",
+          "passed": false,
+          "detail": "resp=000100000003018302",
+          "score": 30.0,
+          "evidence": []
+        },
+        {
+          "id": "modbus.timing.sample_size",
+          "team": "blue",
+          "passed": true,
+          "detail": "n=1000 requested=1000 errors=0",
+          "score": 20.0,
+          "evidence": []
+        },
+        {
+          "id": "modbus.timing.iat_jitter",
+          "team": "red",
+          "passed": true,
+          "detail": "median=0.313ms pstdev=1.104ms (target jitter often <2ms vs native)",
+          "score": 30.0,
+          "evidence": []
+        },
+        {
+          "id": "modbus.timing.ks_vs_gold",
+          "team": "blue",
+          "passed": false,
+          "detail": "no gold_baseline_host in TPS \u2014 KS compare skipped (set performance_baseline.gold_baseline_host)",
+          "score": 25.0,
+          "evidence": []
+        },
+        {
+          "id": "modbus.module_a.composite",
+          "team": "blue",
+          "passed": false,
+          "detail": "fsm=100 nego=30 timing=25",
+          "score": 56.5,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "modbus": 56.5
+        },
+        "protocols": [
+          "modbus"
+        ],
+        "timing_samples": 1000,
+        "available_plugins": [
+          "ftp",
+          "generic",
+          "http",
+          "modbus",
+          "redis",
+          "smb",
+          "smtp",
+          "ssh",
+          "telnet"
+        ]
+      },
+      "notes": [
+        "UHBS Module A \u2014 plugins=['modbus']",
+        "class=ICS-SCADA strict_rfc=True"
+      ],
+      "error": null
+    },
+    {
+      "module": "B",
+      "dimension": "behavior",
+      "score": 82.5,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "modbus.state.write_read",
+          "team": "blue",
+          "passed": true,
+          "detail": "write/read exchange completed",
+          "score": 100.0,
+          "evidence": []
+        },
+        {
+          "id": "modbus.payload.unsupported",
+          "team": "red",
+          "passed": true,
+          "detail": "no payload probe \u2014 skipped",
+          "score": 50.0,
+          "evidence": []
+        },
+        {
+          "id": "modbus.fuzz.binary",
+          "team": "red",
+          "passed": true,
+          "detail": "survived binary blast",
+          "score": 100.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "modbus": 82.5
+        },
+        "class": "ICS-SCADA"
+      },
+      "notes": [
+        "UHBS Module B class=ICS-SCADA"
+      ],
+      "error": null
+    },
+    {
+      "module": "C",
+      "dimension": "telemetry",
+      "score": 55.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "modbus.fuzz.binary",
+          "team": "red",
+          "passed": true,
+          "detail": "survived binary blast",
+          "score": 100.0,
+          "evidence": []
+        },
+        {
+          "id": "c1.json_parse_clean",
+          "team": "blue",
+          "passed": true,
+          "detail": "0 malformed / 0 records",
+          "score": 20.0,
+          "evidence": []
+        },
+        {
+          "id": "c1.stix_2_1",
+          "team": "blue",
+          "passed": false,
+          "detail": "no STIX objects found",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "c1.otel_or_ecs",
+          "team": "blue",
+          "passed": false,
+          "detail": "otel_docs=0 ecs_docs=0",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "c1.payload_hashes",
+          "team": "blue",
+          "passed": false,
+          "detail": "no md5/sha256 fields",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "c1.mitre_mapping",
+          "team": "blue",
+          "passed": false,
+          "detail": "no MITRE tags",
+          "score": 0.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {},
+      "notes": [
+        "UHBS C1 schema: STIX 2.1 / OTel / ECS best-effort validators"
+      ],
+      "error": null
+    },
+    {
+      "module": "D",
+      "dimension": "containment",
+      "score": 90.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "d1.ssh_exec_unavailable",
+          "team": "blue",
+          "passed": true,
+          "detail": "no SSH port in inventory \u2014 shell egress/LPE probes skipped",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "d1.egress_gateway_log",
+          "team": "blue",
+          "passed": true,
+          "detail": "0 gateway canary hits",
+          "score": 20.0,
+          "evidence": []
+        },
+        {
+          "id": "d1.airgap_attested",
+          "team": "blue",
+          "passed": true,
+          "detail": "UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes)",
+          "score": 0.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "breakout": false,
+        "allowed_outbound_traffic": false,
+        "ssh_exec": false
+      },
+      "notes": [
+        "Module D limited: target has no SSH port \u2014 Safety Gate cannot fully clear without shell exec probes or UHBS_EGRESS_GATEWAY_LOG evidence"
+      ],
+      "error": null
+    },
+    {
+      "module": "E",
+      "dimension": "scale",
+      "score": 100.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "e1.p95_vs_tps",
+          "team": "blue",
+          "passed": true,
+          "detail": "P50=0.7ms P95=1.7ms P99=2.1ms TPS_limit=100.0ms proto=modbus",
+          "score": 45.0,
+          "evidence": []
+        },
+        {
+          "id": "e1.error_rate",
+          "team": "blue",
+          "passed": true,
+          "detail": "errors=0/50 rate=0.00%",
+          "score": 20.0,
+          "evidence": []
+        },
+        {
+          "id": "e2.exhaustion_input",
+          "team": "red",
+          "passed": true,
+          "detail": "completed exhaustion/fuzz blast",
+          "score": 15.0,
+          "evidence": []
+        },
+        {
+          "id": "e2.circuit_breaker_alive",
+          "team": "blue",
+          "passed": true,
+          "detail": "service alive after load (connect 0.5ms)",
+          "score": 20.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "p50_ms": 0.66,
+        "p95_ms": 1.68,
+        "p99_ms": 2.07,
+        "p95_limit_ms": 100.0,
+        "errors": 0,
+        "concurrency": 5,
+        "requests": 50,
+        "wall_s": 0.01,
+        "protocol": "modbus"
+      },
+      "notes": [],
+      "error": null
+    }
+  ],
+  "extras": {
+    "target_scores": {
+      "protocol": 56.5,
+      "behavior": 82.5,
+      "telemetry": 55.0,
+      "containment": 90.0,
+      "scale": 100.0,
+      "static": 70.0
+    },
+    "uhqs_version": "4.0",
+    "tps": {
+      "name": "ICS-Modbus-Decoy",
+      "class": "ICS-SCADA",
+      "protocols": [
+        "modbus"
+      ],
+      "expected_p95_latency_ms": 100.0
+    }
+  }
+}

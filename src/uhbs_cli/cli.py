@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 import sys
 from pathlib import Path
 from typing import Any
@@ -21,12 +22,30 @@ from uhbs_cli.scoring import (
     weights_for_class,
 )
 
-ROOT = Path(__file__).resolve().parents[2]
-SCHEMA_DIR = ROOT / "schemas"
+
+def _repo_root() -> Path:
+    """Resolve the UHBS checkout root (editable layout or UHBS_ROOT)."""
+    env = os.environ.get("UHBS_ROOT")
+    if env:
+        return Path(env)
+    # src/uhbs_cli/cli.py → repo root (editable / Docker source tree)
+    return Path(__file__).resolve().parents[2]
+
+
+def _schema_dir() -> Path:
+    """Locate JSON Schemas for profile/scorecard/evidence validation."""
+    env = os.environ.get("UHBS_SCHEMA_DIR")
+    if env:
+        return Path(env)
+    return _repo_root() / "schemas"
+
+
+ROOT = _repo_root()
+SCHEMA_DIR = _schema_dir()
 
 
 def _load_schema(name: str) -> dict[str, Any]:
-    path = SCHEMA_DIR / name
+    path = _schema_dir() / name
     with path.open(encoding="utf-8") as fh:
         return json.load(fh)
 

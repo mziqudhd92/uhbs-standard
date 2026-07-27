@@ -16,7 +16,8 @@ public registry is stood up.
 
 | Kind | Where | Badge? |
 | --- | --- | --- |
-| **Illustrative** | `docs/scorecards/` — labeled non-official | No |
+| **Published lab (evaluation proof)** | `docs/scorecards/` + `docs/conformance/reports/` — named products as proof only | Docs only |
+| **Illustrative (synthetic)** | `docs/scorecards/illustrative-*` — layout sample, not a lab run | No |
 | **Conformance fixture** | `docs/conformance/fixtures/` — math/proof only | Docs only |
 | **Attested (registry)** | Not operated yet | N/A |
 

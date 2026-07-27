@@ -143,10 +143,12 @@ def _walk_strings(obj: Any) -> List[str]:
 def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
     checks: List[CheckResult] = []
 
-    # C2 — injection via primary protocol (prefer ssh plugin path)
-    proto = (target.protocol_list() or ["ssh"])[0]
-    port = target.port_for(proto) or target.port
-    if target.host and proto == "ssh" and port:
+    # C2 — injection via primary protocol (SSH shell inject or generic fuzz)
+    protos = target.protocol_list()
+    proto = protos[0] if protos else "generic"
+    port = target.port_for(proto) or (target.port if target.host else None)
+    if target.host and proto == "ssh" and target.shell_exec_port():
+        port = target.shell_exec_port()
         payloads = [
             r'echo -e "ANSI:\x1b[31mRED\x1b[0m"',
             "echo 'json-break: {\"a\": \"unterminated'",
@@ -290,6 +292,15 @@ def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
     if not (tdir and tdir.exists()) and any(c.id.startswith("c2.") for c in checks):
         c2 = sum(c.score for c in checks if c.id.startswith("c2.") or c.id.startswith("red."))
         score = min(100.0, c2 * (100.0 / 52.0))
+
+    # When telemetry_dir is present but no STIX/OTel/ECS schema evidence exists,
+    # do not let C2 fuzz-survival alone claim an excellent Module C score.
+    if tdir and tdir.exists():
+        schema_ok = any(
+            c.id in {"c1.stix_2_1", "c1.otel_or_ecs"} and c.passed for c in checks
+        )
+        if not schema_ok:
+            score = min(score, 55.0)
 
     return ModuleResult(
         module="C",

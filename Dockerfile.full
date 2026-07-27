@@ -1,0 +1,31 @@
+# Optional full grading image: UHBS CLI/lab + Module F SAST tools.
+# Build after uhbs:4.0.0:  docker build -f Dockerfile.full -t uhbs:4.0.0-full .
+FROM uhbs:4.0.0
+
+USER root
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends curl ca-certificates wget \
+    && rm -rf /var/lib/apt/lists/* \
+    && pip install --no-cache-dir 'bandit>=1.7' 'semgrep>=1.80' \
+    && bandit --version \
+    && semgrep --version \
+    && arch="$(uname -m)" \
+    && case "$arch" in \
+         aarch64|arm64) tarch=ARM64 ;; \
+         x86_64|amd64) tarch=64bit ;; \
+         *) tarch=64bit ;; \
+       esac \
+    && TRIVY_VER=0.66.0 \
+    && if curl -fsSL -o /tmp/trivy.tgz \
+         "https://github.com/aquasecurity/trivy/releases/download/v${TRIVY_VER}/trivy_${TRIVY_VER}_Linux-${tarch}.tar.gz"; then \
+         tar -xzf /tmp/trivy.tgz -C /usr/local/bin trivy \
+         && rm -f /tmp/trivy.tgz \
+         && trivy --version; \
+       else \
+         echo "WARN: trivy download failed — Module F will skip trivy"; \
+       fi
+
+USER uhbs
+ENTRYPOINT ["uhbs"]
+CMD ["--help"]

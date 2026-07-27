@@ -1,0 +1,493 @@
+{
+  "framework": "Universal Honeypot Benchmarking Standard (UHBS) v4.0",
+  "evaluation_type": "Full-Spectrum (Static Audit + Dynamic Sandbox)",
+  "target": {
+    "name": "Low-Interaction-Printer-Decoy",
+    "kind": "generic",
+    "host": "miniprint-lab",
+    "port": 9100,
+    "source_root": "/honeypot",
+    "profile_class": "Low-Interaction",
+    "protocols": [
+      "pjl"
+    ],
+    "ports_map": {
+      "pjl": 9100
+    }
+  },
+  "baseline": null,
+  "uhqs": {
+    "target": "Low-Interaction-Printer-Decoy",
+    "S_A": 54.5,
+    "S_B": 62.5,
+    "S_C": 100.0,
+    "C": 75.0,
+    "S_E": 55.0,
+    "S_F": 74.33,
+    "delta_c": 0.5625,
+    "uhqs": 39.99,
+    "weights": {
+      "protocol": 0.3,
+      "behavior": 0.15,
+      "telemetry": 0.25,
+      "scale": 0.1,
+      "static": 0.2
+    },
+    "profile_class": "Low-Interaction",
+    "grade": "GRADE F (Fail)",
+    "phase": "profile+static+sandbox+dynamic+score",
+    "version": "4.0",
+    "containment_measured": true
+  },
+  "hqs": {
+    "target": "Low-Interaction-Printer-Decoy",
+    "S_A": 54.5,
+    "S_B": 62.5,
+    "S_C": 100.0,
+    "C": 75.0,
+    "S_E": 55.0,
+    "S_F": 74.33,
+    "delta_c": 0.5625,
+    "uhqs": 39.99,
+    "weights": {
+      "protocol": 0.3,
+      "behavior": 0.15,
+      "telemetry": 0.25,
+      "scale": 0.1,
+      "static": 0.2
+    },
+    "profile_class": "Low-Interaction",
+    "grade": "GRADE F (Fail)",
+    "phase": "profile+static+sandbox+dynamic+score",
+    "version": "4.0",
+    "containment_measured": true
+  },
+  "modules": [
+    {
+      "module": "SANDBOX",
+      "dimension": "sandbox",
+      "score": 70.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "sandbox.reach.pjl",
+          "team": "blue",
+          "passed": true,
+          "detail": "miniprint-lab:9100 open",
+          "score": 25.0,
+          "evidence": []
+        },
+        {
+          "id": "sandbox.airgap_attested",
+          "team": "blue",
+          "passed": true,
+          "detail": "operator attested air-gapped sandbox (UHBS_AIRGAP_ATTESTED=1)",
+          "score": 25.0,
+          "evidence": []
+        },
+        {
+          "id": "sandbox.egress_deny_tooling",
+          "team": "blue",
+          "passed": false,
+          "detail": "host-egress-deny.sh not found",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "sandbox.gateway_log_configured",
+          "team": "blue",
+          "passed": false,
+          "detail": "gateway log path not set",
+          "score": 10.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "reachable_protocols": 1
+      },
+      "notes": [
+        "Phase 3 preflight \u2014 does not replace real air-gap deployment"
+      ],
+      "error": null
+    },
+    {
+      "module": "F",
+      "dimension": "static",
+      "score": 74.33,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "white.static_private_keys",
+          "team": "white",
+          "passed": true,
+          "detail": "0 static private keys",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "white.hardcoded_ssh_banners",
+          "team": "white",
+          "passed": true,
+          "detail": "0 hardcoded SSH banners",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "white.predictable_seeds",
+          "team": "white",
+          "passed": true,
+          "detail": "0 predictable PRNG seeds",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "white.hardcoded_macs",
+          "team": "white",
+          "passed": true,
+          "detail": "0 hardcoded MAC addresses",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "white.prompt_corpus_present",
+          "team": "white",
+          "passed": true,
+          "detail": "no prompt corpus (N/A for non-LLM)",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "white.prompt_boundaries",
+          "team": "white",
+          "passed": true,
+          "detail": "no weak delimiter/extract patterns",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "white.fallback_strings",
+          "team": "white",
+          "passed": true,
+          "detail": "no plain-text LLM fallback artifacts",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "white.sast_tools",
+          "team": "white",
+          "passed": true,
+          "detail": "SAST tools skipped by flag",
+          "score": 15.0,
+          "evidence": []
+        },
+        {
+          "id": "white.vfs_posix_coverage",
+          "team": "white",
+          "passed": false,
+          "detail": "POSIX coverage 17% (18/104)",
+          "score": 4.33,
+          "evidence": [
+            "cat",
+            "clear",
+            "date",
+            "echo",
+            "file",
+            "find",
+            "free",
+            "head",
+            "id",
+            "more",
+            "pip",
+            "ps",
+            "python",
+            "python3",
+            "service",
+            "stat",
+            "type",
+            "which"
+          ]
+        },
+        {
+          "id": "white.blocking_calls",
+          "team": "white",
+          "passed": true,
+          "detail": "sleep/blocking markers in non-test code\u22480",
+          "score": 5.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "source_root": "/honeypot"
+      },
+      "notes": [
+        "Module F white-box audit (keys/prompts/SAST/VFS)"
+      ],
+      "error": null
+    },
+    {
+      "module": "A",
+      "dimension": "protocol",
+      "score": 54.5,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "pjl.fsm.connect",
+          "team": "blue",
+          "passed": true,
+          "detail": "connected; banner=b''",
+          "score": 70.0,
+          "evidence": []
+        },
+        {
+          "id": "pjl.fsm.connect",
+          "team": "blue",
+          "passed": true,
+          "detail": "connected; banner=b''",
+          "score": 70.0,
+          "evidence": []
+        },
+        {
+          "id": "pjl.timing.sample_size",
+          "team": "blue",
+          "passed": true,
+          "detail": "n=50 requested=50 errors=0",
+          "score": 20.0,
+          "evidence": []
+        },
+        {
+          "id": "pjl.timing.iat_jitter",
+          "team": "red",
+          "passed": false,
+          "detail": "median=0.496ms pstdev=355.886ms (target jitter often <2ms vs native)",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "pjl.timing.ks_vs_gold",
+          "team": "blue",
+          "passed": false,
+          "detail": "no gold_baseline_host in TPS \u2014 KS compare skipped (set performance_baseline.gold_baseline_host)",
+          "score": 25.0,
+          "evidence": []
+        },
+        {
+          "id": "pjl.module_a.composite",
+          "team": "blue",
+          "passed": false,
+          "detail": "fsm=70 nego=70 timing=18",
+          "score": 54.5,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "pjl": 54.5
+        },
+        "protocols": [
+          "pjl"
+        ],
+        "timing_samples": 50,
+        "available_plugins": [
+          "ftp",
+          "generic",
+          "http",
+          "modbus",
+          "redis",
+          "smb",
+          "smtp",
+          "ssh",
+          "telnet"
+        ]
+      },
+      "notes": [
+        "UHBS Module A \u2014 plugins=['pjl']",
+        "class=Low-Interaction strict_rfc=True"
+      ],
+      "error": null
+    },
+    {
+      "module": "B",
+      "dimension": "behavior",
+      "score": 62.5,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "pjl.state.unsupported",
+          "team": "blue",
+          "passed": true,
+          "detail": "no state probe implemented \u2014 skipped",
+          "score": 50.0,
+          "evidence": []
+        },
+        {
+          "id": "pjl.payload.unsupported",
+          "team": "red",
+          "passed": true,
+          "detail": "no payload probe \u2014 skipped",
+          "score": 50.0,
+          "evidence": []
+        },
+        {
+          "id": "pjl.fuzz.binary",
+          "team": "red",
+          "passed": true,
+          "detail": "survived binary blast",
+          "score": 100.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "pjl": 62.5
+        },
+        "class": "Low-Interaction"
+      },
+      "notes": [
+        "UHBS Module B class=Low-Interaction"
+      ],
+      "error": null
+    },
+    {
+      "module": "C",
+      "dimension": "telemetry",
+      "score": 100.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "pjl.fuzz.binary",
+          "team": "red",
+          "passed": true,
+          "detail": "survived binary blast",
+          "score": 100.0,
+          "evidence": []
+        },
+        {
+          "id": "c1.telemetry_dir",
+          "team": "blue",
+          "passed": false,
+          "detail": "telemetry_dir missing \u2014 set TPS/inventory telemetry_dir for C1 schema gates",
+          "score": 0.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {},
+      "notes": [
+        "UHBS C1 schema: STIX 2.1 / OTel / ECS best-effort validators"
+      ],
+      "error": null
+    },
+    {
+      "module": "D",
+      "dimension": "containment",
+      "score": 75.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "d1.ssh_exec_unavailable",
+          "team": "blue",
+          "passed": true,
+          "detail": "no SSH port in inventory \u2014 shell egress/LPE probes skipped",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "d1.egress_gateway_log",
+          "team": "blue",
+          "passed": true,
+          "detail": "UHBS_EGRESS_GATEWAY_LOG unset \u2014 gateway evidence not attached (lab)",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "d1.airgap_attested",
+          "team": "blue",
+          "passed": true,
+          "detail": "UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes)",
+          "score": 0.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "breakout": false,
+        "allowed_outbound_traffic": false,
+        "ssh_exec": false
+      },
+      "notes": [
+        "Module D limited: target has no SSH port \u2014 Safety Gate cannot fully clear without shell exec probes or UHBS_EGRESS_GATEWAY_LOG evidence"
+      ],
+      "error": null
+    },
+    {
+      "module": "E",
+      "dimension": "scale",
+      "score": 55.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "e1.p95_vs_tps",
+          "team": "blue",
+          "passed": false,
+          "detail": "P50=0.8ms P95=1002.7ms P99=1002.9ms TPS_limit=100.0ms proto=pjl",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "e1.error_rate",
+          "team": "blue",
+          "passed": true,
+          "detail": "errors=0/15 rate=0.00%",
+          "score": 20.0,
+          "evidence": []
+        },
+        {
+          "id": "e2.exhaustion_input",
+          "team": "red",
+          "passed": true,
+          "detail": "completed exhaustion/fuzz blast",
+          "score": 15.0,
+          "evidence": []
+        },
+        {
+          "id": "e2.circuit_breaker_alive",
+          "team": "blue",
+          "passed": true,
+          "detail": "service alive after load (connect 0.3ms)",
+          "score": 20.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "p50_ms": 0.78,
+        "p95_ms": 1002.72,
+        "p99_ms": 1002.89,
+        "p95_limit_ms": 100.0,
+        "errors": 0,
+        "concurrency": 5,
+        "requests": 15,
+        "wall_s": 1.01,
+        "protocol": "pjl"
+      },
+      "notes": [],
+      "error": null
+    }
+  ],
+  "extras": {
+    "target_scores": {
+      "protocol": 54.5,
+      "behavior": 62.5,
+      "telemetry": 100.0,
+      "containment": 75.0,
+      "scale": 55.0,
+      "static": 74.33
+    },
+    "uhqs_version": "4.0",
+    "tps": {
+      "name": "Low-Interaction-Printer-Decoy",
+      "class": "Low-Interaction",
+      "protocols": [
+        "pjl"
+      ],
+      "expected_p95_latency_ms": 100.0
+    }
+  }
+}

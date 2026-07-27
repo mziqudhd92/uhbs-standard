@@ -1,0 +1,66 @@
+{
+  "uhbs_version": "4.0.0",
+  "target": {
+    "name": "miniprint (sa7mon PJL printer honeypot)",
+    "class": "Low-Interaction",
+    "profile_ref": "docs/conformance/labs/miniprint/low_interaction_full.yaml"
+  },
+  "evaluated_at": "2026-07-27",
+  "auditor": "UHBS-Lab detailed Docker run (PJL/generic :9100 + 1000-sample A3 + SAST + telemetry)",
+  "modules": {
+    "A": {
+      "score": 54.5,
+      "status": "PARTIAL",
+      "weight": 0.3,
+      "notes": "generic TCP/PJL plugin; high IAT jitter vs native-printer expectation; n=1000 timing"
+    },
+    "B": {
+      "score": 62.5,
+      "status": "PARTIAL",
+      "weight": 0.15,
+      "notes": "survived binary blast; limited stateful PJL probes in harness"
+    },
+    "C": {
+      "score": 55.0,
+      "status": "PARTIAL",
+      "weight": 0.25,
+      "notes": "miniprint.log text \u2014 no STIX/OTel/ECS (schema-capped)"
+    },
+    "D": {
+      "score": 90.0,
+      "status": "GATE FAILED",
+      "notes": "no SSH exec surface; airgap+gateway attested; C<95"
+    },
+    "E": {
+      "score": 55.0,
+      "status": "PARTIAL",
+      "weight": 0.1,
+      "notes": "P95>>100ms under load (single-threaded handler)",
+      "p50_ms": 1024.6,
+      "p95_ms": 1054.8,
+      "p99_ms": 1056.6
+    },
+    "F": {
+      "score": 70.0,
+      "status": "PASSED",
+      "weight": 0.2,
+      "notes": "semgrep 1 error/critical; SAST gate capped F at 70"
+    }
+  },
+  "weights": {
+    "w_A": 0.3,
+    "w_B": 0.15,
+    "w_C": 0.25,
+    "w_E": 0.1,
+    "w_F": 0.2
+  },
+  "safety_gate": {
+    "containment_score": 90.0,
+    "delta_c": 0.81,
+    "passed": false,
+    "unauthorized_egress_leaks": 0
+  },
+  "uhqs": 47.77,
+  "grade": "F",
+  "notes": "Evaluation proof only. miniprint product name is not a UHBS requirement. PJL spoken over raw :9100 via generic TCP plugin (no first-class PJL RFC suite yet). Artifacts: docs/conformance/reports/miniprint/."
+}

@@ -1,0 +1,16 @@
+# Inventory for the ESPot (mycert) detailed UHBS Docker lab.
+# Paths assume grader mounts: source → /honeypot, logs → /telemetry
+sites:
+  espot:
+    kind: generic
+    class: Web-API
+    host: espot-lab
+    protocol: http
+    protocols: [http]
+    port: 9200
+    ports:
+      http: 9200
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/espot/web_api_full.yaml
+    container_image: espot:lab

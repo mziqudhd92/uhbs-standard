@@ -1,0 +1,15 @@
+# Quick TPS for Conpot — same class/protocol, fewer A3 samples (also capped by UHBS_QUICK).
+target_metadata:
+  name: "ICS-Modbus-Decoy"
+  class: "ICS-SCADA"
+  protocol: "modbus"
+  protocols: ["modbus"]
+
+performance_baseline:
+  expected_p95_latency_ms: 100
+  strict_rfc_enforcement: true
+  timing_samples: 50
+
+safety_boundary:
+  allowed_outbound_traffic: false
+  allow_local_code_execution: false

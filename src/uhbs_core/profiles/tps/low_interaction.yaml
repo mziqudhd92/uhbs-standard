@@ -1,8 +1,8 @@
 target_metadata:
   name: "Low-Interaction-Emulator"
   class: "Low-Interaction"
-  protocol: "ssh"
-  protocols: ["ssh", "telnet"]
+  # Class-only TPS: no protocol list. Bind listeners via --protocol / inventory.
+  # For SSH/Telnet decoys use low_interaction_ssh.yaml instead.
 
 performance_baseline:
   expected_p95_latency_ms: 100

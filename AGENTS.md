@@ -34,6 +34,9 @@ Guidance for coding assistants and automated agents working in this repository.
 pip install -c constraints.txt -e ".[dev,lab]"
 pytest -q
 uhbs validate-scorecard docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
+# optional Docker grading image:
+docker build -t uhbs:4.0.0 .
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.0.0 validate-scorecard docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
 ```
 
 ## Discovery files

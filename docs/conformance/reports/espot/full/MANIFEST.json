@@ -1,0 +1,39 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "66065d41ad1e78e27f63ea9d850727e2fd71ae73a412d003a7a75d0ee6fa8193"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "66065d41ad1e78e27f63ea9d850727e2fd71ae73a412d003a7a75d0ee6fa8193"
+    },
+    {
+      "path": "report.json",
+      "sha256": "1ef883482aa0136917b87ddca51415456fe5c89b1c17128430dae38a09449d3d"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "841264bb9b13554740c1d05b87a2bc7e9c9460a27afefea558bd71682f6ff522"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "18cec31c9452bc5719a697a7505f6709a673b244c246df63ad2260e4c5cbfdb1"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "99aed8d10881b79d1ca731978f91eb17c3eace2acb425d62db17ce47772be728"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "95b586c53d69ced5b623d8260c971d9ec9cfc65b89079ffc8c41e0aeb363bb6c"
+    }
+  ],
+  "extra": {
+    "target": "espot",
+    "uhqs": 49.82,
+    "grade": "GRADE F (Fail)",
+    "run_meta": "run-meta.json"
+  }
+}

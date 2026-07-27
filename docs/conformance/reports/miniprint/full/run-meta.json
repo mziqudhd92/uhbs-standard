@@ -1,0 +1,75 @@
+{
+  "uhbs_version": "4.0.0",
+  "run_mode": "full",
+  "evaluated_at": "2026-07-27T10:26:00Z",
+  "proof_label": "miniprint (sa7mon PJL printer honeypot)",
+  "target": {
+    "repository": "https://github.com/sa7mon/miniprint",
+    "git_commit": "494d2fc75b94c19345c2db55d03b5cf74f75e3c2",
+    "class": "Low-Interaction",
+    "protocol": "pjl",
+    "host": "miniprint-lab",
+    "port": 9100,
+    "container_image": "miniprint:lab",
+    "container_image_id": "sha256:49182ecdd8a682f0e72ea83ae3e733ed69930401be34131d876e51794df4b6f4"
+  },
+  "grader": {
+    "package_version": "4.0.0",
+    "uhbs_git_commit": "9c6e9cf730cb7099699ce4479997881034cf2544",
+    "docker_image": "uhbs:4.0.0-full",
+    "docker_image_id": "sha256:1da71d92d4a9ee39b1e774fdbd623b83671cf07f78c7a299a7ed6d6505e9ad35",
+    "inventory": "docs/conformance/labs/miniprint/inventory.yaml",
+    "tps": "docs/conformance/labs/miniprint/low_interaction_full.yaml"
+  },
+  "flags": {
+    "UHBS_QUICK": false,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": false,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "concurrency": 25,
+    "requests": 200,
+    "timing_samples": 1000,
+    "strict_rfc_enforcement": true,
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry",
+    "plugin": "generic (protocol id pjl)"
+  },
+  "results": {
+    "uhqs": 47.77,
+    "grade": "F",
+    "delta_c": 0.81,
+    "module_scores": {
+      "A": 54.5,
+      "B": 62.5,
+      "C": 55.0,
+      "D": 90.0,
+      "E": 55.0,
+      "F": 70.0
+    },
+    "safety_gate_passed": false
+  },
+  "limitations": [
+    "No first-class PJL RFC suite \u2014 Module A uses generic TCP connect/banner/timing/fuzz (not PJL command semantics).",
+    "miniprint.log is text \u2014 Module C capped without STIX/OTel/ECS.",
+    "Single-threaded TCPServer \u2192 Module E P95 ~1s under concurrency 25.",
+    "PJL-only decoy (no ports.ssh): Module D skips shell probes; Safety Gate not fully cleared (C=90).",
+    "Air-gap attested via UHBS_AIRGAP_ATTESTED=1 (Docker Desktop lab).",
+    "Trivy may be absent; bandit+semgrep ran (1 semgrep critical \u2192 F capped at 70).",
+    "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement."
+  ]
+}

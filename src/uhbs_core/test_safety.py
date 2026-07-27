@@ -74,7 +74,65 @@ def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
     allow_egress = bool(tps and tps.allowed_outbound_traffic)
     checks: List[CheckResult] = []
     breakout = False
-    port = target.port_for("ssh") or target.effective_ssh_port()
+    # Protocol-agnostic: shell/containment exec only on an *explicit* SSH listener.
+    # Never Paramiko the primary application port (HTTP, PJL, Modbus, …).
+    port = target.shell_exec_port()
+
+    if port is None:
+        gw = _gateway_canary_hits()
+        checks.append(
+            CheckResult(
+                id="d1.shell_exec_unavailable",
+                team="blue",
+                passed=True,
+                detail=(
+                    "no explicit SSH listener (ports.ssh / ssh_port) — "
+                    "remote shell egress/LPE probes skipped for this protocol"
+                ),
+                score=0.0,
+            )
+        )
+        checks.append(gw)
+        airgap = os.environ.get("UHBS_AIRGAP_ATTESTED", "").strip() in {"1", "true", "yes"}
+        score = 45.0
+        if gw.passed and "unset" not in (gw.detail or ""):
+            score += 25.0
+        elif gw.passed:
+            score += 10.0
+        if airgap:
+            score += 20.0
+            checks.append(
+                CheckResult(
+                    id="d1.airgap_attested",
+                    team="blue",
+                    passed=True,
+                    detail=(
+                        "UHBS_AIRGAP_ATTESTED=1 (operator attestation; "
+                        "not a substitute for shell probes on SSH decoys)"
+                    ),
+                    score=0.0,
+                )
+            )
+        score = min(90.0, score)  # cannot clear C≥95 without shell or gateway proof
+        return ModuleResult(
+            module="D",
+            dimension="containment",
+            score=round(score, 2),
+            status=pass_status(score, threshold=95.0),
+            checks=checks,
+            metrics={
+                "breakout": False,
+                "allowed_outbound_traffic": allow_egress,
+                "shell_exec": False,
+                "protocols": target.protocol_list(),
+            },
+            notes=[
+                "Module D (protocol-agnostic): no SSH exec surface configured — "
+                "Safety Gate cannot fully clear without shell probes or "
+                "UHBS_EGRESS_GATEWAY_LOG evidence. Non-SSH decoys are graded "
+                "on gateway/airgap attestation only.",
+            ],
+        )
 
     # D1 — OOB egress (must fail unless TPS allows outbound)
     egress_cmds = [
@@ -242,8 +300,10 @@ def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
         score=round(score, 2),
         status="FAILED" if breakout else pass_status(score, threshold=95.0),
         checks=checks,
-        metrics={"breakout": breakout, "allowed_outbound_traffic": allow_egress},
-        notes=["UHBS: C≥95 required for δ_C=1.0; set UHBS_EGRESS_GATEWAY_LOG for gateway proof"],
+        metrics={"breakout": breakout, "allowed_outbound_traffic": allow_egress, "shell_exec": True},
+        notes=[
+            "UHBS: C≥95 required for δ_C=1.0; set UHBS_EGRESS_GATEWAY_LOG for gateway proof"
+        ],
     )
 
 

@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import argparse
 import os
+import sys
 from collections.abc import Sequence
 from pathlib import Path
 
@@ -48,7 +49,14 @@ from uhbs_core.models import (
 from uhbs_core.protocols import list_protocols
 from uhbs_core.report import render_card, write_report
 from uhbs_core.source_scan import scan_source
-from uhbs_core.tps import TPS, apply_tps, default_tps_for_class, load_tps, resolve_tps_path
+from uhbs_core.tps import (
+    TPS,
+    ProtocolConflictError,
+    apply_tps,
+    default_tps_for_class,
+    load_tps,
+    resolve_tps_path,
+)
 
 DYNAMIC_DIMS = (DIM_A, DIM_B, DIM_C, DIM_D, DIM_E)
 
@@ -235,15 +243,28 @@ def main(argv: Sequence[str] | None = None) -> int:
     )
 
     tps_path = resolve_tps_path(args.tps or target.tps_path)
-    if tps_path:
-        tps = load_tps(tps_path)
-        apply_tps(target, tps)
-    else:
-        tps = default_tps_for_class(
-            args.profile_class or target.profile_class,
-            args.protocol or target.protocol or "ssh",
+    try:
+        if tps_path:
+            tps = load_tps(tps_path)
+            apply_tps(target, tps)
+        else:
+            tps = default_tps_for_class(
+                args.profile_class or target.profile_class,
+                args.protocol or target.protocol,
+            )
+            apply_tps(target, tps)
+    except ProtocolConflictError as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 2
+
+    if not target.protocol_list():
+        print(
+            "ERROR: no protocol configured. Pass --protocol <id> "
+            "(e.g. http, pjl, ssh, modbus) or use a TPS that declares protocols "
+            "(e.g. low_interaction_ssh, web_api).",
+            file=sys.stderr,
         )
-        apply_tps(target, tps)
+        return 2
 
     baseline: TargetSpec | None = None
     baseline_tps = tps

@@ -5,6 +5,16 @@ All notable changes to the UHBS specification and tooling are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/). Spec and CLI
 share version **4.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`).
 
+## [Unreleased]
+
+### Fixed
+- **Protocol-agnostic lab binding:** TPS no longer silently overwrites inventory/CLI
+  protocols; conflicting TPS vs `--protocol` raises `ProtocolConflictError`
+- Builtin `low_interaction` is **class-only**; SSH/Telnet profile moved to
+  `low_interaction_ssh`
+- Module D never Paramikos the primary application port unless `ports.ssh` /
+  `ssh_port` is explicit (HTTP/PJL/… decoys safe)
+
 ## [4.0.0] — 2026-07-26
 
 ### Added

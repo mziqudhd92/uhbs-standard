@@ -73,7 +73,6 @@ extra:
 
 nav:
   - Home: index.md
-  - Roadmap: roadmap.md
   - Specification:
       - Status of This Document: specification/status.md
       - Core Principles: specification/core-principles.md
@@ -83,6 +82,16 @@ nav:
   - Reference Implementation: reference-implementation.md
   - Conformance:
       - Overview: conformance/index.md
+      - Lab reports index: conformance/reports/index.md
+      - ESPot report hub: conformance/reports/espot/index.md
+      - ESPot tutorial: conformance/reports/espot/TUTORIAL.md
+      - ESPot methodology: conformance/reports/espot/METHODOLOGY.md
+      - miniprint report hub: conformance/reports/miniprint/index.md
+      - miniprint tutorial: conformance/reports/miniprint/TUTORIAL.md
+      - miniprint methodology: conformance/reports/miniprint/METHODOLOGY.md
+      - Conpot report hub: conformance/reports/conpot/index.md
+      - Conpot tutorial: conformance/reports/conpot/TUTORIAL.md
+      - Conpot methodology: conformance/reports/conpot/METHODOLOGY.md
   - Mappings:
       - Index: mappings/index.md
       - ATT&CK: mappings/attack.md
@@ -93,8 +102,12 @@ nav:
       - CLI & Validator: tooling/cli.md
   - Scorecards:
       - Official Examples: scorecards/index.md
-      - Illustrative POSIX / GenAI: scorecards/illustrative-posix-genai.md
+      - Web-API / HTTP (ESPot proof): scorecards/espot-web-api.md
+      - Low-Interaction / PJL (miniprint proof): scorecards/miniprint-low-interaction.md
+      - ICS-SCADA / Modbus (Conpot proof): scorecards/conpot-ics-scada.md
+      - Illustrative POSIX / GenAI (synthetic): scorecards/illustrative-posix-genai.md
   - Governance:
       - RFCs: rfcs/README.md
       - RFC-0001 Baseline: rfcs/0001-uhbs-4.0-baseline.md
       - RFC Template: rfcs/0000-template.md
+  - Roadmap: roadmap.md

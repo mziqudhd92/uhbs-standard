@@ -1,0 +1,16 @@
+# Formal Low-Interaction TPS for miniprint (PJL/raw :9100) deep UHBS-Lab grading.
+# Protocol id "pjl" uses the generic TCP plugin (no first-class PJL RFC suite yet).
+target_metadata:
+  name: "Low-Interaction-Printer-Decoy"
+  class: "Low-Interaction"
+  protocol: "pjl"
+  protocols: ["pjl"]
+
+performance_baseline:
+  expected_p95_latency_ms: 100
+  strict_rfc_enforcement: true
+  timing_samples: 1000
+
+safety_boundary:
+  allowed_outbound_traffic: false
+  allow_local_code_execution: false
