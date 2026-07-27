@@ -93,7 +93,7 @@ docker run --rm \
     --environment "Quick Docker lab: Conpot Modbus :5020, UHBS_QUICK=1, SAST skipped"
 ```
 
-**Published quick result:** UHQS **44.62** · Grade **F** · δ_C **0.5625**  
+**Published quick result:** UHQS **44.55** · Grade **F** · δ_C **0.5625**  
 See [`quick/SCORECARD.txt`](quick/SCORECARD.txt).
 
 ---
@@ -164,7 +164,7 @@ docker run --rm \
     --environment "Full Docker lab: Conpot Modbus :5020 + 1000-sample A3 + SAST + telemetry"
 ```
 
-**Published full result:** UHQS **55.51** · Grade **D** · δ_C **0.81**  
+**Published full result:** UHQS **55.4** · Grade **D** · δ_C **0.81**  
 See [`full/SCORECARD.txt`](full/SCORECARD.txt).
 
 ---
@@ -185,11 +185,11 @@ ls docs/conformance/reports/conpot/full/static/
 | Signal | Meaning |
 | --- | --- |
 | Listener on `:5020` | Liveness OK — necessary but not sufficient |
-| Module A ≈ 56.5 | FC03 holding-register probe fails on default coil/input map (exception `0x02`); timing n=1000 |
+| Module A ≈ 79.0 | FC03 holding-register probe fails on default coil/input map (exception `0x02`); timing n=1000; 0–100 CheckResult scale |
 | Module C = 55 (full) | Text `conpot.log` without STIX/OTel/ECS |
 | Module E = 100 | Connect-storm at moderated load; not a claim about heavy ICS traffic |
 | δ_C &lt; 1 | Safety Gate not cleared (no remote shell exec surface on this decoy) |
-| UHQS 55.51 / D | Above F band; still below beta Production Baseline (UHQS &gt; 80 + gate) |
+| UHQS 55.4 / D | Above F band; still below beta Production Baseline (UHQS &gt; 80 + gate) |
 
 ---
 

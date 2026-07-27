@@ -21,7 +21,7 @@
 | --- | --- | --- | --- | --- | --- |
 | [ESPot (mycert)](espot/index.md) | Web-API | HTTP `:9200` | [49.34 / F](espot/quick/) | [63.33 / D](espot/full/) | [Step-by-step](espot/TUTORIAL.md) |
 | [miniprint (sa7mon)](miniprint/index.md) | Low-Interaction | PJL/raw `:9100` | [41.83 / F](miniprint/quick/) | [50.43 / D](miniprint/full/) | [Step-by-step](miniprint/TUTORIAL.md) |
-| [Conpot (mushorg)](conpot/index.md) | ICS-SCADA | Modbus `:5020` | [44.62 / F](conpot/quick/) | [55.51 / D](conpot/full/) | [Step-by-step](conpot/TUTORIAL.md) |
+| [Conpot (mushorg)](conpot/index.md) | ICS-SCADA | Modbus `:5020` | [44.55 / F](conpot/quick/) | [55.4 / D](conpot/full/) | [Step-by-step](conpot/TUTORIAL.md) |
 | [Cowrie](cowrie/index.md) | Low-Interaction | SSH `:2222` + Telnet `:2223` (SFTP via SSH) | see hub | see hub | [Step-by-step](cowrie/TUTORIAL.md) |
 | [Endlessh (skeeto)](endlessh/index.md) | Low-Interaction | `ssh_tarpit` `:2222` | [42.75 / F](endlessh/quick/) | [51.90 / D](endlessh/full/) | [Step-by-step](endlessh/TUTORIAL.md) |
 | [OpenCanary (thinkst)](opencanary/index.md) | multi | HTTP / FTP / SSH / Telnet / Redis / MySQL / RDP / SIP / SNMP / NTP / TFTP / VNC / Git / SMB | see hub | see hub | [Step-by-step](opencanary/TUTORIAL.md) |

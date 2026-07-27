@@ -1,7 +1,7 @@
 {
   "uhbs_version": "4.0.0",
   "run_mode": "quick",
-  "evaluated_at": "2026-07-27T11:01:00Z",
+  "evaluated_at": "2026-07-27T18:22:30Z",
   "proof_label": "conpot (mushorg ICS/SCADA honeypot, Modbus)",
   "target": {
     "repository": "https://github.com/mushorg/conpot",
@@ -15,9 +15,9 @@
   },
   "grader": {
     "package_version": "4.0.0",
-    "uhbs_git_commit": "9c6e9cf730cb7099699ce4479997881034cf2544",
+    "uhbs_git_commit": "4818efb000c694c6f072efde2f6e2f99655ed37f",
     "docker_image": "uhbs:4.0.0",
-    "docker_image_id": "sha256:d326a451699575c745c65ca6b5b9b72d4692fc3bb0e4c9207ca0b567fda5dcd8",
+    "docker_image_id": "sha256:3e84c069ad1e343752d5245c7e2189555f6f19db00b8319764fbb08044cd2a16",
     "tps": "docs/conformance/labs/conpot/ics_modbus_quick.yaml"
   },
   "flags": {
@@ -45,27 +45,27 @@
     "plugin": "modbus"
   },
   "results": {
-    "uhqs": 44.62,
+    "uhqs": 44.55,
     "grade": "F",
     "delta_c": 0.5625,
     "module_scores": {
-      "A": 56.5,
-      "B": 82.5,
+      "A": 79.0,
+      "B": 42.5,
       "C": 100.0,
       "D": 75.0,
       "E": 100.0,
-      "F": 90.3
+      "F": 90.26
     },
     "safety_gate_passed": false
   },
   "limitations": [
-    "Default Conpot Modbus map has no holding registers at addr 0 — Module A FC03 nego fails with exception 0x02.",
+    "Default Conpot Modbus map has no holding registers at addr 0 \u2014 Module A FC03 nego fails with exception 0x02.",
     "UHBS_QUICK=1 shortens timing samples and lightens Module E.",
-    "telemetry_dir unset → Module C C1 schema gates largely skipped.",
-    "--skip-sast-tools → no bandit/semgrep.",
+    "telemetry_dir unset \u2192 Module C C1 schema gates largely skipped.",
+    "--skip-sast-tools \u2192 no bandit/semgrep.",
     "Modbus-only grade (other Conpot listeners not scored).",
     "No ports.ssh: Module D skips shell probes; Safety Gate not fully cleared.",
     "Prefer full/ for claim-grade evaluation.",
-    "Product name is evaluation proof only — not a UHBS requirement or endorsement."
+    "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement."
   ]
 }

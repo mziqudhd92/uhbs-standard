@@ -9,14 +9,14 @@
   "auditor": "UHBS-Lab detailed Docker run (Modbus :5020 + 1000-sample A3 + SAST + telemetry)",
   "modules": {
     "A": {
-      "score": 56.5,
-      "status": "PARTIAL",
+      "score": 79.0,
+      "status": "PASSED",
       "weight": 0.35,
       "notes": "modbus plugin; FC03 holding-register nego fails (exception 0x02 on default coil/input map); n=1000 timing"
     },
     "B": {
-      "score": 82.5,
-      "status": "PASSED",
+      "score": 42.5,
+      "status": "PARTIAL",
       "weight": 0.2,
       "notes": "write/read exchange completed; survived binary blast"
     },
@@ -24,7 +24,7 @@
       "score": 55.0,
       "status": "PARTIAL",
       "weight": 0.15,
-      "notes": "conpot.log text — no STIX/OTel/ECS (schema-capped)"
+      "notes": "conpot.log text \u2014 no STIX/OTel/ECS (schema-capped)"
     },
     "D": {
       "score": 90.0,
@@ -36,9 +36,9 @@
       "status": "PASSED",
       "weight": 0.1,
       "notes": "P95 within TPS at moderated concurrency 5 / requests 50",
-      "p50_ms": 0.7,
-      "p95_ms": 1.7,
-      "p99_ms": 2.1
+      "p50_ms": 0.99,
+      "p95_ms": 1.62,
+      "p99_ms": 1.95
     },
     "F": {
       "score": 70.0,
@@ -60,7 +60,7 @@
     "passed": false,
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 55.51,
+  "uhqs": 55.4,
   "grade": "D",
   "notes": "Evaluation proof only. Conpot product name is not a UHBS requirement. Modbus-primary grade on container :5020; other default listeners not scored. Artifacts: docs/conformance/reports/conpot/."
 }

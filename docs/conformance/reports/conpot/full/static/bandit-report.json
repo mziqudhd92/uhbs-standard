@@ -1,6 +1,6 @@
 {
   "errors": [],
-  "generated_at": "2026-07-27T11:08:11Z",
+  "generated_at": "2026-07-27T18:21:36Z",
   "metrics": {
     "./bin/kamstrup_prober.py": {
       "CONFIDENCE.HIGH": 2,

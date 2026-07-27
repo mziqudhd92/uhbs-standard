@@ -10,8 +10,8 @@ Conpot is an **ICS/SCADA honeypot** (default template also enables HTTP, S7, SNM
 
 | Mode | UHQS | Grade | δ_C | Safety Gate | Folder |
 | --- | --- | --- | --- | --- | --- |
-| **Quick** | **44.62** | F | 0.5625 | not cleared (C=75) | [`quick/`](quick/) |
-| **Full** | **55.51** | D | 0.81 | not cleared (C=90) | [`full/`](full/) |
+| **Quick** | **44.55** | F | 0.5625 | not cleared (C=75) | [`quick/`](quick/) |
+| **Full** | **55.4** | D | 0.81 | not cleared (C=90) | [`full/`](full/) |
 
 Sanitized fixture (full): [`../../fixtures/conpot-ics-scada.scorecard.json`](../../fixtures/conpot-ics-scada.scorecard.json)
 
@@ -30,8 +30,8 @@ Sanitized fixture (full): [`../../fixtures/conpot-ics-scada.scorecard.json`](../
 
 | Module | Score | Highlight |
 | --- | --- | --- |
-| A Protocol | 56.5 | Modbus plugin; FC03 holding-register read fails (default map is coils/inputs); **n=1000** timing |
-| B Behavior | 82.5 | Write/read exchange + binary fuzz survived |
+| A Protocol | 79.0 | Modbus plugin; FC03 holding-register read returns exception `0x02` (default map is coils/inputs); **n=1000** timing on 0–100 CheckResult scale |
+| B Behavior | 42.5 | FC 0x06 write step failed/unacknowledged on default template; binary fuzz survived |
 | C Telemetry | 55.0 | `conpot.log` text — no STIX/OTel/ECS (capped) |
 | D Containment | 90.0 | No `ports.ssh`; airgap + gateway; gate not cleared |
 | E Scale | 100.0 | P95 ~1.7 ms at concurrency **5** / 50 requests (moderated — see methodology) |

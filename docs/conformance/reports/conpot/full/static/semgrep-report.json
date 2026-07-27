@@ -1146,12 +1146,12 @@
   },
   "time": {
     "rules": [],
-    "rules_parse_time": 0.3742048740386963,
+    "rules_parse_time": 0.6018187999725342,
     "profiling_times": {
-      "config_time": 1.0195767879486084,
-      "core_time": 3.3568954467773438,
-      "ignores_time": 0.0010008811950683594,
-      "total_time": 4.3822619915008545
+      "config_time": 16.409029722213745,
+      "core_time": 5.78580904006958,
+      "ignores_time": 0.0010530948638916016,
+      "total_time": 22.649755477905273
     },
     "parsing_time": {
       "total_time": 0.0,
@@ -1166,16 +1166,33 @@
       "very_slow_files": []
     },
     "scanning_time": {
-      "total_time": 16.367381811141968,
+      "total_time": 28.319917917251587,
       "per_file_time": {
-        "mean": 0.030309966316929567,
-        "std_dev": 0.017455440711929976
+        "mean": 0.052444292439354785,
+        "std_dev": 0.05593300755989993
       },
       "very_slow_stats": {
-        "time_ratio": 0.0,
-        "count_ratio": 0.0
+        "time_ratio": 0.31845737680965974,
+        "count_ratio": 0.007407407407407408
       },
-      "very_slow_files": []
+      "very_slow_files": [
+        {
+          "fpath": "conpot/protocols/kamstrup_management/commands.py",
+          "ftime": 1.658876895904541
+        },
+        {
+          "fpath": "conpot/protocols/http/command_responder.py",
+          "ftime": 2.3643290996551514
+        },
+        {
+          "fpath": "conpot/core/filesystem.py",
+          "ftime": 2.3769538402557373
+        },
+        {
+          "fpath": "conpot/protocols/ftp/ftp_handler.py",
+          "ftime": 2.6185269355773926
+        }
+      ]
     },
     "matching_time": {
       "total_time": 0.0,
@@ -1202,6 +1219,24 @@
       "very_slow_rules_on_defs": []
     },
     "fixpoint_timeouts": [
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at bin/conpot:144:4 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "bin/conpot",
+          "start": {
+            "line": 144,
+            "col": 5,
+            "offset": 3933
+          },
+          "end": {
+            "line": 144,
+            "col": 9,
+            "offset": 3937
+          }
+        }
+      },
       {
         "error_type": "Fixpoint timeout",
         "severity": "warn",
@@ -1235,6 +1270,24 @@
             "line": 378,
             "col": 19,
             "offset": 17926
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at conpot/protocols/ftp/ftp_server.py:35:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "conpot/protocols/ftp/ftp_server.py",
+          "start": {
+            "line": 35,
+            "col": 9,
+            "offset": 1202
+          },
+          "end": {
+            "line": 35,
+            "col": 17,
+            "offset": 1210
           }
         }
       },
@@ -1285,7 +1338,7 @@
     },
     "targets": [],
     "total_bytes": 0,
-    "max_memory_bytes": 1239488256
+    "max_memory_bytes": 1197072512
   },
   "engine_requested": "OSS",
   "skipped_rules": [],

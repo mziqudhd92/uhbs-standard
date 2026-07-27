@@ -15,11 +15,11 @@
 
 | Evaluation Module | Score (0–100) | Weight | Status |
 | --- | ---: | ---: | --- |
-| Module A: Protocol Fidelity | 56.5/100 | 0.35 | PARTIAL |
-| Module B: Behavioral Realism | 82.5/100 | 0.20 | PASSED |
+| Module A: Protocol Fidelity | 79.0/100 | 0.35 | PASSED |
+| Module B: Behavioral Realism | 42.5/100 | 0.20 | PARTIAL |
 | Module C: Telemetry Quality | 55.0/100 | 0.15 | PARTIAL |
 | Module D: Safety & Containment (\(C\)) | 90.0/100 | GATE | GATE FAILED (C &lt; 95) |
-| Module E: Scalability & Latency | 100.0/100 | 0.10 | PASSED (P95: 1.7 ms) |
+| Module E: Scalability & Latency | 100.0/100 | 0.10 | PASSED |
 | Module F: Static Code Audit | 70.0/100 | 0.20 | PASSED (SAST gate capped) |
 
 ## Safety Gate & Composite
@@ -27,7 +27,7 @@
 | Metric | Value |
 | --- | --- |
 | Safety Gate Multiplier \(\delta_C\) | 0.81 (\(C = 90 &lt; 95\)) |
-| **Final Composite Score (UHQS 4.0)** | **55.51 / 100** |
+| **Final Composite Score (UHQS 4.0)** | **55.4 / 100** |
 | Grade | **D (Needs Remediation)** |
 | Production baseline (UHQS &gt; 80 + gate) | **NOT MET** |
 
@@ -35,7 +35,7 @@
 
 - Fixture: [`../conformance/fixtures/conpot-ics-scada.scorecard.json`](../conformance/fixtures/conpot-ics-scada.scorecard.json)
 - Full scorecard: [`../conformance/reports/conpot/full/SCORECARD.txt`](../conformance/reports/conpot/full/SCORECARD.txt)
-- Quick scorecard: [`../conformance/reports/conpot/quick/SCORECARD.txt`](../conformance/reports/conpot/quick/SCORECARD.txt) (UHQS **44.62** / F)
+- Quick scorecard: [`../conformance/reports/conpot/quick/SCORECARD.txt`](../conformance/reports/conpot/quick/SCORECARD.txt) (UHQS **44.55** / F)
 - Tutorial: [`../conformance/reports/conpot/TUTORIAL.md`](../conformance/reports/conpot/TUTORIAL.md)
 
 ```bash
