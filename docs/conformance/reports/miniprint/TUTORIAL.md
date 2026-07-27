@@ -178,7 +178,7 @@ ls docs/conformance/reports/miniprint/full/static/
 | Module E ≈ 55 | Accept queue stalls under concurrent connects |
 | Module C = 55 (full) | Text logs without STIX/OTel/ECS |
 | δ_C &lt; 1 | Safety Gate not cleared (no remote shell exec surface on this decoy) |
-| UHQS 47.77 / F | Below draft Production Baseline (UHQS &gt; 80 + gate) |
+| UHQS 47.77 / F | Below beta Production Baseline (UHQS &gt; 80 + gate) |
 
 ---
 

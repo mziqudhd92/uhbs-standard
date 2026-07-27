@@ -1,6 +1,6 @@
 # Mapping Index
 
-Informative interoperability mappings for readers evaluating the draft framework:
+Informative interoperability mappings for readers evaluating the beta framework:
 
 - [MITRE ATT&CK](attack.md)
 - [NIST CSF / SP 800-53](nist.md)

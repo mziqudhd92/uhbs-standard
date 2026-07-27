@@ -4,7 +4,7 @@
 
 ## What UHBS is
 
-UHBS (Universal Honeypot Benchmarking Standard) is a **personal open-source draft evaluation framework** for comparing honeypots and deception systems by **decoy class** and **protocol**, not by vendor brand. Version **4.0.0**. License **Apache-2.0**. Author/maintainer: Moran Zavdi (@mziqudhd92).
+UHBS (Universal Honeypot Benchmarking Standard) is a **personal open-source beta evaluation framework** for comparing honeypots and deception systems by **decoy class** and **protocol**, not by vendor brand. Version **4.0.0**. License **Apache-2.0**. Author/maintainer: Moran Zavdi (@mziqudhd92).
 
 It is **not** a consortium standard, not multi-party governed, and not a mandatory industry requirement. Suggested Production Baseline Profile (RECOMMENDED for internal use): **UHQS > 80** with Module D Safety Gate pass (containment C ≥ 95 → δ_C = 1.0).
 
@@ -67,4 +67,4 @@ Published proof (sanitized fixtures):
 
 ## Citation note
 
-Cite as a personal draft software/framework (see CITATION.cff). Do not describe UHBS as an adopted industry or academic standard unless Phase 6 roadmap exit criteria are met.
+Cite as a personal beta software/framework (see CITATION.cff). Do not describe UHBS as an adopted industry or academic standard unless Phase 6 roadmap exit criteria are met.

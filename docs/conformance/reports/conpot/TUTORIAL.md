@@ -189,7 +189,7 @@ ls docs/conformance/reports/conpot/full/static/
 | Module C = 55 (full) | Text `conpot.log` without STIX/OTel/ECS |
 | Module E = 100 | Connect-storm at moderated load; not a claim about heavy ICS traffic |
 | δ_C &lt; 1 | Safety Gate not cleared (no remote shell exec surface on this decoy) |
-| UHQS 55.51 / D | Above F band; still below draft Production Baseline (UHQS &gt; 80 + gate) |
+| UHQS 55.51 / D | Above F band; still below beta Production Baseline (UHQS &gt; 80 + gate) |
 
 ---
 

@@ -9,7 +9,8 @@ share version **4.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`).
 
 ### Changed
 - GitHub Pages root is the React landing hub again; MkDocs deploys under `/mkdocs/`
-- Landing shows published ESPot / miniprint / Conpot lab scorecards and draft posture wording
+- Landing shows published ESPot / miniprint / Conpot lab scorecards and beta posture wording
+- Project maturity wording: **draft** → **beta** (status, landing, docs, AGENTS, ROADMAP)
 
 ### Fixed
 - **Protocol-agnostic lab binding:** TPS no longer silently overwrites inventory/CLI
@@ -43,7 +44,7 @@ share version **4.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`).
   Module F signals profile renamed to `low_interaction_ssh_signals.yaml`
 
 ### Changed (honesty / posture)
-- Docs state clearly that UHBS is a **personal draft framework**, not a
+- Docs state clearly that UHBS is a **personal beta framework**, not a
   multi-party standards body; committee, neutral org, and adopters moved to
   ROADMAP Phase 6 as aspirational (unchecked) goals
 - Dropped React `web/` landing; GitHub Pages is MkDocs at site root

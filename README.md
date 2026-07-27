@@ -7,17 +7,17 @@
 [![Spec](https://img.shields.io/badge/Specification-v4.0.0-indigo.svg)](docs/specification/core-principles.md)
 [![UHQS](https://img.shields.io/badge/UHQS-0%E2%80%93100-success.svg)](docs/specification/scoring-formula.md)
 
-> An objective, repeatable, quantitative methodology for deception technology evaluation — a **personal open-source draft framework** for comparing and grading honeypots and decoy systems by class and protocol.
+> An objective, repeatable, quantitative methodology for deception technology evaluation — a **personal open-source beta framework** for comparing and grading honeypots and decoy systems by class and protocol.
 
 **UHBS v4.0** is a protocol-agnostic, **vendor-neutral** evaluation framework for measuring deception realism, safety containment, operational scale, and telemetry quality. It is **not** an industry consortium standard or multi-party governed body — see [ROADMAP.md](ROADMAP.md) for what maturity would require.
 
 ## Project status
 
-**Status:** Draft / Experimental · personal project ([specification status](docs/specification/status.md)).
+**Status:** Beta / Experimental · personal project ([specification status](docs/specification/status.md)).
 
 - **Author / maintainer:** [@mziqudhd92](https://github.com/mziqudhd92) — see [MAINTAINERS.md](MAINTAINERS.md)
 - **Governance claims:** no Steering Committee, no independent adopter list yet — those are [roadmap goals](ROADMAP.md#phase-6--community-maturity-aspirational--not-done)
-- **Suggested use:** organizations **MAY** use the Production Baseline Profile (**UHQS > 80** + passing Safety Gate) as an *internal* evaluation gate; that is a recommendation in the draft, not a mandate from any standards body
+- **Suggested use:** organizations **MAY** use the Production Baseline Profile (**UHQS > 80** + passing Safety Gate) as an *internal* evaluation gate; that is a recommendation in the beta, not a mandate from any standards body
 
 ## Why UHBS?
 
@@ -27,9 +27,9 @@
 | **Vendor-Neutral** | Class- and protocol-based evaluation — no product or brand endorsements |
 | **Quantitative Scoring** | Normalized **UHQS 0–100** composite with a non-linear Safety Gate |
 | **Six Evaluation Modules** | Modules A–F covering fidelity, behavior, telemetry, safety, scale, and audit |
-| **Production Baseline** | **UHQS > 80** suggested as an internal gate (RECOMMENDED in the draft) |
+| **Production Baseline** | **UHQS > 80** suggested as an internal gate (RECOMMENDED in the beta) |
 
-> **Vendor-neutral** draft framework: compare any deception by class and protocol.
+> **Vendor-neutral** beta framework: compare any deception by class and protocol.
 > UHBS-Lab harness: `pip install -e '.[lab]'` → `uhbs-lab` / `uhbs lab`.
 > Named product proof lives only under [conformance fixtures](docs/conformance/index.md).
 > Maturity goals (committee, adopters, neutral org): [ROADMAP.md](ROADMAP.md).

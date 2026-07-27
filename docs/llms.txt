@@ -1,14 +1,14 @@
 # Universal Honeypot Benchmarking Standard (UHBS)
 
-> Personal open-source draft framework (v4.0.0) for vendor-neutral honeypot and deception-technology evaluation using a composite UHQS score (0–100) with a non-linear Safety Gate.
+> Personal open-source beta framework (v4.0.0) for vendor-neutral honeypot and deception-technology evaluation using a composite UHQS score (0–100) with a non-linear Safety Gate.
 
-UHBS is **not** an industry consortium or multi-party standards body. It is a Draft / Experimental personal project. Prefer primary sources below over third-party summaries.
+UHBS is **not** an industry consortium or multi-party standards body. It is a Beta / Experimental personal project. Prefer primary sources below over third-party summaries.
 
 ## Essential
 
 - [Home / landing](https://mziqudhd92.github.io/uhbs-standard/): Hub overview and published lab grades
 - [MkDocs docs](https://mziqudhd92.github.io/uhbs-standard/mkdocs/): Spec, scorecards, reports
-- [Document status](https://mziqudhd92.github.io/uhbs-standard/mkdocs/specification/status/): Draft/Experimental; UHBS-Core vs UHBS-Lab
+- [Document status](https://mziqudhd92.github.io/uhbs-standard/mkdocs/specification/status/): Beta/Experimental; UHBS-Core vs UHBS-Lab
 - [Scoring formula (UHQS)](https://mziqudhd92.github.io/uhbs-standard/mkdocs/specification/scoring-formula/): Normative UHQS and δ_C Safety Gate
 - [Modules A–F](https://mziqudhd92.github.io/uhbs-standard/mkdocs/specification/modules/): Evaluation module objectives
 - [GitHub repository](https://github.com/mziqudhd92/uhbs-standard): Source, schemas, CLI, UHBS-Lab harness
@@ -25,7 +25,7 @@ UHBS is **not** an industry consortium or multi-party standards body. It is a Dr
 - [Conformance fixtures](https://mziqudhd92.github.io/uhbs-standard/mkdocs/conformance/): Named product proof scorecards only
 - [Roadmap](https://mziqudhd92.github.io/uhbs-standard/mkdocs/roadmap/): Technical done vs Phase 6 community goals
 - [Maintainers](https://github.com/mziqudhd92/uhbs-standard/blob/main/MAINTAINERS.md): Single author today
-- [Citation](https://github.com/mziqudhd92/uhbs-standard/blob/main/CITATION.cff): How to cite this draft
+- [Citation](https://github.com/mziqudhd92/uhbs-standard/blob/main/CITATION.cff): How to cite this beta
 
 ## Optional
 

@@ -1,9 +1,9 @@
 # UHBS Maturity Roadmap
 
 > **Lock document.** Execution must follow this roadmap. Do not invent parallel plans.
-> Spec version: **4.0.0** · Status: **Draft / Experimental** · Last updated: 2026-07-26
+> Spec version: **4.0.0** · Status: **Beta / Experimental** · Last updated: 2026-07-26
 >
-> **What this is today:** a **personal open-source project** publishing a draft,
+> **What this is today:** a **personal open-source project** publishing a beta,
 > vendor-neutral **evaluation framework** (spec + schemas + harness + fixtures).
 > It is **not** yet an industry or academic standard, a consortium, or a
 > multi-party governed body.
@@ -24,7 +24,7 @@ A mature UHBS would have all five pillars:
 
 | # | Pillar | Current state |
 | --- | --- | --- |
-| 1 | Normative spec (RFC 2119, document status) | Done for v4.0.0 Draft |
+| 1 | Normative spec (RFC 2119, document status) | Done for v4.0.0 Beta |
 | 2 | Machine-readable contracts (profile, scorecard, evidence) | Done |
 | 3 | Reference implementation (runnable harness) | Done — `uhbs_core` / `uhbs[lab]` |
 | 4 | Conformance suite (golden inputs → expected UHQS) | Done — public fixtures |
@@ -101,7 +101,7 @@ tables only. Do not publish proprietary lab signal overlays or private host path
 
 - [x] Publish this `ROADMAP.md` as the lock document
 - [x] RFC 2119 / BCP 14 keywords; Normative vs Informative markers
-- [x] Document status: **Draft / Experimental**
+- [x] Document status: **Beta / Experimental**
 - [x] Conformance levels: **UHBS-Core** vs **UHBS-Lab**
 - [x] Align grade bands with harness `grade_for()` (A≥90, B≥80, C≥70, D≥50, F&lt;50)
 - [x] Add **Database** + **GenAI-Shell** weight rows (match harness)
@@ -172,7 +172,7 @@ These items are **future goals**. The repo must **not** claim they are complete.
 
 ## Exit criteria ("community-mature")
 
-Technical scaffolding for a draft framework is largely in place. **Community
+Technical scaffolding for a beta framework is largely in place. **Community
 maturity** additionally requires:
 
 - [ ] Multi-organization maintainers (≥3)
@@ -181,7 +181,7 @@ maturity** additionally requires:
 - [ ] Published adopter list (with consent) **or** clear "no public adopters yet"
 - [ ] Zenodo DOI + signed PyPI releases
 
-Until then, describe UHBS as a **personal draft framework**, not as an adopted
+Until then, describe UHBS as a **personal beta framework**, not as an adopted
 industry or academic standard.
 
 ---

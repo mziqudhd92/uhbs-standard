@@ -1,6 +1,6 @@
 # Contributing to UHBS
 
-Thank you for contributing to UHBS — a **personal open-source draft framework**
+Thank you for contributing to UHBS — a **personal open-source beta framework**
 for vendor-neutral honeypot / deception evaluation.
 
 ## Honesty rules

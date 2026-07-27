@@ -1,8 +1,8 @@
 # Scorecard Registry Rules
 
-**Status:** Informative draft policy (aspirational until Phase 6)
+**Status:** Informative beta policy (aspirational until Phase 6)
 
-UHBS is a personal draft framework. There is **no** live public registry of
+UHBS is a personal beta framework. There is **no** live public registry of
 attested third-party scorecards yet. The checklist below describes how such a
 registry *could* work once independent submitters and maintainers exist
 ([ROADMAP.md](roadmap.md) Phase 6).

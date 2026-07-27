@@ -75,7 +75,7 @@ const Hero = () => {
       >
         <motion.div variants={fadeUpVariant} className="flex items-center gap-3 mb-8">
           <div className="h-px w-12 bg-primary"></div>
-          <span className="font-mono text-primary uppercase tracking-widest text-sm font-semibold">Personal Draft Framework</span>
+          <span className="font-mono text-primary uppercase tracking-widest text-sm font-semibold">Beta Framework</span>
         </motion.div>
         
         <motion.h1 variants={fadeUpVariant} className="text-5xl md:text-7xl font-bold leading-tight mb-6 max-w-4xl text-foreground font-sans tracking-tight">
@@ -84,7 +84,7 @@ const Hero = () => {
         </motion.h1>
         
         <motion.p variants={fadeUpVariant} className="text-xl md:text-2xl text-secondary-foreground max-w-3xl mb-8 font-light leading-relaxed">
-          An objective, repeatable, quantitative methodology for benchmarking honeypots, decoys, and deception technology — a personal open-source draft (not a consortium standard).
+          An objective, repeatable, quantitative methodology for benchmarking honeypots, decoys, and deception technology — a personal open-source beta (not a consortium standard).
         </motion.p>
 
         <motion.div variants={fadeUpVariant} className="flex flex-wrap gap-3 mb-12">
@@ -104,7 +104,7 @@ const Hero = () => {
             { label: "Protocol-Agnostic", icon: Globe },
             { label: "Quantitative Scoring 0–100", icon: Activity },
             { label: "Six Evaluation Modules", icon: Layers },
-            { label: "Draft Production Baseline", icon: Shield }
+            { label: "Beta Production Baseline", icon: Shield }
           ].map((badge, i) => (
             <div key={i} className="flex items-center gap-2 bg-card border border-border px-4 py-2.5 rounded-sm terminal-card">
               <badge.icon className="w-4 h-4 text-primary" />
@@ -147,9 +147,9 @@ const ScopeAndApplicability = () => {
               <div className="flex items-start gap-4">
                 <Shield className="w-6 h-6 text-primary shrink-0 mt-1" />
                 <div>
-                  <h4 className="text-primary font-semibold font-mono mb-2 uppercase tracking-wide text-sm">Vendor-Neutral Draft Baseline</h4>
+                  <h4 className="text-primary font-semibold font-mono mb-2 uppercase tracking-wide text-sm">Vendor-Neutral Beta Baseline</h4>
                   <p className="text-secondary-foreground text-sm">
-                    UHBS v4.0 is a personal open-source draft for comparing and grading honeypots by class and protocol — mathematically reproducible, not a consortium or adopted industry standard.
+                    UHBS v4.0 is a personal open-source beta for comparing and grading honeypots by class and protocol — mathematically reproducible, not a consortium or adopted industry standard.
                   </p>
                 </div>
               </div>
@@ -158,7 +158,7 @@ const ScopeAndApplicability = () => {
             <div className="mt-6 border border-warning/40 bg-warning/5 p-5 flex gap-4 items-start">
               <AlertTriangle className="w-6 h-6 text-warning shrink-0 mt-0.5" />
               <div>
-                <h4 className="font-mono text-warning text-xs uppercase tracking-wider mb-2">Draft Production Baseline</h4>
+                <h4 className="font-mono text-warning text-xs uppercase tracking-wider mb-2">Beta Production Baseline</h4>
                 <p className="text-sm text-secondary-foreground leading-relaxed">
                   Organizations <span className="text-foreground font-semibold">MAY</span> use UHBS as an internal gate. It is <span className="text-foreground font-semibold">RECOMMENDED</span> that active decoys meet <span className="text-foreground font-semibold">UHQS &gt; 80</span> with a passing Safety Gate before production deployment. See the docs for status and limitations.
                 </p>
@@ -827,14 +827,14 @@ const Footer = () => {
           Universal Honeypot Benchmarking Standard <span className="text-primary/70">·</span> v4.0 <span className="text-primary/70">·</span> 2026
         </div>
         <p className="text-xs text-muted-foreground max-w-lg mx-auto mb-6">
-          Personal open-source draft evaluation framework (Apache-2.0). Not a consortium, Steering Committee, or adopted industry standard.
+          Personal open-source beta evaluation framework (Apache-2.0). Not a consortium, Steering Committee, or adopted industry standard.
         </p>
         <div className="flex flex-wrap justify-center gap-6 font-mono text-xs text-muted-foreground">
           <a href="mkdocs/" className="hover:text-primary transition-colors">Docs</a>
           <a href="mkdocs/scorecards/" className="hover:text-primary transition-colors">Scorecards</a>
           <a href="mkdocs/conformance/reports/" className="hover:text-primary transition-colors">Lab reports</a>
           <a href="https://github.com/mziqudhd92/uhbs-standard" className="hover:text-primary transition-colors">GitHub</a>
-          <a href="#scoring" className="hover:text-primary transition-colors">UHQS &gt; 80 draft gate</a>
+          <a href="#scoring" className="hover:text-primary transition-colors">UHQS &gt; 80 beta gate</a>
         </div>
       </div>
     </footer>

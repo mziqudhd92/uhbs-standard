@@ -13,7 +13,7 @@ repository-code: "https://github.com/mziqudhd92/uhbs-standard"
 url: "https://mziqudhd92.github.io/uhbs-standard/"
 # Spec docs also at https://mziqudhd92.github.io/uhbs-standard/mkdocs/
 abstract: >-
-  UHBS v4.0 is a personal open-source draft framework for vendor-neutral,
+  UHBS v4.0 is a personal open-source beta framework for vendor-neutral,
   objective, repeatable evaluation of honeypots and deception technology. It
   defines six evaluation modules (A–F), a composite UHQS score (0–100) with a
   recommended production baseline UHQS > 80, a non-linear Safety Gate,
@@ -38,6 +38,6 @@ preferred-citation:
   version: "4.0.0"
   url: "https://github.com/mziqudhd92/uhbs-standard"
   notes: >-
-    Personal draft framework. Deposit a tagged release on Zenodo for a DOI when
+    Personal beta framework. Deposit a tagged release on Zenodo for a DOI when
     ready (ROADMAP Phase 5). Multi-party governance and adopters are ROADMAP
     Phase 6 aspirations, not current claims.

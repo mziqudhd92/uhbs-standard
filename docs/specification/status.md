@@ -1,6 +1,6 @@
 # Status of This Document
 
-**Status:** Draft / Experimental  
+**Status:** Beta / Experimental  
 **Specification version:** 4.0.0  
 **Keywords:** The key words **MUST**, **MUST NOT**, **REQUIRED**, **SHALL**, **SHALL NOT**,
 **SHOULD**, **SHOULD NOT**, **RECOMMENDED**, **MAY**, and **OPTIONAL** in this
@@ -41,7 +41,7 @@ The reference harness that implements UHBS-Lab is described in
 
 ## Project posture
 
-UHBS is a **personal open-source draft framework**. It is **not** a standards
+UHBS is a **personal open-source beta framework**. It is **not** a standards
 body, consortium, or multi-party committee. Claims about committees, neutral
 org hosting, and independent adopters belong only on
 [ROADMAP.md](../roadmap.md) (Phase 6) until they are real.
@@ -49,7 +49,7 @@ org hosting, and independent adopters belong only on
 ## Production Baseline Profile (RECOMMENDED)
 
 Language such as "mandatory industry standard" **MUST NOT** be used for UHBS
-today. Organizations **MAY** adopt the draft as an **internal** gate.
+today. Organizations **MAY** adopt the beta as an **internal** gate.
 
 For that use, it is **RECOMMENDED** that:
 

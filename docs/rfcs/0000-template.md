@@ -1,6 +1,6 @@
 # RFC-0000: Title
 
-- **Status:** Draft
+- **Status:** Beta
 - **Author(s):**
 - **Created:** YYYY-MM-DD
 - **Spec impact:** Modules / UHQS / TPS / Governance / Other
