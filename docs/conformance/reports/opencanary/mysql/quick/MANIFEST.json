@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "b45a3d1c589a8d67aeae9aa62bf1b810151288edfd06b2dcad8e716982d2b221"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "b45a3d1c589a8d67aeae9aa62bf1b810151288edfd06b2dcad8e716982d2b221"
+    },
+    {
+      "path": "report.json",
+      "sha256": "4a38defa24dae5ef4721f34d5f93c6bc7e05e61569d06ee919bd75e31a5b5ccc"
+    },
+    {
+      "path": "uhbs-run.console.log",
+      "sha256": "c39790661c6f7c24b2a48b0e39bd491ba3a4b5d18d8569fafc6cc3ebe6f1ac68"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-mysql",
+    "uhqs": 51.48,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}
