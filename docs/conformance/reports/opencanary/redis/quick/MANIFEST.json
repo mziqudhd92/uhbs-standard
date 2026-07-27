@@ -2,16 +2,24 @@
   "uhbs_version": "4.0.0",
   "artifacts": [
     {
-      "path": "SCORECARD.txt",
-      "sha256": "5ae76a103519db7d144706f49f58a18f9036ee02e1fbcc8e8f1fc2e0b7210cd0"
+      "path": "README.md",
+      "sha256": "5af3d7109c0aa7d8c0f8eff173625074a2ddccd74de9d7af588e5966193e4163"
     },
     {
       "path": "REPORT.txt",
-      "sha256": "5ae76a103519db7d144706f49f58a18f9036ee02e1fbcc8e8f1fc2e0b7210cd0"
+      "sha256": "0803e800aa3ab676d6c0efbb9a9a0acbe9770b63e8ca8218d12b3051d41a98b8"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "0803e800aa3ab676d6c0efbb9a9a0acbe9770b63e8ca8218d12b3051d41a98b8"
     },
     {
       "path": "report.json",
-      "sha256": "552d7371bb1dd3628a8917b603a3e3248263bc3414066e52d3d1520a42dc1083"
+      "sha256": "b8a6cf9bcd75eb604a719628d0868c0a0b36fb57ce55da0a939cf965c7e51d32"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "6dc783c5cc51dbb6ceb8e46f3f018b818e7ee3d72ef8590d174f317d2cdcd8e4"
     },
     {
       "path": "uhbs-run.log",
@@ -20,7 +28,7 @@
   ],
   "extra": {
     "target": "opencanary-redis",
-    "uhqs": 41.27,
+    "uhqs": 45.07,
     "grade": "GRADE F (Fail)"
   }
 }
