@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "b17352ecf897abe958e95ed844bd2cffb6c964e66d90a397d4abd50a6e149156"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "b17352ecf897abe958e95ed844bd2cffb6c964e66d90a397d4abd50a6e149156"
+    },
+    {
+      "path": "report.json",
+      "sha256": "7e8dd1840e1a0eb789feefbf049810d04d62620216b80e9d281e32baa140db13"
+    },
+    {
+      "path": "uhbs-run.console.log",
+      "sha256": "40c0c88cae1c3b9853d1c1556d6f27eb54300978c368603bee46811d58ab0f3d"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-snmp",
+    "uhqs": 40.69,
+    "grade": "GRADE F (Fail)"
+  }
+}
