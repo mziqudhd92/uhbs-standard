@@ -1,0 +1,30 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "596179f4bc362576088c10569b254104babb6871005940d9ddf312a4b3d8f43e"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "596179f4bc362576088c10569b254104babb6871005940d9ddf312a4b3d8f43e"
+    },
+    {
+      "path": "report.json",
+      "sha256": "ad8a25758238d36dd02a88c6994a9bf8425f03dbd5d33c00a7a24ee0de0b008b"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "faedae1a7d8162e40eba46a94584a955f5675210d5c2ab4ff09e8bc3b809b5e7"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "acf0a054ab32cfe3ec92d3672e95dc018e776bb5bd3e27a51877c75f3b82935c"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-tftp",
+    "uhqs": 47.42,
+    "grade": "GRADE F (Fail)"
+  }
+}

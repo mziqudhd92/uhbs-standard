@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "51ce852adcc1073a8260723fe5335b5ab5c286f18e7516b3ac50bd06cfcbe68d"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "51ce852adcc1073a8260723fe5335b5ab5c286f18e7516b3ac50bd06cfcbe68d"
+    },
+    {
+      "path": "report.json",
+      "sha256": "4bb4fa0a14b08104c63987f865c777d170ed9b051a1e2f981c2d8cc3243778dd"
+    },
+    {
+      "path": "uhbs-run.console.log",
+      "sha256": "16c4c9a64f4f1538ae6f62540dd37b1a41c6816eb15695fba210746e2d895622"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-tftp",
+    "uhqs": 40.69,
+    "grade": "GRADE F (Fail)"
+  }
+}
