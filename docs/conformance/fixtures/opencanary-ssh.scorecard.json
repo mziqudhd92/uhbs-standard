@@ -9,7 +9,7 @@
   "auditor": "UHBS-Lab detailed Docker run (opencanary/ssh)",
   "modules": {
     "A": {
-      "score": 17.5,
+      "score": 41.51,
       "status": "FAILED",
       "weight": 0.3,
       "notes": ""
@@ -39,7 +39,7 @@
     },
     "F": {
       "score": 70.0,
-      "status": "PASSED",
+      "status": "PARTIAL",
       "weight": 0.2,
       "notes": ""
     }
@@ -57,7 +57,7 @@
     "passed": true,
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 28.44,
+  "uhqs": 35.64,
   "grade": "F",
-  "notes": "Evaluation proof only. OpenCanary SSH :2222. Artifacts: docs/conformance/reports/opencanary/ssh/."
+  "notes": "Evaluation proof only. OpenCanary ssh. Regraded 2026-07-27. Artifacts: docs/conformance/reports/opencanary/ssh/."
 }

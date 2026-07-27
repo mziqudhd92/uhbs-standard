@@ -9,14 +9,14 @@
   "auditor": "UHBS-Lab detailed Docker run (opencanary/http)",
   "modules": {
     "A": {
-      "score": 21.5,
-      "status": "FAILED",
+      "score": 100.0,
+      "status": "PASSED",
       "weight": 0.25,
       "notes": ""
     },
     "B": {
       "score": 82.5,
-      "status": "PASSED",
+      "status": "PARTIAL",
       "weight": 0.2,
       "notes": ""
     },
@@ -28,7 +28,7 @@
     },
     "D": {
       "score": 90.0,
-      "status": "GATE FAILED",
+      "status": "PASSED",
       "notes": ""
     },
     "E": {
@@ -39,7 +39,7 @@
     },
     "F": {
       "score": 70.0,
-      "status": "PASSED",
+      "status": "PARTIAL",
       "weight": 0.2,
       "notes": ""
     }
@@ -57,7 +57,7 @@
     "passed": false,
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 50.12,
+  "uhqs": 66.02,
   "grade": "D",
-  "notes": "Evaluation proof only. OpenCanary HTTP :80. Artifacts: docs/conformance/reports/opencanary/http/."
+  "notes": "Evaluation proof only. OpenCanary http. Regraded 2026-07-27. Artifacts: docs/conformance/reports/opencanary/http/."
 }

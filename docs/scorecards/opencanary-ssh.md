@@ -1,9 +1,8 @@
-# Scorecard: OpenCanary — SSH :2222
+# OpenCanary — SSH
 
 **Status:** Informative · evaluation proof  
-**Class:** Low-Interaction · **Protocol:** ssh `:2222`  
-**Full UHQS:** **28.44** · Grade **F** · δ_C **1.0**  
-**Quick UHQS:** 24.74 / F
+**Full UHQS:** **35.64** · Grade **F** · δ_C **1.0**  
+**Quick UHQS:** 31.94 / F
 
-Source report: [`../conformance/reports/opencanary/ssh/`](../conformance/reports/opencanary/ssh/index.md)  
-Fixture: [`../conformance/fixtures/opencanary-ssh.scorecard.json`](../conformance/fixtures/opencanary-ssh.scorecard.json)
+Fixture: [`../conformance/fixtures/opencanary-ssh.scorecard.json`](../conformance/fixtures/opencanary-ssh.scorecard.json)  
+Reports: [`../conformance/reports/opencanary/ssh/`](../conformance/reports/opencanary/ssh/)

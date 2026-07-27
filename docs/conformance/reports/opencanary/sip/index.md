@@ -1,14 +1,14 @@
-# OpenCanary — SSH `:2222` (UHBS proof)
+# OpenCanary — SIP `:5060` (UHBS proof)
 
 **Status:** Informative · evaluation proof  
 **Upstream:** [https://github.com/thinkst/opencanary](https://github.com/thinkst/opencanary)  
-**Class:** Low-Interaction · **Protocol graded:** `ssh` `:2222`
+**Class:** Low-Interaction · **Protocol graded:** `sip` `:5060`
 
 | Run | UHQS | Grade | δ_C | Artifacts |
 | --- | --- | --- | --- | --- |
-| Quick | 31.94 | F | 1.0 | [`quick/`](quick/) |
-| Full | 35.64 | F | 1.0 | [`full/`](full/) |
+| Quick | 40.01 | F | 0.5625 | [`quick/`](quick/) |
+| Full | 46.44 | F | 0.81 | [`full/`](full/) |
 
-- [Tutorial](../TUTORIAL.md#ssh)
+- [Tutorial](../TUTORIAL.md#sip)
 - [Methodology](../METHODOLOGY.md)
 - Parent hub: [`../`](../index.md)

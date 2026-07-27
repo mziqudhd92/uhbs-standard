@@ -31,3 +31,20 @@ Only protocols with a dedicated UHBS harness plugin were scored:
 - Module C often partial when product logs are not STIX/OTel/ECS
 - Safety Gate frequently WARN (δ_C=0.81) under attestation-heavy Docker labs
 - Grades are evaluation proof, not certification
+
+## Grades (regraded 2026-07-27)
+
+- HTTP full: **66.02 / D** (δ_C=0.81)
+- FTP full: **61.5 / D** (δ_C=0.81)
+- SSH full: **35.64 / F** (δ_C=1.0)
+- TELNET full: **64.9 / D** (δ_C=0.81)
+- REDIS full: **53.72 / D** (δ_C=0.81)
+- MYSQL full: **62.96 / D** (δ_C=0.81)
+- RDP full: **61.01 / D** (δ_C=0.81)
+- SIP full: **46.44 / F** (δ_C=0.81)
+- SNMP full: **47.42 / F** (δ_C=0.81)
+- NTP full: **47.42 / F** (δ_C=0.81)
+- TFTP full: **47.42 / F** (δ_C=0.81)
+- VNC full: **61.99 / D** (δ_C=0.81)
+- GIT full: **62.96 / D** (δ_C=0.81)
+- SMB full: **57.72 / D** (δ_C=0.81)

@@ -1,7 +1,7 @@
 {
   "uhbs_version": "4.0.0",
   "target": {
-    "name": "OpenCanary (Telnet :23)",
+    "name": "OpenCanary (TELNET :23)",
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/opencanary/low_interaction_telnet_full.yaml"
   },
@@ -9,13 +9,13 @@
   "auditor": "UHBS-Lab detailed Docker run (opencanary/telnet)",
   "modules": {
     "A": {
-      "score": 77.5,
+      "score": 100.0,
       "status": "PASSED",
       "weight": 0.3,
       "notes": ""
     },
     "B": {
-      "score": 62.5,
+      "score": 82.5,
       "status": "PARTIAL",
       "weight": 0.15,
       "notes": ""
@@ -28,7 +28,7 @@
     },
     "D": {
       "score": 90.0,
-      "status": "GATE FAILED",
+      "status": "PASSED",
       "notes": ""
     },
     "E": {
@@ -39,7 +39,7 @@
     },
     "F": {
       "score": 70.0,
-      "status": "PASSED",
+      "status": "PARTIAL",
       "weight": 0.2,
       "notes": ""
     }
@@ -57,7 +57,7 @@
     "passed": false,
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 57.0,
+  "uhqs": 64.9,
   "grade": "D",
-  "notes": "Evaluation proof only. OpenCanary Telnet :23. Artifacts: docs/conformance/reports/opencanary/telnet/."
+  "notes": "Evaluation proof only. OpenCanary telnet. Regraded 2026-07-27. Artifacts: docs/conformance/reports/opencanary/telnet/."
 }

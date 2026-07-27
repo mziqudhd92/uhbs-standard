@@ -1,7 +1,7 @@
 {
   "uhbs_version": "4.0.0",
   "target": {
-    "name": "OpenCanary (Redis :6379)",
+    "name": "OpenCanary (REDIS :6379)",
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/opencanary/low_interaction_redis_full.yaml"
   },
@@ -9,7 +9,7 @@
   "auditor": "UHBS-Lab detailed Docker run (opencanary/redis)",
   "modules": {
     "A": {
-      "score": 47.5,
+      "score": 70.0,
       "status": "PARTIAL",
       "weight": 0.3,
       "notes": ""
@@ -28,7 +28,7 @@
     },
     "D": {
       "score": 90.0,
-      "status": "GATE FAILED",
+      "status": "PASSED",
       "notes": ""
     },
     "E": {
@@ -39,7 +39,7 @@
     },
     "F": {
       "score": 70.0,
-      "status": "PASSED",
+      "status": "PARTIAL",
       "weight": 0.2,
       "notes": ""
     }
@@ -57,7 +57,7 @@
     "passed": false,
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 48.26,
-  "grade": "F",
-  "notes": "Evaluation proof only. OpenCanary Redis :6379. Artifacts: docs/conformance/reports/opencanary/redis/."
+  "uhqs": 53.72,
+  "grade": "D",
+  "notes": "Evaluation proof only. OpenCanary redis. Regraded 2026-07-27. Artifacts: docs/conformance/reports/opencanary/redis/."
 }

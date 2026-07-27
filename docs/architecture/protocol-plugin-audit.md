@@ -72,14 +72,10 @@ missing a 100 ms bar.
   when a compiled probe binary is present) drops and executes a real ELF
   binary over the shell and checks its arithmetic output — proves genuine
   code execution, not a canned response.
-- **Live regrade (2026-07-27, post scoring-engine fix) against real
-  `cowrie/cowrie:latest`:** Module A **23.5 → 19.73** (quick), **21.5 → 17.5**
-  (full). Same underlying checks/results each time — the drop is entirely the
-  arithmetic→geometric-mean fix (`§0`): SSH's one genuine RFC 4253 gap
-  (`rfc4253.reject_null_in_id` FAIL — Cowrie accepts a null identification
-  string) is no longer diluted by three unrelated passes. Module B unchanged
-  (60.0) — each sub-category has one check, so geometric mean = arithmetic
-  mean there. Full composite UHQS **48.7 → 47.49**. See
+- **Live regrade (2026-07-27, post 0–100 score-scale + P95 defaults) against
+  `cowrie/cowrie:latest`:** Module A quick **70.64**, full **57.07**; Module E
+  benefits from SSH P95 **3000 ms**. Full composite UHQS **61.37 / D** (was
+  **47.49** under the prior partial-point layout). See
   `docs/conformance/reports/cowrie/ssh/{quick,full}/`.
 - **New, opt-in — `probe_shell_realism`** (not wired into any default run):
   runs a read-only recon battery real attackers run first (`uname -a`,
@@ -174,7 +170,7 @@ missing a 100 ms bar.
   formula artifact: the new `telnet.state.login_prompt` probe_state check
   replaces a flat `50`-point "no probe implemented" stub with a live
   detection of Cowrie's real `login:` prompt, scoring `100`. Full composite
-  UHQS **56.52 → 59.41**. See
+  UHQS **64.90** (Telnet full, post scale fix). See
   `docs/conformance/reports/cowrie/telnet/{quick,full}/`.
 
 ## 6. Modbus — `protocols/modbus.py` 🟢 Tier 1 (this round)

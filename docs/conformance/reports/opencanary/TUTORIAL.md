@@ -2,9 +2,9 @@
 
 **Status:** Informative · evaluation proof  
 **Target:** [thinkst/opencanary](https://github.com/thinkst/opencanary) · commit `bc231423aa40242cbd0bf34801f8788e23420dee`  
-**Protocols graded:** HTTP `:80`, FTP `:21`, SSH `:2222`, Telnet `:23`, Redis `:6379`
+**Protocols graded:** HTTP, FTP, SSH, Telnet, Redis, MySQL, RDP, SIP, SNMP, NTP, TFTP, VNC, Git, SMB (Samba sidecar on `opencanary-smb`)
 
-OpenCanary is a multi-protocol canary. This lab enables every module that maps to a UHBS protocol plugin. SMB (Samba) and other modules without a UHBS plugin path are not graded.
+OpenCanary is a multi-protocol canary. This lab enables every module that maps to a UHBS protocol plugin; SMB is graded against the Samba sidecar per inventory.
 
 ## 0. Prerequisites
 
@@ -58,7 +58,7 @@ docker run --rm --network uhbs-lab \
     --environment "Quick Docker lab: opencanary-http"
 ```
 
-**Published HTTP:** quick **41.30 / F** · full **50.12 / D**
+**Published HTTP:** quick **52.34 / D** · full **66.02 / D**
 
 ## 4. Quick + full — FTP {#ftp}
 
@@ -78,7 +78,7 @@ docker run --rm --network uhbs-lab \
     --environment "Quick Docker lab: opencanary-ftp"
 ```
 
-**Published FTP:** quick **49.03 / F** · full **59.43 / D**
+**Published FTP:** quick **50.47 / D** · full **61.5 / D**
 
 ## 5. Quick + full — SSH {#ssh}
 
@@ -100,7 +100,7 @@ docker run --rm --network uhbs-lab \
     --environment "Quick Docker lab: opencanary-ssh"
 ```
 
-**Published SSH:** quick **24.74 / F** · full **28.44 / F**
+**Published SSH:** quick **31.94 / F** · full **35.64 / F**
 
 ## 6. Quick + full — Telnet {#telnet}
 
@@ -120,7 +120,7 @@ docker run --rm --network uhbs-lab \
     --environment "Quick Docker lab: opencanary-telnet"
 ```
 
-**Published Telnet:** quick **47.35 / F** · full **57.00 / D**
+**Published Telnet:** quick **52.83 / D** · full **64.9 / D**
 
 ## 7. Quick + full — Redis {#redis}
 
@@ -140,7 +140,17 @@ docker run --rm --network uhbs-lab \
     --environment "Quick Docker lab: opencanary-redis"
 ```
 
-**Published Redis:** quick **41.27 / F** · full **48.26 / F**
+**Published Redis:** quick **45.07 / F** · full **53.72 / D**
+
+**Published MySQL:** quick **51.48 / D** · full **62.96 / D**
+**Published RDP:** quick **50.13 / D** · full **61.01 / D**
+**Published SIP:** quick **40.01 / F** · full **46.44 / F**
+**Published SNMP:** quick **40.69 / F** · full **47.42 / F**
+**Published NTP:** quick **40.69 / F** · full **47.42 / F**
+**Published TFTP:** quick **40.69 / F** · full **47.42 / F**
+**Published VNC:** quick **50.81 / D** · full **61.99 / D**
+**Published Git:** quick **51.48 / D** · full **62.96 / D**
+**Published SMB:** quick **50.13 / D** · full **57.72 / D**
 
 ## 8. Full runs (telemetry + SAST)
 

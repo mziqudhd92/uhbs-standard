@@ -1,21 +1,21 @@
 {
   "uhbs_version": "4.0.0",
   "target": {
-    "name": "OpenCanary (FTP :21)",
+    "name": "OpenCanary (NTP :123)",
     "class": "Low-Interaction",
-    "profile_ref": "docs/conformance/labs/opencanary/low_interaction_ftp_full.yaml"
+    "profile_ref": "docs/conformance/labs/opencanary/low_interaction_ntp_full.yaml"
   },
   "evaluated_at": "2026-07-27",
-  "auditor": "UHBS-Lab detailed Docker run (opencanary/ftp)",
+  "auditor": "UHBS-Lab detailed Docker run (opencanary/ntp)",
   "modules": {
     "A": {
-      "score": 100.0,
-      "status": "PASSED",
+      "score": 55.71,
+      "status": "PARTIAL",
       "weight": 0.3,
       "notes": ""
     },
     "B": {
-      "score": 54.5,
+      "score": 70.5,
       "status": "PARTIAL",
       "weight": 0.15,
       "notes": ""
@@ -32,8 +32,8 @@
       "notes": ""
     },
     "E": {
-      "score": 100.0,
-      "status": "PASSED",
+      "score": 35.0,
+      "status": "FAILED",
       "weight": 0.1,
       "notes": ""
     },
@@ -57,7 +57,7 @@
     "passed": false,
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 61.5,
-  "grade": "D",
-  "notes": "Evaluation proof only. OpenCanary ftp. Regraded 2026-07-27. Artifacts: docs/conformance/reports/opencanary/ftp/."
+  "uhqs": 47.42,
+  "grade": "F",
+  "notes": "Evaluation proof only. OpenCanary ntp. Regraded 2026-07-27. Artifacts: docs/conformance/reports/opencanary/ntp/."
 }
