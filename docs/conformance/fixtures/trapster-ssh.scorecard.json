@@ -9,13 +9,13 @@
   "auditor": "UHBS-Lab detailed Docker run (trapster/ssh)",
   "modules": {
     "A": {
-      "score": 23.5,
-      "status": "PARTIAL",
+      "score": 70.64,
+      "status": "PASSED",
       "weight": 0.3,
       "notes": "accepted null ID"
     },
     "B": {
-      "score": 6.2,
+      "score": 6.25,
       "status": "PARTIAL",
       "weight": 0.15,
       "notes": "marker missing across sessions"
@@ -35,7 +35,10 @@
       "score": 20.0,
       "status": "PARTIAL",
       "weight": 0.1,
-      "notes": "P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=150.0ms proto=ssh"
+      "notes": "P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=150.0ms proto=ssh",
+      "p50_ms": 0.0,
+      "p95_ms": 0.0,
+      "p99_ms": 0.0
     },
     "F": {
       "score": 70.0,
@@ -57,7 +60,7 @@
     "passed": true,
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 30.24,
+  "uhqs": 44.38,
   "grade": "F",
   "notes": "Evaluation proof only. Graded SSH :2222 on Trapster Community. Artifacts under docs/conformance/reports/trapster/ssh/."
 }

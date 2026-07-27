@@ -1,3 +1,3 @@
-# Trapster Community SSH — quick artifacts
+# Trapster ssh — quick
 
-See [`SCORECARD.txt`](SCORECARD.txt) and parent [`../index.md`](../index.md).
+**Result:** UHQS **40.06** · Grade **F** · δ_C **1.0**

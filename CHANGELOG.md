@@ -47,6 +47,8 @@ share version **4.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[
   full **51.90 → 54.07** / D
 - **Regraded Beelzebub** (HTTP/Redis/SSH/Telnet quick+full); HTTP full **50.12 → 66.02**,
   SSH full **45.74 → 59.88**, Telnet full **57.00 → 47.89**
+- **Regraded Trapster** (FTP/HTTP/SSH/Telnet quick+full); HTTP full **49.82 → 63.33**,
+  SSH full **30.24 → 44.38**, Telnet full **57.00 → 64.90**
 - **Protocol-agnostic lab binding:** TPS no longer silently overwrites inventory/CLI
   protocols; conflicting TPS vs `--protocol` raises `ProtocolConflictError`
 - Builtin `low_interaction` is **class-only**; SSH/Telnet profile moved to

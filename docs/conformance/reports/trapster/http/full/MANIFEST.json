@@ -3,28 +3,32 @@
   "artifacts": [
     {
       "path": "REPORT.txt",
-      "sha256": "0422a8a2954cb13fa4e0c0ae3e0b88ba35ab2099cee4de0f68fb3d4d9b0763da"
+      "sha256": "61ea315fb02a02ad796c10089d05a4afcdcae092c03f492f22bf511debd6655f"
     },
     {
       "path": "SCORECARD.txt",
-      "sha256": "0422a8a2954cb13fa4e0c0ae3e0b88ba35ab2099cee4de0f68fb3d4d9b0763da"
+      "sha256": "61ea315fb02a02ad796c10089d05a4afcdcae092c03f492f22bf511debd6655f"
     },
     {
       "path": "report.json",
-      "sha256": "45a13ee22a174975f25346387a83d5b7ef0ed1c614060bf216dededea87cc0f4"
+      "sha256": "f6a7c28abc80df070406c54296312ca25b687cb6035fd3ad061354a2516ebefa"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "61ea315fb02a02ad796c10089d05a4afcdcae092c03f492f22bf511debd6655f"
     },
     {
       "path": "static/bandit-report.json",
-      "sha256": "d8ee3f1c084c1681cbb7c0fb381f39752f63eab458ea24c5f7b2b129116aa791"
+      "sha256": "b95172a32d57591671af261100627712710c9f9a376f76b11815bca2359abd26"
     },
     {
       "path": "static/semgrep-report.json",
-      "sha256": "f195cc1d04d822d9bc9831acd3b23c067a9853d47972267101224f956b9007b5"
+      "sha256": "8ccd7c7506d71cf15a4aeed358dc1d1cfedee7f22bef6180a9c49fe5de91238e"
     }
   ],
   "extra": {
     "target": "trapster-http",
-    "uhqs": 49.82,
-    "grade": "GRADE F (Fail)"
+    "uhqs": 63.33,
+    "grade": "GRADE D (Needs Remediation)"
   }
 }

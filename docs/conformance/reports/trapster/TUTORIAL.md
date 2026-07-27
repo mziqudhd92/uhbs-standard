@@ -70,7 +70,7 @@ docker run --rm --network uhbs-lab \
     --environment "Full Docker lab: trapster-ftp"
 ```
 
-**Published:** quick **41.94 / F** · full **49.71 / F**
+**Published:** quick **43.37 / F** · full **51.78 / D**
 
 ### HTTP `:8080`
 
@@ -108,7 +108,7 @@ docker run --rm --network uhbs-lab \
     --environment "Full Docker lab: trapster-http"
 ```
 
-**Published:** quick **40.74 / F** · full **49.82 / F**
+**Published:** quick **50.13 / D** · full **63.33 / D**
 
 ### SSH `:2222`
 
@@ -146,7 +146,7 @@ docker run --rm --network uhbs-lab \
     --environment "Full Docker lab: trapster-ssh"
 ```
 
-**Published:** quick **25.92 / F** · full **30.24 / F**
+**Published:** quick **40.06 / F** · full **44.38 / F**
 
 ### Telnet `:2323`
 
@@ -184,7 +184,7 @@ docker run --rm --network uhbs-lab \
     --environment "Full Docker lab: trapster-telnet"
 ```
 
-**Published:** quick **47.00 / F** · full **57.00 / D**
+**Published:** quick **52.49 / D** · full **64.9 / D**
 
 
 ## 4. Validate a fixture

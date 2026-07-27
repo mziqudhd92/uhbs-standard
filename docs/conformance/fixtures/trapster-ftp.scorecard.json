@@ -9,14 +9,14 @@
   "auditor": "UHBS-Lab detailed Docker run (trapster/ftp)",
   "modules": {
     "A": {
-      "score": 37.5,
+      "score": 60.0,
       "status": "PARTIAL",
       "weight": 0.3,
       "notes": "220 Microsoft FTP Service"
     },
     "B": {
-      "score": 82.5,
-      "status": "PASSED",
+      "score": 54.5,
+      "status": "PARTIAL",
       "weight": 0.15,
       "notes": "survived binary blast"
     },
@@ -35,7 +35,10 @@
       "score": 100.0,
       "status": "PASSED",
       "weight": 0.1,
-      "notes": "service alive after load (connect 0.1ms"
+      "notes": "service alive after load (connect 0.1ms",
+      "p50_ms": 3.05,
+      "p95_ms": 8.63,
+      "p99_ms": 10.93
     },
     "F": {
       "score": 70.0,
@@ -57,7 +60,7 @@
     "passed": false,
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 49.71,
-  "grade": "F",
+  "uhqs": 51.78,
+  "grade": "D",
   "notes": "Evaluation proof only. Graded FTP :2121 on Trapster Community. Artifacts under docs/conformance/reports/trapster/ftp/."
 }

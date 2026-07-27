@@ -6,8 +6,8 @@
 
 | Run | UHQS | Grade | δ_C | Artifacts |
 | --- | --- | --- | --- | --- |
-| Quick | 40.74 | F | 0.5625 | [`quick/`](quick/) |
-| Full | 49.82 | F | 0.81 | [`full/`](full/) |
+| Quick | 50.13 | D | 0.5625 | [`quick/`](quick/) |
+| Full | 63.33 | D | 0.81 | [`full/`](full/) |
 
 - [Tutorial](../TUTORIAL.md#http)
 - [Methodology](../METHODOLOGY.md)

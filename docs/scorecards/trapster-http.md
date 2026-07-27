@@ -2,8 +2,8 @@
 
 **Status:** Informative · evaluation proof  
 **Class:** Web-API · **Protocol:** HTTP `: 8080`  
-**Full UHQS:** **49.82** · Grade **F** · δ_C **0.81**  
-**Quick UHQS:** 40.74 / F
+**Full UHQS:** **63.33** · Grade **D** · δ_C **0.81**  
+**Quick UHQS:** 50.13 / D
 
 Source report: [`../conformance/reports/trapster/http/`](../conformance/reports/trapster/http/index.md)  
 Fixture: [`../conformance/fixtures/trapster-http.scorecard.json`](../conformance/fixtures/trapster-http.scorecard.json)

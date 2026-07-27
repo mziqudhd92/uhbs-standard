@@ -1,3 +1,3 @@
-# Trapster Community Telnet — quick artifacts
+# Trapster telnet — quick
 
-See [`SCORECARD.txt`](SCORECARD.txt) and parent [`../index.md`](../index.md).
+**Result:** UHQS **52.49** · Grade **D** · δ_C **0.5625**

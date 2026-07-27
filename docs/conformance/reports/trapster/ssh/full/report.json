@@ -18,14 +18,14 @@
   "baseline": null,
   "uhqs": {
     "target": "trapster-ssh",
-    "S_A": 23.5,
+    "S_A": 70.64,
     "S_B": 6.25,
     "S_C": 25.0,
     "C": 100.0,
     "S_E": 20.0,
     "S_F": 70.0,
     "delta_c": 1.0,
-    "uhqs": 30.24,
+    "uhqs": 44.38,
     "weights": {
       "protocol": 0.3,
       "behavior": 0.15,
@@ -41,14 +41,14 @@
   },
   "hqs": {
     "target": "trapster-ssh",
-    "S_A": 23.5,
+    "S_A": 70.64,
     "S_B": 6.25,
     "S_C": 25.0,
     "C": 100.0,
     "S_E": 20.0,
     "S_F": 70.0,
     "delta_c": 1.0,
-    "uhqs": 30.24,
+    "uhqs": 44.38,
     "weights": {
       "protocol": 0.3,
       "behavior": 0.15,
@@ -75,7 +75,8 @@
           "passed": true,
           "detail": "trapster-lab:2222 open",
           "score": 25.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "sandbox.airgap_attested",
@@ -83,7 +84,8 @@
           "passed": true,
           "detail": "operator attested air-gapped sandbox (UHBS_AIRGAP_ATTESTED=1)",
           "score": 25.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "sandbox.egress_deny_tooling",
@@ -91,7 +93,8 @@
           "passed": false,
           "detail": "host-egress-deny.sh not found",
           "score": 10.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "sandbox.gateway_log_configured",
@@ -99,7 +102,8 @@
           "passed": true,
           "detail": "UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log",
           "score": 25.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {
@@ -122,7 +126,8 @@
           "passed": true,
           "detail": "0 static private keys",
           "score": 10.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.hardcoded_ssh_banners",
@@ -130,7 +135,8 @@
           "passed": true,
           "detail": "0 hardcoded SSH banners",
           "score": 5.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.predictable_seeds",
@@ -140,7 +146,8 @@
           "score": 0.0,
           "evidence": [
             "trapster/modules/http.py"
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "white.hardcoded_macs",
@@ -148,7 +155,8 @@
           "passed": true,
           "detail": "0 hardcoded MAC addresses",
           "score": 5.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.prompt_corpus_present",
@@ -156,7 +164,8 @@
           "passed": true,
           "detail": "no prompt corpus (N/A for non-LLM)",
           "score": 5.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.prompt_boundaries",
@@ -164,7 +173,8 @@
           "passed": true,
           "detail": "no weak delimiter/extract patterns",
           "score": 10.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.fallback_strings",
@@ -172,7 +182,8 @@
           "passed": true,
           "detail": "no plain-text LLM fallback artifacts",
           "score": 10.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.bandit",
@@ -180,7 +191,8 @@
           "passed": true,
           "detail": "bandit HIGH=0",
           "score": 8.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.semgrep",
@@ -188,7 +200,8 @@
           "passed": false,
           "detail": "semgrep error/critical=1 total=10",
           "score": 7.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.trivy",
@@ -196,7 +209,8 @@
           "passed": true,
           "detail": "trivy not installed (skipped)",
           "score": 4.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.sast_gate",
@@ -204,7 +218,8 @@
           "passed": false,
           "detail": "1 high/critical findings",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.vfs_posix_coverage",
@@ -253,7 +268,8 @@
             "pip",
             "ps",
             "pwd"
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "white.blocking_calls",
@@ -261,7 +277,8 @@
           "passed": true,
           "detail": "sleep/blocking markers in non-test code\u22480",
           "score": 5.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {
@@ -275,34 +292,37 @@
     {
       "module": "A",
       "dimension": "protocol",
-      "score": 23.5,
-      "status": "PARTIAL",
+      "score": 70.64,
+      "status": "PASSED",
       "checks": [
         {
           "id": "rfc4253.identification_crlf",
           "team": "blue",
           "passed": true,
           "detail": "SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u7",
-          "score": 25.0,
+          "score": 100.0,
           "evidence": [
             "5353482d322e302d4f70656e5353485f392e3270312044656269616e2d322b646562313275370d0a"
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "rfc4253.kexinit_after_id",
           "team": "blue",
           "passed": true,
           "detail": "KEXINIT observed after version exchange",
-          "score": 25.0,
-          "evidence": []
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "rfc4253.legacy_version_handling",
           "team": "blue",
           "passed": true,
           "detail": "handled SSH-1.5 probe without hang",
-          "score": 20.0,
-          "evidence": []
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "rfc4253.reject_null_in_id",
@@ -312,72 +332,71 @@
           "score": 0.0,
           "evidence": [
             "5353482d322e302d4f70656e5353485f392e3270312044656269616e2d322b646562313275370d0a"
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "rfc4253.identification_crlf",
           "team": "blue",
           "passed": true,
           "detail": "SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u7",
-          "score": 25.0,
+          "score": 100.0,
           "evidence": [
             "5353482d322e302d4f70656e5353485f392e3270312044656269616e2d322b646562313275370d0a"
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "rfc4253.kexinit_after_id",
           "team": "blue",
           "passed": true,
           "detail": "KEXINIT observed after version exchange",
-          "score": 25.0,
-          "evidence": []
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "ssh.nego.hassh",
           "team": "blue",
           "passed": true,
           "detail": "HASSH=efd7813a4bf95ea50ce34dc95be6e814 banner=SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u7",
-          "score": 40.0,
+          "score": 100.0,
           "evidence": [
             "mlkem768x25519-sha256,mlkem768nistp256-sha256,mlkem1024nistp384-sha384,curve25519-sha256,curve25519-sha256@libssh.org,curve448-sha512,ecdh-sha2-nistp521,ecdh-sha2-nistp384,ecdh-sha2-nistp256,ecdh-sha2"
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "ssh.timing.sample_size",
           "team": "blue",
           "passed": true,
           "detail": "n=200 requested=200 errors=0",
-          "score": 20.0,
-          "evidence": []
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "ssh.timing.iat_jitter",
           "team": "red",
           "passed": true,
-          "detail": "median=0.136ms pstdev=0.131ms (target jitter often <2ms vs native)",
-          "score": 30.0,
-          "evidence": []
-        },
-        {
-          "id": "ssh.timing.ks_vs_gold",
-          "team": "blue",
-          "passed": false,
-          "detail": "no gold_baseline_host in TPS \u2014 KS compare skipped (set performance_baseline.gold_baseline_host)",
-          "score": 25.0,
-          "evidence": []
+          "detail": "median=0.164ms pstdev=0.197ms (target jitter often <2ms vs native)",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "ssh.module_a.composite",
           "team": "blue",
-          "passed": false,
-          "detail": "fsm=18 nego=30 timing=25",
-          "score": 23.5,
-          "evidence": []
+          "passed": true,
+          "detail": "fsm=27 nego=100 timing=100",
+          "score": 70.6366,
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {
         "per_protocol": {
-          "ssh": 23.5
+          "ssh": 70.64
         },
         "protocols": [
           "ssh"
@@ -386,13 +405,21 @@
         "available_plugins": [
           "ftp",
           "generic",
+          "git",
           "http",
           "modbus",
+          "mysql",
+          "ntp",
+          "rdp",
           "redis",
+          "sip",
           "smb",
           "smtp",
+          "snmp",
           "ssh",
-          "telnet"
+          "telnet",
+          "tftp",
+          "vnc"
         ]
       },
       "notes": [
@@ -416,7 +443,8 @@
           "evidence": [
             "",
             ""
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "ssh.payload.echo",
@@ -424,7 +452,8 @@
           "passed": false,
           "detail": "failed",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "ssh.fuzz.non_utf8",
@@ -432,7 +461,8 @@
           "passed": false,
           "detail": "failed",
           "score": 25.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {
@@ -458,7 +488,8 @@
           "passed": false,
           "detail": "accepted",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "c2.inject_1",
@@ -466,7 +497,8 @@
           "passed": false,
           "detail": "accepted",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "c2.inject_2",
@@ -474,7 +506,8 @@
           "passed": false,
           "detail": "accepted",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "c2.inject_3",
@@ -482,7 +515,8 @@
           "passed": false,
           "detail": "accepted",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "c2.parser_survival",
@@ -490,7 +524,8 @@
           "passed": false,
           "detail": "0/4 injections survived without client crash",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "c1.json_parse_clean",
@@ -498,7 +533,8 @@
           "passed": true,
           "detail": "0 malformed / 0 records",
           "score": 20.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "c1.stix_2_1",
@@ -506,7 +542,8 @@
           "passed": false,
           "detail": "no STIX objects found",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "c1.otel_or_ecs",
@@ -514,7 +551,8 @@
           "passed": false,
           "detail": "otel_docs=0 ecs_docs=0",
           "score": 5.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "c1.payload_hashes",
@@ -522,7 +560,8 @@
           "passed": false,
           "detail": "no md5/sha256 fields",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "c1.mitre_mapping",
@@ -530,7 +569,8 @@
           "passed": false,
           "detail": "no MITRE tags",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {},
@@ -553,7 +593,8 @@
           "score": 12.0,
           "evidence": [
             ""
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "d1.egress_dns",
@@ -563,7 +604,8 @@
           "score": 12.0,
           "evidence": [
             ""
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "d1.egress_tcp",
@@ -573,7 +615,8 @@
           "score": 12.0,
           "evidence": [
             ""
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "d1.egress_https",
@@ -583,7 +626,8 @@
           "score": 12.0,
           "evidence": [
             ""
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "d1.egress_http",
@@ -593,7 +637,8 @@
           "score": 12.0,
           "evidence": [
             ""
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "d1.egress_gateway_log",
@@ -601,7 +646,8 @@
           "passed": true,
           "detail": "0 gateway canary hits",
           "score": 20.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "d2.docker_sock",
@@ -609,7 +655,8 @@
           "passed": true,
           "detail": "no docker.sock",
           "score": 10.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "d2.cgroup_escape_surface",
@@ -617,7 +664,8 @@
           "passed": true,
           "detail": "cgroup surface ok",
           "score": 8.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "d3.prompt_injection",
@@ -626,8 +674,9 @@
           "detail": "no prompt/policy leak",
           "score": 8.0,
           "evidence": [
-            "Welcome to Ubuntu 22.04.4 LTS (GNU/Linux 6.5.0-28-generic x86_64)\r\n\r\n * Documentation:  https://help.ubuntu.com\r\n * Management:     https://landscape.canonical.com\r\n * Support:        https://ubuntu.com/pro\r\n\r\n  System information as of Mon Jul 27 13:53:08 UTC 2026\r\n\r\n  System load:  1.88              Processes:             198\r\n  Usage of /:   72.6% of 1.6TB   Users logged in:       3\r\n  Memory u"
-          ]
+            "Welcome to Ubuntu 22.04.4 LTS (GNU/Linux 6.5.0-28-generic x86_64)\r\n\r\n * Documentation:  https://help.ubuntu.com\r\n * Management:     https://landscape.canonical.com\r\n * Support:        https://ubuntu.com/pro\r\n\r\n  System information as of Mon Jul 27 18:41:46 UTC 2026\r\n\r\n  System load:  1.88              Processes:             198\r\n  Usage of /:   72.6% of 1.6TB   Users logged in:       3\r\n  Memory u"
+          ],
+          "critical": false
         },
         {
           "id": "d3.context_exhaustion",
@@ -635,12 +684,14 @@
           "passed": false,
           "detail": "leak/unstable",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {
         "breakout": false,
-        "allowed_outbound_traffic": false
+        "allowed_outbound_traffic": false,
+        "shell_exec": true
       },
       "notes": [
         "UHBS: C\u226595 required for \u03b4_C=1.0; set UHBS_EGRESS_GATEWAY_LOG for gateway proof"
@@ -657,9 +708,10 @@
           "id": "e1.p95_vs_tps",
           "team": "blue",
           "passed": false,
-          "detail": "P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=150.0ms proto=ssh",
+          "detail": "P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=3000.0ms proto=ssh",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "e1.error_rate",
@@ -667,7 +719,8 @@
           "passed": false,
           "detail": "errors=200/200 rate=100.00%",
           "score": 5.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "e2.exhaustion_input",
@@ -675,7 +728,8 @@
           "passed": true,
           "detail": "completed exhaustion/fuzz blast",
           "score": 15.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "e2.circuit_breaker_alive",
@@ -683,18 +737,19 @@
           "passed": false,
           "detail": "ssh failed",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {
         "p50_ms": 0.0,
         "p95_ms": 0.0,
         "p99_ms": 0.0,
-        "p95_limit_ms": 150.0,
+        "p95_limit_ms": 3000.0,
         "errors": 200,
         "concurrency": 25,
         "requests": 200,
-        "wall_s": 175.96,
+        "wall_s": 181.37,
         "protocol": "ssh"
       },
       "notes": [],
@@ -703,7 +758,7 @@
   ],
   "extras": {
     "target_scores": {
-      "protocol": 23.5,
+      "protocol": 70.64,
       "behavior": 6.25,
       "telemetry": 25.0,
       "containment": 100.0,
@@ -717,7 +772,7 @@
       "protocols": [
         "ssh"
       ],
-      "expected_p95_latency_ms": 150.0
+      "expected_p95_latency_ms": 3000.0
     }
   }
 }

@@ -1,3 +1,3 @@
-# Trapster Community HTTP — quick artifacts
+# Trapster http — quick
 
-See [`SCORECARD.txt`](SCORECARD.txt) and parent [`../index.md`](../index.md).
+**Result:** UHQS **50.13** · Grade **D** · δ_C **0.5625**

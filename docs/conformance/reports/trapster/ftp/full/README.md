@@ -1,3 +1,3 @@
-# Trapster Community FTP — full artifacts
+# Trapster ftp — full
 
-See [`SCORECARD.txt`](SCORECARD.txt) and parent [`../index.md`](../index.md).
+**Result:** UHQS **51.78** · Grade **D** · δ_C **0.81**

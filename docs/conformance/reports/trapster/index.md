@@ -6,10 +6,10 @@
 
 | Protocol | Class / port | Quick | Full |
 | --- | --- | --- | --- |
-| [FTP](ftp/) | Low-Interaction · FTP :2121 | [41.94 / F](ftp/quick/) | [49.71 / F](ftp/full/) |
-| [HTTP](http/) | Web-API · HTTP :8080 | [40.74 / F](http/quick/) | [49.82 / F](http/full/) |
-| [SSH](ssh/) | Low-Interaction · SSH :2222 | [25.92 / F](ssh/quick/) | [30.24 / F](ssh/full/) |
-| [Telnet](telnet/) | Low-Interaction · Telnet :2323 | [47.00 / F](telnet/quick/) | [57.00 / D](telnet/full/) |
+| [FTP](ftp/) | Low-Interaction · FTP :2121 | [43.37 / F](ftp/quick/) | [51.78 / D](ftp/full/) |
+| [HTTP](http/) | Web-API · HTTP :8080 | [50.13 / D](http/quick/) | [63.33 / D](http/full/) |
+| [SSH](ssh/) | Low-Interaction · SSH :2222 | [40.06 / F](ssh/quick/) | [44.38 / F](ssh/full/) |
+| [Telnet](telnet/) | Low-Interaction · Telnet :2323 | [52.49 / D](telnet/quick/) | [64.9 / D](telnet/full/) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 

@@ -673,12 +673,12 @@
   },
   "time": {
     "rules": [],
-    "rules_parse_time": 0.2608799934387207,
+    "rules_parse_time": 0.32049989700317383,
     "profiling_times": {
-      "config_time": 1.1195940971374512,
-      "core_time": 6.120075702667236,
-      "ignores_time": 0.0010428428649902344,
-      "total_time": 7.250848770141602
+      "config_time": 1.2944056987762451,
+      "core_time": 6.354685306549072,
+      "ignores_time": 0.0008997917175292969,
+      "total_time": 7.655600309371948
     },
     "parsing_time": {
       "total_time": 0.0,
@@ -693,19 +693,19 @@
       "very_slow_files": []
     },
     "scanning_time": {
-      "total_time": 11.382106304168701,
+      "total_time": 16.050410509109497,
       "per_file_time": {
-        "mean": 0.04683994363855433,
-        "std_dev": 0.12541077648320031
+        "mean": 0.06605107205394854,
+        "std_dev": 0.14499354523828564
       },
       "very_slow_stats": {
-        "time_ratio": 0.47102916643468096,
+        "time_ratio": 0.3367642251035093,
         "count_ratio": 0.00411522633744856
       },
       "very_slow_files": [
         {
           "fpath": "trapster/data/http/fortigate/files/45482074d2e66dcb140b5a178a24754d/js/legacy_theme_setup.js",
-          "ftime": 5.361304044723511
+          "ftime": 5.4052040576934814
         }
       ]
     },
@@ -734,6 +734,24 @@
       "very_slow_rules_on_defs": []
     },
     "fixpoint_timeouts": [
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at trapster/libs/ldapasn1.py:1:0 [rules: 2, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "trapster/libs/ldapasn1.py",
+          "start": {
+            "line": 1,
+            "col": 1,
+            "offset": 0
+          },
+          "end": {
+            "line": 1,
+            "col": 1,
+            "offset": 0
+          }
+        }
+      },
       {
         "error_type": "Fixpoint timeout",
         "severity": "warn",
@@ -817,7 +835,7 @@
     },
     "targets": [],
     "total_bytes": 0,
-    "max_memory_bytes": 1549390912
+    "max_memory_bytes": 1600615296
   },
   "engine_requested": "OSS",
   "skipped_rules": [],

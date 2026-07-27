@@ -1,3 +1,3 @@
-# Trapster Community HTTP — full artifacts
+# Trapster http — full
 
-See [`SCORECARD.txt`](SCORECARD.txt) and parent [`../index.md`](../index.md).
+**Result:** UHQS **63.33** · Grade **D** · δ_C **0.81**

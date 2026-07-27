@@ -1,3 +1,3 @@
-# Trapster Community SSH — full artifacts
+# Trapster ssh — full
 
-See [`SCORECARD.txt`](SCORECARD.txt) and parent [`../index.md`](../index.md).
+**Result:** UHQS **44.38** · Grade **F** · δ_C **1.0**

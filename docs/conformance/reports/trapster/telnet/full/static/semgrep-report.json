@@ -673,12 +673,12 @@
   },
   "time": {
     "rules": [],
-    "rules_parse_time": 0.2812778949737549,
+    "rules_parse_time": 0.46370601654052734,
     "profiling_times": {
-      "config_time": 0.7847976684570312,
-      "core_time": 6.1464033126831055,
-      "ignores_time": 0.0008826255798339844,
-      "total_time": 6.937364339828491
+      "config_time": 3.004967212677002,
+      "core_time": 13.659104108810425,
+      "ignores_time": 0.005047798156738281,
+      "total_time": 16.75406265258789
     },
     "parsing_time": {
       "total_time": 0.0,
@@ -693,19 +693,55 @@
       "very_slow_files": []
     },
     "scanning_time": {
-      "total_time": 11.651444673538208,
+      "total_time": 84.01791906356812,
       "per_file_time": {
-        "mean": 0.04794833198986916,
-        "std_dev": 0.1277131464164731
+        "mean": 0.3457527533480171,
+        "std_dev": 2.1020131155278627
       },
       "very_slow_stats": {
-        "time_ratio": 0.46144708354159975,
-        "count_ratio": 0.00411522633744856
+        "time_ratio": 0.8709851375620453,
+        "count_ratio": 0.05761316872427984
       },
       "very_slow_files": [
         {
+          "fpath": "trapster/libs/ntlm.py",
+          "ftime": 2.7634940147399902
+        },
+        {
+          "fpath": "trapster/modules/telnet.py",
+          "ftime": 3.019922971725464
+        },
+        {
+          "fpath": "trapster/modules/ssh.py",
+          "ftime": 3.3507649898529053
+        },
+        {
+          "fpath": "trapster/modules/https.py",
+          "ftime": 3.360539197921753
+        },
+        {
+          "fpath": "trapster/libs/ldapasn1.py",
+          "ftime": 6.258555173873901
+        },
+        {
           "fpath": "trapster/data/http/fortigate/files/45482074d2e66dcb140b5a178a24754d/js/legacy_theme_setup.js",
-          "ftime": 5.376525163650513
+          "ftime": 8.170799970626831
+        },
+        {
+          "fpath": "trapster/modules/ldap.py",
+          "ftime": 8.49451494216919
+        },
+        {
+          "fpath": "trapster/modules/rdp.py",
+          "ftime": 9.1875319480896
+        },
+        {
+          "fpath": "trapster/data/http/fortigate/files/45482074d2e66dcb140b5a178a24754d/js/login.js",
+          "ftime": 9.433632850646973
+        },
+        {
+          "fpath": "trapster/modules/http.py",
+          "ftime": 11.244091987609863
         }
       ]
     },
@@ -737,6 +773,24 @@
       {
         "error_type": "Fixpoint timeout",
         "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at trapster/libs/ldapasn1.py:1:0 [rules: 3, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "trapster/libs/ldapasn1.py",
+          "start": {
+            "line": 1,
+            "col": 1,
+            "offset": 0
+          },
+          "end": {
+            "line": 1,
+            "col": 1,
+            "offset": 0
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
         "message": "Fixpoint timeout while performing taint analysis at trapster/modules/http.py:118:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
         "location": {
           "path": "trapster/modules/http.py",
@@ -749,6 +803,60 @@
             "line": 118,
             "col": 28,
             "offset": 4276
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at trapster/modules/http.py:200:14 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "trapster/modules/http.py",
+          "start": {
+            "line": 200,
+            "col": 15,
+            "offset": 7879
+          },
+          "end": {
+            "line": 200,
+            "col": 26,
+            "offset": 7890
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at trapster/modules/http.py:350:14 [rules: 1, first: python.django.security.injection.raw-html-format.raw-html-format]",
+        "location": {
+          "path": "trapster/modules/http.py",
+          "start": {
+            "line": 350,
+            "col": 15,
+            "offset": 14478
+          },
+          "end": {
+            "line": 350,
+            "col": 18,
+            "offset": 14481
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at trapster/modules/ldap.py:172:8 [rules: 2, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "trapster/modules/ldap.py",
+          "start": {
+            "line": 172,
+            "col": 9,
+            "offset": 7153
+          },
+          "end": {
+            "line": 172,
+            "col": 22,
+            "offset": 7166
           }
         }
       },
@@ -817,7 +925,7 @@
     },
     "targets": [],
     "total_bytes": 0,
-    "max_memory_bytes": 1595546176
+    "max_memory_bytes": 1812125120
   },
   "engine_requested": "OSS",
   "skipped_rules": [],

@@ -3,20 +3,24 @@
   "artifacts": [
     {
       "path": "REPORT.txt",
-      "sha256": "8b3fb122a053d23a0d09c4844774f342205ecc73cb0de73930c66a9821818bd5"
+      "sha256": "c95d0036bf87f4f4f989e7806ecd07b1e844ed555397fc6494cd20edcf9cc4df"
     },
     {
       "path": "SCORECARD.txt",
-      "sha256": "8b3fb122a053d23a0d09c4844774f342205ecc73cb0de73930c66a9821818bd5"
+      "sha256": "c95d0036bf87f4f4f989e7806ecd07b1e844ed555397fc6494cd20edcf9cc4df"
     },
     {
       "path": "report.json",
-      "sha256": "08752d65b05e7fd060229c6177c694cf4dbd7ad4f7146893e2debe1325cb1cd3"
+      "sha256": "cb69b0463a97cc1cc1562898d71539f9ccb6e5ce3f2c7da529a65a561ff52ffe"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "c95d0036bf87f4f4f989e7806ecd07b1e844ed555397fc6494cd20edcf9cc4df"
     }
   ],
   "extra": {
     "target": "trapster-ssh",
-    "uhqs": 25.92,
+    "uhqs": 40.06,
     "grade": "GRADE F (Fail)"
   }
 }

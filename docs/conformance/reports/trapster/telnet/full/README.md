@@ -1,3 +1,3 @@
-# Trapster Community Telnet — full artifacts
+# Trapster telnet — full
 
-See [`SCORECARD.txt`](SCORECARD.txt) and parent [`../index.md`](../index.md).
+**Result:** UHQS **64.9** · Grade **D** · δ_C **0.81**

@@ -673,12 +673,12 @@
   },
   "time": {
     "rules": [],
-    "rules_parse_time": 0.2753009796142578,
+    "rules_parse_time": 0.2901790142059326,
     "profiling_times": {
-      "config_time": 1.1991758346557617,
-      "core_time": 6.192035913467407,
-      "ignores_time": 0.0008835792541503906,
-      "total_time": 7.402191877365112
+      "config_time": 1.1784400939941406,
+      "core_time": 6.125502824783325,
+      "ignores_time": 0.0007791519165039062,
+      "total_time": 7.309068441390991
     },
     "parsing_time": {
       "total_time": 0.0,
@@ -693,19 +693,19 @@
       "very_slow_files": []
     },
     "scanning_time": {
-      "total_time": 11.241820812225342,
+      "total_time": 13.03482961654663,
       "per_file_time": {
-        "mean": 0.04626263708734708,
-        "std_dev": 0.12879618573947943
+        "mean": 0.05364127414216723,
+        "std_dev": 0.13012709573392348
       },
       "very_slow_stats": {
-        "time_ratio": 0.4836872180027602,
+        "time_ratio": 0.41212023228400596,
         "count_ratio": 0.00411522633744856
       },
       "very_slow_files": [
         {
           "fpath": "trapster/data/http/fortigate/files/45482074d2e66dcb140b5a178a24754d/js/legacy_theme_setup.js",
-          "ftime": 5.437525033950806
+          "ftime": 5.371917009353638
         }
       ]
     },
@@ -773,6 +773,24 @@
       {
         "error_type": "Fixpoint timeout",
         "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at trapster/modules/ssh.py:237:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "trapster/modules/ssh.py",
+          "start": {
+            "line": 237,
+            "col": 9,
+            "offset": 8900
+          },
+          "end": {
+            "line": 237,
+            "col": 22,
+            "offset": 8913
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
         "message": "Fixpoint timeout while performing taint analysis at trapster/modules/ssh.py:34:10 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
         "location": {
           "path": "trapster/modules/ssh.py",
@@ -799,7 +817,7 @@
     },
     "targets": [],
     "total_bytes": 0,
-    "max_memory_bytes": 1634073792
+    "max_memory_bytes": 1616420928
   },
   "engine_requested": "OSS",
   "skipped_rules": [],

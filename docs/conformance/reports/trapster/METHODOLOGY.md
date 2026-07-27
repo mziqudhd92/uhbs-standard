@@ -8,10 +8,10 @@
 
 Only protocols with a dedicated UHBS harness plugin (or intentional generic TCP mapping) were scored:
 
-- **FTP** — quick 41.94/F, full 49.71/F
-- **HTTP** — quick 40.74/F, full 49.82/F
-- **SSH** — quick 25.92/F, full 30.24/F
-- **Telnet** — quick 47.00/F, full 57.00/D
+- **FTP** — quick 43.37/F, full 51.78/D
+- **HTTP** — quick 50.13/D, full 63.33/D
+- **SSH** — quick 40.06/F, full 44.38/F
+- **Telnet** — quick 52.49/D, full 64.9/D
 
 Other services the product may advertise (for example MCP, DNS, RDP, MySQL without a UHBS plugin path in this lab) were **not** graded as separate UHQS targets.
 

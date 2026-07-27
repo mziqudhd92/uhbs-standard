@@ -3,20 +3,24 @@
   "artifacts": [
     {
       "path": "REPORT.txt",
-      "sha256": "b1726b38afb8d58e3bd1815d3fa26573df85b9f1288542604b27a8818fa445bb"
+      "sha256": "00916735bebd6a15336014a55e28edb67b61e30c7566820915b3ee7ffd63eead"
     },
     {
       "path": "SCORECARD.txt",
-      "sha256": "b1726b38afb8d58e3bd1815d3fa26573df85b9f1288542604b27a8818fa445bb"
+      "sha256": "00916735bebd6a15336014a55e28edb67b61e30c7566820915b3ee7ffd63eead"
     },
     {
       "path": "report.json",
-      "sha256": "9f0e20c1719c393cafb1874fe79fd34c236661bf05e31527fc7cb21d66c793fd"
+      "sha256": "1b1d81f3833810ab322e3dd0ce04009a92f7387d59725918ed5553c64772a8cc"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "00916735bebd6a15336014a55e28edb67b61e30c7566820915b3ee7ffd63eead"
     }
   ],
   "extra": {
     "target": "trapster-telnet",
-    "uhqs": 47.0,
-    "grade": "GRADE F (Fail)"
+    "uhqs": 52.49,
+    "grade": "GRADE D (Needs Remediation)"
   }
 }
