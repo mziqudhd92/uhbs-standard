@@ -2,16 +2,24 @@
   "uhbs_version": "4.0.0",
   "artifacts": [
     {
-      "path": "SCORECARD.txt",
-      "sha256": "38bbf36aa0982ef8ef1355053b15488d8577ffa699726e71c8e79af40b482acf"
+      "path": "README.md",
+      "sha256": "f83e3d6b0092b7cb1f75fd3622e22f1517b3fd47655dcc348bf9a3202f1976c3"
     },
     {
       "path": "REPORT.txt",
-      "sha256": "38bbf36aa0982ef8ef1355053b15488d8577ffa699726e71c8e79af40b482acf"
+      "sha256": "73a862cb86b7f908e310750bb7006eec1ee77d491b25a862fe54d3e882c245b9"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "73a862cb86b7f908e310750bb7006eec1ee77d491b25a862fe54d3e882c245b9"
     },
     {
       "path": "report.json",
-      "sha256": "4decd3711311278cba4a4bb721c7147849d4d6d74cf87d7879219eb6dfff6872"
+      "sha256": "f3b6dd08a00e9c02f3bcd93b733a014b299d06c76988d6d6bc319e2be1b44ba9"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "e30c630187238bd1a2899011ec0be8df686843a5523446a5a37b3e6bed1f996c"
     },
     {
       "path": "uhbs-run.log",
@@ -20,7 +28,7 @@
   ],
   "extra": {
     "target": "opencanary-telnet",
-    "uhqs": 47.35,
-    "grade": "GRADE F (Fail)"
+    "uhqs": 52.83,
+    "grade": "GRADE D (Needs Remediation)"
   }
 }

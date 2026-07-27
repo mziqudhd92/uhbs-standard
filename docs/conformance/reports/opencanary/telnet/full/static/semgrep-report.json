@@ -1557,12 +1557,12 @@
   },
   "time": {
     "rules": [],
-    "rules_parse_time": 0.315234899520874,
+    "rules_parse_time": 2.145936965942383,
     "profiling_times": {
-      "config_time": 1.0132927894592285,
-      "core_time": 1.5107293128967285,
-      "ignores_time": 0.0007154941558837891,
-      "total_time": 2.5289804935455322
+      "config_time": 3.379260778427124,
+      "core_time": 10.018978595733643,
+      "ignores_time": 0.0060977935791015625,
+      "total_time": 14.033135890960693
     },
     "parsing_time": {
       "total_time": 0.0,
@@ -1577,16 +1577,45 @@
       "very_slow_files": []
     },
     "scanning_time": {
-      "total_time": 5.200621843338013,
+      "total_time": 32.520771503448486,
       "per_file_time": {
-        "mean": 0.021943552081594993,
-        "std_dev": 0.004030468442711973
+        "mean": 0.1372184451622299,
+        "std_dev": 0.203614674507831
       },
       "very_slow_stats": {
-        "time_ratio": 0.0,
-        "count_ratio": 0.0
+        "time_ratio": 0.5109272369770643,
+        "count_ratio": 0.029535864978902954
       },
-      "very_slow_files": []
+      "very_slow_files": [
+        {
+          "fpath": "build_scripts/generate_macOS_launchctl_service_files.py",
+          "ftime": 1.7353858947753906
+        },
+        {
+          "fpath": "opencanary/modules/snmp.py",
+          "ftime": 1.8086950778961182
+        },
+        {
+          "fpath": "opencanary/modules/telnet.py",
+          "ftime": 1.8823089599609375
+        },
+        {
+          "fpath": "opencanary/modules/httpproxy.py",
+          "ftime": 2.313735008239746
+        },
+        {
+          "fpath": "opencanary/modules/des.py",
+          "ftime": 2.336919069290161
+        },
+        {
+          "fpath": "opencanary/modules/redis.py",
+          "ftime": 3.0479609966278076
+        },
+        {
+          "fpath": "opencanary/logger.py",
+          "ftime": 3.4907429218292236
+        }
+      ]
     },
     "matching_time": {
       "total_time": 0.0,
@@ -1616,6 +1645,42 @@
       {
         "error_type": "Fixpoint timeout",
         "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at build_scripts/generate_macOS_launchctl_service_files.py:1:0 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "build_scripts/generate_macOS_launchctl_service_files.py",
+          "start": {
+            "line": 1,
+            "col": 1,
+            "offset": 0
+          },
+          "end": {
+            "line": 1,
+            "col": 1,
+            "offset": 0
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at opencanary/modules/portscan.py:20:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "opencanary/modules/portscan.py",
+          "start": {
+            "line": 20,
+            "col": 9,
+            "offset": 567
+          },
+          "end": {
+            "line": 20,
+            "col": 20,
+            "offset": 578
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
         "message": "Fixpoint timeout while performing taint analysis at opencanary/modules/samba.py:12:12 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
         "location": {
           "path": "opencanary/modules/samba.py",
@@ -1642,7 +1707,7 @@
     },
     "targets": [],
     "total_bytes": 0,
-    "max_memory_bytes": 1085514240
+    "max_memory_bytes": 1073888384
   },
   "engine_requested": "OSS",
   "skipped_rules": [],
