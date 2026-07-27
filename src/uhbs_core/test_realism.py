@@ -15,6 +15,7 @@ from typing import List, Optional
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
+from uhbs_core.check_scoring import score_checks as _mean  # noqa: E402
 from uhbs_core.hqs import pass_status  # noqa: E402
 from uhbs_core.models import CheckResult, ModuleResult, TargetSpec  # noqa: E402
 from uhbs_core.protocols import get_plugin  # noqa: E402
@@ -27,13 +28,8 @@ W_STATE = 0.40
 W_PAYLOAD = 0.35
 W_FUZZ = 0.25
 
-
-def _mean(checks: List[CheckResult]) -> float:
-    if not checks:
-        return 0.0
-    if any(c.score > 0 for c in checks):
-        return min(100.0, sum(c.score for c in checks) / len(checks))
-    return 100.0 * sum(1 for c in checks if c.passed) / len(checks)
+# NOTE: _mean now delegates to uhbs_core.check_scoring.score_checks (circuit
+# breaker for critical=True gate failures + geometric mean otherwise).
 
 
 def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:

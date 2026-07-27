@@ -6,7 +6,7 @@ target_metadata:
   protocols: ["telnet"]
 
 performance_baseline:
-  expected_p95_latency_ms: 150
+  expected_p95_latency_ms: 500
   strict_rfc_enforcement: true
   timing_samples: 50
 

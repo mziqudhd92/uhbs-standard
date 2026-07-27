@@ -67,6 +67,13 @@ class CheckResult:
     detail: str = ""
     score: float = 0.0
     evidence: list[str] = field(default_factory=list)
+    # Circuit-breaker gate (2026-07-27 architecture review): a critical=True
+    # check that fails hard-caps the whole check-list aggregate to 0.0 via
+    # uhbs_core.check_scoring.score_checks, instead of being diluted by an
+    # arithmetic/geometric mean with unrelated passing checks. Reserve this
+    # for genuine security gatekeepers (auth rejection, protocol header
+    # validation, data-plane integrity) — not every check should be critical.
+    critical: bool = False
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)

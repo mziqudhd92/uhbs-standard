@@ -35,21 +35,24 @@ class RFCSuiteResult:
 
     @property
     def score(self) -> float:
+        """Suite score on a 0–100 scale.
+
+        Each check is itself 0–100 (see probe_* below). Aggregation uses the
+        shared Module A/B geometric-mean helper so a perfect suite scores
+        ~100 and a single hard fail still visibly drags the result — the
+        prior ``sum(c.score)`` path assumed partial-point checks that added
+        up to 100 and silently capped a perfect multi-check suite once
+        scores were normalized.
+        """
         if self.skipped or not self.checks:
             return 0.0
-        return min(100.0, sum(c.score for c in self.checks))
+        from uhbs_core.check_scoring import score_checks
+
+        return score_checks(self.checks)
 
     @property
     def max_score(self) -> float:
-        # nominal max if all checks pass (used for renormalization)
-        return sum(
-            {
-                "ssh": 100.0,
-                "smtp": 100.0,
-                "http": 100.0,
-            }.get(self.protocol, 100.0)
-            for _ in [0]
-        )
+        return 100.0
 
 
 def _recv_some(sock: socket.socket, timeout: float = 3.0, max_bytes: int = 65535) -> bytes:
@@ -133,7 +136,8 @@ def probe_ssh_rfc4253(host: str, port: int) -> RFCSuiteResult:
                 if first_line
                 else (err or "no banner")
             ),
-            score=25.0 if (ssh20 and crlf) else (10.0 if ssh20 else 0.0),
+            # Each check is 0–100 so geometric-mean aggregation stays meaningful.
+            score=100.0 if (ssh20 and crlf) else (40.0 if ssh20 else 0.0),
             evidence=[raw[:120].hex()],
         )
     )
@@ -160,7 +164,7 @@ def probe_ssh_rfc4253(host: str, port: int) -> RFCSuiteResult:
             team="blue",
             passed=kex,
             detail="KEXINIT observed after version exchange" if kex else (err2 or "no KEXINIT"),
-            score=25.0 if kex else 0.0,
+            score=100.0 if kex else 0.0,
         )
     )
 
@@ -176,7 +180,7 @@ def probe_ssh_rfc4253(host: str, port: int) -> RFCSuiteResult:
             team="blue",
             passed=alive,
             detail="handled SSH-1.5 probe without hang" if alive else (err3 or "failed"),
-            score=20.0 if alive else 0.0,
+            score=100.0 if alive else 0.0,
         )
     )
 
@@ -191,7 +195,7 @@ def probe_ssh_rfc4253(host: str, port: int) -> RFCSuiteResult:
             team="red",
             passed=not continued,
             detail="null in client ID did not proceed to KEX" if not continued else "accepted null ID",
-            score=30.0 if not continued else 0.0,
+            score=100.0 if not continued else 0.0,
             evidence=[err4 or raw4[:40].hex()],
         )
     )
@@ -225,7 +229,7 @@ def probe_smtp_rfc5321(host: str, port: int) -> RFCSuiteResult:
             team="blue",
             passed=bool(codes) and codes[0] == 220,
             detail=(greet[:120].decode("utf-8", "replace") if greet else err or "no greeting"),
-            score=15.0 if (codes and codes[0] == 220) else 0.0,
+            score=100.0 if (codes and codes[0] == 220) else 0.0,
         )
     )
 
@@ -241,7 +245,7 @@ def probe_smtp_rfc5321(host: str, port: int) -> RFCSuiteResult:
             team="blue",
             passed=has_503,
             detail="503 on DATA before MAIL" if has_503 else f"codes={codes} (want 503)",
-            score=25.0 if has_503 else 0.0,
+            score=100.0 if has_503 else 0.0,
             evidence=[raw[:300].decode("utf-8", "replace")],
         )
     )
@@ -257,7 +261,7 @@ def probe_smtp_rfc5321(host: str, port: int) -> RFCSuiteResult:
             team="blue",
             passed=has_503,
             detail="503 on RCPT before MAIL" if has_503 else f"codes={codes} (want 503)",
-            score=20.0 if has_503 else 0.0,
+            score=100.0 if has_503 else 0.0,
         )
     )
 
@@ -274,7 +278,7 @@ def probe_smtp_rfc5321(host: str, port: int) -> RFCSuiteResult:
             team="blue",
             passed=ehlo_ok,
             detail="EHLO returned 250 capabilities" if ehlo_ok else "EHLO negotiation weak/missing",
-            score=20.0 if ehlo_ok else 0.0,
+            score=100.0 if ehlo_ok else 0.0,
             evidence=[text[:300]],
         )
     )
@@ -291,7 +295,7 @@ def probe_smtp_rfc5321(host: str, port: int) -> RFCSuiteResult:
             team="red",
             passed=bool(codes),
             detail=f"codes={codes}" if codes else (err or "no response to bare LF"),
-            score=10.0 if codes else 0.0,
+            score=100.0 if codes else 0.0,
         )
     )
 
@@ -306,7 +310,7 @@ def probe_smtp_rfc5321(host: str, port: int) -> RFCSuiteResult:
             team="blue",
             passed=unknown_ok,
             detail="500/502 on unknown verb" if unknown_ok else f"codes={codes}",
-            score=10.0 if unknown_ok else 0.0,
+            score=100.0 if unknown_ok else 0.0,
         )
     )
     _ = safe
@@ -337,7 +341,7 @@ def probe_http_rfc9110(host: str, port: int) -> RFCSuiteResult:
             team="blue",
             passed=m is not None,
             detail=(m.group(0).decode() if m else (err or raw[:80].decode("utf-8", "replace"))),
-            score=20.0 if m else 0.0,
+            score=100.0 if m else 0.0,
         )
     )
 
@@ -354,7 +358,7 @@ def probe_http_rfc9110(host: str, port: int) -> RFCSuiteResult:
             team="red",
             passed=ok,
             detail=f"status={code}" if code is not None else (err or "connection closed"),
-            score=25.0 if ok else 0.0,
+            score=100.0 if ok else 0.0,
             evidence=[raw[:200].decode("utf-8", "replace")],
         )
     )
@@ -370,7 +374,7 @@ def probe_http_rfc9110(host: str, port: int) -> RFCSuiteResult:
             team="blue",
             passed=m is not None or err == "",
             detail=(m.group(0).decode() if m else "accepted/closed without HTTP status"),
-            score=15.0 if (m is not None or raw == b"") else 5.0,
+            score=100.0 if (m is not None or raw == b"") else 20.0,
         )
     )
 
@@ -391,7 +395,7 @@ def probe_http_rfc9110(host: str, port: int) -> RFCSuiteResult:
             team="red",
             passed=ok,
             detail=f"status={code}" if code is not None else "rejected/closed",
-            score=20.0 if ok else 0.0,
+            score=100.0 if ok else 0.0,
         )
     )
 
@@ -407,7 +411,7 @@ def probe_http_rfc9110(host: str, port: int) -> RFCSuiteResult:
             team="blue",
             passed=ok,
             detail=f"status={code} (want 400/505 or close)" if code is not None else "closed",
-            score=20.0 if ok else 5.0,
+            score=100.0 if ok else 20.0,
         )
     )
     return suite
@@ -436,7 +440,7 @@ def aggregate_rfc_score(suites: list[RFCSuiteResult]) -> tuple[float, list[Check
                     team="blue",
                     passed=True,
                     detail=s.skip_reason or "skipped",
-                    score=0.0,
+                    score=100.0,  # N/A skip — not a fidelity failure
                 )
             )
             continue

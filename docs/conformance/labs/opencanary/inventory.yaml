@@ -1,6 +1,5 @@
-# Multi-protocol inventory for thinkst/opencanary (UHBS-native plugins).
-# SMB requires Samba and is not graded in this Docker lab.
-# Config: opencanary.conf
+# Multi-protocol inventory for thinkst/opencanary + Samba sidecar (SMB :445).
+# OpenCanary smb.* watches Samba audit logs; UHBS grades TCP SMB against the sidecar.
 sites:
   opencanary-http:
     kind: generic
@@ -68,3 +67,112 @@ sites:
     telemetry_dir: /telemetry
     tps: /work/docs/conformance/labs/opencanary/low_interaction_redis_full.yaml
     container_image: thinkst/opencanary:latest
+  opencanary-mysql:
+    kind: generic
+    class: Low-Interaction
+    host: opencanary-lab
+    protocol: mysql
+    protocols: [mysql]
+    port: 3306
+    ports: {mysql: 3306}
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/opencanary/low_interaction_mysql_full.yaml
+    container_image: thinkst/opencanary:latest
+  opencanary-rdp:
+    kind: generic
+    class: Low-Interaction
+    host: opencanary-lab
+    protocol: rdp
+    protocols: [rdp]
+    port: 3389
+    ports: {rdp: 3389}
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/opencanary/low_interaction_rdp_full.yaml
+    container_image: thinkst/opencanary:latest
+  opencanary-sip:
+    kind: generic
+    class: Low-Interaction
+    host: opencanary-lab
+    protocol: sip
+    protocols: [sip]
+    port: 5060
+    ports: {sip: 5060}
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/opencanary/low_interaction_sip_full.yaml
+    container_image: thinkst/opencanary:latest
+  opencanary-snmp:
+    kind: generic
+    class: Low-Interaction
+    host: opencanary-lab
+    protocol: snmp
+    protocols: [snmp]
+    port: 161
+    ports: {snmp: 161}
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/opencanary/low_interaction_snmp_full.yaml
+    container_image: thinkst/opencanary:latest
+  opencanary-ntp:
+    kind: generic
+    class: Low-Interaction
+    host: opencanary-lab
+    protocol: ntp
+    protocols: [ntp]
+    port: 123
+    ports: {ntp: 123}
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/opencanary/low_interaction_ntp_full.yaml
+    container_image: thinkst/opencanary:latest
+  opencanary-tftp:
+    kind: generic
+    class: Low-Interaction
+    host: opencanary-lab
+    protocol: tftp
+    protocols: [tftp]
+    port: 69
+    ports: {tftp: 69}
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/opencanary/low_interaction_tftp_full.yaml
+    container_image: thinkst/opencanary:latest
+  opencanary-vnc:
+    kind: generic
+    class: Low-Interaction
+    host: opencanary-lab
+    protocol: vnc
+    protocols: [vnc]
+    port: 5900
+    ports: {vnc: 5900}
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/opencanary/low_interaction_vnc_full.yaml
+    container_image: thinkst/opencanary:latest
+  opencanary-git:
+    kind: generic
+    class: Low-Interaction
+    host: opencanary-lab
+    protocol: git
+    protocols: [git]
+    port: 9418
+    ports: {git: 9418}
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/opencanary/low_interaction_git_full.yaml
+    container_image: thinkst/opencanary:latest
+  opencanary-smb:
+    kind: generic
+    class: Low-Interaction
+    host: opencanary-smb
+    protocol: smb
+    protocols: [smb]
+    port: 445
+    ports: {smb: 445}
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/opencanary/low_interaction_smb_full.yaml
+    container_image: dperson/samba
+    notes: "OpenCanary smb module is Samba audit-log based; TCP :445 graded on Samba sidecar"

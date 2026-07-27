@@ -15,12 +15,21 @@ share version **4.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[
   OpenCanary (quick + full)
 - Site-root AEO discovery: `llms-full.txt`, `humans.txt`, `.well-known/security.txt`,
   `server.json` (in addition to root `llms.txt`)
+- Protocol plugins for git, mysql, ntp, rdp, sip, snmp, tftp, vnc; plugin SDK,
+  check-scoring helpers, and OpenCanary multi-protocol lab TPS/inventory coverage
+- Architecture notes: protocol-plugin audit, plugin contracts, CI baseline,
+  supply-chain
 
 ### Changed
 - GitHub Pages root is the React landing hub; MkDocs deploys under `/mkdocs/`
 - Project maturity wording: **draft** → **beta**
 - Cowrie live fixture documented as UHQS **48.70** (worked-example **46.97** kept in tests)
 - ROADMAP evaluation corpus ≥5 OSS targets marked complete
+- **Module E P95 defaults** are class/protocol-aware when TPS omits
+  `expected_p95_latency_ms` (e.g. SSH **3000 ms**, Telnet **500 ms**,
+  Low-Interaction class **2000 ms**)
+- Lab TPS for SSH/Telnet set realistic P95 baselines (Cowrie / OpenCanary /
+  Beelzebub / Trapster)
 
 ### Fixed
 - **Protocol-agnostic lab binding:** TPS no longer silently overwrites inventory/CLI
@@ -30,6 +39,12 @@ share version **4.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[
 - Module D never Paramikos the primary application port unless `ports.ssh` /
   `ssh_port` is explicit (HTTP/PJL/… decoys safe)
 - Stale docs that labeled Cowrie / the Low-Interaction fixture as UHQS 46.97
+- **RFC/timing CheckResult scores normalized to 0–100** so geometric-mean
+  Module A aggregation no longer silently caps suites designed as sum-to-100
+  partial points
+- **Module C JSONL fallback:** telemetry loader accepts `.json` event files
+  (one JSON object per line) in addition to `.jsonl`
+- Omit KS timing check when `gold_baseline_host` is unset (no false fail)
 
 ## [4.0.0] — 2026-07-26
 

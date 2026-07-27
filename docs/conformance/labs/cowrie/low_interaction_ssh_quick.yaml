@@ -1,4 +1,4 @@
-# Quick TPS for Cowrie — Low-Interaction SSH (also capped by UHBS_QUICK).
+# Quick TPS — Low-Interaction SSH (also capped by UHBS_QUICK).
 target_metadata:
   name: "Low-Interaction-SSH-Telnet-Emulator"
   class: "Low-Interaction"
@@ -6,7 +6,7 @@ target_metadata:
   protocols: ["ssh"]
 
 performance_baseline:
-  expected_p95_latency_ms: 100
+  expected_p95_latency_ms: 3000
   strict_rfc_enforcement: true
   timing_samples: 50
 

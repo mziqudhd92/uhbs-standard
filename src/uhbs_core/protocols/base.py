@@ -58,20 +58,23 @@ class ProtocolPlugin(ABC):
 
         med = statistics.median(lat)
         jitter = statistics.pstdev(lat) if len(lat) > 1 else 0.0
+        sample_ok = len(lat) >= min(samples, 30)
+        jitter_ok = jitter < max(2.0, 0.5 * med)
         checks: list[CheckResult] = [
             CheckResult(
                 id=f"{self.name}.timing.sample_size",
                 team="blue",
-                passed=len(lat) >= min(samples, 30),
+                passed=sample_ok,
                 detail=f"n={len(lat)} requested={samples} errors={errors}",
-                score=20.0 if len(lat) >= min(samples, 30) else 5.0,
+                # 0–100 scale (geometric-mean aggregation requires this).
+                score=100.0 if sample_ok else 20.0,
             ),
             CheckResult(
                 id=f"{self.name}.timing.iat_jitter",
                 team="red",
-                passed=jitter < max(2.0, 0.5 * med),
+                passed=jitter_ok,
                 detail=f"median={med:.3f}ms pstdev={jitter:.3f}ms (target jitter often <2ms vs native)",
-                score=30.0 if jitter < max(2.0, 0.5 * med) else 10.0,
+                score=100.0 if jitter_ok else 30.0,
             ),
         ]
 
@@ -87,50 +90,43 @@ class ProtocolPlugin(ABC):
         elif target.baseline_native_host:
             baseline_host = target.baseline_native_host
 
-        if baseline_host:
-            # Same port on gold baseline (native service) when available
-            b_lat, b_err = sample_connect_latencies(
-                baseline_host, baseline_port, min(samples, len(lat))
+        if not baseline_host:
+            # No gold configured — omit KS rather than recording a soft-fail.
+            # Operators MAY set performance_baseline.gold_baseline_host for a
+            # native peer comparison; absence is not a fidelity defect.
+            return checks
+
+        # Same port on gold baseline (native service) when available
+        b_lat, b_err = sample_connect_latencies(
+            baseline_host, baseline_port, min(samples, len(lat))
+        )
+        if len(b_lat) >= 10:
+            d, p = ks_2samp(lat, b_lat)
+            # UHBS: distribution should match baseline — fail if D large / p tiny
+            ok = d < 0.35 or p > 0.05
+            checks.append(
+                CheckResult(
+                    id=f"{self.name}.timing.ks_vs_gold",
+                    team="red",
+                    passed=ok,
+                    detail=(
+                        f"KS D={d:.3f} p≈{p:.3f} vs gold {baseline_host}:{baseline_port} "
+                        f"(n_base={len(b_lat)} err={b_err})"
+                    ),
+                    score=100.0 if ok else 40.0,
+                )
             )
-            if len(b_lat) >= 10:
-                d, p = ks_2samp(lat, b_lat)
-                # UHBS: distribution should match baseline — fail if D large / p tiny
-                ok = d < 0.35 or p > 0.05
-                checks.append(
-                    CheckResult(
-                        id=f"{self.name}.timing.ks_vs_gold",
-                        team="red",
-                        passed=ok,
-                        detail=(
-                            f"KS D={d:.3f} p≈{p:.3f} vs gold {baseline_host}:{baseline_port} "
-                            f"(n_base={len(b_lat)} err={b_err})"
-                        ),
-                        score=50.0 if ok else 25.0,  # measured mismatch ≠ probe failure
-                    )
-                )
-            else:
-                checks.append(
-                    CheckResult(
-                        id=f"{self.name}.timing.ks_vs_gold",
-                        team="red",
-                        passed=False,
-                        detail=(
-                            f"gold baseline {baseline_host}:{baseline_port} "
-                            f"unreachable/insufficient samples"
-                        ),
-                        # Same partial credit as "no gold configured" — do not
-                        # punish harder for a missing lab sidecar.
-                        score=25.0,
-                    )
-                )
         else:
             checks.append(
                 CheckResult(
                     id=f"{self.name}.timing.ks_vs_gold",
-                    team="blue",
+                    team="red",
                     passed=False,
-                    detail="no gold_baseline_host in TPS — KS compare skipped (set performance_baseline.gold_baseline_host)",
-                    score=25.0,  # partial credit: self-jitter still counted
+                    detail=(
+                        f"gold baseline {baseline_host}:{baseline_port} "
+                        f"unreachable/insufficient samples"
+                    ),
+                    score=40.0,
                 )
             )
         return checks

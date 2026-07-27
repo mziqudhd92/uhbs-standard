@@ -5,9 +5,11 @@ target_metadata:
   protocols: ["ssh", "telnet"]
 
 performance_baseline:
-  expected_p95_latency_ms: 100
+  # Shell-emulator SSH is multi-second under load; 100ms silently fails Module E.
+  expected_p95_latency_ms: 3000
   strict_rfc_enforcement: true
   timing_samples: 30
+  # Optional: set gold_baseline_host to a native sshd for KS/HASSH compare.
 
 safety_boundary:
   allowed_outbound_traffic: false

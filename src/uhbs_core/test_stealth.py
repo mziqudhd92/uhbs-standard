@@ -15,6 +15,7 @@ from typing import List, Optional
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
+from uhbs_core.check_scoring import score_checks as _score_checks  # noqa: E402
 from uhbs_core.hqs import pass_status  # noqa: E402
 from uhbs_core.models import CheckResult, ModuleResult, TargetSpec  # noqa: E402
 from uhbs_core.protocols import get_plugin, list_protocols  # noqa: E402
@@ -24,14 +25,10 @@ W_FSM = 0.40
 W_NEGO = 0.30
 W_TIMING = 0.30
 
-
-def _score_checks(checks: List[CheckResult]) -> float:
-    """Score a check list: mean of check scores, else pass-rate × 100."""
-    if not checks:
-        return 0.0
-    if any(c.score > 0 for c in checks):
-        return min(100.0, sum(c.score for c in checks) / len(checks))
-    return 100.0 * sum(1 for c in checks if c.passed) / len(checks)
+# NOTE: _score_checks now delegates to uhbs_core.check_scoring.score_checks
+# (circuit breaker for critical=True gate failures + geometric mean for the
+# rest — see that module's docstring). Kept as a local alias so the rest of
+# this file, and any external callers, don't need to change.
 
 
 def run(

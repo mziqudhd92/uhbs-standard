@@ -14,17 +14,38 @@ class RedisPlugin(ProtocolPlugin):
     def probe_fsm(
         self, host: str, port: int, target: TargetSpec, tps: TPS | None
     ) -> list[CheckResult]:
-        # Nested/invalid RESP should error, not crash
+        """A1 — an unknown/invalid RESP verb must be rejected with a real
+        RESP error reply (``-ERR ...``), not silently accepted or echoed.
+
+        Architecture note (2026-07-27 review): the previous version set
+        ``passed=True`` for several reply shapes (``-``, ``+``, empty,
+        ``*``) but only ever assigned ``score=100`` for the ``-ERR`` case —
+        every other "passing" shape scored 40. A boolean that says "pass"
+        while the number says "40/100" is a contract violation for anything
+        consuming this data downstream (dashboards, other agents, CI
+        gates). ``passed`` is now derived directly from the score band
+        (``passed = score >= 70``) so the two can never disagree.
+        """
         raw, _, err = _transact(host, port, b"Garbage\r\n", recv_first=False)
         text = raw.decode("utf-8", "replace")
-        ok = text.startswith("-") or text.startswith("+") or raw == b"" or text.startswith("*")
+        is_resp_error = text.startswith("-") or "ERR" in text
+        closed_cleanly = raw == b"" or bool(err)
+        if is_resp_error:
+            score = 100.0
+            detail = text[:120]
+        elif closed_cleanly:
+            score = 60.0  # didn't crash/hang, but also didn't emit a real RESP error
+            detail = err or "connection closed on invalid verb (no RESP error emitted)"
+        else:
+            score = 20.0  # replied, but not with a real RESP error — weak fidelity
+            detail = text[:120]
         return [
             CheckResult(
                 id="redis.fsm.invalid_verb",
                 team="blue",
-                passed=ok or bool(err),
-                detail=text[:120] if text else (err or "closed"),
-                score=100.0 if (text.startswith("-") or "ERR" in text) else 40.0,
+                passed=score >= 70.0,
+                detail=detail,
+                score=score,
             )
         ]
 

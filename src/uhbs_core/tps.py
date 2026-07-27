@@ -22,6 +22,46 @@ except ImportError:  # pragma: no cover
 
 PROFILES_DIR = Path(__file__).resolve().parent / "profiles" / "tps"
 
+# Class-aware Module E P95 defaults (ms). Interactive/shell decoys are not
+# sub-100ms TCP services; a 100ms bar silently fails every medium-interaction
+# SSH emulator regardless of product. Explicit TPS values always win.
+CLASS_DEFAULT_P95_MS: dict[str, float] = {
+    "Low-Interaction": 2000.0,
+    "POSIX-Shell": 2000.0,
+    "GenAI-Shell": 3000.0,
+    "ICS-SCADA": 500.0,
+    "Web-API": 150.0,
+    "Database": 200.0,
+}
+
+# Protocol overrides applied when TPS omits expected_p95_latency_ms (or when
+# building default_tps_for_class). SSH handshake + fake FS is typically
+# multi-second under load; Telnet is lighter.
+PROTOCOL_DEFAULT_P95_MS: dict[str, float] = {
+    "ssh": 3000.0,
+    "telnet": 500.0,
+    "http": 150.0,
+    "https": 200.0,
+    "smtp": 300.0,
+    "ftp": 500.0,
+    "mysql": 300.0,
+    "redis": 100.0,
+    "modbus": 200.0,
+}
+
+
+def default_p95_latency_ms(
+    profile_class: str | None = None,
+    protocol: str | None = None,
+) -> float:
+    """Vendor-agnostic Module E latency expectation for class/protocol."""
+    proto = protocol.strip().lower() if protocol and protocol.strip() else None
+    if proto and proto in PROTOCOL_DEFAULT_P95_MS:
+        return float(PROTOCOL_DEFAULT_P95_MS[proto])
+    if profile_class and profile_class in CLASS_DEFAULT_P95_MS:
+        return float(CLASS_DEFAULT_P95_MS[profile_class])
+    return 150.0
+
 
 class ProtocolConflictError(ValueError):
     """TPS protocol set conflicts with an explicitly configured target protocol."""
@@ -77,18 +117,24 @@ def load_tps(path: Path) -> TPS:
     if protocol is None and protocols:
         protocol = protocols[0]
 
+    profile_class = str(meta.get("class") or meta.get("profile_class") or "POSIX-Shell")
     gold_protos = perf.get("gold_baseline_protocols") or meta.get("gold_baseline_protocols")
     if gold_protos is None:
         # Only default gold compare to SSH when the TPS itself is SSH-scoped.
         ssh_scoped = protocol == "ssh" or "ssh" in {p.lower() for p in protocols}
         gold_protos = ["ssh"] if ssh_scoped else []
 
+    if "expected_p95_latency_ms" in perf:
+        p95 = float(perf["expected_p95_latency_ms"])
+    else:
+        p95 = default_p95_latency_ms(profile_class, protocol)
+
     return TPS(
         name=str(meta.get("name") or path.stem),
-        profile_class=str(meta.get("class") or meta.get("profile_class") or "POSIX-Shell"),
+        profile_class=profile_class,
         protocol=protocol,
         protocols=protocols,
-        expected_p95_latency_ms=float(perf.get("expected_p95_latency_ms", 150)),
+        expected_p95_latency_ms=p95,
         strict_rfc_enforcement=bool(perf.get("strict_rfc_enforcement", True)),
         allowed_outbound_traffic=bool(safety.get("allowed_outbound_traffic", False)),
         allow_local_code_execution=bool(safety.get("allow_local_code_execution", False)),
@@ -175,4 +221,5 @@ def default_tps_for_class(profile_class: str, protocol: str | None = None) -> TP
         profile_class=profile_class,
         protocol=proto,
         protocols=[proto] if proto else [],
+        expected_p95_latency_ms=default_p95_latency_ms(profile_class, proto),
     )

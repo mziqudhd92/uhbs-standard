@@ -19,7 +19,21 @@ def test_version_matches_spec() -> None:
 
 def test_protocol_plugins_registered() -> None:
     names = set(list_protocols())
-    assert {"ssh", "http", "modbus", "generic"}.issubset(names)
+    assert {
+        "ssh",
+        "http",
+        "modbus",
+        "generic",
+        "mysql",
+        "rdp",
+        "sip",
+        "snmp",
+        "ntp",
+        "tftp",
+        "vnc",
+        "git",
+        "smb",
+    }.issubset(names)
 
 
 def test_tps_profiles_packaged() -> None:

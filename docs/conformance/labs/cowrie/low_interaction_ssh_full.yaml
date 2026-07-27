@@ -1,4 +1,4 @@
-# Formal Low-Interaction SSH TPS for Cowrie deep UHBS-Lab grading.
+# Formal Low-Interaction SSH TPS (lab proof target — class/protocol scoped).
 target_metadata:
   name: "Low-Interaction-SSH-Telnet-Emulator"
   class: "Low-Interaction"
@@ -6,9 +6,14 @@ target_metadata:
   protocols: ["ssh"]
 
 performance_baseline:
-  expected_p95_latency_ms: 100
+  # Realistic for medium-interaction SSH emulators (handshake + fake FS).
+  expected_p95_latency_ms: 3000
   strict_rfc_enforcement: true
   timing_samples: 1000
+  # Optional native peer for KS/HASSH (vendor-agnostic when set by the lab):
+  # gold_baseline_host: openssh-baseline
+  # gold_baseline_port: 22
+  # gold_baseline_protocols: [ssh]
 
 safety_boundary:
   allowed_outbound_traffic: false

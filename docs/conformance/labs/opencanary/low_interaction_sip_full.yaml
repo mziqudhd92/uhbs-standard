@@ -1,0 +1,15 @@
+# Full TPS — OpenCanary sip
+target_metadata:
+  name: "Low-Interaction-SIP"
+  class: "Low-Interaction"
+  protocol: "sip"
+  protocols: ["sip"]
+
+performance_baseline:
+  expected_p95_latency_ms: 150
+  strict_rfc_enforcement: true
+  timing_samples: 200
+
+safety_boundary:
+  allowed_outbound_traffic: false
+  allow_local_code_execution: false

@@ -46,7 +46,29 @@ _STIX_TYPES = {
 }
 
 
+def _iter_jsonl_lines(text: str, *, limit: int, rows: list[Any]) -> None:
+    """Append JSON objects parsed from newline-delimited JSON text."""
+    for line in text.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            rows.append(json.loads(line))
+        except json.JSONDecodeError:
+            rows.append({"__malformed__": line[:120]})
+        if len(rows) >= limit:
+            return
+
+
 def _iter_records(path: Path, limit: int = 800) -> List[Any]:
+    """Load telemetry records from a file or directory.
+
+    Accepts ``*.jsonl`` (one JSON object per line) and ``*.json``. Many
+    honeypot daemons write JSONL into a file named ``*.json``; when a
+    whole-file JSON parse fails with trailing data, we fall back to
+    line-delimited parsing so schema gates see real events instead of a
+    single false ``malformed`` row.
+    """
     rows: List[Any] = []
     files: List[Path]
     if path.is_file():
@@ -64,18 +86,17 @@ def _iter_records(path: Path, limit: int = 800) -> List[Any]:
             try:
                 rows.append(json.loads(text))
             except json.JSONDecodeError:
-                rows.append({"__malformed__": str(fp)})
-            continue
-        for line in text.splitlines():
-            line = line.strip()
-            if not line:
-                continue
-            try:
-                rows.append(json.loads(line))
-            except json.JSONDecodeError:
-                rows.append({"__malformed__": line[:120]})
+                # Common honeypot layout: JSONL content in a ``.json`` path.
+                before = len(rows)
+                _iter_jsonl_lines(text, limit=limit, rows=rows)
+                if len(rows) == before:
+                    rows.append({"__malformed__": str(fp)})
             if len(rows) >= limit:
                 return rows
+            continue
+        _iter_jsonl_lines(text, limit=limit, rows=rows)
+        if len(rows) >= limit:
+            return rows
     return rows
 
 

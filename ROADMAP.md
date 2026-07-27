@@ -51,7 +51,7 @@ lab inventory and product-specific signal overlays stay out of tree.
 | `test_static_code.py` | Module F — White-Box Static Audit |
 | `models.py` | UHQS formula + profile weights + δ_C |
 | `report.py` | Scorecard layout |
-| `protocols/` | Protocol plugins (ssh, http, ftp, redis, modbus, smb, smtp, telnet, generic) |
+| `protocols/` | Protocol plugins (ssh, http, ftp, redis, modbus, smb, smtp, telnet, mysql, rdp, sip, snmp, ntp, tftp, vnc, git, generic) |
 | `tps.py`, `profiles/tps/*.yaml` | Target Profile Specification |
 | `manifest.py` | Per-run SHA-256 attestation digests |
 
@@ -124,6 +124,9 @@ tables only. Do not publish proprietary lab signal overlays or private host path
 - [x] Round UHQS to **2 decimals**
 - [x] Golden fixtures from sanitized lab scorecards (named only under conformance/)
 - [x] Conformance tests in CI
+- [ ] Pydantic v2 schema validation for `CheckResult`/`ModuleResult`/`ProtocolPlugin`
+      (today: phase-1 advisory lint only — `uhbs_core.contract_validation`,
+      see `docs/architecture/plugin-contracts.md`; not started as a real migration)
 
 ### Phase 3 — Reference implementation (`uhbs-core`) ✅
 
