@@ -1,5 +1,5 @@
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0.1
 ====================================================================================
 Target System         : miniprint
 System Profile Class  : Low-Interaction
@@ -18,6 +18,6 @@ Module E: Scalability & Latency     :  55.0/100       0.10     PARTIAL (P50=1055
 Module F: Static Code Audit         :  70.0/100       0.20     PASSED (semgrep error/critical=1 total=1)
 ------------------------------------------------------------------------------------
 SAFETY GATE MULTIPLIER                : δ_C = 0.81 (C = 90.0 < 95 — exponential penalty)
-FINAL COMPOSITE SCORE (UHQS 4.0)      : 50.43 / 100
+FINAL COMPOSITE SCORE (UHQS 4.0.1)      : 50.43 / 100
 OVERALL EVALUATION GRADE              : GRADE D (Needs Remediation)
 ====================================================================================

@@ -9,7 +9,7 @@
 | Class | Low-Interaction |
 | Protocol | PJL `:9100` |
 | Evaluated | 2026-07-27 (full Docker lab) |
-| Spec | UHBS 4.0.0 |
+| Spec | UHBS 4.0.1 |
 
 ## Module Results
 
@@ -27,7 +27,7 @@
 | Metric | Value |
 | --- | --- |
 | Safety Gate Multiplier \(\delta_C\) | 0.81 (\(C = 90 &lt; 95\)) |
-| **Final Composite Score (UHQS 4.0)** | **50.43 / 100** |
+| **Final Composite Score (UHQS 4.0.1)** | **50.43 / 100** |
 | Grade | **D (Needs Remediation)** |
 | Production baseline (UHQS &gt; 80 + gate) | **NOT MET** |
 

@@ -1,5 +1,5 @@
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0.1
 ====================================================================================
 Target System         : opencanary-tftp
 System Profile Class  : Low-Interaction
@@ -18,6 +18,6 @@ Module E: Scalability & Latency     :  35.0/100       0.10     PARTIAL (P50=1508
 Module F: Static Code Audit         :  70.0/100       0.20     PASSED (bandit HIGH=21)
 ------------------------------------------------------------------------------------
 SAFETY GATE MULTIPLIER                : δ_C = 0.81 (C = 90.0 < 95 — exponential penalty)
-FINAL COMPOSITE SCORE (UHQS 4.0)      : 47.42 / 100
+FINAL COMPOSITE SCORE (UHQS 4.0.1)      : 47.42 / 100
 OVERALL EVALUATION GRADE              : GRADE F (Fail)
 ====================================================================================

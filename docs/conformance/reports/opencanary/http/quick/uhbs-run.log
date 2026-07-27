@@ -1,7 +1,7 @@
 ==> UHBS v4 target=opencanary-http class=Web-API protocols=['http'] phases=['profile', 'static', 'sandbox', 'dynamic', 'score']
     plugins available: ftp, generic, http, modbus, redis, smb, smtp, ssh, telnet
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0.1
 ====================================================================================
 Target System         : opencanary-http
 System Profile Class  : Web-API
@@ -20,7 +20,7 @@ Module E: Scalability & Latency     : 100.0/100       0.15     PASSED (service a
 Module F: Static Code Audit         :  82.7/100       0.20     PASSED (sleep/blocking markers in non-test code≈0)
 ------------------------------------------------------------------------------------
 SAFETY GATE MULTIPLIER                : δ_C = 0.5625 (C = 75.0 < 95 — exponential penalty)
-FINAL COMPOSITE SCORE (UHQS 4.0)      : 41.3 / 100
+FINAL COMPOSITE SCORE (UHQS 4.0.1)      : 41.3 / 100
 OVERALL EVALUATION GRADE              : GRADE F (Fail)
 ====================================================================================
 

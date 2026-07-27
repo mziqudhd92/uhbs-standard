@@ -2,7 +2,7 @@
 
 **Proof label:** [mushorg/conpot](https://github.com/mushorg/conpot)  
 **Class / protocol:** `ICS-SCADA` · Modbus TCP · container port `5020` (host map `502→5020`)  
-**UHBS:** v4.0.0 · evaluation proof only (not an endorsement)
+**UHBS:** v4.0.1 · evaluation proof only (not an endorsement)
 
 Conpot is an **ICS/SCADA honeypot** (default template also enables HTTP, S7, SNMP, BACnet, ENIP, FTP, TFTP, IPMI). This published grade evaluates the **Modbus** listener only — the primary ICS protocol plugin UHBS ships — so results stay comparable to other single-protocol lab reports.
 

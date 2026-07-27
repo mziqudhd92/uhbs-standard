@@ -1,5 +1,5 @@
 {
-  "framework": "Universal Honeypot Benchmarking Standard (UHBS) v4.0",
+  "framework": "Universal Honeypot Benchmarking Standard (UHBS) v4.0.1",
   "evaluation_type": "Full-Spectrum (Static Audit + Dynamic Sandbox)",
   "target": {
     "name": "opencanary-mysql",
@@ -36,7 +36,7 @@
     "profile_class": "Low-Interaction",
     "grade": "GRADE D (Needs Remediation)",
     "phase": "profile+static+sandbox+dynamic+score",
-    "version": "4.0",
+    "version": "4.0.1",
     "containment_measured": true
   },
   "hqs": {
@@ -59,7 +59,7 @@
     "profile_class": "Low-Interaction",
     "grade": "GRADE D (Needs Remediation)",
     "phase": "profile+static+sandbox+dynamic+score",
-    "version": "4.0",
+    "version": "4.0.1",
     "containment_measured": true
   },
   "modules": [
@@ -206,7 +206,7 @@
           "team": "white",
           "passed": true,
           "detail": "trivy not installed (skipped)",
-          "score": 4.0,
+          "score": 4.0.1,
           "evidence": [],
           "critical": false
         },
@@ -599,7 +599,7 @@
       "scale": 100.0,
       "static": 70.0
     },
-    "uhqs_version": "4.0",
+    "uhqs_version": "4.0.1",
     "tps": {
       "name": "Low-Interaction-MySQL",
       "class": "Low-Interaction",

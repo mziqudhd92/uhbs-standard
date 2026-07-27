@@ -11,7 +11,7 @@ This page exists so reviewers can answer: *Who graded what, with which bits, und
 
 | We claim | We do **not** claim |
 | --- | --- |
-| These artifacts were produced by UHBS-Lab v4.0.0 against a runnable ESPot container | That ESPot is “certified” or “UHBS-approved” |
+| These artifacts were produced by UHBS-Lab v4.0.1 against a runnable ESPot container | That ESPot is “certified” or “UHBS-approved” |
 | Full run used formal TPS (`timing_samples: 1000`, strict RFC) + source + SAST + telemetry | That Module D fully proved host containment via remote shell |
 | Manifests include SHA-256 digests for key artifacts | That Docker Desktop networking equals a production air-gap |
 | Grades follow normative UHQS / δ_C math in `uhqs_math.py` | That UHBS is an industry consortium standard |
@@ -38,8 +38,8 @@ UHBS is a **personal beta** framework. Product names appear only under `docs/con
 
 | Field | Full run | Quick run |
 | --- | --- | --- |
-| Package | `uhbs` 4.0.0 | same |
-| Docker image | `uhbs:4.0.0-full` | `uhbs:4.0.0` |
+| Package | `uhbs` 4.0.1 | same |
+| Docker image | `uhbs:4.0.1-full` | `uhbs:4.0.1` |
 | Image id | see `full/run-meta.json` | see `quick/run-meta.json` |
 | UHBS git commit | `9c6e9cf730cb7099699ce4479997881034cf2544` | same tree |
 | TPS | [`labs/espot/web_api_full.yaml`](../../labs/espot/web_api_full.yaml) | builtin `web_api` |
@@ -53,7 +53,7 @@ Normative math: `src/uhbs_core/uhqs_math.py` (CLI wraps the same formulas).
 
 ```text
 ┌─────────────────────┐     Docker network uhbs-lab      ┌──────────────────────┐
-│  uhbs:4.0.0[-full]  │ ──────────────────────────────── │  espot-lab :9200     │
+│  uhbs:4.0.1[-full]  │ ──────────────────────────────── │  espot-lab :9200     │
 │  Modules A–F        │   DNS: espot-lab                 │  Express ES decoy    │
 │  mounts:            │                                  │                      │
 │   /honeypot (ro)    │ ←── ESPot source tree            │  logs → copied out   │
@@ -148,4 +148,4 @@ uhbs validate-scorecard docs/conformance/fixtures/espot-web-api.scorecard.json -
 
 ## 8. Independent replication
 
-Follow [TUTORIAL.md](TUTORIAL.md). If your UHQS differs, check: image digests, TPS path, `UHBS_QUICK`, telemetry mount, SAST image (`uhbs:4.0.0` vs `uhbs:4.0.0-full`), and UHBS git commit. File discrepancies with the reproduced `report.json` attached.
+Follow [TUTORIAL.md](TUTORIAL.md). If your UHQS differs, check: image digests, TPS path, `UHBS_QUICK`, telemetry mount, SAST image (`uhbs:4.0.1` vs `uhbs:4.0.1-full`), and UHBS git commit. File discrepancies with the reproduced `report.json` attached.

@@ -9,7 +9,7 @@
 
 | We claim | We do **not** claim |
 | --- | --- |
-| Artifacts come from UHBS-Lab v4.0.0 against a live miniprint container on `:9100` | That miniprint is UHBS-certified |
+| Artifacts come from UHBS-Lab v4.0.1 against a live miniprint container on `:9100` | That miniprint is UHBS-certified |
 | Full run used 1000-sample timing, source audit, SAST, and real log directory | That Module A exercised full PJL command semantics / RFC-style suites |
 | Manifests include SHA-256 digests | That Docker Desktop equals a production air-gap |
 | Grades follow normative UHQS / δ_C math | That UHBS is an industry consortium standard |
@@ -35,7 +35,7 @@
 
 | Field | Full | Quick |
 | --- | --- | --- |
-| Image | `uhbs:4.0.0-full` | `uhbs:4.0.0` |
+| Image | `uhbs:4.0.1-full` | `uhbs:4.0.1` |
 | TPS | [`labs/miniprint/low_interaction_full.yaml`](../../labs/miniprint/low_interaction_full.yaml) | [`labs/miniprint/low_interaction_quick.yaml`](../../labs/miniprint/low_interaction_quick.yaml) |
 | Inventory | [`labs/miniprint/inventory.yaml`](../../labs/miniprint/inventory.yaml) | CLI + quick TPS |
 | Protocol plugin | **generic** (id `pjl`) | same |
@@ -51,7 +51,7 @@
 
 ```text
 ┌──────────────────────┐   network uhbs-lab    ┌──────────────────────┐
-│ uhbs:4.0.0[-full]    │ ───────────────────── │ miniprint-lab :9100  │
+│ uhbs:4.0.1[-full]    │ ───────────────────── │ miniprint-lab :9100  │
 │ mounts /honeypot     │ ← source tree         │ PJL raw listener     │
 │ mounts /telemetry    │ ← miniprint.log       │ (full run only)      │
 └──────────────────────┘                       └──────────────────────┘

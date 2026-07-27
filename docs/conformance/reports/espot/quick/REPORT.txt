@@ -1,5 +1,5 @@
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0.1
 ====================================================================================
 Target System         : Web-API-Decoy
 System Profile Class  : Web-API
@@ -18,6 +18,6 @@ Module E: Scalability & Latency     : 100.0/100       0.15     PASSED (service a
 Module F: Static Code Audit         :  72.6/100       0.20     PASSED (POSIX coverage 11% (11/104))
 ------------------------------------------------------------------------------------
 SAFETY GATE MULTIPLIER                : δ_C = 0.5625 (C = 75.0 < 95 — exponential penalty)
-FINAL COMPOSITE SCORE (UHQS 4.0)      : 49.34 / 100
+FINAL COMPOSITE SCORE (UHQS 4.0.1)      : 49.34 / 100
 OVERALL EVALUATION GRADE              : GRADE F (Fail)
 ====================================================================================

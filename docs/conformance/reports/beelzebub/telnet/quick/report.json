@@ -1,5 +1,5 @@
 {
-  "framework": "Universal Honeypot Benchmarking Standard (UHBS) v4.0",
+  "framework": "Universal Honeypot Benchmarking Standard (UHBS) v4.0.1",
   "evaluation_type": "Full-Spectrum (Static Audit + Dynamic Sandbox)",
   "target": {
     "name": "beelzebub-telnet",
@@ -36,7 +36,7 @@
     "profile_class": "Low-Interaction",
     "grade": "GRADE F (Fail)",
     "phase": "profile+static+sandbox+dynamic+score",
-    "version": "4.0",
+    "version": "4.0.1",
     "containment_measured": true
   },
   "hqs": {
@@ -59,7 +59,7 @@
     "profile_class": "Low-Interaction",
     "grade": "GRADE F (Fail)",
     "phase": "profile+static+sandbox+dynamic+score",
-    "version": "4.0",
+    "version": "4.0.1",
     "containment_measured": true
   },
   "modules": [
@@ -536,7 +536,7 @@
       "scale": 100.0,
       "static": 86.59
     },
-    "uhqs_version": "4.0",
+    "uhqs_version": "4.0.1",
     "tps": {
       "name": "Low-Interaction-Telnet",
       "class": "Low-Interaction",

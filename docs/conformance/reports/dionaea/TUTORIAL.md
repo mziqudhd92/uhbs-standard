@@ -9,8 +9,8 @@
 ```bash
 git clone https://github.com/mziqudhd92/uhbs-standard.git
 cd uhbs-standard
-docker build -t uhbs:4.0.0 .
-docker build -f Dockerfile.full -t uhbs:4.0.0-full .
+docker build -t uhbs:4.0.1 .
+docker build -f Dockerfile.full -t uhbs:4.0.1-full .
 docker network create uhbs-lab 2>/dev/null || true
 ```
 
@@ -45,7 +45,7 @@ mkdir -p docs/conformance/reports/dionaea/ftp/{quick,full}
 docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/dionaea:/honeypot:ro" -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.0 lab \
+  uhbs:4.0.1 lab \
     --inventory /work/docs/conformance/labs/dionaea/inventory.yaml \
     --target dionaea-ftp \
     --tps /work/docs/conformance/labs/dionaea/low_interaction_ftp_quick.yaml \
@@ -60,7 +60,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/dionaea-telemetry:/telemetry:ro" -w /work \
   -e PYTHONUNBUFFERED=1 -e UHBS_AIRGAP_ATTESTED=1 \
   -e UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log \
-  uhbs:4.0.0-full lab \
+  uhbs:4.0.1-full lab \
     --inventory /work/docs/conformance/labs/dionaea/inventory.yaml \
     --target dionaea-ftp \
     --tps /work/docs/conformance/labs/dionaea/low_interaction_ftp_full.yaml \
@@ -83,7 +83,7 @@ mkdir -p docs/conformance/reports/dionaea/http/{quick,full}
 docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/dionaea:/honeypot:ro" -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.0 lab \
+  uhbs:4.0.1 lab \
     --inventory /work/docs/conformance/labs/dionaea/inventory.yaml \
     --target dionaea-http \
     --tps /work/docs/conformance/labs/dionaea/web_api_http_quick.yaml \
@@ -98,7 +98,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/dionaea-telemetry:/telemetry:ro" -w /work \
   -e PYTHONUNBUFFERED=1 -e UHBS_AIRGAP_ATTESTED=1 \
   -e UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log \
-  uhbs:4.0.0-full lab \
+  uhbs:4.0.1-full lab \
     --inventory /work/docs/conformance/labs/dionaea/inventory.yaml \
     --target dionaea-http \
     --tps /work/docs/conformance/labs/dionaea/web_api_http_full.yaml \
@@ -121,7 +121,7 @@ mkdir -p docs/conformance/reports/dionaea/smb/{quick,full}
 docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/dionaea:/honeypot:ro" -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.0 lab \
+  uhbs:4.0.1 lab \
     --inventory /work/docs/conformance/labs/dionaea/inventory.yaml \
     --target dionaea-smb \
     --tps /work/docs/conformance/labs/dionaea/low_interaction_smb_quick.yaml \
@@ -136,7 +136,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/dionaea-telemetry:/telemetry:ro" -w /work \
   -e PYTHONUNBUFFERED=1 -e UHBS_AIRGAP_ATTESTED=1 \
   -e UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log \
-  uhbs:4.0.0-full lab \
+  uhbs:4.0.1-full lab \
     --inventory /work/docs/conformance/labs/dionaea/inventory.yaml \
     --target dionaea-smb \
     --tps /work/docs/conformance/labs/dionaea/low_interaction_smb_full.yaml \

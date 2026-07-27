@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.0.0",
+  "uhbs_version": "4.0.1",
   "run_mode": "quick",
   "evaluated_at": "2026-07-27T19:41:00Z",
   "proof_label": "cowrie (cowrie SSH honeypot)",
@@ -15,9 +15,9 @@
     "container_image_id": "sha256:a54c1a0f0d3f025dbbef83149c1b8521b811a193625287a97247c7fee2415909"
   },
   "grader": {
-    "package_version": "4.0.0",
+    "package_version": "4.0.1",
     "uhbs_git_commit": "aa66e2b8366a33a910b9269f073e72cc18f03226",
-    "docker_image": "uhbs:4.0.0",
+    "docker_image": "uhbs:4.0.1",
     "docker_image_id": "sha256:eca302d73a1ecd4cccfeba8ae1f9d68c7504af41651727419ce2e6c287aa830f",
     "inventory": "docs/conformance/labs/cowrie/inventory.yaml",
     "tps": "docs/conformance/labs/cowrie/low_interaction_ssh_quick.yaml"

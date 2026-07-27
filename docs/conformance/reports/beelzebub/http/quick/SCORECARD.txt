@@ -1,5 +1,5 @@
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0.1
 ====================================================================================
 Target System         : beelzebub-http
 System Profile Class  : Web-API
@@ -18,6 +18,6 @@ Module E: Scalability & Latency     : 100.0/100       0.15     PASSED (service a
 Module F: Static Code Audit         :  86.6/100       0.20     PASSED (sleep/blocking markers in non-test code≈0)
 ------------------------------------------------------------------------------------
 SAFETY GATE MULTIPLIER                : δ_C = 0.5625 (C = 75.0 < 95 — exponential penalty)
-FINAL COMPOSITE SCORE (UHQS 4.0)      : 52.77 / 100
+FINAL COMPOSITE SCORE (UHQS 4.0.1)      : 52.77 / 100
 OVERALL EVALUATION GRADE              : GRADE D (Needs Remediation)
 ====================================================================================

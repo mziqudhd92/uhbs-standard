@@ -9,7 +9,7 @@
 
 | We claim | We do **not** claim |
 | --- | --- |
-| Artifacts come from UHBS-Lab v4.0.0 against `endlessh-lab:2222` on `uhbs-lab` | That Endlessh is UHBS-certified |
+| Artifacts come from UHBS-Lab v4.0.1 against `endlessh-lab:2222` on `uhbs-lab` | That Endlessh is UHBS-certified |
 | Protocol plugin was **generic** via id `ssh_tarpit` | That Endlessh is an interactive SSH honeypot |
 | Full run used 1000-sample timing, SAST, telemetry dir, gateway canary | That SSH/Paramiko suites are safe against tarpits |
 | Manifests include SHA-256 digests | That `MSDELAY=200` matches every production Endlessh deploy |
@@ -35,7 +35,7 @@
 
 | Field | Full | Quick |
 | --- | --- | --- |
-| Image | `uhbs:4.0.0-full` | `uhbs:4.0.0` |
+| Image | `uhbs:4.0.1-full` | `uhbs:4.0.1` |
 | TPS | [`labs/endlessh/low_interaction_full.yaml`](../../labs/endlessh/low_interaction_full.yaml) | [`labs/endlessh/low_interaction_quick.yaml`](../../labs/endlessh/low_interaction_quick.yaml) |
 | Inventory | [`labs/endlessh/inventory.yaml`](../../labs/endlessh/inventory.yaml) | same + quick TPS |
 | Protocol plugin | **generic** (`ssh_tarpit`) | same |
@@ -48,7 +48,7 @@
 
 ```text
 ┌──────────────────────┐   network uhbs-lab    ┌──────────────────────────┐
-│ uhbs:4.0.0[-full]    │ ───────────────────── │ endlessh-lab             │
+│ uhbs:4.0.1[-full]    │ ───────────────────── │ endlessh-lab             │
 │ mounts /honeypot     │ ← skeeto/endlessh src │ TCP :2222 tarpit         │
 │ mounts /telemetry    │ ← logs + gateway      │ (no SSH handshake)       │
 └──────────────────────┘                       └──────────────────────────┘

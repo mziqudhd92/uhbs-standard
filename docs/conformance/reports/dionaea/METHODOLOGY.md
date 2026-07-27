@@ -1,7 +1,7 @@
 # Methodology: Dionaea multi-protocol UHBS lab
 
 **Status:** Informative  
-**UHBS:** 4.0.0 · Images `uhbs:4.0.0` (quick) / `uhbs:4.0.0-full` (full)  
+**UHBS:** 4.0.1 · Images `uhbs:4.0.1` (quick) / `uhbs:4.0.1-full` (full)  
 **Upstream commit:** `4e459f1b672a5b4c1e8335c0bff1b93738019215`
 
 ## What was graded

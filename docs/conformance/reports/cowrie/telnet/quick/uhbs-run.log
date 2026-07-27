@@ -1,7 +1,7 @@
 ==> UHBS v4 target=cowrie-telnet class=Low-Interaction protocols=['telnet'] phases=['profile', 'static', 'sandbox', 'dynamic', 'score']
     plugins available: ftp, generic, git, http, modbus, mysql, ntp, rdp, redis, sip, smb, smtp, snmp, ssh, telnet, tftp, vnc
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0.1
 ====================================================================================
 Target System         : cowrie-telnet
 System Profile Class  : Low-Interaction
@@ -20,7 +20,7 @@ Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service a
 Module F: Static Code Audit         :  87.8/100       0.20     PASSED (1 predictable PRNG seeds: src/backend_pool/util.py)
 ------------------------------------------------------------------------------------
 SAFETY GATE MULTIPLIER                : δ_C = 0.5625 (C = 75.0 < 95 — exponential penalty)
-FINAL COMPOSITE SCORE (UHQS 4.0)      : 49.59 / 100
+FINAL COMPOSITE SCORE (UHQS 4.0.1)      : 49.59 / 100
 OVERALL EVALUATION GRADE              : GRADE F (Fail)
 ====================================================================================
 

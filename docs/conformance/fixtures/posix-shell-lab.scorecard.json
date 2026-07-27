@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.0.0",
+  "uhbs_version": "4.0.1",
   "target": {
     "name": "CyberHalluciNet (POSIX-Shell lab proof)",
     "class": "POSIX-Shell",

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Module B — Behavioral & Stateful Realism (UHBS v4.0).
+"""Module B — Behavioral & Stateful Realism (UHBS v4.0.1).
 
 Class/protocol-aware via plugins: B1 state · B2 payload · B3 fuzz.
 """

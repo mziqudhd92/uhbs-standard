@@ -1,6 +1,6 @@
 # Universal Honeypot Benchmarking Standard (UHBS)
 
-> Personal open-source beta framework (v4.0.0, Apache-2.0) for vendor-neutral honeypot / deception evaluation (UHQS 0–100 + Safety Gate). Not a consortium standard.
+> Personal open-source beta framework (v4.0.1, Apache-2.0) for vendor-neutral honeypot / deception evaluation (UHQS 0–100 + Safety Gate). Not a consortium standard.
 
 This file is the **repository** agent index (AEO/GEO for coding assistants). The published site mirror is https://mziqudhd92.github.io/uhbs-standard/llms.txt (landing) · https://mziqudhd92.github.io/uhbs-standard/mkdocs/llms.txt (MkDocs)
 

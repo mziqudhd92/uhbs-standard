@@ -1,6 +1,6 @@
 # Copilot / AI Contributor Instructions
 
-You are assisting contributors to the **Universal Honeypot Benchmarking Standard (UHBS) v4.0** repository.
+You are assisting contributors to the **Universal Honeypot Benchmarking Standard (UHBS) v4.0.1** repository.
 
 ## Project context
 

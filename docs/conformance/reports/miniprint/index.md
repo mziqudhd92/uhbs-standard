@@ -2,7 +2,7 @@
 
 **Proof label:** [sa7mon/miniprint](https://github.com/sa7mon/miniprint)  
 **Class / protocol:** `Low-Interaction` · PJL / raw TCP · port `9100`  
-**UHBS:** v4.0.0 · evaluation proof only (not an endorsement)
+**UHBS:** v4.0.1 · evaluation proof only (not an endorsement)
 
 miniprint is a **medium-interaction printer honeypot** that speaks Printer Job Language (PJL) on the classic raw print port. UHBS does not yet ship a first-class PJL RFC suite — Module A uses the **generic TCP** plugin under protocol id `pjl` (connect / banner / timing / fuzz). That limitation is documented so grades stay interpretable.
 

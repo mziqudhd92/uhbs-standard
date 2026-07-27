@@ -1,5 +1,5 @@
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0.1
 ====================================================================================
 Target System         : opencanary-ssh
 System Profile Class  : Low-Interaction
@@ -18,6 +18,6 @@ Module E: Scalability & Latency     :  20.0/100       0.10     PARTIAL (P50=0.0m
 Module F: Static Code Audit         :  82.7/100       0.20     PASSED (sleep/blocking markers in non-test code≈0)
 ------------------------------------------------------------------------------------
 SAFETY GATE MULTIPLIER                : δ_C = 1.0 (Containment Score C = 96.0 >= 95)
-FINAL COMPOSITE SCORE (UHQS 4.0)      : 31.94 / 100
+FINAL COMPOSITE SCORE (UHQS 4.0.1)      : 31.94 / 100
 OVERALL EVALUATION GRADE              : GRADE F (Fail)
 ====================================================================================

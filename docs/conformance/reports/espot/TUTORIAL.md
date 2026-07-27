@@ -20,17 +20,17 @@ git clone https://github.com/mziqudhd92/uhbs-standard.git
 cd uhbs-standard
 
 # Base grader (CLI + lab)
-docker build -t uhbs:4.0.0 .
+docker build -t uhbs:4.0.1 .
 
 # Full grader (+ bandit / semgrep; trivy when download succeeds)
-docker build -f Dockerfile.full -t uhbs:4.0.0-full .
+docker build -f Dockerfile.full -t uhbs:4.0.1-full .
 ```
 
 Confirm:
 
 ```bash
-docker run --rm uhbs:4.0.0 --version
-docker run --rm uhbs:4.0.0-full lab --list-protocols
+docker run --rm uhbs:4.0.1 --version
+docker run --rm uhbs:4.0.1-full lab --list-protocols
 ```
 
 ---
@@ -117,7 +117,7 @@ docker run --rm \
   -w /work \
   -e UHBS_QUICK=1 \
   -e UHBS_AIRGAP_ATTESTED=1 \
-  uhbs:4.0.0 \
+  uhbs:4.0.1 \
   lab \
     --tps web_api \
     --protocol http \
@@ -184,7 +184,7 @@ docker run --rm \
   -w /work \
   -e UHBS_AIRGAP_ATTESTED=1 \
   -e UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log \
-  uhbs:4.0.0-full \
+  uhbs:4.0.1-full \
   lab \
     --inventory /work/docs/conformance/labs/espot/inventory.yaml \
     --target espot \
@@ -215,7 +215,7 @@ for name in ["REPORT.txt","SCORECARD.txt","report.json","uhbs-run.log","run-meta
 for p in sorted((root/"static").glob("*.json")):
     arts.append({"path": f"static/{p.name}", "sha256": hashlib.sha256(p.read_bytes()).hexdigest()})
 rep = json.loads((root/"report.json").read_text())
-man = {"uhbs_version":"4.0.0","artifacts":arts,"extra":{
+man = {"uhbs_version":"4.0.1","artifacts":arts,"extra":{
   "target": rep["target"]["name"], "uhqs": rep["uhqs"]["uhqs"], "grade": rep["uhqs"]["grade"]}}
 (root/"MANIFEST.json").write_text(json.dumps(man, indent=2)+"\n")
 print("wrote", root/"MANIFEST.json")
@@ -250,7 +250,7 @@ uhbs validate-scorecard docs/conformance/fixtures/espot-web-api.scorecard.json -
 | `/telemetry` + inventory `telemetry_dir` | Honest Module C |
 | `UHBS_QUICK=1` / `--quick` | Shorter A3 + lighter E |
 | `--skip-sast-tools` | Skip bandit/semgrep/trivy |
-| `uhbs:4.0.0-full` | Installs SAST tools |
+| `uhbs:4.0.1-full` | Installs SAST tools |
 | `UHBS_AIRGAP_ATTESTED=1` | Phase-3 / D attestation (documented limitation) |
 | `UHBS_EGRESS_GATEWAY_LOG` | Canary file for D1 gateway evidence |
 | `--concurrency` / `--requests` | Module E depth |

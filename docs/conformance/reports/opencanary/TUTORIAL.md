@@ -11,8 +11,8 @@ OpenCanary is a multi-protocol canary. This lab enables every module that maps t
 ```bash
 git clone https://github.com/mziqudhd92/uhbs-standard.git
 cd uhbs-standard
-docker build -t uhbs:4.0.0 .
-docker build -f Dockerfile.full -t uhbs:4.0.0-full .
+docker build -t uhbs:4.0.1 .
+docker build -f Dockerfile.full -t uhbs:4.0.1-full .
 docker network create uhbs-lab 2>/dev/null || true
 ```
 
@@ -48,7 +48,7 @@ mkdir -p docs/conformance/reports/opencanary/http/{quick,full}
 docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/opencanary:/honeypot:ro" -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.0 lab \
+  uhbs:4.0.1 lab \
     --inventory /work/docs/conformance/labs/opencanary/inventory.yaml \
     --target opencanary-http \
     --tps /work/docs/conformance/labs/opencanary/web_api_http_quick.yaml \
@@ -68,7 +68,7 @@ mkdir -p docs/conformance/reports/opencanary/ftp/{quick,full}
 docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/opencanary:/honeypot:ro" -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.0 lab \
+  uhbs:4.0.1 lab \
     --inventory /work/docs/conformance/labs/opencanary/inventory.yaml \
     --target opencanary-ftp \
     --tps /work/docs/conformance/labs/opencanary/low_interaction_ftp_quick.yaml \
@@ -90,7 +90,7 @@ mkdir -p docs/conformance/reports/opencanary/ssh/{quick,full}
 docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/opencanary:/honeypot:ro" -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.0 lab \
+  uhbs:4.0.1 lab \
     --inventory /work/docs/conformance/labs/opencanary/inventory.yaml \
     --target opencanary-ssh \
     --tps /work/docs/conformance/labs/opencanary/low_interaction_ssh_quick.yaml \
@@ -110,7 +110,7 @@ mkdir -p docs/conformance/reports/opencanary/telnet/{quick,full}
 docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/opencanary:/honeypot:ro" -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.0 lab \
+  uhbs:4.0.1 lab \
     --inventory /work/docs/conformance/labs/opencanary/inventory.yaml \
     --target opencanary-telnet \
     --tps /work/docs/conformance/labs/opencanary/low_interaction_telnet_quick.yaml \
@@ -130,7 +130,7 @@ mkdir -p docs/conformance/reports/opencanary/redis/{quick,full}
 docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/opencanary:/honeypot:ro" -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.0 lab \
+  uhbs:4.0.1 lab \
     --inventory /work/docs/conformance/labs/opencanary/inventory.yaml \
     --target opencanary-redis \
     --tps /work/docs/conformance/labs/opencanary/low_interaction_redis_quick.yaml \
@@ -198,7 +198,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/opencanary-telemetry:/telemetry:ro" -w /work \
   -e PYTHONUNBUFFERED=1 -e UHBS_AIRGAP_ATTESTED=1 \
   -e UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log \
-  uhbs:4.0.0-full lab \
+  uhbs:4.0.1-full lab \
     --inventory /work/docs/conformance/labs/opencanary/inventory.yaml \
     --target opencanary-http \
     --tps /work/docs/conformance/labs/opencanary/web_api_http_full.yaml \

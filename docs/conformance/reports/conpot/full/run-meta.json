@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.0.0",
+  "uhbs_version": "4.0.1",
   "run_mode": "full",
   "evaluated_at": "2026-07-27T18:22:30Z",
   "proof_label": "conpot (mushorg ICS/SCADA honeypot, Modbus)",
@@ -14,9 +14,9 @@
     "container_image_id": "sha256:a59010a7d6b449906612343cb36e762e4d0f6f2cd1d3e7e0174381d9926f4abe"
   },
   "grader": {
-    "package_version": "4.0.0",
+    "package_version": "4.0.1",
     "uhbs_git_commit": "4818efb000c694c6f072efde2f6e2f99655ed37f",
-    "docker_image": "uhbs:4.0.0-full",
+    "docker_image": "uhbs:4.0.1-full",
     "docker_image_id": "sha256:8caf886c2e6f53a3d2d3a73d2529b018cbdd3dc343cbde10043cc3ac96e87e21",
     "inventory": "docs/conformance/labs/conpot/inventory.yaml",
     "tps": "docs/conformance/labs/conpot/ics_modbus_full.yaml"

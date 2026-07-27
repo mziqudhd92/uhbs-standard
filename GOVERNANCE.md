@@ -72,7 +72,7 @@ committee vote because no committee exists.
 
 ## 5. Releases & scorecards
 
-- Releases are tagged (`v4.0.0`, …). Prefer signed tags when practical.
+- Releases are tagged (`v4.0.1`, …). Prefer signed tags when practical.
 - Published scorecards should validate against the schemas and disclose date,
   target class, and Safety Gate outcome.
 - Disputes about misleading public claims: open an issue with label

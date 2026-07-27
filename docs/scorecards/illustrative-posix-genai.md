@@ -2,7 +2,7 @@
 
 **Status:** Synthetic layout sample only — **not** a live UHBS-Lab Docker run.
 
-Vendor-neutral illustrative scorecard demonstrating the UHBS v4.0 standard output layout.
+Vendor-neutral illustrative scorecard demonstrating the UHBS v4.0.1 standard output layout.
 For published lab scorecards, see [Official Examples](index.md).
 
 | Field | Value |
@@ -10,7 +10,7 @@ For published lab scorecards, see [Official Examples](index.md).
 | Target | Illustrative interactive shell decoy (GenAI-augmented) |
 | Class | POSIX-Shell |
 | Evaluated | 2026-07-26 |
-| Spec | UHBS 4.0.0 |
+| Spec | UHBS 4.0.1 |
 
 ## Module Results
 
@@ -28,7 +28,7 @@ For published lab scorecards, see [Official Examples](index.md).
 | Metric | Value |
 | --- | --- |
 | Safety Gate Multiplier \(\delta_C\) | 1.0 (\(C = 97 \ge 95\)) |
-| **Final Composite Score (UHQS 4.0)** | **92.1 / 100** |
+| **Final Composite Score (UHQS 4.0.1)** | **92.1 / 100** |
 | Grade | **A (Enterprise Grade)** |
 | Production baseline (UHQS &gt; 80) | **MET** |
 

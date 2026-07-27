@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.0.0",
+  "uhbs_version": "4.0.1",
   "run_mode": "quick",
   "evaluated_at": "2026-07-27T18:24:21Z",
   "proof_label": "endlessh (skeeto SSH tarpit)",
@@ -14,9 +14,9 @@
     "container_image_id": "sha256:9f0dd7c1b4128acd1bf4dfefe910ff39accc5e300ab57df641c51ea74958ad37"
   },
   "grader": {
-    "package_version": "4.0.0",
+    "package_version": "4.0.1",
     "uhbs_git_commit": "c1631a4f0daef5553491017bc9aa44f66d776c58",
-    "docker_image": "uhbs:4.0.0",
+    "docker_image": "uhbs:4.0.1",
     "docker_image_id": "sha256:3e84c069ad1e343752d5245c7e2189555f6f19db00b8319764fbb08044cd2a16",
     "inventory": "docs/conformance/labs/endlessh/inventory.yaml",
     "tps": "docs/conformance/labs/endlessh/low_interaction_quick.yaml"

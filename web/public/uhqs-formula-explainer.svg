@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
-  <title id="title">UHQS 4.0 formula explainer</title>
+  <title id="title">UHQS 4.0.1 formula explainer</title>
   <desc id="desc">UHQS equals Safety Gate multiplier delta-C times the weighted sum of modules A, B, C, E, and F. Module D containment drives delta-C and is not a weight.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
@@ -15,7 +15,7 @@
   <circle cx="880" cy="60" r="120" fill="#1e3a5f" opacity="0.25"/>
   <circle cx="80" cy="480" r="100" fill="#3d1f24" opacity="0.2"/>
 
-  <text x="48" y="48" fill="#67e8f9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="2">UHBS v4.0</text>
+  <text x="48" y="48" fill="#67e8f9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="2">UHBS v4.0.1</text>
   <text x="48" y="84" fill="#f8fafc" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700">Universal Honeypot Quality Score</text>
   <text x="48" y="112" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="14">How the composite grade is built — and why Module D is special</text>
 

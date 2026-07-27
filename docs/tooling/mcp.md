@@ -119,7 +119,7 @@ Until PyPI publish, prefer the editable git install above.
 
 ### Docker grading image
 
-The published `uhbs:4.0.0` / `uhbs:4.0.0-full` images install `uhbs[lab]` only
+The published `uhbs:4.0.1` / `uhbs:4.0.1-full` images install `uhbs[lab]` only
 (CLI + harness). They do **not** ship `uhbs-mcp`. Run the MCP server on the host
 (or a dedicated venv) next to your AI client.
 

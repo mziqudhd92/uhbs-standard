@@ -9,7 +9,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/beelzebub:/honeypot:ro" \
   -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.0 lab \
+  uhbs:4.0.1 lab \
     --inventory /work/docs/conformance/labs/beelzebub/inventory.yaml \
     --target beelzebub-ssh \
     --tps /work/docs/conformance/labs/beelzebub/low_interaction_ssh_quick.yaml \
@@ -27,7 +27,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/beelzebub:/honeypot:ro" \
   -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.0 lab \
+  uhbs:4.0.1 lab \
     --inventory /work/docs/conformance/labs/beelzebub/inventory.yaml \
     --target beelzebub-http \
     --tps /work/docs/conformance/labs/beelzebub/web_api_http_quick.yaml \
@@ -45,7 +45,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/beelzebub:/honeypot:ro" \
   -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.0 lab \
+  uhbs:4.0.1 lab \
     --inventory /work/docs/conformance/labs/beelzebub/inventory.yaml \
     --target beelzebub-telnet \
     --tps /work/docs/conformance/labs/beelzebub/low_interaction_telnet_quick.yaml \
@@ -63,7 +63,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/beelzebub:/honeypot:ro" \
   -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.0 lab \
+  uhbs:4.0.1 lab \
     --inventory /work/docs/conformance/labs/beelzebub/inventory.yaml \
     --target beelzebub-redis \
     --tps /work/docs/conformance/labs/beelzebub/low_interaction_redis_quick.yaml \
@@ -81,7 +81,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/trapster-community:/honeypot:ro" \
   -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.0 lab \
+  uhbs:4.0.1 lab \
     --inventory /work/docs/conformance/labs/trapster/inventory.yaml \
     --target trapster-ssh \
     --tps /work/docs/conformance/labs/trapster/low_interaction_ssh_quick.yaml \
@@ -99,7 +99,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/trapster-community:/honeypot:ro" \
   -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.0 lab \
+  uhbs:4.0.1 lab \
     --inventory /work/docs/conformance/labs/trapster/inventory.yaml \
     --target trapster-http \
     --tps /work/docs/conformance/labs/trapster/web_api_http_quick.yaml \
@@ -117,7 +117,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/trapster-community:/honeypot:ro" \
   -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.0 lab \
+  uhbs:4.0.1 lab \
     --inventory /work/docs/conformance/labs/trapster/inventory.yaml \
     --target trapster-ftp \
     --tps /work/docs/conformance/labs/trapster/low_interaction_ftp_quick.yaml \
@@ -135,7 +135,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/trapster-community:/honeypot:ro" \
   -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.0 lab \
+  uhbs:4.0.1 lab \
     --inventory /work/docs/conformance/labs/trapster/inventory.yaml \
     --target trapster-telnet \
     --tps /work/docs/conformance/labs/trapster/low_interaction_telnet_quick.yaml \
@@ -153,7 +153,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/dionaea:/honeypot:ro" \
   -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.0 lab \
+  uhbs:4.0.1 lab \
     --inventory /work/docs/conformance/labs/dionaea/inventory.yaml \
     --target dionaea-ftp \
     --tps /work/docs/conformance/labs/dionaea/low_interaction_ftp_quick.yaml \
@@ -171,7 +171,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/dionaea:/honeypot:ro" \
   -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.0 lab \
+  uhbs:4.0.1 lab \
     --inventory /work/docs/conformance/labs/dionaea/inventory.yaml \
     --target dionaea-http \
     --tps /work/docs/conformance/labs/dionaea/web_api_http_quick.yaml \
@@ -189,7 +189,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/dionaea:/honeypot:ro" \
   -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.0 lab \
+  uhbs:4.0.1 lab \
     --inventory /work/docs/conformance/labs/dionaea/inventory.yaml \
     --target dionaea-smb \
     --tps /work/docs/conformance/labs/dionaea/low_interaction_smb_quick.yaml \

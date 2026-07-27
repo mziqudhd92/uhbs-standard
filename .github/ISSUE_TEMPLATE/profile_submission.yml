@@ -49,7 +49,7 @@ body:
     attributes:
       label: Attestation
       options:
-        - label: Results were produced following UHBS v4.0 dual-plane audit requirements (isolated sandbox + static audit).
+        - label: Results were produced following UHBS v4.0.1 dual-plane audit requirements (isolated sandbox + static audit).
           required: true
         - label: Scorecard validates against schemas/scorecard.schema.json (or will after PR updates).
           required: true

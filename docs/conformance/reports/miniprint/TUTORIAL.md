@@ -11,8 +11,8 @@
 ```bash
 git clone https://github.com/mziqudhd92/uhbs-standard.git
 cd uhbs-standard
-docker build -t uhbs:4.0.0 .
-docker build -f Dockerfile.full -t uhbs:4.0.0-full .
+docker build -t uhbs:4.0.1 .
+docker build -f Dockerfile.full -t uhbs:4.0.1-full .
 ```
 
 ---
@@ -73,7 +73,7 @@ docker run --rm \
   -w /work \
   -e UHBS_QUICK=1 \
   -e UHBS_AIRGAP_ATTESTED=1 \
-  uhbs:4.0.0 \
+  uhbs:4.0.1 \
   lab \
     --tps /work/docs/conformance/labs/miniprint/low_interaction_quick.yaml \
     --protocol pjl \
@@ -139,7 +139,7 @@ docker run --rm \
   -w /work \
   -e UHBS_AIRGAP_ATTESTED=1 \
   -e UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log \
-  uhbs:4.0.0-full \
+  uhbs:4.0.1-full \
   lab \
     --inventory /work/docs/conformance/labs/miniprint/inventory.yaml \
     --target miniprint \

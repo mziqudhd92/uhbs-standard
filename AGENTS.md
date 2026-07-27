@@ -39,8 +39,8 @@ uhbs validate-scorecard docs/conformance/fixtures/cowrie-low-interaction.scoreca
 # MCP (stdio) for AI hosts — see docs/tooling/mcp.md
 python -c "from uhbs_mcp.server import list_profile_classes; print(list_profile_classes()['ok'])"
 # optional Docker grading image:
-docker build -t uhbs:4.0.0 .
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.0.0 validate-scorecard docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
+docker build -t uhbs:4.0.1 .
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.0.1 validate-scorecard docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
 ```
 
 ## Discovery files

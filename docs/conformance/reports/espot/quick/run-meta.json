@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.0.0",
+  "uhbs_version": "4.0.1",
   "run_mode": "quick",
   "evaluated_at": "2026-07-27T18:14:30Z",
   "proof_label": "ESPot (mycert Elasticsearch honeypot)",
@@ -14,9 +14,9 @@
     "container_image_id": "sha256:7186a31a5ce7e9b806e17ad08164e13bd6c2fd6f3dd8bdeb8286da6476e1f869"
   },
   "grader": {
-    "package_version": "4.0.0",
+    "package_version": "4.0.1",
     "uhbs_git_commit": "12192d04d58b8d1feb5128d1a708c133c91b4a80",
-    "docker_image": "uhbs:4.0.0",
+    "docker_image": "uhbs:4.0.1",
     "tps": "web_api (builtin profiles/tps/web_api.yaml)",
     "notes": "CLI flags instead of inventory; no telemetry_dir; SAST skipped",
     "docker_image_id": "sha256:3e84c069ad1e343752d5245c7e2189555f6f19db00b8319764fbb08044cd2a16"

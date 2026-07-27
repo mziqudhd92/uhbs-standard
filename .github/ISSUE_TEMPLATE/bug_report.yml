@@ -38,6 +38,6 @@ body:
     id: version
     attributes:
       label: UHBS / CLI version
-      placeholder: "4.0.0"
+      placeholder: "4.0.1"
     validations:
       required: true

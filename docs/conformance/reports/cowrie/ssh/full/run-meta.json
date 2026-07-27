@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.0.0",
+  "uhbs_version": "4.0.1",
   "run_mode": "full",
   "evaluated_at": "2026-07-27T19:41:00Z",
   "proof_label": "cowrie (cowrie SSH honeypot)",
@@ -15,9 +15,9 @@
     "container_image_id": "sha256:a54c1a0f0d3f025dbbef83149c1b8521b811a193625287a97247c7fee2415909"
   },
   "grader": {
-    "package_version": "4.0.0",
+    "package_version": "4.0.1",
     "uhbs_git_commit": "aa66e2b8366a33a910b9269f073e72cc18f03226",
-    "docker_image": "uhbs:4.0.0-full",
+    "docker_image": "uhbs:4.0.1-full",
     "docker_image_id": "sha256:8e18b4a9e7a9fc6bec77563237cb98b827cf510112a12bb41663adbe9e7f28df",
     "inventory": "docs/conformance/labs/cowrie/inventory.yaml",
     "tps": "docs/conformance/labs/cowrie/low_interaction_ssh_full.yaml"
@@ -64,7 +64,7 @@
   "limitations": [
     "Full mode: 10 concurrent workers, 50 requests for Module E; 1000 timing samples via TPS.",
     "telemetry_dir set \u2014 Module C graded against real captured cowrie.json (1 malformed/1 records \u2014 pre-existing schema-shape gap, not introduced by this regrade).",
-    "bandit + semgrep run (uhbs:4.0.0-full image).",
+    "bandit + semgrep run (uhbs:4.0.1-full image).",
     "SSH-only grade (Telnet not scored).",
     "Lab auth root/admin (image rejects root/root).",
     "This is the claim-grade (full) evaluation.",

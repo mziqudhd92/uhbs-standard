@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.0.0",
+  "uhbs_version": "4.0.1",
   "run_mode": "quick",
   "evaluated_at": "2026-07-27T14:40:00Z",
   "proof_label": "opencanary (thinkst OpenCanary redis)",
@@ -14,9 +14,9 @@
     "container_image_id": "sha256:558c508742ebc768d979f545bf1889be9d7d58377bd0144058c7df713a88763f"
   },
   "grader": {
-    "package_version": "4.0.0",
+    "package_version": "4.0.1",
     "uhbs_git_commit": "e566119c90826d2dcd5ad0b6a48a062a88f95e16",
-    "docker_image": "uhbs:4.0.0",
+    "docker_image": "uhbs:4.0.1",
     "docker_image_id": "sha256:d326a451699575c745c65ca6b5b9b72d4692fc3bb0e4c9207ca0b567fda5dcd8",
     "inventory": "docs/conformance/labs/opencanary/inventory.yaml",
     "tps": "docs/conformance/labs/opencanary/low_interaction_redis_quick.yaml"

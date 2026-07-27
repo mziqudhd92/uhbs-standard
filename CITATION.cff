@@ -21,7 +21,7 @@ identifiers:
     value: "10.5281/zenodo.21631155"
     description: "Concept DOI (all versions)"
 abstract: >-
-  UHBS v4.0 is a personal open-source beta framework for vendor-neutral,
+  UHBS v4.0.1 is a personal open-source beta framework for vendor-neutral,
   objective, repeatable evaluation of honeypots and deception technology. It
   defines six evaluation modules (A–F), a composite UHQS score (0–100) with a
   recommended production baseline UHQS > 80, a non-linear Safety Gate,

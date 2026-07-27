@@ -9,7 +9,7 @@
 
 | We claim | We do **not** claim |
 | --- | --- |
-| Artifacts come from UHBS-Lab v4.0.0 against a live Conpot container Modbus `:5020` | That Conpot is UHBS-certified |
+| Artifacts come from UHBS-Lab v4.0.1 against a live Conpot container Modbus `:5020` | That Conpot is UHBS-certified |
 | Full run used 1000-sample timing, source audit, SAST, and real log directory | That Module A exercised every Modbus function code / every Conpot template |
 | Manifests include SHA-256 digests | That Docker Desktop equals a production air-gap |
 | Grades follow normative UHQS / δ_C math | That UHBS is an industry consortium standard |
@@ -35,7 +35,7 @@
 
 | Field | Full | Quick |
 | --- | --- | --- |
-| Image | `uhbs:4.0.0-full` | `uhbs:4.0.0` |
+| Image | `uhbs:4.0.1-full` | `uhbs:4.0.1` |
 | TPS | [`labs/conpot/ics_modbus_full.yaml`](../../labs/conpot/ics_modbus_full.yaml) | [`labs/conpot/ics_modbus_quick.yaml`](../../labs/conpot/ics_modbus_quick.yaml) |
 | Inventory | [`labs/conpot/inventory.yaml`](../../labs/conpot/inventory.yaml) | CLI + quick TPS |
 | Protocol plugin | **modbus** | same |
@@ -51,7 +51,7 @@
 
 ```text
 ┌──────────────────────┐   network uhbs-lab    ┌──────────────────────────┐
-│ uhbs:4.0.0[-full]    │ ───────────────────── │ conpot-lab               │
+│ uhbs:4.0.1[-full]    │ ───────────────────── │ conpot-lab               │
 │ mounts /honeypot     │ ← source tree         │ Modbus :5020 (graded)    │
 │ mounts /telemetry    │ ← conpot.log          │ (+ other listeners N/A)  │
 └──────────────────────┘                       └──────────────────────────┘

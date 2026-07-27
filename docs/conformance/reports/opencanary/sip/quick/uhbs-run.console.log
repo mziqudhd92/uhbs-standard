@@ -1,7 +1,7 @@
 ==> UHBS v4 target=opencanary-sip class=Low-Interaction protocols=['sip'] phases=['profile', 'static', 'sandbox', 'dynamic', 'score']
     plugins available: ftp, generic, git, http, modbus, mysql, ntp, rdp, redis, sip, smb, smtp, snmp, ssh, telnet, tftp, vnc
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0.1
 ====================================================================================
 Target System         : opencanary-sip
 System Profile Class  : Low-Interaction
@@ -20,7 +20,7 @@ Module E: Scalability & Latency     :  35.0/100       0.10     PARTIAL (P50=1511
 Module F: Static Code Audit         :  82.7/100       0.20     PASSED (sleep/blocking markers in non-test code≈0)
 ------------------------------------------------------------------------------------
 SAFETY GATE MULTIPLIER                : δ_C = 0.5625 (C = 75.0 < 95 — exponential penalty)
-FINAL COMPOSITE SCORE (UHQS 4.0)      : 37.7 / 100
+FINAL COMPOSITE SCORE (UHQS 4.0.1)      : 37.7 / 100
 OVERALL EVALUATION GRADE              : GRADE F (Fail)
 ====================================================================================
 

@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.0.0",
+  "uhbs_version": "4.0.1",
   "run_mode": "full",
   "evaluated_at": "2026-07-27T18:14:31Z",
   "proof_label": "ESPot (mycert Elasticsearch honeypot)",
@@ -14,9 +14,9 @@
     "container_image_id": "sha256:7186a31a5ce7e9b806e17ad08164e13bd6c2fd6f3dd8bdeb8286da6476e1f869"
   },
   "grader": {
-    "package_version": "4.0.0",
+    "package_version": "4.0.1",
     "uhbs_git_commit": "12192d04d58b8d1feb5128d1a708c133c91b4a80",
-    "docker_image": "uhbs:4.0.0-full",
+    "docker_image": "uhbs:4.0.1-full",
     "docker_image_id": "sha256:8caf886c2e6f53a3d2d3a73d2529b018cbdd3dc343cbde10043cc3ac96e87e21",
     "inventory": "docs/conformance/labs/espot/inventory.yaml",
     "tps": "docs/conformance/labs/espot/web_api_full.yaml"

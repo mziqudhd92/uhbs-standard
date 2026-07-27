@@ -1,5 +1,5 @@
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0.1
 ====================================================================================
 Target System         : beelzebub-ssh
 System Profile Class  : Low-Interaction
@@ -18,6 +18,6 @@ Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service a
 Module F: Static Code Audit         :  70.0/100       0.20     PASSED (semgrep error/critical=7 total=36)
 ------------------------------------------------------------------------------------
 SAFETY GATE MULTIPLIER                : δ_C = 1.0 (Containment Score C = 100.0 >= 95)
-FINAL COMPOSITE SCORE (UHQS 4.0)      : 59.88 / 100
+FINAL COMPOSITE SCORE (UHQS 4.0.1)      : 59.88 / 100
 OVERALL EVALUATION GRADE              : GRADE D (Needs Remediation)
 ====================================================================================

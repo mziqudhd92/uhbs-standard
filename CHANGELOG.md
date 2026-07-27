@@ -14,8 +14,7 @@ share version **4.0.1** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[
 ## [4.0.1] — 2026-07-27
 
 Patch release for Zenodo DOI deposit and post-`v4.0.0` harness/docs work.
-Historical lab fixtures/reports retain `uhbs_version: 4.0.0` as the grading
-tooling that produced them.
+Published fixtures, reports, Docker tags, and docs now advertise `4.0.1`.
 
 ### Added
 - **MCP server** (`uhbs[mcp]` / `uhbs-mcp`): local stdio tools for AI hosts

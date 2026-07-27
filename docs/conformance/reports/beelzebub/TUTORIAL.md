@@ -9,8 +9,8 @@
 ```bash
 git clone https://github.com/mziqudhd92/uhbs-standard.git
 cd uhbs-standard
-docker build -t uhbs:4.0.0 .
-docker build -f Dockerfile.full -t uhbs:4.0.0-full .
+docker build -t uhbs:4.0.1 .
+docker build -f Dockerfile.full -t uhbs:4.0.1-full .
 docker network create uhbs-lab 2>/dev/null || true
 ```
 
@@ -45,7 +45,7 @@ mkdir -p docs/conformance/reports/beelzebub/http/{quick,full}
 docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/beelzebub:/honeypot:ro" -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.0 lab \
+  uhbs:4.0.1 lab \
     --inventory /work/docs/conformance/labs/beelzebub/inventory.yaml \
     --target beelzebub-http \
     --tps /work/docs/conformance/labs/beelzebub/web_api_http_quick.yaml \
@@ -60,7 +60,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/beelzebub-telemetry:/telemetry:ro" -w /work \
   -e PYTHONUNBUFFERED=1 -e UHBS_AIRGAP_ATTESTED=1 \
   -e UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log \
-  uhbs:4.0.0-full lab \
+  uhbs:4.0.1-full lab \
     --inventory /work/docs/conformance/labs/beelzebub/inventory.yaml \
     --target beelzebub-http \
     --tps /work/docs/conformance/labs/beelzebub/web_api_http_full.yaml \
@@ -83,7 +83,7 @@ mkdir -p docs/conformance/reports/beelzebub/redis/{quick,full}
 docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/beelzebub:/honeypot:ro" -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.0 lab \
+  uhbs:4.0.1 lab \
     --inventory /work/docs/conformance/labs/beelzebub/inventory.yaml \
     --target beelzebub-redis \
     --tps /work/docs/conformance/labs/beelzebub/low_interaction_redis_quick.yaml \
@@ -98,7 +98,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/beelzebub-telemetry:/telemetry:ro" -w /work \
   -e PYTHONUNBUFFERED=1 -e UHBS_AIRGAP_ATTESTED=1 \
   -e UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log \
-  uhbs:4.0.0-full lab \
+  uhbs:4.0.1-full lab \
     --inventory /work/docs/conformance/labs/beelzebub/inventory.yaml \
     --target beelzebub-redis \
     --tps /work/docs/conformance/labs/beelzebub/low_interaction_redis_full.yaml \
@@ -121,7 +121,7 @@ mkdir -p docs/conformance/reports/beelzebub/ssh/{quick,full}
 docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/beelzebub:/honeypot:ro" -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.0 lab \
+  uhbs:4.0.1 lab \
     --inventory /work/docs/conformance/labs/beelzebub/inventory.yaml \
     --target beelzebub-ssh \
     --tps /work/docs/conformance/labs/beelzebub/low_interaction_ssh_quick.yaml \
@@ -136,7 +136,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/beelzebub-telemetry:/telemetry:ro" -w /work \
   -e PYTHONUNBUFFERED=1 -e UHBS_AIRGAP_ATTESTED=1 \
   -e UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log \
-  uhbs:4.0.0-full lab \
+  uhbs:4.0.1-full lab \
     --inventory /work/docs/conformance/labs/beelzebub/inventory.yaml \
     --target beelzebub-ssh \
     --tps /work/docs/conformance/labs/beelzebub/low_interaction_ssh_full.yaml \
@@ -159,7 +159,7 @@ mkdir -p docs/conformance/reports/beelzebub/telnet/{quick,full}
 docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/beelzebub:/honeypot:ro" -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.0 lab \
+  uhbs:4.0.1 lab \
     --inventory /work/docs/conformance/labs/beelzebub/inventory.yaml \
     --target beelzebub-telnet \
     --tps /work/docs/conformance/labs/beelzebub/low_interaction_telnet_quick.yaml \
@@ -174,7 +174,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/beelzebub-telemetry:/telemetry:ro" -w /work \
   -e PYTHONUNBUFFERED=1 -e UHBS_AIRGAP_ATTESTED=1 \
   -e UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log \
-  uhbs:4.0.0-full lab \
+  uhbs:4.0.1-full lab \
     --inventory /work/docs/conformance/labs/beelzebub/inventory.yaml \
     --target beelzebub-telnet \
     --tps /work/docs/conformance/labs/beelzebub/low_interaction_telnet_full.yaml \

@@ -1,7 +1,7 @@
 # Methodology: OpenCanary multi-protocol UHBS lab
 
 **Status:** Informative  
-**UHBS:** 4.0.0 · Images `uhbs:4.0.0` (quick) / `uhbs:4.0.0-full` (full)  
+**UHBS:** 4.0.1 · Images `uhbs:4.0.1` (quick) / `uhbs:4.0.1-full` (full)  
 **Upstream commit:** `bc231423aa40242cbd0bf34801f8788e23420dee`  
 **Image:** `thinkst/opencanary:latest` (`sha256:558c508742ebc768d979f545bf1889be9d7d58377bd0144058c7df713a88763f`)
 

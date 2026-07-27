@@ -10,7 +10,7 @@
 
 > An objective, repeatable, quantitative methodology for deception technology evaluation — a **personal open-source beta framework** for comparing and grading honeypots and decoy systems by class and protocol.
 
-**UHBS v4.0** is a protocol-agnostic, **vendor-neutral** evaluation framework for measuring deception realism, safety containment, operational scale, and telemetry quality. It is **not** an industry consortium standard or multi-party governed body — see [ROADMAP.md](ROADMAP.md) for what maturity would require.
+**UHBS v4.0.1** is a protocol-agnostic, **vendor-neutral** evaluation framework for measuring deception realism, safety containment, operational scale, and telemetry quality. It is **not** an industry consortium standard or multi-party governed body — see [ROADMAP.md](ROADMAP.md) for what maturity would require.
 
 ## Project status
 
@@ -75,7 +75,7 @@ Registry metadata: [`server.json`](server.json). Live Docker lab probes stay on 
 Build the grading image (CLI + UHBS-Lab harness):
 
 ```bash
-docker build -t uhbs:4.0.0 .
+docker build -t uhbs:4.0.1 .
 # or: docker compose build
 ```
 
@@ -83,18 +83,18 @@ Mount your working directory at `/work` and pass the same `uhbs` commands:
 
 ```bash
 # Validate a scorecard on disk
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.0.0 \
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.0.1 \
   validate-scorecard ./docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
 
 # Compute UHQS from module scores
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.0.0 \
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.0.1 \
   score --class Low-Interaction --scores ./scores.json
 
 # List protocol plugins / run a lab probe against a reachable honeypot
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.0.0 lab --list-protocols
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.0.1 lab --list-protocols
 docker run --rm -v "$PWD:/work" -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 \
-  uhbs:4.0.0 lab \
+  uhbs:4.0.1 lab \
     --tps low_interaction \
     --protocol ssh \
     --target host.docker.internal --port 2222 \
@@ -118,7 +118,7 @@ Maturity roadmap: **[ROADMAP.md](ROADMAP.md)** · Reference harness: **[docs/ref
 | [CITATION.cff](CITATION.cff) | Formal citation metadata |
 | Site [robots.txt](https://mziqudhd92.github.io/uhbs-standard/robots.txt) · [sitemap.xml](https://mziqudhd92.github.io/uhbs-standard/mkdocs/sitemap.xml) | Crawler hints |
 
-## Scoring Summary (UHQS 4.0)
+## Scoring Summary (UHQS 4.0.1)
 
 The **Universal Honeypot Quality Score (UHQS)** is a normalized composite from **0 to 100**:
 
@@ -185,7 +185,7 @@ uhbs-standard/
 After publishing an official scorecard, maintainers can embed:
 
 ```markdown
-![UHBS v4.0](https://img.shields.io/badge/UHBS%20v4.0-Grade%20A-brightgreen)
+![UHBS v4.0.1](https://img.shields.io/badge/UHBS%20v4.0.1-Grade%20A-brightgreen)
 ```
 
 ## Contributing

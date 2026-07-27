@@ -4,7 +4,7 @@ site_url: https://mziqudhd92.github.io/uhbs-standard/mkdocs/
 repo_url: https://github.com/mziqudhd92/uhbs-standard
 repo_name: mziqudhd92/uhbs-standard
 edit_uri: edit/main/docs/
-copyright: UHBS v4.0 — personal beta evaluation framework (Apache-2.0)
+copyright: UHBS v4.0.1 — personal beta evaluation framework (Apache-2.0)
 
 theme:
   name: material
