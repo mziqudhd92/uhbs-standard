@@ -743,6 +743,23 @@ const Results = () => {
       quickCard: "mkdocs/conformance/reports/conpot/quick/SCORECARD.txt",
       fullCard: "mkdocs/conformance/reports/conpot/full/SCORECARD.txt",
     },
+    {
+      name: "Cowrie",
+      classLabel: "Low-Interaction · SSH :2222",
+      repo: "https://github.com/cowrie/cowrie",
+      uhqsQuick: 63.52,
+      uhqsFull: 48.7,
+      gradeQuick: "D",
+      gradeFull: "F",
+      hub: "mkdocs/conformance/reports/cowrie/",
+      tutorial: "mkdocs/conformance/reports/cowrie/TUTORIAL/",
+      methodology: "mkdocs/conformance/reports/cowrie/METHODOLOGY/",
+      scorecard: "mkdocs/scorecards/cowrie-ssh/",
+      quick: "mkdocs/conformance/reports/cowrie/quick/",
+      full: "mkdocs/conformance/reports/cowrie/full/",
+      quickCard: "mkdocs/conformance/reports/cowrie/quick/SCORECARD.txt",
+      fullCard: "mkdocs/conformance/reports/cowrie/full/SCORECARD.txt",
+    },
   ];
 
   return (
@@ -765,7 +782,7 @@ const Results = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6 mb-12">
           {labs.map((lab) => (
             <motion.div
               key={lab.name}

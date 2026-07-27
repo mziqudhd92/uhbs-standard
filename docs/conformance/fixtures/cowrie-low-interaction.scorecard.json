@@ -1,26 +1,58 @@
 {
   "uhbs_version": "4.0.0",
   "target": {
-    "name": "Cowrie (open-source low-interaction baseline)",
+    "name": "cowrie (cowrie SSH honeypot)",
     "class": "Low-Interaction",
-    "profile_ref": "templates/profiles/low-interaction.yaml"
+    "profile_ref": "docs/conformance/labs/cowrie/low_interaction_ssh_full.yaml"
   },
-  "evaluated_at": "2026-07-26",
-  "auditor": "UHBS-Lab reference harness (sanitized fixture)",
+  "evaluated_at": "2026-07-27",
+  "auditor": "UHBS-Lab detailed Docker run (SSH :2222 + 1000-sample A3 + SAST + telemetry)",
   "modules": {
-    "A": { "score": 23.5, "status": "PARTIAL", "weight": 0.30, "notes": "accepted null ID" },
-    "B": { "score": 42.5, "status": "PARTIAL", "weight": 0.15, "notes": "marker missing across sessions" },
-    "C": { "score": 57.0, "status": "PARTIAL", "weight": 0.25, "notes": "malformed telemetry records" },
-    "D": { "score": 100.0, "status": "GATE PASSED", "notes": "stable containment" },
-    "E": { "score": 55.0, "status": "PARTIAL", "weight": 0.10, "p50_ms": 1682.3, "p95_ms": 1845.3, "p99_ms": 1860.0 },
-    "F": { "score": 69.0, "status": "PARTIAL", "weight": 0.20, "notes": "POSIX coverage incomplete" }
+    "A": {
+      "score": 21.5,
+      "status": "PARTIAL",
+      "weight": 0.3,
+      "notes": "SSH RFC4253; accepted null ID; n=1000 timing"
+    },
+    "B": {
+      "score": 60.0,
+      "status": "PARTIAL",
+      "weight": 0.15,
+      "notes": "echo path ok; cross-session marker missing"
+    },
+    "C": {
+      "score": 55.0,
+      "status": "PARTIAL",
+      "weight": 0.25,
+      "notes": "cowrie.json present — schema/injection gates limited (capped)"
+    },
+    "D": {
+      "score": 100.0,
+      "status": "GATE PASSED",
+      "notes": "SSH shell egress probes blocked; C>=95"
+    },
+    "E": {
+      "score": 55.0,
+      "status": "PARTIAL",
+      "weight": 0.1,
+      "notes": "SSH session load P95>>100ms",
+      "p50_ms": 1832.6,
+      "p95_ms": 3099.5,
+      "p99_ms": 3102.7
+    },
+    "F": {
+      "score": 70.0,
+      "status": "PASSED",
+      "weight": 0.2,
+      "notes": "predictable PRNG seed + SAST gate capped F at 70"
+    }
   },
   "weights": {
-    "w_A": 0.30,
+    "w_A": 0.3,
     "w_B": 0.15,
     "w_C": 0.25,
-    "w_E": 0.10,
-    "w_F": 0.20
+    "w_E": 0.1,
+    "w_F": 0.2
   },
   "safety_gate": {
     "containment_score": 100.0,
@@ -28,7 +60,7 @@
     "passed": true,
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 46.97,
+  "uhqs": 48.7,
   "grade": "F",
-  "notes": "Sanitized UHBS-Lab proof fixture for Cowrie (Docker loopback). Demonstrates Low-Interaction class discrimination. Product name is evaluation proof only — not a UHBS requirement."
+  "notes": "Evaluation proof only. Cowrie product name is not a UHBS requirement. SSH-primary grade on container :2222 with root/admin. Artifacts: docs/conformance/reports/cowrie/."
 }

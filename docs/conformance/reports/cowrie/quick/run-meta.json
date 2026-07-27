@@ -1,0 +1,60 @@
+{
+  "uhbs_version": "4.0.0",
+  "run_mode": "quick",
+  "evaluated_at": "2026-07-27T11:47:00Z",
+  "proof_label": "cowrie (cowrie SSH honeypot)",
+  "target": {
+    "repository": "https://github.com/cowrie/cowrie",
+    "git_commit": "e7d1854a9489fa78845af01e445232f854414f87",
+    "class": "Low-Interaction",
+    "protocol": "ssh",
+    "host": "cowrie-lab",
+    "port": 2222,
+    "user": "root",
+    "container_image": "cowrie/cowrie:latest",
+    "container_image_id": "sha256:a54c1a0f0d3f025dbbef83149c1b8521b811a193625287a97247c7fee2415909"
+  },
+  "grader": {
+    "package_version": "4.0.0",
+    "uhbs_git_commit": "27bea1a4f6c63350d6e05b3fcb5df753d61eca86",
+    "docker_image": "uhbs:4.0.0",
+    "docker_image_id": "sha256:d326a451699575c745c65ca6b5b9b72d4692fc3bb0e4c9207ca0b567fda5dcd8",
+    "inventory": "docs/conformance/labs/cowrie/inventory.yaml",
+    "tps": "docs/conformance/labs/cowrie/low_interaction_ssh_quick.yaml"
+  },
+  "flags": {
+    "UHBS_QUICK": true,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": null,
+    "skip_sast_tools": true,
+    "phases": ["profile", "static", "sandbox", "dynamic", "score"],
+    "modules": ["A", "B", "C", "D", "E", "F"],
+    "source_root": "/honeypot",
+    "telemetry_dir": null,
+    "plugin": "ssh",
+    "auth": "root/admin"
+  },
+  "results": {
+    "uhqs": 63.52,
+    "grade": "D",
+    "delta_c": 1.0,
+    "module_scores": {
+      "A": 21.5,
+      "B": 60.0,
+      "C": 100.0,
+      "D": 100.0,
+      "E": 55.0,
+      "F": 87.8
+    },
+    "safety_gate_passed": true
+  },
+  "limitations": [
+    "UHBS_QUICK=1 shortens timing samples and lightens Module E.",
+    "telemetry_dir unset → Module C C1 schema gates largely skipped (optimistic C).",
+    "--skip-sast-tools → no bandit/semgrep.",
+    "SSH-only grade (Telnet not scored).",
+    "Lab auth root/admin (image rejects root/root).",
+    "Prefer full/ for claim-grade evaluation.",
+    "Product name is evaluation proof only — not a UHBS requirement or endorsement."
+  ]
+}

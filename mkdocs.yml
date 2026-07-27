@@ -92,6 +92,9 @@ nav:
       - Conpot report hub: conformance/reports/conpot/index.md
       - Conpot tutorial: conformance/reports/conpot/TUTORIAL.md
       - Conpot methodology: conformance/reports/conpot/METHODOLOGY.md
+      - Cowrie report hub: conformance/reports/cowrie/index.md
+      - Cowrie tutorial: conformance/reports/cowrie/TUTORIAL.md
+      - Cowrie methodology: conformance/reports/cowrie/METHODOLOGY.md
   - Mappings:
       - Index: mappings/index.md
       - ATT&CK: mappings/attack.md
@@ -105,6 +108,7 @@ nav:
       - Web-API / HTTP (ESPot proof): scorecards/espot-web-api.md
       - Low-Interaction / PJL (miniprint proof): scorecards/miniprint-low-interaction.md
       - ICS-SCADA / Modbus (Conpot proof): scorecards/conpot-ics-scada.md
+      - Low-Interaction / SSH (Cowrie proof): scorecards/cowrie-ssh.md
       - Illustrative POSIX / GenAI (synthetic): scorecards/illustrative-posix-genai.md
   - Governance:
       - RFCs: rfcs/README.md

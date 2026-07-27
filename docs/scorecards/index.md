@@ -13,6 +13,7 @@ Published **full** UHBS-Lab scorecards (evaluated 2026-07-27):
 | [Web-API / HTTP decoy (ESPot proof)](espot-web-api.md) | Web-API · HTTP `:9200` | **49.82** | F | [`espot-web-api.scorecard.json`](../conformance/fixtures/espot-web-api.scorecard.json) |
 | [Low-Interaction / PJL decoy (miniprint proof)](miniprint-low-interaction.md) | Low-Interaction · PJL `:9100` | **47.77** | F | [`miniprint-low-interaction.scorecard.json`](../conformance/fixtures/miniprint-low-interaction.scorecard.json) |
 | [ICS-SCADA / Modbus decoy (Conpot proof)](conpot-ics-scada.md) | ICS-SCADA · Modbus `:5020` | **55.51** | D | [`conpot-ics-scada.scorecard.json`](../conformance/fixtures/conpot-ics-scada.scorecard.json) |
+| [Low-Interaction / SSH decoy (Cowrie proof)](cowrie-ssh.md) | Low-Interaction · SSH `:2222` | **48.70** | F | [`cowrie-low-interaction.scorecard.json`](../conformance/fixtures/cowrie-low-interaction.scorecard.json) |
 
 Each page links to the matching report hub (`quick/` + `full/` scorecards, `report.json`, methodology, tutorial).
 
@@ -45,4 +46,5 @@ Validate a published fixture locally:
 uhbs validate-scorecard docs/conformance/fixtures/espot-web-api.scorecard.json --strict
 uhbs validate-scorecard docs/conformance/fixtures/miniprint-low-interaction.scorecard.json --strict
 uhbs validate-scorecard docs/conformance/fixtures/conpot-ics-scada.scorecard.json --strict
+uhbs validate-scorecard docs/conformance/fixtures/cowrie-low-interaction.scorecard.json --strict
 ```

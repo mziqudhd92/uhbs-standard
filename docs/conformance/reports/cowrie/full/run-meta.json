@@ -1,0 +1,63 @@
+{
+  "uhbs_version": "4.0.0",
+  "run_mode": "full",
+  "evaluated_at": "2026-07-27T11:49:00Z",
+  "proof_label": "cowrie (cowrie SSH honeypot)",
+  "target": {
+    "repository": "https://github.com/cowrie/cowrie",
+    "git_commit": "e7d1854a9489fa78845af01e445232f854414f87",
+    "class": "Low-Interaction",
+    "protocol": "ssh",
+    "host": "cowrie-lab",
+    "port": 2222,
+    "user": "root",
+    "container_image": "cowrie/cowrie:latest",
+    "container_image_id": "sha256:a54c1a0f0d3f025dbbef83149c1b8521b811a193625287a97247c7fee2415909"
+  },
+  "grader": {
+    "package_version": "4.0.0",
+    "uhbs_git_commit": "27bea1a4f6c63350d6e05b3fcb5df753d61eca86",
+    "docker_image": "uhbs:4.0.0-full",
+    "docker_image_id": "sha256:1da71d92d4a9ee39b1e774fdbd623b83671cf07f78c7a299a7ed6d6505e9ad35",
+    "inventory": "docs/conformance/labs/cowrie/inventory.yaml",
+    "tps": "docs/conformance/labs/cowrie/low_interaction_ssh_full.yaml"
+  },
+  "flags": {
+    "UHBS_QUICK": false,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": false,
+    "phases": ["profile", "static", "sandbox", "dynamic", "score"],
+    "modules": ["A", "B", "C", "D", "E", "F"],
+    "concurrency": 10,
+    "requests": 50,
+    "timing_samples": 1000,
+    "strict_rfc_enforcement": true,
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry",
+    "plugin": "ssh",
+    "auth": "root/admin"
+  },
+  "results": {
+    "uhqs": 48.7,
+    "grade": "F",
+    "delta_c": 1.0,
+    "module_scores": {
+      "A": 21.5,
+      "B": 60.0,
+      "C": 55.0,
+      "D": 100.0,
+      "E": 55.0,
+      "F": 70.0
+    },
+    "safety_gate_passed": true
+  },
+  "limitations": [
+    "SSH-only grade (Telnet not scored).",
+    "cowrie.json text/JSON — Module C capped without STIX/OTel/ECS.",
+    "Lab auth root/admin (image rejects root/root).",
+    "Air-gap attested via UHBS_AIRGAP_ATTESTED=1 (Docker Desktop lab).",
+    "SAST gate capped Module F at 70.",
+    "Product name is evaluation proof only — not a UHBS requirement or endorsement."
+  ]
+}

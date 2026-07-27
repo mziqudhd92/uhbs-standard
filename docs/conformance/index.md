@@ -18,12 +18,13 @@ Published quick + full Docker grades, tutorials, and provenance:
 | [ESPot](reports/espot/index.md) | [39.95 / F](reports/espot/quick/) | [49.82 / F](reports/espot/full/) | [TUTORIAL](reports/espot/TUTORIAL.md) |
 | [miniprint](reports/miniprint/index.md) | [39.99 / F](reports/miniprint/quick/) | [47.77 / F](reports/miniprint/full/) | [TUTORIAL](reports/miniprint/TUTORIAL.md) |
 | [Conpot](reports/conpot/index.md) | [44.62 / F](reports/conpot/quick/) | [55.51 / D](reports/conpot/full/) | [TUTORIAL](reports/conpot/TUTORIAL.md) |
+| [Cowrie](reports/cowrie/index.md) | [63.52 / D](reports/cowrie/quick/) | [48.70 / F](reports/cowrie/full/) | [TUTORIAL](reports/cowrie/TUTORIAL.md) |
 
 ## Fixtures
 
 | Fixture | Proof target | Expected UHQS | Grade |
 | --- | --- | --- | --- |
-| [`fixtures/cowrie-low-interaction.scorecard.json`](fixtures/cowrie-low-interaction.scorecard.json) | Cowrie (OSS low-interaction) | 46.97 | F |
+| [`fixtures/cowrie-low-interaction.scorecard.json`](fixtures/cowrie-low-interaction.scorecard.json) | Cowrie (SSH / Low-Interaction, **full** lab) | 48.7 | F |
 | [`fixtures/posix-shell-lab.scorecard.json`](fixtures/posix-shell-lab.scorecard.json) | CyberHalluciNet (POSIX-Shell lab) | 80.33 | B |
 | [`fixtures/espot-web-api.scorecard.json`](fixtures/espot-web-api.scorecard.json) | ESPot (Web-API, **full** lab) | 49.82 | F |
 | [`fixtures/miniprint-low-interaction.scorecard.json`](fixtures/miniprint-low-interaction.scorecard.json) | miniprint (PJL / Low-Interaction, **full**) | 47.77 | F |

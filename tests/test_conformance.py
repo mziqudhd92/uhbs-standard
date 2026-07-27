@@ -22,7 +22,7 @@ FIXTURES = ROOT / "docs" / "conformance" / "fixtures"
 @pytest.mark.parametrize(
     "name,expected_uhqs,expected_grade",
     [
-        ("cowrie-low-interaction.scorecard.json", 46.97, "F"),
+        ("cowrie-low-interaction.scorecard.json", 48.7, "F"),
         ("posix-shell-lab.scorecard.json", 80.33, "B"),
         ("espot-web-api.scorecard.json", 49.82, "F"),
         ("miniprint-low-interaction.scorecard.json", 47.77, "F"),
