@@ -13,7 +13,8 @@ Published **full** UHBS-Lab scorecards (evaluated 2026-07-27):
 | [Web-API / HTTP decoy (ESPot proof)](espot-web-api.md) | Web-API · HTTP `:9200` | **49.82** | F | [`espot-web-api.scorecard.json`](../conformance/fixtures/espot-web-api.scorecard.json) |
 | [Low-Interaction / PJL decoy (miniprint proof)](miniprint-low-interaction.md) | Low-Interaction · PJL `:9100` | **47.77** | F | [`miniprint-low-interaction.scorecard.json`](../conformance/fixtures/miniprint-low-interaction.scorecard.json) |
 | [ICS-SCADA / Modbus decoy (Conpot proof)](conpot-ics-scada.md) | ICS-SCADA · Modbus `:5020` | **55.51** | D | [`conpot-ics-scada.scorecard.json`](../conformance/fixtures/conpot-ics-scada.scorecard.json) |
-| [Low-Interaction / SSH decoy (Cowrie proof)](cowrie-ssh.md) | Low-Interaction · SSH `:2222` | **48.70** | F | [`cowrie-low-interaction.scorecard.json`](../conformance/fixtures/cowrie-low-interaction.scorecard.json) |
+| [Low-Interaction / SSH decoy (Cowrie proof)](cowrie-ssh.md) | Low-Interaction · SSH `:2222` | **48.70** | F | [`cowrie-ssh.scorecard.json`](../conformance/fixtures/cowrie-ssh.scorecard.json) |
+| [Low-Interaction / Telnet decoy (Cowrie proof)](cowrie-telnet.md) | Low-Interaction · Telnet `:2223` | **56.52** | D | [`cowrie-telnet.scorecard.json`](../conformance/fixtures/cowrie-telnet.scorecard.json) |
 | [Low-Interaction / SSH tarpit (Endlessh proof)](endlessh-ssh-tarpit.md) | Low-Interaction · `ssh_tarpit` `:2222` | **51.90** | D | [`endlessh-low-interaction.scorecard.json`](../conformance/fixtures/endlessh-low-interaction.scorecard.json) |
 | [Web-API / HTTP decoy (OpenCanary proof)](opencanary-web-api.md) | Web-API · HTTP `:80` | **50.12** | D | [`opencanary-web-api.scorecard.json`](../conformance/fixtures/opencanary-web-api.scorecard.json) |
 | [Beelzebub HTTP](beelzebub-http.md) | Web-API · HTTP `:8080` | **50.12** | D | [`beelzebub-http.scorecard.json`](../conformance/fixtures/beelzebub-http.scorecard.json) |

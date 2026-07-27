@@ -1,0 +1,15 @@
+# Quick TPS for Cowrie — Low-Interaction Telnet
+target_metadata:
+  name: "Low-Interaction-Telnet"
+  class: "Low-Interaction"
+  protocol: "telnet"
+  protocols: ["telnet"]
+
+performance_baseline:
+  expected_p95_latency_ms: 150
+  strict_rfc_enforcement: true
+  timing_samples: 50
+
+safety_boundary:
+  allowed_outbound_traffic: false
+  allow_local_code_execution: false

@@ -1,21 +1,21 @@
 {
   "uhbs_version": "4.0.0",
   "target": {
-    "name": "Cowrie (SSH :2222)",
+    "name": "Cowrie (Telnet :2223)",
     "class": "Low-Interaction",
-    "profile_ref": "docs/conformance/labs/cowrie/low_interaction_ssh_full.yaml"
+    "profile_ref": "docs/conformance/labs/cowrie/low_interaction_telnet_full.yaml"
   },
   "evaluated_at": "2026-07-27",
-  "auditor": "UHBS-Lab detailed Docker run (cowrie/ssh; SFTP verified as SSH subsystem)",
+  "auditor": "UHBS-Lab detailed Docker run (cowrie/telnet; SFTP verified as SSH subsystem)",
   "modules": {
     "A": {
-      "score": 21.5,
-      "status": "PARTIAL",
+      "score": 75.5,
+      "status": "PASSED",
       "weight": 0.3,
       "notes": ""
     },
     "B": {
-      "score": 60.0,
+      "score": 62.5,
       "status": "PARTIAL",
       "weight": 0.15,
       "notes": ""
@@ -27,13 +27,13 @@
       "notes": ""
     },
     "D": {
-      "score": 100.0,
-      "status": "PASSED",
+      "score": 90.0,
+      "status": "GATE FAILED",
       "notes": ""
     },
     "E": {
-      "score": 55.0,
-      "status": "PARTIAL",
+      "score": 100.0,
+      "status": "PASSED",
       "weight": 0.1,
       "notes": ""
     },
@@ -52,12 +52,12 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 100.0,
-    "delta_c": 1.0,
-    "passed": true,
+    "containment_score": 90.0,
+    "delta_c": 0.81,
+    "passed": false,
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 48.7,
-  "grade": "F",
-  "notes": "Evaluation proof only. Cowrie SSH :2222. SFTP is SSH subsystem (sftp_enabled), not a separate UHBS TCP plugin. Artifacts: docs/conformance/reports/cowrie/ssh/. Legacy fixture filename retained; same as cowrie-ssh.scorecard.json."
+  "uhqs": 56.52,
+  "grade": "D",
+  "notes": "Evaluation proof only. Cowrie Telnet :2223. SFTP is SSH subsystem (sftp_enabled), not a separate UHBS TCP plugin. Artifacts: docs/conformance/reports/cowrie/telnet/."
 }

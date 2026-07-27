@@ -1,0 +1,42 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "8fe19e1c1c07d6fd8c46f54a4ab9e3f04c3c7fcd1aa8ed0bb7944a53bbfc0d92"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "78a6338f9fcf45d92206359a2aa8320d7ecbc4a6df84cd61c106469a3207a4d3"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "78a6338f9fcf45d92206359a2aa8320d7ecbc4a6df84cd61c106469a3207a4d3"
+    },
+    {
+      "path": "report.json",
+      "sha256": "421b9389726f658b62817f95cc24f216b75322d6debdc002c265c351552c1ee1"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "117200f27f198999e3556d0026eb5d4328df288ff7c426c8418ac23552c54bcd"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "e439c15df4e4cfd4587bf4b4416b123751be96e3c262517ddf9e9f559534d25d"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "be2badcf0b8873b48fcf64b7749c915c744e0351058af4a215cc02dec4ba96be"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "27f1286e4e7afe3a2fd4acf526998cbfbc96ab804f9251b1bd161e3d68ed95e4"
+    }
+  ],
+  "extra": {
+    "target": "cowrie-ssh",
+    "uhqs": 48.7,
+    "grade": "GRADE F (Fail)"
+  }
+}

@@ -1,9 +1,7 @@
-# Inventory for cowrie/cowrie detailed UHBS Docker lab (SSH primary).
-# Inside uhbs-lab, Cowrie listens on container port 2222.
-# Mounts: source → /honeypot, logs → /telemetry
-# Default docker image accepts root/admin (not root/root).
+# Multi-protocol inventory for cowrie/cowrie (UHBS-native: ssh + telnet).
+# SFTP is an SSH subsystem (sftp_enabled) — graded under SSH, not a separate TCP plugin.
 sites:
-  cowrie:
+  cowrie-ssh:
     kind: ssh
     class: Low-Interaction
     host: cowrie-lab
@@ -17,4 +15,19 @@ sites:
     source_root: /honeypot
     telemetry_dir: /telemetry
     tps: /work/docs/conformance/labs/cowrie/low_interaction_ssh_full.yaml
+    container_image: cowrie/cowrie:latest
+  cowrie-telnet:
+    kind: generic
+    class: Low-Interaction
+    host: cowrie-lab
+    protocol: telnet
+    protocols: [telnet]
+    port: 2223
+    ports:
+      telnet: 2223
+    user: root
+    password: admin
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/cowrie/low_interaction_telnet_full.yaml
     container_image: cowrie/cowrie:latest

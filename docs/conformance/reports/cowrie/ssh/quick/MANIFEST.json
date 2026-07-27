@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "3578f584c7169271829e2e4a8beea8f83c60d7189a97782ba66d54834294153e"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "a47deb0ececec3092c6651c83d681e2c223bd14a9bc5349db4a29f5fbdc3a6c1"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "a47deb0ececec3092c6651c83d681e2c223bd14a9bc5349db4a29f5fbdc3a6c1"
+    },
+    {
+      "path": "report.json",
+      "sha256": "1566993fd2e05343d56e4891eee7cae95ba6dd103c93bf0bcec5dab05aba0160"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "335f8dbf57b34ddee214d665bb6289aadd9a5e747fd567dfa888391308b327d6"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "81bb1526667a728cb1fbd6dbec71f44f21a6cda52140e702d0b3e07c36c51454"
+    }
+  ],
+  "extra": {
+    "target": "cowrie-ssh",
+    "uhqs": 64.12,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

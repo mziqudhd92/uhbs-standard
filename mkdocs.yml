@@ -126,6 +126,7 @@ nav:
       - Low-Interaction / PJL (miniprint proof): scorecards/miniprint-low-interaction.md
       - ICS-SCADA / Modbus (Conpot proof): scorecards/conpot-ics-scada.md
       - Low-Interaction / SSH (Cowrie proof): scorecards/cowrie-ssh.md
+      - Low-Interaction / Telnet (Cowrie proof): scorecards/cowrie-telnet.md
       - Low-Interaction / SSH tarpit (Endlessh proof): scorecards/endlessh-ssh-tarpit.md
       - Web-API / HTTP (OpenCanary proof): scorecards/opencanary-web-api.md
       - Beelzebub HTTP: scorecards/beelzebub-http.md

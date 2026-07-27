@@ -3525,12 +3525,12 @@
   },
   "time": {
     "rules": [],
-    "rules_parse_time": 0.6628451347351074,
+    "rules_parse_time": 0.31771111488342285,
     "profiling_times": {
-      "config_time": 3.084380626678467,
-      "core_time": 8.008794784545898,
-      "ignores_time": 0.0567474365234375,
-      "total_time": 11.657761573791504
+      "config_time": 1.2495524883270264,
+      "core_time": 4.628686904907227,
+      "ignores_time": 0.0008993148803710938,
+      "total_time": 5.884609699249268
     },
     "parsing_time": {
       "total_time": 0.0,
@@ -3545,25 +3545,16 @@
       "very_slow_files": []
     },
     "scanning_time": {
-      "total_time": 42.292675256729126,
+      "total_time": 30.906846523284912,
       "per_file_time": {
-        "mean": 0.04567243548242885,
-        "std_dev": 0.02330425423639356
+        "mean": 0.033376724107219154,
+        "std_dev": 0.010737436293218229
       },
       "very_slow_stats": {
-        "time_ratio": 0.09044272735924008,
-        "count_ratio": 0.0021598272138228943
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
       },
-      "very_slow_files": [
-        {
-          "fpath": "src/cowrie/output/virustotal.py",
-          "ftime": 1.6824169158935547
-        },
-        {
-          "fpath": "src/cowrie/commands/wget.py",
-          "ftime": 2.1426479816436768
-        }
-      ]
+      "very_slow_files": []
     },
     "matching_time": {
       "total_time": 0.0,
@@ -3605,78 +3596,6 @@
             "line": 231,
             "col": 13,
             "offset": 10746
-          }
-        }
-      },
-      {
-        "error_type": "Fixpoint timeout",
-        "severity": "warn",
-        "message": "Fixpoint timeout while performing taint analysis at src/cowrie/commands/curl.py:222:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
-        "location": {
-          "path": "src/cowrie/commands/curl.py",
-          "start": {
-            "line": 222,
-            "col": 9,
-            "offset": 11157
-          },
-          "end": {
-            "line": 222,
-            "col": 14,
-            "offset": 11162
-          }
-        }
-      },
-      {
-        "error_type": "Fixpoint timeout",
-        "severity": "warn",
-        "message": "Fixpoint timeout while performing taint analysis at src/cowrie/commands/ls.py:126:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
-        "location": {
-          "path": "src/cowrie/commands/ls.py",
-          "start": {
-            "line": 126,
-            "col": 9,
-            "offset": 3758
-          },
-          "end": {
-            "line": 126,
-            "col": 16,
-            "offset": 3765
-          }
-        }
-      },
-      {
-        "error_type": "Fixpoint timeout",
-        "severity": "warn",
-        "message": "Fixpoint timeout while performing taint analysis at src/cowrie/commands/wget.py:173:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
-        "location": {
-          "path": "src/cowrie/commands/wget.py",
-          "start": {
-            "line": 173,
-            "col": 9,
-            "offset": 5568
-          },
-          "end": {
-            "line": 173,
-            "col": 14,
-            "offset": 5573
-          }
-        }
-      },
-      {
-        "error_type": "Fixpoint timeout",
-        "severity": "warn",
-        "message": "Fixpoint timeout while performing taint analysis at src/cowrie/core/fingerprint.py:39:4 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
-        "location": {
-          "path": "src/cowrie/core/fingerprint.py",
-          "start": {
-            "line": 39,
-            "col": 5,
-            "offset": 1113
-          },
-          "end": {
-            "line": 39,
-            "col": 27,
-            "offset": 1135
           }
         }
       },
@@ -3727,7 +3646,7 @@
     },
     "targets": [],
     "total_bytes": 0,
-    "max_memory_bytes": 1142523456
+    "max_memory_bytes": 1171201408
   },
   "engine_requested": "OSS",
   "skipped_rules": [],

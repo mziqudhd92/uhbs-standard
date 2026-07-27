@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "d466c51a3cf694b35591cfafd7c65b1d75a2ffc5ce4c094e7d72bf5a8343648d"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "d466c51a3cf694b35591cfafd7c65b1d75a2ffc5ce4c094e7d72bf5a8343648d"
+    },
+    {
+      "path": "report.json",
+      "sha256": "0af9fa9d48d729ecd440a1a6bca8a38700e9202718cffd3e8a3dc0238474ac0d"
+    }
+  ],
+  "extra": {
+    "target": "cowrie-telnet",
+    "uhqs": 47.92,
+    "grade": "GRADE F (Fail)"
+  }
+}

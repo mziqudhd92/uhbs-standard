@@ -2,7 +2,7 @@
   "framework": "Universal Honeypot Benchmarking Standard (UHBS) v4.0",
   "evaluation_type": "Full-Spectrum (Static Audit + Dynamic Sandbox)",
   "target": {
-    "name": "cowrie",
+    "name": "cowrie-ssh",
     "kind": "ssh",
     "host": "cowrie-lab",
     "port": 2222,
@@ -17,15 +17,15 @@
   },
   "baseline": null,
   "uhqs": {
-    "target": "cowrie",
-    "S_A": 21.5,
+    "target": "cowrie-ssh",
+    "S_A": 23.5,
     "S_B": 60.0,
-    "S_C": 55.0,
+    "S_C": 100.0,
     "C": 100.0,
     "S_E": 55.0,
-    "S_F": 70.0,
+    "S_F": 87.84,
     "delta_c": 1.0,
-    "uhqs": 48.7,
+    "uhqs": 64.12,
     "weights": {
       "protocol": 0.3,
       "behavior": 0.15,
@@ -34,21 +34,21 @@
       "static": 0.2
     },
     "profile_class": "Low-Interaction",
-    "grade": "GRADE F (Fail)",
+    "grade": "GRADE D (Needs Remediation)",
     "phase": "profile+static+sandbox+dynamic+score",
     "version": "4.0",
     "containment_measured": true
   },
   "hqs": {
-    "target": "cowrie",
-    "S_A": 21.5,
+    "target": "cowrie-ssh",
+    "S_A": 23.5,
     "S_B": 60.0,
-    "S_C": 55.0,
+    "S_C": 100.0,
     "C": 100.0,
     "S_E": 55.0,
-    "S_F": 70.0,
+    "S_F": 87.84,
     "delta_c": 1.0,
-    "uhqs": 48.7,
+    "uhqs": 64.12,
     "weights": {
       "protocol": 0.3,
       "behavior": 0.15,
@@ -57,7 +57,7 @@
       "static": 0.2
     },
     "profile_class": "Low-Interaction",
-    "grade": "GRADE F (Fail)",
+    "grade": "GRADE D (Needs Remediation)",
     "phase": "profile+static+sandbox+dynamic+score",
     "version": "4.0",
     "containment_measured": true
@@ -66,7 +66,7 @@
     {
       "module": "SANDBOX",
       "dimension": "sandbox",
-      "score": 85.0,
+      "score": 70.0,
       "status": "PASSED",
       "checks": [
         {
@@ -96,9 +96,9 @@
         {
           "id": "sandbox.gateway_log_configured",
           "team": "blue",
-          "passed": true,
-          "detail": "UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log",
-          "score": 25.0,
+          "passed": false,
+          "detail": "gateway log path not set",
+          "score": 10.0,
           "evidence": []
         }
       ],
@@ -113,7 +113,7 @@
     {
       "module": "F",
       "dimension": "static",
-      "score": 70.0,
+      "score": 87.84,
       "status": "PASSED",
       "checks": [
         {
@@ -175,35 +175,11 @@
           "evidence": []
         },
         {
-          "id": "white.bandit",
-          "team": "white",
-          "passed": false,
-          "detail": "bandit HIGH=9",
-          "score": 0.0,
-          "evidence": []
-        },
-        {
-          "id": "white.semgrep",
-          "team": "white",
-          "passed": false,
-          "detail": "semgrep error/critical=4 total=47",
-          "score": 4.0,
-          "evidence": []
-        },
-        {
-          "id": "white.trivy",
+          "id": "white.sast_tools",
           "team": "white",
           "passed": true,
-          "detail": "trivy not installed (skipped)",
-          "score": 4.0,
-          "evidence": []
-        },
-        {
-          "id": "white.sast_gate",
-          "team": "white",
-          "passed": false,
-          "detail": "13 high/critical findings",
-          "score": 0.0,
+          "detail": "SAST tools skipped by flag",
+          "score": 15.0,
           "evidence": []
         },
         {
@@ -275,7 +251,7 @@
     {
       "module": "A",
       "dimension": "protocol",
-      "score": 21.5,
+      "score": 23.5,
       "status": "PARTIAL",
       "checks": [
         {
@@ -346,16 +322,16 @@
           "id": "ssh.timing.sample_size",
           "team": "blue",
           "passed": true,
-          "detail": "n=1000 requested=1000 errors=0",
+          "detail": "n=50 requested=50 errors=0",
           "score": 20.0,
           "evidence": []
         },
         {
           "id": "ssh.timing.iat_jitter",
           "team": "red",
-          "passed": false,
-          "detail": "median=0.158ms pstdev=74.133ms (target jitter often <2ms vs native)",
-          "score": 10.0,
+          "passed": true,
+          "detail": "median=0.144ms pstdev=0.440ms (target jitter often <2ms vs native)",
+          "score": 30.0,
           "evidence": []
         },
         {
@@ -370,19 +346,19 @@
           "id": "ssh.module_a.composite",
           "team": "blue",
           "passed": false,
-          "detail": "fsm=18 nego=30 timing=18",
-          "score": 21.5,
+          "detail": "fsm=18 nego=30 timing=25",
+          "score": 23.5,
           "evidence": []
         }
       ],
       "metrics": {
         "per_protocol": {
-          "ssh": 21.5
+          "ssh": 23.5
         },
         "protocols": [
           "ssh"
         ],
-        "timing_samples": 1000,
+        "timing_samples": 50,
         "available_plugins": [
           "ftp",
           "generic",
@@ -449,8 +425,8 @@
     {
       "module": "C",
       "dimension": "telemetry",
-      "score": 55.0,
-      "status": "PARTIAL",
+      "score": 100.0,
+      "status": "PASSED",
       "checks": [
         {
           "id": "c2.inject_0",
@@ -493,42 +469,10 @@
           "evidence": []
         },
         {
-          "id": "c1.json_parse_clean",
+          "id": "c1.telemetry_dir",
           "team": "blue",
           "passed": false,
-          "detail": "1 malformed / 1 records",
-          "score": 0.0,
-          "evidence": []
-        },
-        {
-          "id": "c1.stix_2_1",
-          "team": "blue",
-          "passed": false,
-          "detail": "no STIX objects found",
-          "score": 0.0,
-          "evidence": []
-        },
-        {
-          "id": "c1.otel_or_ecs",
-          "team": "blue",
-          "passed": false,
-          "detail": "otel_docs=0 ecs_docs=0",
-          "score": 5.0,
-          "evidence": []
-        },
-        {
-          "id": "c1.payload_hashes",
-          "team": "blue",
-          "passed": false,
-          "detail": "no md5/sha256 fields",
-          "score": 0.0,
-          "evidence": []
-        },
-        {
-          "id": "c1.mitre_mapping",
-          "team": "blue",
-          "passed": false,
-          "detail": "no MITRE tags",
+          "detail": "telemetry_dir missing \u2014 set TPS/inventory telemetry_dir for C1 schema gates",
           "score": 0.0,
           "evidence": []
         }
@@ -599,8 +543,8 @@
           "id": "d1.egress_gateway_log",
           "team": "blue",
           "passed": true,
-          "detail": "0 gateway canary hits",
-          "score": 20.0,
+          "detail": "UHBS_EGRESS_GATEWAY_LOG unset \u2014 gateway evidence not attached (lab)",
+          "score": 10.0,
           "evidence": []
         },
         {
@@ -657,7 +601,7 @@
           "id": "e1.p95_vs_tps",
           "team": "blue",
           "passed": false,
-          "detail": "P50=1832.6ms P95=3099.5ms P99=3102.7ms TPS_limit=100.0ms proto=ssh",
+          "detail": "P50=1544.2ms P95=1680.4ms P99=1724.4ms TPS_limit=100.0ms proto=ssh",
           "score": 0.0,
           "evidence": []
         },
@@ -665,7 +609,7 @@
           "id": "e1.error_rate",
           "team": "blue",
           "passed": true,
-          "detail": "errors=0/50 rate=0.00%",
+          "detail": "errors=0/15 rate=0.00%",
           "score": 20.0,
           "evidence": []
         },
@@ -681,20 +625,20 @@
           "id": "e2.circuit_breaker_alive",
           "team": "blue",
           "passed": true,
-          "detail": "service alive after load (connect 35.8ms)",
+          "detail": "service alive after load (connect 0.6ms)",
           "score": 20.0,
           "evidence": []
         }
       ],
       "metrics": {
-        "p50_ms": 1832.59,
-        "p95_ms": 3099.5,
-        "p99_ms": 3102.69,
+        "p50_ms": 1544.17,
+        "p95_ms": 1680.44,
+        "p99_ms": 1724.41,
         "p95_limit_ms": 100.0,
         "errors": 0,
-        "concurrency": 10,
-        "requests": 50,
-        "wall_s": 13.78,
+        "concurrency": 5,
+        "requests": 15,
+        "wall_s": 5.78,
         "protocol": "ssh"
       },
       "notes": [],
@@ -703,12 +647,12 @@
   ],
   "extras": {
     "target_scores": {
-      "protocol": 21.5,
+      "protocol": 23.5,
       "behavior": 60.0,
-      "telemetry": 55.0,
+      "telemetry": 100.0,
       "containment": 100.0,
       "scale": 55.0,
-      "static": 70.0
+      "static": 87.84
     },
     "uhqs_version": "4.0",
     "tps": {
