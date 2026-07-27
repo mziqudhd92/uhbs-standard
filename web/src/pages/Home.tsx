@@ -91,8 +91,8 @@ const Hero = () => {
           <a href="mkdocs/" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 font-mono text-sm font-semibold hover:opacity-90 transition-opacity">
             Open docs <ArrowRight className="w-4 h-4" />
           </a>
-          <a href="mkdocs/conformance/reports/" className="inline-flex items-center gap-2 bg-card border border-border px-5 py-2.5 font-mono text-sm hover:border-primary/50 transition-colors">
-            Lab reports
+          <a href="#results" className="inline-flex items-center gap-2 bg-card border border-border px-5 py-2.5 font-mono text-sm hover:border-primary/50 transition-colors">
+            Results
           </a>
           <a href="https://github.com/mziqudhd92/uhbs-standard" className="inline-flex items-center gap-2 bg-card border border-border px-5 py-2.5 font-mono text-sm hover:border-primary/50 transition-colors">
             GitHub
@@ -717,40 +717,61 @@ const AuditWorkflow = () => {
   );
 };
 
-// Section 7: Published lab scorecards (evaluation proof)
-const PublishedLabs = () => {
+// Section 7: Results — published tutorials, runs, scorecards
+const Results = () => {
   const labs = [
     {
       name: "ESPot",
       classLabel: "Web-API · HTTP :9200",
-      uhqs: 49.82,
-      grade: "F",
-      delta: "0.81",
-      href: "mkdocs/scorecards/espot-web-api/",
-      report: "mkdocs/conformance/reports/espot/",
+      uhqsQuick: 39.95,
+      uhqsFull: 49.82,
+      gradeQuick: "F",
+      gradeFull: "F",
+      hub: "mkdocs/conformance/reports/espot/",
+      tutorial: "mkdocs/conformance/reports/espot/TUTORIAL/",
+      methodology: "mkdocs/conformance/reports/espot/METHODOLOGY/",
+      scorecard: "mkdocs/scorecards/espot-web-api/",
+      quick: "mkdocs/conformance/reports/espot/quick/",
+      full: "mkdocs/conformance/reports/espot/full/",
+      quickCard: "mkdocs/conformance/reports/espot/quick/SCORECARD.txt",
+      fullCard: "mkdocs/conformance/reports/espot/full/SCORECARD.txt",
     },
     {
       name: "miniprint",
       classLabel: "Low-Interaction · PJL :9100",
-      uhqs: 47.77,
-      grade: "F",
-      delta: "0.81",
-      href: "mkdocs/scorecards/miniprint-low-interaction/",
-      report: "mkdocs/conformance/reports/miniprint/",
+      uhqsQuick: 39.99,
+      uhqsFull: 47.77,
+      gradeQuick: "F",
+      gradeFull: "F",
+      hub: "mkdocs/conformance/reports/miniprint/",
+      tutorial: "mkdocs/conformance/reports/miniprint/TUTORIAL/",
+      methodology: "mkdocs/conformance/reports/miniprint/METHODOLOGY/",
+      scorecard: "mkdocs/scorecards/miniprint-low-interaction/",
+      quick: "mkdocs/conformance/reports/miniprint/quick/",
+      full: "mkdocs/conformance/reports/miniprint/full/",
+      quickCard: "mkdocs/conformance/reports/miniprint/quick/SCORECARD.txt",
+      fullCard: "mkdocs/conformance/reports/miniprint/full/SCORECARD.txt",
     },
     {
       name: "Conpot",
       classLabel: "ICS-SCADA · Modbus :5020",
-      uhqs: 55.51,
-      grade: "D",
-      delta: "0.81",
-      href: "mkdocs/scorecards/conpot-ics-scada/",
-      report: "mkdocs/conformance/reports/conpot/",
+      uhqsQuick: 44.62,
+      uhqsFull: 55.51,
+      gradeQuick: "F",
+      gradeFull: "D",
+      hub: "mkdocs/conformance/reports/conpot/",
+      tutorial: "mkdocs/conformance/reports/conpot/TUTORIAL/",
+      methodology: "mkdocs/conformance/reports/conpot/METHODOLOGY/",
+      scorecard: "mkdocs/scorecards/conpot-ics-scada/",
+      quick: "mkdocs/conformance/reports/conpot/quick/",
+      full: "mkdocs/conformance/reports/conpot/full/",
+      quickCard: "mkdocs/conformance/reports/conpot/quick/SCORECARD.txt",
+      fullCard: "mkdocs/conformance/reports/conpot/full/SCORECARD.txt",
     },
   ];
 
   return (
-    <section id="labs" className="py-24 border-t border-border/50">
+    <section id="results" className="py-24 border-t border-border/50">
       <motion.div
         className="container mx-auto px-6"
         initial="hidden"
@@ -761,14 +782,15 @@ const PublishedLabs = () => {
         <motion.div variants={fadeUpVariant} className="mb-12">
           <h2 className="text-3xl md:text-4xl font-bold font-sans mb-4 flex items-center gap-3">
             <Terminal className="text-primary w-8 h-8" />
-            Published Lab Scorecards
+            Results
           </h2>
           <p className="text-secondary-foreground max-w-3xl">
-            Full UHBS-Lab Docker grades (evaluation proof only — not endorsements). Quick + full artifacts, tutorials, and fixtures live under docs.
+            Published UHBS-Lab Docker runs — tutorials, quick + full scorecards, and methodology.
+            Evaluation proof only (not endorsements). Prefer <span className="text-foreground font-mono text-sm">full/</span> for claim-grade numbers.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
           {labs.map((lab) => (
             <motion.div
               key={lab.name}
@@ -776,35 +798,105 @@ const PublishedLabs = () => {
               className="bg-card border border-border p-6 terminal-card flex flex-col"
             >
               <div className="font-mono text-xs text-primary uppercase tracking-wider mb-2">{lab.classLabel}</div>
-              <h3 className="text-xl font-bold mb-4">{lab.name}</h3>
-              <div className="flex items-baseline gap-2 mb-1">
-                <span className="text-3xl font-mono text-primary font-bold">
-                  <AnimatedNumber value={lab.uhqs} duration={1.5} />
-                </span>
-                <span className="text-muted-foreground text-sm">/100</span>
+              <h3 className="text-xl font-bold mb-4">
+                <a href={lab.hub} className="hover:text-primary transition-colors">{lab.name}</a>
+              </h3>
+
+              <div className="grid grid-cols-2 gap-3 mb-6 font-mono text-sm">
+                <div className="border border-border/60 p-3">
+                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">Quick</div>
+                  <div className="text-primary font-bold text-lg">{lab.uhqsQuick.toFixed(2)}</div>
+                  <div className="text-xs text-secondary-foreground">Grade {lab.gradeQuick}</div>
+                </div>
+                <div className="border border-primary/30 bg-primary/5 p-3">
+                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">Full</div>
+                  <div className="text-primary font-bold text-lg">{lab.uhqsFull.toFixed(2)}</div>
+                  <div className="text-xs text-secondary-foreground">Grade {lab.gradeFull}</div>
+                </div>
               </div>
-              <div className="font-mono text-sm text-secondary-foreground mb-6">
-                Grade <span className="text-foreground font-semibold">{lab.grade}</span>
-                <span className="text-muted-foreground"> · δ<sub>C</sub>={lab.delta}</span>
-              </div>
-              <div className="mt-auto flex flex-col gap-2 font-mono text-xs">
-                <a href={lab.href} className="text-primary hover:underline flex items-center gap-1">
-                  Scorecard <ArrowRight className="w-3 h-3" />
-                </a>
-                <a href={lab.report} className="text-secondary-foreground hover:text-primary transition-colors flex items-center gap-1">
-                  Full report hub <ArrowRight className="w-3 h-3" />
-                </a>
+
+              <div className="mt-auto space-y-4 font-mono text-xs">
+                <div>
+                  <div className="text-muted-foreground uppercase tracking-wider text-[10px] mb-2">Guides</div>
+                  <div className="flex flex-col gap-1.5">
+                    <a href={lab.tutorial} className="text-primary hover:underline flex items-center gap-1">
+                      Tutorial <ArrowRight className="w-3 h-3" />
+                    </a>
+                    <a href={lab.methodology} className="text-secondary-foreground hover:text-primary transition-colors flex items-center gap-1">
+                      Methodology <ArrowRight className="w-3 h-3" />
+                    </a>
+                    <a href={lab.hub} className="text-secondary-foreground hover:text-primary transition-colors flex items-center gap-1">
+                      Report hub <ArrowRight className="w-3 h-3" />
+                    </a>
+                  </div>
+                </div>
+                <div>
+                  <div className="text-muted-foreground uppercase tracking-wider text-[10px] mb-2">Runs & scorecards</div>
+                  <div className="flex flex-col gap-1.5">
+                    <a href={lab.scorecard} className="text-primary hover:underline flex items-center gap-1">
+                      Published scorecard page <ArrowRight className="w-3 h-3" />
+                    </a>
+                    <a href={lab.full} className="text-secondary-foreground hover:text-primary transition-colors flex items-center gap-1">
+                      Full run artifacts <ArrowRight className="w-3 h-3" />
+                    </a>
+                    <a href={lab.fullCard} className="text-secondary-foreground hover:text-primary transition-colors flex items-center gap-1">
+                      Full SCORECARD.txt <ArrowRight className="w-3 h-3" />
+                    </a>
+                    <a href={lab.quick} className="text-secondary-foreground hover:text-primary transition-colors flex items-center gap-1">
+                      Quick run artifacts <ArrowRight className="w-3 h-3" />
+                    </a>
+                    <a href={lab.quickCard} className="text-secondary-foreground hover:text-primary transition-colors flex items-center gap-1">
+                      Quick SCORECARD.txt <ArrowRight className="w-3 h-3" />
+                    </a>
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}
         </div>
 
+        <motion.div variants={fadeUpVariant} className="overflow-x-auto border border-border mb-10">
+          <table className="w-full text-left text-sm font-mono">
+            <thead>
+              <tr className="border-b border-border bg-card text-muted-foreground text-xs uppercase tracking-wider">
+                <th className="py-3 px-4 font-normal">Target</th>
+                <th className="py-3 px-4 font-normal">Tutorial</th>
+                <th className="py-3 px-4 font-normal">Quick</th>
+                <th className="py-3 px-4 font-normal">Full</th>
+                <th className="py-3 px-4 font-normal">Scorecard</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border/40">
+              {labs.map((lab) => (
+                <tr key={`row-${lab.name}`} className="hover:bg-card/80">
+                  <td className="py-3 px-4 text-foreground font-semibold">
+                    <a href={lab.hub} className="hover:text-primary">{lab.name}</a>
+                    <div className="text-[10px] text-muted-foreground font-normal mt-0.5">{lab.classLabel}</div>
+                  </td>
+                  <td className="py-3 px-4">
+                    <a href={lab.tutorial} className="text-primary hover:underline">Open</a>
+                  </td>
+                  <td className="py-3 px-4">
+                    <a href={lab.quickCard} className="text-secondary-foreground hover:text-primary">{lab.uhqsQuick.toFixed(2)} / {lab.gradeQuick}</a>
+                  </td>
+                  <td className="py-3 px-4">
+                    <a href={lab.fullCard} className="text-secondary-foreground hover:text-primary">{lab.uhqsFull.toFixed(2)} / {lab.gradeFull}</a>
+                  </td>
+                  <td className="py-3 px-4">
+                    <a href={lab.scorecard} className="text-primary hover:underline">Page</a>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </motion.div>
+
         <motion.div variants={fadeUpVariant} className="flex flex-wrap gap-4 font-mono text-sm">
+          <a href="mkdocs/conformance/reports/" className="inline-flex items-center gap-2 border border-border px-4 py-2 hover:border-primary/50 transition-colors">
+            All lab reports <ArrowRight className="w-4 h-4 text-primary" />
+          </a>
           <a href="mkdocs/scorecards/" className="inline-flex items-center gap-2 border border-border px-4 py-2 hover:border-primary/50 transition-colors">
             All scorecards <ArrowRight className="w-4 h-4 text-primary" />
-          </a>
-          <a href="mkdocs/conformance/reports/" className="inline-flex items-center gap-2 border border-border px-4 py-2 hover:border-primary/50 transition-colors">
-            Reports index <ArrowRight className="w-4 h-4 text-primary" />
           </a>
           <a href="mkdocs/tooling/cli/" className="inline-flex items-center gap-2 border border-border px-4 py-2 hover:border-primary/50 transition-colors">
             Docker / CLI guide <ArrowRight className="w-4 h-4 text-primary" />
@@ -831,6 +923,7 @@ const Footer = () => {
         </p>
         <div className="flex flex-wrap justify-center gap-6 font-mono text-xs text-muted-foreground">
           <a href="mkdocs/" className="hover:text-primary transition-colors">Docs</a>
+          <a href="#results" className="hover:text-primary transition-colors">Results</a>
           <a href="mkdocs/scorecards/" className="hover:text-primary transition-colors">Scorecards</a>
           <a href="mkdocs/conformance/reports/" className="hover:text-primary transition-colors">Lab reports</a>
           <a href="https://github.com/mziqudhd92/uhbs-standard" className="hover:text-primary transition-colors">GitHub</a>
@@ -861,7 +954,7 @@ export default function Home() {
             <a href="#modules" className="hover:text-primary transition-colors">Modules</a>
             <a href="#compare" className="hover:text-primary transition-colors">Compare</a>
             <a href="#scoring" className="hover:text-primary transition-colors">Scoring</a>
-            <a href="#labs" className="hover:text-primary transition-colors text-primary/80">Labs</a>
+            <a href="#results" className="hover:text-primary transition-colors text-primary/80">Results</a>
             <a href="mkdocs/" className="hover:text-primary transition-colors border border-border/60 px-2 py-1">Docs</a>
           </div>
         </div>
@@ -875,7 +968,7 @@ export default function Home() {
         <FiveDimensionComparison />
         <ScoringMethodology />
         <AuditWorkflow />
-        <PublishedLabs />
+        <Results />
       </main>
 
       <Footer />
