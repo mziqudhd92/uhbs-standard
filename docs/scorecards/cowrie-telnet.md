@@ -2,8 +2,8 @@
 
 **Status:** Informative · evaluation proof  
 **Class:** Low-Interaction · **Protocol:** Telnet `:2223`  
-**Full UHQS:** **56.52** · Grade **D** · δ_C **0.81**  
-**Quick UHQS:** 47.92 / F
+**Full UHQS:** **64.90** · Grade **D** · δ_C **0.81**  
+**Quick UHQS:** 53.41 / D
 
 Source report: [`../conformance/reports/cowrie/telnet/`](../conformance/reports/cowrie/telnet/index.md)  
 Fixture: [`../conformance/fixtures/cowrie-telnet.scorecard.json`](../conformance/fixtures/cowrie-telnet.scorecard.json)

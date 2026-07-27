@@ -1,0 +1,74 @@
+{
+  "uhbs_version": "4.0.0",
+  "run_mode": "quick",
+  "evaluated_at": "2026-07-27T19:41:00Z",
+  "proof_label": "cowrie (cowrie TELNET honeypot)",
+  "target": {
+    "repository": "https://github.com/cowrie/cowrie",
+    "git_commit": "e7d1854a9489fa78845af01e445232f854414f87",
+    "class": "Low-Interaction",
+    "protocol": "telnet",
+    "host": "cowrie-lab",
+    "port": 2223,
+    "user": "root",
+    "container_image": "cowrie/cowrie:latest",
+    "container_image_id": "sha256:a54c1a0f0d3f025dbbef83149c1b8521b811a193625287a97247c7fee2415909"
+  },
+  "grader": {
+    "package_version": "4.0.0",
+    "uhbs_git_commit": "aa66e2b8366a33a910b9269f073e72cc18f03226",
+    "docker_image": "uhbs:4.0.0",
+    "docker_image_id": "sha256:eca302d73a1ecd4cccfeba8ae1f9d68c7504af41651727419ce2e6c287aa830f",
+    "inventory": "docs/conformance/labs/cowrie/inventory.yaml",
+    "tps": "docs/conformance/labs/cowrie/low_interaction_telnet_quick.yaml"
+  },
+  "flags": {
+    "UHBS_QUICK": true,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": null,
+    "skip_sast_tools": true,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "source_root": "/honeypot",
+    "telemetry_dir": null,
+    "plugin": "telnet",
+    "auth": "root/admin"
+  },
+  "results": {
+    "uhqs": 49.59,
+    "grade": "GRADE F (Fail)",
+    "delta_c": 0.5625,
+    "module_scores": {
+      "F": 87.84,
+      "A": 77.4,
+      "B": 82.5,
+      "C": 100.0,
+      "D": 75.0,
+      "E": 100.0
+    },
+    "safety_gate_passed": true
+  },
+  "limitations": [
+    "UHBS_QUICK=1 shortens timing samples and lightens Module E.",
+    "telemetry_dir unset \u2192 Module C C1 schema gates largely skipped (optimistic C).",
+    "--skip-sast-tools \u2192 no bandit/semgrep.",
+    "TELNET-only grade (SSH not scored).",
+    "Lab auth root/admin (image rejects root/root).",
+    "Prefer full/ for claim-grade evaluation.",
+    "Regraded 2026-07-27 after this session's protocol-plugin hardening (circuit-breaker + geometric-mean scoring, real telnet.probe_state, integrity gate). See docs/architecture/protocol-plugin-audit.md.",
+    "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement."
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "uhbs_version": "4.0.0",
   "target": {
-    "name": "Cowrie (SSH :2222)",
+    "name": "Cowrie (Low-Interaction / SSH)",
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/cowrie/low_interaction_ssh_full.yaml"
   },
@@ -9,7 +9,7 @@
   "auditor": "UHBS-Lab detailed Docker run (cowrie/ssh; SFTP verified as SSH subsystem)",
   "modules": {
     "A": {
-      "score": 21.5,
+      "score": 57.07,
       "status": "PARTIAL",
       "weight": 0.3,
       "notes": ""
@@ -32,14 +32,14 @@
       "notes": ""
     },
     "E": {
-      "score": 55.0,
+      "score": 75.0,
       "status": "PARTIAL",
       "weight": 0.1,
       "notes": ""
     },
     "F": {
       "score": 70.0,
-      "status": "PASSED",
+      "status": "PARTIAL",
       "weight": 0.2,
       "notes": ""
     }
@@ -57,7 +57,7 @@
     "passed": true,
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 48.7,
-  "grade": "F",
-  "notes": "Evaluation proof only. Cowrie SSH :2222. SFTP is SSH subsystem (sftp_enabled), not a separate UHBS TCP plugin. Artifacts: docs/conformance/reports/cowrie/ssh/. Legacy fixture filename retained; same as cowrie-ssh.scorecard.json."
+  "uhqs": 61.37,
+  "grade": "D",
+  "notes": "Evaluation proof only. Live Cowrie SSH full lab (aliases cowrie-ssh fixture). Regraded 2026-07-27."
 }

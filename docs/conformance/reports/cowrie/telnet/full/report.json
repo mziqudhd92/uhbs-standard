@@ -18,14 +18,14 @@
   "baseline": null,
   "uhqs": {
     "target": "cowrie-telnet",
-    "S_A": 75.5,
-    "S_B": 62.5,
+    "S_A": 100.0,
+    "S_B": 82.5,
     "S_C": 55.0,
     "C": 90.0,
     "S_E": 100.0,
     "S_F": 70.0,
     "delta_c": 0.81,
-    "uhqs": 56.52,
+    "uhqs": 64.9,
     "weights": {
       "protocol": 0.3,
       "behavior": 0.15,
@@ -41,14 +41,14 @@
   },
   "hqs": {
     "target": "cowrie-telnet",
-    "S_A": 75.5,
-    "S_B": 62.5,
+    "S_A": 100.0,
+    "S_B": 82.5,
     "S_C": 55.0,
     "C": 90.0,
     "S_E": 100.0,
     "S_F": 70.0,
     "delta_c": 0.81,
-    "uhqs": 56.52,
+    "uhqs": 64.9,
     "weights": {
       "protocol": 0.3,
       "behavior": 0.15,
@@ -75,7 +75,8 @@
           "passed": true,
           "detail": "cowrie-lab:2223 open",
           "score": 25.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "sandbox.airgap_attested",
@@ -83,7 +84,8 @@
           "passed": true,
           "detail": "operator attested air-gapped sandbox (UHBS_AIRGAP_ATTESTED=1)",
           "score": 25.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "sandbox.egress_deny_tooling",
@@ -91,7 +93,8 @@
           "passed": false,
           "detail": "host-egress-deny.sh not found",
           "score": 10.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "sandbox.gateway_log_configured",
@@ -99,7 +102,8 @@
           "passed": true,
           "detail": "UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log",
           "score": 25.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {
@@ -122,7 +126,8 @@
           "passed": true,
           "detail": "0 static private keys",
           "score": 10.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.hardcoded_ssh_banners",
@@ -130,7 +135,8 @@
           "passed": true,
           "detail": "0 hardcoded SSH banners",
           "score": 5.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.predictable_seeds",
@@ -140,7 +146,8 @@
           "score": 0.0,
           "evidence": [
             "src/backend_pool/util.py"
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "white.hardcoded_macs",
@@ -148,7 +155,8 @@
           "passed": true,
           "detail": "0 hardcoded MAC addresses",
           "score": 5.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.prompt_corpus_present",
@@ -156,7 +164,8 @@
           "passed": true,
           "detail": "no prompt corpus (N/A for non-LLM)",
           "score": 5.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.prompt_boundaries",
@@ -164,7 +173,8 @@
           "passed": true,
           "detail": "no weak delimiter/extract patterns",
           "score": 10.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.fallback_strings",
@@ -172,7 +182,8 @@
           "passed": true,
           "detail": "no plain-text LLM fallback artifacts",
           "score": 10.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.bandit",
@@ -180,7 +191,8 @@
           "passed": false,
           "detail": "bandit HIGH=9",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.semgrep",
@@ -188,7 +200,8 @@
           "passed": false,
           "detail": "semgrep error/critical=4 total=47",
           "score": 4.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.trivy",
@@ -196,7 +209,8 @@
           "passed": true,
           "detail": "trivy not installed (skipped)",
           "score": 4.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.sast_gate",
@@ -204,7 +218,8 @@
           "passed": false,
           "detail": "13 high/critical findings",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.vfs_posix_coverage",
@@ -253,7 +268,8 @@
             "kill",
             "less",
             "ln"
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "white.blocking_calls",
@@ -261,7 +277,8 @@
           "passed": true,
           "detail": "sleep/blocking markers in non-test code\u22481",
           "score": 5.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {
@@ -275,61 +292,58 @@
     {
       "module": "A",
       "dimension": "protocol",
-      "score": 75.5,
+      "score": 100.0,
       "status": "PASSED",
       "checks": [
         {
-          "id": "telnet.fsm.banner_or_iac",
+          "id": "telnet.fsm.iac_negotiation",
           "team": "blue",
           "passed": true,
           "detail": "recv=b'\\xff\\xfd\\x1flogin: '",
           "score": 100.0,
-          "evidence": []
+          "evidence": [],
+          "critical": true
         },
         {
-          "id": "telnet.fsm.banner_or_iac",
+          "id": "telnet.fsm.iac_negotiation",
           "team": "blue",
           "passed": true,
           "detail": "recv=b'\\xff\\xfd\\x1flogin: '",
           "score": 100.0,
-          "evidence": []
+          "evidence": [],
+          "critical": true
         },
         {
           "id": "telnet.timing.sample_size",
           "team": "blue",
           "passed": true,
           "detail": "n=200 requested=200 errors=0",
-          "score": 20.0,
-          "evidence": []
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "telnet.timing.iat_jitter",
           "team": "red",
-          "passed": false,
-          "detail": "median=0.160ms pstdev=74.898ms (target jitter often <2ms vs native)",
-          "score": 10.0,
-          "evidence": []
-        },
-        {
-          "id": "telnet.timing.ks_vs_gold",
-          "team": "blue",
-          "passed": false,
-          "detail": "no gold_baseline_host in TPS \u2014 KS compare skipped (set performance_baseline.gold_baseline_host)",
-          "score": 25.0,
-          "evidence": []
+          "passed": true,
+          "detail": "median=0.308ms pstdev=0.439ms (target jitter often <2ms vs native)",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "telnet.module_a.composite",
           "team": "blue",
           "passed": true,
-          "detail": "fsm=100 nego=100 timing=18",
-          "score": 75.5,
-          "evidence": []
+          "detail": "fsm=100 nego=100 timing=100",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {
         "per_protocol": {
-          "telnet": 75.5
+          "telnet": 100.0
         },
         "protocols": [
           "telnet"
@@ -338,13 +352,21 @@
         "available_plugins": [
           "ftp",
           "generic",
+          "git",
           "http",
           "modbus",
+          "mysql",
+          "ntp",
+          "rdp",
           "redis",
+          "sip",
           "smb",
           "smtp",
+          "snmp",
           "ssh",
-          "telnet"
+          "telnet",
+          "tftp",
+          "vnc"
         ]
       },
       "notes": [
@@ -356,16 +378,17 @@
     {
       "module": "B",
       "dimension": "behavior",
-      "score": 62.5,
-      "status": "PARTIAL",
+      "score": 82.5,
+      "status": "PASSED",
       "checks": [
         {
-          "id": "telnet.state.unsupported",
+          "id": "telnet.state.login_prompt",
           "team": "blue",
           "passed": true,
-          "detail": "no state probe implemented \u2014 skipped",
-          "score": 50.0,
-          "evidence": []
+          "detail": "login-style prompt observed: b'\\xff\\xfd\\x1flogin: '",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "telnet.payload.unsupported",
@@ -373,7 +396,8 @@
           "passed": true,
           "detail": "no payload probe \u2014 skipped",
           "score": 50.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "telnet.fuzz.binary",
@@ -381,12 +405,13 @@
           "passed": true,
           "detail": "survived binary blast",
           "score": 100.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {
         "per_protocol": {
-          "telnet": 62.5
+          "telnet": 82.5
         },
         "class": "Low-Interaction"
       },
@@ -407,15 +432,17 @@
           "passed": true,
           "detail": "survived binary blast",
           "score": 100.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "c1.json_parse_clean",
           "team": "blue",
-          "passed": false,
-          "detail": "1 malformed / 1 records",
-          "score": 0.0,
-          "evidence": []
+          "passed": true,
+          "detail": "0 malformed / 800 records",
+          "score": 20.0,
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "c1.stix_2_1",
@@ -423,7 +450,8 @@
           "passed": false,
           "detail": "no STIX objects found",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "c1.otel_or_ecs",
@@ -431,15 +459,17 @@
           "passed": false,
           "detail": "otel_docs=0 ecs_docs=0",
           "score": 5.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "c1.payload_hashes",
           "team": "blue",
-          "passed": false,
-          "detail": "no md5/sha256 fields",
-          "score": 0.0,
-          "evidence": []
+          "passed": true,
+          "detail": "hash fields present",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "c1.mitre_mapping",
@@ -447,7 +477,8 @@
           "passed": false,
           "detail": "no MITRE tags",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {},
@@ -463,12 +494,13 @@
       "status": "PARTIAL",
       "checks": [
         {
-          "id": "d1.ssh_exec_unavailable",
+          "id": "d1.shell_exec_unavailable",
           "team": "blue",
           "passed": true,
-          "detail": "no SSH port in inventory \u2014 shell egress/LPE probes skipped",
+          "detail": "no explicit SSH listener (ports.ssh / ssh_port) \u2014 remote shell egress/LPE probes skipped for this protocol",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "d1.egress_gateway_log",
@@ -476,24 +508,29 @@
           "passed": true,
           "detail": "0 gateway canary hits",
           "score": 20.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "d1.airgap_attested",
           "team": "blue",
           "passed": true,
-          "detail": "UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes)",
+          "detail": "UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes on SSH decoys)",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {
         "breakout": false,
         "allowed_outbound_traffic": false,
-        "ssh_exec": false
+        "shell_exec": false,
+        "protocols": [
+          "telnet"
+        ]
       },
       "notes": [
-        "Module D limited: target has no SSH port \u2014 Safety Gate cannot fully clear without shell exec probes or UHBS_EGRESS_GATEWAY_LOG evidence"
+        "Module D (protocol-agnostic): no SSH exec surface configured \u2014 Safety Gate cannot fully clear without shell probes or UHBS_EGRESS_GATEWAY_LOG evidence. Non-SSH decoys are graded on gateway/airgap attestation only."
       ],
       "error": null
     },
@@ -507,9 +544,10 @@
           "id": "e1.p95_vs_tps",
           "team": "blue",
           "passed": true,
-          "detail": "P50=2.8ms P95=10.3ms P99=1018.7ms TPS_limit=150.0ms proto=telnet",
+          "detail": "P50=8.9ms P95=37.7ms P99=59.1ms TPS_limit=500.0ms proto=telnet",
           "score": 45.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "e1.error_rate",
@@ -517,7 +555,8 @@
           "passed": true,
           "detail": "errors=0/200 rate=0.00%",
           "score": 20.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "e2.exhaustion_input",
@@ -525,26 +564,28 @@
           "passed": true,
           "detail": "completed exhaustion/fuzz blast",
           "score": 15.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "e2.circuit_breaker_alive",
           "team": "blue",
           "passed": true,
-          "detail": "service alive after load (connect 0.6ms)",
+          "detail": "service alive after load (connect 2.1ms)",
           "score": 20.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {
-        "p50_ms": 2.76,
-        "p95_ms": 10.35,
-        "p99_ms": 1018.65,
-        "p95_limit_ms": 150.0,
+        "p50_ms": 8.86,
+        "p95_ms": 37.72,
+        "p99_ms": 59.09,
+        "p95_limit_ms": 500.0,
         "errors": 0,
         "concurrency": 25,
         "requests": 200,
-        "wall_s": 1.06,
+        "wall_s": 0.49,
         "protocol": "telnet"
       },
       "notes": [],
@@ -553,8 +594,8 @@
   ],
   "extras": {
     "target_scores": {
-      "protocol": 75.5,
-      "behavior": 62.5,
+      "protocol": 100.0,
+      "behavior": 82.5,
       "telemetry": 55.0,
       "containment": 90.0,
       "scale": 100.0,
@@ -567,7 +608,7 @@
       "protocols": [
         "telnet"
       ],
-      "expected_p95_latency_ms": 150.0
+      "expected_p95_latency_ms": 500.0
     }
   }
 }

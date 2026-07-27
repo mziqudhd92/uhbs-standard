@@ -18,8 +18,8 @@ From Cowrie README / `cowrie.cfg.dist` / docs:
 
 ## Grades
 
-- SSH full: **48.70 / F** (δ_C=1.0)
-- Telnet full: **56.52 / D** (δ_C=0.81)
+- SSH full: **61.37 / D** (δ_C=1.0)
+- Telnet full: **64.90 / D** (δ_C=0.81)
 
 ## Environment
 

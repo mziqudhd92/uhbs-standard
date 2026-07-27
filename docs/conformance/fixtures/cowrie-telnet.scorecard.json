@@ -9,13 +9,13 @@
   "auditor": "UHBS-Lab detailed Docker run (cowrie/telnet; SFTP verified as SSH subsystem)",
   "modules": {
     "A": {
-      "score": 75.5,
+      "score": 100.0,
       "status": "PASSED",
       "weight": 0.3,
       "notes": ""
     },
     "B": {
-      "score": 62.5,
+      "score": 82.5,
       "status": "PARTIAL",
       "weight": 0.15,
       "notes": ""
@@ -28,7 +28,7 @@
     },
     "D": {
       "score": 90.0,
-      "status": "GATE FAILED",
+      "status": "PASSED",
       "notes": ""
     },
     "E": {
@@ -39,7 +39,7 @@
     },
     "F": {
       "score": 70.0,
-      "status": "PASSED",
+      "status": "PARTIAL",
       "weight": 0.2,
       "notes": ""
     }
@@ -57,7 +57,7 @@
     "passed": false,
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 56.52,
+  "uhqs": 64.9,
   "grade": "D",
-  "notes": "Evaluation proof only. Cowrie Telnet :2223. SFTP is SSH subsystem (sftp_enabled), not a separate UHBS TCP plugin. Artifacts: docs/conformance/reports/cowrie/telnet/."
+  "notes": "Evaluation proof only. Cowrie Telnet :2223. Regraded 2026-07-27 with 0\u2013100 Module A scale / P95 defaults. Artifacts: docs/conformance/reports/cowrie/telnet/."
 }

@@ -2,29 +2,41 @@
   "uhbs_version": "4.0.0",
   "artifacts": [
     {
+      "path": "README.md",
+      "sha256": "3d7b19f49db9d7e3b47dbc2f85768fb5a0989b2dd212183b4d79e7c2bf63c2a0"
+    },
+    {
       "path": "REPORT.txt",
-      "sha256": "083ff0547b64fa6e6db4f95423e98b329ff2a66fea178289a21cd205b30bd29c"
+      "sha256": "cd4616fdb33aea48da13d45168986290b70550362cbe53f9709ba36ea115a08a"
     },
     {
       "path": "SCORECARD.txt",
-      "sha256": "083ff0547b64fa6e6db4f95423e98b329ff2a66fea178289a21cd205b30bd29c"
+      "sha256": "cd4616fdb33aea48da13d45168986290b70550362cbe53f9709ba36ea115a08a"
     },
     {
       "path": "report.json",
-      "sha256": "9a7af61b2a9ac0739a66d67f22796333acb48f43d3a42d6b4afc4b5601f92ad7"
+      "sha256": "fc67083a9c4ce9eb3644257be3bfc933f4a135edcdacef222fce71bb66a87817"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "d0cc8cb08a4ea02517e35f5db9cc28c8dc8c887394cd462d46d03f222fc38855"
     },
     {
       "path": "static/bandit-report.json",
-      "sha256": "632080fd24ed7a8939bfd2df24e86c0088236d3bf08ebaf262d3092427aa3499"
+      "sha256": "7a40efc9beb765463ec79fc2f9bf197278f7a091d7f6867d6f43d527f86106b1"
     },
     {
       "path": "static/semgrep-report.json",
-      "sha256": "a49673f4fe9b2c9e09a9526739e67afbe4f861f9204bdd3216eac2cde34da3fe"
+      "sha256": "69eca2b9f52e849304b7481a93a6312e2cf061bdfd9dd1e4fbd87414b3256c28"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "411f327b5d51c90c1e2a37a1a2c4e1eb4182170c9772545b34e2c282a770aca9"
     }
   ],
   "extra": {
     "target": "cowrie-telnet",
-    "uhqs": 56.52,
+    "uhqs": 64.9,
     "grade": "GRADE D (Needs Remediation)"
   }
 }

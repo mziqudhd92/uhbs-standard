@@ -6,8 +6,8 @@
 
 | Run | UHQS | Grade | δ_C | Artifacts |
 | --- | --- | --- | --- | --- |
-| Quick | 64.12 | D | 1.0 | [`quick/`](quick/) |
-| Full | 48.70 | F | 1.0 | [`full/`](full/) |
+| Quick | 82.76 | B | 1.0 | [`quick/`](quick/) |
+| Full | 61.37 | D | 1.0 | [`full/`](full/) |
 
 - [Tutorial](../TUTORIAL.md#ssh)
 - [Methodology](../METHODOLOGY.md)

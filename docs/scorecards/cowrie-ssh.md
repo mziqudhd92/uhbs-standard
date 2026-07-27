@@ -2,8 +2,8 @@
 
 **Status:** Informative · evaluation proof  
 **Class:** Low-Interaction · **Protocol:** SSH `:2222`  
-**Full UHQS:** **48.70** · Grade **F** · δ_C **1.0**  
-**Quick UHQS:** 64.12 / D
+**Full UHQS:** **61.37** · Grade **D** · δ_C **1.0**  
+**Quick UHQS:** 82.76 / B
 
 Source report: [`../conformance/reports/cowrie/ssh/`](../conformance/reports/cowrie/ssh/index.md)  
 Fixture: [`../conformance/fixtures/cowrie-ssh.scorecard.json`](../conformance/fixtures/cowrie-ssh.scorecard.json)

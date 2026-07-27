@@ -72,7 +72,7 @@ names are **proof labels only** — UHBS does not require or endorse them.
 
 | Target (proof) | Class | UHQS | Grade | Fixture |
 | --- | --- | --- | --- | --- |
-| Cowrie | Low-Interaction · SSH | **48.70** | F | [`cowrie-low-interaction.scorecard.json`](conformance/fixtures/cowrie-low-interaction.scorecard.json) |
+| Cowrie | Low-Interaction · SSH | **61.37** | D | [`cowrie-low-interaction.scorecard.json`](conformance/fixtures/cowrie-low-interaction.scorecard.json) |
 | ESPot | Web-API · HTTP | **49.82** | F | [`espot-web-api.scorecard.json`](conformance/fixtures/espot-web-api.scorecard.json) |
 | miniprint | Low-Interaction · PJL | **47.77** | F | [`miniprint-low-interaction.scorecard.json`](conformance/fixtures/miniprint-low-interaction.scorecard.json) |
 | Conpot | ICS-SCADA · Modbus | **55.51** | D | [`conpot-ics-scada.scorecard.json`](conformance/fixtures/conpot-ics-scada.scorecard.json) |

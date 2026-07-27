@@ -6,8 +6,8 @@
 
 | Run | UHQS | Grade | δ_C | Artifacts |
 | --- | --- | --- | --- | --- |
-| Quick | 47.92 | F | 0.5625 | [`quick/`](quick/) |
-| Full | 56.52 | D | 0.81 | [`full/`](full/) |
+| Quick | 53.41 | D | 0.5625 | [`quick/`](quick/) |
+| Full | 64.90 | D | 0.81 | [`full/`](full/) |
 
 - [Tutorial](../TUTORIAL.md#telnet)
 - [Methodology](../METHODOLOGY.md)

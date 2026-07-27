@@ -97,4 +97,4 @@ These normative numbers **MUST** match `uhbs score` and `uhbs_core.uhqs_math.com
 | POSIX-Shell | (see `posix-shell-lab` fixture path below) | **80.33** | B |
 
 **Live published fixtures** (evaluation proof only) are listed under
-[Conformance](../conformance/index.md) — e.g. Cowrie full lab **48.70** / F, not 46.97.
+[Conformance](../conformance/index.md) — e.g. Cowrie full lab **61.37** / D, not 46.97.

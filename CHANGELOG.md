@@ -23,7 +23,7 @@ share version **4.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[
 ### Changed
 - GitHub Pages root is the React landing hub; MkDocs deploys under `/mkdocs/`
 - Project maturity wording: **draft** → **beta**
-- Cowrie live fixture documented as UHQS **48.70** (worked-example **46.97** kept in tests)
+- Cowrie live fixture regraded to UHQS **61.37** / D (SSH full); worked-example **46.97** kept in tests
 - ROADMAP evaluation corpus ≥5 OSS targets marked complete
 - **Module E P95 defaults** are class/protocol-aware when TPS omits
   `expected_p95_latency_ms` (e.g. SSH **3000 ms**, Telnet **500 ms**,
@@ -32,6 +32,8 @@ share version **4.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[
   Beelzebub / Trapster)
 
 ### Fixed
+- **Regraded Cowrie SSH/Telnet** after scoring-scale fixes: SSH quick **82.76 / B**,
+  full **61.37 / D**; Telnet quick **53.41 / D**, full **64.90 / D**
 - **Protocol-agnostic lab binding:** TPS no longer silently overwrites inventory/CLI
   protocols; conflicting TPS vs `--protocol` raises `ProtocolConflictError`
 - Builtin `low_interaction` is **class-only**; SSH/Telnet profile moved to

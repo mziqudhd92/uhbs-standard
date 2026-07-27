@@ -79,7 +79,7 @@ docker run --rm --network uhbs-lab \
     --environment "Full Docker lab: cowrie-ssh"
 ```
 
-**Published SSH:** quick **64.12 / D** · full **48.70 / F**
+**Published SSH:** quick **82.76 / B** · full **61.37 / D**
 
 ## 4. Quick + full — Telnet
 
@@ -113,7 +113,7 @@ docker run --rm --network uhbs-lab \
     --environment "Full Docker lab: cowrie-telnet"
 ```
 
-**Published Telnet:** quick **47.92 / F** · full **56.52 / D**
+**Published Telnet:** quick **53.41 / D** · full **64.90 / D**
 
 ## 5. Validate fixtures
 

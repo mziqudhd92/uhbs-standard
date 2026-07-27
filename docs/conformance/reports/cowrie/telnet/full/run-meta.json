@@ -1,0 +1,74 @@
+{
+  "uhbs_version": "4.0.0",
+  "run_mode": "full",
+  "evaluated_at": "2026-07-27T19:41:00Z",
+  "proof_label": "cowrie (cowrie TELNET honeypot)",
+  "target": {
+    "repository": "https://github.com/cowrie/cowrie",
+    "git_commit": "e7d1854a9489fa78845af01e445232f854414f87",
+    "class": "Low-Interaction",
+    "protocol": "telnet",
+    "host": "cowrie-lab",
+    "port": 2223,
+    "user": "root",
+    "container_image": "cowrie/cowrie:latest",
+    "container_image_id": "sha256:a54c1a0f0d3f025dbbef83149c1b8521b811a193625287a97247c7fee2415909"
+  },
+  "grader": {
+    "package_version": "4.0.0",
+    "uhbs_git_commit": "aa66e2b8366a33a910b9269f073e72cc18f03226",
+    "docker_image": "uhbs:4.0.0-full",
+    "docker_image_id": "sha256:8e18b4a9e7a9fc6bec77563237cb98b827cf510112a12bb41663adbe9e7f28df",
+    "inventory": "docs/conformance/labs/cowrie/inventory.yaml",
+    "tps": "docs/conformance/labs/cowrie/low_interaction_telnet_full.yaml"
+  },
+  "flags": {
+    "UHBS_QUICK": false,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": false,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry",
+    "plugin": "telnet",
+    "auth": "root/admin"
+  },
+  "results": {
+    "uhqs": 59.41,
+    "grade": "GRADE D (Needs Remediation)",
+    "delta_c": 0.81,
+    "module_scores": {
+      "F": 70.0,
+      "A": 77.4,
+      "B": 82.5,
+      "C": 55.0,
+      "D": 90.0,
+      "E": 100.0
+    },
+    "safety_gate_passed": true
+  },
+  "limitations": [
+    "Full mode: 10 concurrent workers, 50 requests for Module E; 1000 timing samples via TPS.",
+    "telemetry_dir set \u2014 Module C graded against real captured cowrie.json (1 malformed/1 records \u2014 pre-existing schema-shape gap, not introduced by this regrade).",
+    "bandit + semgrep run (uhbs:4.0.0-full image).",
+    "TELNET-only grade (SSH not scored).",
+    "Lab auth root/admin (image rejects root/root).",
+    "This is the claim-grade (full) evaluation.",
+    "Regraded 2026-07-27 after this session's protocol-plugin hardening (circuit-breaker + geometric-mean scoring, real telnet.probe_state, integrity gate). See docs/architecture/protocol-plugin-audit.md.",
+    "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement."
+  ]
+}

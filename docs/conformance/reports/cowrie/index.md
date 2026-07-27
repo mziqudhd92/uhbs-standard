@@ -6,8 +6,8 @@
 
 | Protocol | Port | Quick | Full |
 | --- | ---: | --- | --- |
-| [SSH](ssh/) (includes SFTP subsystem) | 2222 | 64.12 / D | 48.70 / F |
-| [Telnet](telnet/) | 2223 | 47.92 / F | 56.52 / D |
+| [SSH](ssh/) (includes SFTP subsystem) | 2222 | 82.76 / B | 61.37 / D |
+| [Telnet](telnet/) | 2223 | 53.41 / D | 64.90 / D |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 

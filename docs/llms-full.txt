@@ -67,7 +67,7 @@ Published full-lab proof (sanitized fixtures; prefer live fixture JSON if this d
 - ESPot (Web-API HTTP): UHQS **49.82** (F)
 - miniprint (Low-Interaction PJL): UHQS **47.77** (F)
 - Conpot (ICS-SCADA Modbus): UHQS **55.51** (D)
-- Cowrie (Low-Interaction SSH): UHQS **48.70** (F)
+- Cowrie (Low-Interaction SSH): UHQS **61.37** (D)
 - OpenCanary HTTP: UHQS **50.12** (D); FTP **59.43** (D); SSH **28.44** (F); Telnet **57.00** (D); Redis **48.26** (F)
 - Endlessh (SSH tarpit / ssh_tarpit): UHQS **51.90** (D)
 - CyberHalluciNet / POSIX-Shell lab (illustrative): UHQS **80.33** (B)

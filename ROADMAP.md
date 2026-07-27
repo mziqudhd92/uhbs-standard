@@ -73,7 +73,7 @@ artifacts: [docs/conformance/](conformance/index.md).
 
 | Target (proof only) | Class | UHQS | Grade |
 | --- | --- | --- | --- |
-| Cowrie (OSS SSH baseline) | Low-Interaction | **48.70** | F |
+| Cowrie (OSS SSH baseline) | Low-Interaction | **61.37** | D |
 | ESPot (HTTP Elasticsearch decoy) | Web-API | **49.82** | F |
 | miniprint (PJL printer decoy) | Low-Interaction | **47.77** | F |
 | Conpot (Modbus ICS) | ICS-SCADA | **55.51** | D |
