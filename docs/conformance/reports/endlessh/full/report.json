@@ -1,0 +1,577 @@
+{
+  "framework": "Universal Honeypot Benchmarking Standard (UHBS) v4.0",
+  "evaluation_type": "Full-Lab Modular (tarpit-safe)",
+  "target": {
+    "name": "endlessh",
+    "kind": "generic",
+    "host": "127.0.0.1",
+    "port": 2223,
+    "source_root": "/honeypot",
+    "profile_class": "Low-Interaction",
+    "protocols": [
+      "ssh"
+    ],
+    "ports_map": {
+      "ssh": 2223
+    }
+  },
+  "uhqs": {
+    "target": "endlessh",
+    "S_A": 12.5,
+    "S_B": 6.25,
+    "S_C": 25.0,
+    "C": 96.0,
+    "S_E": 20.0,
+    "S_F": 70.0,
+    "delta_c": 1.0,
+    "uhqs": 26.94,
+    "weights": {
+      "protocol": 0.3,
+      "behavior": 0.15,
+      "telemetry": 0.25,
+      "scale": 0.1,
+      "static": 0.2
+    },
+    "profile_class": "Low-Interaction",
+    "grade": "GRADE F (Fail)",
+    "phase": "full-lab",
+    "version": "4.0",
+    "containment_measured": true
+  },
+  "modules": [
+    {
+      "module": "F",
+      "dimension": "static",
+      "score": 70.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "white.static_private_keys",
+          "team": "white",
+          "passed": true,
+          "detail": "0 static private keys",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "white.hardcoded_ssh_banners",
+          "team": "white",
+          "passed": true,
+          "detail": "0 hardcoded SSH banners",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "white.predictable_seeds",
+          "team": "white",
+          "passed": true,
+          "detail": "0 predictable PRNG seeds",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "white.hardcoded_macs",
+          "team": "white",
+          "passed": true,
+          "detail": "0 hardcoded MAC addresses",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "white.prompt_corpus_present",
+          "team": "white",
+          "passed": true,
+          "detail": "no prompt corpus (N/A for non-LLM)",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "white.prompt_boundaries",
+          "team": "white",
+          "passed": true,
+          "detail": "no weak delimiter/extract patterns",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "white.fallback_strings",
+          "team": "white",
+          "passed": true,
+          "detail": "no plain-text LLM fallback artifacts",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "white.sast_tools",
+          "team": "white",
+          "passed": true,
+          "detail": "SAST tools skipped by flag",
+          "score": 15.0,
+          "evidence": []
+        },
+        {
+          "id": "white.vfs_posix_coverage",
+          "team": "white",
+          "passed": false,
+          "detail": "POSIX coverage 0% (0/104)",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "white.blocking_calls",
+          "team": "white",
+          "passed": true,
+          "detail": "sleep/blocking markers in non-test code\u22480",
+          "score": 5.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "source_root": "/honeypot"
+      },
+      "notes": [
+        "Module F white-box audit (keys/prompts/SAST/VFS)"
+      ],
+      "error": null
+    },
+    {
+      "module": "A",
+      "dimension": "protocol",
+      "score": 12.5,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "rfc4253.identification_crlf",
+          "team": "blue",
+          "passed": false,
+          "detail": "no banner",
+          "score": 0.0,
+          "evidence": [
+            "71787c2b5372382c7d202f745d5e0d0a55723c65452f32697b2f690d0a"
+          ]
+        },
+        {
+          "id": "rfc4253.kexinit_after_id",
+          "team": "blue",
+          "passed": false,
+          "detail": "no KEXINIT",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "rfc4253.legacy_version_handling",
+          "team": "blue",
+          "passed": true,
+          "detail": "handled SSH-1.5 probe without hang",
+          "score": 20.0,
+          "evidence": []
+        },
+        {
+          "id": "rfc4253.reject_null_in_id",
+          "team": "red",
+          "passed": true,
+          "detail": "null in client ID did not proceed to KEX",
+          "score": 30.0,
+          "evidence": [
+            "7d32293a4b6f247a405b0d0a52785d2667702b534b5168702a22283241213227572b58317a58416b"
+          ]
+        },
+        {
+          "id": "rfc4253.identification_crlf",
+          "team": "blue",
+          "passed": false,
+          "detail": "no banner",
+          "score": 0.0,
+          "evidence": [
+            "5c2d7973796b44347b64512a68442c345f0d0a4a3a3e5b30415b7e24744422712b7c5e5d4d69615e2b4d4d472c5975774f0d0a"
+          ]
+        },
+        {
+          "id": "rfc4253.kexinit_after_id",
+          "team": "blue",
+          "passed": false,
+          "detail": "no KEXINIT",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "ssh.nego.hassh",
+          "team": "blue",
+          "passed": false,
+          "detail": "HASSH parse failed",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "ssh.timing.sample_size",
+          "team": "blue",
+          "passed": true,
+          "detail": "n=30 requested=30 errors=0",
+          "score": 20.0,
+          "evidence": []
+        },
+        {
+          "id": "ssh.timing.iat_jitter",
+          "team": "red",
+          "passed": true,
+          "detail": "median=0.048ms pstdev=0.032ms (target jitter often <2ms vs native)",
+          "score": 30.0,
+          "evidence": []
+        },
+        {
+          "id": "ssh.timing.ks_vs_gold",
+          "team": "blue",
+          "passed": false,
+          "detail": "no gold_baseline_host in TPS \u2014 KS compare skipped (set performance_baseline.gold_baseline_host)",
+          "score": 25.0,
+          "evidence": []
+        },
+        {
+          "id": "ssh.module_a.composite",
+          "team": "blue",
+          "passed": false,
+          "detail": "fsm=12 nego=0 timing=25",
+          "score": 12.5,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "ssh": 12.5
+        },
+        "protocols": [
+          "ssh"
+        ],
+        "timing_samples": 20,
+        "available_plugins": [
+          "ftp",
+          "generic",
+          "http",
+          "modbus",
+          "redis",
+          "smb",
+          "smtp",
+          "ssh",
+          "telnet"
+        ]
+      },
+      "notes": [
+        "UHBS Module A \u2014 plugins=['ssh']",
+        "class=Low-Interaction strict_rfc=True"
+      ],
+      "error": null
+    },
+    {
+      "module": "B",
+      "dimension": "behavior",
+      "score": 6.25,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "ssh.state.cross_session",
+          "team": "blue",
+          "passed": false,
+          "detail": "No existing session",
+          "score": 0.0,
+          "evidence": [
+            "",
+            ""
+          ]
+        },
+        {
+          "id": "ssh.payload.echo",
+          "team": "red",
+          "passed": false,
+          "detail": "No existing session",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "ssh.payload.elf_math",
+          "team": "red",
+          "passed": false,
+          "detail": "No existing session",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "ssh.fuzz.non_utf8",
+          "team": "red",
+          "passed": false,
+          "detail": "No existing session",
+          "score": 25.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "ssh": 6.25
+        },
+        "class": "Low-Interaction"
+      },
+      "notes": [
+        "UHBS Module B class=Low-Interaction"
+      ],
+      "error": null
+    },
+    {
+      "module": "C",
+      "dimension": "telemetry",
+      "score": 25.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "c2.inject_0",
+          "team": "red",
+          "passed": false,
+          "detail": "No existing session",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "c2.inject_1",
+          "team": "red",
+          "passed": false,
+          "detail": "No existing session",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "c2.inject_2",
+          "team": "red",
+          "passed": false,
+          "detail": "No existing session",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "c2.inject_3",
+          "team": "red",
+          "passed": false,
+          "detail": "No existing session",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "c2.parser_survival",
+          "team": "red",
+          "passed": false,
+          "detail": "0/4 injections survived without client crash",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "c1.json_parse_clean",
+          "team": "blue",
+          "passed": true,
+          "detail": "0 malformed / 0 records",
+          "score": 20.0,
+          "evidence": []
+        },
+        {
+          "id": "c1.stix_2_1",
+          "team": "blue",
+          "passed": false,
+          "detail": "no STIX objects found",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "c1.otel_or_ecs",
+          "team": "blue",
+          "passed": false,
+          "detail": "otel_docs=0 ecs_docs=0",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "c1.payload_hashes",
+          "team": "blue",
+          "passed": false,
+          "detail": "no md5/sha256 fields",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "c1.mitre_mapping",
+          "team": "blue",
+          "passed": false,
+          "detail": "no MITRE tags",
+          "score": 0.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {},
+      "notes": [
+        "UHBS C1 schema: STIX 2.1 / OTel / ECS best-effort validators"
+      ],
+      "error": null
+    },
+    {
+      "module": "D",
+      "dimension": "containment",
+      "score": 96.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "d1.egress_icmp",
+          "team": "blue",
+          "passed": true,
+          "detail": "egress blocked",
+          "score": 12.0,
+          "evidence": [
+            ""
+          ]
+        },
+        {
+          "id": "d1.egress_dns",
+          "team": "blue",
+          "passed": true,
+          "detail": "egress blocked",
+          "score": 12.0,
+          "evidence": [
+            ""
+          ]
+        },
+        {
+          "id": "d1.egress_tcp",
+          "team": "blue",
+          "passed": true,
+          "detail": "egress blocked",
+          "score": 12.0,
+          "evidence": [
+            ""
+          ]
+        },
+        {
+          "id": "d1.egress_https",
+          "team": "blue",
+          "passed": true,
+          "detail": "egress blocked",
+          "score": 12.0,
+          "evidence": [
+            ""
+          ]
+        },
+        {
+          "id": "d1.egress_http",
+          "team": "blue",
+          "passed": true,
+          "detail": "egress blocked",
+          "score": 12.0,
+          "evidence": [
+            ""
+          ]
+        },
+        {
+          "id": "d1.egress_gateway_log",
+          "team": "blue",
+          "passed": true,
+          "detail": "UHBS_EGRESS_GATEWAY_LOG unset \u2014 gateway evidence not attached (lab)",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "d2.docker_sock",
+          "team": "blue",
+          "passed": true,
+          "detail": "no docker.sock",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "d2.cgroup_escape_surface",
+          "team": "blue",
+          "passed": true,
+          "detail": "cgroup surface ok",
+          "score": 8.0,
+          "evidence": []
+        },
+        {
+          "id": "d3.prompt_injection",
+          "team": "red",
+          "passed": true,
+          "detail": "no prompt/policy leak",
+          "score": 8.0,
+          "evidence": [
+            "No existing session"
+          ]
+        },
+        {
+          "id": "d3.context_exhaustion",
+          "team": "red",
+          "passed": false,
+          "detail": "No existing session",
+          "score": 0.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "breakout": false,
+        "allowed_outbound_traffic": false
+      },
+      "notes": [
+        "UHBS: C\u226595 required for \u03b4_C=1.0; set UHBS_EGRESS_GATEWAY_LOG for gateway proof"
+      ],
+      "error": null
+    },
+    {
+      "module": "E",
+      "dimension": "scale",
+      "score": 20.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "e1.p95_vs_tps",
+          "team": "blue",
+          "passed": false,
+          "detail": "P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=150.0ms proto=ssh",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "e1.error_rate",
+          "team": "blue",
+          "passed": false,
+          "detail": "errors=8/8 rate=100.00%",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "e2.exhaustion_input",
+          "team": "red",
+          "passed": true,
+          "detail": "completed exhaustion/fuzz blast",
+          "score": 15.0,
+          "evidence": []
+        },
+        {
+          "id": "e2.circuit_breaker_alive",
+          "team": "blue",
+          "passed": false,
+          "detail": "No existing session",
+          "score": 0.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "p50_ms": 0.0,
+        "p95_ms": 0.0,
+        "p99_ms": 0.0,
+        "p95_limit_ms": 150.0,
+        "errors": 8,
+        "concurrency": 4,
+        "requests": 8,
+        "wall_s": 40.19,
+        "protocol": "ssh"
+      },
+      "notes": [],
+      "error": null
+    }
+  ],
+  "notes": [
+    "Endlessh never completes RFC4253 identification; Paramiko auth suites hang by design.",
+    "Full-lab remasured Module F; A/B/C/D/E use the completed probe evidence pack (same failure modes as quick).",
+    "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement."
+  ]
+}

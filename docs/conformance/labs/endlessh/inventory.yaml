@@ -1,0 +1,14 @@
+# Inventory for skeeto/endlessh UHBS lab (SSH tarpit).
+# Bind Endlessh to loopback :2223 (see TUTORIAL.md).
+sites:
+  endlessh:
+    kind: generic
+    class: Low-Interaction
+    host: 127.0.0.1
+    protocol: ssh
+    protocols: [ssh]
+    port: 2223
+    ports:
+      ssh: 2223
+    source_root: /honeypot
+    tps: /work/docs/conformance/labs/endlessh/low_interaction_ssh_full.yaml

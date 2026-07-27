@@ -1,0 +1,63 @@
+{
+  "uhbs_version": "4.0.0",
+  "target": {
+    "name": "endlessh (skeeto SSH tarpit)",
+    "class": "Low-Interaction",
+    "profile_ref": "docs/conformance/labs/endlessh/low_interaction_ssh_full.yaml"
+  },
+  "evaluated_at": "2026-07-27",
+  "auditor": "UHBS-Lab loopback run (SSH tarpit :2223)",
+  "modules": {
+    "A": {
+      "score": 12.5,
+      "status": "PARTIAL",
+      "weight": 0.3,
+      "notes": "no valid SSH-2.0 banner / KEXINIT (tarpit drip)"
+    },
+    "B": {
+      "score": 6.25,
+      "status": "PARTIAL",
+      "weight": 0.15,
+      "notes": "no SSH session — cross-session/payload N/A"
+    },
+    "C": {
+      "score": 25.0,
+      "status": "PARTIAL",
+      "weight": 0.25,
+      "notes": "no session inject / structured CTI pipeline"
+    },
+    "D": {
+      "score": 96.0,
+      "status": "GATE PASSED",
+      "notes": "no interactive shell breakout surface; C>=95"
+    },
+    "E": {
+      "score": 20.0,
+      "status": "PARTIAL",
+      "weight": 0.1,
+      "notes": "100% SSH client errors under load; P95 undefined"
+    },
+    "F": {
+      "score": 70.0,
+      "status": "PASSED",
+      "weight": 0.2,
+      "notes": "small C tree; POSIX VFS coverage N/A; SAST skipped in publication"
+    }
+  },
+  "weights": {
+    "w_A": 0.3,
+    "w_B": 0.15,
+    "w_C": 0.25,
+    "w_E": 0.1,
+    "w_F": 0.2
+  },
+  "safety_gate": {
+    "containment_score": 96.0,
+    "delta_c": 1.0,
+    "passed": true,
+    "unauthorized_egress_leaks": 0
+  },
+  "uhqs": 26.94,
+  "grade": "F",
+  "notes": "Evaluation proof only. Endlessh is an SSH tarpit (negative control for interactive honeypot rubrics). Artifacts: docs/conformance/reports/endlessh/."
+}

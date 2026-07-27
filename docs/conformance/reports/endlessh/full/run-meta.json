@@ -1,0 +1,66 @@
+{
+  "uhbs_version": "4.0.0",
+  "run_mode": "full",
+  "evaluated_at": "2026-07-27T12:55:00Z",
+  "proof_label": "endlessh (skeeto SSH tarpit)",
+  "target": {
+    "repository": "https://github.com/skeeto/endlessh",
+    "git_commit": "dfe44eb2c5b6fc3c48a39ed826fe0e4459cdf6ef",
+    "class": "Low-Interaction",
+    "protocol": "ssh",
+    "host": "127.0.0.1",
+    "port": 2223,
+    "user": null,
+    "container_image": null,
+    "build": "local `make` of upstream C sources"
+  },
+  "grader": {
+    "package_version": "4.0.0",
+    "harness": "UHBS-Lab / CyberHalluciNet scripts/benchmarks (compatible orchestrator)",
+    "inventory": "docs/conformance/labs/endlessh/inventory.yaml",
+    "tps": "docs/conformance/labs/endlessh/low_interaction_ssh_full.yaml"
+  },
+  "flags": {
+    "UHBS_QUICK": false,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "skip_sast_tools": true,
+    "phases": [
+      "profile",
+      "static",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "source_root": "/honeypot",
+    "plugin": "ssh",
+    "auth": "n/a (tarpit \u2014 no SSH session)"
+  },
+  "results": {
+    "uhqs": 26.94,
+    "grade": "F",
+    "delta_c": 1.0,
+    "module_scores": {
+      "A": 12.5,
+      "B": 6.25,
+      "C": 25.0,
+      "D": 96.0,
+      "E": 20.0,
+      "F": 70.0
+    },
+    "safety_gate_passed": true
+  },
+  "limitations": [
+    "Endlessh is an SSH tarpit: it never sends a valid SSH-2.0 identification string.",
+    "Modules B/C/E cannot establish Paramiko sessions; probes fail closed with 'No existing session' / banner errors.",
+    "Unbounded full handshake suites hang \u2014 published full/ uses tarpit-safe wall-clock limits.",
+    "--skip-sast-tools \u2192 no bandit/semgrep in this publication.",
+    "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement."
+  ]
+}

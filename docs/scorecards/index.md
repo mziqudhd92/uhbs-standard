@@ -14,6 +14,7 @@ Published **full** UHBS-Lab scorecards (evaluated 2026-07-27):
 | [Low-Interaction / PJL decoy (miniprint proof)](miniprint-low-interaction.md) | Low-Interaction · PJL `:9100` | **47.77** | F | [`miniprint-low-interaction.scorecard.json`](../conformance/fixtures/miniprint-low-interaction.scorecard.json) |
 | [ICS-SCADA / Modbus decoy (Conpot proof)](conpot-ics-scada.md) | ICS-SCADA · Modbus `:5020` | **55.51** | D | [`conpot-ics-scada.scorecard.json`](../conformance/fixtures/conpot-ics-scada.scorecard.json) |
 | [Low-Interaction / SSH decoy (Cowrie proof)](cowrie-ssh.md) | Low-Interaction · SSH `:2222` | **48.70** | F | [`cowrie-low-interaction.scorecard.json`](../conformance/fixtures/cowrie-low-interaction.scorecard.json) |
+| [Low-Interaction / SSH tarpit (Endlessh proof)](endlessh-ssh-tarpit.md) | Low-Interaction · SSH tarpit `:2223` | **26.94** | F | [`endlessh-low-interaction.scorecard.json`](../conformance/fixtures/endlessh-low-interaction.scorecard.json) |
 | [Web-API / HTTP decoy (OpenCanary proof)](opencanary-web-api.md) | Web-API · HTTP `:80` | **50.12** | D | [`opencanary-web-api.scorecard.json`](../conformance/fixtures/opencanary-web-api.scorecard.json) |
 
 Each page links to the matching report hub (`quick/` + `full/` scorecards, `report.json`, methodology, tutorial).
@@ -48,5 +49,6 @@ uhbs validate-scorecard docs/conformance/fixtures/espot-web-api.scorecard.json -
 uhbs validate-scorecard docs/conformance/fixtures/miniprint-low-interaction.scorecard.json --strict
 uhbs validate-scorecard docs/conformance/fixtures/conpot-ics-scada.scorecard.json --strict
 uhbs validate-scorecard docs/conformance/fixtures/cowrie-low-interaction.scorecard.json --strict
+uhbs validate-scorecard docs/conformance/fixtures/endlessh-low-interaction.scorecard.json --strict
 uhbs validate-scorecard docs/conformance/fixtures/opencanary-web-api.scorecard.json --strict
 ```
