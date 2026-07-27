@@ -1,0 +1,825 @@
+{
+  "version": "1.171.0",
+  "results": [
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/cla.yml",
+      "start": {
+        "line": 21,
+        "col": 9,
+        "offset": 694
+      },
+      "end": {
+        "line": 21,
+        "col": 57,
+        "offset": 742
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/publish.yml",
+      "start": {
+        "line": 17,
+        "col": 7,
+        "offset": 223
+      },
+      "end": {
+        "line": 17,
+        "col": 32,
+        "offset": 248
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/publish.yml",
+      "start": {
+        "line": 19,
+        "col": 7,
+        "offset": 281
+      },
+      "end": {
+        "line": 19,
+        "col": 36,
+        "offset": 310
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/publish.yml",
+      "start": {
+        "line": 29,
+        "col": 7,
+        "offset": 557
+      },
+      "end": {
+        "line": 29,
+        "col": 51,
+        "offset": 601
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "dockerfile.security.missing-user-entrypoint.missing-user-entrypoint",
+      "path": "Dockerfile",
+      "start": {
+        "line": 23,
+        "col": 1,
+        "offset": 697
+      },
+      "end": {
+        "line": 23,
+        "col": 71,
+        "offset": 767
+      },
+      "extra": {
+        "message": "By not specifying a USER, a program in the container may run as 'root'. This is a security hazard. If an attacker can control a process running as root, they may have control over the container. Ensure that the last USER in a Dockerfile is a USER other than 'root'.",
+        "fix": "USER non-root\nENTRYPOINT [\"python3\", \"main.py\", \"-c\", \"/etc/trapster/trapster.conf\"]",
+        "metadata": {
+          "cwe": [
+            "CWE-269: Improper Privilege Management"
+          ],
+          "category": "security",
+          "technology": [
+            "dockerfile"
+          ],
+          "confidence": "MEDIUM",
+          "owasp": [
+            "A04:2021 - Insecure Design",
+            "A06:2025 - Insecure Design"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A04_2021-Insecure_Design"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/dockerfile.security.missing-user-entrypoint.missing-user-entrypoint",
+          "shortlink": "https://sg.run/k281"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "trapster/data/http/default_apache/templates/index.html",
+      "start": {
+        "line": 336,
+        "col": 17,
+        "offset": 9422
+      },
+      "end": {
+        "line": 336,
+        "col": 111,
+        "offset": 9516
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "trapster/data/http/default_iis/templates/index.html",
+      "start": {
+        "line": 29,
+        "col": 1,
+        "offset": 541
+      },
+      "end": {
+        "line": 29,
+        "col": 137,
+        "offset": 677
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp",
+      "path": "trapster/data/http/fortigate/files/45482074d2e66dcb140b5a178a24754d/js/login.js",
+      "start": {
+        "line": 54,
+        "col": 17,
+        "offset": 2000
+      },
+      "end": {
+        "line": 54,
+        "col": 35,
+        "offset": 2018
+      },
+      "extra": {
+        "message": "RegExp() called with a `name` function argument, this might allow an attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your application as RegExP blocks the main thread. For this reason, it is recommended to use hardcoded regexes instead. If your regex is run on user-controlled input, consider performing input validation or use a regex checking/sanitization library such as https://www.npmjs.com/package/recheck to verify that the regex does not appear vulnerable to ReDoS.",
+        "metadata": {
+          "owasp": [
+            "A05:2021 - Security Misconfiguration",
+            "A06:2017 - Security Misconfiguration",
+            "A02:2025 - Security Misconfiguration"
+          ],
+          "cwe": [
+            "CWE-1333: Inefficient Regular Expression Complexity"
+          ],
+          "references": [
+            "https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS"
+          ],
+          "source-rule-url": "https://github.com/nodesecurity/eslint-plugin-security/blob/master/rules/detect-non-literal-regexp.js",
+          "category": "security",
+          "technology": [
+            "javascript"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "MEDIUM",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Denial-of-Service (DoS)"
+          ],
+          "source": "https://semgrep.dev/r/javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp",
+          "shortlink": "https://sg.run/gr65"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "javascript.browser.security.eval-detected.eval-detected",
+      "path": "trapster/data/http/fortigate/files/45482074d2e66dcb140b5a178a24754d/js/login.js",
+      "start": {
+        "line": 270,
+        "col": 3,
+        "offset": 7831
+      },
+      "end": {
+        "line": 270,
+        "col": 12,
+        "offset": 7840
+      },
+      "extra": {
+        "message": "Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.",
+        "metadata": {
+          "cwe": [
+            "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "asvs": {
+            "control_id": "5.2.4 Dynamic Code Execution Features",
+            "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x13-V5-Validation-Sanitization-Encoding.md#v52-sanitization-and-sandboxing",
+            "section": "V5 Validation, Sanitization and Encoding",
+            "version": "4"
+          },
+          "category": "security",
+          "technology": [
+            "browser"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "confidence": "LOW",
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Code Injection"
+          ],
+          "source": "https://semgrep.dev/r/javascript.browser.security.eval-detected.eval-detected",
+          "shortlink": "https://sg.run/7ope"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "javascript.browser.security.eval-detected.eval-detected",
+      "path": "trapster/data/http/fortigate/files/45482074d2e66dcb140b5a178a24754d/js/login.js",
+      "start": {
+        "line": 294,
+        "col": 3,
+        "offset": 8466
+      },
+      "end": {
+        "line": 294,
+        "col": 12,
+        "offset": 8475
+      },
+      "extra": {
+        "message": "Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.",
+        "metadata": {
+          "cwe": [
+            "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "asvs": {
+            "control_id": "5.2.4 Dynamic Code Execution Features",
+            "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x13-V5-Validation-Sanitization-Encoding.md#v52-sanitization-and-sandboxing",
+            "section": "V5 Validation, Sanitization and Encoding",
+            "version": "4"
+          },
+          "category": "security",
+          "technology": [
+            "browser"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "confidence": "LOW",
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Code Injection"
+          ],
+          "source": "https://semgrep.dev/r/javascript.browser.security.eval-detected.eval-detected",
+          "shortlink": "https://sg.run/7ope"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 3,
+      "level": "warn",
+      "type": "Lexical error",
+      "message": "Lexical error at line trapster/data/http/fortigate/files/45482074d2e66dcb140b5a178a24754d/lang/fr.json:1:\n unrecognised symbol, in token rule:\u001f",
+      "path": "trapster/data/http/fortigate/files/45482074d2e66dcb140b5a178a24754d/lang/fr.json"
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": "Lexical error",
+      "message": "Lexical error at line trapster/data/http/fortigate/files/45482074d2e66dcb140b5a178a24754d/lang/pg.json:1:\n unrecognised symbol, in token rule:\u001f",
+      "path": "trapster/data/http/fortigate/files/45482074d2e66dcb140b5a178a24754d/lang/pg.json"
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": "Syntax error",
+      "message": "Syntax error at line scripts/trapster-wizard.sh:1:\n `#!/usr/bin/env bash\n# Interactive Trapster configuration wizard (bash).\n# Uses trapster/data/trapster.conf as the template \u2014 no duplicated service list in this script.\nset -euo pipefail\n\nreadonly C_RESET=$'\\033[0m'\nreadonly C_BOLD=$'\\033[1m'\nreadonly C_DIM=$'\\033[2m'\nreadonly C_RED=$'\\033[0;31m'\nreadonly C_GREEN=$'\\033[0;32m'\nreadonly C_YELLOW=$'\\033[0;33m'\nreadonly C_BLUE=$'\\033[0;34m'\nreadonly C_CYAN=$'\\033[0;36m'\n\n# All Trapster protocols (fixed order; display ports are standard / well-known)\nTRAPSTER_SERVICES=( ftp http https ssh dns vnc mysql mssql postgres ldap ldaps rdp telnet snmp rsync )\nTRAPSTER_PORTS=( 21 80 443 22 53 5900 3306 1433 5432 389 636 3389 23 161 873 )\n\nusage() {\n  echo \"Usage: $0 [--template PATH]\"\n  echo \"  --template  JSON template (default: repo trapster/data/trapster.conf)\"\n  echo \"  Writes: ./trapster.generated.conf (current directory)\"\n  exit \"${1:-0}\"\n}\n\nSCRIPT_DIR=\"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\" && pwd)\"\nREPO_ROOT=\"$(cd \"${SCRIPT_DIR}/..\" && pwd)\"\nTEMPLATE=\"${REPO_ROOT}/trapster/data/trapster.conf\"\n# Full service definitions when the chosen template omits a protocol\nSERVICE_DEFAULTS_LIB=\"${REPO_ROOT}/trapster/data/trapster.conf\"\nreadonly OUTPUT=\"${PWD}/trapster.generated.conf\"\n\nwhile [[ $# -gt 0 ]]; do\n  case \"$1\" in\n    --template) TEMPLATE=\"$2\"; shift 2 ;;\n    -h|--help)  usage 0 ;;\n    *) echo \"Unknown option: $1\"; usage 1 ;;\n  esac\ndone\n\nif [[ ! -f \"$TEMPLATE\" ]]; then\n  echo -e \"${C_RED}Template not found: ${TEMPLATE}${C_RESET}\" >&2\n  exit 1\nfi\n\nneed_python() {\n  if ! command -v python3 &>/dev/null; then\n    echo -e \"${C_RED}python3 is required for JSON handling.${C_RESET}\" >&2\n    exit 1\n  fi\n}\n\nneed_python\n\nbanner() {\n  echo -e \"${C_CYAN}${C_BOLD}\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550${C_RESET}\"\n  echo -e \"${C_CYAN}${C_BOLD}  Trapster configuration wizard${C_RESET}\"\n  echo -e \"${C_DIM}  Template: ${TEMPLATE}${C_RESET}\"\n  echo -e ... (truncated 10969 more characters)",
+      "path": "scripts/trapster-wizard.sh"
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": "Syntax error",
+      "message": "Syntax error at line trapster/data/http/demo_api/templates/user.json:1:\n `%` was unexpected",
+      "path": "trapster/data/http/demo_api/templates/user.json"
+    },
+    {
+      "code": 2,
+      "level": "warn",
+      "type": "Timeout",
+      "rule_id": "javascript.aws-lambda.security.tainted-html-string.tainted-html-string",
+      "message": "Timeout when running javascript.aws-lambda.security.tainted-html-string.tainted-html-string on trapster/data/http/fortigate/files/45482074d2e66dcb140b5a178a24754d/js/legacy_theme_setup.js:\n ",
+      "path": "trapster/data/http/fortigate/files/45482074d2e66dcb140b5a178a24754d/js/legacy_theme_setup.js"
+    },
+    {
+      "code": 2,
+      "level": "warn",
+      "type": "Timeout",
+      "rule_id": "javascript.express.security.audit.express-ssrf.express-ssrf",
+      "message": "Timeout when running javascript.express.security.audit.express-ssrf.express-ssrf on trapster/data/http/fortigate/files/45482074d2e66dcb140b5a178a24754d/js/legacy_theme_setup.js:\n ",
+      "path": "trapster/data/http/fortigate/files/45482074d2e66dcb140b5a178a24754d/js/legacy_theme_setup.js"
+    },
+    {
+      "code": 2,
+      "level": "warn",
+      "type": "Timeout",
+      "rule_id": "javascript.express.security.express-insecure-template-usage.express-insecure-template-usage",
+      "message": "Timeout when running javascript.express.security.express-insecure-template-usage.express-insecure-template-usage on trapster/data/http/fortigate/files/45482074d2e66dcb140b5a178a24754d/js/legacy_theme_setup.js:\n ",
+      "path": "trapster/data/http/fortigate/files/45482074d2e66dcb140b5a178a24754d/js/legacy_theme_setup.js"
+    }
+  ],
+  "paths": {
+    "scanned": [
+      ".github/workflows/cla.yml",
+      ".github/workflows/publish.yml",
+      ".gitignore",
+      "Contributor License Agreement.md",
+      "Dockerfile",
+      "LICENSE",
+      "MANIFEST.in",
+      "README.md",
+      "SECURITY.md",
+      "docker-compose.yml",
+      "example.env",
+      "main.py",
+      "requirements.txt",
+      "scripts/trapster-wizard.sh",
+      "setup.py",
+      "trapster/__init__.py",
+      "trapster/ai/__init__.py",
+      "trapster/ai/base.py",
+      "trapster/ai/http.py",
+      "trapster/ai/ssh.py",
+      "trapster/data/http/default_apache/config.yaml",
+      "trapster/data/http/default_apache/templates/400.html",
+      "trapster/data/http/default_apache/templates/401.html",
+      "trapster/data/http/default_apache/templates/404.html",
+      "trapster/data/http/default_apache/templates/index.html",
+      "trapster/data/http/default_iis/config.yaml",
+      "trapster/data/http/default_iis/templates/401.html",
+      "trapster/data/http/default_iis/templates/404.html",
+      "trapster/data/http/default_iis/templates/405.html",
+      "trapster/data/http/default_iis/templates/index.html",
+      "trapster/data/http/demo_ai/config.yaml",
+      "trapster/data/http/demo_api/config.yaml",
+      "trapster/data/http/demo_api/templates/404.html",
+      "trapster/data/http/demo_api/templates/405.html",
+      "trapster/data/http/demo_api/templates/index.html",
+      "trapster/data/http/demo_api/templates/settings.j2",
+      "trapster/data/http/demo_api/templates/user.j2",
+      "trapster/data/http/demo_api/templates/user.json",
+      "trapster/data/http/fortigate/config.yaml",
+      "trapster/data/http/fortigate/files/45482074d2e66dcb140b5a178a24754d/js/legacy_theme_setup.js",
+      "trapster/data/http/fortigate/files/45482074d2e66dcb140b5a178a24754d/js/login.js",
+      "trapster/data/http/fortigate/files/45482074d2e66dcb140b5a178a24754d/lang/fr.json",
+      "trapster/data/http/fortigate/files/45482074d2e66dcb140b5a178a24754d/lang/pg.json",
+      "trapster/data/http/fortigate/files/45482074d2e66dcb140b5a178a24754d/styles.css",
+      "trapster/data/http/fortigate/files/favicon/safari-pinned-tab.svg",
+      "trapster/data/http/fortigate/files/favicon/site.webmanifest",
+      "trapster/data/http/fortigate/templates/401.html",
+      "trapster/data/http/fortigate/templates/index.html",
+      "trapster/data/http/fortigate/templates/login.html",
+      "trapster/data/http/fortigate/templates/logincheck.html",
+      "trapster/data/ssh/.gitkeep",
+      "trapster/data/trapster.conf",
+      "trapster/libs/__init__.py",
+      "trapster/libs/dns.py",
+      "trapster/libs/ldapasn1.py",
+      "trapster/libs/ntlm.py",
+      "trapster/logger/__init__.py",
+      "trapster/logger/api.py",
+      "trapster/logger/base.py",
+      "trapster/logger/ecs.py",
+      "trapster/logger/factory.py",
+      "trapster/logger/file.py",
+      "trapster/logger/formatters.py",
+      "trapster/logger/json.py",
+      "trapster/logger/output.py",
+      "trapster/logger/redis.py",
+      "trapster/modules/__init__.py",
+      "trapster/modules/base.py",
+      "trapster/modules/dns.py",
+      "trapster/modules/ftp.py",
+      "trapster/modules/http.py",
+      "trapster/modules/https.py",
+      "trapster/modules/ldap.py",
+      "trapster/modules/ldaps.py",
+      "trapster/modules/mssql.py",
+      "trapster/modules/mysql.py",
+      "trapster/modules/postgres.py",
+      "trapster/modules/rdp.py",
+      "trapster/modules/resources/VNC_ascii.hcchr",
+      "trapster/modules/rsync.py",
+      "trapster/modules/snmp.py",
+      "trapster/modules/socks5.py",
+      "trapster/modules/ssh.py",
+      "trapster/modules/telnet.py",
+      "trapster/modules/vnc.py",
+      "trapster/trapster.py"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 0.2812778949737549,
+    "profiling_times": {
+      "config_time": 0.7847976684570312,
+      "core_time": 6.1464033126831055,
+      "ignores_time": 0.0008826255798339844,
+      "total_time": 6.937364339828491
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 11.651444673538208,
+      "per_file_time": {
+        "mean": 0.04794833198986916,
+        "std_dev": 0.1277131464164731
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.46144708354159975,
+        "count_ratio": 0.00411522633744856
+      },
+      "very_slow_files": [
+        {
+          "fpath": "trapster/data/http/fortigate/files/45482074d2e66dcb140b5a178a24754d/js/legacy_theme_setup.js",
+          "ftime": 5.376525163650513
+        }
+      ]
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at trapster/modules/http.py:118:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "trapster/modules/http.py",
+          "start": {
+            "line": 118,
+            "col": 9,
+            "offset": 4257
+          },
+          "end": {
+            "line": 118,
+            "col": 28,
+            "offset": 4276
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at trapster/modules/ldap.py:353:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "trapster/modules/ldap.py",
+          "start": {
+            "line": 353,
+            "col": 9,
+            "offset": 15631
+          },
+          "end": {
+            "line": 353,
+            "col": 32,
+            "offset": 15654
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at trapster/modules/ssh.py:237:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "trapster/modules/ssh.py",
+          "start": {
+            "line": 237,
+            "col": 9,
+            "offset": 8900
+          },
+          "end": {
+            "line": 237,
+            "col": 22,
+            "offset": 8913
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at trapster/modules/ssh.py:34:10 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "trapster/modules/ssh.py",
+          "start": {
+            "line": 34,
+            "col": 11,
+            "offset": 1254
+          },
+          "end": {
+            "line": 34,
+            "col": 24,
+            "offset": 1267
+          }
+        }
+      }
+    ],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.9726749427838269,
+      "rules_selected_ratio": 0.06137734933074416,
+      "rules_matched_ratio": 0.06137734933074416
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 1595546176
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

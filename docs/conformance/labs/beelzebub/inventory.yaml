@@ -1,0 +1,57 @@
+# Multi-protocol inventory for beelzebub-labs/beelzebub (UHBS-native plugins only).
+# Container: beelzebub-lab on uhbs-lab. Static service YAMLs under configurations/services/.
+sites:
+  beelzebub-ssh:
+    kind: ssh
+    class: Low-Interaction
+    host: beelzebub-lab
+    protocol: ssh
+    protocols: [ssh]
+    port: 2222
+    ports:
+      ssh: 2222
+    user: root
+    password: "123456"
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/beelzebub/low_interaction_ssh_full.yaml
+    container_image: beelzebub:uhbs-lab
+  beelzebub-http:
+    kind: generic
+    class: Web-API
+    host: beelzebub-lab
+    protocol: http
+    protocols: [http]
+    port: 8080
+    ports:
+      http: 8080
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/beelzebub/web_api_http_full.yaml
+    container_image: beelzebub:uhbs-lab
+  beelzebub-telnet:
+    kind: generic
+    class: Low-Interaction
+    host: beelzebub-lab
+    protocol: telnet
+    protocols: [telnet]
+    port: 23
+    ports:
+      telnet: 23
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/beelzebub/low_interaction_telnet_full.yaml
+    container_image: beelzebub:uhbs-lab
+  beelzebub-redis:
+    kind: generic
+    class: Low-Interaction
+    host: beelzebub-lab
+    protocol: redis
+    protocols: [redis]
+    port: 6379
+    ports:
+      redis: 6379
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/beelzebub/low_interaction_redis_full.yaml
+    container_image: beelzebub:uhbs-lab

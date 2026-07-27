@@ -1,0 +1,2211 @@
+{
+  "version": "1.171.0",
+  "results": [
+    {
+      "check_id": "package_managers.dependabot.dependabot-missing-cooldown.dependabot-missing-cooldown",
+      "path": ".github/dependabot.yml",
+      "start": {
+        "line": 3,
+        "col": 5,
+        "offset": 24
+      },
+      "end": {
+        "line": 6,
+        "col": 24,
+        "offset": 107
+      },
+      "extra": {
+        "message": "This Dependabot configuration does not set a cooldown period. Newly published packages can be malicious or unstable. Add a `cooldown` block with `default-days: 7` to each `package-ecosystem` entry under `updates` to wait 7 days before proposing updates to newly published package versions. Reference: https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#cooldown",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "dependabot"
+          ],
+          "cwe": [
+            "CWE-829: Inclusion of Functionality from Untrusted Control Sphere"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures"
+          ],
+          "confidence": "HIGH",
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "subcategory": [
+            "audit"
+          ],
+          "vulnerability_class": [
+            "Insecure Configuration"
+          ],
+          "references": [
+            "https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#cooldown"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "source": "https://semgrep.dev/r/package_managers.dependabot.dependabot-missing-cooldown.dependabot-missing-cooldown",
+          "shortlink": "https://sg.run/5WvGK"
+        },
+        "severity": "MEDIUM",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "package_managers.dependabot.dependabot-missing-cooldown.dependabot-missing-cooldown",
+      "path": ".github/dependabot.yml",
+      "start": {
+        "line": 8,
+        "col": 5,
+        "offset": 113
+      },
+      "end": {
+        "line": 15,
+        "col": 16,
+        "offset": 267
+      },
+      "extra": {
+        "message": "This Dependabot configuration does not set a cooldown period. Newly published packages can be malicious or unstable. Add a `cooldown` block with `default-days: 7` to each `package-ecosystem` entry under `updates` to wait 7 days before proposing updates to newly published package versions. Reference: https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#cooldown",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "dependabot"
+          ],
+          "cwe": [
+            "CWE-829: Inclusion of Functionality from Untrusted Control Sphere"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures"
+          ],
+          "confidence": "HIGH",
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "subcategory": [
+            "audit"
+          ],
+          "vulnerability_class": [
+            "Insecure Configuration"
+          ],
+          "references": [
+            "https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#cooldown"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "source": "https://semgrep.dev/r/package_managers.dependabot.dependabot-missing-cooldown.dependabot-missing-cooldown",
+          "shortlink": "https://sg.run/5WvGK"
+        },
+        "severity": "MEDIUM",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "package_managers.dependabot.dependabot-missing-cooldown.dependabot-missing-cooldown",
+      "path": ".github/dependabot.yml",
+      "start": {
+        "line": 17,
+        "col": 5,
+        "offset": 273
+      },
+      "end": {
+        "line": 20,
+        "col": 25,
+        "offset": 358
+      },
+      "extra": {
+        "message": "This Dependabot configuration does not set a cooldown period. Newly published packages can be malicious or unstable. Add a `cooldown` block with `default-days: 7` to each `package-ecosystem` entry under `updates` to wait 7 days before proposing updates to newly published package versions. Reference: https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#cooldown",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "dependabot"
+          ],
+          "cwe": [
+            "CWE-829: Inclusion of Functionality from Untrusted Control Sphere"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures"
+          ],
+          "confidence": "HIGH",
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "subcategory": [
+            "audit"
+          ],
+          "vulnerability_class": [
+            "Insecure Configuration"
+          ],
+          "references": [
+            "https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#cooldown"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "source": "https://semgrep.dev/r/package_managers.dependabot.dependabot-missing-cooldown.dependabot-missing-cooldown",
+          "shortlink": "https://sg.run/5WvGK"
+        },
+        "severity": "MEDIUM",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/build.yml",
+      "start": {
+        "line": 17,
+        "col": 9,
+        "offset": 202
+      },
+      "end": {
+        "line": 17,
+        "col": 34,
+        "offset": 227
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/build.yml",
+      "start": {
+        "line": 20,
+        "col": 9,
+        "offset": 261
+      },
+      "end": {
+        "line": 20,
+        "col": 34,
+        "offset": 286
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/deploy.yml",
+      "start": {
+        "line": 17,
+        "col": 9,
+        "offset": 205
+      },
+      "end": {
+        "line": 17,
+        "col": 34,
+        "offset": 230
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/deploy.yml",
+      "start": {
+        "line": 20,
+        "col": 9,
+        "offset": 274
+      },
+      "end": {
+        "line": 20,
+        "col": 37,
+        "offset": 302
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/deploy.yml",
+      "start": {
+        "line": 27,
+        "col": 9,
+        "offset": 455
+      },
+      "end": {
+        "line": 27,
+        "col": 42,
+        "offset": 488
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/deploy.yml",
+      "start": {
+        "line": 30,
+        "col": 9,
+        "offset": 533
+      },
+      "end": {
+        "line": 30,
+        "col": 44,
+        "offset": 568
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/deploy.yml",
+      "start": {
+        "line": 33,
+        "col": 9,
+        "offset": 613
+      },
+      "end": {
+        "line": 33,
+        "col": 42,
+        "offset": 646
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.secrets-inherit.secrets-inherit",
+      "path": ".github/workflows/main.yml",
+      "start": {
+        "line": 33,
+        "col": 5,
+        "offset": 526
+      },
+      "end": {
+        "line": 33,
+        "col": 21,
+        "offset": 542
+      },
+      "extra": {
+        "message": "This workflow uses `secrets: inherit` to pass all of the calling workflow's secrets to a reusable workflow. This violates the principle of least privilege because the called workflow receives access to every secret in the repository, not just the ones it needs. If the called workflow is compromised or sourced from a third party, an attacker gains access to all repository secrets. Instead, explicitly pass only the secrets that the called workflow requires using the `secrets:` map, e.g. `secrets: { MY_SECRET: ${{ secrets.MY_SECRET }} }`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-250: Execution with Unnecessary Privileges"
+          ],
+          "owasp": [
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/sharing-automations/reusing-workflows#passing-inputs-and-secrets-to-a-reusable-workflow",
+            "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.secrets-inherit.secrets-inherit",
+          "shortlink": "https://sg.run/X2PZB"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.secrets-inherit.secrets-inherit",
+      "path": ".github/workflows/main.yml",
+      "start": {
+        "line": 44,
+        "col": 5,
+        "offset": 720
+      },
+      "end": {
+        "line": 44,
+        "col": 21,
+        "offset": 736
+      },
+      "extra": {
+        "message": "This workflow uses `secrets: inherit` to pass all of the calling workflow's secrets to a reusable workflow. This violates the principle of least privilege because the called workflow receives access to every secret in the repository, not just the ones it needs. If the called workflow is compromised or sourced from a third party, an attacker gains access to all repository secrets. Instead, explicitly pass only the secrets that the called workflow requires using the `secrets:` map, e.g. `secrets: { MY_SECRET: ${{ secrets.MY_SECRET }} }`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-250: Execution with Unnecessary Privileges"
+          ],
+          "owasp": [
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/sharing-automations/reusing-workflows#passing-inputs-and-secrets-to-a-reusable-workflow",
+            "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.secrets-inherit.secrets-inherit",
+          "shortlink": "https://sg.run/X2PZB"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.secrets-inherit.secrets-inherit",
+      "path": ".github/workflows/main.yml",
+      "start": {
+        "line": 50,
+        "col": 5,
+        "offset": 822
+      },
+      "end": {
+        "line": 50,
+        "col": 21,
+        "offset": 838
+      },
+      "extra": {
+        "message": "This workflow uses `secrets: inherit` to pass all of the calling workflow's secrets to a reusable workflow. This violates the principle of least privilege because the called workflow receives access to every secret in the repository, not just the ones it needs. If the called workflow is compromised or sourced from a third party, an attacker gains access to all repository secrets. Instead, explicitly pass only the secrets that the called workflow requires using the `secrets:` map, e.g. `secrets: { MY_SECRET: ${{ secrets.MY_SECRET }} }`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-250: Execution with Unnecessary Privileges"
+          ],
+          "owasp": [
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/sharing-automations/reusing-workflows#passing-inputs-and-secrets-to-a-reusable-workflow",
+            "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.secrets-inherit.secrets-inherit",
+          "shortlink": "https://sg.run/X2PZB"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.secrets-inherit.secrets-inherit",
+      "path": ".github/workflows/main.yml",
+      "start": {
+        "line": 56,
+        "col": 5,
+        "offset": 926
+      },
+      "end": {
+        "line": 56,
+        "col": 21,
+        "offset": 942
+      },
+      "extra": {
+        "message": "This workflow uses `secrets: inherit` to pass all of the calling workflow's secrets to a reusable workflow. This violates the principle of least privilege because the called workflow receives access to every secret in the repository, not just the ones it needs. If the called workflow is compromised or sourced from a third party, an attacker gains access to all repository secrets. Instead, explicitly pass only the secrets that the called workflow requires using the `secrets:` map, e.g. `secrets: { MY_SECRET: ${{ secrets.MY_SECRET }} }`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-250: Execution with Unnecessary Privileges"
+          ],
+          "owasp": [
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/sharing-automations/reusing-workflows#passing-inputs-and-secrets-to-a-reusable-workflow",
+            "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.secrets-inherit.secrets-inherit",
+          "shortlink": "https://sg.run/X2PZB"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/test.yml",
+      "start": {
+        "line": 17,
+        "col": 9,
+        "offset": 199
+      },
+      "end": {
+        "line": 17,
+        "col": 34,
+        "offset": 224
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/test.yml",
+      "start": {
+        "line": 20,
+        "col": 9,
+        "offset": 258
+      },
+      "end": {
+        "line": 20,
+        "col": 34,
+        "offset": 283
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/test.yml",
+      "start": {
+        "line": 55,
+        "col": 9,
+        "offset": 1214
+      },
+      "end": {
+        "line": 55,
+        "col": 40,
+        "offset": 1245
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/test.yml",
+      "start": {
+        "line": 71,
+        "col": 9,
+        "offset": 1538
+      },
+      "end": {
+        "line": 71,
+        "col": 34,
+        "offset": 1563
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/test.yml",
+      "start": {
+        "line": 74,
+        "col": 9,
+        "offset": 1597
+      },
+      "end": {
+        "line": 74,
+        "col": 34,
+        "offset": 1622
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/verify.yml",
+      "start": {
+        "line": 17,
+        "col": 9,
+        "offset": 199
+      },
+      "end": {
+        "line": 17,
+        "col": 34,
+        "offset": 224
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/verify.yml",
+      "start": {
+        "line": 20,
+        "col": 9,
+        "offset": 258
+      },
+      "end": {
+        "line": 20,
+        "col": 34,
+        "offset": 283
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/verify.yml",
+      "start": {
+        "line": 47,
+        "col": 9,
+        "offset": 749
+      },
+      "end": {
+        "line": 47,
+        "col": 34,
+        "offset": 774
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/verify.yml",
+      "start": {
+        "line": 50,
+        "col": 9,
+        "offset": 808
+      },
+      "end": {
+        "line": 50,
+        "col": 34,
+        "offset": 833
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/verify.yml",
+      "start": {
+        "line": 57,
+        "col": 9,
+        "offset": 946
+      },
+      "end": {
+        "line": 57,
+        "col": 43,
+        "offset": 980
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/verify.yml",
+      "start": {
+        "line": 66,
+        "col": 9,
+        "offset": 1126
+      },
+      "end": {
+        "line": 66,
+        "col": 46,
+        "offset": 1163
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "dockerfile.security.missing-user-entrypoint.missing-user-entrypoint",
+      "path": "Dockerfile",
+      "start": {
+        "line": 33,
+        "col": 1,
+        "offset": 704
+      },
+      "end": {
+        "line": 33,
+        "col": 28,
+        "offset": 731
+      },
+      "extra": {
+        "message": "By not specifying a USER, a program in the container may run as 'root'. This is a security hazard. If an attacker can control a process running as root, they may have control over the container. Ensure that the last USER in a Dockerfile is a USER other than 'root'.",
+        "fix": "USER non-root\nENTRYPOINT [\"/main\", \"run\"]",
+        "metadata": {
+          "cwe": [
+            "CWE-269: Improper Privilege Management"
+          ],
+          "category": "security",
+          "technology": [
+            "dockerfile"
+          ],
+          "confidence": "MEDIUM",
+          "owasp": [
+            "A04:2021 - Insecure Design",
+            "A06:2025 - Insecure Design"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A04_2021-Insecure_Design"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/dockerfile.security.missing-user-entrypoint.missing-user-entrypoint",
+          "shortlink": "https://sg.run/k281"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.docker-compose.security.no-new-privileges.no-new-privileges",
+      "path": "integration_test/docker-compose.yml",
+      "start": {
+        "line": 3,
+        "col": 3,
+        "offset": 27
+      },
+      "end": {
+        "line": 3,
+        "col": 11,
+        "offset": 35
+      },
+      "extra": {
+        "message": "Service 'rabbitmq' allows for privilege escalation via setuid or setgid binaries. Add 'no-new-privileges:true' in 'security_opt' to prevent this.",
+        "metadata": {
+          "cwe": [
+            "CWE-732: Incorrect Permission Assignment for Critical Resource"
+          ],
+          "owasp": [
+            "A05:2021 - Security Misconfiguration",
+            "A06:2017 - Security Misconfiguration",
+            "A02:2025 - Security Misconfiguration"
+          ],
+          "references": [
+            "https://raesene.github.io/blog/2019/06/01/docker-capabilities-and-no-new-privs/",
+            "https://www.kernel.org/doc/Documentation/prctl/no_new_privs.txt",
+            "https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html#rule-4-add-no-new-privileges-flag"
+          ],
+          "category": "security",
+          "technology": [
+            "docker-compose"
+          ],
+          "cwe2021-top25": true,
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/yaml.docker-compose.security.no-new-privileges.no-new-privileges",
+          "shortlink": "https://sg.run/0n8q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.docker-compose.security.writable-filesystem-service.writable-filesystem-service",
+      "path": "integration_test/docker-compose.yml",
+      "start": {
+        "line": 3,
+        "col": 3,
+        "offset": 27
+      },
+      "end": {
+        "line": 3,
+        "col": 11,
+        "offset": 35
+      },
+      "extra": {
+        "message": "Service 'rabbitmq' is running with a writable root filesystem. This may allow malicious applications to download and run additional payloads, or modify container files. If an application inside a container has to save something temporarily consider using a tmpfs. Add 'read_only: true' to this service to prevent this.",
+        "metadata": {
+          "cwe": [
+            "CWE-732: Incorrect Permission Assignment for Critical Resource"
+          ],
+          "owasp": [
+            "A05:2021 - Security Misconfiguration",
+            "A06:2017 - Security Misconfiguration",
+            "A02:2025 - Security Misconfiguration"
+          ],
+          "references": [
+            "https://docs.docker.com/compose/compose-file/compose-file-v3/#domainname-hostname-ipc-mac_address-privileged-read_only-shm_size-stdin_open-tty-user-working_dir",
+            "https://blog.atomist.com/security-of-docker-kubernetes/",
+            "https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html#rule-8-set-filesystem-and-volumes-to-read-only"
+          ],
+          "category": "security",
+          "technology": [
+            "docker-compose"
+          ],
+          "cwe2021-top25": true,
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/yaml.docker-compose.security.writable-filesystem-service.writable-filesystem-service",
+          "shortlink": "https://sg.run/e4JE"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "go.lang.security.audit.net.use-tls.use-tls",
+      "path": "internal/builder/builder.go",
+      "start": {
+        "line": 134,
+        "col": 14,
+        "offset": 4349
+      },
+      "end": {
+        "line": 134,
+        "col": 90,
+        "offset": 4425
+      },
+      "extra": {
+        "message": "Found an HTTP server without TLS. Use 'http.ListenAndServeTLS' instead. See https://golang.org/pkg/net/http/#ListenAndServeTLS for more information.",
+        "fix": "http.ListenAndServeTLS(b.beelzebubCoreConfigurations.Core.Prometheus.Port, certFile, keyFile, nil)",
+        "metadata": {
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "references": [
+            "https://golang.org/pkg/net/http/#ListenAndServeTLS"
+          ],
+          "category": "security",
+          "technology": [
+            "go"
+          ],
+          "confidence": "MEDIUM",
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/go.lang.security.audit.net.use-tls.use-tls",
+          "shortlink": "https://sg.run/dKbY"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "go.lang.security.audit.dangerous-exec-command.dangerous-exec-command",
+      "path": "internal/pluginmgr/git.go",
+      "start": {
+        "line": 16,
+        "col": 9,
+        "offset": 291
+      },
+      "end": {
+        "line": 16,
+        "col": 48,
+        "offset": 330
+      },
+      "extra": {
+        "message": "Detected non-static command inside Command. Audit the input to 'exec.Command'. If unverified user data can reach this call site, this is a code injection vulnerability. A malicious actor can inject a malicious script to execute arbitrary code.",
+        "metadata": {
+          "cwe": [
+            "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "category": "security",
+          "technology": [
+            "go"
+          ],
+          "confidence": "LOW",
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "cwe2022-top25": true,
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Code Injection"
+          ],
+          "source": "https://semgrep.dev/r/go.lang.security.audit.dangerous-exec-command.dangerous-exec-command",
+          "shortlink": "https://sg.run/W8lA"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "go.lang.security.audit.crypto.math_random.math-random-used",
+      "path": "internal/plugins/maze.go",
+      "start": {
+        "line": 7,
+        "col": 3,
+        "offset": 71
+      },
+      "end": {
+        "line": 7,
+        "col": 12,
+        "offset": 80
+      },
+      "extra": {
+        "message": "Do not use `math/rand`. Use `crypto/rand` instead.",
+        "fix": "crypto/rand",
+        "metadata": {
+          "cwe": [
+            "CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)"
+          ],
+          "owasp": [
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "references": [
+            "https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html#secure-random-number-generation"
+          ],
+          "category": "security",
+          "technology": [
+            "go"
+          ],
+          "confidence": "MEDIUM",
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues"
+          ],
+          "source": "https://semgrep.dev/r/go.lang.security.audit.crypto.math_random.math-random-used",
+          "shortlink": "https://sg.run/6nK6"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "go.lang.security.filepath-clean-misuse.filepath-clean-misuse",
+      "path": "internal/plugins/maze.go",
+      "start": {
+        "line": 188,
+        "col": 13,
+        "offset": 5971
+      },
+      "end": {
+        "line": 188,
+        "col": 41,
+        "offset": 5999
+      },
+      "extra": {
+        "message": "`Clean` is not intended to sanitize against path traversal attacks. This function is for finding the shortest path name equivalent to the given input. Using `Clean` to sanitize file reads may expose this application to path traversal attacks, where an attacker could access arbitrary files on the server. To fix this easily, write this: `filepath.FromSlash(path.Clean(\"/\"+strings.Trim(req.URL.Path, \"/\")))` However, a better solution is using the `SecureJoin` function in the package `filepath-securejoin`. See https://pkg.go.dev/github.com/cyphar/filepath-securejoin#section-readme.",
+        "fix": "filepath.FromSlash(filepath.Clean(\"/\"+strings.Trim(request.URL.Path, \"/\")))",
+        "metadata": {
+          "references": [
+            "https://pkg.go.dev/path#Clean",
+            "http://technosophos.com/2016/03/31/go-quickly-cleaning-filepaths.html",
+            "https://labs.detectify.com/2021/12/15/zero-day-path-traversal-grafana/",
+            "https://dzx.cz/2021/04/02/go_path_traversal/",
+            "https://pkg.go.dev/github.com/cyphar/filepath-securejoin#section-readme"
+          ],
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "owasp": [
+            "A05:2017 - Broken Access Control",
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control"
+          ],
+          "category": "security",
+          "technology": [
+            "go"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "MEDIUM",
+          "confidence": "MEDIUM",
+          "interfile": true,
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Path Traversal"
+          ],
+          "source": "https://semgrep.dev/r/go.lang.security.filepath-clean-misuse.filepath-clean-misuse",
+          "shortlink": "https://sg.run/ZKzw"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "trailofbits.go.invalid-usage-of-modified-variable.invalid-usage-of-modified-variable",
+      "path": "internal/protocols/strategies/HTTP/http.go",
+      "start": {
+        "line": 39,
+        "col": 5,
+        "offset": 923
+      },
+      "end": {
+        "line": 44,
+        "col": 6,
+        "offset": 1163
+      },
+      "extra": {
+        "message": "Variable `resp` is likely modified and later used on error. In some cases this could result  in panics due to a nil dereference",
+        "metadata": {
+          "category": "security",
+          "cwe": "CWE-665: Improper Initialization",
+          "subcategory": [
+            "audit"
+          ],
+          "confidence": "HIGH",
+          "likelihood": "MEDIUM",
+          "impact": "MEDIUM",
+          "technology": [
+            "--no-technology--"
+          ],
+          "description": "Possible unintentional assignment when an error occurs",
+          "references": [
+            "https://blog.trailofbits.com/2019/11/07/attacking-go-vr-ttps/"
+          ],
+          "license": "AGPL-3.0 license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/trailofbits.go.invalid-usage-of-modified-variable.invalid-usage-of-modified-variable",
+          "shortlink": "https://sg.run/WWQ2"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "trailofbits.go.invalid-usage-of-modified-variable.invalid-usage-of-modified-variable",
+      "path": "internal/protocols/strategies/HTTP/http.go",
+      "start": {
+        "line": 53,
+        "col": 5,
+        "offset": 1488
+      },
+      "end": {
+        "line": 58,
+        "col": 6,
+        "offset": 1728
+      },
+      "extra": {
+        "message": "Variable `resp` is likely modified and later used on error. In some cases this could result  in panics due to a nil dereference",
+        "metadata": {
+          "category": "security",
+          "cwe": "CWE-665: Improper Initialization",
+          "subcategory": [
+            "audit"
+          ],
+          "confidence": "HIGH",
+          "likelihood": "MEDIUM",
+          "impact": "MEDIUM",
+          "technology": [
+            "--no-technology--"
+          ],
+          "description": "Possible unintentional assignment when an error occurs",
+          "references": [
+            "https://blog.trailofbits.com/2019/11/07/attacking-go-vr-ttps/"
+          ],
+          "license": "AGPL-3.0 license",
+          "vulnerability_class": [
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/trailofbits.go.invalid-usage-of-modified-variable.invalid-usage-of-modified-variable",
+          "shortlink": "https://sg.run/WWQ2"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "go.lang.security.audit.xss.no-fprintf-to-responsewriter.no-fprintf-to-responsewriter",
+      "path": "internal/protocols/strategies/HTTP/http.go",
+      "start": {
+        "line": 62,
+        "col": 3,
+        "offset": 1808
+      },
+      "end": {
+        "line": 62,
+        "col": 40,
+        "offset": 1845
+      },
+      "extra": {
+        "message": "Detected 'Fprintf' or similar writing to 'http.ResponseWriter'. This bypasses HTML escaping that prevents cross-site scripting vulnerabilities. Instead, use the 'html/template' package to render data to users.",
+        "metadata": {
+          "owasp": [
+            "A07:2017 - Cross-Site Scripting (XSS)",
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "references": [
+            "https://blogtitle.github.io/robn-go-security-pearls-cross-site-scripting-xss/"
+          ],
+          "category": "security",
+          "technology": [
+            "go"
+          ],
+          "confidence": "LOW",
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cross-Site-Scripting (XSS)"
+          ],
+          "source": "https://semgrep.dev/r/go.lang.security.audit.xss.no-fprintf-to-responsewriter.no-fprintf-to-responsewriter",
+          "shortlink": "https://sg.run/7oqR"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "go.lang.security.audit.net.use-tls.use-tls",
+      "path": "internal/protocols/strategies/HTTP/http.go",
+      "start": {
+        "line": 73,
+        "col": 10,
+        "offset": 2304
+      },
+      "end": {
+        "line": 73,
+        "col": 58,
+        "offset": 2352
+      },
+      "extra": {
+        "message": "Found an HTTP server without TLS. Use 'http.ListenAndServeTLS' instead. See https://golang.org/pkg/net/http/#ListenAndServeTLS for more information.",
+        "fix": "http.ListenAndServeTLS(servConf.Address, certFile, keyFile, serverMux)",
+        "metadata": {
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "references": [
+            "https://golang.org/pkg/net/http/#ListenAndServeTLS"
+          ],
+          "category": "security",
+          "technology": [
+            "go"
+          ],
+          "confidence": "MEDIUM",
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/go.lang.security.audit.net.use-tls.use-tls",
+          "shortlink": "https://sg.run/dKbY"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 2,
+      "level": "warn",
+      "type": "Other syntax error",
+      "message": "Other syntax error at line beelzebub-chart/templates/configmap_core.yaml:6:\n (approximate error location; error nearby after) error calling parser: did not find expected node content character 0 position 0 returned: 0",
+      "path": "beelzebub-chart/templates/configmap_core.yaml"
+    },
+    {
+      "code": 2,
+      "level": "warn",
+      "type": "Other syntax error",
+      "message": "Other syntax error at line beelzebub-chart/templates/configmap_services.yaml:6:\n (approximate error location; error nearby after) error calling parser: did not find expected node content character 0 position 0 returned: 0",
+      "path": "beelzebub-chart/templates/configmap_services.yaml"
+    },
+    {
+      "code": 2,
+      "level": "warn",
+      "type": "Other syntax error",
+      "message": "Other syntax error at line beelzebub-chart/templates/deployment.yaml:6:\n (approximate error location; error nearby after) error calling parser: did not find expected node content character 0 position 0 returned: 0",
+      "path": "beelzebub-chart/templates/deployment.yaml"
+    },
+    {
+      "code": 2,
+      "level": "warn",
+      "type": "Other syntax error",
+      "message": "Other syntax error at line beelzebub-chart/templates/hpa.yaml:1:\n (approximate error location; error nearby after) error calling parser: did not find expected node content character 0 position 0 returned: 0",
+      "path": "beelzebub-chart/templates/hpa.yaml"
+    },
+    {
+      "code": 2,
+      "level": "warn",
+      "type": "Other syntax error",
+      "message": "Other syntax error at line beelzebub-chart/templates/ingress.yaml:1:\n (approximate error location; error nearby after) error calling parser: did not find expected node content character 0 position 0 returned: 0",
+      "path": "beelzebub-chart/templates/ingress.yaml"
+    },
+    {
+      "code": 2,
+      "level": "warn",
+      "type": "Other syntax error",
+      "message": "Other syntax error at line beelzebub-chart/templates/service.yaml:6:\n (approximate error location; error nearby after) error calling parser: did not find expected node content character 0 position 0 returned: 0",
+      "path": "beelzebub-chart/templates/service.yaml"
+    },
+    {
+      "code": 2,
+      "level": "warn",
+      "type": "Other syntax error",
+      "message": "Other syntax error at line beelzebub-chart/templates/serviceaccount.yaml:1:\n (approximate error location; error nearby after) error calling parser: did not find expected node content character 0 position 0 returned: 0",
+      "path": "beelzebub-chart/templates/serviceaccount.yaml"
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/main.yml",
+            "start": {
+              "line": 27,
+              "col": 36,
+              "offset": 420
+            },
+            "end": {
+              "line": 27,
+              "col": 51,
+              "offset": 435
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/main.yml:27:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.curl-eval.curl-eval', `{ github.run_id` was unexpected",
+      "path": ".github/workflows/main.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/main.yml",
+          "start": {
+            "line": 27,
+            "col": 36,
+            "offset": 420
+          },
+          "end": {
+            "line": 27,
+            "col": 51,
+            "offset": 435
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/main.yml",
+            "start": {
+              "line": 27,
+              "col": 36,
+              "offset": 420
+            },
+            "end": {
+              "line": 27,
+              "col": 51,
+              "offset": 435
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/main.yml:27:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell', `{ github.run_id` was unexpected",
+      "path": ".github/workflows/main.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/main.yml",
+          "start": {
+            "line": 27,
+            "col": 36,
+            "offset": 420
+          },
+          "end": {
+            "line": 27,
+            "col": 51,
+            "offset": 435
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": "install.sh",
+            "start": {
+              "line": 18,
+              "col": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 287,
+              "col": 4,
+              "offset": 11424
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line install.sh:18:\n `set -eu\n\nMODE=\"\"\nPLUGINS=\"\"\nTOKEN=\"\"\nGH_TOKEN=\"${BEELZEBUB_GITHUB_TOKEN:-}\"\nASSUME_YES=0\nRUN_LOCAL=1\nREPO_URL=\"https://github.com/beelzebub-labs/beelzebub.git\"\nMAKE_CMD=\"${MAKE:-make}\"\n\n# Colors are disabled for non-TTY output and when NO_COLOR is set.\nif [ -t 1 ] && [ -z \"${NO_COLOR:-}\" ]; then\n  E=$(printf '\\033'); R=\"${E}[0m\"; B=\"${E}[1m\"; D=\"${E}[2m\"\n  GRN=\"${E}[38;2;58;208;127m\"; BLU=\"${E}[38;2;120;140;250m\"; RED=\"${E}[38;2;244;80;110m\"\nelse\n  E=\"\"; R=\"\"; B=\"\"; D=\"\"; GRN=\"\"; BLU=\"\"; RED=\"\"\nfi\n\ninfo()  { printf '%s\\n' \"$*\"; }\nstep()  { printf '%s\u2192%s %s\\n' \"$BLU\" \"$R\" \"$*\"; }\nok()    { printf '%s\u2713%s %s\\n' \"$GRN\" \"$R\" \"$*\"; }\ndie()   { printf '%s\u2717 %s%s\\n' \"$RED\" \"$*\" \"$R\" >&2; exit 1; }\n\nbanner() {\n  _cols=$(tput cols 2>/dev/null || echo 80)\n  printf '\\n'\n  if [ -n \"$E\" ] && [ \"${_cols:-80}\" -ge 70 ]; then\n    printf '%s' \"$B\"\n    printf '  %s[38;2;168;85;247m\u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2557     \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2557   \u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2557 \\n' \"$E\"\n    printf '  %s[38;2;141;110;245m\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u2588\u2588\u2551     \u255a\u2550\u2550\u2588\u2588\u2588\u2554\u255d\u2588\u2588\u2554\u2550\u2550\u2550\u2550\u255d\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\\n' \"$E\"\n    printf '  %s[38;2;114;136;243m\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u2588\u2588\u2588\u2588\u2588\u2557  \u2588\u2588\u2588\u2588\u2588\u2557  \u2588\u2588\u2551       \u2588\u2588\u2588\u2554\u255d \u2588\u2588\u2588\u2588\u2588\u2557  \u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\\n' \"$E\"\n    printf '  %s[38;2;88;161;242m\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2554\u2550\u2550\u255d  \u2588\u2588\u2554\u2550\u2550\u255d  \u2588\u2588\u2551      \u2588\u2588\u2588\u2554\u255d  \u2588\u2588\u2554\u2550\u2550\u255d  \u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\\n' \"$E\"\n    printf '  %s[38;2;61;186;240m\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u255a\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\\n' \"$E\"... (truncated 9393 more characters)",
+      "path": "install.sh",
+      "spans": [
+        {
+          "file": "install.sh",
+          "start": {
+            "line": 18,
+            "col": 1,
+            "offset": 0
+          },
+          "end": {
+            "line": 287,
+            "col": 4,
+            "offset": 11424
+          }
+        }
+      ]
+    }
+  ],
+  "paths": {
+    "scanned": [
+      ".github/FUNDING.yml",
+      ".github/ISSUE_TEMPLATE/bug_report.md",
+      ".github/ISSUE_TEMPLATE/feature_request.md",
+      ".github/dependabot.yml",
+      ".github/workflows/build.yml",
+      ".github/workflows/deploy.yml",
+      ".github/workflows/main.yml",
+      ".github/workflows/test.yml",
+      ".github/workflows/verify.yml",
+      ".gitignore",
+      "CODE_OF_CONDUCT.md",
+      "CONTRIBUTING.md",
+      "Dockerfile",
+      "LICENSE",
+      "Makefile",
+      "README.md",
+      "SECURITY.md",
+      "beelzebub-chart/.helmignore",
+      "beelzebub-chart/Chart.yaml",
+      "beelzebub-chart/templates/NOTES.txt",
+      "beelzebub-chart/templates/_helpers.tpl",
+      "beelzebub-chart/templates/configmap_core.yaml",
+      "beelzebub-chart/templates/configmap_services.yaml",
+      "beelzebub-chart/templates/deployment.yaml",
+      "beelzebub-chart/templates/hpa.yaml",
+      "beelzebub-chart/templates/ingress.yaml",
+      "beelzebub-chart/templates/service.yaml",
+      "beelzebub-chart/templates/serviceaccount.yaml",
+      "beelzebub-chart/values.yaml",
+      "cli/brand.go",
+      "cli/plugin.go",
+      "cli/root.go",
+      "cli/run.go",
+      "cli/validate.go",
+      "cli/version.go",
+      "configurations/beelzebub.yaml",
+      "configurations/lockfile.yaml",
+      "configurations/plugins.yaml",
+      "configurations/services/http-80.yaml",
+      "configurations/services/http-8080.yaml",
+      "configurations/services/http-maze-8888.yaml",
+      "configurations/services/mcp-8000.yaml",
+      "configurations/services/ssh-22.yaml",
+      "configurations/services/ssh-2222.yaml",
+      "configurations/services/tcp-11211-memcached.yaml",
+      "configurations/services/tcp-1433-mssql.yaml",
+      "configurations/services/tcp-1883-mqtt.yaml",
+      "configurations/services/tcp-3306.yaml",
+      "configurations/services/tcp-3389-rdp.yaml",
+      "configurations/services/tcp-389-ldap.yaml",
+      "configurations/services/tcp-445-smb.yaml",
+      "configurations/services/tcp-5432-postgresql-llm.yaml",
+      "configurations/services/tcp-5900-vnc.yaml",
+      "configurations/services/tcp-6379-redis.yaml",
+      "configurations/services/telnet-23.yaml",
+      "docker-compose.yml",
+      "go.mod",
+      "go.sum",
+      "install.sh",
+      "integration_test/certs/.gitkeep",
+      "integration_test/configurations/beelzebub.yaml",
+      "integration_test/configurations/services/http-8080.yaml",
+      "integration_test/configurations/services/ssh-2222.yaml",
+      "integration_test/configurations/services/tcp-3306.yaml",
+      "integration_test/configurations/services/tcp-6379-redis.yaml",
+      "integration_test/configurations/services/telnet-2300.yaml",
+      "integration_test/configurations/services/tls-8443.yaml",
+      "integration_test/docker-compose.yml",
+      "internal/builder/builder.go",
+      "internal/builder/director.go",
+      "internal/historystore/history_store.go",
+      "internal/parser/configurations_parser.go",
+      "internal/parser/validator.go",
+      "internal/parser/validator_shared.go",
+      "internal/pluginmgr/codegen.go",
+      "internal/pluginmgr/declared.go",
+      "internal/pluginmgr/git.go",
+      "internal/pluginmgr/lock.go",
+      "internal/pluginmgr/manager.go",
+      "internal/pluginmgr/manifest.go",
+      "internal/pluginmgr/source.go",
+      "internal/plugins/beelzebub-cloud.go",
+      "internal/plugins/bridge.go",
+      "internal/plugins/llm-integration.go",
+      "internal/plugins/llm_adapter.go",
+      "internal/plugins/llm_validator.go",
+      "internal/plugins/maze.go",
+      "internal/plugins/maze_adapter.go",
+      "internal/plugins/maze_validator.go",
+      "internal/protocols/protocol_manager.go",
+      "internal/protocols/strategies/HTTP/http.go",
+      "internal/protocols/strategies/HTTP/validator.go",
+      "internal/protocols/strategies/MCP/mcp.go",
+      "internal/protocols/strategies/MCP/validator.go",
+      "internal/protocols/strategies/SSH/ssh.go",
+      "internal/protocols/strategies/SSH/validator.go",
+      "internal/protocols/strategies/TCP/tcp.go",
+      "internal/protocols/strategies/TCP/validator.go",
+      "internal/protocols/strategies/TELNET/telnet.go",
+      "internal/protocols/strategies/TELNET/validator.go",
+      "internal/tracer/tracer.go",
+      "main.go",
+      "pkg/plugin/plugin.go",
+      "pkg/plugin/registry.go",
+      "plugin_lock_embed.go",
+      "plugins/imports_gen.go",
+      "pull_request_template.md"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 0.26787281036376953,
+    "profiling_times": {
+      "config_time": 1.7465145587921143,
+      "core_time": 1.6643807888031006,
+      "ignores_time": 0.0009813308715820312,
+      "total_time": 3.4165964126586914
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 3.02776837348938,
+      "per_file_time": {
+        "mean": 0.009894667887220196,
+        "std_dev": 0.0014158623737569266
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.8791448084727309,
+      "rules_selected_ratio": 0.14728298525190536,
+      "rules_matched_ratio": 0.14728298525190536
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 1135676800
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

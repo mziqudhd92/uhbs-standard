@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "70f9aa40eb14e552a8151f91f9ef40c1e74d23ea09a2569e1173ce9f452f968d"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "70f9aa40eb14e552a8151f91f9ef40c1e74d23ea09a2569e1173ce9f452f968d"
+    },
+    {
+      "path": "report.json",
+      "sha256": "5e640643dcc228623038f6b95994e188b5985f7220e64156c82ea2e64b3a1e68"
+    }
+  ],
+  "extra": {
+    "target": "beelzebub-ssh",
+    "uhqs": 60.31,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

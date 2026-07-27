@@ -1,0 +1,30 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "0864d53f1c64a180834ac91d354db0468c6d97654e617271412e2cad05f85469"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "0864d53f1c64a180834ac91d354db0468c6d97654e617271412e2cad05f85469"
+    },
+    {
+      "path": "report.json",
+      "sha256": "484e12bf6a6608a93ca221e625269392d2d44bfc41a4a8126973b68878fad5d9"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "f08f70cf4bc157ff57428682e8fd36fb7ca399efc1f128ec18b039c58e723e1e"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "dbbd526c2cc54cff8a3c15565c5024eaf31abbd9ad3ec4dada84c72389a59513"
+    }
+  ],
+  "extra": {
+    "target": "beelzebub-ssh",
+    "uhqs": 45.74,
+    "grade": "GRADE F (Fail)"
+  }
+}

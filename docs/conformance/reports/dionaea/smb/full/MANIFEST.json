@@ -1,0 +1,30 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "9a1b669d78fbc0b528498f84d1d45d50aced7e76c23b4fff93faa9a2448b42df"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "9a1b669d78fbc0b528498f84d1d45d50aced7e76c23b4fff93faa9a2448b42df"
+    },
+    {
+      "path": "report.json",
+      "sha256": "96678a797453d024270ecbf82cb728f023a025298ba8e89f835551ae9a61da25"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "83417059506eeb1fbf4a98ec4515ab8a7229390cab993676bcf669b238691102"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "3f8c0da0301658a8e568341171d32a3a05ba46fe56c5b903cf6a2d26287865ca"
+    }
+  ],
+  "extra": {
+    "target": "dionaea-smb",
+    "uhqs": 48.74,
+    "grade": "GRADE F (Fail)"
+  }
+}

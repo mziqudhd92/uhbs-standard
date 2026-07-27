@@ -1,0 +1,573 @@
+{
+  "framework": "Universal Honeypot Benchmarking Standard (UHBS) v4.0",
+  "evaluation_type": "Full-Spectrum (Static Audit + Dynamic Sandbox)",
+  "target": {
+    "name": "trapster-telnet",
+    "kind": "generic",
+    "host": "trapster-lab",
+    "port": 2323,
+    "source_root": "/honeypot",
+    "profile_class": "Low-Interaction",
+    "protocols": [
+      "telnet"
+    ],
+    "ports_map": {
+      "telnet": 2323
+    }
+  },
+  "baseline": null,
+  "uhqs": {
+    "target": "trapster-telnet",
+    "S_A": 77.5,
+    "S_B": 62.5,
+    "S_C": 55.0,
+    "C": 90.0,
+    "S_E": 100.0,
+    "S_F": 70.0,
+    "delta_c": 0.81,
+    "uhqs": 57.0,
+    "weights": {
+      "protocol": 0.3,
+      "behavior": 0.15,
+      "telemetry": 0.25,
+      "scale": 0.1,
+      "static": 0.2
+    },
+    "profile_class": "Low-Interaction",
+    "grade": "GRADE D (Needs Remediation)",
+    "phase": "profile+static+sandbox+dynamic+score",
+    "version": "4.0",
+    "containment_measured": true
+  },
+  "hqs": {
+    "target": "trapster-telnet",
+    "S_A": 77.5,
+    "S_B": 62.5,
+    "S_C": 55.0,
+    "C": 90.0,
+    "S_E": 100.0,
+    "S_F": 70.0,
+    "delta_c": 0.81,
+    "uhqs": 57.0,
+    "weights": {
+      "protocol": 0.3,
+      "behavior": 0.15,
+      "telemetry": 0.25,
+      "scale": 0.1,
+      "static": 0.2
+    },
+    "profile_class": "Low-Interaction",
+    "grade": "GRADE D (Needs Remediation)",
+    "phase": "profile+static+sandbox+dynamic+score",
+    "version": "4.0",
+    "containment_measured": true
+  },
+  "modules": [
+    {
+      "module": "SANDBOX",
+      "dimension": "sandbox",
+      "score": 85.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "sandbox.reach.telnet",
+          "team": "blue",
+          "passed": true,
+          "detail": "trapster-lab:2323 open",
+          "score": 25.0,
+          "evidence": []
+        },
+        {
+          "id": "sandbox.airgap_attested",
+          "team": "blue",
+          "passed": true,
+          "detail": "operator attested air-gapped sandbox (UHBS_AIRGAP_ATTESTED=1)",
+          "score": 25.0,
+          "evidence": []
+        },
+        {
+          "id": "sandbox.egress_deny_tooling",
+          "team": "blue",
+          "passed": false,
+          "detail": "host-egress-deny.sh not found",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "sandbox.gateway_log_configured",
+          "team": "blue",
+          "passed": true,
+          "detail": "UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log",
+          "score": 25.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "reachable_protocols": 1
+      },
+      "notes": [
+        "Phase 3 preflight \u2014 does not replace real air-gap deployment"
+      ],
+      "error": null
+    },
+    {
+      "module": "F",
+      "dimension": "static",
+      "score": 70.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "white.static_private_keys",
+          "team": "white",
+          "passed": true,
+          "detail": "0 static private keys",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "white.hardcoded_ssh_banners",
+          "team": "white",
+          "passed": true,
+          "detail": "0 hardcoded SSH banners",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "white.predictable_seeds",
+          "team": "white",
+          "passed": false,
+          "detail": "1 predictable PRNG seeds: trapster/modules/http.py",
+          "score": 0.0,
+          "evidence": [
+            "trapster/modules/http.py"
+          ]
+        },
+        {
+          "id": "white.hardcoded_macs",
+          "team": "white",
+          "passed": true,
+          "detail": "0 hardcoded MAC addresses",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "white.prompt_corpus_present",
+          "team": "white",
+          "passed": true,
+          "detail": "no prompt corpus (N/A for non-LLM)",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "white.prompt_boundaries",
+          "team": "white",
+          "passed": true,
+          "detail": "no weak delimiter/extract patterns",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "white.fallback_strings",
+          "team": "white",
+          "passed": true,
+          "detail": "no plain-text LLM fallback artifacts",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "white.bandit",
+          "team": "white",
+          "passed": true,
+          "detail": "bandit HIGH=0",
+          "score": 8.0,
+          "evidence": []
+        },
+        {
+          "id": "white.semgrep",
+          "team": "white",
+          "passed": false,
+          "detail": "semgrep error/critical=1 total=10",
+          "score": 7.0,
+          "evidence": []
+        },
+        {
+          "id": "white.trivy",
+          "team": "white",
+          "passed": true,
+          "detail": "trivy not installed (skipped)",
+          "score": 4.0,
+          "evidence": []
+        },
+        {
+          "id": "white.sast_gate",
+          "team": "white",
+          "passed": false,
+          "detail": "1 high/critical findings",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "white.vfs_posix_coverage",
+          "team": "white",
+          "passed": true,
+          "detail": "POSIX coverage 59% (61/104)",
+          "score": 14.66,
+          "evidence": [
+            "apt",
+            "awk",
+            "base64",
+            "bash",
+            "cd",
+            "clear",
+            "cp",
+            "curl",
+            "cut",
+            "date",
+            "df",
+            "docker",
+            "du",
+            "echo",
+            "env",
+            "export",
+            "file",
+            "find",
+            "free",
+            "git",
+            "gzip",
+            "head",
+            "history",
+            "id",
+            "ip",
+            "kill",
+            "less",
+            "ln",
+            "ls",
+            "mkdir",
+            "more",
+            "mount",
+            "mv",
+            "nc",
+            "nft",
+            "passwd",
+            "ping",
+            "pip",
+            "ps",
+            "pwd"
+          ]
+        },
+        {
+          "id": "white.blocking_calls",
+          "team": "white",
+          "passed": true,
+          "detail": "sleep/blocking markers in non-test code\u22480",
+          "score": 5.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "source_root": "/honeypot"
+      },
+      "notes": [
+        "Module F white-box audit (keys/prompts/SAST/VFS)"
+      ],
+      "error": null
+    },
+    {
+      "module": "A",
+      "dimension": "protocol",
+      "score": 77.5,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "telnet.fsm.banner_or_iac",
+          "team": "blue",
+          "passed": true,
+          "detail": "recv=b'\\xff\\xfb\\x01\\xff\\xfb\\x03\\xff\\xfd\\x18\\xff\\xfd\\x1f\\r\\n\\r\\nUser Access Verification'",
+          "score": 100.0,
+          "evidence": []
+        },
+        {
+          "id": "telnet.fsm.banner_or_iac",
+          "team": "blue",
+          "passed": true,
+          "detail": "recv=b'\\xff\\xfb\\x01\\xff\\xfb\\x03\\xff\\xfd\\x18\\xff\\xfd\\x1f\\r\\n\\r\\nUser Access Verification'",
+          "score": 100.0,
+          "evidence": []
+        },
+        {
+          "id": "telnet.timing.sample_size",
+          "team": "blue",
+          "passed": true,
+          "detail": "n=200 requested=200 errors=0",
+          "score": 20.0,
+          "evidence": []
+        },
+        {
+          "id": "telnet.timing.iat_jitter",
+          "team": "red",
+          "passed": true,
+          "detail": "median=0.126ms pstdev=0.052ms (target jitter often <2ms vs native)",
+          "score": 30.0,
+          "evidence": []
+        },
+        {
+          "id": "telnet.timing.ks_vs_gold",
+          "team": "blue",
+          "passed": false,
+          "detail": "no gold_baseline_host in TPS \u2014 KS compare skipped (set performance_baseline.gold_baseline_host)",
+          "score": 25.0,
+          "evidence": []
+        },
+        {
+          "id": "telnet.module_a.composite",
+          "team": "blue",
+          "passed": true,
+          "detail": "fsm=100 nego=100 timing=25",
+          "score": 77.5,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "telnet": 77.5
+        },
+        "protocols": [
+          "telnet"
+        ],
+        "timing_samples": 200,
+        "available_plugins": [
+          "ftp",
+          "generic",
+          "http",
+          "modbus",
+          "redis",
+          "smb",
+          "smtp",
+          "ssh",
+          "telnet"
+        ]
+      },
+      "notes": [
+        "UHBS Module A \u2014 plugins=['telnet']",
+        "class=Low-Interaction strict_rfc=True"
+      ],
+      "error": null
+    },
+    {
+      "module": "B",
+      "dimension": "behavior",
+      "score": 62.5,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "telnet.state.unsupported",
+          "team": "blue",
+          "passed": true,
+          "detail": "no state probe implemented \u2014 skipped",
+          "score": 50.0,
+          "evidence": []
+        },
+        {
+          "id": "telnet.payload.unsupported",
+          "team": "red",
+          "passed": true,
+          "detail": "no payload probe \u2014 skipped",
+          "score": 50.0,
+          "evidence": []
+        },
+        {
+          "id": "telnet.fuzz.binary",
+          "team": "red",
+          "passed": true,
+          "detail": "survived binary blast",
+          "score": 100.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "telnet": 62.5
+        },
+        "class": "Low-Interaction"
+      },
+      "notes": [
+        "UHBS Module B class=Low-Interaction"
+      ],
+      "error": null
+    },
+    {
+      "module": "C",
+      "dimension": "telemetry",
+      "score": 55.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "telnet.fuzz.binary",
+          "team": "red",
+          "passed": true,
+          "detail": "survived binary blast",
+          "score": 100.0,
+          "evidence": []
+        },
+        {
+          "id": "c1.json_parse_clean",
+          "team": "blue",
+          "passed": true,
+          "detail": "0 malformed / 0 records",
+          "score": 20.0,
+          "evidence": []
+        },
+        {
+          "id": "c1.stix_2_1",
+          "team": "blue",
+          "passed": false,
+          "detail": "no STIX objects found",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "c1.otel_or_ecs",
+          "team": "blue",
+          "passed": false,
+          "detail": "otel_docs=0 ecs_docs=0",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "c1.payload_hashes",
+          "team": "blue",
+          "passed": false,
+          "detail": "no md5/sha256 fields",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "c1.mitre_mapping",
+          "team": "blue",
+          "passed": false,
+          "detail": "no MITRE tags",
+          "score": 0.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {},
+      "notes": [
+        "UHBS C1 schema: STIX 2.1 / OTel / ECS best-effort validators"
+      ],
+      "error": null
+    },
+    {
+      "module": "D",
+      "dimension": "containment",
+      "score": 90.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "d1.ssh_exec_unavailable",
+          "team": "blue",
+          "passed": true,
+          "detail": "no SSH port in inventory \u2014 shell egress/LPE probes skipped",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "d1.egress_gateway_log",
+          "team": "blue",
+          "passed": true,
+          "detail": "0 gateway canary hits",
+          "score": 20.0,
+          "evidence": []
+        },
+        {
+          "id": "d1.airgap_attested",
+          "team": "blue",
+          "passed": true,
+          "detail": "UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes)",
+          "score": 0.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "breakout": false,
+        "allowed_outbound_traffic": false,
+        "ssh_exec": false
+      },
+      "notes": [
+        "Module D limited: target has no SSH port \u2014 Safety Gate cannot fully clear without shell exec probes or UHBS_EGRESS_GATEWAY_LOG evidence"
+      ],
+      "error": null
+    },
+    {
+      "module": "E",
+      "dimension": "scale",
+      "score": 100.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "e1.p95_vs_tps",
+          "team": "blue",
+          "passed": true,
+          "detail": "P50=2.4ms P95=6.6ms P99=8.9ms TPS_limit=150.0ms proto=telnet",
+          "score": 45.0,
+          "evidence": []
+        },
+        {
+          "id": "e1.error_rate",
+          "team": "blue",
+          "passed": true,
+          "detail": "errors=0/200 rate=0.00%",
+          "score": 20.0,
+          "evidence": []
+        },
+        {
+          "id": "e2.exhaustion_input",
+          "team": "red",
+          "passed": true,
+          "detail": "completed exhaustion/fuzz blast",
+          "score": 15.0,
+          "evidence": []
+        },
+        {
+          "id": "e2.circuit_breaker_alive",
+          "team": "blue",
+          "passed": true,
+          "detail": "service alive after load (connect 0.1ms)",
+          "score": 20.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "p50_ms": 2.39,
+        "p95_ms": 6.56,
+        "p99_ms": 8.9,
+        "p95_limit_ms": 150.0,
+        "errors": 0,
+        "concurrency": 25,
+        "requests": 200,
+        "wall_s": 0.04,
+        "protocol": "telnet"
+      },
+      "notes": [],
+      "error": null
+    }
+  ],
+  "extras": {
+    "target_scores": {
+      "protocol": 77.5,
+      "behavior": 62.5,
+      "telemetry": 55.0,
+      "containment": 90.0,
+      "scale": 100.0,
+      "static": 70.0
+    },
+    "uhqs_version": "4.0",
+    "tps": {
+      "name": "Low-Interaction-Telnet",
+      "class": "Low-Interaction",
+      "protocols": [
+        "telnet"
+      ],
+      "expected_p95_latency_ms": 150.0
+    }
+  }
+}

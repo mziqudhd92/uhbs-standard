@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "6a7b1f700c178a722f4bfed691a84d5b57012a9a339af24d8d0a2d9282ca88e4"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "6a7b1f700c178a722f4bfed691a84d5b57012a9a339af24d8d0a2d9282ca88e4"
+    },
+    {
+      "path": "report.json",
+      "sha256": "60f51d777d131f5a635541ee530c970af95623400b9d986e10d0a0d0d804473c"
+    }
+  ],
+  "extra": {
+    "target": "trapster-http",
+    "uhqs": 40.74,
+    "grade": "GRADE F (Fail)"
+  }
+}

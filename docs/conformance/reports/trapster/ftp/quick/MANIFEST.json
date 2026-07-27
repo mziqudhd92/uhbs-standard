@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "9770f2a570ff9d36ff5804f689a2a2e7a23eece806bd3c679c0a8332c8be53cc"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "9770f2a570ff9d36ff5804f689a2a2e7a23eece806bd3c679c0a8332c8be53cc"
+    },
+    {
+      "path": "report.json",
+      "sha256": "0a5731ec98ff55f5b03ed59438d972950318d5eb153bc4344d1dc0bf062c0edf"
+    }
+  ],
+  "extra": {
+    "target": "trapster-ftp",
+    "uhqs": 41.94,
+    "grade": "GRADE F (Fail)"
+  }
+}

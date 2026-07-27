@@ -1,0 +1,63 @@
+{
+  "uhbs_version": "4.0.0",
+  "target": {
+    "name": "Beelzebub (SSH :2222)",
+    "class": "Low-Interaction",
+    "profile_ref": "docs/conformance/labs/beelzebub/low_interaction_ssh_full.yaml"
+  },
+  "evaluated_at": "2026-07-27",
+  "auditor": "UHBS-Lab detailed Docker run (beelzebub/ssh)",
+  "modules": {
+    "A": {
+      "score": 23.5,
+      "status": "PARTIAL",
+      "weight": 0.3,
+      "notes": "accepted null ID"
+    },
+    "B": {
+      "score": 6.25,
+      "status": "PARTIAL",
+      "weight": 0.15,
+      "notes": "marker missing across sessions"
+    },
+    "C": {
+      "score": 55.0,
+      "status": "PARTIAL",
+      "weight": 0.25,
+      "notes": "no STIX objects found"
+    },
+    "D": {
+      "score": 100.0,
+      "status": "PASSED",
+      "notes": "stable"
+    },
+    "E": {
+      "score": 100.0,
+      "status": "PASSED",
+      "weight": 0.1,
+      "notes": "service alive after load (connect 0.3ms"
+    },
+    "F": {
+      "score": 70.0,
+      "status": "PASSED",
+      "weight": 0.2,
+      "notes": "semgrep error/critical=7 total=36"
+    }
+  },
+  "weights": {
+    "w_A": 0.3,
+    "w_B": 0.15,
+    "w_C": 0.25,
+    "w_E": 0.1,
+    "w_F": 0.2
+  },
+  "safety_gate": {
+    "containment_score": 100.0,
+    "delta_c": 1.0,
+    "passed": true,
+    "unauthorized_egress_leaks": 0
+  },
+  "uhqs": 45.74,
+  "grade": "F",
+  "notes": "Evaluation proof only. Graded SSH :2222 on Beelzebub. Artifacts under docs/conformance/reports/beelzebub/ssh/."
+}

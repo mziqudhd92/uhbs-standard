@@ -1,0 +1,63 @@
+{
+  "uhbs_version": "4.0.0",
+  "target": {
+    "name": "Trapster Community (SSH :2222)",
+    "class": "Low-Interaction",
+    "profile_ref": "docs/conformance/labs/trapster/low_interaction_ssh_full.yaml"
+  },
+  "evaluated_at": "2026-07-27",
+  "auditor": "UHBS-Lab detailed Docker run (trapster/ssh)",
+  "modules": {
+    "A": {
+      "score": 23.5,
+      "status": "PARTIAL",
+      "weight": 0.3,
+      "notes": "accepted null ID"
+    },
+    "B": {
+      "score": 6.2,
+      "status": "PARTIAL",
+      "weight": 0.15,
+      "notes": "marker missing across sessions"
+    },
+    "C": {
+      "score": 25.0,
+      "status": "PARTIAL",
+      "weight": 0.25,
+      "notes": "accepted"
+    },
+    "D": {
+      "score": 100.0,
+      "status": "PASSED",
+      "notes": "leak/unstable"
+    },
+    "E": {
+      "score": 20.0,
+      "status": "PARTIAL",
+      "weight": 0.1,
+      "notes": "P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=150.0ms proto=ssh"
+    },
+    "F": {
+      "score": 70.0,
+      "status": "PASSED",
+      "weight": 0.2,
+      "notes": "1 predictable PRNG seeds: trapster/modules/http.py"
+    }
+  },
+  "weights": {
+    "w_A": 0.3,
+    "w_B": 0.15,
+    "w_C": 0.25,
+    "w_E": 0.1,
+    "w_F": 0.2
+  },
+  "safety_gate": {
+    "containment_score": 100.0,
+    "delta_c": 1.0,
+    "passed": true,
+    "unauthorized_egress_leaks": 0
+  },
+  "uhqs": 30.24,
+  "grade": "F",
+  "notes": "Evaluation proof only. Graded SSH :2222 on Trapster Community. Artifacts under docs/conformance/reports/trapster/ssh/."
+}

@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "b1726b38afb8d58e3bd1815d3fa26573df85b9f1288542604b27a8818fa445bb"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "b1726b38afb8d58e3bd1815d3fa26573df85b9f1288542604b27a8818fa445bb"
+    },
+    {
+      "path": "report.json",
+      "sha256": "9f0e20c1719c393cafb1874fe79fd34c236661bf05e31527fc7cb21d66c793fd"
+    }
+  ],
+  "extra": {
+    "target": "trapster-telnet",
+    "uhqs": 47.0,
+    "grade": "GRADE F (Fail)"
+  }
+}

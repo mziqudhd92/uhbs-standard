@@ -1,0 +1,30 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "f398e1f0754986bd98e59480bdd693428a2dccc549a0b963a7b1e1523a7e9bb0"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "f398e1f0754986bd98e59480bdd693428a2dccc549a0b963a7b1e1523a7e9bb0"
+    },
+    {
+      "path": "report.json",
+      "sha256": "88eb622e818e588aa84f5d878d52b0feb81d2aa776f75cf484ae630300e96a44"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "fd2a8f6936cdb3134d7766e4336706ec71b284398bdf011cb4cb43057b287cb0"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "e517b88afc3794ed558d16b3b4535464d03b4b4c0cfa2230f9316382e88dc810"
+    }
+  ],
+  "extra": {
+    "target": "trapster-telnet",
+    "uhqs": 57.0,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

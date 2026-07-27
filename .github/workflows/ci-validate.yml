@@ -56,5 +56,10 @@ jobs:
           uhbs validate-scorecard docs/conformance/fixtures/conpot-ics-scada.scorecard.json
           uhbs validate-scorecard docs/conformance/fixtures/opencanary-web-api.scorecard.json
           uhbs validate-scorecard docs/conformance/fixtures/endlessh-low-interaction.scorecard.json
+          for f in docs/conformance/fixtures/beelzebub-*.scorecard.json \
+                   docs/conformance/fixtures/trapster-*.scorecard.json \
+                   docs/conformance/fixtures/dionaea-*.scorecard.json; do
+            uhbs validate-scorecard "$f" --strict
+          done
           check-jsonschema --check-metaschema schemas/evidence-pack.schema.json
           python -c "import json; json.load(open('server.json'))"

@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "a7c2387e888aa49b392c92ee9675c9518e59195fcd690fc9be2b223e0e8ad766"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "a7c2387e888aa49b392c92ee9675c9518e59195fcd690fc9be2b223e0e8ad766"
+    },
+    {
+      "path": "report.json",
+      "sha256": "5ffb4ff122cc16ce06a0ab4c64112d2c4061937639597547eb11286fbffe1efa"
+    }
+  ],
+  "extra": {
+    "target": "dionaea-smb",
+    "uhqs": 44.55,
+    "grade": "GRADE F (Fail)"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "uhbs_version": "4.0.0",
+  "target": {
+    "name": "Beelzebub (Redis :6379)",
+    "class": "Low-Interaction",
+    "profile_ref": "docs/conformance/labs/beelzebub/low_interaction_redis_full.yaml"
+  },
+  "evaluated_at": "2026-07-27",
+  "auditor": "UHBS-Lab detailed Docker run (beelzebub/redis)",
+  "modules": {
+    "A": {
+      "score": 77.5,
+      "status": "PASSED",
+      "weight": 0.3,
+      "notes": "no gold_baseline_host in TPS \u2014 KS compare skipped (set performance_baseline.gold_baseline_host"
+    },
+    "B": {
+      "score": 50.5,
+      "status": "PARTIAL",
+      "weight": 0.15,
+      "notes": "fail"
+    },
+    "C": {
+      "score": 55.0,
+      "status": "PARTIAL",
+      "weight": 0.25,
+      "notes": "no STIX objects found"
+    },
+    "D": {
+      "score": 90.0,
+      "status": "PASSED",
+      "notes": "UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes"
+    },
+    "E": {
+      "score": 100.0,
+      "status": "PASSED",
+      "weight": 0.1,
+      "notes": "service alive after load (connect 1.3ms"
+    },
+    "F": {
+      "score": 70.0,
+      "status": "PASSED",
+      "weight": 0.2,
+      "notes": "semgrep error/critical=7 total=36"
+    }
+  },
+  "weights": {
+    "w_A": 0.3,
+    "w_B": 0.15,
+    "w_C": 0.25,
+    "w_E": 0.1,
+    "w_F": 0.2
+  },
+  "safety_gate": {
+    "containment_score": 90.0,
+    "delta_c": 0.81,
+    "passed": false,
+    "unauthorized_egress_leaks": 0
+  },
+  "uhqs": 55.55,
+  "grade": "D",
+  "notes": "Evaluation proof only. Graded Redis :6379 on Beelzebub. Artifacts under docs/conformance/reports/beelzebub/redis/."
+}

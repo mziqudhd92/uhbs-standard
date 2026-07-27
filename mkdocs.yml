@@ -102,6 +102,15 @@ nav:
       - OpenCanary report hub: conformance/reports/opencanary/index.md
       - OpenCanary tutorial: conformance/reports/opencanary/TUTORIAL.md
       - OpenCanary methodology: conformance/reports/opencanary/METHODOLOGY.md
+      - Beelzebub report hub: conformance/reports/beelzebub/index.md
+      - Beelzebub tutorial: conformance/reports/beelzebub/TUTORIAL.md
+      - Beelzebub methodology: conformance/reports/beelzebub/METHODOLOGY.md
+      - Trapster report hub: conformance/reports/trapster/index.md
+      - Trapster tutorial: conformance/reports/trapster/TUTORIAL.md
+      - Trapster methodology: conformance/reports/trapster/METHODOLOGY.md
+      - Dionaea report hub: conformance/reports/dionaea/index.md
+      - Dionaea tutorial: conformance/reports/dionaea/TUTORIAL.md
+      - Dionaea methodology: conformance/reports/dionaea/METHODOLOGY.md
   - Mappings:
       - Index: mappings/index.md
       - ATT&CK: mappings/attack.md
@@ -119,6 +128,17 @@ nav:
       - Low-Interaction / SSH (Cowrie proof): scorecards/cowrie-ssh.md
       - Low-Interaction / SSH tarpit (Endlessh proof): scorecards/endlessh-ssh-tarpit.md
       - Web-API / HTTP (OpenCanary proof): scorecards/opencanary-web-api.md
+      - Beelzebub HTTP: scorecards/beelzebub-http.md
+      - Beelzebub SSH: scorecards/beelzebub-ssh.md
+      - Beelzebub Telnet: scorecards/beelzebub-telnet.md
+      - Beelzebub Redis: scorecards/beelzebub-redis.md
+      - Trapster HTTP: scorecards/trapster-http.md
+      - Trapster SSH: scorecards/trapster-ssh.md
+      - Trapster FTP: scorecards/trapster-ftp.md
+      - Trapster Telnet: scorecards/trapster-telnet.md
+      - Dionaea FTP: scorecards/dionaea-ftp.md
+      - Dionaea HTTP: scorecards/dionaea-http.md
+      - Dionaea SMB: scorecards/dionaea-smb.md
       - Illustrative POSIX / GenAI (synthetic): scorecards/illustrative-posix-genai.md
   - Governance:
       - RFCs: rfcs/README.md

@@ -1,0 +1,515 @@
+{
+  "framework": "Universal Honeypot Benchmarking Standard (UHBS) v4.0",
+  "evaluation_type": "Full-Spectrum (Static Audit + Dynamic Sandbox)",
+  "target": {
+    "name": "dionaea-smb",
+    "kind": "generic",
+    "host": "dionaea-lab",
+    "port": 445,
+    "source_root": "/honeypot",
+    "profile_class": "Low-Interaction",
+    "protocols": [
+      "smb"
+    ],
+    "ports_map": {
+      "smb": 445
+    }
+  },
+  "baseline": null,
+  "uhqs": {
+    "target": "dionaea-smb",
+    "S_A": 58.5,
+    "S_B": 62.5,
+    "S_C": 100.0,
+    "C": 75.0,
+    "S_E": 100.0,
+    "S_F": 86.35,
+    "delta_c": 0.5625,
+    "uhqs": 44.55,
+    "weights": {
+      "protocol": 0.3,
+      "behavior": 0.15,
+      "telemetry": 0.25,
+      "scale": 0.1,
+      "static": 0.2
+    },
+    "profile_class": "Low-Interaction",
+    "grade": "GRADE F (Fail)",
+    "phase": "profile+static+sandbox+dynamic+score",
+    "version": "4.0",
+    "containment_measured": true
+  },
+  "hqs": {
+    "target": "dionaea-smb",
+    "S_A": 58.5,
+    "S_B": 62.5,
+    "S_C": 100.0,
+    "C": 75.0,
+    "S_E": 100.0,
+    "S_F": 86.35,
+    "delta_c": 0.5625,
+    "uhqs": 44.55,
+    "weights": {
+      "protocol": 0.3,
+      "behavior": 0.15,
+      "telemetry": 0.25,
+      "scale": 0.1,
+      "static": 0.2
+    },
+    "profile_class": "Low-Interaction",
+    "grade": "GRADE F (Fail)",
+    "phase": "profile+static+sandbox+dynamic+score",
+    "version": "4.0",
+    "containment_measured": true
+  },
+  "modules": [
+    {
+      "module": "SANDBOX",
+      "dimension": "sandbox",
+      "score": 70.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "sandbox.reach.smb",
+          "team": "blue",
+          "passed": true,
+          "detail": "dionaea-lab:445 open",
+          "score": 25.0,
+          "evidence": []
+        },
+        {
+          "id": "sandbox.airgap_attested",
+          "team": "blue",
+          "passed": true,
+          "detail": "operator attested air-gapped sandbox (UHBS_AIRGAP_ATTESTED=1)",
+          "score": 25.0,
+          "evidence": []
+        },
+        {
+          "id": "sandbox.egress_deny_tooling",
+          "team": "blue",
+          "passed": false,
+          "detail": "host-egress-deny.sh not found",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "sandbox.gateway_log_configured",
+          "team": "blue",
+          "passed": false,
+          "detail": "gateway log path not set",
+          "score": 10.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "reachable_protocols": 1
+      },
+      "notes": [
+        "Phase 3 preflight \u2014 does not replace real air-gap deployment"
+      ],
+      "error": null
+    },
+    {
+      "module": "F",
+      "dimension": "static",
+      "score": 86.35,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "white.static_private_keys",
+          "team": "white",
+          "passed": true,
+          "detail": "0 static private keys",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "white.hardcoded_ssh_banners",
+          "team": "white",
+          "passed": true,
+          "detail": "0 hardcoded SSH banners",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "white.predictable_seeds",
+          "team": "white",
+          "passed": true,
+          "detail": "0 predictable PRNG seeds",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "white.hardcoded_macs",
+          "team": "white",
+          "passed": true,
+          "detail": "0 hardcoded MAC addresses",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "white.prompt_corpus_present",
+          "team": "white",
+          "passed": true,
+          "detail": "no prompt corpus (N/A for non-LLM)",
+          "score": 5.0,
+          "evidence": []
+        },
+        {
+          "id": "white.prompt_boundaries",
+          "team": "white",
+          "passed": true,
+          "detail": "no weak delimiter/extract patterns",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "white.fallback_strings",
+          "team": "white",
+          "passed": true,
+          "detail": "no plain-text LLM fallback artifacts",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "white.sast_tools",
+          "team": "white",
+          "passed": true,
+          "detail": "SAST tools skipped by flag",
+          "score": 15.0,
+          "evidence": []
+        },
+        {
+          "id": "white.vfs_posix_coverage",
+          "team": "white",
+          "passed": true,
+          "detail": "POSIX coverage 65% (68/104)",
+          "score": 16.35,
+          "evidence": [
+            "adduser",
+            "apk",
+            "apt",
+            "apt-get",
+            "awk",
+            "base64",
+            "bash",
+            "cd",
+            "chown",
+            "clear",
+            "cp",
+            "curl",
+            "date",
+            "docker",
+            "echo",
+            "env",
+            "export",
+            "file",
+            "find",
+            "free",
+            "git",
+            "head",
+            "history",
+            "id",
+            "ip",
+            "iptables",
+            "kill",
+            "less",
+            "ln",
+            "ls",
+            "md5sum",
+            "mkdir",
+            "more",
+            "mv",
+            "nc",
+            "openssl",
+            "passwd",
+            "ping",
+            "pip",
+            "ps"
+          ]
+        },
+        {
+          "id": "white.blocking_calls",
+          "team": "white",
+          "passed": true,
+          "detail": "sleep/blocking markers in non-test code\u22481",
+          "score": 5.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "source_root": "/honeypot"
+      },
+      "notes": [
+        "Module F white-box audit (keys/prompts/SAST/VFS)"
+      ],
+      "error": null
+    },
+    {
+      "module": "A",
+      "dimension": "protocol",
+      "score": 58.5,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "smb.fsm.truncated",
+          "team": "blue",
+          "passed": true,
+          "detail": "survived truncated frame resp=b''",
+          "score": 80.0,
+          "evidence": []
+        },
+        {
+          "id": "smb.nego.accept",
+          "team": "blue",
+          "passed": true,
+          "detail": "connected resp=b''",
+          "score": 70.0,
+          "evidence": []
+        },
+        {
+          "id": "smb.timing.sample_size",
+          "team": "blue",
+          "passed": true,
+          "detail": "n=50 requested=50 errors=0",
+          "score": 20.0,
+          "evidence": []
+        },
+        {
+          "id": "smb.timing.iat_jitter",
+          "team": "red",
+          "passed": false,
+          "detail": "median=0.232ms pstdev=198.351ms (target jitter often <2ms vs native)",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "smb.timing.ks_vs_gold",
+          "team": "blue",
+          "passed": false,
+          "detail": "no gold_baseline_host in TPS \u2014 KS compare skipped (set performance_baseline.gold_baseline_host)",
+          "score": 25.0,
+          "evidence": []
+        },
+        {
+          "id": "smb.module_a.composite",
+          "team": "blue",
+          "passed": false,
+          "detail": "fsm=80 nego=70 timing=18",
+          "score": 58.5,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "smb": 58.5
+        },
+        "protocols": [
+          "smb"
+        ],
+        "timing_samples": 50,
+        "available_plugins": [
+          "ftp",
+          "generic",
+          "http",
+          "modbus",
+          "redis",
+          "smb",
+          "smtp",
+          "ssh",
+          "telnet"
+        ]
+      },
+      "notes": [
+        "UHBS Module A \u2014 plugins=['smb']",
+        "class=Low-Interaction strict_rfc=True"
+      ],
+      "error": null
+    },
+    {
+      "module": "B",
+      "dimension": "behavior",
+      "score": 62.5,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "smb.state.unsupported",
+          "team": "blue",
+          "passed": true,
+          "detail": "no state probe implemented \u2014 skipped",
+          "score": 50.0,
+          "evidence": []
+        },
+        {
+          "id": "smb.payload.unsupported",
+          "team": "red",
+          "passed": true,
+          "detail": "no payload probe \u2014 skipped",
+          "score": 50.0,
+          "evidence": []
+        },
+        {
+          "id": "smb.fuzz.binary",
+          "team": "red",
+          "passed": true,
+          "detail": "survived binary blast",
+          "score": 100.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "smb": 62.5
+        },
+        "class": "Low-Interaction"
+      },
+      "notes": [
+        "UHBS Module B class=Low-Interaction"
+      ],
+      "error": null
+    },
+    {
+      "module": "C",
+      "dimension": "telemetry",
+      "score": 100.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "smb.fuzz.binary",
+          "team": "red",
+          "passed": true,
+          "detail": "survived binary blast",
+          "score": 100.0,
+          "evidence": []
+        },
+        {
+          "id": "c1.telemetry_dir",
+          "team": "blue",
+          "passed": false,
+          "detail": "telemetry_dir missing \u2014 set TPS/inventory telemetry_dir for C1 schema gates",
+          "score": 0.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {},
+      "notes": [
+        "UHBS C1 schema: STIX 2.1 / OTel / ECS best-effort validators"
+      ],
+      "error": null
+    },
+    {
+      "module": "D",
+      "dimension": "containment",
+      "score": 75.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "d1.ssh_exec_unavailable",
+          "team": "blue",
+          "passed": true,
+          "detail": "no SSH port in inventory \u2014 shell egress/LPE probes skipped",
+          "score": 0.0,
+          "evidence": []
+        },
+        {
+          "id": "d1.egress_gateway_log",
+          "team": "blue",
+          "passed": true,
+          "detail": "UHBS_EGRESS_GATEWAY_LOG unset \u2014 gateway evidence not attached (lab)",
+          "score": 10.0,
+          "evidence": []
+        },
+        {
+          "id": "d1.airgap_attested",
+          "team": "blue",
+          "passed": true,
+          "detail": "UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes)",
+          "score": 0.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "breakout": false,
+        "allowed_outbound_traffic": false,
+        "ssh_exec": false
+      },
+      "notes": [
+        "Module D limited: target has no SSH port \u2014 Safety Gate cannot fully clear without shell exec probes or UHBS_EGRESS_GATEWAY_LOG evidence"
+      ],
+      "error": null
+    },
+    {
+      "module": "E",
+      "dimension": "scale",
+      "score": 100.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "e1.p95_vs_tps",
+          "team": "blue",
+          "passed": true,
+          "detail": "P50=0.9ms P95=1.5ms P99=1.6ms TPS_limit=150.0ms proto=smb",
+          "score": 45.0,
+          "evidence": []
+        },
+        {
+          "id": "e1.error_rate",
+          "team": "blue",
+          "passed": true,
+          "detail": "errors=0/15 rate=0.00%",
+          "score": 20.0,
+          "evidence": []
+        },
+        {
+          "id": "e2.exhaustion_input",
+          "team": "red",
+          "passed": true,
+          "detail": "completed exhaustion/fuzz blast",
+          "score": 15.0,
+          "evidence": []
+        },
+        {
+          "id": "e2.circuit_breaker_alive",
+          "team": "blue",
+          "passed": true,
+          "detail": "service alive after load (connect 1.3ms)",
+          "score": 20.0,
+          "evidence": []
+        }
+      ],
+      "metrics": {
+        "p50_ms": 0.93,
+        "p95_ms": 1.45,
+        "p99_ms": 1.58,
+        "p95_limit_ms": 150.0,
+        "errors": 0,
+        "concurrency": 5,
+        "requests": 15,
+        "wall_s": 0.01,
+        "protocol": "smb"
+      },
+      "notes": [],
+      "error": null
+    }
+  ],
+  "extras": {
+    "target_scores": {
+      "protocol": 58.5,
+      "behavior": 62.5,
+      "telemetry": 100.0,
+      "containment": 75.0,
+      "scale": 100.0,
+      "static": 86.35
+    },
+    "uhqs_version": "4.0",
+    "tps": {
+      "name": "Low-Interaction-SMB",
+      "class": "Low-Interaction",
+      "protocols": [
+        "smb"
+      ],
+      "expected_p95_latency_ms": 150.0
+    }
+  }
+}

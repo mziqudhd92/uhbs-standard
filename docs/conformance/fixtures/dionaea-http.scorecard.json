@@ -1,0 +1,63 @@
+{
+  "uhbs_version": "4.0.0",
+  "target": {
+    "name": "Dionaea (HTTP :80)",
+    "class": "Web-API",
+    "profile_ref": "docs/conformance/labs/dionaea/web_api_http_full.yaml"
+  },
+  "evaluated_at": "2026-07-27",
+  "auditor": "UHBS-Lab detailed Docker run (dionaea/http)",
+  "modules": {
+    "A": {
+      "score": 16.0,
+      "status": "PARTIAL",
+      "weight": 0.25,
+      "notes": "status=200"
+    },
+    "B": {
+      "score": 82.5,
+      "status": "PASSED",
+      "weight": 0.2,
+      "notes": "survived binary blast"
+    },
+    "C": {
+      "score": 55.0,
+      "status": "PARTIAL",
+      "weight": 0.2,
+      "notes": "no STIX objects found"
+    },
+    "D": {
+      "score": 90.0,
+      "status": "PASSED",
+      "notes": "UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes"
+    },
+    "E": {
+      "score": 55.0,
+      "status": "PARTIAL",
+      "weight": 0.15,
+      "notes": "P50=1023.8ms P95=1050.0ms P99=1052.8ms TPS_limit=150.0ms proto=http"
+    },
+    "F": {
+      "score": 70.0,
+      "status": "PASSED",
+      "weight": 0.2,
+      "notes": "bandit HIGH=9"
+    }
+  },
+  "weights": {
+    "w_A": 0.25,
+    "w_B": 0.2,
+    "w_C": 0.2,
+    "w_E": 0.15,
+    "w_F": 0.2
+  },
+  "safety_gate": {
+    "containment_score": 90.0,
+    "delta_c": 0.81,
+    "passed": false,
+    "unauthorized_egress_leaks": 0
+  },
+  "uhqs": 43.54,
+  "grade": "F",
+  "notes": "Evaluation proof only. Graded HTTP :80 on Dionaea. Artifacts under docs/conformance/reports/dionaea/http/."
+}

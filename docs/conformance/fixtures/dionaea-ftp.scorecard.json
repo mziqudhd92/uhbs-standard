@@ -1,0 +1,63 @@
+{
+  "uhbs_version": "4.0.0",
+  "target": {
+    "name": "Dionaea (FTP :21)",
+    "class": "Low-Interaction",
+    "profile_ref": "docs/conformance/labs/dionaea/low_interaction_ftp_full.yaml"
+  },
+  "evaluated_at": "2026-07-27",
+  "auditor": "UHBS-Lab detailed Docker run (dionaea/ftp)",
+  "modules": {
+    "A": {
+      "score": 75.5,
+      "status": "PASSED",
+      "weight": 0.3,
+      "notes": "median=0.500ms pstdev=204.248ms (target jitter often <2ms vs native"
+    },
+    "B": {
+      "score": 82.5,
+      "status": "PASSED",
+      "weight": 0.15,
+      "notes": "survived binary blast"
+    },
+    "C": {
+      "score": 55.0,
+      "status": "PARTIAL",
+      "weight": 0.25,
+      "notes": "no STIX objects found"
+    },
+    "D": {
+      "score": 90.0,
+      "status": "PASSED",
+      "notes": "UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes"
+    },
+    "E": {
+      "score": 55.0,
+      "status": "PARTIAL",
+      "weight": 0.1,
+      "notes": "P50=1022.4ms P95=1040.9ms P99=1054.3ms TPS_limit=150.0ms proto=ftp"
+    },
+    "F": {
+      "score": 70.0,
+      "status": "PASSED",
+      "weight": 0.2,
+      "notes": "bandit HIGH=9"
+    }
+  },
+  "weights": {
+    "w_A": 0.3,
+    "w_B": 0.15,
+    "w_C": 0.25,
+    "w_E": 0.1,
+    "w_F": 0.2
+  },
+  "safety_gate": {
+    "containment_score": 90.0,
+    "delta_c": 0.81,
+    "passed": false,
+    "unauthorized_egress_leaks": 0
+  },
+  "uhqs": 55.3,
+  "grade": "D",
+  "notes": "Evaluation proof only. Graded FTP :21 on Dionaea. Artifacts under docs/conformance/reports/dionaea/ftp/."
+}

@@ -1,0 +1,63 @@
+{
+  "uhbs_version": "4.0.0",
+  "target": {
+    "name": "Trapster Community (HTTP :8080)",
+    "class": "Web-API",
+    "profile_ref": "docs/conformance/labs/trapster/web_api_http_full.yaml"
+  },
+  "evaluated_at": "2026-07-27",
+  "auditor": "UHBS-Lab detailed Docker run (trapster/http)",
+  "modules": {
+    "A": {
+      "score": 20.0,
+      "status": "PARTIAL",
+      "weight": 0.25,
+      "notes": "status=200 (want 400/505 or close"
+    },
+    "B": {
+      "score": 82.5,
+      "status": "PASSED",
+      "weight": 0.2,
+      "notes": "survived binary blast"
+    },
+    "C": {
+      "score": 55.0,
+      "status": "PARTIAL",
+      "weight": 0.2,
+      "notes": "no STIX objects found"
+    },
+    "D": {
+      "score": 90.0,
+      "status": "PASSED",
+      "notes": "UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes"
+    },
+    "E": {
+      "score": 100.0,
+      "status": "PASSED",
+      "weight": 0.15,
+      "notes": "service alive after load (connect 0.1ms"
+    },
+    "F": {
+      "score": 70.0,
+      "status": "PASSED",
+      "weight": 0.2,
+      "notes": "1 predictable PRNG seeds: trapster/modules/http.py"
+    }
+  },
+  "weights": {
+    "w_A": 0.25,
+    "w_B": 0.2,
+    "w_C": 0.2,
+    "w_E": 0.15,
+    "w_F": 0.2
+  },
+  "safety_gate": {
+    "containment_score": 90.0,
+    "delta_c": 0.81,
+    "passed": false,
+    "unauthorized_egress_leaks": 0
+  },
+  "uhqs": 49.82,
+  "grade": "F",
+  "notes": "Evaluation proof only. Graded HTTP :8080 on Trapster Community. Artifacts under docs/conformance/reports/trapster/http/."
+}

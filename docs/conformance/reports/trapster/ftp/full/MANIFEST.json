@@ -1,0 +1,30 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "a7785c76d2b304b13d69cd9859f11b2a7a9f74a9381a0bc956921d0090e408c4"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "a7785c76d2b304b13d69cd9859f11b2a7a9f74a9381a0bc956921d0090e408c4"
+    },
+    {
+      "path": "report.json",
+      "sha256": "4155fe33ffe7b56220ec65191a3c7ba370d76ed00887b34592a3b0441fde4ace"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "2f1ce753928b5f9e9da8ffc4681d992a536587f2d698b53cad4833a2727ba50b"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "14a02a1b02a36156129dfa305df1a3789ae071b41512159a38e76a445d8ab1fc"
+    }
+  ],
+  "extra": {
+    "target": "trapster-ftp",
+    "uhqs": 49.71,
+    "grade": "GRADE F (Fail)"
+  }
+}

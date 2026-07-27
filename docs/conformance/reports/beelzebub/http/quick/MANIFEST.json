@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "721e867e42e80117bd1ad7439094bbbb608a79ca266184ae398ac3abf1b1e147"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "721e867e42e80117bd1ad7439094bbbb608a79ca266184ae398ac3abf1b1e147"
+    },
+    {
+      "path": "report.json",
+      "sha256": "fa9722cc30f54985e733f74d4c38d3e8f4eadf272651a70befede3e24fe102da"
+    }
+  ],
+  "extra": {
+    "target": "beelzebub-http",
+    "uhqs": 41.73,
+    "grade": "GRADE F (Fail)"
+  }
+}
