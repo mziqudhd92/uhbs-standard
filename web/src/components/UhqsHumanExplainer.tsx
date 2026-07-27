@@ -1,7 +1,7 @@
-import { useEffect, useId, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { Sparkles, X } from "lucide-react";
+import { Pause, Play, Sparkles, X } from "lucide-react";
 
 /**
  * Plain-language autoplay walkthrough of UHQS.
@@ -297,17 +297,30 @@ export function UhqsHumanExplainerModal({ open, onClose }: ModalProps) {
   const reduce = useReducedMotion() ?? false;
   const [step, setStep] = useState(0);
   const [progress, setProgress] = useState(0);
+  const [paused, setPaused] = useState(false);
   const current = STEPS[step];
   const dwell = reduce ? 2200 : STEP_MS;
+  /** Fraction of current step already elapsed when last paused (0–1). */
+  const stepProgressRef = useRef(0);
+
+  const togglePause = useCallback(() => {
+    setPaused((p) => !p);
+  }, []);
 
   useEffect(() => {
     if (!open) return;
     setStep(0);
     setProgress(0);
+    setPaused(false);
+    stepProgressRef.current = 0;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
+      if (e.key === " " || e.code === "Space") {
+        e.preventDefault();
+        setPaused((p) => !p);
+      }
     };
     window.addEventListener("keydown", onKey);
     return () => {
@@ -316,32 +329,41 @@ export function UhqsHumanExplainerModal({ open, onClose }: ModalProps) {
     };
   }, [open, onClose]);
 
-  // Auto-advance — no Next/Back
+  // Auto-advance with pause / resume (keeps remaining time on current step)
   useEffect(() => {
-    if (!open) return;
-    setProgress(0);
+    if (!open || paused) return;
+
+    const startProgress = stepProgressRef.current;
+    const remainingMs = Math.max(80, (1 - startProgress) * dwell);
     const start = performance.now();
     let raf = 0;
+
     const tick = (now: number) => {
-      const t = Math.min(1, (now - start) / dwell);
+      const elapsedInResume = now - start;
+      const t = Math.min(1, startProgress + elapsedInResume / dwell);
+      stepProgressRef.current = t;
       setProgress(t);
       if (t < 1) raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
 
     const timer = window.setTimeout(() => {
+      stepProgressRef.current = 0;
+      setProgress(0);
       if (step >= STEPS.length - 1) {
         onClose();
       } else {
         setStep((s) => s + 1);
       }
-    }, dwell);
+    }, remainingMs);
 
     return () => {
       cancelAnimationFrame(raf);
       window.clearTimeout(timer);
+      // Freeze progress at current point when pausing or leaving the step
+      stepProgressRef.current = Math.min(1, stepProgressRef.current);
     };
-  }, [open, step, dwell, onClose]);
+  }, [open, step, dwell, onClose, paused]);
 
   if (typeof document === "undefined") return null;
 
@@ -400,7 +422,7 @@ export function UhqsHumanExplainerModal({ open, onClose }: ModalProps) {
                 />
               </div>
               <div className="mt-2 font-mono text-[10px] text-muted-foreground tracking-wide">
-                Playing · {step + 1} of {STEPS.length}
+                {paused ? "Paused" : "Playing"} · {step + 1} of {STEPS.length}
               </div>
             </div>
 
@@ -421,10 +443,30 @@ export function UhqsHumanExplainerModal({ open, onClose }: ModalProps) {
               </AnimatePresence>
             </div>
 
-            <div className="px-5 py-3 border-t border-border/50 bg-background/30">
-              <p className="font-mono text-[10px] text-muted-foreground text-center tracking-wide">
-                Auto-playing · Esc or ✕ to close
+            <div className="px-5 py-3 border-t border-border/50 bg-background/30 flex items-center justify-between gap-3">
+              <p className="font-mono text-[10px] text-muted-foreground tracking-wide">
+                {paused ? "Paused · Space to resume" : "Too fast? Pause anytime · Space"}
               </p>
+              <button
+                type="button"
+                onClick={togglePause}
+                aria-pressed={paused}
+                className={
+                  paused
+                    ? "inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider px-3 py-1.5 border border-primary bg-primary/15 text-primary hover:bg-primary/25 transition-colors"
+                    : "inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider px-3 py-1.5 border border-border text-secondary-foreground hover:border-primary/50 hover:text-primary transition-colors"
+                }
+              >
+                {paused ? (
+                  <>
+                    <Play className="w-3 h-3" aria-hidden /> Resume
+                  </>
+                ) : (
+                  <>
+                    <Pause className="w-3 h-3" aria-hidden /> Pause
+                  </>
+                )}
+              </button>
             </div>
           </motion.div>
         </motion.div>
