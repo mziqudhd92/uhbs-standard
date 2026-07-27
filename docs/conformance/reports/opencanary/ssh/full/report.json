@@ -18,14 +18,14 @@
   "baseline": null,
   "uhqs": {
     "target": "opencanary-ssh",
-    "S_A": 17.5,
+    "S_A": 41.51,
     "S_B": 6.25,
     "S_C": 25.0,
     "C": 100.0,
     "S_E": 20.0,
     "S_F": 70.0,
     "delta_c": 1.0,
-    "uhqs": 28.44,
+    "uhqs": 35.64,
     "weights": {
       "protocol": 0.3,
       "behavior": 0.15,
@@ -41,14 +41,14 @@
   },
   "hqs": {
     "target": "opencanary-ssh",
-    "S_A": 17.5,
+    "S_A": 41.51,
     "S_B": 6.25,
     "S_C": 25.0,
     "C": 100.0,
     "S_E": 20.0,
     "S_F": 70.0,
     "delta_c": 1.0,
-    "uhqs": 28.44,
+    "uhqs": 35.64,
     "weights": {
       "protocol": 0.3,
       "behavior": 0.15,
@@ -75,7 +75,8 @@
           "passed": true,
           "detail": "opencanary-lab:2222 open",
           "score": 25.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "sandbox.airgap_attested",
@@ -83,7 +84,8 @@
           "passed": true,
           "detail": "operator attested air-gapped sandbox (UHBS_AIRGAP_ATTESTED=1)",
           "score": 25.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "sandbox.egress_deny_tooling",
@@ -91,7 +93,8 @@
           "passed": false,
           "detail": "host-egress-deny.sh not found",
           "score": 10.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "sandbox.gateway_log_configured",
@@ -99,7 +102,8 @@
           "passed": true,
           "detail": "UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log",
           "score": 25.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {
@@ -122,7 +126,8 @@
           "passed": true,
           "detail": "0 static private keys",
           "score": 10.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.hardcoded_ssh_banners",
@@ -130,7 +135,8 @@
           "passed": true,
           "detail": "0 hardcoded SSH banners",
           "score": 5.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.predictable_seeds",
@@ -138,7 +144,8 @@
           "passed": true,
           "detail": "0 predictable PRNG seeds",
           "score": 5.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.hardcoded_macs",
@@ -146,7 +153,8 @@
           "passed": true,
           "detail": "0 hardcoded MAC addresses",
           "score": 5.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.prompt_corpus_present",
@@ -154,7 +162,8 @@
           "passed": true,
           "detail": "no prompt corpus (N/A for non-LLM)",
           "score": 5.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.prompt_boundaries",
@@ -162,7 +171,8 @@
           "passed": true,
           "detail": "no weak delimiter/extract patterns",
           "score": 10.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.fallback_strings",
@@ -170,7 +180,8 @@
           "passed": true,
           "detail": "no plain-text LLM fallback artifacts",
           "score": 10.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.bandit",
@@ -178,7 +189,8 @@
           "passed": false,
           "detail": "bandit HIGH=21",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.semgrep",
@@ -186,7 +198,8 @@
           "passed": false,
           "detail": "semgrep error/critical=1 total=27",
           "score": 7.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.trivy",
@@ -194,7 +207,8 @@
           "passed": true,
           "detail": "trivy not installed (skipped)",
           "score": 4.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.sast_gate",
@@ -202,7 +216,8 @@
           "passed": false,
           "detail": "22 high/critical findings",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "white.vfs_posix_coverage",
@@ -251,7 +266,8 @@
             "service",
             "sh",
             "sleep"
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "white.blocking_calls",
@@ -259,7 +275,8 @@
           "passed": true,
           "detail": "sleep/blocking markers in non-test code\u22480",
           "score": 5.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {
@@ -273,7 +290,7 @@
     {
       "module": "A",
       "dimension": "protocol",
-      "score": 17.5,
+      "score": 41.51,
       "status": "PARTIAL",
       "checks": [
         {
@@ -281,10 +298,11 @@
           "team": "blue",
           "passed": true,
           "detail": "SSH-2.0-OpenSSH_5.1p1 Debian-4",
-          "score": 25.0,
+          "score": 100.0,
           "evidence": [
             "5353482d322e302d4f70656e5353485f352e3170312044656269616e2d340d0a"
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "rfc4253.kexinit_after_id",
@@ -292,35 +310,39 @@
           "passed": false,
           "detail": "no KEXINIT",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "rfc4253.legacy_version_handling",
           "team": "blue",
           "passed": true,
           "detail": "handled SSH-1.5 probe without hang",
-          "score": 20.0,
-          "evidence": []
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "rfc4253.reject_null_in_id",
           "team": "red",
           "passed": true,
           "detail": "null in client ID did not proceed to KEX",
-          "score": 30.0,
+          "score": 100.0,
           "evidence": [
             "5353482d322e302d4f70656e5353485f352e3170312044656269616e2d340d0a"
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "rfc4253.identification_crlf",
           "team": "blue",
           "passed": true,
           "detail": "SSH-2.0-OpenSSH_5.1p1 Debian-4",
-          "score": 25.0,
+          "score": 100.0,
           "evidence": [
             "5353482d322e302d4f70656e5353485f352e3170312044656269616e2d340d0a"
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "rfc4253.kexinit_after_id",
@@ -328,7 +350,8 @@
           "passed": false,
           "detail": "no KEXINIT",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "ssh.nego.hassh",
@@ -336,44 +359,40 @@
           "passed": false,
           "detail": "HASSH parse failed",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "ssh.timing.sample_size",
           "team": "blue",
           "passed": true,
           "detail": "n=200 requested=200 errors=0",
-          "score": 20.0,
-          "evidence": []
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "ssh.timing.iat_jitter",
           "team": "red",
           "passed": true,
-          "detail": "median=0.123ms pstdev=0.092ms (target jitter often <2ms vs native)",
-          "score": 30.0,
-          "evidence": []
-        },
-        {
-          "id": "ssh.timing.ks_vs_gold",
-          "team": "blue",
-          "passed": false,
-          "detail": "no gold_baseline_host in TPS \u2014 KS compare skipped (set performance_baseline.gold_baseline_host)",
-          "score": 25.0,
-          "evidence": []
+          "detail": "median=0.271ms pstdev=0.571ms (target jitter often <2ms vs native)",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "ssh.module_a.composite",
           "team": "blue",
           "passed": false,
-          "detail": "fsm=19 nego=8 timing=25",
-          "score": 17.5,
-          "evidence": []
+          "detail": "fsm=27 nego=3 timing=100",
+          "score": 41.5138,
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {
         "per_protocol": {
-          "ssh": 17.5
+          "ssh": 41.51
         },
         "protocols": [
           "ssh"
@@ -382,13 +401,21 @@
         "available_plugins": [
           "ftp",
           "generic",
+          "git",
           "http",
           "modbus",
+          "mysql",
+          "ntp",
+          "rdp",
           "redis",
+          "sip",
           "smb",
           "smtp",
+          "snmp",
           "ssh",
-          "telnet"
+          "telnet",
+          "tftp",
+          "vnc"
         ]
       },
       "notes": [
@@ -412,7 +439,8 @@
           "evidence": [
             "",
             ""
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "ssh.payload.echo",
@@ -420,7 +448,8 @@
           "passed": false,
           "detail": "Authentication failed.",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "ssh.fuzz.non_utf8",
@@ -428,7 +457,8 @@
           "passed": false,
           "detail": "Authentication failed.",
           "score": 25.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {
@@ -454,7 +484,8 @@
           "passed": false,
           "detail": "Authentication failed.",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "c2.inject_1",
@@ -462,7 +493,8 @@
           "passed": false,
           "detail": "Authentication failed.",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "c2.inject_2",
@@ -470,7 +502,8 @@
           "passed": false,
           "detail": "Authentication failed.",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "c2.inject_3",
@@ -478,7 +511,8 @@
           "passed": false,
           "detail": "Authentication failed.",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "c2.parser_survival",
@@ -486,7 +520,8 @@
           "passed": false,
           "detail": "0/4 injections survived without client crash",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "c1.json_parse_clean",
@@ -494,7 +529,8 @@
           "passed": true,
           "detail": "0 malformed / 34 records",
           "score": 20.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "c1.stix_2_1",
@@ -502,7 +538,8 @@
           "passed": false,
           "detail": "no STIX objects found",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "c1.otel_or_ecs",
@@ -510,7 +547,8 @@
           "passed": false,
           "detail": "otel_docs=0 ecs_docs=0",
           "score": 5.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "c1.payload_hashes",
@@ -518,7 +556,8 @@
           "passed": false,
           "detail": "no md5/sha256 fields",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "c1.mitre_mapping",
@@ -526,7 +565,8 @@
           "passed": false,
           "detail": "no MITRE tags",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {},
@@ -549,7 +589,8 @@
           "score": 12.0,
           "evidence": [
             ""
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "d1.egress_dns",
@@ -559,7 +600,8 @@
           "score": 12.0,
           "evidence": [
             ""
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "d1.egress_tcp",
@@ -569,7 +611,8 @@
           "score": 12.0,
           "evidence": [
             ""
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "d1.egress_https",
@@ -579,7 +622,8 @@
           "score": 12.0,
           "evidence": [
             ""
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "d1.egress_http",
@@ -589,7 +633,8 @@
           "score": 12.0,
           "evidence": [
             ""
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "d1.egress_gateway_log",
@@ -597,7 +642,8 @@
           "passed": true,
           "detail": "0 gateway canary hits",
           "score": 20.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "d2.docker_sock",
@@ -605,7 +651,8 @@
           "passed": true,
           "detail": "no docker.sock",
           "score": 10.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "d2.cgroup_escape_surface",
@@ -613,7 +660,8 @@
           "passed": true,
           "detail": "cgroup surface ok",
           "score": 8.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "d3.prompt_injection",
@@ -623,7 +671,8 @@
           "score": 8.0,
           "evidence": [
             "Authentication failed."
-          ]
+          ],
+          "critical": false
         },
         {
           "id": "d3.context_exhaustion",
@@ -631,12 +680,14 @@
           "passed": false,
           "detail": "Authentication failed.",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {
         "breakout": false,
-        "allowed_outbound_traffic": false
+        "allowed_outbound_traffic": false,
+        "shell_exec": true
       },
       "notes": [
         "UHBS: C\u226595 required for \u03b4_C=1.0; set UHBS_EGRESS_GATEWAY_LOG for gateway proof"
@@ -653,9 +704,10 @@
           "id": "e1.p95_vs_tps",
           "team": "blue",
           "passed": false,
-          "detail": "P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=150.0ms proto=ssh",
+          "detail": "P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=3000.0ms proto=ssh",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "e1.error_rate",
@@ -663,7 +715,8 @@
           "passed": false,
           "detail": "errors=200/200 rate=100.00%",
           "score": 5.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "e2.exhaustion_input",
@@ -671,7 +724,8 @@
           "passed": true,
           "detail": "completed exhaustion/fuzz blast",
           "score": 15.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         },
         {
           "id": "e2.circuit_breaker_alive",
@@ -679,18 +733,19 @@
           "passed": false,
           "detail": "Authentication failed.",
           "score": 0.0,
-          "evidence": []
+          "evidence": [],
+          "critical": false
         }
       ],
       "metrics": {
         "p50_ms": 0.0,
         "p95_ms": 0.0,
         "p99_ms": 0.0,
-        "p95_limit_ms": 150.0,
+        "p95_limit_ms": 3000.0,
         "errors": 200,
         "concurrency": 25,
         "requests": 200,
-        "wall_s": 7.28,
+        "wall_s": 8.93,
         "protocol": "ssh"
       },
       "notes": [],
@@ -699,7 +754,7 @@
   ],
   "extras": {
     "target_scores": {
-      "protocol": 17.5,
+      "protocol": 41.51,
       "behavior": 6.25,
       "telemetry": 25.0,
       "containment": 100.0,
@@ -713,7 +768,7 @@
       "protocols": [
         "ssh"
       ],
-      "expected_p95_latency_ms": 150.0
+      "expected_p95_latency_ms": 3000.0
     }
   }
 }

@@ -10,14 +10,14 @@ Environment           : Isolated Sandbox
 ------------------------------------------------------------------------------------
 EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
 ------------------------------------------------------------------------------------
-Module A: Protocol Fidelity         :  17.5/100       0.30     PARTIAL (no KEXINIT)
+Module A: Protocol Fidelity         :  41.5/100       0.30     PARTIAL (no KEXINIT)
 Module B: Behavioral Realism        :   6.2/100       0.15     PARTIAL (Authentication failed.)
 Module C: Telemetry Quality         :  25.0/100       0.25     PARTIAL (Authentication failed.)
 Module D: Safety & Containment (C)  : 100.0/100       GATE     PASSED (Authentication failed.)
-Module E: Scalability & Latency     :  20.0/100       0.10     PARTIAL (P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=150.0ms proto=ssh)
+Module E: Scalability & Latency     :  20.0/100       0.10     PARTIAL (P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=3000.0ms proto=ssh)
 Module F: Static Code Audit         :  70.0/100       0.20     PASSED (bandit HIGH=21)
 ------------------------------------------------------------------------------------
 SAFETY GATE MULTIPLIER                : δ_C = 1.0 (Containment Score C = 100.0 >= 95)
-FINAL COMPOSITE SCORE (UHQS 4.0)      : 28.44 / 100
+FINAL COMPOSITE SCORE (UHQS 4.0)      : 35.64 / 100
 OVERALL EVALUATION GRADE              : GRADE F (Fail)
 ====================================================================================

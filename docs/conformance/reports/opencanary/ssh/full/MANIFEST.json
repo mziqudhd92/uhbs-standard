@@ -2,33 +2,41 @@
   "uhbs_version": "4.0.0",
   "artifacts": [
     {
-      "path": "SCORECARD.txt",
-      "sha256": "484438e8f824d4fca9ddf6ed06f97e36fcc7dc07971d021b81212554c68aaeec"
+      "path": "README.md",
+      "sha256": "4af380f2e7527c8b3deb27b17381ae943d34c07b7fc86514d3d4e047fe90d183"
     },
     {
       "path": "REPORT.txt",
-      "sha256": "484438e8f824d4fca9ddf6ed06f97e36fcc7dc07971d021b81212554c68aaeec"
+      "sha256": "6b1e3f95947edc03d94e01aa056018043d7a86b96bb3ce8aa91bad21ca30644e"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "6b1e3f95947edc03d94e01aa056018043d7a86b96bb3ce8aa91bad21ca30644e"
     },
     {
       "path": "report.json",
-      "sha256": "de67fbfdf85728c358e15163b7e449e933ae3186386275b078ce3b4a10ecaa38"
+      "sha256": "42aaa44046091f4b1c35190acfdbbf794136dd6ee490b86a6cc1f229ad225ccc"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "e2fbfcbaff184b03c2887125621b528615973bedb91c8d6e824a6a04e9606109"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "381cd47e9838525c3345e2820e322a6343a495b6a256c5415d3c6a07d3a06f17"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "c12fd006978791556d4ecd81a852abb12e290d41bc3e5f5a09ed9fdaa20bb316"
     },
     {
       "path": "uhbs-run.log",
       "sha256": "e30e7db0db996b06e383c3973cef0e0be69ef0557517067735a0efbb117f3bad"
-    },
-    {
-      "path": "static/bandit-report.json",
-      "sha256": "da578cdc41dcb541f816941ca9c3d7fcbed6fd3a1e4a08428d33095d234ee3f7"
-    },
-    {
-      "path": "static/semgrep-report.json",
-      "sha256": "769fc56d3c4722ce66a8185055e1332959dd999e673ed42b768371fc65e359e1"
     }
   ],
   "extra": {
     "target": "opencanary-ssh",
-    "uhqs": 28.44,
+    "uhqs": 35.64,
     "grade": "GRADE F (Fail)"
   }
 }
