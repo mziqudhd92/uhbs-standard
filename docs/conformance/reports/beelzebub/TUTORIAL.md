@@ -70,7 +70,7 @@ docker run --rm --network uhbs-lab \
     --environment "Full Docker lab: beelzebub-http"
 ```
 
-**Published:** quick **41.73 / F** · full **50.12 / D**
+**Published:** quick **52.77 / D** · full **66.02 / D**
 
 ### Redis `:6379`
 
@@ -108,7 +108,7 @@ docker run --rm --network uhbs-lab \
     --environment "Full Docker lab: beelzebub-redis"
 ```
 
-**Published:** quick **46.77 / F** · full **55.55 / D**
+**Published:** quick **50.56 / D** · full **61.01 / D**
 
 ### SSH `:2222`
 
@@ -146,7 +146,7 @@ docker run --rm --network uhbs-lab \
     --environment "Full Docker lab: beelzebub-ssh"
 ```
 
-**Published:** quick **60.31 / D** · full **45.74 / F**
+**Published:** quick **74.45 / C** · full **59.88 / D**
 
 ### Telnet `:23`
 
@@ -184,7 +184,7 @@ docker run --rm --network uhbs-lab \
     --environment "Full Docker lab: beelzebub-telnet"
 ```
 
-**Published:** quick **47.78 / F** · full **57.00 / D**
+**Published:** quick **39.16 / F** · full **47.89 / F**
 
 
 ## 4. Validate a fixture

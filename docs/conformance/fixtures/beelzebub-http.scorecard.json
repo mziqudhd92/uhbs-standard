@@ -9,8 +9,8 @@
   "auditor": "UHBS-Lab detailed Docker run (beelzebub/http)",
   "modules": {
     "A": {
-      "score": 21.5,
-      "status": "PARTIAL",
+      "score": 100.0,
+      "status": "PASSED",
       "weight": 0.25,
       "notes": "no gold_baseline_host in TPS \u2014 KS compare skipped (set performance_baseline.gold_baseline_host"
     },
@@ -35,7 +35,10 @@
       "score": 100.0,
       "status": "PASSED",
       "weight": 0.15,
-      "notes": "service alive after load (connect 0.1ms"
+      "notes": "service alive after load (connect 0.1ms",
+      "p50_ms": 3.83,
+      "p95_ms": 16.54,
+      "p99_ms": 21.6
     },
     "F": {
       "score": 70.0,
@@ -57,7 +60,7 @@
     "passed": false,
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 50.12,
+  "uhqs": 66.02,
   "grade": "D",
   "notes": "Evaluation proof only. Graded HTTP :8080 on Beelzebub. Artifacts under docs/conformance/reports/beelzebub/http/."
 }

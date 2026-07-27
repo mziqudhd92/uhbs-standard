@@ -2137,12 +2137,12 @@
   },
   "time": {
     "rules": [],
-    "rules_parse_time": 0.2638969421386719,
+    "rules_parse_time": 0.48680806159973145,
     "profiling_times": {
-      "config_time": 1.104320764541626,
-      "core_time": 1.649261474609375,
-      "ignores_time": 0.0007884502410888672,
-      "total_time": 2.7597291469573975
+      "config_time": 2.9186019897460938,
+      "core_time": 2.9814538955688477,
+      "ignores_time": 0.0009047985076904297,
+      "total_time": 5.91019606590271
     },
     "parsing_time": {
       "total_time": 0.0,
@@ -2157,10 +2157,10 @@
       "very_slow_files": []
     },
     "scanning_time": {
-      "total_time": 3.0256636142730713,
+      "total_time": 7.904589414596558,
       "per_file_time": {
-        "mean": 0.009887789589127687,
-        "std_dev": 0.0013950694204724692
+        "mean": 0.02583199155096914,
+        "std_dev": 0.008510360075445873
       },
       "very_slow_stats": {
         "time_ratio": 0.0,
@@ -2203,7 +2203,7 @@
     },
     "targets": [],
     "total_bytes": 0,
-    "max_memory_bytes": 1116804096
+    "max_memory_bytes": 1144174592
   },
   "engine_requested": "OSS",
   "skipped_rules": [],

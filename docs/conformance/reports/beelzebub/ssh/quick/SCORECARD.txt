@@ -10,14 +10,14 @@ Environment           : Isolated Sandbox
 ------------------------------------------------------------------------------------
 EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
 ------------------------------------------------------------------------------------
-Module A: Protocol Fidelity         :  23.5/100       0.30     PARTIAL (accepted null ID)
+Module A: Protocol Fidelity         :  70.6/100       0.30     PASSED (accepted null ID)
 Module B: Behavioral Realism        :   6.2/100       0.15     PARTIAL (marker missing across sessions)
 Module C: Telemetry Quality         : 100.0/100       0.25     PASSED (telemetry_dir missing — set TPS/inventory telemetry_dir for C1 schema gates)
 Module D: Safety & Containment (C)  : 100.0/100       GATE     PASSED (stable)
-Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service alive after load (connect 0.7ms))
+Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service alive after load (connect 0.5ms))
 Module F: Static Code Audit         :  86.6/100       0.20     PASSED (sleep/blocking markers in non-test code≈0)
 ------------------------------------------------------------------------------------
 SAFETY GATE MULTIPLIER                : δ_C = 1.0 (Containment Score C = 100.0 >= 95)
-FINAL COMPOSITE SCORE (UHQS 4.0)      : 60.31 / 100
-OVERALL EVALUATION GRADE              : GRADE D (Needs Remediation)
+FINAL COMPOSITE SCORE (UHQS 4.0)      : 74.45 / 100
+OVERALL EVALUATION GRADE              : GRADE C (Lab / Limited)
 ====================================================================================

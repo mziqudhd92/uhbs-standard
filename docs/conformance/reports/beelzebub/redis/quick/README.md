@@ -1,3 +1,3 @@
-# Beelzebub Redis — quick artifacts
+# Beelzebub redis — quick
 
-See [`SCORECARD.txt`](SCORECARD.txt) and parent [`../index.md`](../index.md).
+**Result:** UHQS **50.56** · Grade **D** · δ_C **0.5625**

@@ -9,7 +9,7 @@
   "auditor": "UHBS-Lab detailed Docker run (beelzebub/redis)",
   "modules": {
     "A": {
-      "score": 77.5,
+      "score": 100.0,
       "status": "PASSED",
       "weight": 0.3,
       "notes": "no gold_baseline_host in TPS \u2014 KS compare skipped (set performance_baseline.gold_baseline_host"
@@ -35,7 +35,10 @@
       "score": 100.0,
       "status": "PASSED",
       "weight": 0.1,
-      "notes": "service alive after load (connect 1.3ms"
+      "notes": "service alive after load (connect 1.3ms",
+      "p50_ms": 3.73,
+      "p95_ms": 9.13,
+      "p99_ms": 10.45
     },
     "F": {
       "score": 70.0,
@@ -57,7 +60,7 @@
     "passed": false,
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 55.55,
+  "uhqs": 61.01,
   "grade": "D",
   "notes": "Evaluation proof only. Graded Redis :6379 on Beelzebub. Artifacts under docs/conformance/reports/beelzebub/redis/."
 }

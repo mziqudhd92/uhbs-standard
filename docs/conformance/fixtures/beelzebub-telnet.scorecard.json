@@ -9,14 +9,14 @@
   "auditor": "UHBS-Lab detailed Docker run (beelzebub/telnet)",
   "modules": {
     "A": {
-      "score": 77.5,
-      "status": "PASSED",
+      "score": 30.0,
+      "status": "PARTIAL",
       "weight": 0.3,
       "notes": "no gold_baseline_host in TPS \u2014 KS compare skipped (set performance_baseline.gold_baseline_host"
     },
     "B": {
-      "score": 62.5,
-      "status": "PARTIAL",
+      "score": 82.5,
+      "status": "PASSED",
       "weight": 0.15,
       "notes": "survived binary blast"
     },
@@ -35,7 +35,10 @@
       "score": 100.0,
       "status": "PASSED",
       "weight": 0.1,
-      "notes": "service alive after load (connect 0.1ms"
+      "notes": "service alive after load (connect 0.1ms",
+      "p50_ms": 3.63,
+      "p95_ms": 10.23,
+      "p99_ms": 12.6
     },
     "F": {
       "score": 70.0,
@@ -57,7 +60,7 @@
     "passed": false,
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 57.0,
-  "grade": "D",
+  "uhqs": 47.89,
+  "grade": "F",
   "notes": "Evaluation proof only. Graded Telnet :23 on Beelzebub. Artifacts under docs/conformance/reports/beelzebub/telnet/."
 }

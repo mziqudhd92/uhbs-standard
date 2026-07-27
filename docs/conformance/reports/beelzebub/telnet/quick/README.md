@@ -1,3 +1,3 @@
-# Beelzebub Telnet — quick artifacts
+# Beelzebub telnet — quick
 
-See [`SCORECARD.txt`](SCORECARD.txt) and parent [`../index.md`](../index.md).
+**Result:** UHQS **39.16** · Grade **F** · δ_C **0.5625**

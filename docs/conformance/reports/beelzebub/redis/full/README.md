@@ -1,3 +1,3 @@
-# Beelzebub Redis — full artifacts
+# Beelzebub redis — full
 
-See [`SCORECARD.txt`](SCORECARD.txt) and parent [`../index.md`](../index.md).
+**Result:** UHQS **61.01** · Grade **D** · δ_C **0.81**

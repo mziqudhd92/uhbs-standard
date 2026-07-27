@@ -1,3 +1,3 @@
-# Beelzebub SSH — quick artifacts
+# Beelzebub ssh — quick
 
-See [`SCORECARD.txt`](SCORECARD.txt) and parent [`../index.md`](../index.md).
+**Result:** UHQS **74.45** · Grade **C** · δ_C **1.0**

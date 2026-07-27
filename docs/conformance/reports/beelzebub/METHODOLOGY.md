@@ -8,10 +8,10 @@
 
 Only protocols with a dedicated UHBS harness plugin (or intentional generic TCP mapping) were scored:
 
-- **HTTP** — quick 41.73/F, full 50.12/D
-- **Redis** — quick 46.77/F, full 55.55/D
-- **SSH** — quick 60.31/D, full 45.74/F
-- **Telnet** — quick 47.78/F, full 57.00/D
+- **HTTP** — quick 52.77/D, full 66.02/D
+- **Redis** — quick 50.56/D, full 61.01/D
+- **SSH** — quick 74.45/C, full 59.88/D
+- **Telnet** — quick 39.16/F, full 47.89/F
 
 Other services the product may advertise (for example MCP, DNS, RDP, MySQL without a UHBS plugin path in this lab) were **not** graded as separate UHQS targets.
 

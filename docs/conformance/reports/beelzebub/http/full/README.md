@@ -1,3 +1,3 @@
-# Beelzebub HTTP — full artifacts
+# Beelzebub http — full
 
-See [`SCORECARD.txt`](SCORECARD.txt) and parent [`../index.md`](../index.md).
+**Result:** UHQS **66.02** · Grade **D** · δ_C **0.81**

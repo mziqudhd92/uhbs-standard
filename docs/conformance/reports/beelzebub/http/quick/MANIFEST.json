@@ -3,20 +3,24 @@
   "artifacts": [
     {
       "path": "REPORT.txt",
-      "sha256": "721e867e42e80117bd1ad7439094bbbb608a79ca266184ae398ac3abf1b1e147"
+      "sha256": "5a5b82f8c705fc3ce1f8286395a1c96c1099c5e6d73d8dcc1b70982297406f89"
     },
     {
       "path": "SCORECARD.txt",
-      "sha256": "721e867e42e80117bd1ad7439094bbbb608a79ca266184ae398ac3abf1b1e147"
+      "sha256": "5a5b82f8c705fc3ce1f8286395a1c96c1099c5e6d73d8dcc1b70982297406f89"
     },
     {
       "path": "report.json",
-      "sha256": "fa9722cc30f54985e733f74d4c38d3e8f4eadf272651a70befede3e24fe102da"
+      "sha256": "a91b6e1c29c5361278a85d23a9082d5ce5dcca2371384fc47b498c7853cc2d66"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "5a5b82f8c705fc3ce1f8286395a1c96c1099c5e6d73d8dcc1b70982297406f89"
     }
   ],
   "extra": {
     "target": "beelzebub-http",
-    "uhqs": 41.73,
-    "grade": "GRADE F (Fail)"
+    "uhqs": 52.77,
+    "grade": "GRADE D (Needs Remediation)"
   }
 }

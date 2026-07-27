@@ -1,3 +1,3 @@
-# Beelzebub HTTP — quick artifacts
+# Beelzebub http — quick
 
-See [`SCORECARD.txt`](SCORECARD.txt) and parent [`../index.md`](../index.md).
+**Result:** UHQS **52.77** · Grade **D** · δ_C **0.5625**

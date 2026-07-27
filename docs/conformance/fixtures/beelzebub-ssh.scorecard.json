@@ -9,8 +9,8 @@
   "auditor": "UHBS-Lab detailed Docker run (beelzebub/ssh)",
   "modules": {
     "A": {
-      "score": 23.5,
-      "status": "PARTIAL",
+      "score": 70.64,
+      "status": "PASSED",
       "weight": 0.3,
       "notes": "accepted null ID"
     },
@@ -35,7 +35,10 @@
       "score": 100.0,
       "status": "PASSED",
       "weight": 0.1,
-      "notes": "service alive after load (connect 0.3ms"
+      "notes": "service alive after load (connect 0.3ms",
+      "p50_ms": 121.16,
+      "p95_ms": 412.32,
+      "p99_ms": 444.51
     },
     "F": {
       "score": 70.0,
@@ -57,7 +60,7 @@
     "passed": true,
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 45.74,
-  "grade": "F",
+  "uhqs": 59.88,
+  "grade": "D",
   "notes": "Evaluation proof only. Graded SSH :2222 on Beelzebub. Artifacts under docs/conformance/reports/beelzebub/ssh/."
 }

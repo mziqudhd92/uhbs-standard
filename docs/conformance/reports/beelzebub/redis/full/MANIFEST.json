@@ -3,28 +3,32 @@
   "artifacts": [
     {
       "path": "REPORT.txt",
-      "sha256": "1b7f32da3784d31d24b006356afc022b07907c8d7f1ac5987f052eb730578e8e"
+      "sha256": "b3aede84ac37ca1981e44b94961f23d02bfb8b8ab23d600bca1eb8cec3bd9c43"
     },
     {
       "path": "SCORECARD.txt",
-      "sha256": "1b7f32da3784d31d24b006356afc022b07907c8d7f1ac5987f052eb730578e8e"
+      "sha256": "b3aede84ac37ca1981e44b94961f23d02bfb8b8ab23d600bca1eb8cec3bd9c43"
     },
     {
       "path": "report.json",
-      "sha256": "36f1f9bcacc962fcd138b28e859764298941e49a3cf4502758aa3a14e7601845"
+      "sha256": "3f63a1dc184b0ddf6bae0b8ceb669a9cabfad100418249827ac38c0f3730a033"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "b3aede84ac37ca1981e44b94961f23d02bfb8b8ab23d600bca1eb8cec3bd9c43"
     },
     {
       "path": "static/bandit-report.json",
-      "sha256": "1f750ccdf2f9b66d0a1075c57ce3c3bb1ab35820b2f9afc8d9b10e5213b6ac93"
+      "sha256": "0055daa2b1db8a5e8063e201382081978bec9847ffe2a73d6445f91fe2517a14"
     },
     {
       "path": "static/semgrep-report.json",
-      "sha256": "d3d713504a7ef779c0fb5058cbf989ad46dd177c323e8206d4642a4f3c224b10"
+      "sha256": "f4f3b6a42b960b4df2b74f63e15c1fa174cd7b6b9882cf1a214a17e59404bc84"
     }
   ],
   "extra": {
     "target": "beelzebub-redis",
-    "uhqs": 55.55,
+    "uhqs": 61.01,
     "grade": "GRADE D (Needs Remediation)"
   }
 }
