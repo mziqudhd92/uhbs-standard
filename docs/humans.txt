@@ -12,4 +12,5 @@ Software: UHBS v4.0.0 (Apache-2.0)
 /* Notes */
 UHBS is a personal beta evaluation framework — not a consortium standard.
 Preferred AI/agent entrypoints: /llms.txt and /llms-full.txt
+MCP (AI tool calling): /mkdocs/tooling/mcp/ · repo server.json
 /* https://humanstxt.org */

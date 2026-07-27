@@ -52,6 +52,8 @@ jobs:
             'User-agent: *' \
             'Allow: /' \
             '' \
+            '# AEO: curated agent index + MCP tooling docs' \
+            '# llms.txt (this site root) · mkdocs/llms.txt · mkdocs/tooling/mcp/' \
             'Sitemap: https://mziqudhd92.github.io/uhbs-standard/mkdocs/sitemap.xml' \
             'Host: https://mziqudhd92.github.io/uhbs-standard/' \
             > web/dist/robots.txt

@@ -11,7 +11,15 @@ license = "Apache-2.0"
 license-files = ["LICENSE"]
 requires-python = ">=3.11"
 authors = [{ name = "Moran Zavdi" }]
-keywords = ["honeypot", "benchmarking", "cybersecurity", "deception", "uhbs"]
+keywords = [
+  "honeypot",
+  "benchmarking",
+  "cybersecurity",
+  "deception",
+  "uhbs",
+  "mcp",
+  "model-context-protocol",
+]
 classifiers = [
   "Development Status :: 3 - Alpha",
   "Intended Audience :: Developers",
@@ -33,16 +41,21 @@ dependencies = [
 lab = [
   "paramiko>=3.0",
 ]
+mcp = [
+  "mcp>=1.28,<2",
+]
 dev = [
   "pytest>=8.0",
   "ruff>=0.5",
   "paramiko>=3.0",
+  "mcp>=1.28,<2",
 ]
 
 [project.scripts]
 uhbs = "uhbs_cli.cli:main"
 uhbs-lab = "uhbs_core.run_benchmark:main"
 uhbs-uhqs = "uhbs_core.calculate_uhqs_v4:main"
+uhbs-mcp = "uhbs_mcp.server:main"
 
 [project.urls]
 Homepage = "https://github.com/mziqudhd92/uhbs-standard"

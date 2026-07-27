@@ -14,9 +14,10 @@ Guidance for coding assistants and automated agents working in this repository.
 
 | Concern | Source of truth |
 | --- | --- |
-| UHQS / δ_C / grades / weights | `src/uhbs_core/uhqs_math.py` (CLI wraps it via `uhbs_cli.scoring`) |
+| UHQS / δ_C / grades / weights | `src/uhbs_core/uhqs_math.py` (CLI + MCP wrap it via `uhbs_cli.scoring`) |
 | Spec prose | `docs/specification/` |
 | Schemas | `schemas/*.schema.json` |
+| MCP tools for AI hosts | `src/uhbs_mcp/` · docs `docs/tooling/mcp.md` · `server.json` |
 | Maturity / future governance | `ROADMAP.md` only (do not claim Phase 6 done) |
 | Vendor-neutrality | Classes/protocols in docs; product names only under `docs/conformance/` |
 
@@ -24,16 +25,19 @@ Guidance for coding assistants and automated agents working in this repository.
 
 1. Do **not** add `*@uhbs.dev` contacts or imply a project domain/email exists.
 2. Do **not** invent stewards, committees, adopters, or “mandatory standard” language.
-3. Keep CLI and harness UHQS math identical — change `uhqs_math.py`, not a second copy.
+3. Keep CLI, MCP, and harness UHQS math identical — change `uhqs_math.py`, not a second copy.
 4. Prefer absolute URLs when editing `llms.txt` / site discovery files.
-5. Run `pytest -q` and `ruff check` on touched Python before finishing.
+5. Do **not** expose `uhbs lab` / network attack tools via MCP without explicit Safety Gate design.
+6. Run `pytest -q` and `ruff check` on touched Python before finishing.
 
 ## Install / verify
 
 ```bash
-pip install -c constraints.txt -e ".[dev,lab]"
+pip install -c constraints.txt -e ".[dev,lab,mcp]"
 pytest -q
 uhbs validate-scorecard docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
+# MCP (stdio) for AI hosts — see docs/tooling/mcp.md
+python -c "from uhbs_mcp.server import list_profile_classes; print(list_profile_classes()['ok'])"
 # optional Docker grading image:
 docker build -t uhbs:4.0.0 .
 docker run --rm -v "$PWD:/work" -w /work uhbs:4.0.0 validate-scorecard docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
@@ -42,4 +46,4 @@ docker run --rm -v "$PWD:/work" -w /work uhbs:4.0.0 validate-scorecard docs/conf
 ## Discovery files
 
 - Site: `/llms.txt`, `/llms-full.txt`, `/robots.txt`, `/humans.txt`, `/sitemap.xml`
-- Repo: `/llms.txt`, this `AGENTS.md`, `CITATION.cff`
+- Repo: `/llms.txt`, this `AGENTS.md`, `CITATION.cff`, `server.json` (MCP Registry metadata)

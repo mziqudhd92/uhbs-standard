@@ -1,6 +1,6 @@
 # UHBS — full agent digest (llms-full.txt)
 
-> Curated plain-text digest of UHBS v4.0.0 for answer engines and coding agents. Prefer the live docs and GitHub sources when they disagree with this file. Last aligned: 2026-07-26.
+> Curated plain-text digest of UHBS v4.0.0 for answer engines and coding agents. Prefer the live docs and GitHub sources when they disagree with this file. Last aligned: 2026-07-27.
 
 ## What UHBS is
 
@@ -9,9 +9,11 @@ UHBS (Universal Honeypot Benchmarking Standard) is a **personal open-source beta
 It is **not** a consortium standard, not multi-party governed, and not a mandatory industry requirement. Suggested Production Baseline Profile (RECOMMENDED for internal use): **UHQS > 80** with Module D Safety Gate pass (containment C ≥ 95 → δ_C = 1.0).
 
 Primary URLs:
-- Docs: https://mziqudhd92.github.io/uhbs-standard/
+- Landing: https://mziqudhd92.github.io/uhbs-standard/
+- MkDocs: https://mziqudhd92.github.io/uhbs-standard/mkdocs/
 - Repo: https://github.com/mziqudhd92/uhbs-standard
 - Spec status: https://mziqudhd92.github.io/uhbs-standard/mkdocs/specification/status/
+- MCP for AI hosts: https://mziqudhd92.github.io/uhbs-standard/mkdocs/tooling/mcp/
 
 ## Normative UHQS formula
 
@@ -23,7 +25,7 @@ UHQS = δ_C · (w_A·S_A + w_B·S_B + w_C·S_C + w_E·S_E + w_F·S_F)
 - UHQS rounded to **two** decimal places
 - Letter grades: A≥90, B≥80, C≥70, D≥50, F&lt;50
 
-Single source of scoring math in package: `uhbs_core.uhqs_math` (CLI and harness must agree).
+Single source of scoring math in package: `uhbs_core.uhqs_math` (CLI, MCP, and harness must agree).
 
 ## Profile classes (weights)
 
@@ -39,24 +41,35 @@ Single source of scoring math in package: `uhbs_core.uhqs_math` (CLI and harness
 
 - **UHBS-Core:** valid TPS + scorecard schemas; recomputed UHQS/δ_C/grade integrity
 - **UHBS-Lab:** UHBS-Core + Modules A–F harness (`uhbs[lab]` / `uhbs-lab`) + MANIFEST digests
+- **UHBS-MCP:** optional stdio MCP server (`uhbs[mcp]` / `uhbs-mcp`) wrapping Core validators — no live lab exec
 
 ## Install & commands
 
 ```bash
-pip install -e ".[lab]"
+pip install -e ".[lab,mcp]"
 uhbs validate-profile templates/profile.yaml
 uhbs validate-scorecard path/to/scorecard.json --strict
 uhbs score --class Low-Interaction --scores scores.json
 uhbs lab --list-protocols
+# AI hosts (Cursor/Claude/VS Code): configure mcpServers → python -m uhbs_mcp
+# Docs: https://mziqudhd92.github.io/uhbs-standard/mkdocs/tooling/mcp/
 ```
+
+## MCP (Model Context Protocol)
+
+Industry open standard for AI tool calling (AAIF / Linux Foundation). UHBS exposes local stdio tools: validate_scorecard, validate_profile, compute_uhqs, list_conformance_fixtures, get_scorecard_summary, list_lab_reports, plus schema/scoring resources. Metadata: https://github.com/mziqudhd92/uhbs-standard/blob/main/server.json
 
 ## Vendor neutrality
 
-Normative docs and templates use **classes and protocols** only. Named products appear only under conformance fixtures as evaluation **proof**, not as UHBS requirements.
+Normative docs and templates use **classes and protocols** only. Named products appear only under conformance fixtures / lab reports as evaluation **proof**, not as UHBS requirements.
 
-Published proof (sanitized fixtures):
-- Cowrie (Low-Interaction): UHQS **46.97** (Grade F)
-- CyberHalluciNet (POSIX-Shell lab): UHQS **80.33** (Grade B)
+Published full-lab proof (sanitized fixtures; prefer live fixture JSON if this digest drifts):
+- ESPot (Web-API HTTP): UHQS **49.82** (F)
+- miniprint (Low-Interaction PJL): UHQS **47.77** (F)
+- Conpot (ICS-SCADA Modbus): UHQS **55.51** (D)
+- Cowrie (Low-Interaction SSH): UHQS **48.70** (F)
+- OpenCanary (Web-API HTTP): UHQS **50.12** (D)
+- CyberHalluciNet / POSIX-Shell lab (illustrative): UHQS **80.33** (B)
 
 ## Machine-readable artifacts
 
@@ -64,6 +77,7 @@ Published proof (sanitized fixtures):
 - CITATION.cff: https://github.com/mziqudhd92/uhbs-standard/blob/main/CITATION.cff
 - ROADMAP: https://github.com/mziqudhd92/uhbs-standard/blob/main/ROADMAP.md
 - Repo llms.txt: https://github.com/mziqudhd92/uhbs-standard/blob/main/llms.txt
+- MCP server.json: https://github.com/mziqudhd92/uhbs-standard/blob/main/server.json
 
 ## Citation note
 

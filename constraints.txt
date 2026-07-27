@@ -1,9 +1,10 @@
 # Pinned transitive + direct deps for reproducible CI (pip install -c constraints.txt …)
-# Refresh periodically: pip install '.[dev,lab]' && pip freeze | grep -E '^(jsonschema|PyYAML|click|paramiko|pytest|ruff|attrs|referencing|rpds-py|jsonschema-specifications)=='
+# Refresh periodically: pip install '.[dev,lab,mcp]' && pip freeze | grep -E '^(jsonschema|PyYAML|click|paramiko|pytest|ruff|mcp|attrs|referencing|rpds-py|jsonschema-specifications)=='
 attrs==26.1.0
 click==8.4.2
 jsonschema==4.26.0
 jsonschema-specifications==2025.9.1
+mcp==1.28.1
 paramiko==5.0.0
 pytest==9.1.1
 PyYAML==6.0.3

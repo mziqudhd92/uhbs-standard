@@ -106,6 +106,7 @@ nav:
   - Registry: registry.md
   - Tooling:
       - CLI & Validator: tooling/cli.md
+      - MCP server (AI hosts): tooling/mcp.md
   - Scorecards:
       - Official Examples: scorecards/index.md
       - Web-API / HTTP (ESPot proof): scorecards/espot-web-api.md

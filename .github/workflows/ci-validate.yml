@@ -27,7 +27,7 @@ jobs:
 
       - name: Lint
         run: |
-          ruff check src/uhbs_cli src/uhbs_core/uhqs_math.py src/uhbs_core/models.py \
+          ruff check src/uhbs_cli src/uhbs_mcp src/uhbs_core/uhqs_math.py src/uhbs_core/models.py \
             src/uhbs_core/run_benchmark.py src/uhbs_core/hqs.py src/uhbs_core/manifest.py \
             src/uhbs_core/tps.py src/uhbs_core/report.py src/uhbs_core/inventory.py \
             src/uhbs_core/source_scan.py src/uhbs_core/ssh_session.py \

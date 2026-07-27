@@ -25,7 +25,10 @@ This file is the **repository** agent index (AEO/GEO for coding assistants). The
 
 - [uhbs_cli](https://github.com/mziqudhd92/uhbs-standard/tree/main/src/uhbs_cli): Validator CLI
 - [uhbs_core](https://github.com/mziqudhd92/uhbs-standard/tree/main/src/uhbs_core): UHBS-Lab Modules A–F harness
+- [uhbs_mcp](https://github.com/mziqudhd92/uhbs-standard/tree/main/src/uhbs_mcp): MCP server for AI hosts (stdio validate/score/fixtures)
 - [CLI guide](https://github.com/mziqudhd92/uhbs-standard/blob/main/docs/tooling/cli.md): Commands and integrity checks
+- [MCP guide](https://github.com/mziqudhd92/uhbs-standard/blob/main/docs/tooling/mcp.md): Cursor / Claude / VS Code config
+- [server.json](https://github.com/mziqudhd92/uhbs-standard/blob/main/server.json): MCP Registry metadata (stdio)
 - [Conformance fixtures](https://github.com/mziqudhd92/uhbs-standard/tree/main/docs/conformance/fixtures): Proof scorecards only
 
 ## Optional
@@ -33,3 +36,4 @@ This file is the **repository** agent index (AEO/GEO for coding assistants). The
 - [AGENTS.md](https://github.com/mziqudhd92/uhbs-standard/blob/main/AGENTS.md): Guidance for coding agents working in this repo
 - [GOVERNANCE.md](https://github.com/mziqudhd92/uhbs-standard/blob/main/GOVERNANCE.md): Honest project notes (no fake committee)
 - [SECURITY.md](https://github.com/mziqudhd92/uhbs-standard/blob/main/SECURITY.md): Report vulns via GitHub Security Advisories
+- [Published site MCP docs](https://mziqudhd92.github.io/uhbs-standard/mkdocs/tooling/mcp/): Install + host config

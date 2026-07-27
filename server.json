@@ -1,0 +1,47 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.mziqudhd92/uhbs",
+  "description": "UHBS validators and UHQS scoring for AI hosts (stdio). Personal beta honeypot evaluation framework — validate scorecards/profiles, recompute UHQS/δ_C, list conformance fixtures. No remote lab execution.",
+  "title": "UHBS (Universal Honeypot Benchmarking Standard)",
+  "websiteUrl": "https://mziqudhd92.github.io/uhbs-standard/mkdocs/tooling/mcp/",
+  "repository": {
+    "url": "https://github.com/mziqudhd92/uhbs-standard",
+    "source": "github"
+  },
+  "version": "4.0.0",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "registryBaseUrl": "https://pypi.org",
+      "identifier": "uhbs",
+      "version": "4.0.0",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "UHBS_ROOT",
+          "description": "Absolute path to a UHBS checkout (schemas + fixtures). Required when the package is installed without the full source tree nearby.",
+          "isRequired": false
+        },
+        {
+          "name": "UHBS_SCHEMA_DIR",
+          "description": "Override path to schemas/*.schema.json",
+          "isRequired": false
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "maturity": "beta",
+      "transport": "stdio-only",
+      "deferred": ["streamable-http", "lab-exec"],
+      "docs": "https://mziqudhd92.github.io/uhbs-standard/mkdocs/tooling/mcp/",
+      "install_extra": "mcp",
+      "entry_points": ["uhbs-mcp", "python -m uhbs_mcp"],
+      "note": "Publish to PyPI before submitting to the official MCP Registry; until then use a local editable install from git."
+    }
+  }
+}

@@ -56,6 +56,19 @@ uhbs validate-scorecard path/to/scorecard.json
 uhbs score --profile my-honeypot.profile.yaml --scores scores.json
 ```
 
+### MCP (AI hosts — Cursor, Claude, VS Code, …)
+
+Install the optional MCP extra so agents can call validators / UHQS scoring over
+the [Model Context Protocol](https://modelcontextprotocol.io/) (local stdio):
+
+```bash
+pip install -e ".[mcp]"
+# Configure your host — see docs/tooling/mcp.md
+# Cursor / Claude example uses: python -m uhbs_mcp  (set UHBS_ROOT to this checkout)
+```
+
+Registry metadata: [`server.json`](server.json). Live Docker lab probes stay on the CLI (`uhbs lab`), not MCP.
+
 ### Docker (grade without a local Python install)
 
 Build the grading image (CLI + UHBS-Lab harness):

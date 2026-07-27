@@ -27,6 +27,19 @@ uhbs lab --list-protocols
 uhbs-lab --help
 ```
 
+### MCP server (AI hosts)
+
+For Cursor / Claude Desktop / VS Code agents that speak the
+[Model Context Protocol](https://modelcontextprotocol.io/):
+
+```bash
+pip install -e ".[mcp]"
+# then configure the host — see tooling/mcp.md
+uhbs-mcp   # stdio JSON-RPC (or: python -m uhbs_mcp)
+```
+
+Full guide: [MCP server](mcp.md) · registry metadata: repo-root `server.json`.
+
 ### Docker image
 
 Build once from the repository root:
