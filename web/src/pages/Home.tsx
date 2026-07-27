@@ -1,5 +1,4 @@
-import { useEffect, useState, useRef } from "react";
-import { motion, useInView, type Variants } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import {
   Shield,
   Activity,
@@ -32,33 +31,6 @@ const staggerContainer: Variants = {
       staggerChildren: 0.1
     }
   }
-};
-
-const AnimatedNumber = ({ value, duration = 2 }: { value: number, duration?: number }) => {
-  const [current, setCurrent] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true });
-
-  useEffect(() => {
-    if (!isInView) return;
-
-    let start = 0;
-    const end = value;
-    const stepTime = Math.abs(Math.floor((duration * 1000) / end));
-    
-    const timer = setInterval(() => {
-      start += 1;
-      setCurrent(start);
-      if (start >= Math.floor(end)) {
-        clearInterval(timer);
-        setCurrent(value);
-      }
-    }, stepTime);
-
-    return () => clearInterval(timer);
-  }, [isInView, value, duration]);
-
-  return <span ref={ref}>{current.toFixed(1)}</span>;
 };
 
 // Section 1: Hero
