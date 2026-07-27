@@ -1,7 +1,7 @@
 {
   "uhbs_version": "4.0.0",
   "run_mode": "full",
-  "evaluated_at": "2026-07-27T11:49:00Z",
+  "evaluated_at": "2026-07-27T19:41:00Z",
   "proof_label": "cowrie (cowrie SSH honeypot)",
   "target": {
     "repository": "https://github.com/cowrie/cowrie",
@@ -16,9 +16,9 @@
   },
   "grader": {
     "package_version": "4.0.0",
-    "uhbs_git_commit": "27bea1a4f6c63350d6e05b3fcb5df753d61eca86",
+    "uhbs_git_commit": "aa66e2b8366a33a910b9269f073e72cc18f03226",
     "docker_image": "uhbs:4.0.0-full",
-    "docker_image_id": "sha256:1da71d92d4a9ee39b1e774fdbd623b83671cf07f78c7a299a7ed6d6505e9ad35",
+    "docker_image_id": "sha256:8e18b4a9e7a9fc6bec77563237cb98b827cf510112a12bb41663adbe9e7f28df",
     "inventory": "docs/conformance/labs/cowrie/inventory.yaml",
     "tps": "docs/conformance/labs/cowrie/low_interaction_ssh_full.yaml"
   },
@@ -27,37 +27,48 @@
     "UHBS_AIRGAP_ATTESTED": true,
     "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
     "skip_sast_tools": false,
-    "phases": ["profile", "static", "sandbox", "dynamic", "score"],
-    "modules": ["A", "B", "C", "D", "E", "F"],
-    "concurrency": 10,
-    "requests": 50,
-    "timing_samples": 1000,
-    "strict_rfc_enforcement": true,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
     "source_root": "/honeypot",
     "telemetry_dir": "/telemetry",
     "plugin": "ssh",
     "auth": "root/admin"
   },
   "results": {
-    "uhqs": 48.7,
-    "grade": "F",
+    "uhqs": 47.49,
+    "grade": "GRADE F (Fail)",
     "delta_c": 1.0,
     "module_scores": {
-      "A": 21.5,
+      "F": 70.0,
+      "A": 17.46,
       "B": 60.0,
       "C": 55.0,
       "D": 100.0,
-      "E": 55.0,
-      "F": 70.0
+      "E": 55.0
     },
     "safety_gate_passed": true
   },
   "limitations": [
+    "Full mode: 10 concurrent workers, 50 requests for Module E; 1000 timing samples via TPS.",
+    "telemetry_dir set \u2014 Module C graded against real captured cowrie.json (1 malformed/1 records \u2014 pre-existing schema-shape gap, not introduced by this regrade).",
+    "bandit + semgrep run (uhbs:4.0.0-full image).",
     "SSH-only grade (Telnet not scored).",
-    "cowrie.json text/JSON — Module C capped without STIX/OTel/ECS.",
     "Lab auth root/admin (image rejects root/root).",
-    "Air-gap attested via UHBS_AIRGAP_ATTESTED=1 (Docker Desktop lab).",
-    "SAST gate capped Module F at 70.",
-    "Product name is evaluation proof only — not a UHBS requirement or endorsement."
+    "This is the claim-grade (full) evaluation.",
+    "Regraded 2026-07-27 after this session's protocol-plugin hardening (circuit-breaker + geometric-mean scoring, real telnet.probe_state, integrity gate). See docs/architecture/protocol-plugin-audit.md.",
+    "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement."
   ]
 }

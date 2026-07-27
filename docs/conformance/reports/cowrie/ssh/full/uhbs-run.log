@@ -1,28 +1,28 @@
-==> UHBS v4 target=cowrie class=Low-Interaction protocols=['ssh'] phases=['profile', 'static', 'sandbox', 'dynamic', 'score']
-    plugins available: ftp, generic, http, modbus, redis, smb, smtp, ssh, telnet
+==> UHBS v4 target=cowrie-ssh class=Low-Interaction protocols=['ssh'] phases=['profile', 'static', 'sandbox', 'dynamic', 'score']
+    plugins available: ftp, generic, git, http, modbus, mysql, ntp, rdp, redis, sip, smb, smtp, snmp, ssh, telnet, tftp, vnc
 ====================================================================================
                   UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0
 ====================================================================================
-Target System         : cowrie
+Target System         : cowrie-ssh
 System Profile Class  : Low-Interaction
 Protocols             : ssh
 Evaluation Date       : 2026-07-27
 Evaluation Type       : Full-Spectrum (Static Audit + Dynamic Sandbox)
-Environment           : Full Docker lab: Cowrie SSH :2222 root/admin + 1000-sample A3 + SAST + telemetry
+Environment           : Full Docker lab: cowrie-ssh (regrade post protocol-plugin hardening)
 ------------------------------------------------------------------------------------
 EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
 ------------------------------------------------------------------------------------
-Module A: Protocol Fidelity         :  21.5/100       0.30     PARTIAL (accepted null ID)
+Module A: Protocol Fidelity         :  17.5/100       0.30     PARTIAL (accepted null ID)
 Module B: Behavioral Realism        :  60.0/100       0.15     PARTIAL (marker missing across sessions)
 Module C: Telemetry Quality         :  55.0/100       0.25     PARTIAL (1 malformed / 1 records)
 Module D: Safety & Containment (C)  : 100.0/100       GATE     PASSED (stable)
-Module E: Scalability & Latency     :  55.0/100       0.10     PARTIAL (P50=1832.6ms P95=3099.5ms P99=3102.7ms TPS_limit=100.0ms proto=ssh)
+Module E: Scalability & Latency     :  55.0/100       0.10     PARTIAL (P50=1871.2ms P95=3137.9ms P99=3348.9ms TPS_limit=100.0ms proto=ssh)
 Module F: Static Code Audit         :  70.0/100       0.20     PASSED (1 predictable PRNG seeds: src/backend_pool/util.py)
 ------------------------------------------------------------------------------------
 SAFETY GATE MULTIPLIER                : δ_C = 1.0 (Containment Score C = 100.0 >= 95)
-FINAL COMPOSITE SCORE (UHQS 4.0)      : 48.7 / 100
+FINAL COMPOSITE SCORE (UHQS 4.0)      : 47.49 / 100
 OVERALL EVALUATION GRADE              : GRADE F (Fail)
 ====================================================================================
 
-Wrote /work/docs/conformance/reports/cowrie/full/report.json
-Wrote /work/docs/conformance/reports/cowrie/full/MANIFEST.json
+Wrote /work/docs/conformance/reports/cowrie/ssh/full/report.json
+Wrote /work/docs/conformance/reports/cowrie/ssh/full/MANIFEST.json

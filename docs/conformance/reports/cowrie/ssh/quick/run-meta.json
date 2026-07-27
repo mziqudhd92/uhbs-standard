@@ -1,7 +1,7 @@
 {
   "uhbs_version": "4.0.0",
   "run_mode": "quick",
-  "evaluated_at": "2026-07-27T11:47:00Z",
+  "evaluated_at": "2026-07-27T19:41:00Z",
   "proof_label": "cowrie (cowrie SSH honeypot)",
   "target": {
     "repository": "https://github.com/cowrie/cowrie",
@@ -16,9 +16,9 @@
   },
   "grader": {
     "package_version": "4.0.0",
-    "uhbs_git_commit": "27bea1a4f6c63350d6e05b3fcb5df753d61eca86",
+    "uhbs_git_commit": "aa66e2b8366a33a910b9269f073e72cc18f03226",
     "docker_image": "uhbs:4.0.0",
-    "docker_image_id": "sha256:d326a451699575c745c65ca6b5b9b72d4692fc3bb0e4c9207ca0b567fda5dcd8",
+    "docker_image_id": "sha256:eca302d73a1ecd4cccfeba8ae1f9d68c7504af41651727419ce2e6c287aa830f",
     "inventory": "docs/conformance/labs/cowrie/inventory.yaml",
     "tps": "docs/conformance/labs/cowrie/low_interaction_ssh_quick.yaml"
   },
@@ -27,34 +27,48 @@
     "UHBS_AIRGAP_ATTESTED": true,
     "UHBS_EGRESS_GATEWAY_LOG": null,
     "skip_sast_tools": true,
-    "phases": ["profile", "static", "sandbox", "dynamic", "score"],
-    "modules": ["A", "B", "C", "D", "E", "F"],
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
     "source_root": "/honeypot",
     "telemetry_dir": null,
     "plugin": "ssh",
     "auth": "root/admin"
   },
   "results": {
-    "uhqs": 63.52,
-    "grade": "D",
+    "uhqs": 62.99,
+    "grade": "GRADE D (Needs Remediation)",
     "delta_c": 1.0,
     "module_scores": {
-      "A": 21.5,
+      "F": 87.84,
+      "A": 19.73,
       "B": 60.0,
       "C": 100.0,
       "D": 100.0,
-      "E": 55.0,
-      "F": 87.8
+      "E": 55.0
     },
     "safety_gate_passed": true
   },
   "limitations": [
     "UHBS_QUICK=1 shortens timing samples and lightens Module E.",
-    "telemetry_dir unset → Module C C1 schema gates largely skipped (optimistic C).",
-    "--skip-sast-tools → no bandit/semgrep.",
+    "telemetry_dir unset \u2192 Module C C1 schema gates largely skipped (optimistic C).",
+    "--skip-sast-tools \u2192 no bandit/semgrep.",
     "SSH-only grade (Telnet not scored).",
     "Lab auth root/admin (image rejects root/root).",
     "Prefer full/ for claim-grade evaluation.",
-    "Product name is evaluation proof only — not a UHBS requirement or endorsement."
+    "Regraded 2026-07-27 after this session's protocol-plugin hardening (circuit-breaker + geometric-mean scoring, real telnet.probe_state, integrity gate). See docs/architecture/protocol-plugin-audit.md.",
+    "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement."
   ]
 }

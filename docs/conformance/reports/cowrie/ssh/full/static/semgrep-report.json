@@ -3525,12 +3525,12 @@
   },
   "time": {
     "rules": [],
-    "rules_parse_time": 0.3424949645996094,
+    "rules_parse_time": 0.45828986167907715,
     "profiling_times": {
-      "config_time": 3.4362611770629883,
-      "core_time": 4.637541055679321,
-      "ignores_time": 0.0008821487426757812,
-      "total_time": 8.079392433166504
+      "config_time": 1.5026264190673828,
+      "core_time": 8.992028713226318,
+      "ignores_time": 0.0018758773803710938,
+      "total_time": 10.50248646736145
     },
     "parsing_time": {
       "total_time": 0.0,
@@ -3545,16 +3545,41 @@
       "very_slow_files": []
     },
     "scanning_time": {
-      "total_time": 31.082788705825806,
+      "total_time": 65.09555530548096,
       "per_file_time": {
-        "mean": 0.03356672646417475,
-        "std_dev": 0.011249506518910646
+        "mean": 0.0702975759238455,
+        "std_dev": 0.05298230172226778
       },
       "very_slow_stats": {
-        "time_ratio": 0.0,
-        "count_ratio": 0.0
+        "time_ratio": 0.1779839851473323,
+        "count_ratio": 0.0064794816414686825
       },
-      "very_slow_files": []
+      "very_slow_files": [
+        {
+          "fpath": "src/cowrie/scripts/cowrie.py",
+          "ftime": 1.6117260456085205
+        },
+        {
+          "fpath": "src/cowrie/commands/bash.py",
+          "ftime": 1.627357006072998
+        },
+        {
+          "fpath": "src/cowrie/commands/wget.py",
+          "ftime": 1.6895091533660889
+        },
+        {
+          "fpath": "src/cowrie/ssh_proxy/protocols/ssh.py",
+          "ftime": 1.9673240184783936
+        },
+        {
+          "fpath": "src/cowrie/output/virustotal.py",
+          "ftime": 2.1346511840820312
+        },
+        {
+          "fpath": "src/cowrie/commands/nc.py",
+          "ftime": 2.555398941040039
+        }
+      ]
     },
     "matching_time": {
       "total_time": 0.0,
@@ -3620,6 +3645,42 @@
       {
         "error_type": "Fixpoint timeout",
         "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at src/cowrie/commands/uname.py:84:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "src/cowrie/commands/uname.py",
+          "start": {
+            "line": 84,
+            "col": 9,
+            "offset": 2696
+          },
+          "end": {
+            "line": 84,
+            "col": 13,
+            "offset": 2700
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at src/cowrie/commands/wget.py:173:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "src/cowrie/commands/wget.py",
+          "start": {
+            "line": 173,
+            "col": 9,
+            "offset": 5568
+          },
+          "end": {
+            "line": 173,
+            "col": 14,
+            "offset": 5573
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
         "message": "Fixpoint timeout while performing taint analysis at src/cowrie/output/misp.py:304:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
         "location": {
           "path": "src/cowrie/output/misp.py",
@@ -3638,18 +3699,54 @@
       {
         "error_type": "Fixpoint timeout",
         "severity": "warn",
-        "message": "Fixpoint timeout while performing taint analysis at src/cowrie/scripts/createdynamicprocess.py:14:4 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "message": "Fixpoint timeout while performing taint analysis at src/cowrie/output/misp.py:93:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
         "location": {
-          "path": "src/cowrie/scripts/createdynamicprocess.py",
+          "path": "src/cowrie/output/misp.py",
           "start": {
-            "line": 14,
-            "col": 5,
-            "offset": 205
+            "line": 93,
+            "col": 9,
+            "offset": 2985
           },
           "end": {
-            "line": 14,
-            "col": 8,
-            "offset": 208
+            "line": 93,
+            "col": 14,
+            "offset": 2990
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at src/cowrie/scripts/createfs.py:95:4 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "src/cowrie/scripts/createfs.py",
+          "start": {
+            "line": 95,
+            "col": 5,
+            "offset": 2021
+          },
+          "end": {
+            "line": 95,
+            "col": 12,
+            "offset": 2028
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at src/cowrie/ssh_proxy/protocols/ssh.py:93:8 [rules: 1, first: python.django.security.injection.tainted-sql-string.tainted-sql-string]",
+        "location": {
+          "path": "src/cowrie/ssh_proxy/protocols/ssh.py",
+          "start": {
+            "line": 93,
+            "col": 9,
+            "offset": 4049
+          },
+          "end": {
+            "line": 93,
+            "col": 25,
+            "offset": 4065
           }
         }
       }
@@ -3664,7 +3761,7 @@
     },
     "targets": [],
     "total_bytes": 0,
-    "max_memory_bytes": 1203791296
+    "max_memory_bytes": 1264854656
   },
   "engine_requested": "OSS",
   "skipped_rules": [],
