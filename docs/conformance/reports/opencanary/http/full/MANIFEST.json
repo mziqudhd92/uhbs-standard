@@ -2,33 +2,41 @@
   "uhbs_version": "4.0.0",
   "artifacts": [
     {
-      "path": "SCORECARD.txt",
-      "sha256": "d01f776e7b5d243c7c88636c286b618e6f69d9da49912abf20aa473a3a4dc56d"
+      "path": "README.md",
+      "sha256": "bfbe0b518e28ac91ec2af23146b00c6e4cc51adc3e6dd68c8106cc1d94a43d24"
     },
     {
       "path": "REPORT.txt",
-      "sha256": "d01f776e7b5d243c7c88636c286b618e6f69d9da49912abf20aa473a3a4dc56d"
+      "sha256": "d5631034f4ff4175c9a5c0595394610edfd1a1da262641e321bfb7a210ae9aa1"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "d5631034f4ff4175c9a5c0595394610edfd1a1da262641e321bfb7a210ae9aa1"
     },
     {
       "path": "report.json",
-      "sha256": "31c43146f3c4d742a2be7e1bca4c57b9883a1779d5f88ccb467e62950bffe0bf"
+      "sha256": "c96d6ba362b830aef3e520a5ca7ef7bd239a3b5a3ed27dadf6be05031e838d63"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "29fdcc82b7cd3c61c4db99d82aaac551fc8d2eb03e3dd0f0d04c0f9090943c6f"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "d2cbf366022c7a618ca62cbef6d2d3cf06590a0ebfb9d05758faa8fa3a9ee6e4"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "d130d2d882ad683d1e464e6f5299ed8fdf6d6b0f61a838148b3d8dea3fe7c00f"
     },
     {
       "path": "uhbs-run.log",
       "sha256": "cd1df5ade5093ca540b9480d4e6984c9e672ead056a32382c78b9953af7406ce"
-    },
-    {
-      "path": "static/bandit-report.json",
-      "sha256": "e9e5f0acce37297d0cee36ab367fb9f9edf10842540a298f6ad4efe9cd70e903"
-    },
-    {
-      "path": "static/semgrep-report.json",
-      "sha256": "5ff3691ab414d690ef3e5978f60a66d6aa0e0a0c7972a92e3c23ded4e632b7a6"
     }
   ],
   "extra": {
     "target": "opencanary-http",
-    "uhqs": 50.12,
+    "uhqs": 66.02,
     "grade": "GRADE D (Needs Remediation)"
   }
 }
