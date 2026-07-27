@@ -78,4 +78,30 @@
     border-bottom: 2px solid hsl(var(--primary));
     border-right: 2px solid hsl(var(--primary));
   }
+
+  /* KaTeX on dark landing cards */
+  .uhqs-katex {
+    color: hsl(var(--foreground));
+    overflow-x: auto;
+  }
+
+  .uhqs-katex .katex {
+    font-size: 1.05em;
+  }
+
+  .uhqs-katex-display {
+    @apply rounded-sm border border-border/50 bg-background/80 px-4 py-5 text-center;
+  }
+
+  .uhqs-katex-display .katex-display {
+    margin: 0;
+  }
+
+  .uhqs-katex-accent .katex {
+    color: hsl(var(--primary));
+  }
+
+  .uhqs-katex-danger .katex {
+    color: hsl(var(--danger));
+  }
 }

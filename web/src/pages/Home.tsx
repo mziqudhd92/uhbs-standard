@@ -18,6 +18,7 @@ import {
   Layers,
   Check,
 } from "lucide-react";
+import { KatexMath } from "../components/KatexMath";
 
 const fadeUpVariant: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -523,22 +524,39 @@ const ScoringMethodology = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <motion.div variants={fadeUpVariant} className="lg:col-span-7 bg-card border border-border p-4 md:p-6">
             <h3 className="font-mono text-primary text-sm uppercase tracking-wider mb-4 px-2">The UHQS 4.0 Formula</h3>
-            <img
-              src={`${import.meta.env.BASE_URL}uhqs-formula-explainer.svg`}
-              alt="UHQS equals Safety Gate multiplier delta-C times the weighted sum of modules A, B, C, E, and F. Module D containment drives delta-C and is not a weight."
-              className="w-full h-auto rounded-sm border border-border/40"
-              loading="lazy"
-            />
+            <div className="uhqs-katex uhqs-katex-display space-y-4">
+              <KatexMath
+                display
+                className="block"
+                label="UHQS equals delta-C times the weighted sum of modules A, B, C, E, and F"
+                tex={`\\mathrm{UHQS} = \\delta_{C}\\cdot\\bigl(w_{A}S_{A}+w_{B}S_{B}+w_{C}S_{C}+w_{E}S_{E}+w_{F}S_{F}\\bigr)`}
+              />
+              <KatexMath
+                display
+                className="block uhqs-katex-danger"
+                label="Safety Gate: delta-C is 1 when Module D is at least 95, otherwise C over 100 squared"
+                tex={`\\delta_{C} = \\begin{cases} 1 & \\text{if } C \\ge 95 \\\\ \\bigl(C/100\\bigr)^{2} & \\text{if } C < 95 \\end{cases}`}
+              />
+            </div>
             <p className="mt-4 px-2 text-xs text-muted-foreground font-mono leading-relaxed">
-              Module D is missing from the parentheses on purpose: containment becomes δ<sub>C</sub> and multiplies the whole score.
-              Full normative detail:{" "}
+              Module D is missing from the parentheses on purpose: containment becomes{" "}
+              <KatexMath className="uhqs-katex uhqs-katex-accent inline" tex={`\\delta_{C}`} />{" "}
+              and multiplies the whole score. Typeset with{" "}
+              <a href="https://katex.org/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">KaTeX</a>
+              . Full normative detail:{" "}
               <a href="mkdocs/specification/scoring-formula/" className="text-primary hover:underline">scoring formula</a>.
             </p>
 
             <div className="grid grid-cols-2 gap-4 font-mono text-sm text-secondary-foreground mt-6 px-2">
-              <div><span className="text-primary">δ<sub>C</sub></span> : Safety Gate Multiplier (Module D)</div>
-              <div><span className="text-foreground">S<sub>x</sub></span> : Score for Module X (0-100)</div>
-              <div><span className="text-muted-foreground">w<sub>x</sub></span> : Profile-Adaptive Weight</div>
+              <div>
+                <KatexMath className="uhqs-katex uhqs-katex-accent inline" tex={`\\delta_{C}`} /> : Safety Gate Multiplier (Module D)
+              </div>
+              <div>
+                <KatexMath className="uhqs-katex inline" tex={`S_{x}`} /> : Score for Module X (0–100)
+              </div>
+              <div>
+                <KatexMath className="uhqs-katex inline" tex={`w_{x}`} /> : Profile-Adaptive Weight
+              </div>
             </div>
             
             <div className="mt-8 pt-8 border-t border-border/50">
