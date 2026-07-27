@@ -7,6 +7,10 @@ share version **4.0.1** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[
 
 ## [Unreleased]
 
+### Added
+- Zenodo DOI badge + citation metadata (`10.5281/zenodo.21631156`; concept
+  `10.5281/zenodo.21631155`)
+
 ## [4.0.1] — 2026-07-27
 
 Patch release for Zenodo DOI deposit and post-`v4.0.0` harness/docs work.
@@ -94,6 +98,5 @@ tooling that produced them.
 
 ### Pending (manual / ops / community — see ROADMAP Phase 6)
 - PyPI Trusted Publishing + Sigstore signing (blocks MCP Registry `uvx` path)
-- Zenodo DOI deposit
 - Neutral GitHub organization transfer
 - Multi-organization maintainers and independent adopters

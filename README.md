@@ -3,8 +3,9 @@
 [![CI](https://github.com/mziqudhd92/uhbs-standard/actions/workflows/ci-validate.yml/badge.svg)](https://github.com/mziqudhd92/uhbs-standard/actions/workflows/ci-validate.yml)
 [![Docs](https://github.com/mziqudhd92/uhbs-standard/actions/workflows/deploy-docs.yml/badge.svg)](https://mziqudhd92.github.io/uhbs-standard/)
 [![CodeQL](https://github.com/mziqudhd92/uhbs-standard/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/mziqudhd92/uhbs-standard/actions/workflows/codeql-analysis.yml)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21631156.svg)](https://doi.org/10.5281/zenodo.21631156)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![Spec](https://img.shields.io/badge/Specification-v4.0.0-indigo.svg)](docs/specification/core-principles.md)
+[![Spec](https://img.shields.io/badge/Specification-v4.0.1-indigo.svg)](docs/specification/core-principles.md)
 [![UHQS](https://img.shields.io/badge/UHQS-0%E2%80%93100-success.svg)](docs/specification/scoring-formula.md)
 
 > An objective, repeatable, quantitative methodology for deception technology evaluation — a **personal open-source beta framework** for comparing and grading honeypots and decoy systems by class and protocol.
@@ -195,13 +196,17 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) and [GOVERNANCE.md](GOVERNANCE.md
 
 ```bibtex
 @software{uhbs2026,
-  title = {Universal Honeypot Benchmarking Standard (UHBS) v4.0},
+  author = {Zavdi, Moran},
+  title = {Universal Honeypot Benchmarking Standard (UHBS)},
   year = {2026},
-  url = {https://github.com/mziqudhd92/uhbs-standard}
+  version = {4.0.1},
+  publisher = {Zenodo},
+  doi = {10.5281/zenodo.21631156},
+  url = {https://doi.org/10.5281/zenodo.21631156}
 }
 ```
 
-Or use the machine-readable [`CITATION.cff`](CITATION.cff).
+Or use the machine-readable [`CITATION.cff`](CITATION.cff). Concept DOI (always resolves to the latest deposit): [10.5281/zenodo.21631155](https://doi.org/10.5281/zenodo.21631155).
 
 ## License
 

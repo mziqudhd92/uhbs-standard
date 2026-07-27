@@ -146,7 +146,7 @@ tables only. Do not publish proprietary lab signal overlays or private host path
 
 - [x] ATT&CK / NIST CSF / IEC 62443 mappings under `docs/mappings/`
 - [x] Citation metadata (`CITATION.cff`) + Zenodo DOI placeholder notes
-- [ ] Actual Zenodo DOI deposit (manual step)
+- [x] Actual Zenodo DOI deposit (`10.5281/zenodo.21631156`, concept `10.5281/zenodo.21631155`)
 
 ### Phase 6 — Community maturity (aspirational — **not done**)
 
@@ -190,7 +190,8 @@ maturity** additionally requires:
 - [ ] Neutral GitHub org hosting
 - [ ] ≥1 independent external evaluation or second implementation
 - [ ] Published adopter list (with consent) **or** clear "no public adopters yet"
-- [ ] Zenodo DOI + signed PyPI releases
+- [x] Zenodo DOI (v4.0.1 → `10.5281/zenodo.21631156`)
+- [ ] Signed PyPI releases (Trusted Publishing + Sigstore)
 
 Until then, describe UHBS as a **personal beta framework**, not as an adopted
 industry or academic standard.

@@ -12,6 +12,14 @@ license: Apache-2.0
 repository-code: "https://github.com/mziqudhd92/uhbs-standard"
 url: "https://mziqudhd92.github.io/uhbs-standard/"
 # Spec docs also at https://mziqudhd92.github.io/uhbs-standard/mkdocs/
+doi: "10.5281/zenodo.21631156"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21631156"
+    description: "This version (v4.0.1)"
+  - type: doi
+    value: "10.5281/zenodo.21631155"
+    description: "Concept DOI (all versions)"
 abstract: >-
   UHBS v4.0 is a personal open-source beta framework for vendor-neutral,
   objective, repeatable evaluation of honeypots and deception technology. It
@@ -36,8 +44,8 @@ preferred-citation:
       given-names: "Moran"
   year: 2026
   version: "4.0.1"
-  url: "https://github.com/mziqudhd92/uhbs-standard"
+  doi: "10.5281/zenodo.21631156"
+  url: "https://doi.org/10.5281/zenodo.21631156"
   notes: >-
-    Personal beta framework. Deposit a tagged release on Zenodo for a DOI when
-    ready (ROADMAP Phase 5). Multi-party governance and adopters are ROADMAP
+    Personal beta framework. Multi-party governance and adopters are ROADMAP
     Phase 6 aspirations, not current claims.
