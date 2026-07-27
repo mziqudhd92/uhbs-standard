@@ -1,7 +1,7 @@
 # Plugin interface contracts — phase 1 (advisory)
 
 > Companion to [`docs/plugin-authoring.md`](../plugin-authoring.md) and
-> [`GOVERNANCE.md`](../../GOVERNANCE.md). Describes the *current* state of the
+> [`GOVERNANCE.md`](https://github.com/mziqudhd92/uhbs-standard/blob/main/GOVERNANCE.md). Describes the *current* state of the
 > `CheckResult` / `ProtocolPlugin` contract, not an aspirational future one.
 
 ## What exists today
@@ -48,7 +48,7 @@ Pydantic v2 models would give real, always-on schema enforcement (coercion,
    large, separate effort that deserves its own focused review, not a
    drive-by change bundled with unrelated work.
 
-This is tracked as a follow-up in [`ROADMAP.md`](../../ROADMAP.md) — **not
+This is tracked as a follow-up in [`ROADMAP.md`](https://github.com/mziqudhd92/uhbs-standard/blob/main/ROADMAP.md) — **not
 done**, not started as code, just written down so it isn't lost.
 
 ## Honest status

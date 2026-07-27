@@ -26,11 +26,12 @@ FIXTURE = ROOT / "docs" / "conformance" / "fixtures" / "opencanary-web-api.score
 def test_validate_scorecard_fixture() -> None:
     result = validate_scorecard(str(FIXTURE), strict=True)
     assert result["ok"] is True
-    assert result["uhqs"] == 50.12
+    assert result["uhqs"] == 66.02
     assert result["grade"] == "D"
 
 
 def test_compute_uhqs_web_api() -> None:
+    # Formula smoke test with fixed module scores (not the live OpenCanary fixture).
     result = compute_uhqs_tool(
         scores={"A": 21.5, "B": 82.5, "C": 55.0, "D": 90.0, "E": 100.0, "F": 70.0},
         profile_class="Web-API",
@@ -60,8 +61,8 @@ def test_list_conformance_fixtures() -> None:
 def test_get_scorecard_summary() -> None:
     result = get_scorecard_summary(str(FIXTURE))
     assert result["ok"] is True
-    assert result["uhqs"] == 50.12
-    assert result["module_scores"]["A"] == 21.5
+    assert result["uhqs"] == 66.02
+    assert result["module_scores"]["A"] == 100.0
 
 
 def test_list_lab_reports() -> None:

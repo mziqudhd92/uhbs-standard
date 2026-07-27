@@ -34,7 +34,7 @@ docker run -d --name trapster-lab --network uhbs-lab \
 
 ## 3. Per-protocol quick + full
 
-### FTP `:2121`
+### FTP `:2121` {#ftp}
 
 Target id: `trapster-ftp` · inventory: [`../../labs/trapster/inventory.yaml`](../../labs/trapster/inventory.yaml)
 
@@ -72,7 +72,7 @@ docker run --rm --network uhbs-lab \
 
 **Published:** quick **43.37 / F** · full **51.78 / D**
 
-### HTTP `:8080`
+### HTTP `:8080` {#http}
 
 Target id: `trapster-http` · inventory: [`../../labs/trapster/inventory.yaml`](../../labs/trapster/inventory.yaml)
 
@@ -110,7 +110,7 @@ docker run --rm --network uhbs-lab \
 
 **Published:** quick **50.13 / D** · full **63.33 / D**
 
-### SSH `:2222`
+### SSH `:2222` {#ssh}
 
 Target id: `trapster-ssh` · inventory: [`../../labs/trapster/inventory.yaml`](../../labs/trapster/inventory.yaml)
 
@@ -148,7 +148,7 @@ docker run --rm --network uhbs-lab \
 
 **Published:** quick **40.06 / F** · full **44.38 / F**
 
-### Telnet `:2323`
+### Telnet `:2323` {#telnet}
 
 Target id: `trapster-telnet` · inventory: [`../../labs/trapster/inventory.yaml`](../../labs/trapster/inventory.yaml)
 

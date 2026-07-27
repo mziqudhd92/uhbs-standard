@@ -32,6 +32,11 @@ share version **4.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[
   Beelzebub / Trapster)
 
 ### Fixed
+- **CI fix:** sync `tests/test_conformance.py` / `tests/test_mcp.py` fixture
+  expectations to regraded UHQS values; add MkDocs `{#proto}` anchors on lab
+  TUTORIALs; retarget architecture/plugin-authoring docs links to absolute
+  GitHub URLs so `mkdocs build --strict` (Deploy Documentation) passes.
+
 - **Regraded Cowrie SSH/Telnet** after scoring-scale fixes: SSH quick **82.76 / B**,
   full **61.37 / D**; Telnet quick **53.41 / D**, full **64.90 / D**
 - **Regraded OpenCanary** across HTTP/FTP/SSH/Telnet/Redis/MySQL/RDP/SIP/SNMP/

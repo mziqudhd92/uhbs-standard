@@ -1,6 +1,6 @@
 # Golden-baseline CI — today vs. intended end state
 
-> Companion to [`.github/workflows/golden-baseline.yml`](../../.github/workflows/golden-baseline.yml)
+> Companion to [`.github/workflows/golden-baseline.yml`](https://github.com/mziqudhd92/uhbs-standard/blob/main/.github/workflows/golden-baseline.yml)
 > and [`docs/architecture/plugin-contracts.md`](plugin-contracts.md).
 
 ## Intended end state (aspirational — not implemented today)
@@ -15,12 +15,12 @@ enforced as a **required, blocking** CI check, is the goal.
 
 ## Actual state today
 
-- [`tests/test_plugin_baseline_live.py`](../../tests/test_plugin_baseline_live.py)
+- [`tests/test_plugin_baseline_live.py`](https://github.com/mziqudhd92/uhbs-standard/blob/main/tests/test_plugin_baseline_live.py)
   implements this pattern for exactly **two** of 17+ built-in plugins today
   (`redis.py` against `redis:7-alpine`, `smb.py` against `dperson/samba`) —
   see that file's module docstring for the honest, up-to-date coverage list
   and explicit list of protocols with **no** live baseline yet.
-- [`.github/workflows/golden-baseline.yml`](../../.github/workflows/golden-baseline.yml)
+- [`.github/workflows/golden-baseline.yml`](https://github.com/mziqudhd92/uhbs-standard/blob/main/.github/workflows/golden-baseline.yml)
   runs those tests in CI with `RUN_LIVE_BASELINE=1`, but as an
   **informational, non-blocking** job (`continue-on-error: true`). A
   failure here is currently a *signal to investigate*, not a merge blocker.

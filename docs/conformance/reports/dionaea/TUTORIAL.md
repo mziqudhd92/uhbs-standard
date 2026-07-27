@@ -34,7 +34,7 @@ docker run -d --name dionaea-lab --network uhbs-lab --platform linux/amd64 \
 
 ## 3. Per-protocol quick + full
 
-### FTP `:21`
+### FTP `:21` {#ftp}
 
 Target id: `dionaea-ftp` · inventory: [`../../labs/dionaea/inventory.yaml`](../../labs/dionaea/inventory.yaml)
 
@@ -72,7 +72,7 @@ docker run --rm --network uhbs-lab \
 
 **Published:** quick **50.95 / D** · full **57.96 / D**
 
-### HTTP `:80`
+### HTTP `:80` {#http}
 
 Target id: `dionaea-http` · inventory: [`../../labs/dionaea/inventory.yaml`](../../labs/dionaea/inventory.yaml)
 
@@ -110,7 +110,7 @@ docker run --rm --network uhbs-lab \
 
 **Published:** quick **46.21 / F** · full **51.14 / D**
 
-### SMB `:445`
+### SMB `:445` {#smb}
 
 Target id: `dionaea-smb` · inventory: [`../../labs/dionaea/inventory.yaml`](../../labs/dionaea/inventory.yaml)
 

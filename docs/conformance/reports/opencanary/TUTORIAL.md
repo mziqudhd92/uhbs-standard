@@ -142,14 +142,45 @@ docker run --rm --network uhbs-lab \
 
 **Published Redis:** quick **45.07 / F** · full **53.72 / D**
 
+## 7a. Additional protocols
+
+Same quick/full pattern as HTTP above — swap `--target` / TPS / `--out` using
+[`../../labs/opencanary/inventory.yaml`](../../labs/opencanary/inventory.yaml).
+
+### MySQL `:3306` {#mysql}
+
 **Published MySQL:** quick **51.48 / D** · full **62.96 / D**
+
+### RDP `:3389` {#rdp}
+
 **Published RDP:** quick **50.13 / D** · full **61.01 / D**
+
+### SIP `:5060` {#sip}
+
 **Published SIP:** quick **40.01 / F** · full **46.44 / F**
+
+### SNMP `:161` {#snmp}
+
 **Published SNMP:** quick **40.69 / F** · full **47.42 / F**
+
+### NTP `:123` {#ntp}
+
 **Published NTP:** quick **40.69 / F** · full **47.42 / F**
+
+### TFTP `:69` {#tftp}
+
 **Published TFTP:** quick **40.69 / F** · full **47.42 / F**
+
+### VNC `:5900` {#vnc}
+
 **Published VNC:** quick **50.81 / D** · full **61.99 / D**
+
+### Git `:9418` {#git}
+
 **Published Git:** quick **51.48 / D** · full **62.96 / D**
+
+### SMB `:445` (Samba sidecar) {#smb}
+
 **Published SMB:** quick **50.13 / D** · full **57.72 / D**
 
 ## 8. Full runs (telemetry + SAST)

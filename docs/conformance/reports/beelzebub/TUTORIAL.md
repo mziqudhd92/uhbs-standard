@@ -34,7 +34,7 @@ docker run -d --name beelzebub-lab --network uhbs-lab \
 
 ## 3. Per-protocol quick + full
 
-### HTTP `:8080`
+### HTTP `:8080` {#http}
 
 Target id: `beelzebub-http` · inventory: [`../../labs/beelzebub/inventory.yaml`](../../labs/beelzebub/inventory.yaml)
 
@@ -72,7 +72,7 @@ docker run --rm --network uhbs-lab \
 
 **Published:** quick **52.77 / D** · full **66.02 / D**
 
-### Redis `:6379`
+### Redis `:6379` {#redis}
 
 Target id: `beelzebub-redis` · inventory: [`../../labs/beelzebub/inventory.yaml`](../../labs/beelzebub/inventory.yaml)
 
@@ -110,7 +110,7 @@ docker run --rm --network uhbs-lab \
 
 **Published:** quick **50.56 / D** · full **61.01 / D**
 
-### SSH `:2222`
+### SSH `:2222` {#ssh}
 
 Target id: `beelzebub-ssh` · inventory: [`../../labs/beelzebub/inventory.yaml`](../../labs/beelzebub/inventory.yaml)
 
@@ -148,7 +148,7 @@ docker run --rm --network uhbs-lab \
 
 **Published:** quick **74.45 / C** · full **59.88 / D**
 
-### Telnet `:23`
+### Telnet `:23` {#telnet}
 
 Target id: `beelzebub-telnet` · inventory: [`../../labs/beelzebub/inventory.yaml`](../../labs/beelzebub/inventory.yaml)
 

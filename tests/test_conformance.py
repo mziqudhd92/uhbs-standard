@@ -22,17 +22,18 @@ FIXTURES = ROOT / "docs" / "conformance" / "fixtures"
 @pytest.mark.parametrize(
     "name,expected_uhqs,expected_grade",
     [
-        ("cowrie-low-interaction.scorecard.json", 48.7, "F"),
+        # Full-lab fixtures (regraded 2026-07-27 after Module A 0–100 rescale).
+        ("cowrie-low-interaction.scorecard.json", 61.37, "D"),
         ("posix-shell-lab.scorecard.json", 80.33, "B"),
-        ("espot-web-api.scorecard.json", 49.82, "F"),
-        ("miniprint-low-interaction.scorecard.json", 47.77, "F"),
-        ("conpot-ics-scada.scorecard.json", 55.51, "D"),
-        ("opencanary-web-api.scorecard.json", 50.12, "D"),
-        ("opencanary-ftp.scorecard.json", 59.43, "D"),
-        ("opencanary-ssh.scorecard.json", 28.44, "F"),
-        ("opencanary-telnet.scorecard.json", 57.0, "D"),
-        ("opencanary-redis.scorecard.json", 48.26, "F"),
-        ("endlessh-low-interaction.scorecard.json", 51.9, "D"),
+        ("espot-web-api.scorecard.json", 63.33, "D"),
+        ("miniprint-low-interaction.scorecard.json", 50.43, "D"),
+        ("conpot-ics-scada.scorecard.json", 55.4, "D"),
+        ("opencanary-web-api.scorecard.json", 66.02, "D"),
+        ("opencanary-ftp.scorecard.json", 61.5, "D"),
+        ("opencanary-ssh.scorecard.json", 35.64, "F"),
+        ("opencanary-telnet.scorecard.json", 64.9, "D"),
+        ("opencanary-redis.scorecard.json", 53.72, "D"),
+        ("endlessh-low-interaction.scorecard.json", 54.07, "D"),
         ("safety-gate-fail.scorecard.json", 0.0, "F"),
     ],
 )

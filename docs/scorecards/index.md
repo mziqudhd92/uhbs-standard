@@ -10,9 +10,9 @@ Published **full** UHBS-Lab scorecards (evaluated 2026-07-27):
 
 | Scorecard | Class / protocol | UHQS | Grade | Fixture |
 | --- | --- | ---: | --- | --- |
-| [Web-API / HTTP decoy (ESPot proof)](espot-web-api.md) | Web-API · HTTP `:9200` | **49.82** | F | [`espot-web-api.scorecard.json`](../conformance/fixtures/espot-web-api.scorecard.json) |
-| [Low-Interaction / PJL decoy (miniprint proof)](miniprint-low-interaction.md) | Low-Interaction · PJL `:9100` | **47.77** | F | [`miniprint-low-interaction.scorecard.json`](../conformance/fixtures/miniprint-low-interaction.scorecard.json) |
-| [ICS-SCADA / Modbus decoy (Conpot proof)](conpot-ics-scada.md) | ICS-SCADA · Modbus `:5020` | **55.51** | D | [`conpot-ics-scada.scorecard.json`](../conformance/fixtures/conpot-ics-scada.scorecard.json) |
+| [Web-API / HTTP decoy (ESPot proof)](espot-web-api.md) | Web-API · HTTP `:9200` | **63.33** | D | [`espot-web-api.scorecard.json`](../conformance/fixtures/espot-web-api.scorecard.json) |
+| [Low-Interaction / PJL decoy (miniprint proof)](miniprint-low-interaction.md) | Low-Interaction · PJL `:9100` | **50.43** | D | [`miniprint-low-interaction.scorecard.json`](../conformance/fixtures/miniprint-low-interaction.scorecard.json) |
+| [ICS-SCADA / Modbus decoy (Conpot proof)](conpot-ics-scada.md) | ICS-SCADA · Modbus `:5020` | **55.4** | D | [`conpot-ics-scada.scorecard.json`](../conformance/fixtures/conpot-ics-scada.scorecard.json) |
 | [Low-Interaction / SSH decoy (Cowrie proof)](cowrie-ssh.md) | Low-Interaction · SSH `:2222` | **61.37** | D | [`cowrie-ssh.scorecard.json`](../conformance/fixtures/cowrie-ssh.scorecard.json) |
 | [Low-Interaction / Telnet decoy (Cowrie proof)](cowrie-telnet.md) | Low-Interaction · Telnet `:2223` | **64.90** | D | [`cowrie-telnet.scorecard.json`](../conformance/fixtures/cowrie-telnet.scorecard.json) |
 | [OpenCanary HTTP](opencanary-web-api.md) | Web-API · HTTP :80 | **66.02** | D | [`opencanary-web-api.scorecard.json`](../conformance/fixtures/opencanary-web-api.scorecard.json) |
@@ -29,18 +29,18 @@ Published **full** UHBS-Lab scorecards (evaluated 2026-07-27):
 | [OpenCanary VNC](opencanary-vnc.md) | Low-Interaction · VNC :5900 | **61.99** | D | [`opencanary-vnc.scorecard.json`](../conformance/fixtures/opencanary-vnc.scorecard.json) |
 | [OpenCanary GIT](opencanary-git.md) | Low-Interaction · Git :9418 | **62.96** | D | [`opencanary-git.scorecard.json`](../conformance/fixtures/opencanary-git.scorecard.json) |
 | [OpenCanary SMB](opencanary-smb.md) | Low-Interaction · SMB :445 | **57.72** | D | [`opencanary-smb.scorecard.json`](../conformance/fixtures/opencanary-smb.scorecard.json) |
-| [Low-Interaction / SSH tarpit (Endlessh proof)](endlessh-ssh-tarpit.md) | Low-Interaction · `ssh_tarpit` `:2222` | **51.90** | D | [`endlessh-low-interaction.scorecard.json`](../conformance/fixtures/endlessh-low-interaction.scorecard.json) |
-| [Beelzebub HTTP](beelzebub-http.md) | Web-API · HTTP `:8080` | **50.12** | D | [`beelzebub-http.scorecard.json`](../conformance/fixtures/beelzebub-http.scorecard.json) |
+| [Low-Interaction / SSH tarpit (Endlessh proof)](endlessh-ssh-tarpit.md) | Low-Interaction · `ssh_tarpit` `:2222` | **54.07** | D | [`endlessh-low-interaction.scorecard.json`](../conformance/fixtures/endlessh-low-interaction.scorecard.json) |
+| [Beelzebub HTTP](beelzebub-http.md) | Web-API · HTTP `:8080` | **66.02** | D | [`beelzebub-http.scorecard.json`](../conformance/fixtures/beelzebub-http.scorecard.json) |
 | [Beelzebub SSH](beelzebub-ssh.md) | Low-Interaction · SSH `:2222` | **45.74** | F | [`beelzebub-ssh.scorecard.json`](../conformance/fixtures/beelzebub-ssh.scorecard.json) |
-| [Beelzebub Telnet](beelzebub-telnet.md) | Low-Interaction · Telnet `:23` | **57.00** | D | [`beelzebub-telnet.scorecard.json`](../conformance/fixtures/beelzebub-telnet.scorecard.json) |
+| [Beelzebub Telnet](beelzebub-telnet.md) | Low-Interaction · Telnet `:23` | **47.89** | F | [`beelzebub-telnet.scorecard.json`](../conformance/fixtures/beelzebub-telnet.scorecard.json) |
 | [Beelzebub Redis](beelzebub-redis.md) | Low-Interaction · Redis `:6379` | **55.55** | D | [`beelzebub-redis.scorecard.json`](../conformance/fixtures/beelzebub-redis.scorecard.json) |
-| [Trapster HTTP](trapster-http.md) | Web-API · HTTP `:8080` | **49.82** | F | [`trapster-http.scorecard.json`](../conformance/fixtures/trapster-http.scorecard.json) |
+| [Trapster HTTP](trapster-http.md) | Web-API · HTTP `:8080` | **63.33** | D | [`trapster-http.scorecard.json`](../conformance/fixtures/trapster-http.scorecard.json) |
 | [Trapster SSH](trapster-ssh.md) | Low-Interaction · SSH `:2222` | **30.24** | F | [`trapster-ssh.scorecard.json`](../conformance/fixtures/trapster-ssh.scorecard.json) |
 | [Trapster FTP](trapster-ftp.md) | Low-Interaction · FTP `:2121` | **49.71** | F | [`trapster-ftp.scorecard.json`](../conformance/fixtures/trapster-ftp.scorecard.json) |
-| [Trapster Telnet](trapster-telnet.md) | Low-Interaction · Telnet `:2323` | **57.00** | D | [`trapster-telnet.scorecard.json`](../conformance/fixtures/trapster-telnet.scorecard.json) |
+| [Trapster Telnet](trapster-telnet.md) | Low-Interaction · Telnet `:2323` | **64.9** | D | [`trapster-telnet.scorecard.json`](../conformance/fixtures/trapster-telnet.scorecard.json) |
 | [Dionaea FTP](dionaea-ftp.md) | Low-Interaction · FTP `:21` | **55.30** | D | [`dionaea-ftp.scorecard.json`](../conformance/fixtures/dionaea-ftp.scorecard.json) |
 | [Dionaea HTTP](dionaea-http.md) | Web-API · HTTP `:80` | **43.54** | F | [`dionaea-http.scorecard.json`](../conformance/fixtures/dionaea-http.scorecard.json) |
-| [Dionaea SMB](dionaea-smb.md) | Low-Interaction · SMB `:445` | **48.74** | F | [`dionaea-smb.scorecard.json`](../conformance/fixtures/dionaea-smb.scorecard.json) |
+| [Dionaea SMB](dionaea-smb.md) | Low-Interaction · SMB `:445` | **54.07** | D | [`dionaea-smb.scorecard.json`](../conformance/fixtures/dionaea-smb.scorecard.json) |
 
 Each page links to the matching report hub (`quick/` + `full/` scorecards, `report.json`, methodology, tutorial).
 

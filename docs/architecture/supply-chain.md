@@ -1,9 +1,9 @@
 # Supply-chain hygiene — concrete steps taken vs. aspirational target
 
-> Companion to [`GOVERNANCE.md`](../../GOVERNANCE.md) §7 and
-> [`ROADMAP.md`](../../ROADMAP.md) Phase 4 (Integrity / OpenSSF / SLSA).
+> Companion to [`GOVERNANCE.md`](https://github.com/mziqudhd92/uhbs-standard/blob/main/GOVERNANCE.md) §7 and
+> [`ROADMAP.md`](https://github.com/mziqudhd92/uhbs-standard/blob/main/ROADMAP.md) Phase 4 (Integrity / OpenSSF / SLSA).
 > Written for a **personal open-source beta project**, not a certified
-> supply-chain program — see [`AGENTS.md`](../../AGENTS.md).
+> supply-chain program — see [`AGENTS.md`](https://github.com/mziqudhd92/uhbs-standard/blob/main/AGENTS.md).
 
 ## Aspirational target (not achieved)
 

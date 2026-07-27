@@ -47,7 +47,7 @@ python3 -c "import paramiko; t=paramiko.Transport(('cowrie-lab',2222)); t.connec
 # run from a container on uhbs-lab, or use host-mapped ports
 ```
 
-## 3. Quick + full — SSH
+## 3. Quick + full — SSH {#ssh}
 
 ```bash
 mkdir -p docs/conformance/reports/cowrie/ssh/{quick,full}
@@ -81,7 +81,7 @@ docker run --rm --network uhbs-lab \
 
 **Published SSH:** quick **82.76 / B** · full **61.37 / D**
 
-## 4. Quick + full — Telnet
+## 4. Quick + full — Telnet {#telnet}
 
 ```bash
 mkdir -p docs/conformance/reports/cowrie/telnet/{quick,full}
