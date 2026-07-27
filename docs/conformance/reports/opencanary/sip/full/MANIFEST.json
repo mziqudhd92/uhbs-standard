@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "e6240d18a86dc035d951b223676e09b742ed80c49b74aa5bbf66e9727136ecbd"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "e6240d18a86dc035d951b223676e09b742ed80c49b74aa5bbf66e9727136ecbd"
+    },
+    {
+      "path": "report.json",
+      "sha256": "f900b66d024bf65c423d79ec97d57c25328ff7656e23e3a314e13c56d3386e10"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "70cf0abd960077b470c15bdbe2a151bde1f272e866d9c04b372dbc28bde540da"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "47725e9ec84ae6046bb5d75707ad4329c7fa69d54b4a2c8d1a46fba515055bcf"
+    },
+    {
+      "path": "uhbs-run.console.log",
+      "sha256": "ca1e71bfaa30aab7fc1775f1f659d3fb5acda3c7b774e260e49d9828bb1323d4"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-sip",
+    "uhqs": 46.44,
+    "grade": "GRADE F (Fail)"
+  }
+}
