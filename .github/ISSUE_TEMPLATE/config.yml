@@ -5,4 +5,4 @@ contact_links:
     about: Report security issues privately — do not open a public issue.
   - name: Documentation site
     url: https://mziqudhd92.github.io/uhbs-standard/
-    about: Browse the UHBS v4.0 specification docs.
+    about: Landing hub; full MkDocs docs live under /mkdocs/.

@@ -7,6 +7,10 @@ share version **4.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`).
 
 ## [Unreleased]
 
+### Changed
+- GitHub Pages root is the React landing hub again; MkDocs deploys under `/mkdocs/`
+- Landing shows published ESPot / miniprint / Conpot lab scorecards and draft posture wording
+
 ### Fixed
 - **Protocol-agnostic lab binding:** TPS no longer silently overwrites inventory/CLI
   protocols; conflicting TPS vs `--protocol` raises `ProtocolConflictError`

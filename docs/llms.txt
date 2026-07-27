@@ -6,28 +6,29 @@ UHBS is **not** an industry consortium or multi-party standards body. It is a Dr
 
 ## Essential
 
-- [Home](https://mziqudhd92.github.io/uhbs-standard/): Project overview and posture
-- [Document status](https://mziqudhd92.github.io/uhbs-standard/specification/status/): Draft/Experimental; UHBS-Core vs UHBS-Lab
-- [Scoring formula (UHQS)](https://mziqudhd92.github.io/uhbs-standard/specification/scoring-formula/): Normative UHQS and δ_C Safety Gate
-- [Modules A–F](https://mziqudhd92.github.io/uhbs-standard/specification/modules/): Evaluation module objectives
+- [Home / landing](https://mziqudhd92.github.io/uhbs-standard/): Hub overview and published lab grades
+- [MkDocs docs](https://mziqudhd92.github.io/uhbs-standard/mkdocs/): Spec, scorecards, reports
+- [Document status](https://mziqudhd92.github.io/uhbs-standard/mkdocs/specification/status/): Draft/Experimental; UHBS-Core vs UHBS-Lab
+- [Scoring formula (UHQS)](https://mziqudhd92.github.io/uhbs-standard/mkdocs/specification/scoring-formula/): Normative UHQS and δ_C Safety Gate
+- [Modules A–F](https://mziqudhd92.github.io/uhbs-standard/mkdocs/specification/modules/): Evaluation module objectives
 - [GitHub repository](https://github.com/mziqudhd92/uhbs-standard): Source, schemas, CLI, UHBS-Lab harness
 
 ## Specification
 
-- [Core principles](https://mziqudhd92.github.io/uhbs-standard/specification/core-principles/): Dual-plane audit and isolation
-- [Target profiles (TPS)](https://mziqudhd92.github.io/uhbs-standard/specification/target-profiles/): profile.yaml classes and weights
-- [CLI & validator](https://mziqudhd92.github.io/uhbs-standard/tooling/cli/): uhbs validate-profile / validate-scorecard / score
-- [Reference implementation](https://mziqudhd92.github.io/uhbs-standard/reference-implementation/): uhbs_core Modules A–F harness
+- [Core principles](https://mziqudhd92.github.io/uhbs-standard/mkdocs/specification/core-principles/): Dual-plane audit and isolation
+- [Target profiles (TPS)](https://mziqudhd92.github.io/uhbs-standard/mkdocs/specification/target-profiles/): profile.yaml classes and weights
+- [CLI & validator](https://mziqudhd92.github.io/uhbs-standard/mkdocs/tooling/cli/): uhbs validate-profile / validate-scorecard / score
+- [Reference implementation](https://mziqudhd92.github.io/uhbs-standard/mkdocs/reference-implementation/): uhbs_core Modules A–F harness
 
 ## Evidence & maturity
 
-- [Conformance fixtures](https://mziqudhd92.github.io/uhbs-standard/conformance/): Named product proof scorecards only
-- [Roadmap](https://mziqudhd92.github.io/uhbs-standard/roadmap/): Technical done vs Phase 6 community goals
+- [Conformance fixtures](https://mziqudhd92.github.io/uhbs-standard/mkdocs/conformance/): Named product proof scorecards only
+- [Roadmap](https://mziqudhd92.github.io/uhbs-standard/mkdocs/roadmap/): Technical done vs Phase 6 community goals
 - [Maintainers](https://github.com/mziqudhd92/uhbs-standard/blob/main/MAINTAINERS.md): Single author today
 - [Citation](https://github.com/mziqudhd92/uhbs-standard/blob/main/CITATION.cff): How to cite this draft
 
 ## Optional
 
-- [llms-full.txt](https://mziqudhd92.github.io/uhbs-standard/llms-full.txt): Longer curated digest for agents
-- [ATT&CK / NIST / IEC mappings](https://mziqudhd92.github.io/uhbs-standard/mappings/): Informative interoperability notes
-- [RFC-0001 baseline](https://mziqudhd92.github.io/uhbs-standard/rfcs/0001-uhbs-4.0-baseline/): Accepted v4.0.0 baseline note
+- [llms-full.txt](https://mziqudhd92.github.io/uhbs-standard/mkdocs/llms-full.txt): Longer curated digest for agents
+- [ATT&CK / NIST / IEC mappings](https://mziqudhd92.github.io/uhbs-standard/mkdocs/mappings/): Informative interoperability notes
+- [RFC-0001 baseline](https://mziqudhd92.github.io/uhbs-standard/mkdocs/rfcs/0001-uhbs-4.0-baseline/): Accepted v4.0.0 baseline note

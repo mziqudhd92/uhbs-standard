@@ -1,4 +1,4 @@
-# https://mziqudhd92.github.io/uhbs-standard/robots.txt
+# https://mziqudhd92.github.io/uhbs-standard/mkdocs/robots.txt
 User-agent: *
 Allow: /
 
@@ -7,5 +7,5 @@ Allow: /
 # useful for documentation-oriented agents and RAG pipelines.
 # See https://llmstxt.org/
 
-Sitemap: https://mziqudhd92.github.io/uhbs-standard/sitemap.xml
+Sitemap: https://mziqudhd92.github.io/uhbs-standard/mkdocs/sitemap.xml
 Host: https://mziqudhd92.github.io/uhbs-standard/

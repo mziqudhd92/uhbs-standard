@@ -92,7 +92,7 @@ docker run --rm -v "$PWD:/work" -w /work \
 
 Compose shorthand: `docker compose run --rm uhbs validate-profile ./my-honeypot.profile.yaml`.
 
-Documentation site: **[https://mziqudhd92.github.io/uhbs-standard/](https://mziqudhd92.github.io/uhbs-standard/)** (MkDocs)  
+Documentation site: **[https://mziqudhd92.github.io/uhbs-standard/](https://mziqudhd92.github.io/uhbs-standard/)** (landing hub) · **[docs / MkDocs](https://mziqudhd92.github.io/uhbs-standard/mkdocs/)**  
 Maturity roadmap: **[ROADMAP.md](ROADMAP.md)** · Reference harness: **[docs/reference-implementation.md](docs/reference-implementation.md)** · CLI guide: **[docs/tooling/cli.md](docs/tooling/cli.md)**
 
 ### Discovery for search & AI agents (SEO / AEO / GEO)
@@ -102,7 +102,7 @@ Maturity roadmap: **[ROADMAP.md](ROADMAP.md)** · Reference harness: **[docs/ref
 | [llms.txt](llms.txt) (repo) · [site llms.txt](https://mziqudhd92.github.io/uhbs-standard/llms.txt) | Curated index for coding / answer agents |
 | [AGENTS.md](AGENTS.md) | Rules for assistants editing this repo |
 | [CITATION.cff](CITATION.cff) | Formal citation metadata |
-| Site [robots.txt](https://mziqudhd92.github.io/uhbs-standard/robots.txt) · [sitemap.xml](https://mziqudhd92.github.io/uhbs-standard/sitemap.xml) | Crawler hints |
+| Site [robots.txt](https://mziqudhd92.github.io/uhbs-standard/robots.txt) · [sitemap.xml](https://mziqudhd92.github.io/uhbs-standard/mkdocs/sitemap.xml) | Crawler hints |
 
 ## Scoring Summary (UHQS 4.0)
 

@@ -11,7 +11,7 @@ It is **not** a consortium standard, not multi-party governed, and not a mandato
 Primary URLs:
 - Docs: https://mziqudhd92.github.io/uhbs-standard/
 - Repo: https://github.com/mziqudhd92/uhbs-standard
-- Spec status: https://mziqudhd92.github.io/uhbs-standard/specification/status/
+- Spec status: https://mziqudhd92.github.io/uhbs-standard/mkdocs/specification/status/
 
 ## Normative UHQS formula
 

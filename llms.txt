@@ -2,14 +2,15 @@
 
 > Personal open-source draft framework (v4.0.0, Apache-2.0) for vendor-neutral honeypot / deception evaluation (UHQS 0–100 + Safety Gate). Not a consortium standard.
 
-This file is the **repository** agent index (AEO/GEO for coding assistants). The published docs site mirror is https://mziqudhd92.github.io/uhbs-standard/llms.txt
+This file is the **repository** agent index (AEO/GEO for coding assistants). The published site mirror is https://mziqudhd92.github.io/uhbs-standard/llms.txt (landing) · https://mziqudhd92.github.io/uhbs-standard/mkdocs/llms.txt (MkDocs)
 
 ## Essential
 
 - [README](https://github.com/mziqudhd92/uhbs-standard/blob/main/README.md): Project posture and quickstart
 - [ROADMAP](https://github.com/mziqudhd92/uhbs-standard/blob/main/ROADMAP.md): Maturity plan; Phase 6 community goals unchecked
 - [MAINTAINERS](https://github.com/mziqudhd92/uhbs-standard/blob/main/MAINTAINERS.md): Single maintainer today
-- [Docs site](https://mziqudhd92.github.io/uhbs-standard/): MkDocs documentation
+- [Landing hub](https://mziqudhd92.github.io/uhbs-standard/): React overview + published lab grades
+- [MkDocs docs](https://mziqudhd92.github.io/uhbs-standard/mkdocs/): Specification, scorecards, conformance reports
 - [CITATION.cff](https://github.com/mziqudhd92/uhbs-standard/blob/main/CITATION.cff): How to cite
 
 ## Normative / machine-readable

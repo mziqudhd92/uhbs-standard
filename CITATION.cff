@@ -11,6 +11,7 @@ date-released: "2026-07-26"
 license: Apache-2.0
 repository-code: "https://github.com/mziqudhd92/uhbs-standard"
 url: "https://mziqudhd92.github.io/uhbs-standard/"
+# Spec docs also at https://mziqudhd92.github.io/uhbs-standard/mkdocs/
 abstract: >-
   UHBS v4.0 is a personal open-source draft framework for vendor-neutral,
   objective, repeatable evaluation of honeypots and deception technology. It

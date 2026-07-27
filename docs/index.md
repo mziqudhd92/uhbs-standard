@@ -61,4 +61,4 @@ pip install -e .
 uhbs validate-profile templates/profile.yaml
 ```
 
-Specification version **4.0.0** · [GitHub repository](https://github.com/mziqudhd92/uhbs-standard)
+Specification version **4.0.0** · [GitHub repository](https://github.com/mziqudhd92/uhbs-standard) · [Site landing hub](https://mziqudhd92.github.io/uhbs-standard/) (this MkDocs tree is served under `/mkdocs/`)

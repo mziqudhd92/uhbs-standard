@@ -21,6 +21,8 @@ htmlcov/
 
 # MkDocs / web
 site/
+web/node_modules/
+web/dist/
 
 # IDE / OS
 .idea/
