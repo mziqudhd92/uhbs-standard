@@ -18,6 +18,9 @@ import {
   ChevronRight,
   LayoutGrid,
   List,
+  ArrowUp,
+  ArrowDown,
+  ArrowUpDown,
   GitCommit,
   Layers,
   Check,
@@ -1082,15 +1085,22 @@ const Results = () => {
   const [protocolFilter, setProtocolFilter] = useState<string>("all");
   const [viewMode, setViewMode] = useState<"cards" | "list">("cards");
   const [page, setPage] = useState(0);
+  const [sortKey, setSortKey] = useState<"uhqsQuick" | "uhqsFull" | null>(null);
+  const [sortDir, setSortDir] = useState<"asc" | "desc">("desc");
   const pageSize = 3;
 
-  const filteredLabs = useMemo(
-    () =>
+  const filteredLabs = useMemo(() => {
+    const base =
       protocolFilter === "all"
         ? LAB_RESULTS
-        : LAB_RESULTS.filter((lab) => lab.protocol === protocolFilter),
-    [protocolFilter],
-  );
+        : LAB_RESULTS.filter((lab) => lab.protocol === protocolFilter);
+    if (!sortKey) return base;
+    return [...base].sort((a, b) => {
+      const av = a[sortKey];
+      const bv = b[sortKey];
+      return sortDir === "asc" ? av - bv : bv - av;
+    });
+  }, [protocolFilter, sortKey, sortDir]);
 
   const pageCount = Math.max(1, Math.ceil(filteredLabs.length / pageSize));
   const safePage = Math.min(page, pageCount - 1);
@@ -1103,6 +1113,29 @@ const Results = () => {
   const setFilter = (id: string) => {
     setProtocolFilter(id);
     setPage(0);
+  };
+
+  const toggleSort = (key: "uhqsQuick" | "uhqsFull") => {
+    if (sortKey !== key) {
+      setSortKey(key);
+      setSortDir("desc");
+    } else if (sortDir === "desc") {
+      setSortDir("asc");
+    } else {
+      setSortKey(null);
+      setSortDir("desc");
+    }
+  };
+
+  const SortIcon = ({ column }: { column: "uhqsQuick" | "uhqsFull" }) => {
+    if (sortKey !== column) {
+      return <ArrowUpDown className="w-3 h-3 opacity-50" aria-hidden />;
+    }
+    return sortDir === "desc" ? (
+      <ArrowDown className="w-3 h-3 text-primary" aria-hidden />
+    ) : (
+      <ArrowUp className="w-3 h-3 text-primary" aria-hidden />
+    );
   };
 
   return (
@@ -1317,8 +1350,28 @@ const Results = () => {
                   <th className="py-3 px-4 font-normal">Protocol</th>
                   <th className="py-3 px-4 font-normal">Project</th>
                   <th className="py-3 px-4 font-normal">Tutorial</th>
-                  <th className="py-3 px-4 font-normal">Quick</th>
-                  <th className="py-3 px-4 font-normal">Full</th>
+                  <th className="py-3 px-4 font-normal">
+                    <button
+                      type="button"
+                      onClick={() => toggleSort("uhqsQuick")}
+                      className="inline-flex items-center gap-1.5 hover:text-primary transition-colors"
+                      aria-label={`Sort by Quick UHQS${sortKey === "uhqsQuick" ? `, currently ${sortDir === "desc" ? "high to low" : "low to high"}` : ""}`}
+                    >
+                      Quick
+                      <SortIcon column="uhqsQuick" />
+                    </button>
+                  </th>
+                  <th className="py-3 px-4 font-normal">
+                    <button
+                      type="button"
+                      onClick={() => toggleSort("uhqsFull")}
+                      className="inline-flex items-center gap-1.5 hover:text-primary transition-colors"
+                      aria-label={`Sort by Full UHQS${sortKey === "uhqsFull" ? `, currently ${sortDir === "desc" ? "high to low" : "low to high"}` : ""}`}
+                    >
+                      Full
+                      <SortIcon column="uhqsFull" />
+                    </button>
+                  </th>
                   <th className="py-3 px-4 font-normal">Scorecard</th>
                 </tr>
               </thead>
