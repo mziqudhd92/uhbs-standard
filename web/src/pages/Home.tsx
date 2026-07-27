@@ -19,6 +19,7 @@ import {
   Check,
 } from "lucide-react";
 import { KatexMath } from "../components/KatexMath";
+import { UhqsHumanExplainerTrigger } from "../components/UhqsHumanExplainer";
 
 const fadeUpVariant: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -523,7 +524,10 @@ const ScoringMethodology = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <motion.div variants={fadeUpVariant} className="lg:col-span-7 bg-card border border-border p-4 md:p-6">
-            <h3 className="font-mono text-primary text-sm uppercase tracking-wider mb-4 px-2">The UHQS 4.0 Formula</h3>
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-4 px-2">
+              <h3 className="font-mono text-primary text-sm uppercase tracking-wider">The UHQS 4.0 Formula</h3>
+              <UhqsHumanExplainerTrigger />
+            </div>
             <div className="uhqs-katex uhqs-katex-display space-y-4">
               <KatexMath
                 display
