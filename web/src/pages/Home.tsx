@@ -695,6 +695,7 @@ const Results = () => {
     {
       name: "ESPot",
       classLabel: "Web-API · HTTP :9200",
+      repo: "https://github.com/mycert/ESPot",
       uhqsQuick: 39.95,
       uhqsFull: 49.82,
       gradeQuick: "F",
@@ -711,6 +712,7 @@ const Results = () => {
     {
       name: "miniprint",
       classLabel: "Low-Interaction · PJL :9100",
+      repo: "https://github.com/sa7mon/miniprint",
       uhqsQuick: 39.99,
       uhqsFull: 47.77,
       gradeQuick: "F",
@@ -727,6 +729,7 @@ const Results = () => {
     {
       name: "Conpot",
       classLabel: "ICS-SCADA · Modbus :5020",
+      repo: "https://github.com/mushorg/conpot",
       uhqsQuick: 44.62,
       uhqsFull: 55.51,
       gradeQuick: "F",
@@ -770,9 +773,17 @@ const Results = () => {
               className="bg-card border border-border p-6 terminal-card flex flex-col"
             >
               <div className="font-mono text-xs text-primary uppercase tracking-wider mb-2">{lab.classLabel}</div>
-              <h3 className="text-xl font-bold mb-4">
+              <h3 className="text-xl font-bold mb-1">
                 <a href={lab.hub} className="hover:text-primary transition-colors">{lab.name}</a>
               </h3>
+              <a
+                href={lab.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-xs text-secondary-foreground hover:text-primary transition-colors mb-4 inline-flex items-center gap-1"
+              >
+                Original project <ArrowRight className="w-3 h-3" />
+              </a>
 
               <div className="grid grid-cols-2 gap-3 mb-6 font-mono text-sm">
                 <div className="border border-border/60 p-3">
@@ -832,6 +843,7 @@ const Results = () => {
             <thead>
               <tr className="border-b border-border bg-card text-muted-foreground text-xs uppercase tracking-wider">
                 <th className="py-3 px-4 font-normal">Target</th>
+                <th className="py-3 px-4 font-normal">Project</th>
                 <th className="py-3 px-4 font-normal">Tutorial</th>
                 <th className="py-3 px-4 font-normal">Quick</th>
                 <th className="py-3 px-4 font-normal">Full</th>
@@ -844,6 +856,9 @@ const Results = () => {
                   <td className="py-3 px-4 text-foreground font-semibold">
                     <a href={lab.hub} className="hover:text-primary">{lab.name}</a>
                     <div className="text-[10px] text-muted-foreground font-normal mt-0.5">{lab.classLabel}</div>
+                  </td>
+                  <td className="py-3 px-4">
+                    <a href={lab.repo} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">GitHub</a>
                   </td>
                   <td className="py-3 px-4">
                     <a href={lab.tutorial} className="text-primary hover:underline">Open</a>
