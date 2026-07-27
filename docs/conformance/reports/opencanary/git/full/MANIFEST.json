@@ -1,0 +1,30 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "8d8ae2ce574e57469ff421d58b1df6dcdd2858db9c9725fb2c4fcd1d9615bf11"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "8d8ae2ce574e57469ff421d58b1df6dcdd2858db9c9725fb2c4fcd1d9615bf11"
+    },
+    {
+      "path": "report.json",
+      "sha256": "e0a9794e90b442cc03f7d287bcc7e4fb0db2107b166afa3118ec0a76b343681b"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "6eb1d840e711d2fd65e095aaae0ddf5fa0a768a072bccd3e21335ee5424a9fb9"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "1986eaa97c187ef2e77f7dfc2224c835a8ede091d622275807e86df0fdbcf88a"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-git",
+    "uhqs": 62.96,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}
