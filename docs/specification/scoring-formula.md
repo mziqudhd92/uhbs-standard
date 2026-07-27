@@ -15,6 +15,8 @@ normalized value from **0 to 100**:
 \mathrm{UHQS} = \delta_C \cdot (w_A \cdot S_A + w_B \cdot S_B + w_C \cdot S_C + w_E \cdot S_E + w_F \cdot S_F)
 \]
 
+![UHQS formula explainer: weighted modules A–F multiplied by Safety Gate δ_C from Module D](../assets/uhqs-formula-explainer.svg)
+
 | Symbol | Meaning |
 | --- | --- |
 | \(S_A, S_B, S_C, S_E, S_F\) | Normalized scores (0–100) for Modules A, B, C, E, and F |

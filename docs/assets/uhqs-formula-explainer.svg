@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">UHQS 4.0 formula explainer</title>
+  <desc id="desc">UHQS equals Safety Gate multiplier delta-C times the weighted sum of modules A, B, C, E, and F. Module D containment drives delta-C and is not a weight.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0e1a"/>
+      <stop offset="100%" stop-color="#121a2e"/>
+    </linearGradient>
+    <filter id="soft" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="960" height="540" fill="url(#bg)"/>
+  <circle cx="880" cy="60" r="120" fill="#1e3a5f" opacity="0.25"/>
+  <circle cx="80" cy="480" r="100" fill="#3d1f24" opacity="0.2"/>
+
+  <text x="48" y="48" fill="#67e8f9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="2">UHBS v4.0</text>
+  <text x="48" y="84" fill="#f8fafc" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700">Universal Honeypot Quality Score</text>
+  <text x="48" y="112" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="14">How the composite grade is built  and why Module D is special</text>
+
+  <!-- Formula bar -->
+  <rect x="48" y="136" width="864" height="72" rx="8" fill="#111827" stroke="#334155" filter="url(#soft)"/>
+  <text x="480" y="182" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="28" fill="#e2e8f0">
+    UHQS =
+    <tspan fill="#f87171" font-weight="700">´<tspan baseline-shift="sub" font-size="18">C</tspan></tspan>
+    · (w<tspan baseline-shift="sub" font-size="16">A</tspan>S<tspan baseline-shift="sub" font-size="16">A</tspan>
+    + w<tspan baseline-shift="sub" font-size="16">B</tspan>S<tspan baseline-shift="sub" font-size="16">B</tspan>
+    + w<tspan baseline-shift="sub" font-size="16">C</tspan>S<tspan baseline-shift="sub" font-size="16">C</tspan>
+    + w<tspan baseline-shift="sub" font-size="16">E</tspan>S<tspan baseline-shift="sub" font-size="16">E</tspan>
+    + w<tspan baseline-shift="sub" font-size="16">F</tspan>S<tspan baseline-shift="sub" font-size="16">F</tspan>)
+  </text>
+
+  <!-- Left: weighted modules -->
+  <rect x="48" y="232" width="520" height="236" rx="10" fill="#0f172a" stroke="#334155"/>
+  <text x="68" y="262" fill="#67e8f9" font-family="ui-monospace, Menlo, monospace" font-size="12" letter-spacing="1">WEIGHTED FIDELITY STACK</text>
+  <text x="68" y="282" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Each module scores 0100 · weights depend on profile class · sum of weights = 1.00</text>
+
+  <!-- Module rows -->
+  <g font-family="system-ui, sans-serif" font-size="13">
+    <rect x="68" y="298" width="480" height="28" rx="4" fill="#1e293b"/>
+    <text x="80" y="317" fill="#22d3ee" font-family="ui-monospace, Menlo, monospace" font-weight="700">A</text>
+    <text x="108" y="317" fill="#e2e8f0">Protocol &amp; syntax fidelity</text>
+    <text x="520" y="317" text-anchor="end" fill="#94a3b8">× w<tspan baseline-shift="sub" font-size="10">A</tspan></text>
+
+    <rect x="68" y="332" width="480" height="28" rx="4" fill="#1e293b"/>
+    <text x="80" y="351" fill="#60a5fa" font-family="ui-monospace, Menlo, monospace" font-weight="700">B</text>
+    <text x="108" y="351" fill="#e2e8f0">Behavioral realism</text>
+    <text x="520" y="351" text-anchor="end" fill="#94a3b8">× w<tspan baseline-shift="sub" font-size="10">B</tspan></text>
+
+    <rect x="68" y="366" width="480" height="28" rx="4" fill="#1e293b"/>
+    <text x="80" y="385" fill="#818cf8" font-family="ui-monospace, Menlo, monospace" font-weight="700">C</text>
+    <text x="108" y="385" fill="#e2e8f0">Telemetry quality</text>
+    <text x="520" y="385" text-anchor="end" fill="#94a3b8">× w<tspan baseline-shift="sub" font-size="10">C</tspan></text>
+
+    <rect x="68" y="400" width="480" height="28" rx="4" fill="#1e293b"/>
+    <text x="80" y="419" fill="#fbbf24" font-family="ui-monospace, Menlo, monospace" font-weight="700">E</text>
+    <text x="108" y="419" fill="#e2e8f0">Scalability &amp; latency</text>
+    <text x="520" y="419" text-anchor="end" fill="#94a3b8">× w<tspan baseline-shift="sub" font-size="10">E</tspan></text>
+
+    <rect x="68" y="434" width="480" height="28" rx="4" fill="#1e293b"/>
+    <text x="80" y="453" fill="#4ade80" font-family="ui-monospace, Menlo, monospace" font-weight="700">F</text>
+    <text x="108" y="453" fill="#e2e8f0">Static code audit</text>
+    <text x="520" y="453" text-anchor="end" fill="#94a3b8">× w<tspan baseline-shift="sub" font-size="10">F</tspan></text>
+  </g>
+
+  <!-- Right: Safety Gate -->
+  <rect x="588" y="232" width="324" height="236" rx="10" fill="#1a1014" stroke="#f87171" stroke-width="1.5"/>
+  <text x="608" y="262" fill="#f87171" font-family="ui-monospace, Menlo, monospace" font-size="12" letter-spacing="1">SAFETY GATE · MODULE D</text>
+  <text x="608" y="286" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Containment score C</text>
+  <text x="608" y="308" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Not added as a weight. It becomes</text>
+  <text x="608" y="326" fill="#f87171" font-family="Georgia, serif" font-size="22" font-weight="700">´<tspan baseline-shift="sub" font-size="14">C</tspan></text>
+  <text x="648" y="326" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">and multiplies everything.</text>
+
+  <rect x="608" y="348" width="284" height="48" rx="6" fill="#14532d" opacity="0.55" stroke="#22c55e"/>
+  <text x="620" y="370" fill="#86efac" font-family="ui-monospace, Menlo, monospace" font-size="12">C e 95  ’  ´_C = 1.0</text>
+  <text x="620" y="388" fill="#bbf7d0" font-family="system-ui, sans-serif" font-size="11">Gate pass · no penalty</text>
+
+  <rect x="608" y="406" width="284" height="48" rx="6" fill="#7f1d1d" opacity="0.45" stroke="#f87171"/>
+  <text x="620" y="428" fill="#fecaca" font-family="ui-monospace, Menlo, monospace" font-size="12">C &lt; 95  ’  ´_C = (C/100)²</text>
+  <text x="620" y="446" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="11">Exponential cut · e.g. C=90 ’ 0.81</text>
+
+  <!-- Footer -->
+  <text x="48" y="510" fill="#64748b" font-family="system-ui, sans-serif" font-size="12">Round UHQS to 2 decimals · Grades: Ae90 · Be80 · Ce70 · De50 · F&lt;50 · Production baseline RECOMMENDED: UHQS &gt; 80 and gate pass</text>
+</svg>

@@ -520,22 +520,21 @@ const ScoringMethodology = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          <motion.div variants={fadeUpVariant} className="lg:col-span-7 bg-card border border-border p-8">
-            <h3 className="font-mono text-primary text-sm uppercase tracking-wider mb-6">The UHQS 4.0 Formula</h3>
-            
-            <div className="bg-background border border-border/50 p-6 flex justify-center items-center overflow-x-auto mb-8 py-10">
-              <div className="font-serif text-2xl md:text-3xl text-foreground whitespace-nowrap">
-                UHQS = <span className="text-danger">δ<sub>C</sub></span> · (
-                  <span className="text-muted-foreground">w<sub>A</sub></span>S<sub>A</sub> + 
-                  <span className="text-muted-foreground">w<sub>B</sub></span>S<sub>B</sub> + 
-                  <span className="text-muted-foreground">w<sub>C</sub></span>S<sub>C</sub> + 
-                  <span className="text-muted-foreground">w<sub>E</sub></span>S<sub>E</sub> + 
-                  <span className="text-muted-foreground">w<sub>F</sub></span>S<sub>F</sub>
-                )
-              </div>
-            </div>
+          <motion.div variants={fadeUpVariant} className="lg:col-span-7 bg-card border border-border p-4 md:p-6">
+            <h3 className="font-mono text-primary text-sm uppercase tracking-wider mb-4 px-2">The UHQS 4.0 Formula</h3>
+            <img
+              src="uhqs-formula-explainer.svg"
+              alt="UHQS equals Safety Gate multiplier delta-C times the weighted sum of modules A, B, C, E, and F. Module D containment drives delta-C and is not a weight."
+              className="w-full h-auto rounded-sm border border-border/40"
+              loading="lazy"
+            />
+            <p className="mt-4 px-2 text-xs text-muted-foreground font-mono leading-relaxed">
+              Module D is missing from the parentheses on purpose: containment becomes δ<sub>C</sub> and multiplies the whole score.
+              Full normative detail:{" "}
+              <a href="mkdocs/specification/scoring-formula/" className="text-primary hover:underline">scoring formula</a>.
+            </p>
 
-            <div className="grid grid-cols-2 gap-4 font-mono text-sm text-secondary-foreground">
+            <div className="grid grid-cols-2 gap-4 font-mono text-sm text-secondary-foreground mt-6 px-2">
               <div><span className="text-primary">δ<sub>C</sub></span> : Safety Gate Multiplier (Module D)</div>
               <div><span className="text-foreground">S<sub>x</sub></span> : Score for Module X (0-100)</div>
               <div><span className="text-muted-foreground">w<sub>x</sub></span> : Profile-Adaptive Weight</div>
