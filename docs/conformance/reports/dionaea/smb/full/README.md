@@ -1,3 +1,3 @@
-# Dionaea SMB — full artifacts
+# Dionaea smb — full
 
-See [`SCORECARD.txt`](SCORECARD.txt) and parent [`../index.md`](../index.md).
+**Result:** UHQS **54.07** · Grade **D** · δ_C **0.81**

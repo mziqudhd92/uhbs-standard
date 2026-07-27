@@ -70,7 +70,7 @@ docker run --rm --network uhbs-lab \
     --environment "Full Docker lab: dionaea-ftp"
 ```
 
-**Published:** quick **49.10 / F** · full **55.30 / D**
+**Published:** quick **50.95 / D** · full **57.96 / D**
 
 ### HTTP `:80`
 
@@ -108,7 +108,7 @@ docker run --rm --network uhbs-lab \
     --environment "Full Docker lab: dionaea-http"
 ```
 
-**Published:** quick **40.93 / F** · full **43.54 / F**
+**Published:** quick **46.21 / F** · full **51.14 / D**
 
 ### SMB `:445`
 
@@ -146,7 +146,7 @@ docker run --rm --network uhbs-lab \
     --environment "Full Docker lab: dionaea-smb"
 ```
 
-**Published:** quick **44.55 / F** · full **48.74 / F**
+**Published:** quick **48.25 / F** · full **54.07 / D**
 
 
 ## 4. Validate a fixture

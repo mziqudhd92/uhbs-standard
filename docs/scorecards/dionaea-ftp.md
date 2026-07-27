@@ -2,8 +2,8 @@
 
 **Status:** Informative · evaluation proof  
 **Class:** Low-Interaction · **Protocol:** FTP `: 21`  
-**Full UHQS:** **55.30** · Grade **D** · δ_C **0.81**  
-**Quick UHQS:** 49.10 / F
+**Full UHQS:** **57.96** · Grade **D** · δ_C **0.81**  
+**Quick UHQS:** 50.95 / D
 
 Source report: [`../conformance/reports/dionaea/ftp/`](../conformance/reports/dionaea/ftp/index.md)  
 Fixture: [`../conformance/fixtures/dionaea-ftp.scorecard.json`](../conformance/fixtures/dionaea-ftp.scorecard.json)

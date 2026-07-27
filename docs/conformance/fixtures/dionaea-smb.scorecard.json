@@ -9,14 +9,14 @@
   "auditor": "UHBS-Lab detailed Docker run (dionaea/smb)",
   "modules": {
     "A": {
-      "score": 58.5,
-      "status": "PARTIAL",
+      "score": 70.43,
+      "status": "PASSED",
       "weight": 0.3,
       "notes": "median=0.444ms pstdev=198.996ms (target jitter often <2ms vs native"
     },
     "B": {
-      "score": 62.5,
-      "status": "PARTIAL",
+      "score": 82.5,
+      "status": "PASSED",
       "weight": 0.15,
       "notes": "survived binary blast"
     },
@@ -35,7 +35,10 @@
       "score": 55.0,
       "status": "PARTIAL",
       "weight": 0.1,
-      "notes": "P50=1022.2ms P95=1029.2ms P99=1032.0ms TPS_limit=150.0ms proto=smb"
+      "notes": "P50=1022.2ms P95=1029.2ms P99=1032.0ms TPS_limit=150.0ms proto=smb",
+      "p50_ms": 1025.55,
+      "p95_ms": 1183.46,
+      "p99_ms": 1203.6
     },
     "F": {
       "score": 70.0,
@@ -57,7 +60,7 @@
     "passed": false,
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 48.74,
-  "grade": "F",
+  "uhqs": 54.07,
+  "grade": "D",
   "notes": "Evaluation proof only. Graded SMB :445 on Dionaea. Artifacts under docs/conformance/reports/dionaea/smb/."
 }

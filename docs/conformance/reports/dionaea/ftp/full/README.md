@@ -1,3 +1,3 @@
-# Dionaea FTP — full artifacts
+# Dionaea ftp — full
 
-See [`SCORECARD.txt`](SCORECARD.txt) and parent [`../index.md`](../index.md).
+**Result:** UHQS **57.96** · Grade **D** · δ_C **0.81**

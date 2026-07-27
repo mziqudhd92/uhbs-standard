@@ -9305,12 +9305,12 @@
   },
   "time": {
     "rules": [],
-    "rules_parse_time": 0.27224302291870117,
+    "rules_parse_time": 0.3720510005950928,
     "profiling_times": {
-      "config_time": 0.7831575870513916,
-      "core_time": 4.55789041519165,
-      "ignores_time": 0.0008616447448730469,
-      "total_time": 5.347392797470093
+      "config_time": 1.5836796760559082,
+      "core_time": 10.21263861656189,
+      "ignores_time": 0.001180887222290039,
+      "total_time": 11.807490587234497
     },
     "parsing_time": {
       "total_time": 0.0,
@@ -9325,31 +9325,51 @@
       "very_slow_files": []
     },
     "scanning_time": {
-      "total_time": 26.206705331802368,
+      "total_time": 52.08172106742859,
       "per_file_time": {
-        "mean": 0.031536348173047395,
-        "std_dev": 0.03594842153342926
+        "mean": 0.06267355122434244,
+        "std_dev": 0.1592355141274982
       },
       "very_slow_stats": {
-        "time_ratio": 0.35243382054198163,
-        "count_ratio": 0.0048134777376654635
+        "time_ratio": 0.5538991271234008,
+        "count_ratio": 0.010830324909747292
       },
       "very_slow_files": [
         {
+          "fpath": "modules/python/util/readlogsqltree.py",
+          "ftime": 1.650609016418457
+        },
+        {
+          "fpath": "modules/python/dionaea/smb/smb.py",
+          "ftime": 1.7048540115356445
+        },
+        {
+          "fpath": "modules/python/dionaea/logsql.py",
+          "ftime": 1.7095379829406738
+        },
+        {
+          "fpath": "modules/python/dionaea/mysql/var.py",
+          "ftime": 1.7608778476715088
+        },
+        {
+          "fpath": "modules/python/dionaea/http.py",
+          "ftime": 1.9169721603393555
+        },
+        {
           "fpath": "modules/python/dionaea/tftp.py",
-          "ftime": 1.5855422019958496
+          "ftime": 3.2461230754852295
         },
         {
           "fpath": "modules/python/util/xmpp/pg_backend.py",
-          "ftime": 1.8398799896240234
+          "ftime": 4.088740110397339
         },
         {
           "fpath": "modules/python/dionaea/smb/include/smbfields.py",
-          "ftime": 2.821202039718628
+          "ftime": 6.02397084236145
         },
         {
           "fpath": "modules/python/dionaea/smb/rpcservices.py",
-          "ftime": 2.9895050525665283
+          "ftime": 6.746334791183472
         }
       ]
     },
@@ -9393,6 +9413,24 @@
             "line": 94,
             "col": 24,
             "offset": 2464
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at modules/python/dionaea/logsql.py:33:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "modules/python/dionaea/logsql.py",
+          "start": {
+            "line": 33,
+            "col": 9,
+            "offset": 735
+          },
+          "end": {
+            "line": 33,
+            "col": 14,
+            "offset": 740
           }
         }
       },
@@ -9453,7 +9491,7 @@
       {
         "error_type": "Fixpoint timeout",
         "severity": "warn",
-        "message": "Fixpoint timeout while performing taint analysis at modules/python/dionaea/smb/include/smbfields.py:1:0 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "message": "Fixpoint timeout while performing taint analysis at modules/python/dionaea/smb/include/smbfields.py:1:0 [rules: 5, first: python.boto3.security.hardcoded-token.hardcoded-token]",
         "location": {
           "path": "modules/python/dionaea/smb/include/smbfields.py",
           "start": {
@@ -9465,6 +9503,24 @@
             "line": 1,
             "col": 1,
             "offset": 0
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at modules/python/dionaea/smb/smb.py:166:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "modules/python/dionaea/smb/smb.py",
+          "start": {
+            "line": 166,
+            "col": 9,
+            "offset": 5015
+          },
+          "end": {
+            "line": 166,
+            "col": 16,
+            "offset": 5022
           }
         }
       },
@@ -9497,7 +9553,7 @@
     },
     "targets": [],
     "total_bytes": 0,
-    "max_memory_bytes": 1308304512
+    "max_memory_bytes": 1284391488
   },
   "engine_requested": "OSS",
   "skipped_rules": [],

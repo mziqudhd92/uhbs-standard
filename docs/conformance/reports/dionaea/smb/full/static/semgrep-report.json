@@ -9305,12 +9305,12 @@
   },
   "time": {
     "rules": [],
-    "rules_parse_time": 0.29546689987182617,
+    "rules_parse_time": 0.3777279853820801,
     "profiling_times": {
-      "config_time": 0.8827710151672363,
-      "core_time": 4.920202016830444,
-      "ignores_time": 0.0009667873382568359,
-      "total_time": 5.808816432952881
+      "config_time": 1.58748197555542,
+      "core_time": 11.639851570129395,
+      "ignores_time": 0.0011451244354248047,
+      "total_time": 13.240381956100464
     },
     "parsing_time": {
       "total_time": 0.0,
@@ -9325,31 +9325,55 @@
       "very_slow_files": []
     },
     "scanning_time": {
-      "total_time": 29.368539094924927,
+      "total_time": 54.61922335624695,
       "per_file_time": {
-        "mean": 0.035341202280294734,
-        "std_dev": 0.04332216811269896
+        "mean": 0.06572710391846803,
+        "std_dev": 0.15077327538445429
       },
       "very_slow_stats": {
-        "time_ratio": 0.3306577194988226,
-        "count_ratio": 0.0048134777376654635
+        "time_ratio": 0.6016099410734123,
+        "count_ratio": 0.013237063778580024
       },
       "very_slow_files": [
         {
           "fpath": "modules/python/dionaea/tftp.py",
-          "ftime": 1.6240060329437256
+          "ftime": 1.816762924194336
+        },
+        {
+          "fpath": "modules/python/dionaea/sip/__init__.py",
+          "ftime": 1.8523988723754883
+        },
+        {
+          "fpath": "modules/python/dionaea/mysql/var.py",
+          "ftime": 1.9768049716949463
+        },
+        {
+          "fpath": "modules/python/dionaea/http.py",
+          "ftime": 2.3440771102905273
+        },
+        {
+          "fpath": "modules/python/dionaea/smb/smb.py",
+          "ftime": 2.403157949447632
+        },
+        {
+          "fpath": "modules/python/dionaea/smb/include/packet.py",
+          "ftime": 2.4947359561920166
+        },
+        {
+          "fpath": "modules/python/dionaea/logsql.py",
+          "ftime": 3.121579885482788
         },
         {
           "fpath": "modules/python/util/xmpp/pg_backend.py",
-          "ftime": 1.88897705078125
+          "ftime": 4.184681177139282
         },
         {
           "fpath": "modules/python/dionaea/smb/include/smbfields.py",
-          "ftime": 3.064336061477661
+          "ftime": 5.257025957107544
         },
         {
           "fpath": "modules/python/dionaea/smb/rpcservices.py",
-          "ftime": 3.133615016937256
+          "ftime": 5.754306077957153
         }
       ]
     },
@@ -9378,24 +9402,6 @@
       "very_slow_rules_on_defs": []
     },
     "fixpoint_timeouts": [
-      {
-        "error_type": "Fixpoint timeout",
-        "severity": "warn",
-        "message": "Fixpoint timeout while performing taint analysis at modules/python/dionaea/log_incident.py:94:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
-        "location": {
-          "path": "modules/python/dionaea/log_incident.py",
-          "start": {
-            "line": 94,
-            "col": 9,
-            "offset": 2449
-          },
-          "end": {
-            "line": 94,
-            "col": 24,
-            "offset": 2464
-          }
-        }
-      },
       {
         "error_type": "Fixpoint timeout",
         "severity": "warn",
@@ -9453,7 +9459,25 @@
       {
         "error_type": "Fixpoint timeout",
         "severity": "warn",
-        "message": "Fixpoint timeout while performing taint analysis at modules/python/dionaea/smb/include/smbfields.py:1:0 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "message": "Fixpoint timeout while performing taint analysis at modules/python/dionaea/smb/include/packet.py:659:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "modules/python/dionaea/smb/include/packet.py",
+          "start": {
+            "line": 659,
+            "col": 9,
+            "offset": 23440
+          },
+          "end": {
+            "line": 659,
+            "col": 16,
+            "offset": 23447
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at modules/python/dionaea/smb/include/smbfields.py:1:0 [rules: 2, first: python.boto3.security.hardcoded-token.hardcoded-token]",
         "location": {
           "path": "modules/python/dionaea/smb/include/smbfields.py",
           "start": {
@@ -9465,6 +9489,78 @@
             "line": 1,
             "col": 1,
             "offset": 0
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at modules/python/dionaea/smb/smb.py:166:8 [rules: 2, first: python.django.security.injection.tainted-sql-string.tainted-sql-string]",
+        "location": {
+          "path": "modules/python/dionaea/smb/smb.py",
+          "start": {
+            "line": 166,
+            "col": 9,
+            "offset": 5015
+          },
+          "end": {
+            "line": 166,
+            "col": 16,
+            "offset": 5022
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at modules/python/util/gnuplotsql.py:101:4 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "modules/python/util/gnuplotsql.py",
+          "start": {
+            "line": 101,
+            "col": 5,
+            "offset": 2930
+          },
+          "end": {
+            "line": 101,
+            "col": 16,
+            "offset": 2941
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at modules/python/util/readlogsqltree.py:392:4 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "modules/python/util/readlogsqltree.py",
+          "start": {
+            "line": 392,
+            "col": 5,
+            "offset": 13773
+          },
+          "end": {
+            "line": 392,
+            "col": 13,
+            "offset": 13781
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at modules/python/util/xmpp/pg_backend.py:558:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "modules/python/util/xmpp/pg_backend.py",
+          "start": {
+            "line": 558,
+            "col": 9,
+            "offset": 22034
+          },
+          "end": {
+            "line": 558,
+            "col": 59,
+            "offset": 22084
           }
         }
       }
@@ -9479,7 +9575,7 @@
     },
     "targets": [],
     "total_bytes": 0,
-    "max_memory_bytes": 1254616960
+    "max_memory_bytes": 1308037696
   },
   "engine_requested": "OSS",
   "skipped_rules": [],

@@ -9,7 +9,7 @@
   "auditor": "UHBS-Lab detailed Docker run (dionaea/http)",
   "modules": {
     "A": {
-      "score": 16.0,
+      "score": 53.54,
       "status": "PARTIAL",
       "weight": 0.25,
       "notes": "status=200"
@@ -35,7 +35,10 @@
       "score": 55.0,
       "status": "PARTIAL",
       "weight": 0.15,
-      "notes": "P50=1023.8ms P95=1050.0ms P99=1052.8ms TPS_limit=150.0ms proto=http"
+      "notes": "P50=1023.8ms P95=1050.0ms P99=1052.8ms TPS_limit=150.0ms proto=http",
+      "p50_ms": 1025.61,
+      "p95_ms": 1148.84,
+      "p99_ms": 1162.06
     },
     "F": {
       "score": 70.0,
@@ -57,7 +60,7 @@
     "passed": false,
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 43.54,
-  "grade": "F",
+  "uhqs": 51.14,
+  "grade": "D",
   "notes": "Evaluation proof only. Graded HTTP :80 on Dionaea. Artifacts under docs/conformance/reports/dionaea/http/."
 }

@@ -6,9 +6,9 @@
 
 | Protocol | Class / port | Quick | Full |
 | --- | --- | --- | --- |
-| [FTP](ftp/) | Low-Interaction · FTP :21 | [49.10 / F](ftp/quick/) | [55.30 / D](ftp/full/) |
-| [HTTP](http/) | Web-API · HTTP :80 | [40.93 / F](http/quick/) | [43.54 / F](http/full/) |
-| [SMB](smb/) | Low-Interaction · SMB :445 | [44.55 / F](smb/quick/) | [48.74 / F](smb/full/) |
+| [FTP](ftp/) | Low-Interaction · FTP :21 | [50.95 / D](ftp/quick/) | [57.96 / D](ftp/full/) |
+| [HTTP](http/) | Web-API · HTTP :80 | [46.21 / F](http/quick/) | [51.14 / D](http/full/) |
+| [SMB](smb/) | Low-Interaction · SMB :445 | [48.25 / F](smb/quick/) | [54.07 / D](smb/full/) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 

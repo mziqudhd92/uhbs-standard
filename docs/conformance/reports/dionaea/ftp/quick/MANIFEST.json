@@ -3,20 +3,24 @@
   "artifacts": [
     {
       "path": "REPORT.txt",
-      "sha256": "ab68a3b55be42dfea100e09202f5565f36bc9b6eb31a4db1232e39d908e49a9d"
+      "sha256": "2d3fa3dea52aff413e76c221d5aaabf84a776241e05799deb266410c3153e146"
     },
     {
       "path": "SCORECARD.txt",
-      "sha256": "ab68a3b55be42dfea100e09202f5565f36bc9b6eb31a4db1232e39d908e49a9d"
+      "sha256": "2d3fa3dea52aff413e76c221d5aaabf84a776241e05799deb266410c3153e146"
     },
     {
       "path": "report.json",
-      "sha256": "18f59a97b6464c3cc5bb38f9681fcf4819474be66d3459ab88272eeee93d4947"
+      "sha256": "0aaa9fe03f53fc6a7e5c2d4645e7b52f8f66007a23d4c4014a5f09d409dc23e5"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "2d3fa3dea52aff413e76c221d5aaabf84a776241e05799deb266410c3153e146"
     }
   ],
   "extra": {
     "target": "dionaea-ftp",
-    "uhqs": 49.1,
-    "grade": "GRADE F (Fail)"
+    "uhqs": 50.95,
+    "grade": "GRADE D (Needs Remediation)"
   }
 }

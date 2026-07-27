@@ -3,28 +3,32 @@
   "artifacts": [
     {
       "path": "REPORT.txt",
-      "sha256": "f8d8196c5b8e283ca972dfe42d3ea5e825c43b0f5d4abb56962617efd342ea23"
+      "sha256": "a605704b7ee74f329fd0e9ba6a48c4f01d65e0db4730471f3229878037c69849"
     },
     {
       "path": "SCORECARD.txt",
-      "sha256": "f8d8196c5b8e283ca972dfe42d3ea5e825c43b0f5d4abb56962617efd342ea23"
+      "sha256": "a605704b7ee74f329fd0e9ba6a48c4f01d65e0db4730471f3229878037c69849"
     },
     {
       "path": "report.json",
-      "sha256": "9a3efdaffac196288908a63f998d621cc475190f6bbb8b9120bbe0a9fd0918e7"
+      "sha256": "786915f7a60621307604e2d6418967b1569db7c96dcc43749b5fc4f655ed0561"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "a605704b7ee74f329fd0e9ba6a48c4f01d65e0db4730471f3229878037c69849"
     },
     {
       "path": "static/bandit-report.json",
-      "sha256": "7654abe582c47edac2f4549c89918f1913226c79d3ee4b52ca67d19323dcd701"
+      "sha256": "511c959f631235f9bba8ac4e88a426293c53adb7a89439b561d6a1fdfe91d1bc"
     },
     {
       "path": "static/semgrep-report.json",
-      "sha256": "4a745927ca897e408c48f459646b3f5edf893b7d51132071b80fe2090fbb6432"
+      "sha256": "d5e9568e3a71dd00a592009ac3215210580833c0862d8bcc950fb3e9549b0738"
     }
   ],
   "extra": {
     "target": "dionaea-http",
-    "uhqs": 43.54,
-    "grade": "GRADE F (Fail)"
+    "uhqs": 51.14,
+    "grade": "GRADE D (Needs Remediation)"
   }
 }

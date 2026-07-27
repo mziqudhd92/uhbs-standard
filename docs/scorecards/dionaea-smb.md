@@ -2,8 +2,8 @@
 
 **Status:** Informative · evaluation proof  
 **Class:** Low-Interaction · **Protocol:** SMB `: 445`  
-**Full UHQS:** **48.74** · Grade **F** · δ_C **0.81**  
-**Quick UHQS:** 44.55 / F
+**Full UHQS:** **54.07** · Grade **D** · δ_C **0.81**  
+**Quick UHQS:** 48.25 / F
 
 Source report: [`../conformance/reports/dionaea/smb/`](../conformance/reports/dionaea/smb/index.md)  
 Fixture: [`../conformance/fixtures/dionaea-smb.scorecard.json`](../conformance/fixtures/dionaea-smb.scorecard.json)

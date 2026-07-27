@@ -3,28 +3,32 @@
   "artifacts": [
     {
       "path": "REPORT.txt",
-      "sha256": "f10da09f259fc6d188fa2d88d509449058e45131f1e8877cc6ec19d30c731faf"
+      "sha256": "100e7d867774ec2b6baff7111e33b364cd8ac97a7c45af231d8b9c2e6e85784c"
     },
     {
       "path": "SCORECARD.txt",
-      "sha256": "f10da09f259fc6d188fa2d88d509449058e45131f1e8877cc6ec19d30c731faf"
+      "sha256": "100e7d867774ec2b6baff7111e33b364cd8ac97a7c45af231d8b9c2e6e85784c"
     },
     {
       "path": "report.json",
-      "sha256": "7258da3a921f99d7d0d53eb8f00d1040d8cc770da286f79b2424c268aa20cec5"
+      "sha256": "fca6e75ca1c6f8bf58047b857fe057923e9efde4a414fd4fa3b4b1f3b18a8e9d"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "100e7d867774ec2b6baff7111e33b364cd8ac97a7c45af231d8b9c2e6e85784c"
     },
     {
       "path": "static/bandit-report.json",
-      "sha256": "d55fd545acc3fb1cb48fcbb2f33ddcf4d42ff49e9ec577aa4efe97f8407a4e60"
+      "sha256": "6413da3cc1eb7afe8ee2e50e972f395afc3f203084e01d9f848f3731defad925"
     },
     {
       "path": "static/semgrep-report.json",
-      "sha256": "1eb16b2191c46a8b3ed85238ef0a02ed6d640b201b8acbea13fc8d86e820aefb"
+      "sha256": "00d5bc7f37949c41f567384b25494c84bb86da7a1b420c1c2bbfac18ee7731e8"
     }
   ],
   "extra": {
     "target": "dionaea-ftp",
-    "uhqs": 55.3,
+    "uhqs": 57.96,
     "grade": "GRADE D (Needs Remediation)"
   }
 }

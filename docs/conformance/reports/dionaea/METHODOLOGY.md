@@ -8,9 +8,9 @@
 
 Only protocols with a dedicated UHBS harness plugin (or intentional generic TCP mapping) were scored:
 
-- **FTP** — quick 49.10/F, full 55.30/D
-- **HTTP** — quick 40.93/F, full 43.54/F
-- **SMB** — quick 44.55/F, full 48.74/F
+- **FTP** — quick 50.95/D, full 57.96/D
+- **HTTP** — quick 46.21/F, full 51.14/D
+- **SMB** — quick 48.25/F, full 54.07/D
 
 Other services the product may advertise (for example MCP, DNS, RDP, MySQL without a UHBS plugin path in this lab) were **not** graded as separate UHQS targets.
 

@@ -9,7 +9,7 @@
   "auditor": "UHBS-Lab detailed Docker run (dionaea/ftp)",
   "modules": {
     "A": {
-      "score": 75.5,
+      "score": 86.43,
       "status": "PASSED",
       "weight": 0.3,
       "notes": "median=0.500ms pstdev=204.248ms (target jitter often <2ms vs native"
@@ -35,7 +35,10 @@
       "score": 55.0,
       "status": "PARTIAL",
       "weight": 0.1,
-      "notes": "P50=1022.4ms P95=1040.9ms P99=1054.3ms TPS_limit=150.0ms proto=ftp"
+      "notes": "P50=1022.4ms P95=1040.9ms P99=1054.3ms TPS_limit=150.0ms proto=ftp",
+      "p50_ms": 1023.42,
+      "p95_ms": 1230.25,
+      "p99_ms": 2096.61
     },
     "F": {
       "score": 70.0,
@@ -57,7 +60,7 @@
     "passed": false,
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 55.3,
+  "uhqs": 57.96,
   "grade": "D",
   "notes": "Evaluation proof only. Graded FTP :21 on Dionaea. Artifacts under docs/conformance/reports/dionaea/ftp/."
 }

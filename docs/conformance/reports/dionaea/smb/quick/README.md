@@ -1,3 +1,3 @@
-# Dionaea SMB — quick artifacts
+# Dionaea smb — quick
 
-See [`SCORECARD.txt`](SCORECARD.txt) and parent [`../index.md`](../index.md).
+**Result:** UHQS **48.25** · Grade **F** · δ_C **0.5625**
