@@ -1557,12 +1557,12 @@
   },
   "time": {
     "rules": [],
-    "rules_parse_time": 0.28758883476257324,
+    "rules_parse_time": 0.3000359535217285,
     "profiling_times": {
-      "config_time": 1.1833279132843018,
-      "core_time": 2.723940849304199,
-      "ignores_time": 0.0010364055633544922,
-      "total_time": 3.9132275581359863
+      "config_time": 1.3162994384765625,
+      "core_time": 1.6207752227783203,
+      "ignores_time": 0.0008544921875,
+      "total_time": 2.94315767288208
     },
     "parsing_time": {
       "total_time": 0.0,
@@ -1577,25 +1577,16 @@
       "very_slow_files": []
     },
     "scanning_time": {
-      "total_time": 14.353191375732422,
+      "total_time": 6.169956684112549,
       "per_file_time": {
-        "mean": 0.06056198892714101,
-        "std_dev": 0.05361640066129471
+        "mean": 0.026033572506804,
+        "std_dev": 0.005891801411202843
       },
       "very_slow_stats": {
-        "time_ratio": 0.2130032885478484,
-        "count_ratio": 0.008438818565400843
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
       },
-      "very_slow_files": [
-        {
-          "fpath": "opencanary/modules/mongodb.py",
-          "ftime": 1.5239360332489014
-        },
-        {
-          "fpath": "opencanary/logger.py",
-          "ftime": 1.5333409309387207
-        }
-      ]
+      "very_slow_files": []
     },
     "matching_time": {
       "total_time": 0.0,
@@ -1625,6 +1616,24 @@
       {
         "error_type": "Fixpoint timeout",
         "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at opencanary/modules/portscan.py:20:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "opencanary/modules/portscan.py",
+          "start": {
+            "line": 20,
+            "col": 9,
+            "offset": 567
+          },
+          "end": {
+            "line": 20,
+            "col": 20,
+            "offset": 578
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
         "message": "Fixpoint timeout while performing taint analysis at opencanary/modules/samba.py:12:12 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
         "location": {
           "path": "opencanary/modules/samba.py",
@@ -1651,7 +1660,7 @@
     },
     "targets": [],
     "total_bytes": 0,
-    "max_memory_bytes": 1076061760
+    "max_memory_bytes": 1128735872
   },
   "engine_requested": "OSS",
   "skipped_rules": [],
