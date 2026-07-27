@@ -524,7 +524,7 @@ const ScoringMethodology = () => {
           <motion.div variants={fadeUpVariant} className="lg:col-span-7 bg-card border border-border p-4 md:p-6">
             <h3 className="font-mono text-primary text-sm uppercase tracking-wider mb-4 px-2">The UHQS 4.0 Formula</h3>
             <img
-              src="uhqs-formula-explainer.svg"
+              src={`${import.meta.env.BASE_URL}uhqs-formula-explainer.svg`}
               alt="UHQS equals Safety Gate multiplier delta-C times the weighted sum of modules A, B, C, E, and F. Module D containment drives delta-C and is not a weight."
               className="w-full h-auto rounded-sm border border-border/40"
               loading="lazy"
