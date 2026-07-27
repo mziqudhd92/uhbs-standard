@@ -1,0 +1,60 @@
+{
+  "uhbs_version": "4.0.0",
+  "run_mode": "quick",
+  "evaluated_at": "2026-07-27T12:15:00Z",
+  "proof_label": "opencanary (thinkst OpenCanary HTTP canary)",
+  "target": {
+    "repository": "https://github.com/thinkst/opencanary",
+    "git_commit": "bc231423aa40242cbd0bf34801f8788e23420dee",
+    "class": "Web-API",
+    "protocol": "http",
+    "host": "opencanary-lab",
+    "port": 80,
+    "container_image": "thinkst/opencanary:latest",
+    "container_image_id": "sha256:558c508742ebc768d979f545bf1889be9d7d58377bd0144058c7df713a88763f"
+  },
+  "grader": {
+    "package_version": "4.0.0",
+    "uhbs_git_commit": "2b0bc2a1acfa663d5b7ba1e7a38f36b3099dedf3",
+    "docker_image": "uhbs:4.0.0",
+    "docker_image_id": "sha256:d326a451699575c745c65ca6b5b9b72d4692fc3bb0e4c9207ca0b567fda5dcd8",
+    "inventory": "docs/conformance/labs/opencanary/inventory.yaml",
+    "tps": "docs/conformance/labs/opencanary/web_api_http_quick.yaml"
+  },
+  "flags": {
+    "UHBS_QUICK": true,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": null,
+    "skip_sast_tools": true,
+    "phases": ["profile", "static", "sandbox", "dynamic", "score"],
+    "modules": ["A", "B", "C", "D", "E", "F"],
+    "source_root": "/honeypot",
+    "telemetry_dir": null,
+    "plugin": "http",
+    "graded_protocol": "http",
+    "ungraded_enabled_services": ["ftp"]
+  },
+  "results": {
+    "uhqs": 41.3,
+    "grade": "F",
+    "delta_c": 0.5625,
+    "module_scores": {
+      "A": 21.5,
+      "B": 82.5,
+      "C": 100.0,
+      "D": 75.0,
+      "E": 100.0,
+      "F": 82.74
+    },
+    "safety_gate_passed": false
+  },
+  "limitations": [
+    "UHBS_QUICK=1 shortens timing samples and lightens Module E.",
+    "telemetry_dir unset → Module C C1 schema gates largely skipped (optimistic C).",
+    "--skip-sast-tools → no bandit/semgrep.",
+    "HTTP-only grade (FTP listener enabled but not scored).",
+    "No ports.ssh → Module D shell egress/LPE probes skipped.",
+    "Prefer full/ for claim-grade evaluation.",
+    "Product name is evaluation proof only — not a UHBS requirement or endorsement."
+  ]
+}

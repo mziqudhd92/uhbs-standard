@@ -760,6 +760,23 @@ const Results = () => {
       quickCard: "mkdocs/conformance/reports/cowrie/quick/SCORECARD.txt",
       fullCard: "mkdocs/conformance/reports/cowrie/full/SCORECARD.txt",
     },
+    {
+      name: "OpenCanary",
+      classLabel: "Web-API · HTTP :80",
+      repo: "https://github.com/thinkst/opencanary",
+      uhqsQuick: 41.3,
+      uhqsFull: 50.12,
+      gradeQuick: "F",
+      gradeFull: "D",
+      hub: "mkdocs/conformance/reports/opencanary/",
+      tutorial: "mkdocs/conformance/reports/opencanary/TUTORIAL/",
+      methodology: "mkdocs/conformance/reports/opencanary/METHODOLOGY/",
+      scorecard: "mkdocs/scorecards/opencanary-web-api/",
+      quick: "mkdocs/conformance/reports/opencanary/quick/",
+      full: "mkdocs/conformance/reports/opencanary/full/",
+      quickCard: "mkdocs/conformance/reports/opencanary/quick/SCORECARD.txt",
+      fullCard: "mkdocs/conformance/reports/opencanary/full/SCORECARD.txt",
+    },
   ];
 
   return (

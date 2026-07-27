@@ -19,6 +19,7 @@ Published quick + full Docker grades, tutorials, and provenance:
 | [miniprint](reports/miniprint/index.md) | [39.99 / F](reports/miniprint/quick/) | [47.77 / F](reports/miniprint/full/) | [TUTORIAL](reports/miniprint/TUTORIAL.md) |
 | [Conpot](reports/conpot/index.md) | [44.62 / F](reports/conpot/quick/) | [55.51 / D](reports/conpot/full/) | [TUTORIAL](reports/conpot/TUTORIAL.md) |
 | [Cowrie](reports/cowrie/index.md) | [63.52 / D](reports/cowrie/quick/) | [48.70 / F](reports/cowrie/full/) | [TUTORIAL](reports/cowrie/TUTORIAL.md) |
+| [OpenCanary](reports/opencanary/index.md) | [41.30 / F](reports/opencanary/quick/) | [50.12 / D](reports/opencanary/full/) | [TUTORIAL](reports/opencanary/TUTORIAL.md) |
 
 ## Fixtures
 
@@ -29,6 +30,7 @@ Published quick + full Docker grades, tutorials, and provenance:
 | [`fixtures/espot-web-api.scorecard.json`](fixtures/espot-web-api.scorecard.json) | ESPot (Web-API, **full** lab) | 49.82 | F |
 | [`fixtures/miniprint-low-interaction.scorecard.json`](fixtures/miniprint-low-interaction.scorecard.json) | miniprint (PJL / Low-Interaction, **full**) | 47.77 | F |
 | [`fixtures/conpot-ics-scada.scorecard.json`](fixtures/conpot-ics-scada.scorecard.json) | Conpot (ICS-SCADA / Modbus, **full**) | 55.51 | D |
+| [`fixtures/opencanary-web-api.scorecard.json`](fixtures/opencanary-web-api.scorecard.json) | OpenCanary (Web-API / HTTP, **full**) | 50.12 | D |
 | [`fixtures/safety-gate-fail.scorecard.json`](fixtures/safety-gate-fail.scorecard.json) | Synthetic δ_C penalty case | 0.0 | F |
 
 ## How to run
@@ -40,6 +42,7 @@ uhbs validate-scorecard docs/conformance/fixtures/cowrie-low-interaction.scoreca
 uhbs validate-scorecard docs/conformance/fixtures/espot-web-api.scorecard.json --strict
 uhbs validate-scorecard docs/conformance/fixtures/miniprint-low-interaction.scorecard.json --strict
 uhbs validate-scorecard docs/conformance/fixtures/conpot-ics-scada.scorecard.json --strict
+uhbs validate-scorecard docs/conformance/fixtures/opencanary-web-api.scorecard.json --strict
 ```
 
 ## Relationship to the lab harness

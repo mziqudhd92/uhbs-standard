@@ -95,6 +95,9 @@ nav:
       - Cowrie report hub: conformance/reports/cowrie/index.md
       - Cowrie tutorial: conformance/reports/cowrie/TUTORIAL.md
       - Cowrie methodology: conformance/reports/cowrie/METHODOLOGY.md
+      - OpenCanary report hub: conformance/reports/opencanary/index.md
+      - OpenCanary tutorial: conformance/reports/opencanary/TUTORIAL.md
+      - OpenCanary methodology: conformance/reports/opencanary/METHODOLOGY.md
   - Mappings:
       - Index: mappings/index.md
       - ATT&CK: mappings/attack.md
@@ -109,6 +112,7 @@ nav:
       - Low-Interaction / PJL (miniprint proof): scorecards/miniprint-low-interaction.md
       - ICS-SCADA / Modbus (Conpot proof): scorecards/conpot-ics-scada.md
       - Low-Interaction / SSH (Cowrie proof): scorecards/cowrie-ssh.md
+      - Web-API / HTTP (OpenCanary proof): scorecards/opencanary-web-api.md
       - Illustrative POSIX / GenAI (synthetic): scorecards/illustrative-posix-genai.md
   - Governance:
       - RFCs: rfcs/README.md

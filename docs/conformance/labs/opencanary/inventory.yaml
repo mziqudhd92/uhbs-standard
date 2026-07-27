@@ -1,0 +1,17 @@
+# Inventory for thinkst/opencanary detailed UHBS Docker lab (HTTP primary).
+# Default sample enables HTTP :80 and FTP :21; this grade evaluates HTTP only.
+# Mounts: source → /honeypot, logs → /telemetry
+sites:
+  opencanary:
+    kind: generic
+    class: Web-API
+    host: opencanary-lab
+    protocol: http
+    protocols: [http]
+    port: 80
+    ports:
+      http: 80
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/opencanary/web_api_http_full.yaml
+    container_image: thinkst/opencanary:latest

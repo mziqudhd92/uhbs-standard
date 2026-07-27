@@ -23,6 +23,7 @@
 | [miniprint (sa7mon)](miniprint/index.md) | Low-Interaction | PJL/raw `:9100` | [39.99 / F](miniprint/quick/) | [47.77 / F](miniprint/full/) | [Step-by-step](miniprint/TUTORIAL.md) |
 | [Conpot (mushorg)](conpot/index.md) | ICS-SCADA | Modbus `:5020` | [44.62 / F](conpot/quick/) | [55.51 / D](conpot/full/) | [Step-by-step](conpot/TUTORIAL.md) |
 | [Cowrie](cowrie/index.md) | Low-Interaction | SSH `:2222` | [63.52 / D](cowrie/quick/) | [48.70 / F](cowrie/full/) | [Step-by-step](cowrie/TUTORIAL.md) |
+| [OpenCanary (thinkst)](opencanary/index.md) | Web-API | HTTP `:80` | [41.30 / F](opencanary/quick/) | [50.12 / D](opencanary/full/) | [Step-by-step](opencanary/TUTORIAL.md) |
 
 ## Directory layout (per honeypot)
 
