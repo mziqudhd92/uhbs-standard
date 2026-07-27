@@ -1,0 +1,30 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "648d9c894590484c815012f09a9af09ad5fad0556e7d114d29a749f5f8afb809"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "648d9c894590484c815012f09a9af09ad5fad0556e7d114d29a749f5f8afb809"
+    },
+    {
+      "path": "report.json",
+      "sha256": "c76aedbf7b88edfb249782165743b5cce157998d38903a50a1e3a9dafc01fec5"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "0689228ee57b1edcff1dc69e0818bef95b714aa6347023fedc23e134025b61f2"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "cd8f9fad40398ee90eebcccb367c16e43f6d6be9b795a6137f82d71946aa7e0c"
+    }
+  ],
+  "extra": {
+    "target": "Low-Interaction-SMB",
+    "uhqs": 57.72,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

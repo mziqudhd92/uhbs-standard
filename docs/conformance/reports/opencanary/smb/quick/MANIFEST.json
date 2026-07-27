@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "08630f76faec647e22a3255c50a63f6eff55428b7d191ed8ede14c356b4df500"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "08630f76faec647e22a3255c50a63f6eff55428b7d191ed8ede14c356b4df500"
+    },
+    {
+      "path": "report.json",
+      "sha256": "652a1326b9b1b4a5acc86ab9406a61d47e9efc5d65dd88649b89d931637ce509"
+    },
+    {
+      "path": "uhbs-run.console.log",
+      "sha256": "c51f169548c2634198cb4f4d20ccab2eba767a735d88da2cd2e5cf67f1dcef3a"
+    }
+  ],
+  "extra": {
+    "target": "Low-Interaction-SMB",
+    "uhqs": 50.13,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}
