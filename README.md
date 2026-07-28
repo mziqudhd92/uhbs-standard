@@ -3,6 +3,7 @@
 [![CI](https://github.com/mziqudhd92/uhbs-standard/actions/workflows/ci-validate.yml/badge.svg)](https://github.com/mziqudhd92/uhbs-standard/actions/workflows/ci-validate.yml)
 [![Docs](https://github.com/mziqudhd92/uhbs-standard/actions/workflows/deploy-docs.yml/badge.svg)](https://mziqudhd92.github.io/uhbs-standard/)
 [![CodeQL](https://github.com/mziqudhd92/uhbs-standard/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/mziqudhd92/uhbs-standard/actions/workflows/codeql-analysis.yml)
+[![PyPI](https://img.shields.io/pypi/v/uhbs.svg)](https://pypi.org/project/uhbs/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21631156.svg)](https://doi.org/10.5281/zenodo.21631156)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Spec](https://img.shields.io/badge/Specification-v4.2.0-indigo.svg)](docs/specification/core-principles.md)
@@ -31,23 +32,32 @@
 | **Production Baseline** | **UHQS > 80** suggested as an internal gate (RECOMMENDED in the beta) |
 
 > **Vendor-neutral** beta framework: compare any deception by class and protocol.
-> UHBS-Lab harness: `pip install -e '.[lab]'` → `uhbs-lab` / `uhbs lab`.
+> Install from PyPI: `pip install 'uhbs[lab]'` → `uhbs-lab` / `uhbs lab`.
 > Named product proof lives only under [conformance fixtures](docs/conformance/index.md).
 > Maturity goals (committee, adopters, neutral org): [ROADMAP.md](ROADMAP.md).
 
 ## Quickstart
 
-Validate a honeypot against a Target Profile Specification (`profile.yaml`) in three steps:
+```bash
+# Official PyPI install (CLI + lab harness)
+pip install 'uhbs[lab]'
+
+# Optional: AI-host MCP tools (validate/score fixtures — no live lab probes)
+pip install 'uhbs[mcp]'
+```
+
+Validate a honeypot against a Target Profile Specification (`profile.yaml`):
 
 ```bash
-# 1. Install the CLI (add [lab] for the Modules A–F harness)
-pip install -e ".[lab]"
-
-# 2. Create or adapt a target profile
-cp templates/profile.yaml ./my-honeypot.profile.yaml
-
-# 3. Validate the profile against the official schema
+# From a checkout (templates live in the repo) or your own profile file
+cp templates/profile.yaml ./my-honeypot.profile.yaml   # if you cloned the repo
 uhbs validate-profile my-honeypot.profile.yaml
+```
+
+From a git checkout (editable / development):
+
+```bash
+pip install -e ".[lab,dev]"
 ```
 
 Run a full scorecard validation once your audit harness produces results:
@@ -63,9 +73,10 @@ Install the optional MCP extra so agents can call validators / UHQS scoring over
 the [Model Context Protocol](https://modelcontextprotocol.io/) (local stdio):
 
 ```bash
-pip install -e ".[mcp]"
+pip install 'uhbs[mcp]'
 # Configure your host — see docs/tooling/mcp.md
-# Cursor / Claude example uses: python -m uhbs_mcp  (set UHBS_ROOT to this checkout)
+# Cursor / Claude example uses: uhbs-mcp  or  python -m uhbs_mcp
+# Set UHBS_ROOT to a checkout if you need fixtures/docs from the repo
 ```
 
 Registry metadata: [`server.json`](server.json). Live Docker lab probes stay on the CLI (`uhbs lab`), not MCP.
@@ -75,8 +86,9 @@ Registry metadata: [`server.json`](server.json). Live Docker lab probes stay on 
 Grade network-facing MCP decoys (JSON-RPC over HTTP/SSE) with the in-tree `mcp` protocol plugin — distinct from the AI-host MCP server above:
 
 ```bash
-pip install -e ".[lab]"
+pip install 'uhbs[lab]'
 uhbs-lab --list-protocols   # includes mcp
+# Lab inventories/TPS live in the git repo (or your own paths):
 uhbs-lab \
   --inventory docs/conformance/labs/beelzebub/inventory.yaml \
   --target beelzebub-mcp \
@@ -85,7 +97,7 @@ uhbs-lab \
   --out ./reports/mcp
 ```
 
-Details: [docs/architecture/mcp-honeypot-grading.md](docs/architecture/mcp-honeypot-grading.md).
+Details: [docs/architecture/mcp-honeypot-grading.md](docs/architecture/mcp-honeypot-grading.md). PyPI: https://pypi.org/project/uhbs/
 
 ### Docker (grade without a local Python install)
 
