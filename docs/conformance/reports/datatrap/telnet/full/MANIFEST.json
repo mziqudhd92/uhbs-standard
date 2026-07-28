@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.2.1",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "1f446e7f39d5fe8fe67702482a7c4b1f6a57b0337a504deeb2e9ee0771283f76"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "1f446e7f39d5fe8fe67702482a7c4b1f6a57b0337a504deeb2e9ee0771283f76"
+    },
+    {
+      "path": "report.json",
+      "sha256": "1ef5dc027150fd8ad73730a886bc398bb35026cc662f7913584f453f8f90d737"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "b1e4ef1bd1968b8071bffaf2524f0cd7e91baeaf65f344bf072229455319e227"
+    }
+  ],
+  "extra": {
+    "target": "datatrap-telnet",
+    "uhqs": 59.88,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

@@ -1,0 +1,15 @@
+target_metadata:
+  name: "llmpot-modbus-quick"
+  class: "ICS-SCADA"
+  protocol: "modbus"
+  protocols: ["modbus"]
+
+performance_baseline:
+  # ByT5 CPU inference is multi-second; keep TPS honest for Module E.
+  expected_p95_latency_ms: 30000
+  strict_rfc_enforcement: true
+  timing_samples: 20
+
+safety_boundary:
+  allowed_outbound_traffic: false
+  allow_local_code_execution: false

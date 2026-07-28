@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.2.1",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "0f490f90b83870da5b82152daf0b2900a4adb626503d4447cfbf9e3e6b5f9448"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "0f490f90b83870da5b82152daf0b2900a4adb626503d4447cfbf9e3e6b5f9448"
+    },
+    {
+      "path": "report.json",
+      "sha256": "ed34be68a67731f86241d20bd2d1ffb76e342dece67e21692511c7358a11bc2d"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "67c0b0319e74a9c85fb681b2dbe0c5314edd04d2b31a25bc27165a96ad370921"
+    }
+  ],
+  "extra": {
+    "target": "datatrap-postgres",
+    "uhqs": 40.35,
+    "grade": "GRADE F (Fail)"
+  }
+}

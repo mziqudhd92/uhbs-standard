@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.2.1",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "96e73234d5c82b9fc80140aff8c2f9d0d6073392b56a9d53a4cee6d12b7be983"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "96e73234d5c82b9fc80140aff8c2f9d0d6073392b56a9d53a4cee6d12b7be983"
+    },
+    {
+      "path": "report.json",
+      "sha256": "821fae6867452717d85eb3c8801752901b45ed21d550e9846eb1202b44ed25a0"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "f0a1ef444c0c1f1acbeb135b892becb4bb6ed68230cd7c991789e2117de9662b"
+    }
+  ],
+  "extra": {
+    "target": "datatrap-mysql",
+    "uhqs": 40.35,
+    "grade": "GRADE F (Fail)"
+  }
+}

@@ -1,0 +1,18 @@
+# PalisadeResearch/llm-honeypot — Cowrie SSH with LLM prompt-injection traps.
+# Shipped cowrie.cfg: SSH :2222 (SFTP on), Telnet disabled.
+sites:
+  llm-honeypot-ssh:
+    kind: ssh
+    class: Low-Interaction
+    host: llm-honeypot-lab
+    protocol: ssh
+    protocols: [ssh]
+    port: 2222
+    ports:
+      ssh: 2222
+    user: root
+    password: "admin"
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/llm-honeypot/low_interaction_ssh_full.yaml
+    container_image: cowrie/cowrie:latest

@@ -15,8 +15,10 @@ from .mcp import MCPPlugin
 from .modbus import ModbusPlugin
 from .mysql import MySQLPlugin
 from .ntp import NTPPlugin
+from .postgres import PostgresPlugin
 from .rdp import RDPPlugin
 from .redis import RedisPlugin
+from .s7comm import S7commPlugin
 from .sip import SIPPlugin
 from .smb import SMBPlugin
 from .smtp import SMTPPlugin
@@ -69,6 +71,10 @@ def get_plugin(name: str) -> ProtocolPlugin:
     key = (name or "generic").lower()
     if key in {"https"}:
         key = "http"
+    if key in {"postgresql"}:
+        key = "postgres"
+    if key in {"s7", "iso-tsap", "isotp", "iso_on_tcp"}:
+        key = "s7comm"
     if key in _REGISTRY and key != "generic":
         return _REGISTRY[key]
     if key == "generic" and "generic" in _REGISTRY:
@@ -133,10 +139,12 @@ def _bootstrap() -> None:
         MCPPlugin(),
         TelnetPlugin(),
         ModbusPlugin(),
+        S7commPlugin(),
         FTPPlugin(),
         RedisPlugin(),
         SMBPlugin(),
         MySQLPlugin(),
+        PostgresPlugin(),
         RDPPlugin(),
         SIPPlugin(),
         SNMPPlugin(),

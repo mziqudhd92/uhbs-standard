@@ -3,14 +3,47 @@
 All notable changes to the UHBS specification and tooling are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/). Spec and CLI
-share version **4.2.1** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`).
+share version **4.2.2** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`).
 
 ## [Unreleased]
 
+## [4.2.2] — 2026-07-28
+
+Minor release: new protocol plugins (`postgres`, `s7comm`), multi-honeypot lab
+grades for GitHub Pages, and MCP client resilience under honeypot rate limits.
+
 ### Added
+- Built-in **`postgres`** protocol plugin (StartupMessage / SSLRequest /
+  Authentication* / auth-deny; alias `postgresql`) with Module E P95 default
+- Built-in **`s7comm`** protocol plugin (ISO-on-TCP / COTP CC / S7 Setup
+  Communication; aliases `s7`, `iso-tsap`, `isotp`, `iso_on_tcp`) with Module E
+  P95 default
+- HoneyMCP **MCP** published lab grades (quick **43.04 / F**, full **42.93 / F**)
+  — Streamable HTTP `/mcp` (aws-admin); lab rate-limit override documented in
+  `docs/conformance/reports/honeymcp/METHODOLOGY.md`
+- LLM Honeypot (Palisade) **SSH** published lab grades (quick **67.94 / D**,
+  full **61.17 / D**) — Cowrie overlays; Telnet disabled in shipped cfg
+- HoneyAgents **SSH** published lab grades (quick **67.94 / D**, full **65.24 / D**)
+  — stock Cowrie honeypot service; nginx/AutoGen out of UHQS decoy scope
+- DataTrap (Thales dd-honeypot) multi-protocol lab grades (SSH / HTTP / MySQL /
+  Redis / Telnet / PostgreSQL)
+- LLMPot (momalab) Modbus + S7comm + HTTP lab grades
+  — Modbus quick **38.48 / F**, full **55.24 / D** (HF CPU adapter);
+  S7comm quick **45.53 / F**, full **65.41 / D** (Snap7 NoLogic gold);
+  HTTP quick **45.84 / F**, full **63.11 / D**
 - OpenSSF Best Practices **passing** badge
   ([project 13853](https://www.bestpractices.dev/projects/13853))
 - Beelzebub **MCP** published lab grades (quick **43.04 / F**, full **42.93 / F**)
+  (also reflected on Results hub)
+
+### Fixed
+- MCP client retries HTTP **429** with backoff (HoneyMCP-style Wait-for prose /
+  `Retry-After`); Module A timing reuses one session for `tools/list` RTT samples
+  so per-IP honeypot governors are not burned by full re-init storms
+
+### Changed
+- Package / schemas / fixtures / docs / Docker tags advertise **4.2.2**
+
 ## [4.2.1] — 2026-07-28
 
 Patch release after the first PyPI upload of `uhbs`.

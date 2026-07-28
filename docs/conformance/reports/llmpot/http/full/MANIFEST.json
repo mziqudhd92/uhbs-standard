@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.2.1",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "0a45b53b6a2eda641c6b982c8a903d9d3f82798fc311654167a6ad52de5ba5a8"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "0a45b53b6a2eda641c6b982c8a903d9d3f82798fc311654167a6ad52de5ba5a8"
+    },
+    {
+      "path": "report.json",
+      "sha256": "85d42345429b6ed861ed9e26f69e9be0fbd4c3bc9f372197ac80baf09fdf9d81"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "6dd62f5334606d4621c9e926e44a19266ba0bcf249f42ca64e151090930d2b60"
+    }
+  ],
+  "extra": {
+    "target": "llmpot-http",
+    "uhqs": 63.11,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

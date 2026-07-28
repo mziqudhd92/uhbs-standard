@@ -195,6 +195,21 @@ missing a 100 ms bar.
   persists a written value, the single most meaningful behavioral check
   available for this protocol class.
 
+## 6b. S7comm — `protocols/s7comm.py` 🟡 Tier 1
+
+- **Standards:** ISO-on-TCP (RFC 1006 TPKT) + COTP (ISO 8073) + S7comm Setup
+  Communication. Aliases: `s7`, `iso-tsap`, `isotp`, `iso_on_tcp`.
+- **A1 (`s7comm.fsm.truncated_tpkt`):** truncated TPKT length claim must not hang.
+- **A2 (`s7comm.nego.cotp_cc`, critical in Strict mode):** COTP Connection
+  Request → Connection Confirm (PDU type `0xD0`).
+- **B1 (`s7comm.state.setup_communication`, critical in Strict mode):** after
+  COTP CC, S7 Setup Communication (`0xF0`) must yield an S7 (`0x32`) ack.
+  Dual-engine: Canary mode soft-scores COTP-only decoys.
+- **Why it's good:** covers the other major ICS wire UHBS lists in
+  `core-principles.md` alongside Modbus; COTP CC is the minimal proof of an
+  ISO-TSAP stack before any PLC memory ops.
+- **Disclosed limitation:** no Read/Write Var or SZL identity probing yet.
+
 ## 7. Redis — `protocols/redis.py` 🟡 Tier 1 (live-baseline verified)
 
 - **Standards:** RESP (REdis Serialization Protocol).
@@ -252,6 +267,25 @@ missing a 100 ms bar.
   matters for security fidelity, and it's hard-gated with an honest
   leniency path for canaries that were never designed to enforce it.
 - **Disclosed limitation:** no SQL-syntax parsing or dynamic error-code testing yet.
+
+## 9b. PostgreSQL — `protocols/postgres.py` 🟡 Tier 1
+
+- **Standards:** PostgreSQL frontend/backend protocol v3 (StartupMessage /
+  SSLRequest / Authentication* / ErrorResponse). Alias: `postgresql` → `postgres`.
+- **A1 (`postgres.fsm.truncated_startup`):** truncated Startup length claim must
+  not hang the harness (ErrorResponse, clean close, or non-timeout survival).
+- **A2a (`postgres.nego.ssl_request`):** SSLRequest → single-byte `N` (refuse) or
+  `S` (accept).
+- **A2b (`postgres.nego.startup`):** StartupMessage → Authentication* (`R`) or
+  ErrorResponse (`E`).
+- **B1 (`postgres.state.auth_deny`, critical in Strict mode):** after
+  AuthenticationCleartextPassword (or MD5), a bad password must yield
+  ErrorResponse (typically SQLSTATE `28P01`). Dual-engine: Canary/Alert mode
+  soft-scores decoys that AuthOk any password (common honeypot pattern).
+- **Why it's good:** mirrors the MySQL auth-deny security gate for the other
+  major database wire protocol UHBS grades; client-speaks-first framing is
+  covered (unlike MySQL's server-first greeting).
+- **Disclosed limitation:** no extended-query / COPY / cancel-request coverage yet.
 
 ## 10. RDP — `protocols/rdp.py` 🟢 Tier 1 (this round)
 

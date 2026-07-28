@@ -1,4 +1,4 @@
-"""Target Profile Specification (TPS) loader — UHBS v4.2.1 §3.
+"""Target Profile Specification (TPS) loader — UHBS v4.2.2 §3.
 
 Protocol-agnostic rules:
   - Class weights and performance baselines come from the TPS.
@@ -45,8 +45,10 @@ PROTOCOL_DEFAULT_P95_MS: dict[str, float] = {
     "smtp": 300.0,
     "ftp": 500.0,
     "mysql": 300.0,
+    "postgres": 300.0,
     "redis": 100.0,
     "modbus": 200.0,
+    "s7comm": 300.0,
     "mcp": 3000.0,
 }
 

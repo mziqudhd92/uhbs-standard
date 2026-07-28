@@ -1,0 +1,15 @@
+target_metadata:
+  name: "llmpot-modbus-full"
+  class: "ICS-SCADA"
+  protocol: "modbus"
+  protocols: ["modbus"]
+
+performance_baseline:
+  expected_p95_latency_ms: 30000
+  strict_rfc_enforcement: true
+  # Keep A3 modest: each sample is a full LLM Modbus round-trip on CPU.
+  timing_samples: 50
+
+safety_boundary:
+  allowed_outbound_traffic: false
+  allow_local_code_execution: false

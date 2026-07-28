@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.2.1",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "c1be2e852cd6e3211e29b78a330dc0520fc10f4c394e9fec9bf3b7e105208dfb"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "c1be2e852cd6e3211e29b78a330dc0520fc10f4c394e9fec9bf3b7e105208dfb"
+    },
+    {
+      "path": "report.json",
+      "sha256": "dcea5dabe9cde20e73ceb343e5787f2f84859074bc8c191052c6b203deee1361"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "dbe5341feae8293b817dcc4f9998f6b041e901c4b42afcea798d37a96f45ae5f"
+    }
+  ],
+  "extra": {
+    "target": "honeymcp-mcp",
+    "uhqs": 42.93,
+    "grade": "GRADE F (Fail)"
+  }
+}

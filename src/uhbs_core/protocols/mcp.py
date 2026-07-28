@@ -106,7 +106,7 @@ def _init_params() -> dict[str, Any]:
     return {
         "protocolVersion": "2024-11-05",
         "capabilities": {},
-        "clientInfo": {"name": "uhbs-mcp-grader", "version": "4.2.1"},
+        "clientInfo": {"name": "uhbs-mcp-grader", "version": "4.2.2"},
     }
 
 
@@ -458,14 +458,29 @@ class MCPPlugin(ProtocolPlugin):
             samples = min(samples, 20)
         samples = max(5, min(int(samples), 50))
 
+        # One handshake, then repeated tools/list RTT samples (avoids burning
+        # per-IP honeypot rate limits that throttle full re-init storms).
         rtts: list[float] = []
         errors = 0
-        for _ in range(samples):
-            session, listed, _tools, err = _lifecycle_ready(host, port, target)
-            if err or listed is None:
-                errors += 1
-                continue
-            rtts.append(float(listed.rtt_ms))
+        session, listed0, _tools, err = _lifecycle_ready(host, port, target)
+        if err or listed0 is None or session is None:
+            for _ in range(samples):
+                session, listed, _tools, err = _lifecycle_ready(host, port, target)
+                if err or listed is None:
+                    errors += 1
+                    continue
+                rtts.append(float(listed.rtt_ms))
+        else:
+            rtts.append(float(listed0.rtt_ms))
+            for _ in range(samples - 1):
+                listed = jsonrpc_request(session, "tools/list", {}, req_id=2)
+                if not rpc_has_result(listed):
+                    errors += 1
+                    # Re-handshake once if the session was dropped / rate-limited.
+                    session, listed, _tools, err = _lifecycle_ready(host, port, target)
+                    if err or listed is None or session is None:
+                        continue
+                rtts.append(float(listed.rtt_ms))
         if not rtts:
             return [
                 CheckResult(

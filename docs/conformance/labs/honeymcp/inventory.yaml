@@ -1,0 +1,26 @@
+# HoneyMCP (kosiorkosa47/honeymcp) — MCP Streamable HTTP evaluation proof.
+# Default image personas: aws (default /mcp), github, vercel, stripe.
+# Container: honeymcp-lab on uhbs-lab, host port mapped as needed.
+sites:
+  honeymcp-mcp:
+    kind: generic
+    class: Web-API
+    host: honeymcp-lab
+    protocol: mcp
+    protocols: [mcp]
+    port: 8080
+    ports:
+      mcp: 8080
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/honeymcp/web_api_mcp_full.yaml
+    container_image: honeymcp:uhbs-lab
+    mcp_path: /mcp
+    mcp_transport: streamable_http
+    # Default aws-admin decoy tools (not builtin echo/ping keywords)
+    mcp_custom_allowlist_tools:
+      - get_caller_identity
+      - list_secrets
+      - list_s3_buckets
+      - describe_instances
+      - list_iam_users

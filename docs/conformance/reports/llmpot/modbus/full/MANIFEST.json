@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.2.1",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "adc6d2524520eb83294a8d78f3d37f14d71ad3a6b3f648849dd132ecd911c9ca"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "adc6d2524520eb83294a8d78f3d37f14d71ad3a6b3f648849dd132ecd911c9ca"
+    },
+    {
+      "path": "report.json",
+      "sha256": "a7a16c6f1dd046a4cac4d754ec34bcadccda61bb219119fa03b0b0da45892ade"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "f284298f6bae08a4c6fe8551f06d1457ebd93e40dcd8aba67b14dc301c8b01b0"
+    }
+  ],
+  "extra": {
+    "target": "llmpot-modbus",
+    "uhqs": 55.24,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

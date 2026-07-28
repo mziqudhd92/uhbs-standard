@@ -194,7 +194,7 @@ def score_cmd(
     click.echo(
         json.dumps(
             {
-                "uhbs_version": "4.2.1",
+                "uhbs_version": "4.2.2",
                 "profile_class": profile_class,
                 "delta_c": result.delta_c,
                 "uhqs": result.uhqs,

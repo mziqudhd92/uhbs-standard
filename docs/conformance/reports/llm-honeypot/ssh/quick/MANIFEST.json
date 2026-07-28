@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.2.1",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "212c57a117a288b21ad2d9207b5a46e668f79fb325a7da7e374d1bdd9e200bd9"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "212c57a117a288b21ad2d9207b5a46e668f79fb325a7da7e374d1bdd9e200bd9"
+    },
+    {
+      "path": "report.json",
+      "sha256": "9066c13ec2c02d65e1a5c46d1d2204f48415d3d7884297622efd869f7360da42"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "75e1b9f0cdb06a21c5e147022f68b128c4cf9ae5f4c512de8cc86c55f258bd8f"
+    }
+  ],
+  "extra": {
+    "target": "llm-honeypot-ssh",
+    "uhqs": 67.94,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

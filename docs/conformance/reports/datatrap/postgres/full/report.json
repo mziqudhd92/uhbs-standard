@@ -1,0 +1,584 @@
+{
+  "framework": "Universal Honeypot Benchmarking Standard (UHBS) v4.2.1",
+  "evaluation_type": "Full-Spectrum (Static Audit + Dynamic Sandbox)",
+  "target": {
+    "name": "datatrap-postgres",
+    "kind": "generic",
+    "host": "127.0.0.1",
+    "port": 15432,
+    "source_root": "/Users/mz/UHBS/.local/labs/dd-honeypot",
+    "profile_class": "Low-Interaction",
+    "protocols": [
+      "postgres"
+    ],
+    "ports_map": {
+      "postgres": 15432
+    }
+  },
+  "baseline": null,
+  "uhqs": {
+    "target": "datatrap-postgres",
+    "S_A": 92.0,
+    "S_B": 42.5,
+    "S_C": 55.0,
+    "C": 90.0,
+    "S_E": 100.0,
+    "S_F": 69.0,
+    "delta_c": 0.81,
+    "uhqs": 57.94,
+    "weights": {
+      "protocol": 0.3,
+      "behavior": 0.15,
+      "telemetry": 0.25,
+      "scale": 0.1,
+      "static": 0.2
+    },
+    "profile_class": "Low-Interaction",
+    "grade": "GRADE D (Needs Remediation)",
+    "phase": "profile+static+sandbox+dynamic+score",
+    "version": "4.2.1",
+    "containment_measured": true
+  },
+  "hqs": {
+    "target": "datatrap-postgres",
+    "S_A": 92.0,
+    "S_B": 42.5,
+    "S_C": 55.0,
+    "C": 90.0,
+    "S_E": 100.0,
+    "S_F": 69.0,
+    "delta_c": 0.81,
+    "uhqs": 57.94,
+    "weights": {
+      "protocol": 0.3,
+      "behavior": 0.15,
+      "telemetry": 0.25,
+      "scale": 0.1,
+      "static": 0.2
+    },
+    "profile_class": "Low-Interaction",
+    "grade": "GRADE D (Needs Remediation)",
+    "phase": "profile+static+sandbox+dynamic+score",
+    "version": "4.2.1",
+    "containment_measured": true
+  },
+  "modules": [
+    {
+      "module": "SANDBOX",
+      "dimension": "sandbox",
+      "score": 85.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "sandbox.reach.postgres",
+          "team": "blue",
+          "passed": true,
+          "detail": "127.0.0.1:15432 open",
+          "score": 25.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "sandbox.airgap_attested",
+          "team": "blue",
+          "passed": true,
+          "detail": "operator attested air-gapped sandbox (UHBS_AIRGAP_ATTESTED=1)",
+          "score": 25.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "sandbox.egress_deny_tooling",
+          "team": "blue",
+          "passed": false,
+          "detail": "host-egress-deny.sh not found",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "sandbox.gateway_log_configured",
+          "team": "blue",
+          "passed": true,
+          "detail": "UHBS_EGRESS_GATEWAY_LOG=/Users/mz/UHBS/.local/labs/datatrap-telemetry/egress-gateway.log",
+          "score": 25.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {
+        "reachable_protocols": 1
+      },
+      "notes": [
+        "Phase 3 preflight \u2014 does not replace real air-gap deployment"
+      ],
+      "error": null
+    },
+    {
+      "module": "F",
+      "dimension": "static",
+      "score": 69.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "white.static_private_keys",
+          "team": "white",
+          "passed": true,
+          "detail": "0 static private keys",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.hardcoded_ssh_banners",
+          "team": "white",
+          "passed": true,
+          "detail": "0 hardcoded SSH banners",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.predictable_seeds",
+          "team": "white",
+          "passed": true,
+          "detail": "0 predictable PRNG seeds",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.hardcoded_macs",
+          "team": "white",
+          "passed": true,
+          "detail": "0 hardcoded MAC addresses",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.prompt_corpus_present",
+          "team": "white",
+          "passed": true,
+          "detail": "no prompt corpus (N/A for non-LLM)",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.prompt_boundaries",
+          "team": "white",
+          "passed": true,
+          "detail": "no weak delimiter/extract patterns",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.fallback_strings",
+          "team": "white",
+          "passed": true,
+          "detail": "no plain-text LLM fallback artifacts",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.bandit",
+          "team": "white",
+          "passed": true,
+          "detail": "bandit not installed (skipped)",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.semgrep",
+          "team": "white",
+          "passed": true,
+          "detail": "semgrep not installed (skipped)",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.trivy",
+          "team": "white",
+          "passed": true,
+          "detail": "trivy not installed (skipped)",
+          "score": 4.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.sast_gate",
+          "team": "white",
+          "passed": true,
+          "detail": "0 high/critical static findings",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.vfs_posix_coverage",
+          "team": "white",
+          "passed": false,
+          "detail": "POSIX coverage 0% (0/104)",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.blocking_calls",
+          "team": "white",
+          "passed": true,
+          "detail": "sleep/blocking markers in non-test code\u22480",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {
+        "source_root": "/Users/mz/UHBS/.local/labs/dd-honeypot"
+      },
+      "notes": [
+        "Module F white-box audit (keys/prompts/SAST/VFS)"
+      ],
+      "error": null
+    },
+    {
+      "module": "A",
+      "dimension": "protocol",
+      "score": 92.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "postgres.fsm.truncated_startup",
+          "team": "blue",
+          "passed": true,
+          "detail": "closed",
+          "score": 80.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "postgres.nego.ssl_request",
+          "team": "blue",
+          "passed": true,
+          "detail": "reply=b'N'",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "postgres.nego.startup",
+          "team": "blue",
+          "passed": true,
+          "detail": "Authentication type=3",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "postgres.timing.sample_size",
+          "team": "blue",
+          "passed": true,
+          "detail": "n=1000 requested=1000 errors=0",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "postgres.timing.iat_jitter",
+          "team": "red",
+          "passed": true,
+          "detail": "median=0.071ms pstdev=1.397ms (target jitter often <2ms vs native)",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "postgres.module_a.composite",
+          "team": "blue",
+          "passed": true,
+          "detail": "fsm=80 nego=100 timing=100",
+          "score": 92.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "postgres": 92.0
+        },
+        "protocols": [
+          "postgres"
+        ],
+        "timing_samples": 1000,
+        "available_plugins": [
+          "ftp",
+          "generic",
+          "git",
+          "http",
+          "mcp",
+          "modbus",
+          "mysql",
+          "ntp",
+          "postgres",
+          "rdp",
+          "redis",
+          "sip",
+          "smb",
+          "smtp",
+          "snmp",
+          "ssh",
+          "telnet",
+          "tftp",
+          "vnc"
+        ]
+      },
+      "notes": [
+        "UHBS Module A \u2014 plugins=['postgres']",
+        "class=Low-Interaction strict_rfc=True"
+      ],
+      "error": null
+    },
+    {
+      "module": "B",
+      "dimension": "behavior",
+      "score": 42.5,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "postgres.state.auth_deny",
+          "team": "blue",
+          "passed": false,
+          "detail": "AuthenticationOk (accepted bad password)",
+          "score": 0.0,
+          "evidence": [],
+          "critical": true
+        },
+        {
+          "id": "postgres.payload.unsupported",
+          "team": "red",
+          "passed": true,
+          "detail": "no payload probe \u2014 skipped",
+          "score": 50.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "postgres.fuzz.binary",
+          "team": "red",
+          "passed": true,
+          "detail": "survived binary blast",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "postgres": 42.5
+        },
+        "class": "Low-Interaction",
+        "surface_depth": "unknown"
+      },
+      "notes": [
+        "UHBS Module B class=Low-Interaction"
+      ],
+      "error": null
+    },
+    {
+      "module": "C",
+      "dimension": "telemetry",
+      "score": 55.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "postgres.fuzz.binary",
+          "team": "red",
+          "passed": true,
+          "detail": "survived binary blast",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "c1.json_parse_clean",
+          "team": "blue",
+          "passed": true,
+          "detail": "0 malformed / 0 records",
+          "score": 20.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "c1.stix_2_1",
+          "team": "blue",
+          "passed": false,
+          "detail": "no STIX objects found",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "c1.otel_or_ecs",
+          "team": "blue",
+          "passed": false,
+          "detail": "otel_docs=0 ecs_docs=0",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "c1.payload_hashes",
+          "team": "blue",
+          "passed": false,
+          "detail": "no md5/sha256 fields",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "c1.mitre_mapping",
+          "team": "blue",
+          "passed": false,
+          "detail": "no MITRE tags",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {},
+      "notes": [
+        "UHBS C1 schema: STIX 2.1 / OTel / ECS best-effort validators"
+      ],
+      "error": null
+    },
+    {
+      "module": "D",
+      "dimension": "containment",
+      "score": 90.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "d1.shell_exec_unavailable",
+          "team": "blue",
+          "passed": true,
+          "detail": "no explicit SSH listener (ports.ssh / ssh_port) \u2014 remote shell egress/LPE probes skipped for this protocol",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "d1.egress_gateway_log",
+          "team": "blue",
+          "passed": true,
+          "detail": "0 gateway canary hits",
+          "score": 20.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "d1.airgap_attested",
+          "team": "blue",
+          "passed": true,
+          "detail": "UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes on SSH decoys)",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {
+        "breakout": false,
+        "allowed_outbound_traffic": false,
+        "shell_exec": false,
+        "protocols": [
+          "postgres"
+        ]
+      },
+      "notes": [
+        "Module D (protocol-agnostic): no SSH exec surface configured \u2014 Safety Gate cannot fully clear without shell probes or UHBS_EGRESS_GATEWAY_LOG evidence. Non-SSH decoys are graded on gateway/airgap attestation only."
+      ],
+      "error": null
+    },
+    {
+      "module": "E",
+      "dimension": "scale",
+      "score": 100.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "e1.p95_vs_tps",
+          "team": "blue",
+          "passed": true,
+          "detail": "P50=1.1ms P95=2.7ms P99=3.6ms TPS_limit=3000.0ms proto=postgres",
+          "score": 45.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "e1.error_rate",
+          "team": "blue",
+          "passed": true,
+          "detail": "errors=0/200 rate=0.00%",
+          "score": 20.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "e2.exhaustion_input",
+          "team": "red",
+          "passed": true,
+          "detail": "completed exhaustion/fuzz blast",
+          "score": 15.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "e2.circuit_breaker_alive",
+          "team": "blue",
+          "passed": true,
+          "detail": "service alive after load (connect 0.2ms)",
+          "score": 20.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {
+        "p50_ms": 1.14,
+        "p95_ms": 2.72,
+        "p99_ms": 3.6,
+        "p95_limit_ms": 3000.0,
+        "errors": 0,
+        "concurrency": 25,
+        "requests": 200,
+        "wall_s": 0.03,
+        "protocol": "postgres"
+      },
+      "notes": [],
+      "error": null
+    }
+  ],
+  "extras": {
+    "target_scores": {
+      "protocol": 92.0,
+      "behavior": 42.5,
+      "telemetry": 55.0,
+      "containment": 90.0,
+      "scale": 100.0,
+      "static": 69.0
+    },
+    "uhqs_version": "4.2.1",
+    "tps": {
+      "name": "datatrap-postgres-full",
+      "class": "Low-Interaction",
+      "protocols": [
+        "postgres"
+      ],
+      "expected_p95_latency_ms": 3000.0
+    },
+    "surface_depth": "unknown"
+  }
+}

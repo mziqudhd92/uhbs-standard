@@ -7,6 +7,7 @@ Notifications are sent without a JSON-RPC ``id`` field.
 from __future__ import annotations
 
 import json
+import re
 import time
 import urllib.error
 import urllib.parse
@@ -83,6 +84,25 @@ def _parse_json_body(body: bytes) -> dict[str, Any] | None:
     return obj if isinstance(obj, dict) else None
 
 
+def _retry_after_seconds(headers: dict[str, str], body: bytes, default: float = 1.0) -> float:
+    """Best-effort delay for HTTP 429 from Retry-After or honeypot prose."""
+    ra = headers.get("retry-after", "").strip()
+    if ra:
+        try:
+            return max(0.05, float(ra))
+        except ValueError:
+            pass
+    text = body.decode("utf-8", errors="replace")
+    # HoneyMCP: "Too Many Requests! Wait for 1s"
+    m = re.search(r"wait\s+for\s+(\d+(?:\.\d+)?)\s*s", text, flags=re.IGNORECASE)
+    if m:
+        try:
+            return max(0.05, float(m.group(1)))
+        except ValueError:
+            pass
+    return default
+
+
 def _http_exchange(
     url: str,
     *,
@@ -90,47 +110,54 @@ def _http_exchange(
     body: bytes | None = None,
     headers: dict[str, str] | None = None,
     timeout: float = DEFAULT_TIMEOUT_S,
+    max_retries_429: int = 8,
 ) -> JsonRpcResponse:
     hdrs = {"Accept": "application/json, text/event-stream"}
     if headers:
         hdrs.update(headers)
-    req = urllib.request.Request(url, data=body, headers=hdrs, method=method)
-    t0 = time.perf_counter()
-    try:
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            raw = resp.read()
+    attempt = 0
+    while True:
+        req = urllib.request.Request(url, data=body, headers=hdrs, method=method)
+        t0 = time.perf_counter()
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                raw = resp.read()
+                rtt = (time.perf_counter() - t0) * 1000.0
+                hmap = _header_map(resp.headers)
+                return JsonRpcResponse(
+                    http_status=int(getattr(resp, "status", 200) or 200),
+                    headers=hmap,
+                    body=raw,
+                    parsed=_parse_json_body(raw),
+                    rtt_ms=rtt,
+                    session_id=_extract_session(hmap),
+                )
+        except urllib.error.HTTPError as exc:
+            raw = exc.read() if hasattr(exc, "read") else b""
             rtt = (time.perf_counter() - t0) * 1000.0
-            hmap = _header_map(resp.headers)
+            hmap = _header_map(getattr(exc, "headers", {}) or {})
+            if int(exc.code) == 429 and attempt < max_retries_429:
+                attempt += 1
+                time.sleep(_retry_after_seconds(hmap, raw or b""))
+                continue
             return JsonRpcResponse(
-                http_status=int(getattr(resp, "status", 200) or 200),
+                http_status=int(exc.code),
                 headers=hmap,
-                body=raw,
-                parsed=_parse_json_body(raw),
+                body=raw or b"",
+                parsed=_parse_json_body(raw or b""),
                 rtt_ms=rtt,
                 session_id=_extract_session(hmap),
+                error=f"HTTPError {exc.code}",
             )
-    except urllib.error.HTTPError as exc:
-        raw = exc.read() if hasattr(exc, "read") else b""
-        rtt = (time.perf_counter() - t0) * 1000.0
-        hmap = _header_map(getattr(exc, "headers", {}) or {})
-        return JsonRpcResponse(
-            http_status=int(exc.code),
-            headers=hmap,
-            body=raw or b"",
-            parsed=_parse_json_body(raw or b""),
-            rtt_ms=rtt,
-            session_id=_extract_session(hmap),
-            error=f"HTTPError {exc.code}",
-        )
-    except Exception as exc:  # noqa: BLE001 — probe path must not raise
-        rtt = (time.perf_counter() - t0) * 1000.0
-        return JsonRpcResponse(
-            http_status=0,
-            headers={},
-            body=b"",
-            rtt_ms=rtt,
-            error=str(exc)[:200],
-        )
+        except Exception as exc:  # noqa: BLE001 — probe path must not raise
+            rtt = (time.perf_counter() - t0) * 1000.0
+            return JsonRpcResponse(
+                http_status=0,
+                headers={},
+                body=b"",
+                rtt_ms=rtt,
+                error=str(exc)[:200],
+            )
 
 
 def build_base_url(host: str, port: int, path: str = "/mcp") -> str:

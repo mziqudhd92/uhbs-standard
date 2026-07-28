@@ -1,6 +1,6 @@
 # Beelzebub — MCP
 
-**UHBS:** v4.2.1 · evaluation proof for the `mcp` protocol plugin (Web-API class)
+**UHBS:** v4.2.2 · evaluation proof for the `mcp` protocol plugin (Web-API class)
 
 | Run | UHQS | Grade | Notes |
 | --- | --- | --- | --- |
@@ -17,7 +17,7 @@ Safety Gate dominated the composite (Module D C=75 → δ_C=0.5625) despite stro
 # After Beelzebub exposes MCP on :8000 (see labs/beelzebub/configurations/services/mcp-8000.yaml)
 docker run --rm -v "$PWD:/work" -w /work --network uhbs-lab \
   -e UHBS_AIRGAP_ATTESTED=1 -e UHBS_QUICK=1 \
-  uhbs:4.2.1 lab \
+  uhbs:4.2.2 lab \
   --inventory /work/docs/conformance/labs/beelzebub/inventory.yaml \
   --target beelzebub-mcp \
   --tps /work/docs/conformance/labs/beelzebub/web_api_mcp_quick.yaml \

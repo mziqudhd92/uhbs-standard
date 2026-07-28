@@ -4,7 +4,7 @@ site_url: https://mziqudhd92.github.io/uhbs-standard/mkdocs/
 repo_url: https://github.com/mziqudhd92/uhbs-standard
 repo_name: mziqudhd92/uhbs-standard
 edit_uri: edit/main/docs/
-copyright: UHBS v4.2.1 — personal beta evaluation framework (Apache-2.0)
+copyright: UHBS v4.2.2 — personal beta evaluation framework (Apache-2.0)
 
 theme:
   name: material
@@ -96,6 +96,29 @@ nav:
       - Cowrie report hub: conformance/reports/cowrie/index.md
       - Cowrie tutorial: conformance/reports/cowrie/TUTORIAL.md
       - Cowrie methodology: conformance/reports/cowrie/METHODOLOGY.md
+      - LLM Honeypot report hub: conformance/reports/llm-honeypot/index.md
+      - LLM Honeypot SSH hub: conformance/reports/llm-honeypot/ssh/index.md
+      - LLM Honeypot tutorial: conformance/reports/llm-honeypot/TUTORIAL.md
+      - LLM Honeypot methodology: conformance/reports/llm-honeypot/METHODOLOGY.md
+      - HoneyAgents report hub: conformance/reports/honeyagents/index.md
+      - HoneyAgents SSH hub: conformance/reports/honeyagents/ssh/index.md
+      - HoneyAgents tutorial: conformance/reports/honeyagents/TUTORIAL.md
+      - HoneyAgents methodology: conformance/reports/honeyagents/METHODOLOGY.md
+      - LLMPot report hub: conformance/reports/llmpot/index.md
+      - LLMPot Modbus hub: conformance/reports/llmpot/modbus/index.md
+      - LLMPot S7comm hub: conformance/reports/llmpot/s7comm/index.md
+      - LLMPot HTTP hub: conformance/reports/llmpot/http/index.md
+      - LLMPot tutorial: conformance/reports/llmpot/TUTORIAL.md
+      - LLMPot methodology: conformance/reports/llmpot/METHODOLOGY.md
+      - DataTrap report hub: conformance/reports/datatrap/index.md
+      - DataTrap SSH hub: conformance/reports/datatrap/ssh/index.md
+      - DataTrap HTTP hub: conformance/reports/datatrap/http/index.md
+      - DataTrap MySQL hub: conformance/reports/datatrap/mysql/index.md
+      - DataTrap PostgreSQL hub: conformance/reports/datatrap/postgres/index.md
+      - DataTrap Redis hub: conformance/reports/datatrap/redis/index.md
+      - DataTrap Telnet hub: conformance/reports/datatrap/telnet/index.md
+      - DataTrap tutorial: conformance/reports/datatrap/TUTORIAL.md
+      - DataTrap methodology: conformance/reports/datatrap/METHODOLOGY.md
       - Endlessh report hub: conformance/reports/endlessh/index.md
       - Endlessh tutorial: conformance/reports/endlessh/TUTORIAL.md
       - Endlessh methodology: conformance/reports/endlessh/METHODOLOGY.md
@@ -106,6 +129,10 @@ nav:
       - Beelzebub MCP hub: conformance/reports/beelzebub/mcp/index.md
       - Beelzebub tutorial: conformance/reports/beelzebub/TUTORIAL.md
       - Beelzebub methodology: conformance/reports/beelzebub/METHODOLOGY.md
+      - HoneyMCP report hub: conformance/reports/honeymcp/index.md
+      - HoneyMCP MCP hub: conformance/reports/honeymcp/mcp/index.md
+      - HoneyMCP tutorial: conformance/reports/honeymcp/TUTORIAL.md
+      - HoneyMCP methodology: conformance/reports/honeymcp/METHODOLOGY.md
       - Trapster report hub: conformance/reports/trapster/index.md
       - Trapster tutorial: conformance/reports/trapster/TUTORIAL.md
       - Trapster methodology: conformance/reports/trapster/METHODOLOGY.md
@@ -129,6 +156,17 @@ nav:
       - ICS-SCADA / Modbus (Conpot proof): scorecards/conpot-ics-scada.md
       - Low-Interaction / SSH (Cowrie proof): scorecards/cowrie-ssh.md
       - Low-Interaction / Telnet (Cowrie proof): scorecards/cowrie-telnet.md
+      - Low-Interaction / SSH (LLM Honeypot proof): scorecards/llm-honeypot-ssh.md
+      - Low-Interaction / SSH (HoneyAgents proof): scorecards/honeyagents-ssh.md
+      - LLMPot Modbus: scorecards/llmpot-modbus.md
+      - LLMPot S7comm: scorecards/llmpot-s7comm.md
+      - LLMPot HTTP: scorecards/llmpot-http.md
+      - DataTrap SSH: scorecards/datatrap-ssh.md
+      - DataTrap HTTP: scorecards/datatrap-http.md
+      - DataTrap MySQL: scorecards/datatrap-mysql.md
+      - DataTrap PostgreSQL: scorecards/datatrap-postgres.md
+      - DataTrap Redis: scorecards/datatrap-redis.md
+      - DataTrap Telnet: scorecards/datatrap-telnet.md
       - Low-Interaction / SSH tarpit (Endlessh proof): scorecards/endlessh-ssh-tarpit.md
       - Web-API / HTTP (OpenCanary proof): scorecards/opencanary-web-api.md
       - OpenCanary FTP: scorecards/opencanary-ftp.md
@@ -140,6 +178,7 @@ nav:
       - Beelzebub Telnet: scorecards/beelzebub-telnet.md
       - Beelzebub Redis: scorecards/beelzebub-redis.md
       - Beelzebub MCP: scorecards/beelzebub-mcp.md
+      - HoneyMCP MCP: scorecards/honeymcp-mcp.md
       - Trapster HTTP: scorecards/trapster-http.md
       - Trapster SSH: scorecards/trapster-ssh.md
       - Trapster FTP: scorecards/trapster-ftp.md

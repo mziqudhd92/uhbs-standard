@@ -14,7 +14,19 @@ from uhbs_core.protocols.telnet import _negate_options
 
 
 def test_new_plugins_resolve() -> None:
-    for name in ("mysql", "rdp", "sip", "snmp", "ntp", "tftp", "vnc", "git", "smb"):
+    for name in (
+        "mysql",
+        "postgres",
+        "s7comm",
+        "rdp",
+        "sip",
+        "snmp",
+        "ntp",
+        "tftp",
+        "vnc",
+        "git",
+        "smb",
+    ):
         p = get_plugin(name)
         assert p.name == name
 

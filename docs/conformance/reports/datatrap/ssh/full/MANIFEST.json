@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.2.1",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "1254bab5c2b646013ac899f92a160129ba57ac868e9be1dd25181067c7c9a19a"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "1254bab5c2b646013ac899f92a160129ba57ac868e9be1dd25181067c7c9a19a"
+    },
+    {
+      "path": "report.json",
+      "sha256": "668d4a435948edd95efe8eaa1fab292306bacd50fa3ef715122c9f37a011ed3b"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "7c973c97bad86fa58fcf12ebf39dfe06129ff28545f9439dbc455ae76b4ea11a"
+    }
+  ],
+  "extra": {
+    "target": "datatrap-ssh",
+    "uhqs": 55.61,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

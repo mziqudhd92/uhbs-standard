@@ -62,7 +62,7 @@ const Hero = () => {
         
         <motion.h1 variants={fadeUpVariant} className="text-5xl md:text-7xl font-bold leading-tight mb-6 max-w-4xl text-foreground font-sans tracking-tight">
           Universal Honeypot Benchmarking Standard <br className="hidden md:block"/>
-          <span className="text-muted-foreground font-mono text-4xl md:text-6xl tracking-tighter">(UHBS) v4.2.1 <span className="text-primary/70">· 2026</span></span>
+          <span className="text-muted-foreground font-mono text-4xl md:text-6xl tracking-tighter">(UHBS) v4.2.2 <span className="text-primary/70">· 2026</span></span>
         </motion.h1>
         
         <motion.p variants={fadeUpVariant} className="text-xl md:text-2xl text-secondary-foreground max-w-3xl mb-8 font-light leading-relaxed">
@@ -121,7 +121,7 @@ const ScopeAndApplicability = () => {
             </h2>
             <div className="prose prose-invert prose-lg text-secondary-foreground font-light leading-relaxed">
               <p>
-                The UHBS v4.2.1 framework provides a rigorous technical foundation for evaluating the efficacy, safety, and realism of deception assets prior to deployment.
+                The UHBS v4.2.2 framework provides a rigorous technical foundation for evaluating the efficacy, safety, and realism of deception assets prior to deployment.
               </p>
               <p className="mt-4">
                 Historically, deception technology has been evaluated subjectively. UHBS introduces a verifiable, deterministic mathematical model designed to expose flaws in protocol state machines, containment boundaries, and behavioral realism.
@@ -134,7 +134,7 @@ const ScopeAndApplicability = () => {
                 <div>
                   <h4 className="text-primary font-semibold font-mono mb-2 uppercase tracking-wide text-sm">Vendor-Neutral Beta Baseline</h4>
                   <p className="text-secondary-foreground text-sm">
-                    UHBS v4.2.1 is a personal open-source beta for comparing and grading honeypots by class and protocol — mathematically reproducible, not a consortium or adopted industry standard.
+                    UHBS v4.2.2 is a personal open-source beta for comparing and grading honeypots by class and protocol — mathematically reproducible, not a consortium or adopted industry standard.
                   </p>
                 </div>
               </div>
@@ -372,7 +372,7 @@ const FiveDimensionComparison = () => {
       module: "Module F",
       moduleName: "White-Box Static Code Audit",
       color: "text-success",
-      expansion: "New in UHBS v4.2.1: Scans repository code, container build manifests, and system prompts for SAST flaws, default keys, and unhandled command stubs.",
+      expansion: "New in UHBS v4.2.2: Scans repository code, container build manifests, and system prompts for SAST flaws, default keys, and unhandled command stubs.",
       isNew: true,
     },
   ];
@@ -382,25 +382,25 @@ const FiveDimensionComparison = () => {
       num: "01",
       title: "Dual-Plane Audit vs. Runtime-Only",
       left: { label: "5-Dimension Framework", text: "Functions purely as an operational runtime framework, observing honeypot behavior during active exposure." },
-      right: { label: "UHBS v4.2.1", text: "Employs a Dual-Plane Audit Philosophy — requires pre-deployment static code analysis (Module F) to catch hardcoded SSH keys, static seeds, or vulnerable command wrappers before dynamic sandbox probing begins." },
+      right: { label: "UHBS v4.2.2", text: "Employs a Dual-Plane Audit Philosophy — requires pre-deployment static code analysis (Module F) to catch hardcoded SSH keys, static seeds, or vulnerable command wrappers before dynamic sandbox probing begins." },
     },
     {
       num: "02",
       title: "Non-Linear Safety Gate vs. Linear Averaging",
       left: { label: "5-Dimension Framework", text: "Aggregates metrics using simple linear weighted averages. A high interaction score can mask a serious containment flaw, allowing dangerous decoys to pass evaluation." },
-      right: { label: "UHBS v4.2.1", text: "Implements a strict Safety Gate Multiplier (δ_C). If Module D containment drops below 95/100, an exponential penalty degrades the entire UHQS score regardless of performance elsewhere." },
+      right: { label: "UHBS v4.2.2", text: "Implements a strict Safety Gate Multiplier (δ_C). If Module D containment drops below 95/100, an exponential penalty degrades the entire UHQS score regardless of performance elsewhere." },
     },
     {
       num: "03",
       title: "Profile-Adaptive Context (TPS) vs. Static Metrics",
       left: { label: "5-Dimension Framework", text: "Applies identical static metric weights across all honeypot classes — a SCADA PLC and an SSH shell are evaluated with the same emphasis." },
-      right: { label: "UHBS v4.2.1", text: "Target Profile Specification (profile.yaml) adjusts evaluation weights. ICS-SCADA weights protocol fidelity at w_A = 0.35, while POSIX shells emphasize state behavior at w_B = 0.25." },
+      right: { label: "UHBS v4.2.2", text: "Target Profile Specification (profile.yaml) adjusts evaluation weights. ICS-SCADA weights protocol fidelity at w_A = 0.35, while POSIX shells emphasize state behavior at w_B = 0.25." },
     },
     {
       num: "04",
       title: "GenAI & Cloud Coverage vs. Traditional IT Only",
       left: { label: "5-Dimension Framework", text: "Designed around traditional IT OS and network service emulators — SSH servers, HTTP endpoints, and network stacks." },
-      right: { label: "UHBS v4.2.1", text: "Explicitly tests next-generation decoys: indirect prompt injections, system prompt leaks, context exhaustion attacks, and cloud API boundary breaches across public-cloud control planes and container orchestration surfaces." },
+      right: { label: "UHBS v4.2.2", text: "Explicitly tests next-generation decoys: indirect prompt injections, system prompt leaks, context exhaustion attacks, and cloud API boundary breaches across public-cloud control planes and container orchestration surfaces." },
     },
   ];
 
@@ -420,10 +420,10 @@ const FiveDimensionComparison = () => {
         <motion.div variants={fadeUpVariant} className="mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-sans mb-4 flex items-center gap-3">
             <GitCommit className="text-primary w-8 h-8" />
-            UHBS v4.2.1 vs. 5-Dimension Framework
+            UHBS v4.2.2 vs. 5-Dimension Framework
           </h2>
           <p className="text-secondary-foreground max-w-3xl">
-            The standard 5-Dimension Framework evaluates honeypots across Interaction, Data Quality, Resource Efficiency, Stealth, and Fingerprinting Resistance. UHBS v4.2.1 absorbs all five dimensions and restructures them into a production-grade standard with pre-deployment auditing, non-linear safety gates, and coverage for modern decoy architectures.
+            The standard 5-Dimension Framework evaluates honeypots across Interaction, Data Quality, Resource Efficiency, Stealth, and Fingerprinting Resistance. UHBS v4.2.2 absorbs all five dimensions and restructures them into a production-grade standard with pre-deployment auditing, non-linear safety gates, and coverage for modern decoy architectures.
           </p>
         </motion.div>
 
@@ -434,8 +434,8 @@ const FiveDimensionComparison = () => {
             <thead>
               <tr className="border-b border-border text-muted-foreground">
                 <th className="py-3 pr-6 font-normal w-1/4">5-Dimension Metric</th>
-                <th className="py-3 pr-6 font-normal w-1/5">UHBS v4.2.1 Module</th>
-                <th className="py-3 font-normal">Key Expansion in UHBS v4.2.1</th>
+                <th className="py-3 pr-6 font-normal w-1/5">UHBS v4.2.2 Module</th>
+                <th className="py-3 font-normal">Key Expansion in UHBS v4.2.2</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border/30">
@@ -481,7 +481,7 @@ const FiveDimensionComparison = () => {
                     </div>
                     <p className="text-sm text-secondary-foreground leading-relaxed">{diff.left.text}</p>
                   </div>
-                  {/* Right: UHBS v4.2.1 */}
+                  {/* Right: UHBS v4.2.2 */}
                   <div className="p-6 bg-[#0f1629]/50">
                     <div className="flex items-center gap-2 mb-3">
                       <CheckCircle className="w-4 h-4 text-primary shrink-0" />
@@ -501,7 +501,7 @@ const FiveDimensionComparison = () => {
           <div>
             <h4 className="font-semibold text-primary font-mono text-sm uppercase tracking-wide mb-2">Bottom Line for Security Leadership</h4>
             <p className="text-sm text-secondary-foreground leading-relaxed">
-              The 5-Dimension Framework provides a useful conceptual lens for categorizing honeypot quality. UHBS v4.2.1 operationalizes every dimension into a mathematically rigorous, machine-verifiable standard — adding a pre-deployment code audit plane (Module F), a non-linear safety gate that makes containment failures non-maskable, and explicit support for GenAI and OT/ICS decoy classes that the 5-Dimension model was never designed to assess.
+              The 5-Dimension Framework provides a useful conceptual lens for categorizing honeypot quality. UHBS v4.2.2 operationalizes every dimension into a mathematically rigorous, machine-verifiable standard — adding a pre-deployment code audit plane (Module F), a non-linear safety gate that makes containment failures non-maskable, and explicit support for GenAI and OT/ICS decoy classes that the 5-Dimension model was never designed to assess.
             </p>
           </div>
         </motion.div>
@@ -532,7 +532,7 @@ const ScoringMethodology = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <motion.div variants={fadeUpVariant} className="lg:col-span-7 bg-card border border-border p-4 md:p-6">
             <div className="flex flex-wrap items-center justify-between gap-3 mb-4 px-2">
-              <h3 className="font-mono text-primary text-sm uppercase tracking-wider">The UHQS 4.2.1 Formula</h3>
+              <h3 className="font-mono text-primary text-sm uppercase tracking-wider">The UHQS 4.2.2 Formula</h3>
               <UhqsHumanExplainerTrigger />
             </div>
             <div className="uhqs-katex uhqs-katex-display space-y-4">
@@ -851,6 +851,215 @@ const LAB_RESULTS: LabResult[] = [
     full: "mkdocs/conformance/reports/cowrie/telnet/full/",
     quickCard: "mkdocs/conformance/reports/cowrie/telnet/quick/SCORECARD.txt",
     fullCard: "mkdocs/conformance/reports/cowrie/telnet/full/SCORECARD.txt",
+  },
+  {
+    name: "LLM Honeypot (SSH)",
+    classLabel: "Low-Interaction · SSH :2222",
+    protocol: "ssh",
+    protocolLabel: "SSH",
+    repo: "https://github.com/PalisadeResearch/llm-honeypot",
+    uhqsQuick: 67.94,
+    uhqsFull: 61.17,
+    gradeQuick: "D",
+    gradeFull: "D",
+    hub: "mkdocs/conformance/reports/llm-honeypot/ssh/",
+    tutorial: "mkdocs/conformance/reports/llm-honeypot/TUTORIAL/",
+    methodology: "mkdocs/conformance/reports/llm-honeypot/METHODOLOGY/",
+    scorecard: "mkdocs/scorecards/llm-honeypot-ssh/",
+    quick: "mkdocs/conformance/reports/llm-honeypot/ssh/quick/",
+    full: "mkdocs/conformance/reports/llm-honeypot/ssh/full/",
+    quickCard: "mkdocs/conformance/reports/llm-honeypot/ssh/quick/SCORECARD.txt",
+    fullCard: "mkdocs/conformance/reports/llm-honeypot/ssh/full/SCORECARD.txt",
+  },
+  {
+    name: "HoneyAgents (SSH)",
+    classLabel: "Low-Interaction · SSH :2222",
+    protocol: "ssh",
+    protocolLabel: "SSH",
+    repo: "https://github.com/mrwadams/honeyagents",
+    uhqsQuick: 67.94,
+    uhqsFull: 65.24,
+    gradeQuick: "D",
+    gradeFull: "D",
+    hub: "mkdocs/conformance/reports/honeyagents/ssh/",
+    tutorial: "mkdocs/conformance/reports/honeyagents/TUTORIAL/",
+    methodology: "mkdocs/conformance/reports/honeyagents/METHODOLOGY/",
+    scorecard: "mkdocs/scorecards/honeyagents-ssh/",
+    quick: "mkdocs/conformance/reports/honeyagents/ssh/quick/",
+    full: "mkdocs/conformance/reports/honeyagents/ssh/full/",
+    quickCard: "mkdocs/conformance/reports/honeyagents/ssh/quick/SCORECARD.txt",
+    fullCard: "mkdocs/conformance/reports/honeyagents/ssh/full/SCORECARD.txt",
+  },
+  {
+    name: "LLMPot (Modbus)",
+    classLabel: "ICS-SCADA · Modbus :5020",
+    protocol: "modbus",
+    protocolLabel: "Modbus",
+    repo: "https://github.com/momalab/LLMPot",
+    uhqsQuick: 38.48,
+    uhqsFull: 55.24,
+    gradeQuick: "F",
+    gradeFull: "D",
+    hub: "mkdocs/conformance/reports/llmpot/modbus/",
+    tutorial: "mkdocs/conformance/reports/llmpot/TUTORIAL/",
+    methodology: "mkdocs/conformance/reports/llmpot/METHODOLOGY/",
+    scorecard: "mkdocs/scorecards/llmpot-modbus/",
+    quick: "mkdocs/conformance/reports/llmpot/modbus/quick/",
+    full: "mkdocs/conformance/reports/llmpot/modbus/full/",
+    quickCard: "mkdocs/conformance/reports/llmpot/modbus/quick/SCORECARD.txt",
+    fullCard: "mkdocs/conformance/reports/llmpot/modbus/full/SCORECARD.txt",
+  },
+  {
+    name: "LLMPot (S7comm)",
+    classLabel: "ICS-SCADA · S7comm :102",
+    protocol: "s7comm",
+    protocolLabel: "S7comm",
+    repo: "https://github.com/momalab/LLMPot",
+    uhqsQuick: 45.53,
+    uhqsFull: 65.41,
+    gradeQuick: "F",
+    gradeFull: "D",
+    hub: "mkdocs/conformance/reports/llmpot/s7comm/",
+    tutorial: "mkdocs/conformance/reports/llmpot/TUTORIAL/",
+    methodology: "mkdocs/conformance/reports/llmpot/METHODOLOGY/",
+    scorecard: "mkdocs/scorecards/llmpot-s7comm/",
+    quick: "mkdocs/conformance/reports/llmpot/s7comm/quick/",
+    full: "mkdocs/conformance/reports/llmpot/s7comm/full/",
+    quickCard: "mkdocs/conformance/reports/llmpot/s7comm/quick/SCORECARD.txt",
+    fullCard: "mkdocs/conformance/reports/llmpot/s7comm/full/SCORECARD.txt",
+  },
+  {
+    name: "LLMPot (HTTP)",
+    classLabel: "Web-API · HTTP :8080",
+    protocol: "http",
+    protocolLabel: "HTTP",
+    repo: "https://github.com/momalab/LLMPot",
+    uhqsQuick: 45.84,
+    uhqsFull: 63.11,
+    gradeQuick: "F",
+    gradeFull: "D",
+    hub: "mkdocs/conformance/reports/llmpot/http/",
+    tutorial: "mkdocs/conformance/reports/llmpot/TUTORIAL/",
+    methodology: "mkdocs/conformance/reports/llmpot/METHODOLOGY/",
+    scorecard: "mkdocs/scorecards/llmpot-http/",
+    quick: "mkdocs/conformance/reports/llmpot/http/quick/",
+    full: "mkdocs/conformance/reports/llmpot/http/full/",
+    quickCard: "mkdocs/conformance/reports/llmpot/http/quick/SCORECARD.txt",
+    fullCard: "mkdocs/conformance/reports/llmpot/http/full/SCORECARD.txt",
+  },
+  {
+    name: "DataTrap (SSH)",
+    classLabel: "Low-Interaction · SSH :2222",
+    protocol: "ssh",
+    protocolLabel: "SSH",
+    repo: "https://github.com/ThalesGroup/dd-honeypot",
+    uhqsQuick: 59.88,
+    uhqsFull: 55.61,
+    gradeQuick: "D",
+    gradeFull: "D",
+    hub: "mkdocs/conformance/reports/datatrap/ssh/",
+    tutorial: "mkdocs/conformance/reports/datatrap/TUTORIAL/",
+    methodology: "mkdocs/conformance/reports/datatrap/METHODOLOGY/",
+    scorecard: "mkdocs/scorecards/datatrap-ssh/",
+    quick: "mkdocs/conformance/reports/datatrap/ssh/quick/",
+    full: "mkdocs/conformance/reports/datatrap/ssh/full/",
+    quickCard: "mkdocs/conformance/reports/datatrap/ssh/quick/SCORECARD.txt",
+    fullCard: "mkdocs/conformance/reports/datatrap/ssh/full/SCORECARD.txt",
+  },
+  {
+    name: "DataTrap (HTTP)",
+    classLabel: "Web-API · HTTP :8080",
+    protocol: "http",
+    protocolLabel: "HTTP",
+    repo: "https://github.com/ThalesGroup/dd-honeypot",
+    uhqsQuick: 45.84,
+    uhqsFull: 65.85,
+    gradeQuick: "F",
+    gradeFull: "D",
+    hub: "mkdocs/conformance/reports/datatrap/http/",
+    tutorial: "mkdocs/conformance/reports/datatrap/TUTORIAL/",
+    methodology: "mkdocs/conformance/reports/datatrap/METHODOLOGY/",
+    scorecard: "mkdocs/scorecards/datatrap-http/",
+    quick: "mkdocs/conformance/reports/datatrap/http/quick/",
+    full: "mkdocs/conformance/reports/datatrap/http/full/",
+    quickCard: "mkdocs/conformance/reports/datatrap/http/quick/SCORECARD.txt",
+    fullCard: "mkdocs/conformance/reports/datatrap/http/full/SCORECARD.txt",
+  },
+  {
+    name: "DataTrap (MySQL)",
+    classLabel: "Low-Interaction · MySQL :3306",
+    protocol: "mysql",
+    protocolLabel: "MySQL",
+    repo: "https://github.com/ThalesGroup/dd-honeypot",
+    uhqsQuick: 40.35,
+    uhqsFull: 50.65,
+    gradeQuick: "F",
+    gradeFull: "D",
+    hub: "mkdocs/conformance/reports/datatrap/mysql/",
+    tutorial: "mkdocs/conformance/reports/datatrap/TUTORIAL/",
+    methodology: "mkdocs/conformance/reports/datatrap/METHODOLOGY/",
+    scorecard: "mkdocs/scorecards/datatrap-mysql/",
+    quick: "mkdocs/conformance/reports/datatrap/mysql/quick/",
+    full: "mkdocs/conformance/reports/datatrap/mysql/full/",
+    quickCard: "mkdocs/conformance/reports/datatrap/mysql/quick/SCORECARD.txt",
+    fullCard: "mkdocs/conformance/reports/datatrap/mysql/full/SCORECARD.txt",
+  },
+  {
+    name: "DataTrap (PostgreSQL)",
+    classLabel: "Low-Interaction · PostgreSQL :5432",
+    protocol: "postgres",
+    protocolLabel: "PostgreSQL",
+    repo: "https://github.com/ThalesGroup/dd-honeypot",
+    uhqsQuick: 40.35,
+    uhqsFull: 57.94,
+    gradeQuick: "F",
+    gradeFull: "D",
+    hub: "mkdocs/conformance/reports/datatrap/postgres/",
+    tutorial: "mkdocs/conformance/reports/datatrap/TUTORIAL/",
+    methodology: "mkdocs/conformance/reports/datatrap/METHODOLOGY/",
+    scorecard: "mkdocs/scorecards/datatrap-postgres/",
+    quick: "mkdocs/conformance/reports/datatrap/postgres/quick/",
+    full: "mkdocs/conformance/reports/datatrap/postgres/full/",
+    quickCard: "mkdocs/conformance/reports/datatrap/postgres/quick/SCORECARD.txt",
+    fullCard: "mkdocs/conformance/reports/datatrap/postgres/full/SCORECARD.txt",
+  },
+  {
+    name: "DataTrap (Redis)",
+    classLabel: "Low-Interaction · Redis :6379",
+    protocol: "redis",
+    protocolLabel: "Redis",
+    repo: "https://github.com/ThalesGroup/dd-honeypot",
+    uhqsQuick: 42.37,
+    uhqsFull: 60.85,
+    gradeQuick: "F",
+    gradeFull: "D",
+    hub: "mkdocs/conformance/reports/datatrap/redis/",
+    tutorial: "mkdocs/conformance/reports/datatrap/TUTORIAL/",
+    methodology: "mkdocs/conformance/reports/datatrap/METHODOLOGY/",
+    scorecard: "mkdocs/scorecards/datatrap-redis/",
+    quick: "mkdocs/conformance/reports/datatrap/redis/quick/",
+    full: "mkdocs/conformance/reports/datatrap/redis/full/",
+    quickCard: "mkdocs/conformance/reports/datatrap/redis/quick/SCORECARD.txt",
+    fullCard: "mkdocs/conformance/reports/datatrap/redis/full/SCORECARD.txt",
+  },
+  {
+    name: "DataTrap (Telnet)",
+    classLabel: "Low-Interaction · Telnet :2323",
+    protocol: "telnet",
+    protocolLabel: "Telnet",
+    repo: "https://github.com/ThalesGroup/dd-honeypot",
+    uhqsQuick: 43.38,
+    uhqsFull: 59.88,
+    gradeQuick: "F",
+    gradeFull: "D",
+    hub: "mkdocs/conformance/reports/datatrap/telnet/",
+    tutorial: "mkdocs/conformance/reports/datatrap/TUTORIAL/",
+    methodology: "mkdocs/conformance/reports/datatrap/METHODOLOGY/",
+    scorecard: "mkdocs/scorecards/datatrap-telnet/",
+    quick: "mkdocs/conformance/reports/datatrap/telnet/quick/",
+    full: "mkdocs/conformance/reports/datatrap/telnet/full/",
+    quickCard: "mkdocs/conformance/reports/datatrap/telnet/quick/SCORECARD.txt",
+    fullCard: "mkdocs/conformance/reports/datatrap/telnet/full/SCORECARD.txt",
   },
   {
     name: "Endlessh",
@@ -1231,6 +1440,25 @@ const LAB_RESULTS: LabResult[] = [
     full: "mkdocs/conformance/reports/beelzebub/mcp/full/",
     quickCard: "mkdocs/conformance/reports/beelzebub/mcp/quick/SCORECARD.txt",
     fullCard: "mkdocs/conformance/reports/beelzebub/mcp/full/SCORECARD.txt",
+  },
+  {
+    name: "HoneyMCP (MCP)",
+    classLabel: "Web-API (MCP v1) · :8080",
+    protocol: "mcp",
+    protocolLabel: "MCP",
+    repo: "https://github.com/kosiorkosa47/honeymcp",
+    uhqsQuick: 43.04,
+    uhqsFull: 42.93,
+    gradeQuick: "F",
+    gradeFull: "F",
+    hub: "mkdocs/conformance/reports/honeymcp/mcp/",
+    tutorial: "mkdocs/conformance/reports/honeymcp/TUTORIAL/",
+    methodology: "mkdocs/conformance/reports/honeymcp/METHODOLOGY/",
+    scorecard: "mkdocs/scorecards/honeymcp-mcp/",
+    quick: "mkdocs/conformance/reports/honeymcp/mcp/quick/",
+    full: "mkdocs/conformance/reports/honeymcp/mcp/full/",
+    quickCard: "mkdocs/conformance/reports/honeymcp/mcp/quick/SCORECARD.txt",
+    fullCard: "mkdocs/conformance/reports/honeymcp/mcp/full/SCORECARD.txt",
   },
   {
     name: "Trapster Community (FTP)",
@@ -1780,7 +2008,7 @@ const Footer = () => {
           <Shield className="w-6 h-6" />
         </div>
         <div className="font-mono text-sm text-secondary-foreground mb-4">
-          Universal Honeypot Benchmarking Standard <span className="text-primary/70">·</span> v4.2.1 <span className="text-primary/70">·</span> 2026
+          Universal Honeypot Benchmarking Standard <span className="text-primary/70">·</span> v4.2.2 <span className="text-primary/70">·</span> 2026
         </div>
         <p className="text-xs text-muted-foreground max-w-lg mx-auto mb-6">
           Personal open-source beta evaluation framework (Apache-2.0). Not a consortium, Steering Committee, or adopted industry standard.

@@ -1,0 +1,2 @@
+{"command": "help", "response": "BusyBox v1.xx multi-call binary."}
+{"command": "ls", "response": "bin  etc  home  tmp  var"}

@@ -3,7 +3,7 @@
 **Status:** Informative  
 **Purpose:** Published, reproducible UHBS-Lab outputs for named honeypots / decoys so the community can **audit**, **replicate**, and **compare** grades — not so UHBS can endorse products.
 
-> UHBS is a personal open-source **beta** evaluation framework (v4.2.1).  
+> UHBS is a personal open-source **beta** evaluation framework (v4.2.2).  
 > Named products appear **only** under `docs/conformance/` as evaluation proof.  
 > A grade is not a certification, badge program, or consortium verdict.
 
@@ -23,9 +23,14 @@
 | [miniprint (sa7mon)](miniprint/index.md) | Low-Interaction | PJL/raw `:9100` | [41.83 / F](miniprint/quick/) | [50.43 / D](miniprint/full/) | [Step-by-step](miniprint/TUTORIAL.md) |
 | [Conpot (mushorg)](conpot/index.md) | ICS-SCADA | Modbus `:5020` | [44.55 / F](conpot/quick/) | [55.4 / D](conpot/full/) | [Step-by-step](conpot/TUTORIAL.md) |
 | [Cowrie](cowrie/index.md) | Low-Interaction | SSH `:2222` + Telnet `:2223` (SFTP via SSH) | see hub | see hub | [Step-by-step](cowrie/TUTORIAL.md) |
+| [LLM Honeypot (Palisade)](llm-honeypot/index.md) | Low-Interaction | SSH `:2222` (Telnet off) | [67.94 / D](llm-honeypot/ssh/quick/) | [61.17 / D](llm-honeypot/ssh/full/) | [Step-by-step](llm-honeypot/TUTORIAL.md) |
+| [HoneyAgents](honeyagents/index.md) | Low-Interaction | SSH `:2222` (Telnet mapped, not enabled) | [67.94 / D](honeyagents/ssh/quick/) | [65.24 / D](honeyagents/ssh/full/) | [Step-by-step](honeyagents/TUTORIAL.md) |
+| [LLMPot (momalab)](llmpot/index.md) | multi | Modbus `:5020` / S7comm `:102` / HTTP `:8080` | see hub | see hub | [Step-by-step](llmpot/TUTORIAL.md) |
+| [DataTrap (Thales)](datatrap/index.md) | multi | SSH / HTTP / MySQL / Redis / Telnet / PostgreSQL | see hub | see hub | [Step-by-step](datatrap/TUTORIAL.md) |
 | [Endlessh (skeeto)](endlessh/index.md) | Low-Interaction | `ssh_tarpit` `:2222` | [46.55 / F](endlessh/quick/) | [54.07 / D](endlessh/full/) | [Step-by-step](endlessh/TUTORIAL.md) |
 | [OpenCanary (thinkst)](opencanary/index.md) | multi | HTTP / FTP / SSH / Telnet / Redis / MySQL / RDP / SIP / SNMP / NTP / TFTP / VNC / Git / SMB | see hub | see hub | [Step-by-step](opencanary/TUTORIAL.md) |
 | [Beelzebub](beelzebub/index.md) | multi | SSH / HTTP / Telnet / Redis / MCP | see hub | see hub | [Step-by-step](beelzebub/TUTORIAL.md) |
+| [HoneyMCP](honeymcp/index.md) | Web-API | MCP `:8080` | [43.04 / F](honeymcp/mcp/quick/) | [42.93 / F](honeymcp/mcp/full/) | [Step-by-step](honeymcp/TUTORIAL.md) |
 | [Trapster Community](trapster/index.md) | multi | SSH / HTTP / FTP / Telnet | see hub | see hub | [Step-by-step](trapster/TUTORIAL.md) |
 | [Dionaea](dionaea/index.md) | multi | FTP / HTTP / SMB | see hub | see hub | [Step-by-step](dionaea/TUTORIAL.md) |
 

@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.2.1",
+  "uhbs_version": "4.2.2",
   "target": {
     "name": "Endlessh (skeeto SSH tarpit)",
     "class": "Low-Interaction",

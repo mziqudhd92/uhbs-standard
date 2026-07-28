@@ -1,0 +1,30 @@
+{
+  "uhbs_version": "4.2.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "9885ec1cf37da67193e31fd7e93ae4233209fd36f080b70d1d9554d0e9cd94b8"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "3b675df457970665d682f21c997f97f4de5ad2c7b9b20f29fc38e1492f0740d7"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "3b675df457970665d682f21c997f97f4de5ad2c7b9b20f29fc38e1492f0740d7"
+    },
+    {
+      "path": "report.json",
+      "sha256": "9a539a003c2026e873276399207c73f10acbe29efda44844ad7f8b3bef610e5f"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "f00885380046937a6dde2d033017aa69614a2d389c846e87824c53dd35aad4d8"
+    }
+  ],
+  "extra": {
+    "target": "datatrap-postgres",
+    "uhqs": 57.94,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

@@ -1,0 +1,38 @@
+# LLMPot — Docker-network inventory (uhbs-lab).
+sites:
+  llmpot-modbus:
+    kind: generic
+    class: ICS-SCADA
+    host: llmpot-modbus
+    protocol: modbus
+    protocols: [modbus]
+    port: 5020
+    ports: {modbus: 5020}
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/llmpot/ics_modbus_full.yaml
+    container_image: llmpot-modbus:uhbs-lab
+  llmpot-http:
+    kind: generic
+    class: Web-API
+    host: llmpot-web_app-1
+    protocol: http
+    protocols: [http]
+    port: 8080
+    ports: {http: 8080}
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/llmpot/web_api_http_full.yaml
+    container_image: llmpot-web_app
+  llmpot-s7comm:
+    kind: generic
+    class: ICS-SCADA
+    host: llmpot-s7
+    protocol: s7comm
+    protocols: [s7comm]
+    port: 102
+    ports: {s7comm: 102}
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/llmpot/ics_s7comm_full.yaml
+    container_image: llmpot-s7:uhbs-lab

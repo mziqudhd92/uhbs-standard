@@ -1,0 +1,30 @@
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: "m0m@l@b202$"
+    volumes:
+      - /Users/mz/UHBS/.local/labs/llmpot-mongo:/data/db
+    networks: [uhbs-lab]
+
+  web_app:
+    build:
+      context: /Users/mz/UHBS/.local/labs/LLMPot
+      dockerfile: emulator/web.Dockerfile
+      args:
+        MONGO_PWD: "m0m@l@b202$"
+    restart: unless-stopped
+    depends_on: [mongo]
+    environment:
+      MONGO_PWD: "m0m@l@b202$"
+      DOCKER_ENV: "True"
+    # Point beanie at compose service name "mongo"
+    ports:
+      - "127.0.0.1:18081:8080"
+    networks: [uhbs-lab]
+
+networks:
+  uhbs-lab:
+    external: true

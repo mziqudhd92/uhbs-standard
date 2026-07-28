@@ -1,0 +1,3 @@
+{"command": "whoami", "response": "root"}
+{"command": "pwd", "response": "/root"}
+{"command": "uname -a", "response": "Linux alpine 5.15.0 #1 SMP x86_64 Linux"}

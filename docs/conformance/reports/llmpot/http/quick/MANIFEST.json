@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.2.1",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "f17c9686f82652ae862e7bb05fac9db6e388b48029a9475e9bf0f535b4d7f8e9"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "f17c9686f82652ae862e7bb05fac9db6e388b48029a9475e9bf0f535b4d7f8e9"
+    },
+    {
+      "path": "report.json",
+      "sha256": "fc7d63571fff65426cb2aa095eb4199af14487abca44a4f10e96cbd4b7160153"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "0cf0ca1e273a6619d28e363b37ac4007683f56c93605580cb601c0529fc302fe"
+    }
+  ],
+  "extra": {
+    "target": "llmpot-http",
+    "uhqs": 45.84,
+    "grade": "GRADE F (Fail)"
+  }
+}

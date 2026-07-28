@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.2.1",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "b2f141f3417714e4555b7454c3c41057d98b415d21d3b090985d7bcdd8d5e132"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "b2f141f3417714e4555b7454c3c41057d98b415d21d3b090985d7bcdd8d5e132"
+    },
+    {
+      "path": "report.json",
+      "sha256": "458a45f20b20841603250a5b4693ee03dcf71ee82f6ed03ea2cc5cc0e6765ad0"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "204b82df3325041de481286f700291eadaad2491c87c48f3923ebe73ac76e804"
+    }
+  ],
+  "extra": {
+    "target": "datatrap-mysql",
+    "uhqs": 50.65,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

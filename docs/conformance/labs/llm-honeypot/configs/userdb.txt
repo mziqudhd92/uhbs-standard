@@ -1,0 +1,5 @@
+# UHBS lab userdb for llm-honeypot (Cowrie)
+root:x:!root
+root:x:!123456
+root:x:*
+*:x:*

@@ -1,0 +1,1 @@
+{"command": "SELECT 1", "response": "[{\"?column?\": 1}]"}

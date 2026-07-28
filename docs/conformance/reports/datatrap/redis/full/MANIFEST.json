@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.2.1",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "428a5fcff92a030102a390b5c4e2228158ce42769f10fa4551d3311920058165"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "428a5fcff92a030102a390b5c4e2228158ce42769f10fa4551d3311920058165"
+    },
+    {
+      "path": "report.json",
+      "sha256": "33109126d3ae69a52489d69cf21958c8e24236b8a8d3f8a6411455d7356a2564"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "576a70d1eeeec9132793ec1dfd398361c555e78b232b70c4793397c25b6e95df"
+    }
+  ],
+  "extra": {
+    "target": "datatrap-redis",
+    "uhqs": 60.85,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

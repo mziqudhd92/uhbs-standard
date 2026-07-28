@@ -1,7 +1,7 @@
 # MCP honeypot grading vs UHBS AI-host MCP
 
 **Status:** Informative  
-**UHBS:** 4.2.1
+**UHBS:** 4.2.2
 
 UHBS has **two** MCP-related surfaces. Do not confuse them:
 
@@ -41,6 +41,8 @@ mcp_transport: streamable_http   # or sse
 mcp_custom_allowlist_tools: [check_weather, get_status]
 ```
 
-Beelzebub’s default decoy tools (`tool:system-log`, `tool:user-account-manager`) are not builtin echo/ping keywords — the lab inventory allowlists them explicitly so Module B can exercise the interactive surface without calling shell/SSRF-shaped tools.
+Beelzebub’s default decoy tools (`tool:system-log`, `tool:user-account-manager`) are not builtin echo/ping keywords — the lab inventory allowlists them explicitly so Module B can exercise the interactive surface without calling shell/SSRF-shaped tools. HoneyMCP aws-admin tools are allowlisted the same way (`get_caller_identity`, `list_secrets`, …); see `docs/conformance/labs/honeymcp/`.
+
+Published proofs: Beelzebub MCP (`docs/conformance/reports/beelzebub/mcp/`) and HoneyMCP (`docs/conformance/reports/honeymcp/mcp/`).
 
 See also [`docs/plugin-authoring.md`](../plugin-authoring.md) and [`docs/tooling/mcp.md`](../tooling/mcp.md).

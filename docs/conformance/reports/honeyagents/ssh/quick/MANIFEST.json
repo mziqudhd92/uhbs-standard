@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.2.1",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "22878ca372e5d9bcc2d1b6257473a1762907bc0e7e2379b35a4185dc51613c92"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "22878ca372e5d9bcc2d1b6257473a1762907bc0e7e2379b35a4185dc51613c92"
+    },
+    {
+      "path": "report.json",
+      "sha256": "205d6fcdb1e64eeb7456796dac0b40585a6ca6b4c69ad33182b4686b241d0d4a"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "dcec5cfceec7385a00fc37dd6262bf187195bacae24178088a2cf17d0b3ac1fe"
+    }
+  ],
+  "extra": {
+    "target": "honeyagents-ssh",
+    "uhqs": 67.94,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}
