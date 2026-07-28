@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.2.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "4f433768f8687f101c2952603d6af02dd91087ca1b5291efb183a3ea6101e0b8"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "f0cf55211fd18c1aaf0a770860b569f6d80b140ef2b8a9f2f6706c028dba8d5a"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "f0cf55211fd18c1aaf0a770860b569f6d80b140ef2b8a9f2f6706c028dba8d5a"
+    },
+    {
+      "path": "report.json",
+      "sha256": "8e99d3908b98a3e8c3eaffd1c97374a131510c1e6dd105890a3b8e9b622562ce"
+    }
+  ],
+  "extra": {
+    "target": "beelzebub-mcp",
+    "uhqs": 42.93,
+    "grade": "GRADE F (Fail)"
+  }
+}

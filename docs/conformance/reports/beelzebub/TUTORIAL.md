@@ -222,7 +222,7 @@ docker run --rm --network uhbs-lab \
     --environment "Full Docker lab: beelzebub-mcp"
 ```
 
-**Published live product scores:** pending — enable MCP on the lab container and re-run. Plugin smoke artifacts may appear under `mcp/quick/` from CI stub exercises.
+**Published live product scores:** quick **43.04 / F** · full **42.93 / F** (UHBS v4.2.1; δ_C 0.56 from Module D C=75).
 
 ## 4. Validate a fixture
 

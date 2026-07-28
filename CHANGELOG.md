@@ -10,6 +10,7 @@ share version **4.2.1** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[
 ### Added
 - OpenSSF Best Practices **passing** badge
   ([project 13853](https://www.bestpractices.dev/projects/13853))
+- Beelzebub **MCP** published lab grades (quick **43.04 / F**, full **42.93 / F**)
 ## [4.2.1] — 2026-07-28
 
 Patch release after the first PyPI upload of `uhbs`.

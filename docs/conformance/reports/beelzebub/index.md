@@ -10,7 +10,7 @@
 | [Redis](redis/) | Low-Interaction · Redis :6379 | [50.56 / D](redis/quick/) | [61.01 / D](redis/full/) |
 | [SSH](ssh/) | Low-Interaction · SSH :2222 | [74.45 / C](ssh/quick/) | [59.88 / D](ssh/full/) |
 | [Telnet](telnet/) | Low-Interaction · Telnet :23 | [39.16 / F](telnet/quick/) | [47.89 / F](telnet/full/) |
-| [MCP](mcp/) | Web-API (MCP v1) · :8000 | pending | pending |
+| [MCP](mcp/) | Web-API (MCP v1) · :8000 | [43.04 / F](mcp/quick/) | [42.93 / F](mcp/full/) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 

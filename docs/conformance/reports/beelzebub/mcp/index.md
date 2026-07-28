@@ -4,10 +4,12 @@
 
 | Run | UHQS | Grade | Notes |
 | --- | --- | --- | --- |
-| Quick | see `quick/` | — | Enable Beelzebub MCP listener (`mcp-8000`) then re-run tutorial |
-| Full | see `full/` | — | Prefer full for claim-grade |
+| [Quick](quick/) | **43.04** | F | δ_C 0.56 · `surface_depth=interactive` |
+| [Full](full/) | **42.93** | F | Prefer full for claim-grade |
 
 MCP grading differs from classic HTTP: JSON-RPC lifecycle, tool allowlists, and `surface_depth`. See [architecture/mcp-honeypot-grading.md](../../../../architecture/mcp-honeypot-grading.md) and [METHODOLOGY.md](../METHODOLOGY.md).
+
+Safety Gate dominated the composite (Module D C=75 → δ_C=0.5625) despite strong Module B (~94).
 
 ## Reproduce
 

@@ -1,5 +1,5 @@
-# Beelzebub MCP — quick
+# Beelzebub MCP — full
 
-Live product UHQS pending. Enable Beelzebub MCP on `:8000` and run the [TUTORIAL](../../TUTORIAL.md#mcp).
+**UHQS 42.93 / F** · UHBS v4.2.1 · `surface_depth=interactive` · δ_C 0.56
 
-In-tree plugin verification: `pytest tests/test_mcp_protocol.py`.
+Artifacts: `SCORECARD.txt`, `report.json`, `MANIFEST.json`. Prefer this run for claim-grade numbers.
