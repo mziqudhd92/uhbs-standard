@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.2.0",
+  "uhbs_version": "4.2.1",
   "target": {
     "name": "Beelzebub (HTTP :8080)",
     "class": "Web-API",

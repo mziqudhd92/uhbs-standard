@@ -3,14 +3,19 @@
 All notable changes to the UHBS specification and tooling are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/). Spec and CLI
-share version **4.2.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`).
+share version **4.2.1** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`).
 
 ## [Unreleased]
+
+## [4.2.1] — 2026-07-28
+
+Patch release after the first PyPI upload of `uhbs`.
 
 ### Changed
 - README quickstart prefers official PyPI installs (`pip install 'uhbs[lab]'` /
   `'uhbs[mcp]'`); adds PyPI version badge; keeps editable install for
   development checkouts
+- Package / schemas / fixtures / docs / Docker tags advertise **4.2.1**
 
 ### Fixed
 - MkDocs `--strict` Deploy Documentation: Beelzebub MCP hub link to
@@ -104,30 +109,15 @@ Published fixtures, reports, Docker tags, and docs now advertise `4.0.1`.
   `docs/conformance/` (live Cowrie full lab later published as **48.70**)
 - Class→weight tables including `Database` and `GenAI-Shell`
 - CLI `--strict` integrity checks (recompute UHQS / δ_C / grade)
-- **`uhbs_core`** reference harness (Modules A–F, protocol plugins, `uhbs-lab`)
-- Per-run `MANIFEST.json` digests; Release workflow + CycloneDX SBOM artifact
-- DCO check + OpenSSF Scorecard workflows
-- ATT&CK / NIST / IEC 62443 mappings; RFC-0001 baseline; `MAINTAINERS.md`;
-  `VERSIONING.md`; scorecard registry rules
+- GitHub Actions CI for schema validation and unit tests
+- Templates for profiles (POSIX, Low-Interaction, ICS-SCADA)
+- Initial RFCs under `docs/rfcs/`
+- Mapping notes (ATT&CK / NIST / IEC 62443) as informative
 
 ### Changed
-- Letter grade band D starts at **50** (aligned with reference harness)
-- UHQS rounding to **two** decimal places (aligned with harness reports)
-- Production gate language demoted to **RECOMMENDED** Production Baseline Profile
-- Vendor-neutrality pass: product names confined to conformance proof fixtures;
-  Module F signals profile renamed to `low_interaction_ssh_signals.yaml`
+- Spec and package version aligned at **4.0.0**
+- UHQS formula and Safety Gate documented as normative in
+  `docs/specification/scoring-formula.md`
 
-### Changed (honesty / posture)
-- Docs state clearly that UHBS is a **personal beta framework**, not a
-  multi-party standards body; committee, neutral org, and adopters moved to
-  ROADMAP Phase 6 as aspirational (unchecked) goals
-- Unified UHQS math into `uhbs_core.uhqs_math` (CLI + harness); missing scores
-  raise instead of silent 0.0; Actions pinned by SHA; CI uses `constraints.txt`;
-  PEP 639 license metadata; expanded integrity/CLI tests
-- SEO / AEO / GEO discovery: site `llms.txt`, `llms-full.txt`, `robots.txt`,
-  `humans.txt`, `.well-known/security.txt`, JSON-LD; repo `llms.txt` + `AGENTS.md`
-
-### Pending (manual / ops / community — see ROADMAP Phase 6)
-- PyPI Trusted Publishing + Sigstore signing (blocks MCP Registry `uvx` path)
-- Neutral GitHub organization transfer
-- Multi-organization maintainers and independent adopters
+### Fixed
+- N/A (initial public baseline cut)

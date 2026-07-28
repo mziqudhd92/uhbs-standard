@@ -1,7 +1,7 @@
 # Methodology: Beelzebub multi-protocol UHBS lab
 
 **Status:** Informative  
-**UHBS:** 4.2.0 · Images `uhbs:4.2.0` (quick) / `uhbs:4.2.0-full` (full)  
+**UHBS:** 4.2.1 · Images `uhbs:4.2.1` (quick) / `uhbs:4.2.1-full` (full)  
 **Upstream commit:** `80e1428d023d564481acede9e63eb49e1631bfec`
 
 ## What was graded

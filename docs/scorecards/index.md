@@ -53,11 +53,11 @@ Each page links to the matching report hub (`quick/` + `full/` scorecards, `repo
 After an official evaluation, maintainers can embed:
 
 ```markdown
-![UHBS v4.2.0 Grade A](https://img.shields.io/badge/UHBS%20v4.2.0-Grade%20A-brightgreen)
-![UHBS v4.2.0 Grade B](https://img.shields.io/badge/UHBS%20v4.2.0-Grade%20B-yellowgreen)
-![UHBS v4.2.0 Grade C](https://img.shields.io/badge/UHBS%20v4.2.0-Grade%20C-yellow)
-![UHBS v4.2.0 Grade D](https://img.shields.io/badge/UHBS%20v4.2.0-Grade%20D-orange)
-![UHBS v4.2.0 Grade F](https://img.shields.io/badge/UHBS%20v4.2.0-Grade%20F-red)
+![UHBS v4.2.1 Grade A](https://img.shields.io/badge/UHBS%20v4.2.1-Grade%20A-brightgreen)
+![UHBS v4.2.1 Grade B](https://img.shields.io/badge/UHBS%20v4.2.1-Grade%20B-yellowgreen)
+![UHBS v4.2.1 Grade C](https://img.shields.io/badge/UHBS%20v4.2.1-Grade%20C-yellow)
+![UHBS v4.2.1 Grade D](https://img.shields.io/badge/UHBS%20v4.2.1-Grade%20D-orange)
+![UHBS v4.2.1 Grade F](https://img.shields.io/badge/UHBS%20v4.2.1-Grade%20F-red)
 ```
 
 ## Submitting a Scorecard

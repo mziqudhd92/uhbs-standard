@@ -80,7 +80,7 @@ signing” path for PyPI wheels, not a separate cosign step (optional extra).
    - `permissions: { id-token: write, contents: read }`
    - downloads the `python-dist` artifact
    - runs `pypa/gh-action-pypi-publish` **pinned to a commit SHA** (no password)
-6. Tag a release (`v4.2.0`), verify the PyPI project page shows the files **and**
+6. Tag a release (`v4.2.1`), verify the PyPI project page shows the files **and**
    provenance attestations.
 7. Document install as `pip install uhbs` / `pip install 'uhbs[lab]'` and update
    MCP `uvx` docs once the package exists.

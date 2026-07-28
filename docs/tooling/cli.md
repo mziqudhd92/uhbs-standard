@@ -49,16 +49,16 @@ Full guide: [MCP server](mcp.md) · registry metadata: repo-root `server.json`.
 Build once from the repository root:
 
 ```bash
-docker build -t uhbs:4.2.0 .
+docker build -t uhbs:4.2.1 .
 ```
 
 The image entrypoint is `uhbs`. Mount your project at `/work`:
 
 ```bash
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.2.0 --help
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.2.0 \
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.2.1 --help
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.2.1 \
   validate-scorecard ./docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.2.0 lab --list-protocols
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.2.1 lab --list-protocols
 ```
 
 For live Modules A–E probes, point `--target` at a host reachable from the

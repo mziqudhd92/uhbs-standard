@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.2.0",
+  "uhbs_version": "4.2.1",
   "target": {
     "name": "conpot (mushorg ICS/SCADA honeypot, Modbus)",
     "class": "ICS-SCADA",

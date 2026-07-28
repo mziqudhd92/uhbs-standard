@@ -1,4 +1,4 @@
-"""Normative UHQS 4.2.0 math — single source of truth for CLI and UHBS-Lab.
+"""Normative UHQS 4.2.1 math — single source of truth for CLI and UHBS-Lab.
 
 UHQS = δ_C · (w_A·S_A + w_B·S_B + w_C·S_C + w_E·S_E + w_F·S_F)
 δ_C  = 1.0 if C ≥ 95 else (C/100)²

@@ -1,4 +1,4 @@
-"""UHBS v4.2.0 — Universal Honeypot Benchmarking Standard shared types."""
+"""UHBS v4.2.1 — Universal Honeypot Benchmarking Standard shared types."""
 
 from __future__ import annotations
 
@@ -217,7 +217,7 @@ class UHQSResult:
     profile_class: str
     grade: str
     phase: str = "combined"
-    version: str = "4.2.0"
+    version: str = "4.2.1"
     containment_measured: bool = True
 
     # Compat with older report code expecting .hqs / .S/.R/...
@@ -286,7 +286,7 @@ def compute_uhqs(
         profile_class=profile_class,
         grade=grade_for(result.uhqs),
         phase=phase,
-        version="4.2.0",
+        version="4.2.1",
         containment_measured=containment_measured,
     )
 
