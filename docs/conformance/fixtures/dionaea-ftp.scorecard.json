@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.0.1",
+  "uhbs_version": "4.2.0",
   "target": {
     "name": "Dionaea (FTP :21)",
     "class": "Low-Interaction",

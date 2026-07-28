@@ -14,6 +14,8 @@ UHBS remains a **personal open-source beta** framework — not a consortium
 standard. MCP is optional tooling for agents; the CLI and Docker lab stay the
 primary human workflows ([CLI guide](cli.md)).
 
+To **grade MCP honeypots** (live JSON-RPC probes), use `uhbs[lab]` / `uhbs-lab --protocol mcp` — see [MCP honeypot grading](../architecture/mcp-honeypot-grading.md). This AI-host server does **not** run lab probes.
+
 ---
 
 ## What is included (and what is not)
@@ -119,7 +121,7 @@ Until PyPI publish, prefer the editable git install above.
 
 ### Docker grading image
 
-The published `uhbs:4.0.1` / `uhbs:4.0.1-full` images install `uhbs[lab]` only
+The published `uhbs:4.2.0` / `uhbs:4.2.0-full` images install `uhbs[lab]` only
 (CLI + harness). They do **not** ship `uhbs-mcp`. Run the MCP server on the host
 (or a dedicated venv) next to your AI client.
 

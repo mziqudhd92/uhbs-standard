@@ -1,7 +1,7 @@
 # UHBS Maturity Roadmap
 
 > **Lock document.** Execution must follow this roadmap. Do not invent parallel plans.
-> Spec version: **4.0.1** · Status: **Beta / Experimental** · Last updated: 2026-07-26
+> Spec version: **4.2.0** · Status: **Beta / Experimental** · Last updated: 2026-07-28
 >
 > **What this is today:** a **personal open-source project** publishing a beta,
 > vendor-neutral **evaluation framework** (spec + schemas + harness + fixtures).
@@ -24,7 +24,7 @@ A mature UHBS would have all five pillars:
 
 | # | Pillar | Current state |
 | --- | --- | --- |
-| 1 | Normative spec (RFC 2119, document status) | Done for v4.0.1 Beta |
+| 1 | Normative spec (RFC 2119, document status) | Done for v4.2.0 Beta |
 | 2 | Machine-readable contracts (profile, scorecard, evidence) | Done |
 | 3 | Reference implementation (runnable harness) | Done — `uhbs_core` / `uhbs[lab]` |
 | 4 | Conformance suite (golden inputs → expected UHQS) | Done — public fixtures |
@@ -42,7 +42,7 @@ lab inventory and product-specific signal overlays stay out of tree.
 
 | Component | Role |
 | --- | --- |
-| `run_benchmark.py` | UHBS v4.0.1 orchestrator (phases 1–5) |
+| `run_benchmark.py` | UHBS v4.2.0 orchestrator (phases 1–5) |
 | `test_stealth.py` | Module A — Protocol & Syntax Fidelity |
 | `test_realism.py` | Module B — Behavioral & Stateful Realism |
 | `test_telemetry.py` | Module C — Telemetry Quality |
@@ -51,7 +51,7 @@ lab inventory and product-specific signal overlays stay out of tree.
 | `test_static_code.py` | Module F — White-Box Static Audit |
 | `models.py` | UHQS formula + profile weights + δ_C |
 | `report.py` | Scorecard layout |
-| `protocols/` | Protocol plugins (ssh, http, ftp, redis, modbus, smb, smtp, telnet, mysql, rdp, sip, snmp, ntp, tftp, vnc, git, generic) |
+| `protocols/` | Protocol plugins (ssh, http, mcp, ftp, redis, modbus, smb, smtp, telnet, mysql, rdp, sip, snmp, ntp, tftp, vnc, git, generic) |
 | `tps.py`, `profiles/tps/*.yaml` | Target Profile Specification |
 | `manifest.py` | Per-run SHA-256 attestation digests |
 
@@ -132,7 +132,7 @@ tables only. Do not publish proprietary lab signal overlays or private host path
 
 - [x] Extract vendor-neutral core (protocols, models, modules)
 - [x] Leave proprietary signals / lab inventory private
-- [x] Package as installable `uhbs[lab]` / `uhbs-lab`, version == spec `4.0.1`
+- [x] Package as installable `uhbs[lab]` / `uhbs-lab`, version == spec `4.2.0`
 - [x] Wire public docs to class-/protocol-based quickstart
 
 ### Phase 4 — Integrity (OpenSSF / SLSA)

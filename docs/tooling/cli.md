@@ -25,7 +25,11 @@ uhbs --help
 pip install -e ".[lab]"
 uhbs lab --list-protocols
 uhbs-lab --help
+# Grade an MCP honeypot (HTTP/SSE JSON-RPC):
+# uhbs-lab --inventory … --protocol mcp --tps …/mcp_server.yaml --out ./reports/mcp
 ```
+
+MCP honeypot grading is part of `uhbs[lab]` (protocol plugin `mcp`). The separate `uhbs[mcp]` / `uhbs-mcp` entry point is only for AI-host scorecard tools — see [MCP honeypot grading](../architecture/mcp-honeypot-grading.md).
 
 ### MCP server (AI hosts)
 
@@ -45,16 +49,16 @@ Full guide: [MCP server](mcp.md) · registry metadata: repo-root `server.json`.
 Build once from the repository root:
 
 ```bash
-docker build -t uhbs:4.0.1 .
+docker build -t uhbs:4.2.0 .
 ```
 
 The image entrypoint is `uhbs`. Mount your project at `/work`:
 
 ```bash
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.0.1 --help
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.0.1 \
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.2.0 --help
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.2.0 \
   validate-scorecard ./docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.0.1 lab --list-protocols
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.2.0 lab --list-protocols
 ```
 
 For live Modules A–E probes, point `--target` at a host reachable from the

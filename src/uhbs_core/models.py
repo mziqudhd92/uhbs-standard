@@ -1,4 +1,4 @@
-"""UHBS v4.0.1 — Universal Honeypot Benchmarking Standard shared types."""
+"""UHBS v4.2.0 — Universal Honeypot Benchmarking Standard shared types."""
 
 from __future__ import annotations
 
@@ -127,6 +127,8 @@ class TargetSpec:
     protocols: list[str] = field(default_factory=list)  # multi-protocol
     profile_class: str = "POSIX-Shell"
     ports_map: dict[str, int] = field(default_factory=dict)
+    # Lab inventory annotations (mcp_path, mcp_transport, mcp_custom_allowlist_tools, …)
+    annotations: dict[str, Any] = field(default_factory=dict)
 
     @property
     def label(self) -> str:
@@ -215,7 +217,7 @@ class UHQSResult:
     profile_class: str
     grade: str
     phase: str = "combined"
-    version: str = "4.0.1"
+    version: str = "4.2.0"
     containment_measured: bool = True
 
     # Compat with older report code expecting .hqs / .S/.R/...
@@ -284,7 +286,7 @@ def compute_uhqs(
         profile_class=profile_class,
         grade=grade_for(result.uhqs),
         phase=phase,
-        version="4.0.1",
+        version="4.2.0",
         containment_measured=containment_measured,
     )
 

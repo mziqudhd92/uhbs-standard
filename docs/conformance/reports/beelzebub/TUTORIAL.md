@@ -2,15 +2,15 @@
 
 **Status:** Informative · evaluation proof  
 **Target:** [https://github.com/beelzebub-labs/beelzebub](https://github.com/beelzebub-labs/beelzebub) · commit `80e1428d023d564481acede9e63eb49e1631bfec`  
-**Protocols graded:** HTTP, Redis, SSH, Telnet
+**Protocols graded:** HTTP, Redis, SSH, Telnet, **MCP**
 
 ## 0. Prerequisites
 
 ```bash
 git clone https://github.com/mziqudhd92/uhbs-standard.git
 cd uhbs-standard
-docker build -t uhbs:4.0.1 .
-docker build -f Dockerfile.full -t uhbs:4.0.1-full .
+docker build -t uhbs:4.2.0 .
+docker build -f Dockerfile.full -t uhbs:4.2.0-full .
 docker network create uhbs-lab 2>/dev/null || true
 ```
 
@@ -45,7 +45,7 @@ mkdir -p docs/conformance/reports/beelzebub/http/{quick,full}
 docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/beelzebub:/honeypot:ro" -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.1 lab \
+  uhbs:4.2.0 lab \
     --inventory /work/docs/conformance/labs/beelzebub/inventory.yaml \
     --target beelzebub-http \
     --tps /work/docs/conformance/labs/beelzebub/web_api_http_quick.yaml \
@@ -60,7 +60,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/beelzebub-telemetry:/telemetry:ro" -w /work \
   -e PYTHONUNBUFFERED=1 -e UHBS_AIRGAP_ATTESTED=1 \
   -e UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log \
-  uhbs:4.0.1-full lab \
+  uhbs:4.2.0-full lab \
     --inventory /work/docs/conformance/labs/beelzebub/inventory.yaml \
     --target beelzebub-http \
     --tps /work/docs/conformance/labs/beelzebub/web_api_http_full.yaml \
@@ -83,7 +83,7 @@ mkdir -p docs/conformance/reports/beelzebub/redis/{quick,full}
 docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/beelzebub:/honeypot:ro" -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.1 lab \
+  uhbs:4.2.0 lab \
     --inventory /work/docs/conformance/labs/beelzebub/inventory.yaml \
     --target beelzebub-redis \
     --tps /work/docs/conformance/labs/beelzebub/low_interaction_redis_quick.yaml \
@@ -98,7 +98,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/beelzebub-telemetry:/telemetry:ro" -w /work \
   -e PYTHONUNBUFFERED=1 -e UHBS_AIRGAP_ATTESTED=1 \
   -e UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log \
-  uhbs:4.0.1-full lab \
+  uhbs:4.2.0-full lab \
     --inventory /work/docs/conformance/labs/beelzebub/inventory.yaml \
     --target beelzebub-redis \
     --tps /work/docs/conformance/labs/beelzebub/low_interaction_redis_full.yaml \
@@ -121,7 +121,7 @@ mkdir -p docs/conformance/reports/beelzebub/ssh/{quick,full}
 docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/beelzebub:/honeypot:ro" -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.1 lab \
+  uhbs:4.2.0 lab \
     --inventory /work/docs/conformance/labs/beelzebub/inventory.yaml \
     --target beelzebub-ssh \
     --tps /work/docs/conformance/labs/beelzebub/low_interaction_ssh_quick.yaml \
@@ -136,7 +136,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/beelzebub-telemetry:/telemetry:ro" -w /work \
   -e PYTHONUNBUFFERED=1 -e UHBS_AIRGAP_ATTESTED=1 \
   -e UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log \
-  uhbs:4.0.1-full lab \
+  uhbs:4.2.0-full lab \
     --inventory /work/docs/conformance/labs/beelzebub/inventory.yaml \
     --target beelzebub-ssh \
     --tps /work/docs/conformance/labs/beelzebub/low_interaction_ssh_full.yaml \
@@ -159,7 +159,7 @@ mkdir -p docs/conformance/reports/beelzebub/telnet/{quick,full}
 docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/beelzebub:/honeypot:ro" -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:4.0.1 lab \
+  uhbs:4.2.0 lab \
     --inventory /work/docs/conformance/labs/beelzebub/inventory.yaml \
     --target beelzebub-telnet \
     --tps /work/docs/conformance/labs/beelzebub/low_interaction_telnet_quick.yaml \
@@ -174,7 +174,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/beelzebub-telemetry:/telemetry:ro" -w /work \
   -e PYTHONUNBUFFERED=1 -e UHBS_AIRGAP_ATTESTED=1 \
   -e UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log \
-  uhbs:4.0.1-full lab \
+  uhbs:4.2.0-full lab \
     --inventory /work/docs/conformance/labs/beelzebub/inventory.yaml \
     --target beelzebub-telnet \
     --tps /work/docs/conformance/labs/beelzebub/low_interaction_telnet_full.yaml \
@@ -186,6 +186,43 @@ docker run --rm --network uhbs-lab \
 
 **Published:** quick **39.16 / F** · full **47.89 / F**
 
+### MCP `:8000` {#mcp}
+
+Target id: `beelzebub-mcp` · class **Web-API (MCP v1)** · see [architecture/mcp-honeypot-grading.md](../../../architecture/mcp-honeypot-grading.md).
+
+The lab overlay [`mcp-8000.yaml`](../../labs/beelzebub/configurations/services/mcp-8000.yaml) is the upstream Beelzebub MCP decoy (tools `tool:system-log` / `tool:user-account-manager`). Inventory sets `mcp_custom_allowlist_tools` so Module B can probe those decoys safely. Mount `configurations/` as in §2 so the container listens on **8000**.
+
+```bash
+mkdir -p docs/conformance/reports/beelzebub/mcp/{quick,full}
+
+docker run --rm --network uhbs-lab \
+  -v "$PWD:/work" -v "$PWD/.local/labs/beelzebub:/honeypot:ro" -w /work \
+  -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
+  uhbs:4.2.0 lab \
+    --inventory /work/docs/conformance/labs/beelzebub/inventory.yaml \
+    --target beelzebub-mcp \
+    --tps /work/docs/conformance/labs/beelzebub/web_api_mcp_quick.yaml \
+    --phases profile,static,sandbox,dynamic,score --modules A,B,C,D,E,F \
+    --quick --skip-sast-tools --concurrency 10 --requests 50 \
+    --out /work/docs/conformance/reports/beelzebub/mcp/quick \
+    --environment "Quick Docker lab: beelzebub-mcp"
+
+docker run --rm --network uhbs-lab \
+  -v "$PWD:/work" -v "$PWD/.local/labs/beelzebub:/honeypot:ro" \
+  -v "$PWD/.local/labs/beelzebub-telemetry:/telemetry:ro" -w /work \
+  -e PYTHONUNBUFFERED=1 -e UHBS_AIRGAP_ATTESTED=1 \
+  -e UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log \
+  uhbs:4.2.0-full lab \
+    --inventory /work/docs/conformance/labs/beelzebub/inventory.yaml \
+    --target beelzebub-mcp \
+    --tps /work/docs/conformance/labs/beelzebub/web_api_mcp_full.yaml \
+    --phases profile,static,sandbox,dynamic,score --modules A,B,C,D,E,F \
+    --concurrency 25 --requests 200 \
+    --out /work/docs/conformance/reports/beelzebub/mcp/full \
+    --environment "Full Docker lab: beelzebub-mcp"
+```
+
+**Published live product scores:** pending — enable MCP on the lab container and re-run. Plugin smoke artifacts may appear under `mcp/quick/` from CI stub exercises.
 
 ## 4. Validate a fixture
 

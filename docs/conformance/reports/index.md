@@ -3,7 +3,7 @@
 **Status:** Informative  
 **Purpose:** Published, reproducible UHBS-Lab outputs for named honeypots / decoys so the community can **audit**, **replicate**, and **compare** grades — not so UHBS can endorse products.
 
-> UHBS is a personal open-source **beta** evaluation framework (v4.0.1).  
+> UHBS is a personal open-source **beta** evaluation framework (v4.2.0).  
 > Named products appear **only** under `docs/conformance/` as evaluation proof.  
 > A grade is not a certification, badge program, or consortium verdict.
 
@@ -25,7 +25,7 @@
 | [Cowrie](cowrie/index.md) | Low-Interaction | SSH `:2222` + Telnet `:2223` (SFTP via SSH) | see hub | see hub | [Step-by-step](cowrie/TUTORIAL.md) |
 | [Endlessh (skeeto)](endlessh/index.md) | Low-Interaction | `ssh_tarpit` `:2222` | [46.55 / F](endlessh/quick/) | [54.07 / D](endlessh/full/) | [Step-by-step](endlessh/TUTORIAL.md) |
 | [OpenCanary (thinkst)](opencanary/index.md) | multi | HTTP / FTP / SSH / Telnet / Redis / MySQL / RDP / SIP / SNMP / NTP / TFTP / VNC / Git / SMB | see hub | see hub | [Step-by-step](opencanary/TUTORIAL.md) |
-| [Beelzebub](beelzebub/index.md) | multi | SSH / HTTP / Telnet / Redis | see hub | see hub | [Step-by-step](beelzebub/TUTORIAL.md) |
+| [Beelzebub](beelzebub/index.md) | multi | SSH / HTTP / Telnet / Redis / MCP | see hub | see hub | [Step-by-step](beelzebub/TUTORIAL.md) |
 | [Trapster Community](trapster/index.md) | multi | SSH / HTTP / FTP / Telnet | see hub | see hub | [Step-by-step](trapster/TUTORIAL.md) |
 | [Dionaea](dionaea/index.md) | multi | FTP / HTTP / SMB | see hub | see hub | [Step-by-step](dionaea/TUTORIAL.md) |
 

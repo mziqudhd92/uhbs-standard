@@ -62,7 +62,7 @@ const Hero = () => {
         
         <motion.h1 variants={fadeUpVariant} className="text-5xl md:text-7xl font-bold leading-tight mb-6 max-w-4xl text-foreground font-sans tracking-tight">
           Universal Honeypot Benchmarking Standard <br className="hidden md:block"/>
-          <span className="text-muted-foreground font-mono text-4xl md:text-6xl tracking-tighter">(UHBS) v4.0.1 <span className="text-primary/70">· 2026</span></span>
+          <span className="text-muted-foreground font-mono text-4xl md:text-6xl tracking-tighter">(UHBS) v4.2.0 <span className="text-primary/70">· 2026</span></span>
         </motion.h1>
         
         <motion.p variants={fadeUpVariant} className="text-xl md:text-2xl text-secondary-foreground max-w-3xl mb-8 font-light leading-relaxed">
@@ -121,7 +121,7 @@ const ScopeAndApplicability = () => {
             </h2>
             <div className="prose prose-invert prose-lg text-secondary-foreground font-light leading-relaxed">
               <p>
-                The UHBS v4.0.1 framework provides a rigorous technical foundation for evaluating the efficacy, safety, and realism of deception assets prior to deployment.
+                The UHBS v4.2.0 framework provides a rigorous technical foundation for evaluating the efficacy, safety, and realism of deception assets prior to deployment.
               </p>
               <p className="mt-4">
                 Historically, deception technology has been evaluated subjectively. UHBS introduces a verifiable, deterministic mathematical model designed to expose flaws in protocol state machines, containment boundaries, and behavioral realism.
@@ -134,7 +134,7 @@ const ScopeAndApplicability = () => {
                 <div>
                   <h4 className="text-primary font-semibold font-mono mb-2 uppercase tracking-wide text-sm">Vendor-Neutral Beta Baseline</h4>
                   <p className="text-secondary-foreground text-sm">
-                    UHBS v4.0.1 is a personal open-source beta for comparing and grading honeypots by class and protocol — mathematically reproducible, not a consortium or adopted industry standard.
+                    UHBS v4.2.0 is a personal open-source beta for comparing and grading honeypots by class and protocol — mathematically reproducible, not a consortium or adopted industry standard.
                   </p>
                 </div>
               </div>
@@ -372,7 +372,7 @@ const FiveDimensionComparison = () => {
       module: "Module F",
       moduleName: "White-Box Static Code Audit",
       color: "text-success",
-      expansion: "New in UHBS v4.0.1: Scans repository code, container build manifests, and system prompts for SAST flaws, default keys, and unhandled command stubs.",
+      expansion: "New in UHBS v4.2.0: Scans repository code, container build manifests, and system prompts for SAST flaws, default keys, and unhandled command stubs.",
       isNew: true,
     },
   ];
@@ -382,25 +382,25 @@ const FiveDimensionComparison = () => {
       num: "01",
       title: "Dual-Plane Audit vs. Runtime-Only",
       left: { label: "5-Dimension Framework", text: "Functions purely as an operational runtime framework, observing honeypot behavior during active exposure." },
-      right: { label: "UHBS v4.0.1", text: "Employs a Dual-Plane Audit Philosophy — requires pre-deployment static code analysis (Module F) to catch hardcoded SSH keys, static seeds, or vulnerable command wrappers before dynamic sandbox probing begins." },
+      right: { label: "UHBS v4.2.0", text: "Employs a Dual-Plane Audit Philosophy — requires pre-deployment static code analysis (Module F) to catch hardcoded SSH keys, static seeds, or vulnerable command wrappers before dynamic sandbox probing begins." },
     },
     {
       num: "02",
       title: "Non-Linear Safety Gate vs. Linear Averaging",
       left: { label: "5-Dimension Framework", text: "Aggregates metrics using simple linear weighted averages. A high interaction score can mask a serious containment flaw, allowing dangerous decoys to pass evaluation." },
-      right: { label: "UHBS v4.0.1", text: "Implements a strict Safety Gate Multiplier (δ_C). If Module D containment drops below 95/100, an exponential penalty degrades the entire UHQS score regardless of performance elsewhere." },
+      right: { label: "UHBS v4.2.0", text: "Implements a strict Safety Gate Multiplier (δ_C). If Module D containment drops below 95/100, an exponential penalty degrades the entire UHQS score regardless of performance elsewhere." },
     },
     {
       num: "03",
       title: "Profile-Adaptive Context (TPS) vs. Static Metrics",
       left: { label: "5-Dimension Framework", text: "Applies identical static metric weights across all honeypot classes — a SCADA PLC and an SSH shell are evaluated with the same emphasis." },
-      right: { label: "UHBS v4.0.1", text: "Target Profile Specification (profile.yaml) adjusts evaluation weights. ICS-SCADA weights protocol fidelity at w_A = 0.35, while POSIX shells emphasize state behavior at w_B = 0.25." },
+      right: { label: "UHBS v4.2.0", text: "Target Profile Specification (profile.yaml) adjusts evaluation weights. ICS-SCADA weights protocol fidelity at w_A = 0.35, while POSIX shells emphasize state behavior at w_B = 0.25." },
     },
     {
       num: "04",
       title: "GenAI & Cloud Coverage vs. Traditional IT Only",
       left: { label: "5-Dimension Framework", text: "Designed around traditional IT OS and network service emulators — SSH servers, HTTP endpoints, and network stacks." },
-      right: { label: "UHBS v4.0.1", text: "Explicitly tests next-generation decoys: indirect prompt injections, system prompt leaks, context exhaustion attacks, and cloud API boundary breaches across public-cloud control planes and container orchestration surfaces." },
+      right: { label: "UHBS v4.2.0", text: "Explicitly tests next-generation decoys: indirect prompt injections, system prompt leaks, context exhaustion attacks, and cloud API boundary breaches across public-cloud control planes and container orchestration surfaces." },
     },
   ];
 
@@ -420,10 +420,10 @@ const FiveDimensionComparison = () => {
         <motion.div variants={fadeUpVariant} className="mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-sans mb-4 flex items-center gap-3">
             <GitCommit className="text-primary w-8 h-8" />
-            UHBS v4.0.1 vs. 5-Dimension Framework
+            UHBS v4.2.0 vs. 5-Dimension Framework
           </h2>
           <p className="text-secondary-foreground max-w-3xl">
-            The standard 5-Dimension Framework evaluates honeypots across Interaction, Data Quality, Resource Efficiency, Stealth, and Fingerprinting Resistance. UHBS v4.0.1 absorbs all five dimensions and restructures them into a production-grade standard with pre-deployment auditing, non-linear safety gates, and coverage for modern decoy architectures.
+            The standard 5-Dimension Framework evaluates honeypots across Interaction, Data Quality, Resource Efficiency, Stealth, and Fingerprinting Resistance. UHBS v4.2.0 absorbs all five dimensions and restructures them into a production-grade standard with pre-deployment auditing, non-linear safety gates, and coverage for modern decoy architectures.
           </p>
         </motion.div>
 
@@ -434,8 +434,8 @@ const FiveDimensionComparison = () => {
             <thead>
               <tr className="border-b border-border text-muted-foreground">
                 <th className="py-3 pr-6 font-normal w-1/4">5-Dimension Metric</th>
-                <th className="py-3 pr-6 font-normal w-1/5">UHBS v4.0.1 Module</th>
-                <th className="py-3 font-normal">Key Expansion in UHBS v4.0.1</th>
+                <th className="py-3 pr-6 font-normal w-1/5">UHBS v4.2.0 Module</th>
+                <th className="py-3 font-normal">Key Expansion in UHBS v4.2.0</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border/30">
@@ -481,7 +481,7 @@ const FiveDimensionComparison = () => {
                     </div>
                     <p className="text-sm text-secondary-foreground leading-relaxed">{diff.left.text}</p>
                   </div>
-                  {/* Right: UHBS v4.0.1 */}
+                  {/* Right: UHBS v4.2.0 */}
                   <div className="p-6 bg-[#0f1629]/50">
                     <div className="flex items-center gap-2 mb-3">
                       <CheckCircle className="w-4 h-4 text-primary shrink-0" />
@@ -501,7 +501,7 @@ const FiveDimensionComparison = () => {
           <div>
             <h4 className="font-semibold text-primary font-mono text-sm uppercase tracking-wide mb-2">Bottom Line for Security Leadership</h4>
             <p className="text-sm text-secondary-foreground leading-relaxed">
-              The 5-Dimension Framework provides a useful conceptual lens for categorizing honeypot quality. UHBS v4.0.1 operationalizes every dimension into a mathematically rigorous, machine-verifiable standard — adding a pre-deployment code audit plane (Module F), a non-linear safety gate that makes containment failures non-maskable, and explicit support for GenAI and OT/ICS decoy classes that the 5-Dimension model was never designed to assess.
+              The 5-Dimension Framework provides a useful conceptual lens for categorizing honeypot quality. UHBS v4.2.0 operationalizes every dimension into a mathematically rigorous, machine-verifiable standard — adding a pre-deployment code audit plane (Module F), a non-linear safety gate that makes containment failures non-maskable, and explicit support for GenAI and OT/ICS decoy classes that the 5-Dimension model was never designed to assess.
             </p>
           </div>
         </motion.div>
@@ -532,7 +532,7 @@ const ScoringMethodology = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <motion.div variants={fadeUpVariant} className="lg:col-span-7 bg-card border border-border p-4 md:p-6">
             <div className="flex flex-wrap items-center justify-between gap-3 mb-4 px-2">
-              <h3 className="font-mono text-primary text-sm uppercase tracking-wider">The UHQS 4.0.1 Formula</h3>
+              <h3 className="font-mono text-primary text-sm uppercase tracking-wider">The UHQS 4.2.0 Formula</h3>
               <UhqsHumanExplainerTrigger />
             </div>
             <div className="uhqs-katex uhqs-katex-display space-y-4">
@@ -728,8 +728,8 @@ type LabResult = {
   protocol: string;
   protocolLabel: string;
   repo: string;
-  uhqsQuick: number;
-  uhqsFull: number;
+  uhqsQuick: number | null;
+  uhqsFull: number | null;
   gradeQuick: string;
   gradeFull: string;
   hub: string;
@@ -753,6 +753,7 @@ const PROTOCOL_FILTERS = [
   { id: "smb", label: "SMB" },
   { id: "pjl", label: "PJL" },
   { id: "modbus", label: "Modbus" },
+  { id: "mcp", label: "MCP" },
 ] as const;
 
 const LAB_RESULTS: LabResult[] = [
@@ -1213,6 +1214,25 @@ const LAB_RESULTS: LabResult[] = [
     fullCard: "mkdocs/conformance/reports/beelzebub/telnet/full/SCORECARD.txt",
   },
   {
+    name: "Beelzebub (MCP)",
+    classLabel: "Web-API (MCP v1) · :8000",
+    protocol: "mcp",
+    protocolLabel: "MCP",
+    repo: "https://github.com/beelzebub-labs/beelzebub",
+    uhqsQuick: null,
+    uhqsFull: null,
+    gradeQuick: "—",
+    gradeFull: "—",
+    hub: "mkdocs/conformance/reports/beelzebub/mcp/",
+    tutorial: "mkdocs/conformance/reports/beelzebub/TUTORIAL/",
+    methodology: "mkdocs/conformance/reports/beelzebub/METHODOLOGY/",
+    scorecard: "mkdocs/conformance/reports/beelzebub/mcp/",
+    quick: "mkdocs/conformance/reports/beelzebub/mcp/quick/",
+    full: "mkdocs/conformance/reports/beelzebub/mcp/full/",
+    quickCard: "mkdocs/conformance/reports/beelzebub/mcp/quick/",
+    fullCard: "mkdocs/conformance/reports/beelzebub/mcp/full/",
+  },
+  {
     name: "Trapster Community (FTP)",
     classLabel: "Low-Interaction · FTP :2121",
     protocol: "ftp",
@@ -1532,12 +1552,12 @@ const Results = () => {
                     <div className="grid grid-cols-2 gap-3 mb-6 font-mono text-sm">
                       <div className="border border-border/60 p-3">
                         <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">Quick</div>
-                        <div className="text-primary font-bold text-lg">{lab.uhqsQuick.toFixed(2)}</div>
+                        <div className="text-primary font-bold text-lg">{lab.uhqsQuick == null ? "—" : lab.uhqsQuick.toFixed(2)}</div>
                         <div className="text-xs text-secondary-foreground">Grade {lab.gradeQuick}</div>
                       </div>
                       <div className="border border-primary/30 bg-primary/5 p-3">
                         <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">Full</div>
-                        <div className="text-primary font-bold text-lg">{lab.uhqsFull.toFixed(2)}</div>
+                        <div className="text-primary font-bold text-lg">{lab.uhqsFull == null ? "—" : lab.uhqsFull.toFixed(2)}</div>
                         <div className="text-xs text-secondary-foreground">Grade {lab.gradeFull}</div>
                       </div>
                     </div>
@@ -1656,10 +1676,10 @@ const Results = () => {
                       <a href={lab.tutorial} className="text-primary hover:underline">Open</a>
                     </td>
                     <td className="py-3 px-4">
-                      <a href={lab.quickCard} className="text-secondary-foreground hover:text-primary">{lab.uhqsQuick.toFixed(2)} / {lab.gradeQuick}</a>
+                      <a href={lab.quickCard} className="text-secondary-foreground hover:text-primary">{lab.uhqsQuick == null ? "—" : `${lab.uhqsQuick.toFixed(2)} / ${lab.gradeQuick}`}</a>
                     </td>
                     <td className="py-3 px-4">
-                      <a href={lab.fullCard} className="text-secondary-foreground hover:text-primary">{lab.uhqsFull.toFixed(2)} / {lab.gradeFull}</a>
+                      <a href={lab.fullCard} className="text-secondary-foreground hover:text-primary">{lab.uhqsFull == null ? "—" : `${lab.uhqsFull.toFixed(2)} / ${lab.gradeFull}`}</a>
                     </td>
                     <td className="py-3 px-4">
                       <a href={lab.scorecard} className="text-primary hover:underline">Page</a>
@@ -1760,7 +1780,7 @@ const Footer = () => {
           <Shield className="w-6 h-6" />
         </div>
         <div className="font-mono text-sm text-secondary-foreground mb-4">
-          Universal Honeypot Benchmarking Standard <span className="text-primary/70">·</span> v4.0.1 <span className="text-primary/70">·</span> 2026
+          Universal Honeypot Benchmarking Standard <span className="text-primary/70">·</span> v4.2.0 <span className="text-primary/70">·</span> 2026
         </div>
         <p className="text-xs text-muted-foreground max-w-lg mx-auto mb-6">
           Personal open-source beta evaluation framework (Apache-2.0). Not a consortium, Steering Committee, or adopted industry standard.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Module D — Safety, Containment & Boundary Controls (UHBS v4.0.1).
+"""Module D — Safety, Containment & Boundary Controls (UHBS v4.2.0).
 
 D1 OOB egress (ICMP/DNS/HTTP/S/TCP) + optional egress-gateway canary log
 D2 container escape / LPE surface

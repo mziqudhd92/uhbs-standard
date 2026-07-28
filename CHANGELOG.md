@@ -3,13 +3,21 @@
 All notable changes to the UHBS specification and tooling are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/). Spec and CLI
-share version **4.0.1** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`).
+share version **4.2.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`).
 
 ## [Unreleased]
 
+## [4.2.0] — 2026-07-28
+
 ### Added
+- **MCP honeypot grading** (`mcp` protocol plugin): JSON-RPC lifecycle, tool
+  allowlist + inputSchema denylist, schema-aware `tools/call`, SSE handshake
+  hygiene, `surface_depth` / reason strings, TPS `mcp_server.yaml`, Beelzebub
+  MCP lab inventory + docs (`docs/architecture/mcp-honeypot-grading.md`)
 - Zenodo DOI badge + citation metadata (`10.5281/zenodo.21631156`; concept
   `10.5281/zenodo.21631155`)
+- Release workflow **PyPI Trusted Publishing** job (`publish-pypi`, environment
+  `pypi`) for OIDC upload + PEP 740 provenance on `v*` tags
 
 ## [4.0.1] — 2026-07-27
 

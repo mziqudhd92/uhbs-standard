@@ -1,6 +1,6 @@
 # Universal Honeypot Benchmarking Standard (UHBS)
 
-> Personal open-source beta framework (v4.0.1, Apache-2.0) for vendor-neutral honeypot / deception evaluation (UHQS 0–100 + Safety Gate). Not a consortium standard.
+> Personal open-source beta framework (v4.2.0, Apache-2.0) for vendor-neutral honeypot / deception evaluation (UHQS 0–100 + Safety Gate). Not a consortium standard.
 
 This file is the **repository** agent index (AEO/GEO for coding assistants). The published site mirror is https://mziqudhd92.github.io/uhbs-standard/llms.txt (landing) · https://mziqudhd92.github.io/uhbs-standard/mkdocs/llms.txt (MkDocs)
 
@@ -28,6 +28,7 @@ This file is the **repository** agent index (AEO/GEO for coding assistants). The
 - [uhbs_mcp](https://github.com/mziqudhd92/uhbs-standard/tree/main/src/uhbs_mcp): MCP server for AI hosts (stdio validate/score/fixtures)
 - [CLI guide](https://github.com/mziqudhd92/uhbs-standard/blob/main/docs/tooling/cli.md): Commands and integrity checks
 - [MCP guide](https://github.com/mziqudhd92/uhbs-standard/blob/main/docs/tooling/mcp.md): Cursor / Claude / VS Code config
+- [MCP honeypot grading](https://github.com/mziqudhd92/uhbs-standard/blob/main/docs/architecture/mcp-honeypot-grading.md): Live `uhbs-lab --protocol mcp` (not AI-host MCP)
 - [server.json](https://github.com/mziqudhd92/uhbs-standard/blob/main/server.json): MCP Registry metadata (stdio)
 - [Conformance fixtures](https://github.com/mziqudhd92/uhbs-standard/tree/main/docs/conformance/fixtures): Proof scorecards only
 

@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.0.1",
+  "uhbs_version": "4.2.0",
   "target": {
     "name": "Dionaea (HTTP :80)",
     "class": "Web-API",

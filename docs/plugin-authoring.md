@@ -5,8 +5,8 @@
 > [`GOVERNANCE.md`](https://github.com/mziqudhd92/uhbs-standard/blob/main/GOVERNANCE.md)) — this page describes what the code
 > does today, not a certified or committee-reviewed plugin API.
 
-UHBS ships 17+ built-in protocol plugins under `src/uhbs_core/protocols/`
-(ssh, http, ftp, redis, modbus, smb, smtp, telnet, mysql, rdp, sip, snmp,
+UHBS ships 18+ built-in protocol plugins under `src/uhbs_core/protocols/`
+(ssh, http, **mcp**, ftp, redis, modbus, smb, smtp, telnet, mysql, rdp, sip, snmp,
 ntp, tftp, vnc, git, generic). As of this note, the registry
 (`src/uhbs_core/protocols/registry.py`) can **also** load plugins from an
 installed third-party Python package via

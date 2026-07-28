@@ -4,8 +4,9 @@
 
 | Version | Supported |
 | --- | --- |
-| 4.0.x | Yes |
-| < 4.0.1 | No |
+| 4.2.x | Yes |
+| 4.0.x | Security fixes only (please upgrade to 4.2.x) |
+| < 4.0.0 | No |
 
 ## Reporting a Vulnerability
 

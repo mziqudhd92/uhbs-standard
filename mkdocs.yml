@@ -4,7 +4,7 @@ site_url: https://mziqudhd92.github.io/uhbs-standard/mkdocs/
 repo_url: https://github.com/mziqudhd92/uhbs-standard
 repo_name: mziqudhd92/uhbs-standard
 edit_uri: edit/main/docs/
-copyright: UHBS v4.0.1 — personal beta evaluation framework (Apache-2.0)
+copyright: UHBS v4.2.0 — personal beta evaluation framework (Apache-2.0)
 
 theme:
   name: material
@@ -103,6 +103,7 @@ nav:
       - OpenCanary tutorial: conformance/reports/opencanary/TUTORIAL.md
       - OpenCanary methodology: conformance/reports/opencanary/METHODOLOGY.md
       - Beelzebub report hub: conformance/reports/beelzebub/index.md
+      - Beelzebub MCP hub: conformance/reports/beelzebub/mcp/index.md
       - Beelzebub tutorial: conformance/reports/beelzebub/TUTORIAL.md
       - Beelzebub methodology: conformance/reports/beelzebub/METHODOLOGY.md
       - Trapster report hub: conformance/reports/trapster/index.md
@@ -120,6 +121,7 @@ nav:
   - Tooling:
       - CLI & Validator: tooling/cli.md
       - MCP server (AI hosts): tooling/mcp.md
+      - MCP honeypot grading: architecture/mcp-honeypot-grading.md
   - Scorecards:
       - Official Examples: scorecards/index.md
       - Web-API / HTTP (ESPot proof): scorecards/espot-web-api.md
@@ -137,6 +139,7 @@ nav:
       - Beelzebub SSH: scorecards/beelzebub-ssh.md
       - Beelzebub Telnet: scorecards/beelzebub-telnet.md
       - Beelzebub Redis: scorecards/beelzebub-redis.md
+      - Beelzebub MCP: scorecards/beelzebub-mcp.md
       - Trapster HTTP: scorecards/trapster-http.md
       - Trapster SSH: scorecards/trapster-ssh.md
       - Trapster FTP: scorecards/trapster-ftp.md

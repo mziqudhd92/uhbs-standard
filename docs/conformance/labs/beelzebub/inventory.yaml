@@ -55,3 +55,24 @@ sites:
     telemetry_dir: /telemetry
     tps: /work/docs/conformance/labs/beelzebub/low_interaction_redis_full.yaml
     container_image: beelzebub:uhbs-lab
+  beelzebub-mcp:
+    kind: generic
+    class: Web-API
+    host: beelzebub-lab
+    protocol: mcp
+    protocols: [mcp]
+    port: 8000
+    ports:
+      mcp: 8000
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/beelzebub/web_api_mcp_full.yaml
+    container_image: beelzebub:uhbs-lab
+    mcp_path: /mcp
+    mcp_transport: streamable_http
+    # Beelzebub default decoy tools (not builtin echo/ping keywords)
+    mcp_custom_allowlist_tools:
+      - tool:user-account-manager
+      - tool:system-log
+      - user-account-manager
+      - system-log

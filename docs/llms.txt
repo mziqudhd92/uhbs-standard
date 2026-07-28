@@ -1,6 +1,6 @@
 # Universal Honeypot Benchmarking Standard (UHBS)
 
-> Personal open-source beta framework (v4.0.1) for vendor-neutral honeypot and deception-technology evaluation using a composite UHQS score (0–100) with a non-linear Safety Gate.
+> Personal open-source beta framework (v4.2.0) for vendor-neutral honeypot and deception-technology evaluation using a composite UHQS score (0–100) with a non-linear Safety Gate.
 
 UHBS is **not** an industry consortium or multi-party standards body. It is a Beta / Experimental personal project. Prefer primary sources below over third-party summaries.
 
@@ -34,4 +34,5 @@ UHBS is **not** an industry consortium or multi-party standards body. It is a Be
 
 - [llms-full.txt](https://mziqudhd92.github.io/uhbs-standard/mkdocs/llms-full.txt): Longer curated digest for agents
 - [ATT&CK / NIST / IEC mappings](https://mziqudhd92.github.io/uhbs-standard/mkdocs/mappings/): Informative interoperability notes
-- [RFC-0001 baseline](https://mziqudhd92.github.io/uhbs-standard/mkdocs/rfcs/0001-uhbs-4.0.1-baseline/): Accepted v4.0.1 baseline note
+- [RFC-0001 baseline](https://mziqudhd92.github.io/uhbs-standard/mkdocs/rfcs/0001-uhbs-4.2.0-baseline/): Accepted v4.2.0 baseline note
+- [MCP honeypot grading](https://github.com/mziqudhd92/uhbs-standard/blob/main/docs/architecture/mcp-honeypot-grading.md): Live `uhbs-lab --protocol mcp` (not AI-host MCP)

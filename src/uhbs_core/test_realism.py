@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Module B — Behavioral & Stateful Realism (UHBS v4.0.1).
+"""Module B — Behavioral & Stateful Realism (UHBS v4.2.0).
 
 Class/protocol-aware via plugins: B1 state · B2 payload · B3 fuzz.
 """
@@ -95,14 +95,35 @@ def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
         )
 
     score = sum(per_proto.values()) / len(per_proto)
+    notes = [f"UHBS Module B class={tps.profile_class}"]
+    # MCP honeypot honesty: zero-tool / high-risk-only surfaces cannot inflate B
+    surface = (target.annotations or {}).get("mcp_surface_depth")
+    reason = (target.annotations or {}).get("mcp_surface_reason")
+    if surface == "metadata_only" or any(
+        "NEUTRAL_NO_SURFACE" in (c.detail or "")
+        or "SKIPPED_HIGH_RISK_TOOL" in (c.detail or "")
+        or "SKIPPED_UNSATISFIABLE_SCHEMA" in (c.detail or "")
+        for c in all_checks
+    ):
+        score = min(score, 50.0)
+        notes.append("surface_depth=metadata_only (Module B ceiling 50)")
+        if reason:
+            notes.append(str(reason)[:240])
+    elif surface == "interactive":
+        notes.append("surface_depth=interactive")
+
     return ModuleResult(
         module="B",
         dimension="behavior",
         score=round(score, 2),
         status=pass_status(score),
         checks=all_checks,
-        metrics={"per_protocol": per_proto, "class": tps.profile_class},
-        notes=[f"UHBS Module B class={tps.profile_class}"],
+        metrics={
+            "per_protocol": per_proto,
+            "class": tps.profile_class,
+            "surface_depth": surface or "unknown",
+        },
+        notes=notes,
     )
 
 

@@ -11,6 +11,7 @@ from .ftp import FTPPlugin
 from .generic import GenericTCPPlugin
 from .git import GitPlugin
 from .http import HTTPPlugin
+from .mcp import MCPPlugin
 from .modbus import ModbusPlugin
 from .mysql import MySQLPlugin
 from .ntp import NTPPlugin
@@ -129,6 +130,7 @@ def _bootstrap() -> None:
         SSHPlugin(),
         SMTPPlugin(),
         HTTPPlugin(),
+        MCPPlugin(),
         TelnetPlugin(),
         ModbusPlugin(),
         FTPPlugin(),

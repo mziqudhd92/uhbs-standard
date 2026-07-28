@@ -14,7 +14,7 @@ from uhbs_core.tps import PROFILES_DIR, load_tps, resolve_tps_path
 
 
 def test_version_matches_spec() -> None:
-    assert __version__ == "4.0.1"
+    assert __version__ == "4.2.0"
 
 
 def test_protocol_plugins_registered() -> None:
@@ -22,6 +22,7 @@ def test_protocol_plugins_registered() -> None:
     assert {
         "ssh",
         "http",
+        "mcp",
         "modbus",
         "generic",
         "mysql",
@@ -42,6 +43,12 @@ def test_tps_profiles_packaged() -> None:
     assert path is not None and path.exists()
     tps = load_tps(path)
     assert tps.profile_class in {"POSIX-Shell", "GenAI-Shell", "Low-Interaction"}
+
+    mcp_path = resolve_tps_path("mcp_server")
+    assert mcp_path is not None and mcp_path.exists()
+    mcp_tps = load_tps(mcp_path)
+    assert mcp_tps.profile_class == "Web-API"
+    assert "mcp" in [p.lower() for p in mcp_tps.protocols]
 
 
 def test_uhqs_matches_cli_math() -> None:
@@ -76,7 +83,7 @@ def test_manifest_writer(tmp_path: Path) -> None:
     (tmp_path / "SCORECARD.txt").write_text("UHQS\n", encoding="utf-8")
     dest = write_manifest(tmp_path, extra={"target": "unit"})
     data = json.loads(dest.read_text(encoding="utf-8"))
-    assert data["uhbs_version"] == "4.0.1"
+    assert data["uhbs_version"] == "4.2.0"
     paths = {a["path"] for a in data["artifacts"]}
     assert "report.json" in paths
     assert "SCORECARD.txt" in paths

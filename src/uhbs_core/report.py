@@ -1,4 +1,4 @@
-"""UHBS v4.0.1 scorecard + JSON report writer."""
+"""UHBS v4.2.0 scorecard + JSON report writer."""
 
 from __future__ import annotations
 
@@ -44,7 +44,7 @@ def render_card(
     weights = uhqs.weights
     lines = [
         "====================================================================================",
-        "                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0.1",
+        "                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.2.0",
         "====================================================================================",
         f"Target System         : {target.label}",
         f"System Profile Class  : {uhqs.profile_class}",
@@ -52,10 +52,35 @@ def render_card(
         f"Evaluation Date       : {datetime.now(UTC).strftime('%Y-%m-%d')}",
         f"Evaluation Type       : {evaluation_type}",
         f"Environment           : {environment}",
+    ]
+    # Optional MCP surface_depth / reason (set by mcp plugin on TargetSpec + Module B)
+    for m in modules:
+        if m.module == "B" and m.metrics.get("surface_depth"):
+            lines.append(f"MCP Surface Depth     : {m.metrics['surface_depth']}")
+            reason = (target.annotations or {}).get("mcp_surface_reason")
+            if not reason:
+                for note in m.notes or []:
+                    text = str(note)
+                    if (
+                        "surface_depth=" in text
+                        or "SKIPPED_" in text
+                        or "NEUTRAL_" in text
+                        or "Module B" in text
+                        or text.startswith("UHBS ")
+                    ):
+                        continue
+                    reason = text
+                    break
+            if reason:
+                lines.append(f"MCP Surface Reason    : {str(reason)[:120]}")
+            break
+    lines.extend(
+        [
         "------------------------------------------------------------------------------------",
         "EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS",
         "------------------------------------------------------------------------------------",
-    ]
+        ]
+    )
     for dim in DIMS:
         label = DIM_LABELS[dim]
         score = getattr(uhqs, UHQS_ATTR[dim])
@@ -71,7 +96,7 @@ def render_card(
     lines += [
         "------------------------------------------------------------------------------------",
         f"SAFETY GATE MULTIPLIER                : {gate}",
-        f"FINAL COMPOSITE SCORE (UHQS 4.0.1)      : {uhqs.uhqs} / 100",
+        f"FINAL COMPOSITE SCORE (UHQS 4.2.0)      : {uhqs.uhqs} / 100",
         f"OVERALL EVALUATION GRADE              : {uhqs.grade}",
         "====================================================================================",
     ]
@@ -96,7 +121,7 @@ def write_report(
     (out_dir / "REPORT.txt").write_text(card, encoding="utf-8")
     (out_dir / "SCORECARD.txt").write_text(card, encoding="utf-8")
     payload = {
-        "framework": "Universal Honeypot Benchmarking Standard (UHBS) v4.0.1",
+        "framework": "Universal Honeypot Benchmarking Standard (UHBS) v4.2.0",
         "evaluation_type": evaluation_type,
         "target": {
             "name": target.name,

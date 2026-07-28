@@ -53,6 +53,24 @@ def _site_to_spec(name: str, raw: dict[str, Any]) -> TargetSpec:
     if "ssh" not in ports_map and "ssh" in proto_l:
         ports_map["ssh"] = primary
 
+    meta = raw.get("metadata") if isinstance(raw.get("metadata"), dict) else {}
+    annotations: dict[str, Any] = {}
+    annotations.update(meta)
+    # Flat inventory keys also accepted for MCP lab ergonomics
+    for key in (
+        "mcp_path",
+        "mcp_transport",
+        "mcp_sse_path",
+        "mcp_custom_allowlist_tools",
+    ):
+        if key in raw and raw[key] is not None:
+            annotations[key] = raw[key]
+        elif key in meta and meta[key] is not None:
+            annotations[key] = meta[key]
+
+    if "mcp" in proto_l and "mcp" not in ports_map:
+        ports_map["mcp"] = primary
+
     t = TargetSpec(
         name=name,
         kind=str(raw.get("kind", "generic")),
@@ -73,6 +91,7 @@ def _site_to_spec(name: str, raw: dict[str, Any]) -> TargetSpec:
         protocols=protocols,
         profile_class=str(raw.get("class") or raw.get("profile_class") or "POSIX-Shell"),
         ports_map=ports_map,
+        annotations=annotations,
     )
 
     tps_ref = t.tps_path or raw.get("tps")

@@ -51,3 +51,77 @@ none of the above becomes a required/blocking gate in this pass. This
 document exists so a reader can tell the difference between "we pinned
 Actions by SHA" (true, verifiable in the workflow files) and "we are
 SLSA Level 3" (not true, not claimed).
+
+---
+
+## Checklist: PyPI Trusted Publishing + Sigstore (not done yet)
+
+Trusted Publishing removes long-lived PyPI API tokens. Modern
+`pypa/gh-action-pypi-publish` also attaches **PEP 740 provenance** (Sigstore-
+backed attestations) when publishing via OIDC — that is the usual “Sigstore
+signing” path for PyPI wheels, not a separate cosign step (optional extra).
+
+### Maintainer actions (PyPI + GitHub)
+
+1. Create a PyPI account and reserve the project name `uhbs` (or confirm ownership).
+2. On PyPI → project **Publishing** settings, add a **Trusted Publisher**:
+   - Owner: `mziqudhd92`
+   - Repository: `uhbs-standard`
+   - Workflow filename: `release.yml` (exact name under `.github/workflows/`)
+   - Environment: `pypi` (recommended)
+3. If the project does not exist yet, use a **pending** trusted publisher so the
+   first tag publish can create the project.
+4. In GitHub → **Settings → Environments**, create environment `pypi` with:
+   - Deployment branch restriction: only tags / `main` (as appropriate)
+   - Optional: required reviewers for production publishes
+5. Extend `.github/workflows/release.yml` with a **publish** job that:
+   - `needs: build`
+   - `environment: pypi`
+   - `permissions: { id-token: write, contents: read }`
+   - downloads the `python-dist` artifact
+   - runs `pypa/gh-action-pypi-publish` **pinned to a commit SHA** (no password)
+6. Tag a release (`v4.2.0`), verify the PyPI project page shows the files **and**
+   provenance attestations.
+7. Document install as `pip install uhbs` / `pip install 'uhbs[lab]'` and update
+   MCP `uvx` docs once the package exists.
+8. (Optional) Add an explicit `cosign`/`sigstore-python` attest step for GitHub
+   Release assets — separate from PyPI provenance.
+
+### Do not
+
+- Commit PyPI API tokens or use `TWINE_PASSWORD` long-lived secrets when OIDC works.
+- Grant `id-token: write` on unrelated jobs that restore caches or run untrusted code.
+- Claim SLSA Level 3 solely because Trusted Publishing succeeded.
+
+---
+
+## Checklist: OpenSSF Best Practices (passing badge)
+
+Submit at [https://www.bestpractices.dev/](https://www.bestpractices.dev/) for
+this GitHub repo. Passing is a **questionnaire + evidence URLs**, not an automatic
+CI pass. Scorecard (already in-repo) is related but separate.
+
+### Already in good shape for many “passing” criteria
+
+- Public git history, Apache-2.0, `LICENSE`
+- `SECURITY.md` + private vulnerability reporting
+- CI (tests + lint), CodeQL, Dependabot, DCO
+- `CONTRIBUTING.md`, CoC, issue/PR templates
+- `CHANGELOG.md` / release notes via GitHub Releases
+- Docs site + README quickstart
+
+### Likely work before claiming “passing”
+
+1. Create the badge project entry and answer every required criterion with a URL.
+2. Confirm **branch protection** on `main` (required reviews and/or status checks) —
+   Scorecard and Best Practices both care about this; it is a GitHub setting, not a file.
+3. Ensure a clear **“how to run tests”** statement (README or CONTRIBUTING) matching CI.
+4. Document **known security risks** of the lab harness (network probes against lab
+   targets only; Safety Gate notes) if asked under security documentation criteria.
+5. After first PyPI release: link distributed packages and prefer HTTPS-only install.
+6. Silver/gold need multi-person bus factor — **out of scope** until Phase 6 maintainers.
+
+### After acceptance
+
+- Add the Best Practices badge to `README.md`.
+- Keep the entry updated when version/support policy changes (`SECURITY.md` 4.2.x).
