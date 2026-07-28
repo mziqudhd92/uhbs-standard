@@ -7,17 +7,41 @@ share version **4.2.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[
 
 ## [Unreleased]
 
+### Changed
+- README quickstart prefers official PyPI installs (`pip install 'uhbs[lab]'` /
+  `'uhbs[mcp]'`); adds PyPI version badge; keeps editable install for
+  development checkouts
+
+### Fixed
+- MkDocs `--strict` Deploy Documentation: Beelzebub MCP hub link to
+  `architecture/mcp-honeypot-grading.md` (wrong relative depth)
+
 ## [4.2.0] — 2026-07-28
+
+First **PyPI** release of `uhbs` (Trusted Publishing / OIDC + PEP 740 provenance).
 
 ### Added
 - **MCP honeypot grading** (`mcp` protocol plugin): JSON-RPC lifecycle, tool
   allowlist + inputSchema denylist, schema-aware `tools/call`, SSE handshake
   hygiene, `surface_depth` / reason strings, TPS `mcp_server.yaml`, Beelzebub
   MCP lab inventory + docs (`docs/architecture/mcp-honeypot-grading.md`)
-- Zenodo DOI badge + citation metadata (`10.5281/zenodo.21631156`; concept
-  `10.5281/zenodo.21631155`)
+- SCORECARD / report extras: `MCP Surface Depth` and `MCP Surface Reason` when
+  Module B sets metadata-only / interactive surface annotations
 - Release workflow **PyPI Trusted Publishing** job (`publish-pypi`, environment
   `pypi`) for OIDC upload + PEP 740 provenance on `v*` tags
+- Supply-chain checklists for PyPI Trusted Publishing and OpenSSF Best Practices
+  passing submission (`docs/architecture/supply-chain.md`)
+- Zenodo DOI badge + citation metadata (`10.5281/zenodo.21631156`; concept
+  `10.5281/zenodo.21631155`)
+
+### Changed
+- Spec / package / schemas / fixtures / Docker tags advertise **4.2.0**
+- `SECURITY.md` supported line: **4.2.x** (4.0.x security-fixes only)
+- Core registry/TPS tests assert `mcp` plugin and packaged `mcp_server` profile
+
+### Fixed
+- Release `publish-pypi` staging finds wheel/sdist under nested
+  `actions/download-artifact` paths
 
 ## [4.0.1] — 2026-07-27
 
