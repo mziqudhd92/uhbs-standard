@@ -5,7 +5,7 @@
 [![CodeQL](https://github.com/mziqudhd92/uhbs-standard/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/mziqudhd92/uhbs-standard/actions/workflows/codeql-analysis.yml)
 [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/13853/badge)](https://www.bestpractices.dev/projects/13853)
 [![PyPI](https://img.shields.io/pypi/v/uhbs.svg)](https://pypi.org/project/uhbs/)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21631156.svg)](https://doi.org/10.5281/zenodo.21631156)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21631156-blue)](https://doi.org/10.5281/zenodo.21631156)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Spec](https://img.shields.io/badge/Specification-v4.2.1-indigo.svg)](docs/specification/core-principles.md)
 [![UHQS](https://img.shields.io/badge/UHQS-0%E2%80%93100-success.svg)](docs/specification/scoring-formula.md)
