@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "840b47d9fcee84c99984a4bf1707f0881990bdbb3b6a1f3ad089b919d41e891b"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "840b47d9fcee84c99984a4bf1707f0881990bdbb3b6a1f3ad089b919d41e891b"
+    },
+    {
+      "path": "report.json",
+      "sha256": "bd15d2acf5fdec25a2bef6361e46519675170368cf88e9ea0c0f38771bb08f77"
+    }
+  ],
+  "extra": {
+    "target": "genaipot-smtp",
+    "uhqs": 30.78,
+    "grade": "GRADE F (Fail)"
+  }
+}

@@ -133,6 +133,11 @@ nav:
       - HoneyMCP MCP hub: conformance/reports/honeymcp/mcp/index.md
       - HoneyMCP tutorial: conformance/reports/honeymcp/TUTORIAL.md
       - HoneyMCP methodology: conformance/reports/honeymcp/METHODOLOGY.md
+      - GenAIPot report hub: conformance/reports/genaipot/index.md
+      - GenAIPot SMTP hub: conformance/reports/genaipot/smtp/index.md
+      - GenAIPot POP3 hub: conformance/reports/genaipot/pop3/index.md
+      - GenAIPot tutorial: conformance/reports/genaipot/TUTORIAL.md
+      - GenAIPot methodology: conformance/reports/genaipot/METHODOLOGY.md
       - Trapster report hub: conformance/reports/trapster/index.md
       - Trapster tutorial: conformance/reports/trapster/TUTORIAL.md
       - Trapster methodology: conformance/reports/trapster/METHODOLOGY.md
@@ -179,6 +184,8 @@ nav:
       - Beelzebub Redis: scorecards/beelzebub-redis.md
       - Beelzebub MCP: scorecards/beelzebub-mcp.md
       - HoneyMCP MCP: scorecards/honeymcp-mcp.md
+      - GenAIPot SMTP: scorecards/genaipot-smtp.md
+      - GenAIPot POP3: scorecards/genaipot-pop3.md
       - Trapster HTTP: scorecards/trapster-http.md
       - Trapster SSH: scorecards/trapster-ssh.md
       - Trapster FTP: scorecards/trapster-ftp.md

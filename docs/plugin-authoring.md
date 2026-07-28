@@ -6,7 +6,7 @@
 > does today, not a certified or committee-reviewed plugin API.
 
 UHBS ships 18+ built-in protocol plugins under `src/uhbs_core/protocols/`
-(ssh, http, **mcp**, ftp, redis, modbus, **s7comm**, smb, smtp, telnet, mysql,
+(ssh, http, **mcp**, ftp, redis, modbus, **s7comm**, smb, smtp, **pop3**, telnet, mysql,
 **postgres**, rdp, sip, snmp, ntp, tftp, vnc, git, generic). As of this note, the registry
 (`src/uhbs_core/protocols/registry.py`) can **also** load plugins from an
 installed third-party Python package via

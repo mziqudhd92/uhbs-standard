@@ -43,6 +43,7 @@ PROTOCOL_DEFAULT_P95_MS: dict[str, float] = {
     "http": 150.0,
     "https": 200.0,
     "smtp": 300.0,
+    "pop3": 300.0,
     "ftp": 500.0,
     "mysql": 300.0,
     "postgres": 300.0,

@@ -1,0 +1,29 @@
+# GenAIPot (ls1911/GenAIPot) — SMTP + POP3 mail decoy (offline AI templates).
+# Docker Hub: annls/genaipot:latest · host map 2525→25, 1110→110.
+sites:
+  genaipot-smtp:
+    kind: generic
+    class: Low-Interaction
+    host: genaipot-lab
+    protocol: smtp
+    protocols: [smtp]
+    port: 25
+    ports:
+      smtp: 25
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/genaipot/low_interaction_smtp_full.yaml
+    container_image: annls/genaipot:latest
+  genaipot-pop3:
+    kind: generic
+    class: Low-Interaction
+    host: genaipot-lab
+    protocol: pop3
+    protocols: [pop3]
+    port: 110
+    ports:
+      pop3: 110
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/genaipot/low_interaction_pop3_full.yaml
+    container_image: annls/genaipot:latest

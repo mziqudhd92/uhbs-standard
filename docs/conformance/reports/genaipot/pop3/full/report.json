@@ -1,0 +1,619 @@
+{
+  "framework": "Universal Honeypot Benchmarking Standard (UHBS) v4.2.2",
+  "evaluation_type": "Full-Spectrum (Static Audit + Dynamic Sandbox)",
+  "target": {
+    "name": "genaipot-pop3",
+    "kind": "generic",
+    "host": "127.0.0.1",
+    "port": 1110,
+    "source_root": "/Users/mz/UHBS/.local/genaipot",
+    "profile_class": "Low-Interaction",
+    "protocols": [
+      "pop3"
+    ],
+    "ports_map": {
+      "pop3": 1110
+    }
+  },
+  "baseline": null,
+  "uhqs": {
+    "target": "genaipot-pop3",
+    "S_A": 95.1,
+    "S_B": 82.5,
+    "S_C": 55.0,
+    "C": 75.0,
+    "S_E": 100.0,
+    "S_F": 69.0,
+    "delta_c": 0.5625,
+    "uhqs": 44.13,
+    "weights": {
+      "protocol": 0.3,
+      "behavior": 0.15,
+      "telemetry": 0.25,
+      "scale": 0.1,
+      "static": 0.2
+    },
+    "profile_class": "Low-Interaction",
+    "grade": "GRADE F (Fail)",
+    "phase": "profile+static+sandbox+dynamic+score",
+    "version": "4.2.2",
+    "containment_measured": true
+  },
+  "hqs": {
+    "target": "genaipot-pop3",
+    "S_A": 95.1,
+    "S_B": 82.5,
+    "S_C": 55.0,
+    "C": 75.0,
+    "S_E": 100.0,
+    "S_F": 69.0,
+    "delta_c": 0.5625,
+    "uhqs": 44.13,
+    "weights": {
+      "protocol": 0.3,
+      "behavior": 0.15,
+      "telemetry": 0.25,
+      "scale": 0.1,
+      "static": 0.2
+    },
+    "profile_class": "Low-Interaction",
+    "grade": "GRADE F (Fail)",
+    "phase": "profile+static+sandbox+dynamic+score",
+    "version": "4.2.2",
+    "containment_measured": true
+  },
+  "modules": [
+    {
+      "module": "SANDBOX",
+      "dimension": "sandbox",
+      "score": 70.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "sandbox.reach.pop3",
+          "team": "blue",
+          "passed": true,
+          "detail": "127.0.0.1:1110 open",
+          "score": 25.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "sandbox.airgap_attested",
+          "team": "blue",
+          "passed": true,
+          "detail": "operator attested air-gapped sandbox (UHBS_AIRGAP_ATTESTED=1)",
+          "score": 25.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "sandbox.egress_deny_tooling",
+          "team": "blue",
+          "passed": false,
+          "detail": "host-egress-deny.sh not found",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "sandbox.gateway_log_configured",
+          "team": "blue",
+          "passed": false,
+          "detail": "gateway log path not set",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {
+        "reachable_protocols": 1
+      },
+      "notes": [
+        "Phase 3 preflight \u2014 does not replace real air-gap deployment"
+      ],
+      "error": null
+    },
+    {
+      "module": "F",
+      "dimension": "static",
+      "score": 69.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "white.static_private_keys",
+          "team": "white",
+          "passed": true,
+          "detail": "0 static private keys",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.hardcoded_ssh_banners",
+          "team": "white",
+          "passed": true,
+          "detail": "0 hardcoded SSH banners",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.predictable_seeds",
+          "team": "white",
+          "passed": true,
+          "detail": "0 predictable PRNG seeds",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.hardcoded_macs",
+          "team": "white",
+          "passed": true,
+          "detail": "0 hardcoded MAC addresses",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.prompt_corpus_present",
+          "team": "white",
+          "passed": true,
+          "detail": "no prompt corpus (N/A for non-LLM)",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.prompt_boundaries",
+          "team": "white",
+          "passed": true,
+          "detail": "no weak delimiter/extract patterns",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.fallback_strings",
+          "team": "white",
+          "passed": true,
+          "detail": "no plain-text LLM fallback artifacts",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.bandit",
+          "team": "white",
+          "passed": true,
+          "detail": "bandit not installed (skipped)",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.semgrep",
+          "team": "white",
+          "passed": true,
+          "detail": "semgrep not installed (skipped)",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.trivy",
+          "team": "white",
+          "passed": true,
+          "detail": "trivy not installed (skipped)",
+          "score": 4.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.sast_gate",
+          "team": "white",
+          "passed": true,
+          "detail": "0 high/critical static findings",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.vfs_posix_coverage",
+          "team": "white",
+          "passed": false,
+          "detail": "POSIX coverage 0% (0/104)",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.blocking_calls",
+          "team": "white",
+          "passed": true,
+          "detail": "sleep/blocking markers in non-test code\u22480",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {
+        "source_root": "/Users/mz/UHBS/.local/genaipot"
+      },
+      "notes": [
+        "Module F white-box audit (keys/prompts/SAST/VFS)"
+      ],
+      "error": null
+    },
+    {
+      "module": "A",
+      "dimension": "protocol",
+      "score": 95.1,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "rfc1939.preauth_stat",
+          "team": "blue",
+          "passed": true,
+          "detail": "-ERR on STAT before auth",
+          "score": 100.0,
+          "evidence": [
+            "+OK localhost generic POP3 server ready\r\n-ERR Unrecognized command\r\n+OK Goodbye\r\n"
+          ],
+          "critical": false
+        },
+        {
+          "id": "rfc1939.preauth_list",
+          "team": "blue",
+          "passed": true,
+          "detail": "-ERR on LIST before auth",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "rfc1939.bare_lf_tolerance",
+          "team": "red",
+          "passed": true,
+          "detail": "statuses=['+OK']",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "rfc1939.unknown_command",
+          "team": "blue",
+          "passed": true,
+          "detail": "-ERR on unknown verb",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "rfc1939.greeting_ok",
+          "team": "blue",
+          "passed": true,
+          "detail": "+OK localhost generic POP3 server ready\r\n",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "rfc1939.capa",
+          "team": "blue",
+          "passed": true,
+          "detail": "CAPA answered (+OK list or -ERR)",
+          "score": 70.0,
+          "evidence": [
+            "+OK localhost generic POP3 server ready\r\n-ERR Unrecognized command\r\n+OK Goodbye\r\n"
+          ],
+          "critical": false
+        },
+        {
+          "id": "pop3.timing.sample_size",
+          "team": "blue",
+          "passed": true,
+          "detail": "n=1000 requested=1000 errors=0",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "pop3.timing.iat_jitter",
+          "team": "red",
+          "passed": true,
+          "detail": "median=0.075ms pstdev=1.066ms (target jitter often <2ms vs native)",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "pop3.module_a.composite",
+          "team": "blue",
+          "passed": true,
+          "detail": "fsm=100 nego=84 timing=100",
+          "score": 95.0998,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "pop3": 95.1
+        },
+        "protocols": [
+          "pop3"
+        ],
+        "timing_samples": 1000,
+        "available_plugins": [
+          "ftp",
+          "generic",
+          "git",
+          "http",
+          "mcp",
+          "modbus",
+          "mysql",
+          "ntp",
+          "pop3",
+          "postgres",
+          "rdp",
+          "redis",
+          "s7comm",
+          "sip",
+          "smb",
+          "smtp",
+          "snmp",
+          "ssh",
+          "telnet",
+          "tftp",
+          "vnc"
+        ]
+      },
+      "notes": [
+        "UHBS Module A \u2014 plugins=['pop3']",
+        "class=Low-Interaction strict_rfc=True"
+      ],
+      "error": null
+    },
+    {
+      "module": "B",
+      "dimension": "behavior",
+      "score": 82.5,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "pop3.state.user_pass_stat",
+          "team": "blue",
+          "passed": true,
+          "detail": "statuses=['+OK', '+OK', '+OK', '+OK', '+OK']",
+          "score": 100.0,
+          "evidence": [
+            "+OK localhost generic POP3 server ready\r\n+OK User accepted\r\n+OK Password accepted\r\n+OK 0 0\r\n+OK Goodbye\r\n"
+          ],
+          "critical": false
+        },
+        {
+          "id": "pop3.payload.unsupported",
+          "team": "red",
+          "passed": true,
+          "detail": "no payload probe \u2014 skipped",
+          "score": 50.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "pop3.fuzz.binary",
+          "team": "red",
+          "passed": true,
+          "detail": "survived binary blast",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "pop3": 82.5
+        },
+        "class": "Low-Interaction",
+        "surface_depth": "unknown"
+      },
+      "notes": [
+        "UHBS Module B class=Low-Interaction"
+      ],
+      "error": null
+    },
+    {
+      "module": "C",
+      "dimension": "telemetry",
+      "score": 55.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "pop3.fuzz.binary",
+          "team": "red",
+          "passed": true,
+          "detail": "survived binary blast",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "c1.json_parse_clean",
+          "team": "blue",
+          "passed": true,
+          "detail": "0 malformed / 0 records",
+          "score": 20.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "c1.stix_2_1",
+          "team": "blue",
+          "passed": false,
+          "detail": "no STIX objects found",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "c1.otel_or_ecs",
+          "team": "blue",
+          "passed": false,
+          "detail": "otel_docs=0 ecs_docs=0",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "c1.payload_hashes",
+          "team": "blue",
+          "passed": false,
+          "detail": "no md5/sha256 fields",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "c1.mitre_mapping",
+          "team": "blue",
+          "passed": false,
+          "detail": "no MITRE tags",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {},
+      "notes": [
+        "UHBS C1 schema: STIX 2.1 / OTel / ECS best-effort validators"
+      ],
+      "error": null
+    },
+    {
+      "module": "D",
+      "dimension": "containment",
+      "score": 75.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "d1.shell_exec_unavailable",
+          "team": "blue",
+          "passed": true,
+          "detail": "no explicit SSH listener (ports.ssh / ssh_port) \u2014 remote shell egress/LPE probes skipped for this protocol",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "d1.egress_gateway_log",
+          "team": "blue",
+          "passed": true,
+          "detail": "UHBS_EGRESS_GATEWAY_LOG unset \u2014 gateway evidence not attached (lab)",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "d1.airgap_attested",
+          "team": "blue",
+          "passed": true,
+          "detail": "UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes on SSH decoys)",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {
+        "breakout": false,
+        "allowed_outbound_traffic": false,
+        "shell_exec": false,
+        "protocols": [
+          "pop3"
+        ]
+      },
+      "notes": [
+        "Module D (protocol-agnostic): no SSH exec surface configured \u2014 Safety Gate cannot fully clear without shell probes or UHBS_EGRESS_GATEWAY_LOG evidence. Non-SSH decoys are graded on gateway/airgap attestation only."
+      ],
+      "error": null
+    },
+    {
+      "module": "E",
+      "dimension": "scale",
+      "score": 100.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "e1.p95_vs_tps",
+          "team": "blue",
+          "passed": true,
+          "detail": "P50=1.7ms P95=4.6ms P99=6.2ms TPS_limit=300.0ms proto=pop3",
+          "score": 45.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "e1.error_rate",
+          "team": "blue",
+          "passed": true,
+          "detail": "errors=0/200 rate=0.00%",
+          "score": 20.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "e2.exhaustion_input",
+          "team": "red",
+          "passed": true,
+          "detail": "completed exhaustion/fuzz blast",
+          "score": 15.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "e2.circuit_breaker_alive",
+          "team": "blue",
+          "passed": true,
+          "detail": "service alive after load (connect 0.3ms)",
+          "score": 20.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {
+        "p50_ms": 1.71,
+        "p95_ms": 4.63,
+        "p99_ms": 6.24,
+        "p95_limit_ms": 300.0,
+        "errors": 0,
+        "concurrency": 25,
+        "requests": 200,
+        "wall_s": 0.04,
+        "protocol": "pop3"
+      },
+      "notes": [],
+      "error": null
+    }
+  ],
+  "extras": {
+    "target_scores": {
+      "protocol": 95.1,
+      "behavior": 82.5,
+      "telemetry": 55.0,
+      "containment": 75.0,
+      "scale": 100.0,
+      "static": 69.0
+    },
+    "uhqs_version": "4.2.2",
+    "tps": {
+      "name": "genaipot-pop3-full",
+      "class": "Low-Interaction",
+      "protocols": [
+        "pop3"
+      ],
+      "expected_p95_latency_ms": 300.0
+    },
+    "surface_depth": "unknown"
+  }
+}

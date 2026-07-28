@@ -7,6 +7,14 @@ share version **4.2.2** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[
 
 ## [Unreleased]
 
+### Added
+- Built-in **`pop3`** protocol plugin (RFC 1939 greeting / pre-auth STAT|LIST
+  reject / CAPA / unknown-command; aliases `pop`, `pop-3`) with Module E P95
+  default
+- GenAIPot (ls1911) **SMTP** + **POP3** published lab grades
+  — SMTP quick **30.9 / F**, full **30.78 / F**;
+  POP3 quick **44.24 / F**, full **44.13 / F** (offline Docker templates)
+
 ## [4.2.2] — 2026-07-28
 
 Minor release: new protocol plugins (`postgres`, `s7comm`), multi-honeypot lab

@@ -28,6 +28,7 @@ def test_protocol_plugins_registered() -> None:
         "generic",
         "mysql",
         "postgres",
+        "pop3",
         "rdp",
         "sip",
         "snmp",

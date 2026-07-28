@@ -122,6 +122,16 @@ missing a 100 ms bar.
   the RSET-then-reuse check specifically targets stateful realism, not just
   banner correctness.
 
+## 3b. POP3 — `protocols/pop3.py` 🟢 Tier 1
+
+- **Standards:** RFC 1939 (POP3); CAPA optional via RFC 2449.
+- **A1:** Pre-auth `STAT`/`LIST` must return `-ERR`; unknown verbs `-ERR`;
+  bare-LF tolerance.
+- **A2:** Greeting `+OK`; `CAPA` answered honestly (`+OK` list or `-ERR`).
+- **B1:** `USER → PASS → STAT → QUIT` session — auth gate then transaction.
+- **Aliases:** `pop`, `pop-3`.
+- **Disclosed limitation:** no STLS/POP3S, no APOP challenge-response yet.
+
 ## 4. FTP — `protocols/ftp.py` 🟢 Tier 1 (this round)
 
 - **Standards:** RFC 959 (FTP).
