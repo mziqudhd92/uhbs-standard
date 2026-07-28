@@ -82,24 +82,6 @@ pip install 'uhbs[mcp]'
 
 Registry metadata: [`server.json`](server.json). Live Docker lab probes stay on the CLI (`uhbs lab`), not MCP.
 
-### MCP honeypot grading (`uhbs[lab]`)
-
-Grade network-facing MCP decoys (JSON-RPC over HTTP/SSE) with the in-tree `mcp` protocol plugin — distinct from the AI-host MCP server above:
-
-```bash
-pip install 'uhbs[lab]'
-uhbs-lab --list-protocols   # includes mcp
-# Lab inventories/TPS live in the git repo (or your own paths):
-uhbs-lab \
-  --inventory docs/conformance/labs/beelzebub/inventory.yaml \
-  --target beelzebub-mcp \
-  --tps docs/conformance/labs/beelzebub/web_api_mcp_quick.yaml \
-  --protocol mcp \
-  --out ./reports/mcp
-```
-
-Details: [docs/architecture/mcp-honeypot-grading.md](docs/architecture/mcp-honeypot-grading.md). PyPI: https://pypi.org/project/uhbs/
-
 ### Docker (grade without a local Python install)
 
 Build the grading image (CLI + UHBS-Lab harness):
@@ -217,6 +199,24 @@ After publishing an official scorecard, maintainers can embed:
 ```markdown
 ![UHBS v4.2.2](https://img.shields.io/badge/UHBS%20v4.2.2-Grade%20A-brightgreen)
 ```
+
+## MCP honeypot grading (`uhbs[lab]`)
+
+Grade network-facing MCP decoys (JSON-RPC over HTTP/SSE) with the in-tree `mcp` protocol plugin — distinct from the AI-host MCP server in Quickstart:
+
+```bash
+pip install 'uhbs[lab]'
+uhbs-lab --list-protocols   # includes mcp
+# Lab inventories/TPS live in the git repo (or your own paths):
+uhbs-lab \
+  --inventory docs/conformance/labs/beelzebub/inventory.yaml \
+  --target beelzebub-mcp \
+  --tps docs/conformance/labs/beelzebub/web_api_mcp_quick.yaml \
+  --protocol mcp \
+  --out ./reports/mcp
+```
+
+Details: [docs/architecture/mcp-honeypot-grading.md](docs/architecture/mcp-honeypot-grading.md). PyPI: https://pypi.org/project/uhbs/
 
 ## Contributing
 
