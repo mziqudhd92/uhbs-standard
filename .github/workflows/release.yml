@@ -100,8 +100,10 @@ jobs:
       - name: Stage wheel and sdist only
         run: |
           mkdir -p dist
-          mv artifacts/*.whl artifacts/*.tar.gz dist/
+          find artifacts -type f \( -name '*.whl' -o -name '*.tar.gz' \) -print -exec mv {} dist/ \;
           ls -la dist/
+          test "$(find dist -name '*.whl' | wc -l)" -ge 1
+          test "$(find dist -name '*.tar.gz' | wc -l)" -ge 1
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@ba38be9e461d3875417946c167d0b5f3d385a247 # v1.14.1
         with:
