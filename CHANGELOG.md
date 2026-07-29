@@ -10,8 +10,9 @@ share version **4.3.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[
 ### Added
 - HoneyWire (andreicscs) **HTTP** lab grades for official WebRouterDecoy
   (quick **45.84 / F**, full **45.84 / F**)
-- README terminal demo GIF (`docs/assets/uhbs-quickstart.gif`) — pip install,
-  validate-scorecard, `uhbs-lab` grade
+- README lab demo GIF (`docs/assets/uhbs-lab-demo.gif`) — install Cowrie/Conpot,
+  start decoys, full UHQS for Cowrie · Conpot · HellPot
+- HellPot sanitized scorecard fixture (`hellpot-web-api.scorecard.json`)
 
 ### Fixed
 - Ship JSON Schemas inside the `uhbs` wheel (`uhbs_cli/schemas/`) so
