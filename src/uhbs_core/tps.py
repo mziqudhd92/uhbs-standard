@@ -51,6 +51,21 @@ PROTOCOL_DEFAULT_P95_MS: dict[str, float] = {
     "modbus": 200.0,
     "s7comm": 300.0,
     "mcp": 3000.0,
+    "mongodb": 3000.0,
+    "imap": 3000.0,
+    "kubernetes": 3000.0,
+    "dns": 3000.0,
+    "bluetooth": 3000.0,
+    "dhcp": 3000.0,
+    "httpproxy": 3000.0,
+    "ipp": 3000.0,
+    "irc": 3000.0,
+    "ldap": 3000.0,
+    "memcache": 3000.0,
+    "mssql": 3000.0,
+    "oracle": 3000.0,
+    "pjl": 3000.0,
+    "socks5": 3000.0,
 }
 
 

@@ -7,14 +7,28 @@ from importlib import metadata as _importlib_metadata
 
 from uhbs_core.protocols.base import ProtocolPlugin
 
+from .bluetooth import BluetoothPlugin
+from .dhcp import DHCPPlugin
+from .dns import DNSPlugin
 from .ftp import FTPPlugin
 from .generic import GenericTCPPlugin
 from .git import GitPlugin
 from .http import HTTPPlugin
+from .httpproxy import HttpProxyPlugin
+from .imap import IMAPPlugin
+from .ipp import IppPlugin
+from .irc import IRCPlugin
+from .kubernetes import KubernetesPlugin
+from .ldap import LDAPPlugin
 from .mcp import MCPPlugin
+from .memcache import MemcachePlugin
 from .modbus import ModbusPlugin
+from .mongodb import MongoDBPlugin
+from .mssql import MssqlPlugin
 from .mysql import MySQLPlugin
 from .ntp import NTPPlugin
+from .oracle import OraclePlugin
+from .pjl import PJLPlugin
 from .pop3 import POP3Plugin
 from .postgres import PostgresPlugin
 from .rdp import RDPPlugin
@@ -24,6 +38,7 @@ from .sip import SIPPlugin
 from .smb import SMBPlugin
 from .smtp import SMTPPlugin
 from .snmp import SNMPPlugin
+from .socks5 import SOCKS5Plugin
 from .ssh import SSHPlugin
 from .telnet import TelnetPlugin
 from .tftp import TFTPPlugin
@@ -78,6 +93,36 @@ def get_plugin(name: str) -> ProtocolPlugin:
         key = "s7comm"
     if key in {"pop-3", "pop"}:
         key = "pop3"
+    if key in {"mongo", "mongodb-wire"}:
+        key = "mongodb"
+    if key in {"imap4", "imaps"}:
+        key = "imap"
+    if key in {"k8s", "kube-api", "kubernetes-api"}:
+        key = "kubernetes"
+    if key in {"domain"}:
+        key = "dns"
+    if key in {"bt", "rfcomm", "bluez"}:
+        key = "bluetooth"
+    if key in {"dhcpv4", "bootp"}:
+        key = "dhcp"
+    if key in {"http-proxy", "proxy", "forward-proxy"}:
+        key = "httpproxy"
+    if key in {"ipps"}:
+        key = "ipp"
+    if key in {"internet-relay-chat", "rfc2812"}:
+        key = "irc"
+    if key in {"ldaps"}:
+        key = "ldap"
+    if key in {"memcached", "memcache-text"}:
+        key = "memcache"
+    if key in {"tds", "sqlserver", "sql-server"}:
+        key = "mssql"
+    if key in {"tns", "oracle-tns"}:
+        key = "oracle"
+    if key in {"printer-pjl", "jetdirect"}:
+        key = "pjl"
+    if key in {"socks", "socks4"}:
+        key = "socks5"
     if key in _REGISTRY and key != "generic":
         return _REGISTRY[key]
     if key == "generic" and "generic" in _REGISTRY:
@@ -156,6 +201,21 @@ def _bootstrap() -> None:
         TFTPPlugin(),
         VNCPlugin(),
         GitPlugin(),
+        MongoDBPlugin(),
+        IMAPPlugin(),
+        KubernetesPlugin(),
+        DNSPlugin(),
+        BluetoothPlugin(),
+        DHCPPlugin(),
+        HttpProxyPlugin(),
+        IppPlugin(),
+        IRCPlugin(),
+        LDAPPlugin(),
+        MemcachePlugin(),
+        MssqlPlugin(),
+        OraclePlugin(),
+        PJLPlugin(),
+        SOCKS5Plugin(),
         GenericTCPPlugin(),
     ):
         register(p)

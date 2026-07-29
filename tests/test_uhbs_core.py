@@ -37,6 +37,21 @@ def test_protocol_plugins_registered() -> None:
         "vnc",
         "git",
         "smb",
+        "mongodb",
+        "imap",
+        "kubernetes",
+        "dns",
+        "bluetooth",
+        "dhcp",
+        "httpproxy",
+        "ipp",
+        "irc",
+        "ldap",
+        "memcache",
+        "mssql",
+        "oracle",
+        "pjl",
+        "socks5",
     }.issubset(names)
 
 
