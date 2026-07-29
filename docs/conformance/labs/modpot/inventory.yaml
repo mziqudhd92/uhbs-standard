@@ -1,0 +1,13 @@
+sites:
+  modpot-http:
+    kind: generic
+    class: Web-API
+    host: modpot-lab
+    protocol: http
+    protocols: [http]
+    port: 8080
+    ports: {http: 8080}
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/modpot/web_api_http_full.yaml
+    container_image: modpot:uhbs-lab

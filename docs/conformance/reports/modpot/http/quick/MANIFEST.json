@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "f65d753cc2f4927062638fb35ded2cfb9e781c8e7f01fcfc6c6eb099d4f0e228"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "f65d753cc2f4927062638fb35ded2cfb9e781c8e7f01fcfc6c6eb099d4f0e228"
+    },
+    {
+      "path": "report.json",
+      "sha256": "ec82f1047f439a7a35facf6644a25e615ae41c63ce366ba2bb09b11153b58388"
+    }
+  ],
+  "extra": {
+    "target": "modpot-http",
+    "uhqs": 50.91,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

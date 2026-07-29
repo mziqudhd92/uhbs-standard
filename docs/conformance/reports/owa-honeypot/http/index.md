@@ -1,0 +1,68 @@
+# owa-honeypot — HTTP
+
+**Status:** Informative · evaluation proof  
+**UHBS:** v4.2.2 · **Class:** Web-API · **Protocol:** `http`  
+**Target id:** `owa-honeypot-http` · **Evaluated:** 2026-07-29
+
+| Run | UHQS | Grade | δ_C | Artifacts |
+| --- | ---: | --- | --- | --- |
+| [Quick](quick/README.md) | **41.71** | F | 0.5625 | [`SCORECARD.txt`](quick/SCORECARD.txt) · [`report.json`](quick/report.json) |
+| [Full](full/README.md) | **41.71** | F | 0.5625 | [`SCORECARD.txt`](full/SCORECARD.txt) · [`report.json`](full/report.json) |
+
+## Full run — module breakdown (analyst view)
+
+| Module | Score | Weight | Status | Notes |
+| --- | ---: | --- | --- | --- |
+| Module A | 70.6 | 0.25 | PASSED | status=302 |
+| Module B | 82.5 | 0.20 | PASSED | survived binary blast |
+| Module C | 55.0 | 0.20 | PARTIAL | no STIX objects found |
+| Module D | 75.0 | 100 | GATE | PASSED (UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes on SSH decoys |
+| Module E | 100.0 | 0.15 | PASSED | service alive after load (connect 0.1ms |
+| Module F | 70.0 | 0.20 | PASSED | POSIX coverage 0% (0/104 |
+
+## Full scorecard (verbatim)
+
+```text
+====================================================================================
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.2.2
+====================================================================================
+Target System         : owa-honeypot-http
+System Profile Class  : Web-API
+Protocols             : http
+Evaluation Date       : 2026-07-29
+Evaluation Type       : Full-Spectrum (Static Audit + Dynamic Sandbox)
+Environment           : Isolated Sandbox
+MCP Surface Depth     : unknown
+------------------------------------------------------------------------------------
+EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
+------------------------------------------------------------------------------------
+Module A: Protocol Fidelity         :  70.6/100       0.25     PASSED (status=302)
+Module B: Behavioral Realism        :  82.5/100       0.20     PASSED (survived binary blast)
+Module C: Telemetry Quality         :  55.0/100       0.20     PARTIAL (no STIX objects found)
+Module D: Safety & Containment (C)  :  75.0/100       GATE     PASSED (UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes on SSH decoys))
+Module E: Scalability & Latency     : 100.0/100       0.15     PASSED (service alive after load (connect 0.1ms))
+Module F: Static Code Audit         :  70.0/100       0.20     PASSED (POSIX coverage 0% (0/104))
+------------------------------------------------------------------------------------
+SAFETY GATE MULTIPLIER                : δ_C = 0.5625 (C = 75.0 < 95 — exponential penalty)
+FINAL COMPOSITE SCORE (UHQS 4.2.2)      : 41.71 / 100
+OVERALL EVALUATION GRADE              : GRADE F (Fail)
+====================================================================================
+```
+
+## CTI & blue-team reading
+
+This page is the protocol-level proof hub for **owa-honeypot** on **http**. Prefer the **full** run over quick for operational decisions. Numbers without the verbatim SCORECARD (or `report.json`) are not trustworthy citations.
+
+- **CTI:** Credential-spray and OWA-specific scanner traffic; useful when you need Exchange-flavored lures without deploying full Exchange emulation.
+- **Blue team:** Run behind reverse proxy TLS termination; Flask dev patterns in upstream are not production-hardened — treat UHBS scores as lab proof only.
+- **Replication:** commands live in the product tutorial; environment limits in the methodology.
+
+## Guides
+
+- Product hub: [`../`](../index.md)
+- [Tutorial](../TUTORIAL.md)
+- [Methodology](../METHODOLOGY.md)
+- Published scorecard page: [`../../../../scorecards/owa-honeypot-http.md`](../../../../scorecards/owa-honeypot-http.md)
+- How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
+
+> Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

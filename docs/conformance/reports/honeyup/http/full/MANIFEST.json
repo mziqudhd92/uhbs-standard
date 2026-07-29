@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "79b8828847e41ecb2a0b6ceb290a8d8c2b3d6a0598b2d549f479f45bd677bb0e"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "79b8828847e41ecb2a0b6ceb290a8d8c2b3d6a0598b2d549f479f45bd677bb0e"
+    },
+    {
+      "path": "report.json",
+      "sha256": "c716516d276ca59c3e7f48fbda804a9454a33eed2f43cc7c6803b750ca36c897"
+    }
+  ],
+  "extra": {
+    "target": "honeyup-http",
+    "uhqs": 50.91,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

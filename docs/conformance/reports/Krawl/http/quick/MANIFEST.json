@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "f1344d60c09538cc83540a18637d43c3bbcd7c8d3008cb88227e6cc9d6dfd161"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "f1344d60c09538cc83540a18637d43c3bbcd7c8d3008cb88227e6cc9d6dfd161"
+    },
+    {
+      "path": "report.json",
+      "sha256": "62441568f30105367e96753b61dc79424ada3a77be12334be5fb2ca459799542"
+    }
+  ],
+  "extra": {
+    "target": "krawl-http",
+    "uhqs": 50.91,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

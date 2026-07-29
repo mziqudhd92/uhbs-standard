@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "d12594f3b645ecc81c8050ef616ada195c1925498294901b125f5e6d11291c32"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "d12594f3b645ecc81c8050ef616ada195c1925498294901b125f5e6d11291c32"
+    },
+    {
+      "path": "report.json",
+      "sha256": "b06277da2aa3847e167cdad397a9a684b2162915896e165b77b9a910471055c8"
+    }
+  ],
+  "extra": {
+    "target": "owa-honeypot-http",
+    "uhqs": 41.71,
+    "grade": "GRADE F (Fail)"
+  }
+}

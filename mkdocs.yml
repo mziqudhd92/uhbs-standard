@@ -176,6 +176,25 @@ nav:
       - SMTPLLMPot skip note: conformance/reports/SMTPLLMPot/index.md
       - tanner skip note: conformance/reports/tanner/index.md
       - glastopf skip note: conformance/reports/glastopf/index.md
+      - owa-honeypot report hub: conformance/reports/owa-honeypot/index.md
+      - owa-honeypot HTTP hub: conformance/reports/owa-honeypot/http/index.md
+      - owa-honeypot tutorial: conformance/reports/owa-honeypot/TUTORIAL.md
+      - honeyup report hub: conformance/reports/honeyup/index.md
+      - honeyup HTTP hub: conformance/reports/honeyup/http/index.md
+      - honeyup tutorial: conformance/reports/honeyup/TUTORIAL.md
+      - modpot report hub: conformance/reports/modpot/index.md
+      - modpot HTTP hub: conformance/reports/modpot/http/index.md
+      - modpot tutorial: conformance/reports/modpot/TUTORIAL.md
+      - Krawl report hub: conformance/reports/Krawl/index.md
+      - Krawl HTTP hub: conformance/reports/Krawl/http/index.md
+      - Krawl tutorial: conformance/reports/Krawl/TUTORIAL.md
+      - flux report hub: conformance/reports/flux/index.md
+      - flux HTTP hub: conformance/reports/flux/http/index.md
+      - flux tutorial: conformance/reports/flux/TUTORIAL.md
+      - fortigate-vpn-ssl report hub: conformance/reports/fortigate-vpn-ssl/index.md
+      - fortigate-vpn-ssl HTTP hub: conformance/reports/fortigate-vpn-ssl/http/index.md
+      - fortigate-vpn-ssl tutorial: conformance/reports/fortigate-vpn-ssl/TUTORIAL.md
+      - lophiid skip note: conformance/reports/lophiid/index.md
       - HoneyHTTPD report hub: conformance/reports/honeyhttpd/index.md
       - HoneyHTTPD HTTP hub: conformance/reports/honeyhttpd/http/index.md
       - HoneyHTTPD tutorial: conformance/reports/honeyhttpd/TUTORIAL.md
@@ -278,6 +297,12 @@ nav:
       - Heralding FTP: scorecards/heralding-ftp.md
       - Heralding SMTP: scorecards/heralding-smtp.md
       - OWASP Python-Honeypot HTTP: scorecards/owasp-python-honeypot-http.md
+      - owa-honeypot HTTP: scorecards/owa-honeypot-http.md
+      - honeyup HTTP: scorecards/honeyup-http.md
+      - modpot HTTP: scorecards/modpot-http.md
+      - Krawl HTTP: scorecards/krawl-http.md
+      - flux HTTP: scorecards/flux-http.md
+      - fortigate-vpn-ssl HTTP: scorecards/fortigate-vpn-ssl-http.md
       - HoneyHTTPD HTTP: scorecards/honeyhttpd-http.md
       - SHIVA SMTP: scorecards/shiva-smtp.md
       - sshesame SSH: scorecards/sshesame-ssh.md

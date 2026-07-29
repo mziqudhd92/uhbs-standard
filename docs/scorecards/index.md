@@ -50,6 +50,12 @@ Full artifacts (tutorials, methodology, `SCORECARD.txt`, `report.json`) live und
 | [heralding — ftp](heralding-ftp.md) | Low-Interaction · ftp | **35.85** | F |
 | [heralding — smtp](heralding-smtp.md) | Low-Interaction · smtp | **45.07** | F |
 | [owasp-python-honeypot — http](owasp-python-honeypot-http.md) | Web-API · http | **43.98** | F |
+| [owa-honeypot — http](owa-honeypot-http.md) | Web-API · http | **41.71** | F |
+| [honeyup — http](honeyup-http.md) | Web-API · http | **50.91** | D |
+| [modpot — http](modpot-http.md) | Web-API · http | **50.91** | D |
+| [Krawl — http](krawl-http.md) | Web-API · http | **50.91** | D |
+| [flux — http](flux-http.md) | Web-API · http | **50.91** | D |
+| [fortigate-vpn-ssl — http](fortigate-vpn-ssl-http.md) | Web-API · http | **46.78** | F |
 | [heralding — ssh](heralding-ssh.md) | Low-Interaction · ssh | **44.18** | F |
 | [HoneyAgents — SSH :2222](honeyagents-ssh.md) | Low-Interaction · SSH | **65.24** | D |
 | [honeyhttpd — http](honeyhttpd-http.md) | Web-API · http | **45.73** | F |

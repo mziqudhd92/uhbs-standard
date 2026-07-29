@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "59d8d5ec253103881bfb754c4285acd6a9d55963716229723bc3a27c7ebecdd7"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "59d8d5ec253103881bfb754c4285acd6a9d55963716229723bc3a27c7ebecdd7"
+    },
+    {
+      "path": "report.json",
+      "sha256": "87df9cd8c27eae322ae489e3170895188c23fd0533756828735e6b44b5d04715"
+    }
+  ],
+  "extra": {
+    "target": "fortigate-vpn-ssl-http",
+    "uhqs": 46.78,
+    "grade": "GRADE F (Fail)"
+  }
+}

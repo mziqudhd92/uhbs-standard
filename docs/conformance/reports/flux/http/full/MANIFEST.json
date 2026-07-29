@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "819f9c7583f6f5f49972b6ca7f690b61904a909f4e425ad93a11fc8f46426785"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "819f9c7583f6f5f49972b6ca7f690b61904a909f4e425ad93a11fc8f46426785"
+    },
+    {
+      "path": "report.json",
+      "sha256": "de8f77aec08c349798a333bbb72054d3335c30b07182402b21238244641192c7"
+    }
+  ],
+  "extra": {
+    "target": "flux-http",
+    "uhqs": 50.91,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}
