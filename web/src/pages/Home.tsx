@@ -85,7 +85,7 @@ const Hero = () => {
           </a>
         </motion.div>
         
-        <motion.div variants={fadeUpVariant} className="flex flex-wrap gap-4 mt-2">
+        <motion.div variants={fadeUpVariant} className="flex flex-wrap gap-4 mt-2 mb-12">
           {[
             { label: "Protocol-Agnostic", icon: Globe },
             { label: "Quantitative Scoring 0–100", icon: Activity },
@@ -97,6 +97,32 @@ const Hero = () => {
               <span className="font-mono text-sm text-foreground">{badge.label}</span>
             </div>
           ))}
+        </motion.div>
+
+        <motion.div variants={fadeUpVariant} className="max-w-4xl">
+          <div className="flex items-center justify-between gap-4 mb-3">
+            <p className="font-mono text-xs uppercase tracking-widest text-primary">
+              Demo · install + full UHQS
+            </p>
+            <a
+              href="https://github.com/mziqudhd92/uhbs-standard/blob/main/docs/assets/uhbs-lab-demo.cast"
+              className="font-mono text-xs text-secondary-foreground hover:text-primary transition-colors"
+            >
+              asciinema cast →
+            </a>
+          </div>
+          <div className="border border-border bg-card/40 overflow-hidden terminal-card">
+            <img
+              src={`${import.meta.env.BASE_URL}assets/uhbs-lab-demo.gif`}
+              alt="UHBS lab demo: install Cowrie and Conpot, start decoys, full UHQS grades for Cowrie, Conpot, and HellPot"
+              className="w-full h-auto block"
+              loading="lazy"
+            />
+          </div>
+          <p className="mt-3 font-mono text-xs text-secondary-foreground leading-relaxed max-w-3xl">
+            Pip-install Cowrie &amp; Conpot, bring up live surfaces, then run full
+            UHQS (modules A–F) — Cowrie SSH · Conpot Modbus · HellPot HTTP.
+          </p>
         </motion.div>
       </motion.div>
     </section>

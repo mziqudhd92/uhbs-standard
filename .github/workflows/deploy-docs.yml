@@ -51,8 +51,10 @@ jobs:
           cp docs/llms-full.txt web/dist/llms-full.txt
           cp docs/humans.txt web/dist/humans.txt
           cp server.json web/dist/server.json
-          mkdir -p web/dist/.well-known
+          mkdir -p web/dist/.well-known web/dist/assets
           cp docs/.well-known/security.txt web/dist/.well-known/security.txt
+          # Landing-page demo GIF (also symlinked from web/public/assets for Vite)
+          cp docs/assets/uhbs-lab-demo.gif web/dist/assets/uhbs-lab-demo.gif
           printf '%s\n' \
             '# https://mziqudhd92.github.io/uhbs-standard/robots.txt' \
             'User-agent: *' \
