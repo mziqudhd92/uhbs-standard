@@ -6,8 +6,8 @@
 
 | Run | UHQS | Grade | δ_C | Artifacts |
 | --- | ---: | --- | --- | --- |
-| [Quick](quick/) | **34.38** | F | 0.5625 | [`SCORECARD.txt`](quick/SCORECARD.txt) · [`report.json`](quick/report.json) |
-| [Full](full/) | **34.27** | F | 0.5625 | [`SCORECARD.txt`](full/SCORECARD.txt) · [`report.json`](full/report.json) |
+| [Quick](quick/README.md) | **34.38** | F | 0.5625 | [`SCORECARD.txt`](quick/SCORECARD.txt) · [`report.json`](quick/report.json) |
+| [Full](full/README.md) | **34.27** | F | 0.5625 | [`SCORECARD.txt`](full/SCORECARD.txt) · [`report.json`](full/report.json) |
 
 ## Full run — module breakdown (analyst view)
 
@@ -83,4 +83,4 @@ See product hub for full analyst notes and [READING-UHQS.md](../../READING-UHQS.
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../scorecards/qeeqbox-postgres.md`](../../../scorecards/qeeqbox-postgres.md)
+- Published scorecard page: [`../../../../scorecards/qeeqbox-postgres.md`](../../../../scorecards/qeeqbox-postgres.md)

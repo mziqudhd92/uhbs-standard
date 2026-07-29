@@ -2,7 +2,7 @@
 
 **Status:** Informative · evaluation proof  
 **Target:** [skeeto/endlessh](https://github.com/skeeto/endlessh) — SSH tarpit on TCP **2222**  
-**Published artifacts:** [`quick/`](quick/) · [`full/`](full/) · trust notes: [METHODOLOGY.md](METHODOLOGY.md)
+**Published artifacts:** [`quick/`](quick/README.md) · [`full/`](full/README.md) · trust notes: [METHODOLOGY.md](METHODOLOGY.md)
 
 > **Critical:** use protocol id **`ssh_tarpit`** (generic plugin).  
 > Never pass `--protocol ssh` or inventory `ports.ssh` — Paramiko hangs forever.

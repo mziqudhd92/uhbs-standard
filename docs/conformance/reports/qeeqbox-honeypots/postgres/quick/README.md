@@ -1,6 +1,8 @@
-# qeeqbox / postgres — Quick artifacts
+# qeeqbox-honeypots / postgres — quick artifacts
 
 **UHQS 34.38 / F** · UHBS v4.2.2 · δ_C=0.5625
+
+This page is the human-readable landing for the UHBS-Lab run artifacts. The authoritative proof is the verbatim scorecard below (same bytes as `SCORECARD.txt`).
 
 ## Module scores
 
@@ -13,7 +15,6 @@
 | Module E: Scalability & Latency | 100.0 | 0.10 | PASSED | service alive after load (connect 0.0ms) |
 | Module F: Static Code Audit | 70.0 | 0.20 | PASSED | POSIX coverage 0% (0/104) |
 | Safety Gate δ_C | 0.5625 | GATE | — | Containment multiplier |
-
 
 ## Verbatim SCORECARD.txt
 
@@ -44,12 +45,13 @@ OVERALL EVALUATION GRADE              : GRADE F (Fail)
 ====================================================================================
 ```
 
+## Files in this directory
 
-## Files
+- [`SCORECARD.txt`](SCORECARD.txt) — human-readable UHBS scorecard (source of the table above)
+- [`report.json`](report.json) — machine-readable checks / evidence
+- [`MANIFEST.json`](MANIFEST.json) — run manifest
+- [`REPORT.txt`](REPORT.txt) — text report twin of the scorecard
+- [`uhbs-run.log`](uhbs-run.log) — harness log
 
-- [`SCORECARD.txt`](SCORECARD.txt)
-- [`report.json`](report.json)
-- [`MANIFEST.json`](MANIFEST.json)
-- [`uhbs-run.log`](uhbs-run.log)
+Parent protocol hub: [`../index.md`](../index.md)
 
-Parent: [`../`](../index.md)

@@ -14,7 +14,7 @@ Lightweight FTP decoy for anonymous/auth FTP probing.
 
 | Surface | UHBS plugin? | Graded? | Quick | Full |
 | --- | --- | --- | --- | --- |
-| [FTP](ftp/) | yes (`ftp`) | **yes** | [35.96 / F](ftp/quick/) | [35.85 / F](ftp/full/) |
+| [FTP](ftp/index.md) | yes (`ftp`) | **yes** | [35.96 / F](ftp/quick/README.md) | [35.85 / F](ftp/full/README.md) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 

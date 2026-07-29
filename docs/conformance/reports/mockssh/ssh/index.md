@@ -6,8 +6,8 @@
 
 | Run | UHQS | Grade | δ_C | Artifacts |
 | --- | ---: | --- | --- | --- |
-| [Quick](quick/) | **59.2** | D | 1.0 | [`SCORECARD.txt`](quick/SCORECARD.txt) · [`report.json`](quick/report.json) |
-| [Full](full/) | **59.0** | D | 1.0 | [`SCORECARD.txt`](full/SCORECARD.txt) · [`report.json`](full/report.json) |
+| [Quick](quick/README.md) | **59.2** | D | 1.0 | [`SCORECARD.txt`](quick/SCORECARD.txt) · [`report.json`](quick/report.json) |
+| [Full](full/README.md) | **59.0** | D | 1.0 | [`SCORECARD.txt`](full/SCORECARD.txt) · [`report.json`](full/report.json) |
 
 ## Full run — module breakdown (analyst view)
 
@@ -84,6 +84,6 @@ See product hub for full analyst notes and [READING-UHQS.md](../../READING-UHQS.
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../scorecards/mockssh-ssh.md`](../../../scorecards/mockssh-ssh.md)
+- Published scorecard page: [`../../../../scorecards/mockssh-ssh.md`](../../../../scorecards/mockssh-ssh.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

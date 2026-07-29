@@ -14,7 +14,7 @@ Low-interaction SSH decoy that accepts sessions and logs activity without execut
 
 | Surface | UHBS plugin? | Graded? | Quick | Full |
 | --- | --- | --- | --- | --- |
-| [SSH](ssh/) | yes (`ssh`) | **yes** | [65.13 / D](ssh/quick/) | [61.06 / D](ssh/full/) |
+| [SSH](ssh/index.md) | yes (`ssh`) | **yes** | [65.13 / D](ssh/quick/README.md) | [61.06 / D](ssh/full/README.md) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 

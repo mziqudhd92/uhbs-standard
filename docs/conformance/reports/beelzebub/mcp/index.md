@@ -4,8 +4,8 @@
 
 | Run | UHQS | Grade | Notes |
 | --- | --- | --- | --- |
-| [Quick](quick/) | **43.04** | F | δ_C 0.56 · `surface_depth=interactive` |
-| [Full](full/) | **42.93** | F | Prefer full for claim-grade |
+| [Quick](quick/README.md) | **43.04** | F | δ_C 0.56 · `surface_depth=interactive` |
+| [Full](full/README.md) | **42.93** | F | Prefer full for claim-grade |
 
 MCP grading differs from classic HTTP: JSON-RPC lifecycle, tool allowlists, and `surface_depth`. See [architecture/mcp-honeypot-grading.md](../../../../architecture/mcp-honeypot-grading.md) and [METHODOLOGY.md](../METHODOLOGY.md).
 

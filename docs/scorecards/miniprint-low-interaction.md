@@ -1,51 +1,79 @@
-# Scorecard: Low-Interaction / PJL decoy (miniprint proof)
+# Scorecard: miniprint — lab
 
 **Status:** Informative · evaluation proof (not an endorsement)  
-**Proof label:** [sa7mon/miniprint](https://github.com/sa7mon/miniprint) · report hub: [`../conformance/reports/miniprint/`](../conformance/reports/miniprint/index.md)
+**UHBS:** **4.2.2** · **Class:** Low-Interaction · **Protocol / surface:** `lab`  
+**Target id (lab):** `miniprint` · **Evaluation date:** 2026-07-27
 
-| Field | Value |
-| --- | --- |
-| Target | Low-Interaction printer decoy (PJL / raw TCP) |
-| Class | Low-Interaction |
-| Protocol | PJL `:9100` |
-| Evaluated | 2026-07-27 (full Docker lab) |
-| Spec | UHBS 4.0.1 |
+| Run | UHQS | Grade | δ_C | Proof artifacts |
+| --- | ---: | --- | --- | --- |
+| Quick | 41.83 | F | 0.5625 | See report hub quick artifacts |
+| **Full (authoritative)** | **50.43** | **D** | **0.81** | Verbatim SCORECARD below + `report.json` on the report hub |
 
-## Module Results
+**Report hub:** [miniprint / lab](../conformance/reports/miniprint/index.md) · [Tutorial](../conformance/reports/miniprint/TUTORIAL.md) · [Methodology](../conformance/reports/miniprint/METHODOLOGY.md)  
+**How to read UHQS:** [CTI / blue-team guide](../conformance/reports/READING-UHQS.md)
 
-| Evaluation Module | Score (0–100) | Weight | Status |
-| --- | ---: | ---: | --- |
-| Module A: Protocol Fidelity | 65.4/100 | 0.30 | PARTIAL |
-| Module B: Behavioral Realism | 62.5/100 | 0.15 | PARTIAL |
-| Module C: Telemetry Quality | 55.0/100 | 0.25 | PARTIAL |
-| Module D: Safety & Containment (\(C\)) | 90.0/100 | GATE | GATE FAILED (C &lt; 95) |
-| Module E: Scalability & Latency | 55.0/100 | 0.10 | PARTIAL (P95: ~1127 ms) |
-| Module F: Static Code Audit | 70.0/100 | 0.20 | PASSED (SAST gate capped) |
+## Proof: module scores (full run)
 
-## Safety Gate & Composite
+These numbers are copied from the lab `SCORECARD.txt` produced by `uhbs-lab` — not hand-typed summaries.
 
-| Metric | Value |
-| --- | --- |
-| Safety Gate Multiplier \(\delta_C\) | 0.81 (\(C = 90 &lt; 95\)) |
-| **Final Composite Score (UHQS 4.0.1)** | **50.43 / 100** |
-| Grade | **D (Needs Remediation)** |
-| Production baseline (UHQS &gt; 80 + gate) | **NOT MET** |
+| Module | Score | Weight | Status | Notes |
+| --- | ---: | --- | --- | --- |
+| Module A: Protocol Fidelity | 65.4 | 0.30 | PARTIAL | median=0.791ms pstdev=346.816ms (target jitter often <2ms vs native) |
+| Module B: Behavioral Realism | 62.5 | 0.15 | PARTIAL | survived binary blast |
+| Module C: Telemetry Quality | 55.0 | 0.25 | PARTIAL | no STIX objects found |
+| Module D: Safety & Containment (C) | 90.0 | GATE | PASSED | UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes on SSH decoys) |
+| Module E: Scalability & Latency | 55.0 | 0.10 | PARTIAL | P50=1055.1ms P95=1127.1ms P99=2112.5ms TPS_limit=100.0ms proto=pjl |
+| Module F: Static Code Audit | 70.0 | 0.20 | PASSED | semgrep error/critical=1 total=1 |
+| Safety Gate δ_C | 0.81 | GATE | — | Containment multiplier applied to UHQS |
 
-## Artifacts
 
-- Fixture: [`../conformance/fixtures/miniprint-low-interaction.scorecard.json`](../conformance/fixtures/miniprint-low-interaction.scorecard.json)
-- Full scorecard: [`../conformance/reports/miniprint/full/SCORECARD.txt`](../conformance/reports/miniprint/full/SCORECARD.txt)
-- Quick scorecard: [`../conformance/reports/miniprint/quick/SCORECARD.txt`](../conformance/reports/miniprint/quick/SCORECARD.txt) (UHQS **41.83** / F)
-- Tutorial: [`../conformance/reports/miniprint/TUTORIAL.md`](../conformance/reports/miniprint/TUTORIAL.md)
+## How CTI / blue team should read this
 
-```bash
-uhbs validate-scorecard docs/conformance/fixtures/miniprint-low-interaction.scorecard.json --strict
+| Module | Score | Analyst reading |
+| --- | ---: | --- |
+| A — Protocol Fidelity | 65.4 | Protocol speak / banner-handshake quality for keeping automated clients engaged. |
+| B — Behavioral Realism | 62.5 | Post-connect realism (auth/session). Low often means credential-only or reject-by-design. |
+| C — Telemetry Quality | 55.0 | Telemetry visible to the UHBS lab harness — not a claim about your SIEM pipeline. |
+| D — Safety & Containment (C) | 90.0 | Containment / Safety Gate. Below threshold collapses UHQS via δ_C. |
+| E — Scalability & Latency | 55.0 | Latency vs profile P95. Low can mean timeouts, tarpits, or slow handlers. |
+| F — Static Code Audit | 70.0 | Static audit of the graded source tree — hygiene signal, not a full CVE program. |
+| δ_C | 0.81 | Safety Gate multiplier applied to composite UHQS. |
+
+
+- **CTI:** use module notes to judge what attacker activity you can actually observe (auth-only vs interactive vs tarpit).
+- **Blue team:** verify Safety Gate (Module D / δ_C) and wire real log shipping before Internet exposure.
+- **Do not** cite UHQS without the verbatim SCORECARD or `report.json` from the report hub.
+
+## Verbatim full SCORECARD
+
+```text
+====================================================================================
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0.1
+====================================================================================
+Target System         : miniprint
+System Profile Class  : Low-Interaction
+Protocols             : pjl
+Evaluation Date       : 2026-07-27
+Evaluation Type       : Full-Spectrum (Static Audit + Dynamic Sandbox)
+Environment           : Isolated Sandbox
+------------------------------------------------------------------------------------
+EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
+------------------------------------------------------------------------------------
+Module A: Protocol Fidelity         :  65.4/100       0.30     PARTIAL (median=0.791ms pstdev=346.816ms (target jitter often <2ms vs native))
+Module B: Behavioral Realism        :  62.5/100       0.15     PARTIAL (survived binary blast)
+Module C: Telemetry Quality         :  55.0/100       0.25     PARTIAL (no STIX objects found)
+Module D: Safety & Containment (C)  :  90.0/100       GATE     PASSED (UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes on SSH decoys))
+Module E: Scalability & Latency     :  55.0/100       0.10     PARTIAL (P50=1055.1ms P95=1127.1ms P99=2112.5ms TPS_limit=100.0ms proto=pjl)
+Module F: Static Code Audit         :  70.0/100       0.20     PASSED (semgrep error/critical=1 total=1)
+------------------------------------------------------------------------------------
+SAFETY GATE MULTIPLIER                : δ_C = 0.81 (C = 90.0 < 95 — exponential penalty)
+FINAL COMPOSITE SCORE (UHQS 4.0.1)      : 50.43 / 100
+OVERALL EVALUATION GRADE              : GRADE D (Needs Remediation)
+====================================================================================
 ```
 
-## How to read this scorecard (CTI / blue team)
+## Replication
 
-_Module interpretation unavailable (missing full SCORECARD)._
+Re-run commands are in the [tutorial](../conformance/reports/miniprint/TUTORIAL.md). Environment and limitations are in the [methodology](../conformance/reports/miniprint/METHODOLOGY.md).
 
-- **CTI:** use module notes + verbatim SCORECARD to judge what attacker activity you can actually observe.
-- **Blue team:** verify Safety Gate (δ_C / Module D) and plan log shipping before Internet exposure.
-- **Guide:** [How to read UHBS lab proof](../conformance/reports/READING-UHQS.md)
+> Product names appear only under conformance as evaluation proof — not UHBS requirements.

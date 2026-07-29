@@ -14,7 +14,7 @@ Zero/low-interaction SSH authentication logger — records auth, does not grant 
 
 | Surface | UHBS plugin? | Graded? | Quick | Full |
 | --- | --- | --- | --- | --- |
-| [SSH](ssh/) | yes (`ssh`) | **yes** | [44.38 / F](ssh/quick/) | [44.38 / F](ssh/full/) |
+| [SSH](ssh/index.md) | yes (`ssh`) | **yes** | [44.38 / F](ssh/quick/README.md) | [44.38 / F](ssh/full/README.md) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 

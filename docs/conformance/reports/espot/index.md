@@ -10,8 +10,8 @@ ESPot is an old Node.js Elasticsearch honeypot aimed at CVE-2014-3120. These rep
 
 | Mode | UHQS | Grade | δ_C | Safety Gate | Folder |
 | --- | --- | --- | --- | --- | --- |
-| **Quick** | **49.34** | F | 0.5625 | not cleared (C=75) | [`quick/`](quick/) |
-| **Full** | **63.33** | D | 0.81 | not cleared (C=90) | [`full/`](full/) |
+| **Quick** | **49.34** | F | 0.5625 | not cleared (C=75) | [`quick/`](quick/README.md) |
+| **Full** | **63.33** | D | 0.81 | not cleared (C=90) | [`full/`](full/README.md) |
 
 Sanitized fixture (full run): [`../../fixtures/espot-web-api.scorecard.json`](../../fixtures/espot-web-api.scorecard.json)
 
@@ -52,7 +52,7 @@ Full measures telemetry honestly (C=55), runs SAST (F capped at 70), and records
 1. Read [METHODOLOGY.md](METHODOLOGY.md) (trust / limitations).  
 2. Follow [TUTORIAL.md](TUTORIAL.md) to reproduce.  
 3. Open [`full/SCORECARD.txt`](full/SCORECARD.txt) and [`full/report.json`](full/report.json).  
-4. Compare against [`quick/`](quick/) to see which knobs change the grade.
+4. Compare against [`quick/`](quick/README.md) to see which knobs change the grade.
 
 Back to the [reports index](../index.md).
 

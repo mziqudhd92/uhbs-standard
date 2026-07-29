@@ -6,8 +6,8 @@
 
 | Run | UHQS | Grade | δ_C | Artifacts |
 | --- | ---: | --- | --- | --- |
-| [Quick](quick/) | **38.8** | F | 0.5625 | [`SCORECARD.txt`](quick/SCORECARD.txt) · [`report.json`](quick/report.json) |
-| [Full](full/) | **38.69** | F | 0.5625 | [`SCORECARD.txt`](full/SCORECARD.txt) · [`report.json`](full/report.json) |
+| [Quick](quick/README.md) | **38.8** | F | 0.5625 | [`SCORECARD.txt`](quick/SCORECARD.txt) · [`report.json`](quick/report.json) |
+| [Full](full/README.md) | **38.69** | F | 0.5625 | [`SCORECARD.txt`](full/SCORECARD.txt) · [`report.json`](full/report.json) |
 
 ## Full run — module breakdown (analyst view)
 
@@ -84,6 +84,6 @@ See product hub for full analyst notes and [READING-UHQS.md](../../READING-UHQS.
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../scorecards/mailoney-smtp.md`](../../../scorecards/mailoney-smtp.md)
+- Published scorecard page: [`../../../../scorecards/mailoney-smtp.md`](../../../../scorecards/mailoney-smtp.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

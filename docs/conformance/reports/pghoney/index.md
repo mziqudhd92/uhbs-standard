@@ -14,7 +14,7 @@ Low-interaction PostgreSQL decoy focused on auth/handshake capture.
 
 | Surface | UHBS plugin? | Graded? | Quick | Full |
 | --- | --- | --- | --- | --- |
-| [Postgres](postgres/) | yes (`postgres`) | **yes** | [43.72 / F](postgres/quick/) | [43.61 / F](postgres/full/) |
+| [Postgres](postgres/index.md) | yes (`postgres`) | **yes** | [43.72 / F](postgres/quick/README.md) | [43.61 / F](postgres/full/README.md) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 

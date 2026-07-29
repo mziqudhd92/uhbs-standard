@@ -5,8 +5,8 @@
 
 | Run | UHQS | Grade | Notes |
 | --- | --- | --- | --- |
-| [Quick](quick/) | **67.94** | D | δ_C 1.0 · Module D C=100 |
-| [Full](full/) | **65.24** | D | Prefer full for claim-grade |
+| [Quick](quick/README.md) | **67.94** | D | δ_C 1.0 · Module D C=100 |
+| [Full](full/README.md) | **65.24** | D | Prefer full for claim-grade |
 
 AutoGen deny-list / threat-report behaviour is out of scope for UHQS.
 

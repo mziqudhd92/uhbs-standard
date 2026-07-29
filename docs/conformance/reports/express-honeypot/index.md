@@ -14,7 +14,7 @@ Small Express-based HTTP honeypot oriented at LFI/RFI-style web probing.
 
 | Surface | UHBS plugin? | Graded? | Quick | Full |
 | --- | --- | --- | --- | --- |
-| [HTTP](http/) | yes (`http`) | **yes** | [45.84 / F](http/quick/) | [45.73 / F](http/full/) |
+| [HTTP](http/index.md) | yes (`http`) | **yes** | [45.84 / F](http/quick/README.md) | [45.73 / F](http/full/README.md) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 

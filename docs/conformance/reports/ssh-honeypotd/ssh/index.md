@@ -6,8 +6,8 @@
 
 | Run | UHQS | Grade | δ_C | Artifacts |
 | --- | ---: | --- | --- | --- |
-| [Quick](quick/) | **44.38** | F | 1.0 | [`SCORECARD.txt`](quick/SCORECARD.txt) · [`report.json`](quick/report.json) |
-| [Full](full/) | **44.38** | F | 1.0 | [`SCORECARD.txt`](full/SCORECARD.txt) · [`report.json`](full/report.json) |
+| [Quick](quick/README.md) | **44.38** | F | 1.0 | [`SCORECARD.txt`](quick/SCORECARD.txt) · [`report.json`](quick/report.json) |
+| [Full](full/README.md) | **44.38** | F | 1.0 | [`SCORECARD.txt`](full/SCORECARD.txt) · [`report.json`](full/report.json) |
 
 ## Full run — module breakdown (analyst view)
 
@@ -84,6 +84,6 @@ See product hub for full analyst notes and [READING-UHQS.md](../../READING-UHQS.
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../scorecards/ssh-honeypotd-ssh.md`](../../../scorecards/ssh-honeypotd-ssh.md)
+- Published scorecard page: [`../../../../scorecards/ssh-honeypotd-ssh.md`](../../../../scorecards/ssh-honeypotd-ssh.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

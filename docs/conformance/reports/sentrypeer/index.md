@@ -12,7 +12,7 @@ SIP/VoIP honeypot oriented at toll-fraud and SIP abuse telemetry.
 
 | Surface | UHBS plugin? | Graded? | Quick | Full |
 | --- | --- | --- | --- | --- |
-| [SIP](sip/) | yes | **yes** (`:5060` lab) | [43.38 / F](sip/quick/) | [43.38 / F](sip/full/) |
+| [SIP](sip/index.md) | yes | **yes** (`:5060` lab) | [43.38 / F](sip/quick/README.md) | [43.38 / F](sip/full/README.md) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 

@@ -6,8 +6,8 @@
 
 | Run | UHQS | Grade | δ_C | Artifacts |
 | --- | ---: | --- | --- | --- |
-| [Quick](quick/) | **35.96** | F | 0.5625 | [`SCORECARD.txt`](quick/SCORECARD.txt) · [`report.json`](quick/report.json) |
-| [Full](full/) | **35.85** | F | 0.5625 | [`SCORECARD.txt`](full/SCORECARD.txt) · [`report.json`](full/report.json) |
+| [Quick](quick/README.md) | **35.96** | F | 0.5625 | [`SCORECARD.txt`](quick/SCORECARD.txt) · [`report.json`](quick/report.json) |
+| [Full](full/README.md) | **35.85** | F | 0.5625 | [`SCORECARD.txt`](full/SCORECARD.txt) · [`report.json`](full/report.json) |
 
 ## Full run — module breakdown (analyst view)
 
@@ -88,6 +88,6 @@ See product hub for full analyst notes and [READING-UHQS.md](../../READING-UHQS.
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../scorecards/node-ftp-honeypot-ftp.md`](../../../scorecards/node-ftp-honeypot-ftp.md)
+- Published scorecard page: [`../../../../scorecards/node-ftp-honeypot-ftp.md`](../../../../scorecards/node-ftp-honeypot-ftp.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

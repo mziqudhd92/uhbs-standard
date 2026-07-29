@@ -14,8 +14,8 @@ Multi-protocol credential-harvesting honeypot; this UHBS proof graded SSH and FT
 
 | Surface | UHBS plugin? | Graded? | Quick | Full |
 | --- | --- | --- | --- | --- |
-| [SSH](ssh/) | yes | **yes** | [44.38 / F](ssh/quick/) | [44.18 / F](ssh/full/) |
-| [FTP](ftp/) | yes | **yes** | [35.96 / F](ftp/quick/) | [35.85 / F](ftp/full/) |
+| [SSH](ssh/index.md) | yes | **yes** | [44.38 / F](ssh/quick/README.md) | [44.18 / F](ssh/full/README.md) |
+| [FTP](ftp/index.md) | yes | **yes** | [35.96 / F](ftp/quick/README.md) | [35.85 / F](ftp/full/README.md) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 

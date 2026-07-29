@@ -14,7 +14,7 @@ HTTP tarpit that keeps aggressive bots reading endless generated content (delay/
 
 | Surface | UHBS plugin? | Graded? | Quick | Full |
 | --- | --- | --- | --- | --- |
-| [HTTP](http/) | yes (`http`) | **yes** | [43.98 / F](http/quick/) | [43.87 / F](http/full/) |
+| [HTTP](http/index.md) | yes (`http`) | **yes** | [43.98 / F](http/quick/README.md) | [43.87 / F](http/full/README.md) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 

@@ -14,7 +14,7 @@ Low-interaction MySQL listener for connection and auth attempt capture.
 
 | Surface | UHBS plugin? | Graded? | Quick | Full |
 | --- | --- | --- | --- | --- |
-| [MySQL](mysql/) | yes (`mysql`) | **yes** | [40.35 / F](mysql/quick/) | [37.94 / F](mysql/full/) |
+| [MySQL](mysql/index.md) | yes (`mysql`) | **yes** | [40.35 / F](mysql/quick/README.md) | [37.94 / F](mysql/full/README.md) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 

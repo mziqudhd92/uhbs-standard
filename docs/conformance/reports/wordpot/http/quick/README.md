@@ -1,6 +1,8 @@
-# wordpot / http — Quick artifacts
+# wordpot / http — quick artifacts
 
 **UHQS 41.71 / F** · UHBS v4.2.2 · δ_C=0.5625
+
+This page is the human-readable landing for the UHBS-Lab run artifacts. The authoritative proof is the verbatim scorecard below (same bytes as `SCORECARD.txt`).
 
 ## Module scores
 
@@ -13,7 +15,6 @@
 | Module E: Scalability & Latency | 100.0 | 0.15 | PASSED | service alive after load (connect 0.1ms) |
 | Module F: Static Code Audit | 70.0 | 0.20 | PASSED | POSIX coverage 0% (0/104) |
 | Safety Gate δ_C | 0.5625 | GATE | — | Containment multiplier |
-
 
 ## Verbatim SCORECARD.txt
 
@@ -44,12 +45,13 @@ OVERALL EVALUATION GRADE              : GRADE F (Fail)
 ====================================================================================
 ```
 
-
 ## Files in this directory
 
-- [`SCORECARD.txt`](SCORECARD.txt) — human-readable UHBS scorecard
-- [`report.json`](report.json) — machine-readable module checks / evidence
-- [`MANIFEST.json`](MANIFEST.json) — run manifest (when present)
-- [`uhbs-run.log`](uhbs-run.log) — harness console log (when present)
+- [`SCORECARD.txt`](SCORECARD.txt) — human-readable UHBS scorecard (source of the table above)
+- [`report.json`](report.json) — machine-readable checks / evidence
+- [`MANIFEST.json`](MANIFEST.json) — run manifest
+- [`REPORT.txt`](REPORT.txt) — text report twin of the scorecard
+- [`uhbs-run.log`](uhbs-run.log) — harness log
 
-Parent protocol hub: [`../`](../index.md)
+Parent protocol hub: [`../index.md`](../index.md)
+

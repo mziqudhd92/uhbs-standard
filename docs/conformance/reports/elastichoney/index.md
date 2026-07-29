@@ -14,7 +14,7 @@ Elasticsearch-themed HTTP decoy for ES/CVE-era probing (historic but still scann
 
 | Surface | UHBS plugin? | Graded? | Quick | Full |
 | --- | --- | --- | --- | --- |
-| [HTTP ES REST](http/) | yes (`http`) | **yes** | [45.84 / F](http/quick/) | [45.73 / F](http/full/) |
+| [HTTP ES REST](http/index.md) | yes (`http`) | **yes** | [45.84 / F](http/quick/README.md) | [45.73 / F](http/full/README.md) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 

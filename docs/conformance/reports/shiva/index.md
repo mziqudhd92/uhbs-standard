@@ -14,7 +14,7 @@ SMTP spam honeypot (receiver-oriented) for capturing spam/abuse mail traffic.
 
 | Surface | UHBS plugin? | Graded? | Quick | Full |
 | --- | --- | --- | --- | --- |
-| [SMTP](smtp/) | yes | **yes** | [45.07 / F](smtp/quick/) | [44.96 / F](smtp/full/) |
+| [SMTP](smtp/index.md) | yes | **yes** | [45.07 / F](smtp/quick/README.md) | [44.96 / F](smtp/full/README.md) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 

@@ -2,7 +2,7 @@
 
 **Status:** Informative · evaluation proof  
 **Target:** [mushorg/conpot](https://github.com/mushorg/conpot) — ICS honeypot, **Modbus** on TCP **5020**  
-**Published artifacts:** [`quick/`](quick/) · [`full/`](full/) · trust notes: [METHODOLOGY.md](METHODOLOGY.md)
+**Published artifacts:** [`quick/`](quick/README.md) · [`full/`](full/README.md) · trust notes: [METHODOLOGY.md](METHODOLOGY.md)
 
 ---
 

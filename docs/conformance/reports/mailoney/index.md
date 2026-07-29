@@ -14,7 +14,7 @@ SMTP honeypot for spam/abuse and mail-oriented credential or relay abuse attempt
 
 | Surface | UHBS plugin? | Graded? | Quick | Full |
 | --- | --- | --- | --- | --- |
-| [SMTP](smtp/) | yes (`smtp`) | **yes** | [38.8 / F](smtp/quick/) | [38.69 / F](smtp/full/) |
+| [SMTP](smtp/index.md) | yes (`smtp`) | **yes** | [38.8 / F](smtp/quick/README.md) | [38.69 / F](smtp/full/README.md) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 

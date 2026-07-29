@@ -13,8 +13,8 @@ but **never** emits a valid `SSH-2.0-…` identification string. This grade uses
 
 | Mode | UHQS | Grade | δ_C | Safety Gate | Folder |
 | --- | --- | --- | --- | --- | --- |
-| **Quick** | **46.55** | F | 0.5625 | not cleared (C=75) | [`quick/`](quick/) |
-| **Full** | **54.07** | D | 0.81 | not cleared (C=90) | [`full/`](full/) |
+| **Quick** | **46.55** | F | 0.5625 | not cleared (C=75) | [`quick/`](quick/README.md) |
+| **Full** | **54.07** | D | 0.81 | not cleared (C=90) | [`full/`](full/README.md) |
 
 Sanitized fixture (full): [`../../fixtures/endlessh-low-interaction.scorecard.json`](../../fixtures/endlessh-low-interaction.scorecard.json)
 

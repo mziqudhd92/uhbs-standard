@@ -14,8 +14,8 @@ AI-assisted mail decoy surfaces graded on SMTP and POP3 in UHBS labs.
 
 | Surface | UHBS plugin? | Graded? | Quick | Full |
 | --- | --- | --- | --- | --- |
-| [SMTP](smtp/) | yes | **yes** (offline Docker) | [30.9 / F](smtp/quick/) | [30.78 / F](smtp/full/) |
-| [POP3](pop3/) | yes | **yes** (offline Docker) | [44.24 / F](pop3/quick/) | [44.13 / F](pop3/full/) |
+| [SMTP](smtp/index.md) | yes | **yes** (offline Docker) | [30.9 / F](smtp/quick/README.md) | [30.78 / F](smtp/full/README.md) |
+| [POP3](pop3/index.md) | yes | **yes** (offline Docker) | [44.24 / F](pop3/quick/README.md) | [44.13 / F](pop3/full/README.md) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 

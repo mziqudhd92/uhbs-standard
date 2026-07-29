@@ -2,7 +2,7 @@
 
 **Status:** Informative · evaluation proof  
 **Audience:** Researchers and defenders who want to **reproduce** the published ESPot reports  
-**Outputs live in:** [`quick/`](quick/) and [`full/`](full/) · trust notes: [METHODOLOGY.md](METHODOLOGY.md)
+**Outputs live in:** [`quick/`](quick/README.md) and [`full/`](full/README.md) · trust notes: [METHODOLOGY.md](METHODOLOGY.md)
 
 This is the exact workflow used to produce the artifacts under
 `docs/conformance/reports/espot/`. Product name = proof label only.

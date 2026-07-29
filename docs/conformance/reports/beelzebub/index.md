@@ -6,11 +6,11 @@
 
 | Protocol | Class / port | Quick | Full |
 | --- | --- | --- | --- |
-| [HTTP](http/) | Web-API · HTTP :8080 | [52.77 / D](http/quick/) | [66.02 / D](http/full/) |
-| [Redis](redis/) | Low-Interaction · Redis :6379 | [50.56 / D](redis/quick/) | [61.01 / D](redis/full/) |
-| [SSH](ssh/) | Low-Interaction · SSH :2222 | [74.45 / C](ssh/quick/) | [59.88 / D](ssh/full/) |
-| [Telnet](telnet/) | Low-Interaction · Telnet :23 | [39.16 / F](telnet/quick/) | [47.89 / F](telnet/full/) |
-| [MCP](mcp/) | Web-API (MCP v1) · :8000 | [43.04 / F](mcp/quick/) | [42.93 / F](mcp/full/) |
+| [HTTP](http/index.md) | Web-API · HTTP :8080 | [52.77 / D](http/quick/README.md) | [66.02 / D](http/full/README.md) |
+| [Redis](redis/index.md) | Low-Interaction · Redis :6379 | [50.56 / D](redis/quick/README.md) | [61.01 / D](redis/full/README.md) |
+| [SSH](ssh/index.md) | Low-Interaction · SSH :2222 | [74.45 / C](ssh/quick/README.md) | [59.88 / D](ssh/full/README.md) |
+| [Telnet](telnet/index.md) | Low-Interaction · Telnet :23 | [39.16 / F](telnet/quick/README.md) | [47.89 / F](telnet/full/README.md) |
+| [MCP](mcp/index.md) | Web-API (MCP v1) · :8000 | [43.04 / F](mcp/quick/README.md) | [42.93 / F](mcp/full/README.md) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 

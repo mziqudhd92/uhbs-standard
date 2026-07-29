@@ -14,7 +14,7 @@ Twisted-based mock SSH presenting scripted device-like behavior (lab used Cisco-
 
 | Surface | UHBS plugin? | Graded? | Quick | Full |
 | --- | --- | --- | --- | --- |
-| [SSH](ssh/) | yes | **yes** | [59.2 / D](ssh/quick/) | [59.0 / D](ssh/full/) |
+| [SSH](ssh/index.md) | yes | **yes** | [59.2 / D](ssh/quick/README.md) | [59.0 / D](ssh/full/README.md) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 

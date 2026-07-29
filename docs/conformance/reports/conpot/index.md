@@ -10,8 +10,8 @@ Conpot is an **ICS/SCADA honeypot** (default template also enables HTTP, S7, SNM
 
 | Mode | UHQS | Grade | δ_C | Safety Gate | Folder |
 | --- | --- | --- | --- | --- | --- |
-| **Quick** | **44.55** | F | 0.5625 | not cleared (C=75) | [`quick/`](quick/) |
-| **Full** | **55.4** | D | 0.81 | not cleared (C=90) | [`full/`](full/) |
+| **Quick** | **44.55** | F | 0.5625 | not cleared (C=75) | [`quick/`](quick/README.md) |
+| **Full** | **55.4** | D | 0.81 | not cleared (C=90) | [`full/`](full/README.md) |
 
 Sanitized fixture (full): [`../../fixtures/conpot-ics-scada.scorecard.json`](../../fixtures/conpot-ics-scada.scorecard.json)
 

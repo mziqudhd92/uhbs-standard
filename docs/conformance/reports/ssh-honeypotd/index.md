@@ -14,7 +14,7 @@ Minimal low-interaction SSH listener (C) oriented at capturing connection/auth a
 
 | Surface | UHBS plugin? | Graded? | Quick | Full |
 | --- | --- | --- | --- | --- |
-| [SSH](ssh/) | yes (`ssh`) | **yes** | [44.38 / F](ssh/quick/) | [44.38 / F](ssh/full/) |
+| [SSH](ssh/index.md) | yes (`ssh`) | **yes** | [44.38 / F](ssh/quick/README.md) | [44.38 / F](ssh/full/README.md) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 

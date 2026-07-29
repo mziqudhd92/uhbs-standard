@@ -4,7 +4,7 @@
 
 | Run | UHQS | Grade |
 | --- | --- | --- |
-| [Quick](quick/) | **45.53** | F |
-| [Full](full/) | **65.41** | D |
+| [Quick](quick/README.md) | **45.53** | F |
+| [Full](full/README.md) | **65.41** | D |
 
 Lab surface: LLMPot dataset-generation gold PLC (`python-snap7`), not unpublished ByT5 S7 weights. See [Tutorial](../TUTORIAL.md).

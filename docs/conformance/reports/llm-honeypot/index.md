@@ -6,7 +6,7 @@
 
 | Protocol | Class / port | Quick | Full | Notes |
 | --- | --- | --- | --- | --- |
-| [SSH](ssh/) | Low-Interaction · SSH :2222 (lab host :12222) | [67.94 / D](ssh/quick/) | [61.17 / D](ssh/full/) | SFTP subsystem on (not a separate UHBS listen) |
+| [SSH](ssh/index.md) | Low-Interaction · SSH :2222 (lab host :12222) | [67.94 / D](ssh/quick/README.md) | [61.17 / D](ssh/full/README.md) | SFTP subsystem on (not a separate UHBS listen) |
 | Telnet | — | — | — | Present in Cowrie `cowrie.cfg` but **`enabled = false`** — not graded |
 | HTTP dashboard | — | — | — | `docker compose` web UI for logs — not a decoy listen surface |
 

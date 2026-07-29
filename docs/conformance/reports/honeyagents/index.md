@@ -6,7 +6,7 @@
 
 | Protocol | Class / port | Quick | Full | Notes |
 | --- | --- | --- | --- | --- |
-| [SSH](ssh/) | Low-Interaction · SSH :2222 (lab host :13222) | [67.94 / D](ssh/quick/) | [65.24 / D](ssh/full/) | Stock `cowrie/cowrie:latest` as in compose |
+| [SSH](ssh/index.md) | Low-Interaction · SSH :2222 (lab host :13222) | [67.94 / D](ssh/quick/README.md) | [65.24 / D](ssh/full/README.md) | Stock `cowrie/cowrie:latest` as in compose |
 | Telnet | compose maps `:2223` | — | — | Stock Cowrie defaults leave Telnet **disabled** — not graded |
 | HTTP (nginx→Apache) | `:80` / `:443` | — | — | Protected web app, **not** a honeypot decoy |
 | AutoGen agent | — | — | — | Needs OpenAI API; not a network decoy |

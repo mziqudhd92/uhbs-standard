@@ -13,12 +13,12 @@ Multi-protocol decoy suite graded across SSH/HTTP/MySQL/Redis/Telnet/PostgreSQL 
 
 | DataTrap protocol | UHBS plugin? | Graded? | Quick | Full |
 | --- | --- | --- | --- | --- |
-| [SSH](ssh/) | yes | **yes** | [59.88 / D](ssh/quick/) | [55.61 / D](ssh/full/) |
-| [HTTP](http/) | yes | **yes** | [45.84 / F](http/quick/) | [65.85 / D](http/full/) |
-| [MySQL](mysql/) | yes | **yes** | [40.35 / F](mysql/quick/) | [50.65 / D](mysql/full/) |
-| [Redis](redis/) | yes | **yes** | [42.37 / F](redis/quick/) | [60.85 / D](redis/full/) |
-| [Telnet](telnet/) | yes | **yes** | [43.38 / F](telnet/quick/) | [59.88 / D](telnet/full/) |
-| [PostgreSQL](postgres/) | yes (`postgres`) | **yes** | [40.35 / F](postgres/quick/) | [57.94 / D](postgres/full/) |
+| [SSH](ssh/index.md) | yes | **yes** | [59.88 / D](ssh/quick/README.md) | [55.61 / D](ssh/full/README.md) |
+| [HTTP](http/index.md) | yes | **yes** | [45.84 / F](http/quick/README.md) | [65.85 / D](http/full/README.md) |
+| [MySQL](mysql/index.md) | yes | **yes** | [40.35 / F](mysql/quick/README.md) | [50.65 / D](mysql/full/README.md) |
+| [Redis](redis/index.md) | yes | **yes** | [42.37 / F](redis/quick/README.md) | [60.85 / D](redis/full/README.md) |
+| [Telnet](telnet/index.md) | yes | **yes** | [43.38 / F](telnet/quick/README.md) | [59.88 / D](telnet/full/README.md) |
+| [PostgreSQL](postgres/index.md) | yes (`postgres`) | **yes** | [40.35 / F](postgres/quick/README.md) | [57.94 / D](postgres/full/README.md) |
 | Generic TCP | `generic` | no | — | — | Not stood up in this lab tree |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)

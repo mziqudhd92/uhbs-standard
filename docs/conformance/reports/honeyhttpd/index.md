@@ -14,7 +14,7 @@ Configurable Python HTTP imitation server for web decoy pages/endpoints.
 
 | Surface | UHBS plugin? | Graded? | Quick | Full |
 | --- | --- | --- | --- | --- |
-| [HTTP](http/) | yes | **yes** | [45.84 / F](http/quick/) | [45.73 / F](http/full/) |
+| [HTTP](http/index.md) | yes | **yes** | [45.84 / F](http/quick/README.md) | [45.73 / F](http/full/README.md) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 

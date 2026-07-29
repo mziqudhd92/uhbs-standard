@@ -1,14 +1,20 @@
 # Scorecard: shiva — smtp
 
-**Status:** Informative · evaluation proof  
-**Class:** Low-Interaction · **Protocol:** `smtp`  
-**Full UHQS:** **44.96** · Grade **F** · δ_C **0.5625**  
-**Quick UHQS:** 45.07 / F  
-**Evaluated:** 2026-07-29 · **UHBS:** 4.2.2
+**Status:** Informative · evaluation proof (not an endorsement)  
+**UHBS:** **4.2.2** · **Class:** Low-Interaction · **Protocol / surface:** `smtp`  
+**Target id (lab):** `shiva-smtp` · **Evaluation date:** 2026-07-29
 
-Source report: [`../conformance/reports/shiva/smtp/`](../conformance/reports/shiva/smtp/index.md)
+| Run | UHQS | Grade | δ_C | Proof artifacts |
+| --- | ---: | --- | --- | --- |
+| Quick | 45.07 | F | 0.5625 | See report hub quick artifacts |
+| **Full (authoritative)** | **44.96** | **F** | **0.5625** | Verbatim SCORECARD below + `report.json` on the report hub |
 
-## Module breakdown (full run)
+**Report hub:** [shiva / smtp](../conformance/reports/shiva/smtp/index.md) · [Tutorial](../conformance/reports/shiva/TUTORIAL.md) · [Methodology](../conformance/reports/shiva/METHODOLOGY.md)  
+**How to read UHQS:** [CTI / blue-team guide](../conformance/reports/READING-UHQS.md)
+
+## Proof: module scores (full run)
+
+These numbers are copied from the lab `SCORECARD.txt` produced by `uhbs-lab` — not hand-typed summaries.
 
 | Module | Score | Weight | Status | Notes |
 | --- | ---: | --- | --- | --- |
@@ -18,25 +24,25 @@ Source report: [`../conformance/reports/shiva/smtp/`](../conformance/reports/shi
 | Module D: Safety & Containment (C) | 75.0 | GATE | PASSED | UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes on SSH decoys) |
 | Module E: Scalability & Latency | 100.0 | 0.10 | PASSED | service alive after load (connect 0.2ms) |
 | Module F: Static Code Audit | 69.0 | 0.20 | PARTIAL | POSIX coverage 0% (0/104) |
-| Safety Gate δ_C | 0.5625 | GATE | — | Containment multiplier |
+| Safety Gate δ_C | 0.5625 | GATE | — | Containment multiplier applied to UHQS |
 
 
-
-## How to read this scorecard (CTI / blue team)
+## How CTI / blue team should read this
 
 | Module | Score | Analyst reading |
 | --- | ---: | --- |
 | A — Protocol Fidelity | 100.0 | Protocol speak / banner-handshake quality for keeping automated clients engaged. |
 | B — Behavioral Realism | 82.5 | Post-connect realism (auth/session). Low often means credential-only or reject-by-design. |
-| C — Telemetry Quality | 55.0 | How much useful telemetry the *graded lab* exposed to UHBS — not your SIEM maturity. |
-| D — Safety & Containment (C) | 75.0 | Containment/Safety Gate. Below threshold collapses UHQS via δ_C. |
+| C — Telemetry Quality | 55.0 | Telemetry visible to the UHBS lab harness — not a claim about your SIEM pipeline. |
+| D — Safety & Containment (C) | 75.0 | Containment / Safety Gate. Below threshold collapses UHQS via δ_C. |
 | E — Scalability & Latency | 100.0 | Latency vs profile P95. Low can mean timeouts, tarpits, or slow handlers. |
-| F — Static Code Audit | 69.0 | Static audit of the lab source tree — hygiene signal, not a full CVE program. |
+| F — Static Code Audit | 69.0 | Static audit of the graded source tree — hygiene signal, not a full CVE program. |
 | δ_C | 0.5625 | Safety Gate multiplier applied to composite UHQS. |
 
-- **CTI:** use module notes + verbatim SCORECARD to judge what attacker activity you can actually observe.
-- **Blue team:** verify Safety Gate (δ_C / Module D) and plan log shipping before Internet exposure.
-- **Guide:** [How to read UHBS lab proof](../conformance/reports/READING-UHQS.md)
+
+- **CTI:** use module notes to judge what attacker activity you can actually observe (auth-only vs interactive vs tarpit).
+- **Blue team:** verify Safety Gate (Module D / δ_C) and wire real log shipping before Internet exposure.
+- **Do not** cite UHQS without the verbatim SCORECARD or `report.json` from the report hub.
 
 ## Verbatim full SCORECARD
 
@@ -67,9 +73,8 @@ OVERALL EVALUATION GRADE              : GRADE F (Fail)
 ====================================================================================
 ```
 
-
 ## Replication
 
-See the report [tutorial](../conformance/reports/shiva/TUTORIAL.md) and [methodology](../conformance/reports/shiva/METHODOLOGY.md).
+Re-run commands are in the [tutorial](../conformance/reports/shiva/TUTORIAL.md). Environment and limitations are in the [methodology](../conformance/reports/shiva/METHODOLOGY.md).
 
 > Product names appear only under conformance as evaluation proof — not UHBS requirements.

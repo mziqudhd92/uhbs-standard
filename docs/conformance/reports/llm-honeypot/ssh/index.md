@@ -5,8 +5,8 @@
 
 | Run | UHQS | Grade | Notes |
 | --- | --- | --- | --- |
-| [Quick](quick/) | **67.94** | D | δ_C 1.0 · Module D C=100 |
-| [Full](full/) | **61.17** | D | Prefer full for claim-grade |
+| [Quick](quick/README.md) | **67.94** | D | δ_C 1.0 · Module D C=100 |
+| [Full](full/README.md) | **61.17** | D | Prefer full for claim-grade |
 
 Hidden ANSI / goal-hijack traps are product features; UHBS grades the live SSH surface, not LLM-detection efficacy.
 

@@ -15,9 +15,9 @@ LLM-assisted industrial/protocol honeypot; UHBS graded Modbus/S7comm/HTTP surfac
 
 | Surface | UHBS plugin? | Graded? | Quick | Full |
 | --- | --- | --- | --- | --- |
-| [Modbus TCP](modbus/) | yes | **yes** (HF CPU lab adapter) | [38.48 / F](modbus/quick/) | [55.24 / D](modbus/full/) |
-| [S7comm](s7comm/) | yes | **yes** (Snap7 NoLogic gold) | [45.53 / F](s7comm/quick/) | [65.41 / D](s7comm/full/) |
-| [HTTP WAGO WBM](http/) | yes | **yes** | [45.84 / F](http/quick/) | [63.11 / D](http/full/) |
+| [Modbus TCP](modbus/index.md) | yes | **yes** (HF CPU lab adapter) | [38.48 / F](modbus/quick/README.md) | [55.24 / D](modbus/full/README.md) |
+| [S7comm](s7comm/index.md) | yes | **yes** (Snap7 NoLogic gold) | [45.53 / F](s7comm/quick/README.md) | [65.41 / D](s7comm/full/README.md) |
+| [HTTP WAGO WBM](http/index.md) | yes | **yes** | [45.84 / F](http/quick/README.md) | [63.11 / D](http/full/README.md) |
 | Honeyd WAGO fingerprint (`docker/`) | partial | no | — | — | Separate Honeyd path; not this lab |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)

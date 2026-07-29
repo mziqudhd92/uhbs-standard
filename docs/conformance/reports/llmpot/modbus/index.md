@@ -4,7 +4,7 @@
 
 | Run | UHQS | Grade |
 | --- | --- | --- |
-| [Quick](quick/) | **38.48** | F |
-| [Full](full/) | **55.24** | D |
+| [Quick](quick/README.md) | **38.48** | F |
+| [Full](full/README.md) | **55.24** | D |
 
 See [Tutorial](../TUTORIAL.md).

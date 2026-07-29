@@ -6,7 +6,7 @@
 
 | Protocol | Class / port | Quick | Full |
 | --- | --- | --- | --- |
-| [MCP](mcp/) | Web-API (MCP v1) · :8080 (lab host map :18080) | [43.04 / F](mcp/quick/) | [42.93 / F](mcp/full/) |
+| [MCP](mcp/index.md) | Web-API (MCP v1) · :8080 (lab host map :18080) | [43.04 / F](mcp/quick/README.md) | [42.93 / F](mcp/full/README.md) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 

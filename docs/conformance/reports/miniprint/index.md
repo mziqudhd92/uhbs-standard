@@ -10,8 +10,8 @@ miniprint is a **medium-interaction printer honeypot** that speaks Printer Job L
 
 | Mode | UHQS | Grade | δ_C | Safety Gate | Folder |
 | --- | --- | --- | --- | --- | --- |
-| **Quick** | **41.83** | F | 0.5625 | not cleared (C=75) | [`quick/`](quick/) |
-| **Full** | **50.43** | D | 0.81 | not cleared (C=90) | [`full/`](full/) |
+| **Quick** | **41.83** | F | 0.5625 | not cleared (C=75) | [`quick/`](quick/README.md) |
+| **Full** | **50.43** | D | 0.81 | not cleared (C=90) | [`full/`](full/README.md) |
 
 Sanitized fixture (full): [`../../fixtures/miniprint-low-interaction.scorecard.json`](../../fixtures/miniprint-low-interaction.scorecard.json)
 

@@ -1,51 +1,79 @@
-# Scorecard: ICS-SCADA / Modbus decoy (Conpot proof)
+# Scorecard: conpot — lab
 
 **Status:** Informative · evaluation proof (not an endorsement)  
-**Proof label:** [mushorg/conpot](https://github.com/mushorg/conpot) · report hub: [`../conformance/reports/conpot/`](../conformance/reports/conpot/index.md)
+**UHBS:** **4.2.2** · **Class:** ICS-SCADA · **Protocol / surface:** `lab`  
+**Target id (lab):** `conpot` · **Evaluation date:** 2026-07-27
 
-| Field | Value |
-| --- | --- |
-| Target | ICS-SCADA Modbus decoy |
-| Class | ICS-SCADA |
-| Protocol | Modbus TCP `:5020` |
-| Evaluated | 2026-07-27 (full Docker lab) |
-| Spec | UHBS 4.0.1 |
+| Run | UHQS | Grade | δ_C | Proof artifacts |
+| --- | ---: | --- | --- | --- |
+| Quick | 44.55 | F | 0.5625 | See report hub quick artifacts |
+| **Full (authoritative)** | **55.4** | **D** | **0.81** | Verbatim SCORECARD below + `report.json` on the report hub |
 
-## Module Results
+**Report hub:** [conpot / lab](../conformance/reports/conpot/index.md) · [Tutorial](../conformance/reports/conpot/TUTORIAL.md) · [Methodology](../conformance/reports/conpot/METHODOLOGY.md)  
+**How to read UHQS:** [CTI / blue-team guide](../conformance/reports/READING-UHQS.md)
 
-| Evaluation Module | Score (0–100) | Weight | Status |
-| --- | ---: | ---: | --- |
-| Module A: Protocol Fidelity | 79.0/100 | 0.35 | PASSED |
-| Module B: Behavioral Realism | 42.5/100 | 0.20 | PARTIAL |
-| Module C: Telemetry Quality | 55.0/100 | 0.15 | PARTIAL |
-| Module D: Safety & Containment (\(C\)) | 90.0/100 | GATE | GATE FAILED (C &lt; 95) |
-| Module E: Scalability & Latency | 100.0/100 | 0.10 | PASSED |
-| Module F: Static Code Audit | 70.0/100 | 0.20 | PASSED (SAST gate capped) |
+## Proof: module scores (full run)
 
-## Safety Gate & Composite
+These numbers are copied from the lab `SCORECARD.txt` produced by `uhbs-lab` — not hand-typed summaries.
 
-| Metric | Value |
-| --- | --- |
-| Safety Gate Multiplier \(\delta_C\) | 0.81 (\(C = 90 &lt; 95\)) |
-| **Final Composite Score (UHQS 4.0.1)** | **55.4 / 100** |
-| Grade | **D (Needs Remediation)** |
-| Production baseline (UHQS &gt; 80 + gate) | **NOT MET** |
+| Module | Score | Weight | Status | Notes |
+| --- | ---: | --- | --- | --- |
+| Module A: Protocol Fidelity | 79.0 | 0.35 | PASSED | resp=000100000003018302 |
+| Module B: Behavioral Realism | 42.5 | 0.20 | PARTIAL | write step (FC 0x06) failed/unacknowledged: resp=000200000003018602 |
+| Module C: Telemetry Quality | 55.0 | 0.15 | PARTIAL | no STIX objects found |
+| Module D: Safety & Containment (C) | 90.0 | GATE | PASSED | UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes on SSH decoys) |
+| Module E: Scalability & Latency | 100.0 | 0.10 | PASSED | service alive after load (connect 0.6ms) |
+| Module F: Static Code Audit | 70.0 | 0.20 | PASSED | 2 static private keys: conpot/templates/default/ssl/ssl.key, conpot/templates/kamstrup_382/ssl/ssl.key |
+| Safety Gate δ_C | 0.81 | GATE | — | Containment multiplier applied to UHQS |
 
-## Artifacts
 
-- Fixture: [`../conformance/fixtures/conpot-ics-scada.scorecard.json`](../conformance/fixtures/conpot-ics-scada.scorecard.json)
-- Full scorecard: [`../conformance/reports/conpot/full/SCORECARD.txt`](../conformance/reports/conpot/full/SCORECARD.txt)
-- Quick scorecard: [`../conformance/reports/conpot/quick/SCORECARD.txt`](../conformance/reports/conpot/quick/SCORECARD.txt) (UHQS **44.55** / F)
-- Tutorial: [`../conformance/reports/conpot/TUTORIAL.md`](../conformance/reports/conpot/TUTORIAL.md)
+## How CTI / blue team should read this
 
-```bash
-uhbs validate-scorecard docs/conformance/fixtures/conpot-ics-scada.scorecard.json --strict
+| Module | Score | Analyst reading |
+| --- | ---: | --- |
+| A — Protocol Fidelity | 79.0 | Protocol speak / banner-handshake quality for keeping automated clients engaged. |
+| B — Behavioral Realism | 42.5 | Post-connect realism (auth/session). Low often means credential-only or reject-by-design. |
+| C — Telemetry Quality | 55.0 | Telemetry visible to the UHBS lab harness — not a claim about your SIEM pipeline. |
+| D — Safety & Containment (C) | 90.0 | Containment / Safety Gate. Below threshold collapses UHQS via δ_C. |
+| E — Scalability & Latency | 100.0 | Latency vs profile P95. Low can mean timeouts, tarpits, or slow handlers. |
+| F — Static Code Audit | 70.0 | Static audit of the graded source tree — hygiene signal, not a full CVE program. |
+| δ_C | 0.81 | Safety Gate multiplier applied to composite UHQS. |
+
+
+- **CTI:** use module notes to judge what attacker activity you can actually observe (auth-only vs interactive vs tarpit).
+- **Blue team:** verify Safety Gate (Module D / δ_C) and wire real log shipping before Internet exposure.
+- **Do not** cite UHQS without the verbatim SCORECARD or `report.json` from the report hub.
+
+## Verbatim full SCORECARD
+
+```text
+====================================================================================
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0.1
+====================================================================================
+Target System         : conpot
+System Profile Class  : ICS-SCADA
+Protocols             : modbus
+Evaluation Date       : 2026-07-27
+Evaluation Type       : Full-Spectrum (Static Audit + Dynamic Sandbox)
+Environment           : Isolated Sandbox
+------------------------------------------------------------------------------------
+EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
+------------------------------------------------------------------------------------
+Module A: Protocol Fidelity         :  79.0/100       0.35     PASSED (resp=000100000003018302)
+Module B: Behavioral Realism        :  42.5/100       0.20     PARTIAL (write step (FC 0x06) failed/unacknowledged: resp=000200000003018602)
+Module C: Telemetry Quality         :  55.0/100       0.15     PARTIAL (no STIX objects found)
+Module D: Safety & Containment (C)  :  90.0/100       GATE     PASSED (UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes on SSH decoys))
+Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service alive after load (connect 0.6ms))
+Module F: Static Code Audit         :  70.0/100       0.20     PASSED (2 static private keys: conpot/templates/default/ssl/ssl.key, conpot/templates/kamstrup_382/ssl/ssl.key)
+------------------------------------------------------------------------------------
+SAFETY GATE MULTIPLIER                : δ_C = 0.81 (C = 90.0 < 95 — exponential penalty)
+FINAL COMPOSITE SCORE (UHQS 4.0.1)      : 55.4 / 100
+OVERALL EVALUATION GRADE              : GRADE D (Needs Remediation)
+====================================================================================
 ```
 
-## How to read this scorecard (CTI / blue team)
+## Replication
 
-_Module interpretation unavailable (missing full SCORECARD)._
+Re-run commands are in the [tutorial](../conformance/reports/conpot/TUTORIAL.md). Environment and limitations are in the [methodology](../conformance/reports/conpot/METHODOLOGY.md).
 
-- **CTI:** use module notes + verbatim SCORECARD to judge what attacker activity you can actually observe.
-- **Blue team:** verify Safety Gate (δ_C / Module D) and plan log shipping before Internet exposure.
-- **Guide:** [How to read UHBS lab proof](../conformance/reports/READING-UHQS.md)
+> Product names appear only under conformance as evaluation proof — not UHBS requirements.

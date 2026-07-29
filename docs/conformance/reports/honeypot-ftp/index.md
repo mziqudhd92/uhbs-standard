@@ -12,7 +12,7 @@ Plain FTP honeypot (lab graded non-TLS FTP).
 
 | Surface | UHBS plugin? | Graded? | Quick | Full |
 | --- | --- | --- | --- | --- |
-| [FTP](ftp/) | yes | **yes** (plain `:21`) | [42.71 / F](ftp/quick/) | [42.6 / F](ftp/full/) |
+| [FTP](ftp/index.md) | yes | **yes** (plain `:21`) | [42.71 / F](ftp/quick/README.md) | [42.6 / F](ftp/full/README.md) |
 | FTPS `:990` | yes (`ftp`) | no (lab skips SSL) | — | — |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)

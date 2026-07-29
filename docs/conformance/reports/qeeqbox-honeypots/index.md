@@ -12,16 +12,16 @@ Multi-protocol honeypot framework; UHBS published selected overlapping protocol 
 
 | Surface | UHBS plugin? | Graded? | Quick | Full |
 | --- | --- | --- | --- | --- |
-| [ssh](ssh/) | yes | **yes** | [59.88 / D](ssh/quick/) | [59.68 / D](ssh/full/) |
-| [http](http/) | yes | **yes** | [45.84 / F](http/quick/) | [45.73 / F](http/full/) |
-| [ftp](ftp/) | yes | **yes** | [42.71 / F](ftp/quick/) | [40.31 / F](ftp/full/) |
-| [telnet](telnet/) | yes | **yes** | [29.88 / F](telnet/quick/) | [29.77 / F](telnet/full/) |
-| [smtp](smtp/) | yes | **yes** | [30.9 / F](smtp/quick/) | [30.78 / F](smtp/full/) |
-| [pop3](pop3/) | yes | **yes** | [31.06 / F](pop3/quick/) | [30.94 / F](pop3/full/) |
-| [mysql](mysql/) | yes | **yes** | [34.38 / F](mysql/quick/) | [34.27 / F](mysql/full/) |
-| [postgres](postgres/) | yes | **yes** | [34.38 / F](postgres/quick/) | [34.27 / F](postgres/full/) |
-| [redis](redis/) | yes | **yes** | [34.61 / F](redis/quick/) | [34.5 / F](redis/full/) |
-| [vnc](vnc/) | yes | **yes** | [32.92 / F](vnc/quick/) | [32.81 / F](vnc/full/) |
+| [ssh](ssh/index.md) | yes | **yes** | [59.88 / D](ssh/quick/README.md) | [59.68 / D](ssh/full/README.md) |
+| [http](http/index.md) | yes | **yes** | [45.84 / F](http/quick/README.md) | [45.73 / F](http/full/README.md) |
+| [ftp](ftp/index.md) | yes | **yes** | [42.71 / F](ftp/quick/README.md) | [40.31 / F](ftp/full/README.md) |
+| [telnet](telnet/index.md) | yes | **yes** | [29.88 / F](telnet/quick/README.md) | [29.77 / F](telnet/full/README.md) |
+| [smtp](smtp/index.md) | yes | **yes** | [30.9 / F](smtp/quick/README.md) | [30.78 / F](smtp/full/README.md) |
+| [pop3](pop3/index.md) | yes | **yes** | [31.06 / F](pop3/quick/README.md) | [30.94 / F](pop3/full/README.md) |
+| [mysql](mysql/index.md) | yes | **yes** | [34.38 / F](mysql/quick/README.md) | [34.27 / F](mysql/full/README.md) |
+| [postgres](postgres/index.md) | yes | **yes** | [34.38 / F](postgres/quick/README.md) | [34.27 / F](postgres/full/README.md) |
+| [redis](redis/index.md) | yes | **yes** | [34.61 / F](redis/quick/README.md) | [34.5 / F](redis/full/README.md) |
+| [vnc](vnc/index.md) | yes | **yes** | [32.92 / F](vnc/quick/README.md) | [32.81 / F](vnc/full/README.md) |
 
 ## Skipped in this proof
 

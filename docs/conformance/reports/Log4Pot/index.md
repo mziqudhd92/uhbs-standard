@@ -14,7 +14,7 @@ HTTP listener designed to capture Log4Shell (Log4j JNDI) exploitation attempts.
 
 | Surface | UHBS plugin? | Graded? | Quick | Full |
 | --- | --- | --- | --- | --- |
-| [HTTP](http/) | yes (`http`) | **yes** | [41.71 / F](http/quick/) | [38.0 / F](http/full/) |
+| [HTTP](http/index.md) | yes (`http`) | **yes** | [41.71 / F](http/quick/README.md) | [38.0 / F](http/full/README.md) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 

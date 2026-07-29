@@ -2,7 +2,7 @@
 
 **Status:** Informative · evaluation proof  
 **Target:** [sa7mon/miniprint](https://github.com/sa7mon/miniprint) — PJL printer honeypot on TCP **9100**  
-**Published artifacts:** [`quick/`](quick/) · [`full/`](full/) · trust notes: [METHODOLOGY.md](METHODOLOGY.md)
+**Published artifacts:** [`quick/`](quick/README.md) · [`full/`](full/README.md) · trust notes: [METHODOLOGY.md](METHODOLOGY.md)
 
 ---
 

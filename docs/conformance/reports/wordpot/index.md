@@ -14,7 +14,7 @@ WordPress-themed HTTP honeypot for CMS scanner and plugin/theme probe capture.
 
 | Surface | UHBS plugin? | Graded? | Quick | Full |
 | --- | --- | --- | --- | --- |
-| [HTTP](http/) | yes | **yes** | [41.71 / F](http/quick/) | [41.6 / F](http/full/) |
+| [HTTP](http/index.md) | yes | **yes** | [41.71 / F](http/quick/README.md) | [41.6 / F](http/full/README.md) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 
