@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "6a1a18ca60d4a4710f95b507cdc80878ef5efaf1dbd06f5593ffe256494f0948"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "fc60210fd4ebe22c15455b3a5a0a0cfa08cb90e447e051b4e1dd7375fb3ab0fe"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "fc60210fd4ebe22c15455b3a5a0a0cfa08cb90e447e051b4e1dd7375fb3ab0fe"
+    },
+    {
+      "path": "report.json",
+      "sha256": "00bda3eebb4300a688ed03fc2f43302d1f1b1dcfce27426686762a0152c2023e"
+    }
+  ],
+  "extra": {
+    "target": "portlurker-generic",
+    "uhqs": 39.84,
+    "grade": "GRADE F (Fail)"
+  }
+}

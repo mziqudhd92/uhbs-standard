@@ -195,6 +195,18 @@ nav:
       - fortigate-vpn-ssl HTTP hub: conformance/reports/fortigate-vpn-ssl/http/index.md
       - fortigate-vpn-ssl tutorial: conformance/reports/fortigate-vpn-ssl/TUTORIAL.md
       - lophiid skip note: conformance/reports/lophiid/index.md
+      - honeytrap report hub: conformance/reports/honeytrap/index.md
+      - honeytrap SSH hub: conformance/reports/honeytrap/ssh/index.md
+      - honeytrap tutorial: conformance/reports/honeytrap/TUTORIAL.md
+      - portlurker report hub: conformance/reports/portlurker/index.md
+      - portlurker generic hub: conformance/reports/portlurker/generic/index.md
+      - portlurker tutorial: conformance/reports/portlurker/TUTORIAL.md
+      - fapro skip note: conformance/reports/fapro/index.md
+      - glutton skip note: conformance/reports/glutton/index.md
+      - HoneyPy skip note: conformance/reports/HoneyPy/index.md
+      - masscanned skip note: conformance/reports/masscanned/index.md
+      - honeyplc skip note: conformance/reports/honeyplc/index.md
+      - Malbait skip note: conformance/reports/Malbait/index.md
       - HoneyHTTPD report hub: conformance/reports/honeyhttpd/index.md
       - HoneyHTTPD HTTP hub: conformance/reports/honeyhttpd/http/index.md
       - HoneyHTTPD tutorial: conformance/reports/honeyhttpd/TUTORIAL.md
@@ -303,6 +315,8 @@ nav:
       - Krawl HTTP: scorecards/krawl-http.md
       - flux HTTP: scorecards/flux-http.md
       - fortigate-vpn-ssl HTTP: scorecards/fortigate-vpn-ssl-http.md
+      - honeytrap SSH: scorecards/honeytrap-ssh.md
+      - portlurker generic: scorecards/portlurker-generic.md
       - HoneyHTTPD HTTP: scorecards/honeyhttpd-http.md
       - SHIVA SMTP: scorecards/shiva-smtp.md
       - sshesame SSH: scorecards/sshesame-ssh.md

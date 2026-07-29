@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "87b1e95316fcea8a367bdc2a3d7c87589d1042e703c09cc960ae8409a655750a"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "87b1e95316fcea8a367bdc2a3d7c87589d1042e703c09cc960ae8409a655750a"
+    },
+    {
+      "path": "report.json",
+      "sha256": "be7c2d32feba3af0184a216f271922fcbf75abcab99307c7f9efe5e236cb7501"
+    }
+  ],
+  "extra": {
+    "target": "honeytrap-ssh",
+    "uhqs": 44.38,
+    "grade": "GRADE F (Fail)"
+  }
+}

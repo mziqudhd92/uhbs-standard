@@ -1,0 +1,12 @@
+target_metadata:
+  name: "honeytrap-ssh-quick"
+  class: "Low-Interaction"
+  protocol: "ssh"
+  protocols: ["ssh"]
+performance_baseline:
+  expected_p95_latency_ms: 3000
+  strict_rfc_enforcement: true
+  timing_samples: 50
+safety_boundary:
+  allowed_outbound_traffic: false
+  allow_local_code_execution: false

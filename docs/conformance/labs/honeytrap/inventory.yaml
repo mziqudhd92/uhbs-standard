@@ -1,0 +1,27 @@
+sites:
+  honeytrap-ssh:
+    kind: ssh
+    class: Low-Interaction
+    host: honeytrap-lab
+    protocol: ssh
+    protocols: [ssh]
+    port: 8022
+    ports: {ssh: 8022}
+    user: root
+    password: "root"
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/honeytrap/low_interaction_ssh_full.yaml
+    container_image: honeytrap:uhbs-lab
+  portlurker-generic:
+    kind: generic
+    class: Low-Interaction
+    host: portlurker-lab
+    protocol: generic
+    protocols: [generic]
+    port: 8080
+    ports: {generic: 8080}
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/portlurker/low_interaction_generic_full.yaml
+    container_image: portlurker:uhbs-lab

@@ -59,8 +59,8 @@ See also: [PLAN.md](PLAN.md) Â· [DEFERRED-PROTOCOLS.md](DEFERRED-PROTOCOLS.md) Â
 
 ## Graded this batch (quick + full published)
 
-sshesame, ssh-honeypotd, ssh-auth-logger, HellPot, express-honeypot, mailoney, pghoney, mysql-honeypotd, Log4Pot, node-ftp-honeypot, SentryPeer, wordpot, MockSSH, Heralding (SSH+FTP+SMTP), HoneyHTTPD, SHIVA, OWASP Python-Honeypot (HTTP), owa-honeypot, honeyup, modpot, Krawl, flux, fortigate-vpn-ssl.
+sshesame, ssh-honeypotd, ssh-auth-logger, HellPot, express-honeypot, mailoney, pghoney, mysql-honeypotd, Log4Pot, node-ftp-honeypot, SentryPeer, wordpot, MockSSH, Heralding (SSH+FTP+SMTP), HoneyHTTPD, SHIVA, OWASP Python-Honeypot (HTTP), owa-honeypot, honeyup, modpot, Krawl, flux, fortigate-vpn-ssl, honeytrap (SSH), portlurker (generic).
 
-**Skipped (with published notes):** droberson/ssh-honeypot (missing Docker base); snare (needs Tanner); galah / SMTPLLMPot / lophiid (LLM API keys); tanner (backend, not standalone decoy); glastopf (ubuntu:14.04 image unbuildable).
+**Skipped (with published notes):** droberson/ssh-honeypot (missing Docker base); snare (needs Tanner); galah / SMTPLLMPot / lophiid (LLM API keys); tanner (backend, not standalone decoy); glastopf (ubuntu:14.04 image unbuildable); FaPro (binary config load failed); glutton (host net/TPROXY); HoneyPy (Python 2.7); masscanned (NET_ADMIN/userland stack); HoneyPLC (Honeyd/Snap7 host stack); Malbait (not containerized in time).
 
-Remaining **grade_now** still queued (FaPro, glutton, sticky_elephant, blacknet, kippo, masscanned, HoneyPy, etc.).
+Remaining **grade_now** still queued (sticky_elephant, kippo, blacknet, telnet-iot-honeypot, nosqlpot, pyRDP, Artillery, etc.).

@@ -1,0 +1,13 @@
+sites:
+  portlurker-generic:
+    kind: generic
+    class: Low-Interaction
+    host: portlurker-lab
+    protocol: generic
+    protocols: [generic]
+    port: 8080
+    ports: {generic: 8080}
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/portlurker/low_interaction_generic_full.yaml
+    container_image: portlurker:uhbs-lab
