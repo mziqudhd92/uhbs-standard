@@ -8,6 +8,8 @@ share version **4.2.2** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[
 ## [Unreleased]
 
 ### Fixed
+- MkDocs `--strict` Pages deploy was failing on broken scorecard links, leaving stub scorecards live; artifact README/scorecard pages now embed verbatim SCORECARD proof
+
 ### Added
 - CTI/blue-team analyst sections on report hubs + scorecard reading tables; READING-UHQS guide
 - Analyst-facing report/scorecard pages: module tables + verbatim SCORECARD; scorecards index lists all published proofs
