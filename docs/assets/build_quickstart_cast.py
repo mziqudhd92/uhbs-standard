@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Build docs/assets/uhbs-quickstart.cast (CRLF — required for agg/asciinema).
+"""Build docs/assets/uhbs-lab-demo.cast (CRLF — required for agg/asciinema).
 
 Usage:
   python docs/assets/build_quickstart_cast.py
-  agg --cols 100 --rows 32 --font-size 13 --speed 0.85 \\
-    docs/assets/uhbs-quickstart.cast docs/assets/uhbs-quickstart.gif
+  agg --cols 100 --rows 32 --font-size 13 --speed 0.9 \\
+    docs/assets/uhbs-lab-demo.cast /tmp/uhbs-lab-demo-raw.gif
+  gifsicle -O3 --lossy=80 --colors 64 \\
+    -o docs/assets/uhbs-lab-demo.gif /tmp/uhbs-lab-demo-raw.gif
 """
 from __future__ import annotations
 
@@ -14,7 +16,7 @@ from pathlib import Path
 
 COLS = 100
 ROWS = 32
-OUT = Path(__file__).resolve().parent / "uhbs-quickstart.cast"
+OUT = Path(__file__).resolve().parent / "uhbs-lab-demo.cast"
 
 PLUGINS = (
     "bluetooth, dhcp, dns, ftp, generic, git, http, httpproxy, imap, ipp, "

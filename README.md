@@ -43,10 +43,10 @@
 Terminal walkthrough: install UHBS + Cowrie/Conpot, start the decoys, then run
 full UHQS grades (Cowrie SSH · Conpot Modbus · HellPot HTTP).
 
-![UHBS quickstart — install honeypots + full UHQS](docs/assets/uhbs-quickstart.gif)
+![UHBS lab demo — install honeypots + full UHQS](docs/assets/uhbs-lab-demo.gif)
 
-Replay source: [`docs/assets/uhbs-quickstart.cast`](docs/assets/uhbs-quickstart.cast)
-(`asciinema play docs/assets/uhbs-quickstart.cast`).
+Replay source: [`docs/assets/uhbs-lab-demo.cast`](docs/assets/uhbs-lab-demo.cast)
+(`asciinema play docs/assets/uhbs-lab-demo.cast`).
 
 ## Quickstart
 
