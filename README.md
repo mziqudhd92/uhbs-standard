@@ -40,10 +40,10 @@
 
 ## Demo
 
-Terminal walkthrough: install from PyPI, validate a published scorecard, then
-grade a live HTTP decoy with `uhbs-lab`.
+Terminal walkthrough: install UHBS + Cowrie/Conpot, start the decoys, then run
+full UHQS grades (Cowrie SSH · Conpot Modbus · HellPot HTTP).
 
-![UHBS quickstart — pip install, validate, grade](docs/assets/uhbs-quickstart.gif)
+![UHBS quickstart — install honeypots + full UHQS](docs/assets/uhbs-quickstart.gif)
 
 Replay source: [`docs/assets/uhbs-quickstart.cast`](docs/assets/uhbs-quickstart.cast)
 (`asciinema play docs/assets/uhbs-quickstart.cast`).

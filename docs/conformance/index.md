@@ -31,6 +31,7 @@ Published quick + full Docker grades, tutorials, and provenance:
 | [`fixtures/espot-web-api.scorecard.json`](fixtures/espot-web-api.scorecard.json) | ESPot (Web-API, **full** lab) | 63.33 | D |
 | [`fixtures/miniprint-low-interaction.scorecard.json`](fixtures/miniprint-low-interaction.scorecard.json) | miniprint (PJL / Low-Interaction, **full**) | 50.43 | D |
 | [`fixtures/conpot-ics-scada.scorecard.json`](fixtures/conpot-ics-scada.scorecard.json) | Conpot (ICS-SCADA / Modbus, **full**) | 55.4 | D |
+| [`fixtures/hellpot-web-api.scorecard.json`](fixtures/hellpot-web-api.scorecard.json) | HellPot (Web-API / HTTP, **full**) | 43.87 | F |
 | [`fixtures/opencanary-web-api.scorecard.json`](fixtures/opencanary-web-api.scorecard.json) | OpenCanary (Web-API / HTTP, **full**) | 66.02 | D |
 | [`fixtures/opencanary-ftp.scorecard.json`](fixtures/opencanary-ftp.scorecard.json) | OpenCanary (FTP, **full**) | 61.5 | D |
 | [`fixtures/opencanary-ssh.scorecard.json`](fixtures/opencanary-ssh.scorecard.json) | OpenCanary (SSH, **full**) | 35.64 | F |

@@ -59,6 +59,7 @@ jobs:
           uhbs validate-scorecard docs/conformance/fixtures/opencanary-web-api.scorecard.json
           uhbs validate-scorecard docs/conformance/fixtures/endlessh-low-interaction.scorecard.json
           uhbs validate-scorecard docs/conformance/fixtures/honeywire-web-api.scorecard.json
+          uhbs validate-scorecard docs/conformance/fixtures/hellpot-web-api.scorecard.json --strict
           for f in docs/conformance/fixtures/beelzebub-*.scorecard.json \
                    docs/conformance/fixtures/trapster-*.scorecard.json \
                    docs/conformance/fixtures/dionaea-*.scorecard.json; do

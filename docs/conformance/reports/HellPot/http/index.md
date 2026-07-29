@@ -9,6 +9,8 @@
 | [Quick](quick/README.md) | **43.98** | F | 0.5625 | [`SCORECARD.txt`](quick/SCORECARD.txt) · [`report.json`](quick/report.json) |
 | [Full](full/README.md) | **43.87** | F | 0.5625 | [`SCORECARD.txt`](full/SCORECARD.txt) · [`report.json`](full/report.json) |
 
+Sanitized fixture (full): [`../../../fixtures/hellpot-web-api.scorecard.json`](../../../fixtures/hellpot-web-api.scorecard.json)
+
 ## Full run — module breakdown (analyst view)
 
 | Module | Score | Weight | Status | Notes |

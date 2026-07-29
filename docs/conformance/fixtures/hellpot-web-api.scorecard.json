@@ -1,0 +1,63 @@
+{
+  "uhbs_version": "4.3.0",
+  "target": {
+    "name": "HellPot (HTTP tarpit / Web-API)",
+    "class": "Web-API",
+    "profile_ref": "docs/conformance/labs/HellPot/web_api_http_full.yaml"
+  },
+  "evaluated_at": "2026-07-29",
+  "auditor": "UHBS-Lab detailed Docker run (HTTP :18080 + SAST + telemetry)",
+  "modules": {
+    "A": {
+      "score": 86.75,
+      "status": "PASSED",
+      "weight": 0.25,
+      "notes": "status=200 (want 400/505 or close); CheckResult scores on 0–100 scale"
+    },
+    "B": {
+      "score": 82.5,
+      "status": "PASSED",
+      "weight": 0.2,
+      "notes": "survived binary blast"
+    },
+    "C": {
+      "score": 55.0,
+      "status": "PARTIAL",
+      "weight": 0.2,
+      "notes": "no STIX objects found (schema-capped)"
+    },
+    "D": {
+      "score": 75.0,
+      "status": "GATE FAILED",
+      "notes": "UHBS_AIRGAP_ATTESTED=1; Safety Gate not fully cleared (C<95)"
+    },
+    "E": {
+      "score": 100.0,
+      "status": "PASSED",
+      "weight": 0.15,
+      "notes": "service alive after load (connect 0.1ms)"
+    },
+    "F": {
+      "score": 69.0,
+      "status": "PARTIAL",
+      "weight": 0.2,
+      "notes": "POSIX coverage 0% (0/104)"
+    }
+  },
+  "weights": {
+    "w_A": 0.25,
+    "w_B": 0.2,
+    "w_C": 0.2,
+    "w_E": 0.15,
+    "w_F": 0.2
+  },
+  "safety_gate": {
+    "containment_score": 75.0,
+    "delta_c": 0.5625,
+    "passed": false,
+    "unauthorized_egress_leaks": 0
+  },
+  "uhqs": 43.87,
+  "grade": "F",
+  "notes": "Evaluation proof only. HellPot product name is not a UHBS requirement. Full lab artifacts: docs/conformance/reports/HellPot/."
+}
