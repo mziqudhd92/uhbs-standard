@@ -50,6 +50,6 @@ OVERALL EVALUATION GRADE              : GRADE F (Fail)
 - [`report.json`](report.json) — machine-readable checks / evidence
 - [`MANIFEST.json`](MANIFEST.json) — run manifest
 - [`REPORT.txt`](REPORT.txt) — text report twin of the scorecard
-- [`uhbs-run.log`](uhbs-run.log) — harness log
+- `uhbs-run.log` — harness log (not published in docs tree; see SCORECARD/report.json)
 
 Parent protocol hub: [`../index.md`](../index.md)
