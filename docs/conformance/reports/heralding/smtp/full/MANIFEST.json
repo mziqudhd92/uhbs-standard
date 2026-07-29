@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "a24db24c66cc5da0bc7a866be823f17538c13b64fac8d63c2fdb51db6b015cf4"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "a24db24c66cc5da0bc7a866be823f17538c13b64fac8d63c2fdb51db6b015cf4"
+    },
+    {
+      "path": "report.json",
+      "sha256": "a11d6f4d378208863c7e82305462fa50c68ef45d4050895e22dd05ae97a1641e"
+    }
+  ],
+  "extra": {
+    "target": "heralding-smtp",
+    "uhqs": 45.07,
+    "grade": "GRADE F (Fail)"
+  }
+}

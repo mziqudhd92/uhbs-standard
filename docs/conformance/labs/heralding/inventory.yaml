@@ -27,3 +27,15 @@ sites:
     telemetry_dir: /telemetry
     tps: /work/docs/conformance/labs/heralding/low_interaction_ftp_full.yaml
     container_image: heralding:uhbs-lab
+  heralding-smtp:
+    kind: generic
+    class: Low-Interaction
+    host: heralding-smtp-lab
+    protocol: smtp
+    protocols: [smtp]
+    port: 25
+    ports: {smtp: 25}
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/heralding/low_interaction_smtp_full.yaml
+    container_image: heralding:uhbs-lab

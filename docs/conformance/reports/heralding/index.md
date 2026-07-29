@@ -2,13 +2,13 @@
 
 **Status:** Informative · evaluation proof  
 **Upstream:** [https://github.com/johnnykv/heralding](https://github.com/johnnykv/heralding) · GitHub last push `2024-02-28`  
-**Runtime:** `heralding:uhbs-lab` with lab config enabling **SSH + FTP only**
+**Runtime:** `heralding:uhbs-lab` with lab configs enabling **SSH + FTP** (shared container) and **SMTP** (dedicated container)
 
-Credential-harvesting multi-protocol honeypot; only SSH and FTP graded in this round.
+Credential-harvesting multi-protocol honeypot; SSH, FTP, and SMTP graded in this round.
 
 ## What this decoy is
 
-Multi-protocol credential-harvesting honeypot; this UHBS proof graded SSH and FTP only.
+Multi-protocol credential-harvesting honeypot; UHBS proofs cover SSH, FTP, and SMTP listeners documented below.
 
 ## Protocol survey
 
@@ -16,6 +16,7 @@ Multi-protocol credential-harvesting honeypot; this UHBS proof graded SSH and FT
 | --- | --- | --- | --- | --- |
 | [SSH](ssh/index.md) | yes | **yes** | [44.38 / F](ssh/quick/README.md) | [44.18 / F](ssh/full/README.md) |
 | [FTP](ftp/index.md) | yes | **yes** | [35.96 / F](ftp/quick/README.md) | [35.85 / F](ftp/full/README.md) |
+| [SMTP](smtp/index.md) | yes | **yes** | [45.07 / F](smtp/quick/README.md) | [45.07 / F](smtp/full/README.md) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 
@@ -32,7 +33,7 @@ Multi-protocol credential-harvesting honeypot; this UHBS proof graded SSH and FT
 
 - Excellent mental model for auth-only sensors: alert on username/password pairs, never on “missing shell”.
 - Protect credential logs as highly sensitive; hash or encrypt at rest per policy.
-- Only SSH+FTP were enabled in the graded lab config — do not assume other Heralding protocols were tested here.
+- Only SSH+FTP share one container; SMTP uses `heralding-smtp-lab.yml` on port **17025** — other Heralding protocols were not tested here.
 
 ## Trust & limitations
 

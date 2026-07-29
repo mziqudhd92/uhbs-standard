@@ -59,6 +59,8 @@ See also: [PLAN.md](PLAN.md) Â· [DEFERRED-PROTOCOLS.md](DEFERRED-PROTOCOLS.md) Â
 
 ## Graded this batch (quick + full published)
 
-sshesame, ssh-honeypotd, ssh-auth-logger, HellPot, express-honeypot, mailoney, pghoney, mysql-honeypotd, Log4Pot, node-ftp-honeypot, SentryPeer, wordpot, MockSSH, Heralding (SSH+FTP), HoneyHTTPD, SHIVA. droberson/ssh-honeypot skipped (missing Docker base image).
+sshesame, ssh-honeypotd, ssh-auth-logger, HellPot, express-honeypot, mailoney, pghoney, mysql-honeypotd, Log4Pot, node-ftp-honeypot, SentryPeer, wordpot, MockSSH, Heralding (SSH+FTP+SMTP), HoneyHTTPD, SHIVA, OWASP Python-Honeypot (HTTP).
 
-Remaining **grade_now** entries stay queued for follow-up sessions (FaPro, glutton, sticky_elephant, Krawl, flux/galah/lophiid, etc.).
+**Skipped (with published notes):** droberson/ssh-honeypot (missing Docker base); snare (needs Tanner); galah / SMTPLLMPot (LLM API keys); tanner (backend, not standalone decoy); glastopf (ubuntu:14.04 image unbuildable).
+
+Remaining **grade_now** still queued (FaPro, glutton, sticky_elephant, Krawl, flux, lophiid, etc.).

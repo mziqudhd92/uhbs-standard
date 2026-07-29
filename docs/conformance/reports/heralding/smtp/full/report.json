@@ -1,0 +1,590 @@
+{
+  "framework": "Universal Honeypot Benchmarking Standard (UHBS) v4.2.2",
+  "evaluation_type": "Full-Spectrum (Static Audit + Dynamic Sandbox)",
+  "target": {
+    "name": "heralding-smtp",
+    "kind": "generic",
+    "host": "127.0.0.1",
+    "port": 17025,
+    "source_root": "/Users/mz/UHBS/.local/labs/heralding",
+    "profile_class": "Low-Interaction",
+    "protocols": [
+      "smtp"
+    ],
+    "ports_map": {
+      "smtp": 17025
+    }
+  },
+  "baseline": null,
+  "uhqs": {
+    "target": "heralding-smtp",
+    "S_A": 100.0,
+    "S_B": 82.5,
+    "S_C": 55.0,
+    "C": 75.0,
+    "S_E": 100.0,
+    "S_F": 70.0,
+    "delta_c": 0.5625,
+    "uhqs": 45.07,
+    "weights": {
+      "protocol": 0.3,
+      "behavior": 0.15,
+      "telemetry": 0.25,
+      "scale": 0.1,
+      "static": 0.2
+    },
+    "profile_class": "Low-Interaction",
+    "grade": "GRADE F (Fail)",
+    "phase": "profile+static+sandbox+dynamic+score",
+    "version": "4.2.2",
+    "containment_measured": true
+  },
+  "hqs": {
+    "target": "heralding-smtp",
+    "S_A": 100.0,
+    "S_B": 82.5,
+    "S_C": 55.0,
+    "C": 75.0,
+    "S_E": 100.0,
+    "S_F": 70.0,
+    "delta_c": 0.5625,
+    "uhqs": 45.07,
+    "weights": {
+      "protocol": 0.3,
+      "behavior": 0.15,
+      "telemetry": 0.25,
+      "scale": 0.1,
+      "static": 0.2
+    },
+    "profile_class": "Low-Interaction",
+    "grade": "GRADE F (Fail)",
+    "phase": "profile+static+sandbox+dynamic+score",
+    "version": "4.2.2",
+    "containment_measured": true
+  },
+  "modules": [
+    {
+      "module": "SANDBOX",
+      "dimension": "sandbox",
+      "score": 70.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "sandbox.reach.smtp",
+          "team": "blue",
+          "passed": true,
+          "detail": "127.0.0.1:17025 open",
+          "score": 25.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "sandbox.airgap_attested",
+          "team": "blue",
+          "passed": true,
+          "detail": "operator attested air-gapped sandbox (UHBS_AIRGAP_ATTESTED=1)",
+          "score": 25.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "sandbox.egress_deny_tooling",
+          "team": "blue",
+          "passed": false,
+          "detail": "host-egress-deny.sh not found",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "sandbox.gateway_log_configured",
+          "team": "blue",
+          "passed": false,
+          "detail": "gateway log path not set",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {
+        "reachable_protocols": 1
+      },
+      "notes": [
+        "Phase 3 preflight \u2014 does not replace real air-gap deployment"
+      ],
+      "error": null
+    },
+    {
+      "module": "F",
+      "dimension": "static",
+      "score": 70.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "white.static_private_keys",
+          "team": "white",
+          "passed": true,
+          "detail": "0 static private keys",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.hardcoded_ssh_banners",
+          "team": "white",
+          "passed": true,
+          "detail": "0 hardcoded SSH banners",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.predictable_seeds",
+          "team": "white",
+          "passed": true,
+          "detail": "0 predictable PRNG seeds",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.hardcoded_macs",
+          "team": "white",
+          "passed": true,
+          "detail": "0 hardcoded MAC addresses",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.prompt_corpus_present",
+          "team": "white",
+          "passed": true,
+          "detail": "no prompt corpus (N/A for non-LLM)",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.prompt_boundaries",
+          "team": "white",
+          "passed": true,
+          "detail": "no weak delimiter/extract patterns",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.fallback_strings",
+          "team": "white",
+          "passed": true,
+          "detail": "no plain-text LLM fallback artifacts",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.sast_tools",
+          "team": "white",
+          "passed": true,
+          "detail": "SAST tools skipped by flag",
+          "score": 15.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.vfs_posix_coverage",
+          "team": "white",
+          "passed": false,
+          "detail": "POSIX coverage 0% (0/104)",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.blocking_calls",
+          "team": "white",
+          "passed": true,
+          "detail": "sleep/blocking markers in non-test code\u22480",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {
+        "source_root": "/Users/mz/UHBS/.local/labs/heralding"
+      },
+      "notes": [
+        "Module F white-box audit (keys/prompts/SAST/VFS)"
+      ],
+      "error": null
+    },
+    {
+      "module": "A",
+      "dimension": "protocol",
+      "score": 100.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "rfc5321.bad_sequence_data",
+          "team": "blue",
+          "passed": true,
+          "detail": "503 on DATA before MAIL",
+          "score": 100.0,
+          "evidence": [
+            "220 Microsoft ESMTP MAIL service ready \r\n503 Error: send HELO first\r\n221 Bye\r\n"
+          ],
+          "critical": false
+        },
+        {
+          "id": "rfc5321.bad_sequence_rcpt",
+          "team": "blue",
+          "passed": true,
+          "detail": "503 on RCPT before MAIL",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "rfc5321.bare_lf_tolerance",
+          "team": "red",
+          "passed": true,
+          "detail": "codes=[220, 250, 221]",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "rfc5321.unknown_command",
+          "team": "blue",
+          "passed": true,
+          "detail": "500/502 on unknown verb",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "rfc5321.greeting_220",
+          "team": "blue",
+          "passed": true,
+          "detail": "220 Microsoft ESMTP MAIL service ready \r\n",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "rfc5321.ehlo_capabilities",
+          "team": "blue",
+          "passed": true,
+          "detail": "EHLO returned 250 capabilities",
+          "score": 100.0,
+          "evidence": [
+            "220 Microsoft ESMTP MAIL service ready \r\n250-Microsoft ESMTP MAIL service ready Hello bench.invalid\r\n250-AUTH PLAIN LOGIN CRAM-MD5\r\n250 EHLO\r\n221 Bye\r\n"
+          ],
+          "critical": false
+        },
+        {
+          "id": "smtp.timing.sample_size",
+          "team": "blue",
+          "passed": true,
+          "detail": "n=1000 requested=1000 errors=0",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "smtp.timing.iat_jitter",
+          "team": "red",
+          "passed": true,
+          "detail": "median=0.074ms pstdev=1.018ms (target jitter often <2ms vs native)",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "smtp.module_a.composite",
+          "team": "blue",
+          "passed": true,
+          "detail": "fsm=100 nego=100 timing=100",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "smtp": 100.0
+        },
+        "protocols": [
+          "smtp"
+        ],
+        "timing_samples": 1000,
+        "available_plugins": [
+          "ftp",
+          "generic",
+          "git",
+          "http",
+          "mcp",
+          "modbus",
+          "mysql",
+          "ntp",
+          "pop3",
+          "postgres",
+          "rdp",
+          "redis",
+          "s7comm",
+          "sip",
+          "smb",
+          "smtp",
+          "snmp",
+          "ssh",
+          "telnet",
+          "tftp",
+          "vnc"
+        ]
+      },
+      "notes": [
+        "UHBS Module A \u2014 plugins=['smtp']",
+        "class=Low-Interaction strict_rfc=True"
+      ],
+      "error": null
+    },
+    {
+      "module": "B",
+      "dimension": "behavior",
+      "score": 82.5,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "smtp.state.mail_rset",
+          "team": "blue",
+          "passed": true,
+          "detail": "codes=[220, 250, 250, 250, 503, 250, 503, 221]",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "smtp.payload.unsupported",
+          "team": "red",
+          "passed": true,
+          "detail": "no payload probe \u2014 skipped",
+          "score": 50.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "smtp.fuzz.binary",
+          "team": "red",
+          "passed": true,
+          "detail": "survived binary blast",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "smtp": 82.5
+        },
+        "class": "Low-Interaction",
+        "surface_depth": "unknown"
+      },
+      "notes": [
+        "UHBS Module B class=Low-Interaction"
+      ],
+      "error": null
+    },
+    {
+      "module": "C",
+      "dimension": "telemetry",
+      "score": 55.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "smtp.fuzz.binary",
+          "team": "red",
+          "passed": true,
+          "detail": "survived binary blast",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "c1.json_parse_clean",
+          "team": "blue",
+          "passed": true,
+          "detail": "0 malformed / 0 records",
+          "score": 20.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "c1.stix_2_1",
+          "team": "blue",
+          "passed": false,
+          "detail": "no STIX objects found",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "c1.otel_or_ecs",
+          "team": "blue",
+          "passed": false,
+          "detail": "otel_docs=0 ecs_docs=0",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "c1.payload_hashes",
+          "team": "blue",
+          "passed": false,
+          "detail": "no md5/sha256 fields",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "c1.mitre_mapping",
+          "team": "blue",
+          "passed": false,
+          "detail": "no MITRE tags",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {},
+      "notes": [
+        "UHBS C1 schema: STIX 2.1 / OTel / ECS best-effort validators"
+      ],
+      "error": null
+    },
+    {
+      "module": "D",
+      "dimension": "containment",
+      "score": 75.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "d1.shell_exec_unavailable",
+          "team": "blue",
+          "passed": true,
+          "detail": "no explicit SSH listener (ports.ssh / ssh_port) \u2014 remote shell egress/LPE probes skipped for this protocol",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "d1.egress_gateway_log",
+          "team": "blue",
+          "passed": true,
+          "detail": "UHBS_EGRESS_GATEWAY_LOG unset \u2014 gateway evidence not attached (lab)",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "d1.airgap_attested",
+          "team": "blue",
+          "passed": true,
+          "detail": "UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes on SSH decoys)",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {
+        "breakout": false,
+        "allowed_outbound_traffic": false,
+        "shell_exec": false,
+        "protocols": [
+          "smtp"
+        ]
+      },
+      "notes": [
+        "Module D (protocol-agnostic): no SSH exec surface configured \u2014 Safety Gate cannot fully clear without shell probes or UHBS_EGRESS_GATEWAY_LOG evidence. Non-SSH decoys are graded on gateway/airgap attestation only."
+      ],
+      "error": null
+    },
+    {
+      "module": "E",
+      "dimension": "scale",
+      "score": 100.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "e1.p95_vs_tps",
+          "team": "blue",
+          "passed": true,
+          "detail": "P50=0.7ms P95=3.5ms P99=4.1ms TPS_limit=3000.0ms proto=smtp",
+          "score": 45.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "e1.error_rate",
+          "team": "blue",
+          "passed": true,
+          "detail": "errors=0/30 rate=0.00%",
+          "score": 20.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "e2.exhaustion_input",
+          "team": "red",
+          "passed": true,
+          "detail": "completed exhaustion/fuzz blast",
+          "score": 15.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "e2.circuit_breaker_alive",
+          "team": "blue",
+          "passed": true,
+          "detail": "service alive after load (connect 0.3ms)",
+          "score": 20.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {
+        "p50_ms": 0.73,
+        "p95_ms": 3.55,
+        "p99_ms": 4.06,
+        "p95_limit_ms": 3000.0,
+        "errors": 0,
+        "concurrency": 10,
+        "requests": 30,
+        "wall_s": 0.04,
+        "protocol": "smtp"
+      },
+      "notes": [],
+      "error": null
+    }
+  ],
+  "extras": {
+    "target_scores": {
+      "protocol": 100.0,
+      "behavior": 82.5,
+      "telemetry": 55.0,
+      "containment": 75.0,
+      "scale": 100.0,
+      "static": 70.0
+    },
+    "uhqs_version": "4.2.2",
+    "tps": {
+      "name": "low_interaction_smtp-full",
+      "class": "Low-Interaction",
+      "protocols": [
+        "smtp"
+      ],
+      "expected_p95_latency_ms": 3000.0
+    },
+    "surface_depth": "unknown"
+  }
+}

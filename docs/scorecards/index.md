@@ -48,6 +48,8 @@ Full artifacts (tutorials, methodology, `SCORECARD.txt`, `report.json`) live und
 | [genaipot — smtp](genaipot-smtp.md) | Low-Interaction · smtp | **30.78** | F |
 | [HellPot — http](hellpot-http.md) | Web-API · http | **43.87** | F |
 | [heralding — ftp](heralding-ftp.md) | Low-Interaction · ftp | **35.85** | F |
+| [heralding — smtp](heralding-smtp.md) | Low-Interaction · smtp | **45.07** | F |
+| [owasp-python-honeypot — http](owasp-python-honeypot-http.md) | Web-API · http | **43.98** | F |
 | [heralding — ssh](heralding-ssh.md) | Low-Interaction · ssh | **44.18** | F |
 | [HoneyAgents — SSH :2222](honeyagents-ssh.md) | Low-Interaction · SSH | **65.24** | D |
 | [honeyhttpd — http](honeyhttpd-http.md) | Web-API · http | **45.73** | F |

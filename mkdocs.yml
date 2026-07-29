@@ -165,8 +165,17 @@ nav:
       - Heralding report hub: conformance/reports/heralding/index.md
       - Heralding SSH hub: conformance/reports/heralding/ssh/index.md
       - Heralding FTP hub: conformance/reports/heralding/ftp/index.md
+      - Heralding SMTP hub: conformance/reports/heralding/smtp/index.md
       - Heralding tutorial: conformance/reports/heralding/TUTORIAL.md
       - Heralding methodology: conformance/reports/heralding/METHODOLOGY.md
+      - OWASP Python-Honeypot report hub: conformance/reports/owasp-python-honeypot/index.md
+      - OWASP Python-Honeypot HTTP hub: conformance/reports/owasp-python-honeypot/http/index.md
+      - OWASP Python-Honeypot tutorial: conformance/reports/owasp-python-honeypot/TUTORIAL.md
+      - OWASP Python-Honeypot methodology: conformance/reports/owasp-python-honeypot/METHODOLOGY.md
+      - galah skip note: conformance/reports/galah/index.md
+      - SMTPLLMPot skip note: conformance/reports/SMTPLLMPot/index.md
+      - tanner skip note: conformance/reports/tanner/index.md
+      - glastopf skip note: conformance/reports/glastopf/index.md
       - HoneyHTTPD report hub: conformance/reports/honeyhttpd/index.md
       - HoneyHTTPD HTTP hub: conformance/reports/honeyhttpd/http/index.md
       - HoneyHTTPD tutorial: conformance/reports/honeyhttpd/TUTORIAL.md
@@ -267,6 +276,8 @@ nav:
       - MockSSH SSH: scorecards/mockssh-ssh.md
       - Heralding SSH: scorecards/heralding-ssh.md
       - Heralding FTP: scorecards/heralding-ftp.md
+      - Heralding SMTP: scorecards/heralding-smtp.md
+      - OWASP Python-Honeypot HTTP: scorecards/owasp-python-honeypot-http.md
       - HoneyHTTPD HTTP: scorecards/honeyhttpd-http.md
       - SHIVA SMTP: scorecards/shiva-smtp.md
       - sshesame SSH: scorecards/sshesame-ssh.md
