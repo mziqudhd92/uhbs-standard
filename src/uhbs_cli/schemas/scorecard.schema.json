@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mziqudhd92/uhbs-standard/raw/main/schemas/scorecard.schema.json",
+  "title": "UHBS Benchmark Scorecard",
+  "description": "Standardized UHBS v4.3.0 evaluation scorecard output.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "uhbs_version",
+    "target",
+    "evaluated_at",
+    "modules",
+    "safety_gate",
+    "uhqs",
+    "grade"
+  ],
+  "properties": {
+    "uhbs_version": {
+      "type": "string",
+      "const": "4.3.0"
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "class"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "class": {
+          "type": "string",
+          "enum": [
+            "POSIX-Shell",
+            "ICS-SCADA",
+            "Web-API",
+            "Database",
+            "GenAI-Shell",
+            "Low-Interaction"
+          ]
+        },
+        "profile_ref": {
+          "type": "string",
+          "description": "Path or URI of the TPS profile.yaml used for this evaluation."
+        }
+      }
+    },
+    "evaluated_at": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO-8601 date of evaluation (YYYY-MM-DD)."
+    },
+    "auditor": {
+      "type": "string"
+    },
+    "modules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["A", "B", "C", "D", "E", "F"],
+      "properties": {
+        "A": { "$ref": "#/$defs/moduleResult" },
+        "B": { "$ref": "#/$defs/moduleResult" },
+        "C": { "$ref": "#/$defs/moduleResult" },
+        "D": { "$ref": "#/$defs/moduleDResult" },
+        "E": { "$ref": "#/$defs/moduleEResult" },
+        "F": { "$ref": "#/$defs/moduleFResult" }
+      }
+    },
+    "weights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["w_A", "w_B", "w_C", "w_E", "w_F"],
+      "properties": {
+        "w_A": { "type": "number", "minimum": 0, "maximum": 1 },
+        "w_B": { "type": "number", "minimum": 0, "maximum": 1 },
+        "w_C": { "type": "number", "minimum": 0, "maximum": 1 },
+        "w_E": { "type": "number", "minimum": 0, "maximum": 1 },
+        "w_F": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "safety_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["containment_score", "delta_c", "passed"],
+      "properties": {
+        "containment_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Module D containment score C."
+        },
+        "delta_c": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Safety Gate multiplier δ_C."
+        },
+        "passed": {
+          "type": "boolean",
+          "description": "True when C >= 95 (no exponential penalty)."
+        },
+        "unauthorized_egress_leaks": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "uhqs": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Final composite Universal Honeypot Quality Score."
+    },
+    "grade": {
+      "type": "string",
+      "enum": ["A", "B", "C", "D", "F"],
+      "description": "Letter grade derived from UHQS."
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "moduleResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["score", "status"],
+      "properties": {
+        "score": { "type": "number", "minimum": 0, "maximum": 100 },
+        "status": {
+          "type": "string",
+          "enum": ["PASSED", "PARTIAL", "FAILED", "SKIPPED"]
+        },
+        "weight": { "type": "number", "minimum": 0, "maximum": 1 },
+        "notes": { "type": "string" }
+      }
+    },
+    "moduleDResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["score", "status"],
+      "properties": {
+        "score": { "type": "number", "minimum": 0, "maximum": 100 },
+        "status": {
+          "type": "string",
+          "enum": ["GATE PASSED", "GATE FAILED", "PASSED", "FAILED"]
+        },
+        "notes": { "type": "string" }
+      }
+    },
+    "moduleEResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["score", "status"],
+      "properties": {
+        "score": { "type": "number", "minimum": 0, "maximum": 100 },
+        "status": {
+          "type": "string",
+          "enum": ["PASSED", "PARTIAL", "FAILED", "SKIPPED"]
+        },
+        "weight": { "type": "number", "minimum": 0, "maximum": 1 },
+        "notes": { "type": "string" },
+        "p50_ms": { "type": "number", "minimum": 0 },
+        "p95_ms": { "type": "number", "minimum": 0 },
+        "p99_ms": { "type": "number", "minimum": 0 }
+      }
+    },
+    "moduleFResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["score", "status"],
+      "properties": {
+        "score": { "type": "number", "minimum": 0, "maximum": 100 },
+        "status": {
+          "type": "string",
+          "enum": ["PASSED", "PARTIAL", "FAILED", "SKIPPED"]
+        },
+        "weight": { "type": "number", "minimum": 0, "maximum": 1 },
+        "notes": { "type": "string" },
+        "critical_findings": { "type": "integer", "minimum": 0 },
+        "high_findings": { "type": "integer", "minimum": 0 }
+      }
+    }
+  }
+}

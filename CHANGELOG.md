@@ -10,6 +10,12 @@ share version **4.3.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[
 ### Added
 - HoneyWire (andreicscs) **HTTP** lab grades for official WebRouterDecoy
   (quick **45.84 / F**, full **45.84 / F**)
+- README terminal demo GIF (`docs/assets/uhbs-quickstart.gif`) — pip install,
+  validate-scorecard, `uhbs-lab` grade
+
+### Fixed
+- Ship JSON Schemas inside the `uhbs` wheel (`uhbs_cli/schemas/`) so
+  `pip install 'uhbs[lab]'` can `validate-scorecard` without a git checkout
 
 ## [4.3.0] — 2026-07-29
 

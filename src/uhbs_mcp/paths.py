@@ -16,11 +16,20 @@ def repo_root() -> Path:
 
 
 def schema_dir() -> Path:
-    """Locate JSON Schemas for profile/scorecard/evidence validation."""
+    """Locate JSON Schemas for profile/scorecard/evidence validation.
+
+    Prefer ``UHBS_SCHEMA_DIR``, then schemas shipped with ``uhbs_cli`` (PyPI),
+    then a source checkout's ``schemas/``.
+    """
     env = os.environ.get("UHBS_SCHEMA_DIR")
     if env:
         return Path(env).expanduser().resolve()
-    return repo_root() / "schemas"
+    try:
+        from uhbs_cli.cli import _schema_dir as _cli_schema_dir
+
+        return _cli_schema_dir()
+    except Exception:  # pragma: no cover - extremely defensive
+        return repo_root() / "schemas"
 
 
 def resolve_user_path(path: str) -> Path:

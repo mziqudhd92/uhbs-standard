@@ -90,6 +90,9 @@ uhbs_core = [
   "profiles/*.yaml",
   "profiles/coverage/*",
 ]
+uhbs_cli = [
+  "schemas/*.json",
+]
 
 [tool.ruff]
 line-length = 100

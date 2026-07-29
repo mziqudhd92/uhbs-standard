@@ -33,10 +33,17 @@ def _repo_root() -> Path:
 
 
 def _schema_dir() -> Path:
-    """Locate JSON Schemas for profile/scorecard/evidence validation."""
+    """Locate JSON Schemas for profile/scorecard/evidence validation.
+
+    Prefer ``UHBS_SCHEMA_DIR``, then schemas shipped inside the installed
+    ``uhbs_cli`` package (PyPI wheel), then a source checkout's ``schemas/``.
+    """
     env = os.environ.get("UHBS_SCHEMA_DIR")
     if env:
         return Path(env)
+    packaged = Path(__file__).resolve().parent / "schemas"
+    if (packaged / "scorecard.schema.json").is_file():
+        return packaged
     return _repo_root() / "schemas"
 
 

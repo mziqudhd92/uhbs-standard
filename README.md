@@ -38,6 +38,16 @@
 > Named product proof lives only under [conformance fixtures](docs/conformance/index.md).
 > Maturity goals (committee, adopters, neutral org): [ROADMAP.md](ROADMAP.md).
 
+## Demo
+
+Terminal walkthrough: install from PyPI, validate a published scorecard, then
+grade a live HTTP decoy with `uhbs-lab`.
+
+![UHBS quickstart — pip install, validate, grade](docs/assets/uhbs-quickstart.gif)
+
+Replay source: [`docs/assets/uhbs-quickstart.cast`](docs/assets/uhbs-quickstart.cast)
+(`asciinema play docs/assets/uhbs-quickstart.cast`).
+
 ## Quickstart
 
 ```bash
