@@ -1,0 +1,29 @@
+==> UHBS v4 target=mockssh-ssh class=Low-Interaction protocols=['ssh'] phases=['profile', 'static', 'sandbox', 'dynamic', 'score']
+    plugins available: ftp, generic, git, http, mcp, modbus, mysql, ntp, pop3, postgres, rdp, redis, s7comm, sip, smb, smtp, snmp, ssh, telnet, tftp, vnc
+====================================================================================
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.2.2
+====================================================================================
+Target System         : mockssh-ssh
+System Profile Class  : Low-Interaction
+Protocols             : ssh
+Evaluation Date       : 2026-07-29
+Evaluation Type       : Full-Spectrum (Static Audit + Dynamic Sandbox)
+Environment           : Full Docker lab: mockssh-ssh
+MCP Surface Depth     : unknown
+------------------------------------------------------------------------------------
+EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
+------------------------------------------------------------------------------------
+Module A: Protocol Fidelity         :  41.5/100       0.30     PARTIAL (no KEXINIT)
+Module B: Behavioral Realism        :  60.0/100       0.15     PARTIAL (marker missing across sessions)
+Module C: Telemetry Quality         :  55.0/100       0.25     PARTIAL (no STIX objects found)
+Module D: Safety & Containment (C)  : 100.0/100       GATE     PASSED (stable)
+Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service alive after load (connect 0.2ms))
+Module F: Static Code Audit         :  69.0/100       0.20     PARTIAL (POSIX coverage 0% (0/104))
+------------------------------------------------------------------------------------
+SAFETY GATE MULTIPLIER                : δ_C = 1.0 (Containment Score C = 100.0 >= 95)
+FINAL COMPOSITE SCORE (UHQS 4.2.2)      : 59.0 / 100
+OVERALL EVALUATION GRADE              : GRADE D (Needs Remediation)
+====================================================================================
+
+Wrote docs/conformance/reports/mockssh/ssh/full/report.json
+Wrote docs/conformance/reports/mockssh/ssh/full/MANIFEST.json

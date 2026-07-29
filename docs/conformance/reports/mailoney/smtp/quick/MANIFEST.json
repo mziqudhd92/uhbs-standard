@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "47c8c242bc64fc467fc9de37dbc570256680183385f9c3c21f7bda9568d6d292"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "47c8c242bc64fc467fc9de37dbc570256680183385f9c3c21f7bda9568d6d292"
+    },
+    {
+      "path": "report.json",
+      "sha256": "b03f8eea39532ee332e03438b67c24dbbb62f635e4901af81cc5f44e117d607c"
+    },
+    {
+      "path": "uhbs-console.log",
+      "sha256": "434f161fd7be258813dc8803a606aa2701a375eb5cb1342e79320986b1c498bb"
+    },
+    {
+      "path": "uhbs-run.console.log",
+      "sha256": "92adbfcc186273130a95d8e843f6c37c664892aff06694fcb21192d7478594da"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "extra": {
+    "target": "mailoney-smtp",
+    "uhqs": 38.8,
+    "grade": "GRADE F (Fail)"
+  }
+}

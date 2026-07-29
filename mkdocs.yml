@@ -149,8 +149,57 @@ nav:
       - qeeqbox report hub: conformance/reports/qeeqbox-honeypots/index.md
       - qeeqbox tutorial: conformance/reports/qeeqbox-honeypots/TUTORIAL.md
       - qeeqbox methodology: conformance/reports/qeeqbox-honeypots/METHODOLOGY.md
+      - SentryPeer report hub: conformance/reports/sentrypeer/index.md
+      - SentryPeer SIP hub: conformance/reports/sentrypeer/sip/index.md
+      - SentryPeer tutorial: conformance/reports/sentrypeer/TUTORIAL.md
+      - SentryPeer methodology: conformance/reports/sentrypeer/METHODOLOGY.md
+      - wordpot report hub: conformance/reports/wordpot/index.md
+      - wordpot HTTP hub: conformance/reports/wordpot/http/index.md
+      - wordpot tutorial: conformance/reports/wordpot/TUTORIAL.md
+      - wordpot methodology: conformance/reports/wordpot/METHODOLOGY.md
+      - MockSSH report hub: conformance/reports/mockssh/index.md
+      - MockSSH SSH hub: conformance/reports/mockssh/ssh/index.md
+      - MockSSH tutorial: conformance/reports/mockssh/TUTORIAL.md
+      - MockSSH methodology: conformance/reports/mockssh/METHODOLOGY.md
+      - Heralding report hub: conformance/reports/heralding/index.md
+      - Heralding SSH hub: conformance/reports/heralding/ssh/index.md
+      - Heralding FTP hub: conformance/reports/heralding/ftp/index.md
+      - Heralding tutorial: conformance/reports/heralding/TUTORIAL.md
+      - Heralding methodology: conformance/reports/heralding/METHODOLOGY.md
+      - HoneyHTTPD report hub: conformance/reports/honeyhttpd/index.md
+      - HoneyHTTPD HTTP hub: conformance/reports/honeyhttpd/http/index.md
+      - HoneyHTTPD tutorial: conformance/reports/honeyhttpd/TUTORIAL.md
+      - HoneyHTTPD methodology: conformance/reports/honeyhttpd/METHODOLOGY.md
+      - SHIVA report hub: conformance/reports/shiva/index.md
+      - SHIVA SMTP hub: conformance/reports/shiva/smtp/index.md
+      - SHIVA tutorial: conformance/reports/shiva/TUTORIAL.md
+      - SHIVA methodology: conformance/reports/shiva/METHODOLOGY.md
+      - sshesame report hub: conformance/reports/sshesame/index.md
+      - sshesame SSH hub: conformance/reports/sshesame/ssh/index.md
+      - sshesame tutorial: conformance/reports/sshesame/TUTORIAL.md
+      - ssh-honeypotd report hub: conformance/reports/ssh-honeypotd/index.md
+      - ssh-honeypotd tutorial: conformance/reports/ssh-honeypotd/TUTORIAL.md
+      - HellPot report hub: conformance/reports/HellPot/index.md
+      - HellPot tutorial: conformance/reports/HellPot/TUTORIAL.md
+      - express-honeypot report hub: conformance/reports/express-honeypot/index.md
+      - express-honeypot tutorial: conformance/reports/express-honeypot/TUTORIAL.md
+      - mailoney report hub: conformance/reports/mailoney/index.md
+      - mailoney tutorial: conformance/reports/mailoney/TUTORIAL.md
+      - pghoney report hub: conformance/reports/pghoney/index.md
+      - pghoney tutorial: conformance/reports/pghoney/TUTORIAL.md
+      - mysql-honeypotd report hub: conformance/reports/mysql-honeypotd/index.md
+      - mysql-honeypotd tutorial: conformance/reports/mysql-honeypotd/TUTORIAL.md
+      - Log4Pot report hub: conformance/reports/Log4Pot/index.md
+      - Log4Pot tutorial: conformance/reports/Log4Pot/TUTORIAL.md
+      - node-ftp-honeypot report hub: conformance/reports/node-ftp-honeypot/index.md
+      - node-ftp-honeypot tutorial: conformance/reports/node-ftp-honeypot/TUTORIAL.md
+      - ssh-auth-logger report hub: conformance/reports/ssh-auth-logger/index.md
+      - ssh-auth-logger tutorial: conformance/reports/ssh-auth-logger/TUTORIAL.md
+      - Awesome honeypots triage: conformance/awesome-honeypots/TRIAGE.md
+      - Awesome deferred protocols: conformance/awesome-honeypots/DEFERRED-PROTOCOLS.md
       - Acra skip note: conformance/reports/acra/index.md
       - Ensnare skip note: conformance/reports/ensnare/index.md
+      - snare skip note: conformance/reports/snare/index.md
       - qeeqbox ssh hub: conformance/reports/qeeqbox-honeypots/ssh/index.md
       - qeeqbox http hub: conformance/reports/qeeqbox-honeypots/http/index.md
       - qeeqbox ftp hub: conformance/reports/qeeqbox-honeypots/ftp/index.md
@@ -211,6 +260,13 @@ nav:
       - GenAIPot POP3: scorecards/genaipot-pop3.md
       - Elastichoney HTTP: scorecards/elastichoney-http.md
       - honeypot-ftp: scorecards/honeypot-ftp.md
+      - SentryPeer SIP: scorecards/sentrypeer-sip.md
+      - wordpot HTTP: scorecards/wordpot-http.md
+      - MockSSH SSH: scorecards/mockssh-ssh.md
+      - Heralding SSH: scorecards/heralding-ssh.md
+      - Heralding FTP: scorecards/heralding-ftp.md
+      - HoneyHTTPD HTTP: scorecards/honeyhttpd-http.md
+      - SHIVA SMTP: scorecards/shiva-smtp.md
       - qeeqbox ssh: scorecards/qeeqbox-ssh.md
       - qeeqbox http: scorecards/qeeqbox-http.md
       - qeeqbox ftp: scorecards/qeeqbox-ftp.md

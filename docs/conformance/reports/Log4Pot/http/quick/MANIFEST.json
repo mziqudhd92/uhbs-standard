@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "44c668eb0e044296d53d617dabea4bcf114e0af958d3e3aa355f2d97b69983d9"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "44c668eb0e044296d53d617dabea4bcf114e0af958d3e3aa355f2d97b69983d9"
+    },
+    {
+      "path": "report.json",
+      "sha256": "5fb6fd3a8f429fd2477427f391e1f4bc6772445990837be525ae41678fe94cb6"
+    },
+    {
+      "path": "uhbs-console.log",
+      "sha256": "1eb98f81e86da1380ea372425ccaecfe872765b240c81b4860c55f4bd9c25c04"
+    },
+    {
+      "path": "uhbs-run.console.log",
+      "sha256": "37982968938a606c83c1ffa539064af3a25c4452e03ed586911b122ba09963be"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "extra": {
+    "target": "Log4Pot-http",
+    "uhqs": 41.71,
+    "grade": "GRADE F (Fail)"
+  }
+}

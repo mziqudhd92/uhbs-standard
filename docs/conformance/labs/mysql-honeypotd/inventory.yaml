@@ -1,0 +1,13 @@
+sites:
+  mysql-honeypotd:
+    kind: generic
+    class: Low-Interaction
+    host: mysql-honeypotd-lab
+    protocol: mysql
+    protocols: [mysql]
+    port: 3306
+    ports: {mysql: 3306}
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/mysql-honeypotd/low_interaction_mysql_full.yaml
+    container_image: mysql-honeypotd:uhbs-lab

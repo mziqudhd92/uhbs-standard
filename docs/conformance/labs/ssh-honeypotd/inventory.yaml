@@ -1,0 +1,18 @@
+# sjinks/ssh-honeypotd — Low-Interaction SSH auth-logging honeypot
+# Host grading uses .local/ssh-honeypotd-inventory.yaml (127.0.0.1 + mapped port).
+sites:
+  ssh-honeypotd-ssh:
+    kind: ssh
+    class: Low-Interaction
+    host: ssh-honeypotd-lab
+    protocol: ssh
+    protocols: [ssh]
+    port: 22
+    ports:
+      ssh: 22
+    user: root
+    password: "admin"
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/ssh-honeypotd/low_interaction_ssh_full.yaml
+    container_image: wildwildangel/ssh-honeypotd:latest

@@ -1,0 +1,13 @@
+sites:
+  sentrypeer-sip:
+    kind: generic
+    class: Low-Interaction
+    host: sentrypeer-lab
+    protocol: sip
+    protocols: [sip]
+    port: 5060
+    ports: {sip: 5060}
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/sentrypeer/low_interaction_sip_full.yaml
+    container_image: sentrypeer/sentrypeer:latest

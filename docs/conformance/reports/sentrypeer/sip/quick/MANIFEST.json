@@ -1,0 +1,30 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "66c848566ce2e0237bbe8aefbee681ea64914b0c01c2e6eb63d67eae7a1d7562"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "66c848566ce2e0237bbe8aefbee681ea64914b0c01c2e6eb63d67eae7a1d7562"
+    },
+    {
+      "path": "report.json",
+      "sha256": "8cf5d8fdafe5a73f63a3d6901c7bf3f4856c10d037333243450a0fe32e7fcde2"
+    },
+    {
+      "path": "uhbs-console.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "ec5a98bc6afcb9759bda69cec732ace162efe1e362502fb506687c6389108c52"
+    }
+  ],
+  "extra": {
+    "target": "sentrypeer-sip",
+    "uhqs": 43.38,
+    "grade": "GRADE F (Fail)"
+  }
+}

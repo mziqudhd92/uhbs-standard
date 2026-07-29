@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "a6a83d9cf5b6ccc09f45aaa50ae4fab65c75eff20ae2b8e9f212a0bc64414105"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "a6a83d9cf5b6ccc09f45aaa50ae4fab65c75eff20ae2b8e9f212a0bc64414105"
+    },
+    {
+      "path": "report.json",
+      "sha256": "4e4fe796683099a6725275d96584228147bb47d4eae5a9600795160df87be3b0"
+    },
+    {
+      "path": "uhbs-console.log",
+      "sha256": "7246586871766c3c12754f5e9d4ac7f74b607e9a89127a1688c8aa4926d390a6"
+    },
+    {
+      "path": "uhbs-run.console.log",
+      "sha256": "fc96a565ba2db4aeaa7eb4e6e7ae41d7d0f36515c83ab081825ce145c2047cf5"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "extra": {
+    "target": "express-honeypot-http",
+    "uhqs": 45.84,
+    "grade": "GRADE F (Fail)"
+  }
+}

@@ -1,0 +1,13 @@
+sites:
+  pghoney-postgres:
+    kind: generic
+    class: Low-Interaction
+    host: pghoney-lab
+    protocol: postgres
+    protocols: [postgres]
+    port: 5432
+    ports: {postgres: 5432}
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/pghoney/database_postgres_full.yaml
+    container_image: pghoney:uhbs-lab

@@ -1,0 +1,13 @@
+sites:
+  express-honeypot-http:
+    kind: generic
+    class: Web-API
+    host: express-honeypot-lab
+    protocol: http
+    protocols: [http]
+    port: 3001
+    ports: {http: 3001}
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/express-honeypot/web_api_http_full.yaml
+    container_image: express-honeypot:uhbs-lab

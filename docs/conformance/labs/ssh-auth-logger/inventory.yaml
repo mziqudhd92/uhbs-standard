@@ -1,0 +1,18 @@
+# JustinAzoff/ssh-auth-logger — Low/zero-interaction SSH auth honeypot
+# Host grading uses .local/ssh-auth-logger-inventory.yaml (127.0.0.1 + mapped port).
+sites:
+  ssh-auth-logger-ssh:
+    kind: ssh
+    class: Low-Interaction
+    host: ssh-auth-logger-lab
+    protocol: ssh
+    protocols: [ssh]
+    port: 2222
+    ports:
+      ssh: 2222
+    user: root
+    password: "admin"
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/ssh-auth-logger/low_interaction_ssh_full.yaml
+    container_image: ssh-auth-logger:uhbs-lab

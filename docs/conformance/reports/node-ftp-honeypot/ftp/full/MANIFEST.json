@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "e5cc6846eba6f9288b925f2abe30b69cd3d2483eb85daf0630f72500ebd67ff6"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "e5cc6846eba6f9288b925f2abe30b69cd3d2483eb85daf0630f72500ebd67ff6"
+    },
+    {
+      "path": "report.json",
+      "sha256": "c42d75601b3d81272e82f773f0c25735ffe7d4ba8e02c22a3fc870fe34aaab72"
+    },
+    {
+      "path": "uhbs-console.log",
+      "sha256": "e67befcaab08f389b71fa6167fc03c40b4653dc96818b880c1437b1baabd32b9"
+    },
+    {
+      "path": "uhbs-run.console.log",
+      "sha256": "7335eb85aa088b7deb8d57813ccb955cd1b65f21ffaa3ce6fd90bfaa35598945"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "extra": {
+    "target": "node-ftp-honeypot",
+    "uhqs": 35.85,
+    "grade": "GRADE F (Fail)"
+  }
+}

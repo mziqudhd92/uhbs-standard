@@ -1,0 +1,15 @@
+sites:
+  mockssh-ssh:
+    kind: ssh
+    class: Low-Interaction
+    host: mockssh-lab
+    protocol: ssh
+    protocols: [ssh]
+    port: 2222
+    ports: {ssh: 2222}
+    user: testadmin
+    password: "x"
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/mockssh/low_interaction_ssh_full.yaml
+    container_image: mockssh:uhbs-lab

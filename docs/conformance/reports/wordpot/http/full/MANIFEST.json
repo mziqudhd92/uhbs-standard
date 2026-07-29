@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "88c9192529ec92710145b4eb8256520bd52bb97711cdca7037d8789243ba1daa"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "88c9192529ec92710145b4eb8256520bd52bb97711cdca7037d8789243ba1daa"
+    },
+    {
+      "path": "report.json",
+      "sha256": "8f034f57816e739b1b5042566b4f3f8d892b4a4fa2f760370906b7d036f76cd2"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "extra": {
+    "target": "wordpot-http",
+    "uhqs": 41.6,
+    "grade": "GRADE F (Fail)"
+  }
+}

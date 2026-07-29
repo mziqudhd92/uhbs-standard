@@ -35,9 +35,32 @@
 | [Elastichoney](elastichoney/index.md) | Web-API | HTTP ES `:9200` | [45.84 / F](elastichoney/http/quick/) | [45.73 / F](elastichoney/http/full/) | [Step-by-step](elastichoney/TUTORIAL.md) |
 | [honeypot-ftp (alexbredo)](honeypot-ftp/index.md) | Low-Interaction | FTP `:21` | [42.71 / F](honeypot-ftp/ftp/quick/) | [42.6 / F](honeypot-ftp/ftp/full/) | [Step-by-step](honeypot-ftp/TUTORIAL.md) |
 | [qeeqbox/honeypots](qeeqbox-honeypots/index.md) | multi | SSH/HTTP/FTP/Telnet/SMTP/POP3/MySQL/Postgres/Redis/VNC | see hub | see hub | [Step-by-step](qeeqbox-honeypots/TUTORIAL.md) |
+| [SentryPeer](sentrypeer/index.md) | Low-Interaction | SIP `:5060` | [41.09 / F](sentrypeer/sip/quick/) | [40.98 / F](sentrypeer/sip/full/) | [Step-by-step](sentrypeer/TUTORIAL.md) |
+| [wordpot](wordpot/index.md) | Web-API | HTTP `:8080` | [41.71 / F](wordpot/http/quick/) | [41.6 / F](wordpot/http/full/) | [Step-by-step](wordpot/TUTORIAL.md) |
+| [MockSSH](mockssh/index.md) | Low-Interaction | SSH `:2222` | [59.2 / D](mockssh/ssh/quick/) | [59.0 / D](mockssh/ssh/full/) | [Step-by-step](mockssh/TUTORIAL.md) |
+| [Heralding](heralding/index.md) | Low-Interaction | SSH `:22` + FTP `:21` | see hub | see hub | [Step-by-step](heralding/TUTORIAL.md) |
+| [HoneyHTTPD](honeyhttpd/index.md) | Web-API | HTTP `:8080` | [45.84 / F](honeyhttpd/http/quick/) | [45.73 / F](honeyhttpd/http/full/) | [Step-by-step](honeyhttpd/TUTORIAL.md) |
+| [SHIVA](shiva/index.md) | Low-Interaction | SMTP `:2525` | [45.07 / F](shiva/smtp/quick/) | [44.96 / F](shiva/smtp/full/) | [Step-by-step](shiva/TUTORIAL.md) |
 | [Acra (skipped)](acra/index.md) | — | DB proxy / poison records (not a protocol honeypot) | — | — | [Note](acra/TUTORIAL.md) |
 | [Ensnare (skipped)](ensnare/index.md) | — | Rails gem HTTP traps (not standalone) | — | — | [Note](ensnare/TUTORIAL.md) |
+| [snare (skipped)](snare/index.md) | — | Needs Tanner + page clone | — | — | [Note](snare/TUTORIAL.md) |
 | [Trapster Community](trapster/index.md) | multi | SSH / HTTP / FTP / Telnet | see hub | see hub | [Step-by-step](trapster/TUTORIAL.md) |
+| [sshesame](sshesame/index.md) | Low-Interaction | SSH | [65.13 / D](sshesame/ssh/quick/) | [65.13 / D](sshesame/ssh/full/) | [Step-by-step](sshesame/TUTORIAL.md) |
+| [ssh-honeypotd](ssh-honeypotd/index.md) | Low-Interaction | SSH | [44.38 / F](ssh-honeypotd/ssh/quick/) | [33.04 / F](ssh-honeypotd/ssh/full/) | [Step-by-step](ssh-honeypotd/TUTORIAL.md) |
+| [HellPot](HellPot/index.md) | Web-API | HTTP | [43.98 / F](HellPot/http/quick/) | [43.87 / F](HellPot/http/full/) | [Step-by-step](HellPot/TUTORIAL.md) |
+| [express-honeypot](express-honeypot/index.md) | Web-API | HTTP | [45.84 / F](express-honeypot/http/quick/) | [45.73 / F](express-honeypot/http/full/) | [Step-by-step](express-honeypot/TUTORIAL.md) |
+| [mailoney](mailoney/index.md) | Low-Interaction | SMTP | [38.8 / F](mailoney/smtp/quick/) | [38.69 / F](mailoney/smtp/full/) | [Step-by-step](mailoney/TUTORIAL.md) |
+| [pghoney](pghoney/index.md) | Low-Interaction | PostgreSQL | [43.72 / F](pghoney/postgres/quick/) | [43.61 / F](pghoney/postgres/full/) | [Step-by-step](pghoney/TUTORIAL.md) |
+| [mysql-honeypotd](mysql-honeypotd/index.md) | Low-Interaction | MySQL | [40.35 / F](mysql-honeypotd/mysql/quick/) | [37.94 / F](mysql-honeypotd/mysql/full/) | [Step-by-step](mysql-honeypotd/TUTORIAL.md) |
+| [Log4Pot](Log4Pot/index.md) | Web-API | HTTP | [41.71 / F](Log4Pot/http/quick/) | [38.0 / F](Log4Pot/http/full/) | [Step-by-step](Log4Pot/TUTORIAL.md) |
+| [node-ftp-honeypot](node-ftp-honeypot/index.md) | Low-Interaction | FTP | [35.96 / F](node-ftp-honeypot/ftp/quick/) | [35.85 / F](node-ftp-honeypot/ftp/full/) | [Step-by-step](node-ftp-honeypot/TUTORIAL.md) |
+| [SentryPeer](sentrypeer/index.md) | Low-Interaction | SIP | [43.38 / F](sentrypeer/sip/quick/) | [43.38 / F](sentrypeer/sip/full/) | [Step-by-step](sentrypeer/TUTORIAL.md) |
+| [wordpot](wordpot/index.md) | Web-API | HTTP | [41.71 / F](wordpot/http/quick/) | [41.6 / F](wordpot/http/full/) | [Step-by-step](wordpot/TUTORIAL.md) |
+| [MockSSH](mockssh/index.md) | Low-Interaction | SSH | [59.2 / F](mockssh/ssh/quick/) | [59.0 / F](mockssh/ssh/full/) | [Step-by-step](mockssh/TUTORIAL.md) |
+| [Heralding](heralding/index.md) | Low-Interaction | SSH + FTP | see hub | see hub | [Step-by-step](heralding/TUTORIAL.md) |
+| [HoneyHTTPD](honeyhttpd/index.md) | Web-API | HTTP | [45.84 / F](honeyhttpd/http/quick/) | [45.73 / F](honeyhttpd/http/full/) | [Step-by-step](honeyhttpd/TUTORIAL.md) |
+| [SHIVA](shiva/index.md) | Low-Interaction | SMTP | [45.07 / F](shiva/smtp/quick/) | [44.96 / F](shiva/smtp/full/) | [Step-by-step](shiva/TUTORIAL.md) |
+| [awesome-honeypots triage](../awesome-honeypots/TRIAGE.md) | — | grade_now / skip / deferred | — | — | [Deferred protocols](../awesome-honeypots/DEFERRED-PROTOCOLS.md) |
 | [Dionaea](dionaea/index.md) | multi | FTP / HTTP / SMB | see hub | see hub | [Step-by-step](dionaea/TUTORIAL.md) |
 
 ## Directory layout (per honeypot)

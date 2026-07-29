@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "c71599f30ed05fbe22d5f68028c45253c5979f3ac86e7e30398f2dea7fee0047"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "c71599f30ed05fbe22d5f68028c45253c5979f3ac86e7e30398f2dea7fee0047"
+    },
+    {
+      "path": "report.json",
+      "sha256": "5d2e3a1ce196ed26cf35e296fc4d88f1d083562121ed326b20836edd7aa1ae13"
+    },
+    {
+      "path": "uhbs-console.log",
+      "sha256": "dd0869f7e05877bf0d64513f4ff4d64bcba49847af916c9e91c5a5bd07ec6bc6"
+    },
+    {
+      "path": "uhbs-run.console.log",
+      "sha256": "5d163289ef744f2ce5ba7707a3887bb83dbc5347f0e57657d9bb46f4ad04466a"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "extra": {
+    "target": "pghoney-postgres",
+    "uhqs": 43.72,
+    "grade": "GRADE F (Fail)"
+  }
+}

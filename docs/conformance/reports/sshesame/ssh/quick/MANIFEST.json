@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "44451f11f12a8d60540bccac39b54928c6176472397df11ce2f0b75236d26608"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "44451f11f12a8d60540bccac39b54928c6176472397df11ce2f0b75236d26608"
+    },
+    {
+      "path": "report.json",
+      "sha256": "accf3d34f2089ca95c230e60213380a5550fe0c30a9184f683cfb921733fdaf5"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "extra": {
+    "target": "sshesame-ssh",
+    "uhqs": 65.13,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

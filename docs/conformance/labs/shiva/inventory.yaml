@@ -1,0 +1,13 @@
+sites:
+  shiva-smtp:
+    kind: generic
+    class: Low-Interaction
+    host: shiva-lab
+    protocol: smtp
+    protocols: [smtp]
+    port: 2525
+    ports: {smtp: 2525}
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/shiva/low_interaction_smtp_full.yaml
+    container_image: shiva-receiver:uhbs-lab

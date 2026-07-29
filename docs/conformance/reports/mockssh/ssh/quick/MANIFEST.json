@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "f630d4b1be730a62b7cf883ffaf7cc7210c575b32380a0369085c7eeeb3a6300"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "f630d4b1be730a62b7cf883ffaf7cc7210c575b32380a0369085c7eeeb3a6300"
+    },
+    {
+      "path": "report.json",
+      "sha256": "790df36b1da466455fd98501c632f5445639e85a351fd94138081351bd24a82b"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "extra": {
+    "target": "mockssh-ssh",
+    "uhqs": 59.2,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

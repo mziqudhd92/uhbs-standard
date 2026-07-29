@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "96f5cedbe1c12ab0a434a4b3334a90e1c46aad8d22ed054fe319de17b7000000"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "96f5cedbe1c12ab0a434a4b3334a90e1c46aad8d22ed054fe319de17b7000000"
+    },
+    {
+      "path": "report.json",
+      "sha256": "4009163a1a778d9360967e58be3622e9e1742e4df75a251516298f0f8d435fbd"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "extra": {
+    "target": "shiva-smtp",
+    "uhqs": 44.96,
+    "grade": "GRADE F (Fail)"
+  }
+}

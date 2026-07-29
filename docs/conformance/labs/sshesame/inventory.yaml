@@ -1,0 +1,18 @@
+# jaksi/sshesame — Low-Interaction SSH honeypot
+# Host grading uses .local/sshesame-inventory.yaml (127.0.0.1 + mapped port).
+sites:
+  sshesame-ssh:
+    kind: ssh
+    class: Low-Interaction
+    host: sshesame-lab
+    protocol: ssh
+    protocols: [ssh]
+    port: 2022
+    ports:
+      ssh: 2022
+    user: root
+    password: "admin"
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/sshesame/low_interaction_ssh_full.yaml
+    container_image: ghcr.io/jaksi/sshesame:latest

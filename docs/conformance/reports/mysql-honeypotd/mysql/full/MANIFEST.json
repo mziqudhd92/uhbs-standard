@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "bf9dcb5b14ee2044f871633bd5a21375e4f4d968cee21819a347819daa637618"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "bf9dcb5b14ee2044f871633bd5a21375e4f4d968cee21819a347819daa637618"
+    },
+    {
+      "path": "report.json",
+      "sha256": "7da34bb701b1b813d6f09117295290553781e7239b0f756c7104000a2463f45a"
+    },
+    {
+      "path": "uhbs-console.log",
+      "sha256": "e1218037f19a2ee27a0342a3f9bc48af2363fbb1c0e516bf3f8e5590cff9642a"
+    },
+    {
+      "path": "uhbs-run.console.log",
+      "sha256": "1a48927e4e3a8e5a07f570022fbb7fc0cb06288b71911564089d132e645d8bcf"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "extra": {
+    "target": "mysql-honeypotd",
+    "uhqs": 37.94,
+    "grade": "GRADE F (Fail)"
+  }
+}

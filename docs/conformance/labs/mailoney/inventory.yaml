@@ -1,0 +1,13 @@
+sites:
+  mailoney-smtp:
+    kind: generic
+    class: Low-Interaction
+    host: mailoney-lab
+    protocol: smtp
+    protocols: [smtp]
+    port: 25
+    ports: {smtp: 25}
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/mailoney/low_interaction_smtp_full.yaml
+    container_image: mailoney:uhbs-lab

@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "6ccfb20d39baf60140ba08209915514c685bc07ced327ab3c6e2db9856584c71"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "6ccfb20d39baf60140ba08209915514c685bc07ced327ab3c6e2db9856584c71"
+    },
+    {
+      "path": "report.json",
+      "sha256": "66209b49f2902f168889adb1e79afe2a33ab6c0e046248062506f81dd44cfe7f"
+    },
+    {
+      "path": "uhbs-console.log",
+      "sha256": "612603cc250f3b6ab40d75c40e7206989c5b378aad90fd8cbbb705d795c02536"
+    },
+    {
+      "path": "uhbs-run.console.log",
+      "sha256": "6ab10cc38f74f8d9b97b6d15a3f71e49cd9686a2688279eae1fa55f9a7f99836"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "extra": {
+    "target": "HellPot-http",
+    "uhqs": 43.98,
+    "grade": "GRADE F (Fail)"
+  }
+}

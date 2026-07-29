@@ -8,6 +8,9 @@ share version **4.2.2** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[
 ## [Unreleased]
 
 ### Added
+- Awesome-honeypots survey triage + deferred/skipped lists under `docs/conformance/awesome-honeypots/`
+- Batch lab grades (quick+full): sshesame, ssh-honeypotd, HellPot, express-honeypot, mailoney, pghoney, mysql-honeypotd, Log4Pot, node-ftp-honeypot, SentryPeer, wordpot, MockSSH, Heralding (SSH/FTP), HoneyHTTPD, SHIVA
+- Results UI: name/repo search + paginated list view
 - Built-in **`pop3`** protocol plugin (RFC 1939 greeting / pre-auth STAT|LIST
   reject / CAPA / unknown-command; aliases `pop`, `pop-3`) with Module E P95
   default
