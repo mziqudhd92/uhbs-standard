@@ -205,10 +205,12 @@ def _rfcomm_channel_from_target(target: TargetSpec) -> int:
 
 
 def _soft_skip(check_id: str) -> CheckResult:
+    # Soft skip = probe path unavailable, not a protocol pass. Keep score=50
+    # for partial credit without claiming passed=True (grading integrity).
     return CheckResult(
         id=check_id,
         team="blue",
-        passed=True,
+        passed=False,
         detail=_SOFT_SKIP_DETAIL,
         score=50.0,
     )

@@ -95,6 +95,24 @@ to be considered for `Standard` recognition in this repository's own
 for the (opt-in, advisory) `CheckResult` contract validator plugin authors
 can run against their own output.
 
+## 5. Lab-target safety (built-in probes)
+
+Built-in plugins that speak proxies, DNS, DHCP, or cleartext auth are
+designed for **isolated lab targets only**:
+
+- **httpproxy / socks5** — CONNECT / tunnel probes use loopback or
+  `.invalid` destinations on purpose. Point them at a production proxy and
+  you risk unintended egress (SSRF-shaped traffic from the proxy’s view).
+- **dns / dhcp** — UDP probes assume a honeypot or hermetic stub, not a
+  shared enterprise resolver/DHCP server.
+- **imap** — negotiation may send a synthetic cleartext `LOGIN` with
+  disposable credentials to exercise AUTH paths; never aim that at a
+  real mailbox.
+
+Cap framed reply sizes in new plugins (see LDAP’s 64 KiB BER cap and
+MongoDB’s message limit) so a broken peer cannot force unbounded
+allocations in the harness process.
+
 ## What this is *not* (yet)
 
 - Not a plugin marketplace or curated registry — there is no discovery UI.

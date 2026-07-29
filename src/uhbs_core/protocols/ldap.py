@@ -16,6 +16,9 @@ from uhbs_core.tps import TPS
 _LDAP_SUCCESS = 0
 _LDAP_PROTOCOL_ERROR = 2
 
+# Cap inbound BER bodies so a malicious/broken peer cannot force multi-GB allocs.
+_MAX_LDAP_MESSAGE = 64 * 1024
+
 # Invalid / truncated BER for FSM probes
 _INVALID_BER = b"\x30\x08\x02\x01\x01\x60\x05\x02"  # length mismatch / truncated
 _GARBAGE_BER = b"\xff\x30\x00"
@@ -158,9 +161,13 @@ def has_search_result_entry(raw: bytes) -> bool:
 
 
 def _recv_exact(sock: socket.socket, n: int) -> bytes:
+    if n < 0:
+        raise ValueError("negative BER length")
+    if n > _MAX_LDAP_MESSAGE:
+        raise ValueError(f"BER length {n} exceeds {_MAX_LDAP_MESSAGE} byte cap")
     buf = b""
     while len(buf) < n:
-        chunk = sock.recv(n - len(buf))
+        chunk = sock.recv(min(4096, n - len(buf)))
         if not chunk:
             break
         buf += chunk
@@ -176,6 +183,8 @@ def _read_ber_message(sock: socket.socket) -> bytes:
         return tag
     if lb[0] & 0x80:
         nlen = lb[0] & 0x7F
+        if nlen > 4:
+            raise ValueError("BER length-of-length too large")
         lbytes = _recv_exact(sock, nlen)
         if len(lbytes) != nlen:
             return tag + lb + lbytes
@@ -184,6 +193,8 @@ def _read_ber_message(sock: socket.socket) -> bytes:
     else:
         length = lb[0]
         len_field = lb
+    if length > _MAX_LDAP_MESSAGE:
+        raise ValueError(f"BER message length {length} exceeds cap")
     body = _recv_exact(sock, length)
     return tag + len_field + body
 
@@ -205,7 +216,10 @@ def ldap_session(
                 is_unbind = b"\x42\x00" in msg or msg.endswith(b"\x42\x00")
                 if is_unbind and i == len(outbound) - 1:
                     break
-                reply = _read_ber_message(sock)
+                try:
+                    reply = _read_ber_message(sock)
+                except ValueError as exc:
+                    return collected, str(exc)
                 collected += reply
             return collected, ""
     except OSError as exc:

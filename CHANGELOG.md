@@ -9,6 +9,8 @@ share version **4.2.2** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[
 
 ### Fixed
 - MkDocs `--strict` Pages deploy was failing on broken scorecard links, leaving stub scorecards live; artifact README/scorecard pages now embed verbatim SCORECARD proof
+- LDAP BER reader caps message size (64 KiB) so a malicious peer cannot force unbounded allocations; Bluetooth soft-skip no longer claims `passed=True`
+- Removed HellPot-copied untracked `labs/lophiid` stubs that could mis-grade HTTP if used
 
 ### Added
 - Built-in protocol plugins: **mongodb**, **imap**, **kubernetes**, **dns**, **bluetooth**, **dhcp**, **httpproxy**, **ipp**, **irc**, **ldap**, **memcache**, **mssql**, **oracle**, **pjl**, **socks5** (with aliases; Module E P95 defaults; deferred-protocol list updated)

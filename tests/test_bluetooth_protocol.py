@@ -84,7 +84,9 @@ def test_unreachable_does_not_raise_soft_skip() -> None:
     fsm = plugin.probe_fsm("127.0.0.1", 1, target, None)
     nego = plugin.probe_negotiation("127.0.0.1", 1, target, None)
     assert fsm[0].id == "bluetooth.fsm.skipped"
+    assert fsm[0].passed is False
     assert fsm[0].score == 50.0
+    assert nego[0].passed is False
     assert nego[0].score == 50.0
     assert "skipped" in fsm[0].detail.lower() or "RFCOMM" in fsm[0].detail
 

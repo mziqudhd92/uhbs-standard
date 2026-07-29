@@ -12,7 +12,7 @@ Static-only rules could theoretically be deployed, but that would not represent 
 ## What analysts should do instead
 
 - Treat this entry as a **catalog gap note**, not a failing grade.
-- If you operate lophiid with OpenRouter/VT keys and isolated agents, re-run `uhbs-lab` locally using the Web-API HTTP TPS stubs under `docs/conformance/labs/lophiid/` once your stack matches production intent.
+- If you operate lophiid with OpenRouter/VT keys and isolated agents, author a hermetic inventory + Web-API HTTP TPS (see the [HellPot HTTP lab pattern](../HellPot/TUTORIAL.md)), then re-run `uhbs-lab` locally once your stack matches production intent.
 - For OWA-style credential sinks without AI, see graded proof for [owa-honeypot](../owa-honeypot/index.md) in the same batch.
 
 ## Protocol survey

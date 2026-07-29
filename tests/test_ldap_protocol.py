@@ -163,3 +163,35 @@ def test_parse_bind_protocol_error() -> None:
     inner = b"\x02\x01\x01" + op
     raw = b"\x30" + bytes([len(inner)]) + inner
     assert parse_bind_result_code(raw) == 2
+
+
+def test_ldap_rejects_oversize_ber_length() -> None:
+    """A peer advertising a huge definite length must not allocate multi-GB."""
+    srv = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    srv.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    srv.bind(("127.0.0.1", 0))
+    srv.listen(1)
+    host, port = srv.getsockname()
+    stop = threading.Event()
+
+    def _loop() -> None:
+        srv.settimeout(0.5)
+        while not stop.is_set():
+            try:
+                conn, _ = srv.accept()
+            except TimeoutError:
+                continue
+            with conn:
+                conn.recv(64)
+                # SEQUENCE with definite length 0x01000000 (16 MiB) — over cap.
+                conn.sendall(b"\x30\x84\x01\x00\x00\x00")
+            break
+
+    threading.Thread(target=_loop, daemon=True).start()
+    try:
+        raw, err = ldap_session(host, port, [build_bind_request_anonymous()], timeout=2.0)
+        assert "exceeds" in err.lower() or "cap" in err.lower()
+        assert len(raw) < 1024
+    finally:
+        stop.set()
+        srv.close()
