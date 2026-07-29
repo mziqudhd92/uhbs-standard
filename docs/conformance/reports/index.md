@@ -32,6 +32,11 @@
 | [Beelzebub](beelzebub/index.md) | multi | SSH / HTTP / Telnet / Redis / MCP | see hub | see hub | [Step-by-step](beelzebub/TUTORIAL.md) |
 | [HoneyMCP](honeymcp/index.md) | Web-API | MCP `:8080` | [43.04 / F](honeymcp/mcp/quick/) | [42.93 / F](honeymcp/mcp/full/) | [Step-by-step](honeymcp/TUTORIAL.md) |
 | [GenAIPot (ls1911)](genaipot/index.md) | Low-Interaction | SMTP `:25` + POP3 `:110` | see hub | see hub | [Step-by-step](genaipot/TUTORIAL.md) |
+| [Elastichoney](elastichoney/index.md) | Web-API | HTTP ES `:9200` | [45.84 / F](elastichoney/http/quick/) | [45.73 / F](elastichoney/http/full/) | [Step-by-step](elastichoney/TUTORIAL.md) |
+| [honeypot-ftp (alexbredo)](honeypot-ftp/index.md) | Low-Interaction | FTP `:21` | [42.71 / F](honeypot-ftp/ftp/quick/) | [42.6 / F](honeypot-ftp/ftp/full/) | [Step-by-step](honeypot-ftp/TUTORIAL.md) |
+| [qeeqbox/honeypots](qeeqbox-honeypots/index.md) | multi | SSH/HTTP/FTP/Telnet/SMTP/POP3/MySQL/Postgres/Redis/VNC | see hub | see hub | [Step-by-step](qeeqbox-honeypots/TUTORIAL.md) |
+| [Acra (skipped)](acra/index.md) | — | DB proxy / poison records (not a protocol honeypot) | — | — | [Note](acra/TUTORIAL.md) |
+| [Ensnare (skipped)](ensnare/index.md) | — | Rails gem HTTP traps (not standalone) | — | — | [Note](ensnare/TUTORIAL.md) |
 | [Trapster Community](trapster/index.md) | multi | SSH / HTTP / FTP / Telnet | see hub | see hub | [Step-by-step](trapster/TUTORIAL.md) |
 | [Dionaea](dionaea/index.md) | multi | FTP / HTTP / SMB | see hub | see hub | [Step-by-step](dionaea/TUTORIAL.md) |
 

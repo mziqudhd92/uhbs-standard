@@ -138,6 +138,29 @@ nav:
       - GenAIPot POP3 hub: conformance/reports/genaipot/pop3/index.md
       - GenAIPot tutorial: conformance/reports/genaipot/TUTORIAL.md
       - GenAIPot methodology: conformance/reports/genaipot/METHODOLOGY.md
+      - Elastichoney report hub: conformance/reports/elastichoney/index.md
+      - Elastichoney HTTP hub: conformance/reports/elastichoney/http/index.md
+      - Elastichoney tutorial: conformance/reports/elastichoney/TUTORIAL.md
+      - Elastichoney methodology: conformance/reports/elastichoney/METHODOLOGY.md
+      - honeypot-ftp report hub: conformance/reports/honeypot-ftp/index.md
+      - honeypot-ftp FTP hub: conformance/reports/honeypot-ftp/ftp/index.md
+      - honeypot-ftp tutorial: conformance/reports/honeypot-ftp/TUTORIAL.md
+      - honeypot-ftp methodology: conformance/reports/honeypot-ftp/METHODOLOGY.md
+      - qeeqbox report hub: conformance/reports/qeeqbox-honeypots/index.md
+      - qeeqbox tutorial: conformance/reports/qeeqbox-honeypots/TUTORIAL.md
+      - qeeqbox methodology: conformance/reports/qeeqbox-honeypots/METHODOLOGY.md
+      - Acra skip note: conformance/reports/acra/index.md
+      - Ensnare skip note: conformance/reports/ensnare/index.md
+      - qeeqbox ssh hub: conformance/reports/qeeqbox-honeypots/ssh/index.md
+      - qeeqbox http hub: conformance/reports/qeeqbox-honeypots/http/index.md
+      - qeeqbox ftp hub: conformance/reports/qeeqbox-honeypots/ftp/index.md
+      - qeeqbox telnet hub: conformance/reports/qeeqbox-honeypots/telnet/index.md
+      - qeeqbox smtp hub: conformance/reports/qeeqbox-honeypots/smtp/index.md
+      - qeeqbox pop3 hub: conformance/reports/qeeqbox-honeypots/pop3/index.md
+      - qeeqbox mysql hub: conformance/reports/qeeqbox-honeypots/mysql/index.md
+      - qeeqbox postgres hub: conformance/reports/qeeqbox-honeypots/postgres/index.md
+      - qeeqbox redis hub: conformance/reports/qeeqbox-honeypots/redis/index.md
+      - qeeqbox vnc hub: conformance/reports/qeeqbox-honeypots/vnc/index.md
       - Trapster report hub: conformance/reports/trapster/index.md
       - Trapster tutorial: conformance/reports/trapster/TUTORIAL.md
       - Trapster methodology: conformance/reports/trapster/METHODOLOGY.md
@@ -186,6 +209,18 @@ nav:
       - HoneyMCP MCP: scorecards/honeymcp-mcp.md
       - GenAIPot SMTP: scorecards/genaipot-smtp.md
       - GenAIPot POP3: scorecards/genaipot-pop3.md
+      - Elastichoney HTTP: scorecards/elastichoney-http.md
+      - honeypot-ftp: scorecards/honeypot-ftp.md
+      - qeeqbox ssh: scorecards/qeeqbox-ssh.md
+      - qeeqbox http: scorecards/qeeqbox-http.md
+      - qeeqbox ftp: scorecards/qeeqbox-ftp.md
+      - qeeqbox telnet: scorecards/qeeqbox-telnet.md
+      - qeeqbox smtp: scorecards/qeeqbox-smtp.md
+      - qeeqbox pop3: scorecards/qeeqbox-pop3.md
+      - qeeqbox mysql: scorecards/qeeqbox-mysql.md
+      - qeeqbox postgres: scorecards/qeeqbox-postgres.md
+      - qeeqbox redis: scorecards/qeeqbox-redis.md
+      - qeeqbox vnc: scorecards/qeeqbox-vnc.md
       - Trapster HTTP: scorecards/trapster-http.md
       - Trapster SSH: scorecards/trapster-ssh.md
       - Trapster FTP: scorecards/trapster-ftp.md

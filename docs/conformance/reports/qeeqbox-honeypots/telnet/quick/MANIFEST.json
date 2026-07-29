@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "6a06a74bf0c69892769a3134a2c05ae608e8894cef4049aaf87ab2c312a75dd8"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "6a06a74bf0c69892769a3134a2c05ae608e8894cef4049aaf87ab2c312a75dd8"
+    },
+    {
+      "path": "report.json",
+      "sha256": "fd616782bf34e36c1ec27510ecf29d6c84070a6fe598850a6fa1b3aad47ca47b"
+    }
+  ],
+  "extra": {
+    "target": "qeeqbox-telnet",
+    "uhqs": 29.88,
+    "grade": "GRADE F (Fail)"
+  }
+}

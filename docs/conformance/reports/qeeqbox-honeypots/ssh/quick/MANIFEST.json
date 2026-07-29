@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "31775e1f576c4a4366305423c8b0891d489ccefba7a52df68e47eec3d47e0d31"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "31775e1f576c4a4366305423c8b0891d489ccefba7a52df68e47eec3d47e0d31"
+    },
+    {
+      "path": "report.json",
+      "sha256": "e4ce965abc3adf303ce9dd539c5706d8daec6e43d628e9caf1013d1b431856a2"
+    }
+  ],
+  "extra": {
+    "target": "qeeqbox-ssh",
+    "uhqs": 59.88,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

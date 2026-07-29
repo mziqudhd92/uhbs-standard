@@ -1,0 +1,14 @@
+target_metadata:
+  name: "qeeqbox-ftp-quick"
+  class: "Low-Interaction"
+  protocol: "ftp"
+  protocols: ["ftp"]
+
+performance_baseline:
+  expected_p95_latency_ms: 3000
+  strict_rfc_enforcement: true
+  timing_samples: 50
+
+safety_boundary:
+  allowed_outbound_traffic: false
+  allow_local_code_execution: false

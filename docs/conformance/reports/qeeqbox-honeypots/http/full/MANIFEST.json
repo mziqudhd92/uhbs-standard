@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "91701baa5dae3f4b1b84345238c34d0633d54fb92d476154f86f0268b91328c9"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "91701baa5dae3f4b1b84345238c34d0633d54fb92d476154f86f0268b91328c9"
+    },
+    {
+      "path": "report.json",
+      "sha256": "1ecb4c3751ea7be3a9e82e66447776fa1fe8b31dc4c867f0974dab3cd47ce04b"
+    }
+  ],
+  "extra": {
+    "target": "qeeqbox-http",
+    "uhqs": 45.73,
+    "grade": "GRADE F (Fail)"
+  }
+}

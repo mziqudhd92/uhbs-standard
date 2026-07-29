@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "acb3d85456415ae97c6425fe640eed94da8f0d735b0b872aa25f5426066725db"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "acb3d85456415ae97c6425fe640eed94da8f0d735b0b872aa25f5426066725db"
+    },
+    {
+      "path": "report.json",
+      "sha256": "b9c77a95ffac9b6730e31afe3439191f91d17a9e08ca8bb4f23ca09b62c47b24"
+    }
+  ],
+  "extra": {
+    "target": "honeypot-ftp",
+    "uhqs": 42.6,
+    "grade": "GRADE F (Fail)"
+  }
+}

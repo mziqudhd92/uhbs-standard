@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "b03d9faa36dd667a072a083ff0daed5c0861fcf88ef703acbd1516182f5aa433"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "b03d9faa36dd667a072a083ff0daed5c0861fcf88ef703acbd1516182f5aa433"
+    },
+    {
+      "path": "report.json",
+      "sha256": "da04496a132a356053c1739036b71199441d7252ad06d540800cf73d599ebf4d"
+    }
+  ],
+  "extra": {
+    "target": "qeeqbox-redis",
+    "uhqs": 34.61,
+    "grade": "GRADE F (Fail)"
+  }
+}

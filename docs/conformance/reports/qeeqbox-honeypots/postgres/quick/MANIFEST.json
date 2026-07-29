@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "b976870b8de30d2b59bf421d788eba410199dd6e511c7829a589948b8d24756e"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "b976870b8de30d2b59bf421d788eba410199dd6e511c7829a589948b8d24756e"
+    },
+    {
+      "path": "report.json",
+      "sha256": "f336c365c3a06526ecb37ff72702de0b1eb6882a76c35305bf8a2fa66a5f8fdf"
+    }
+  ],
+  "extra": {
+    "target": "qeeqbox-postgres",
+    "uhqs": 34.38,
+    "grade": "GRADE F (Fail)"
+  }
+}

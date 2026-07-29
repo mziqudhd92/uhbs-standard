@@ -14,6 +14,12 @@ share version **4.2.2** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[
 - GenAIPot (ls1911) **SMTP** + **POP3** published lab grades
   — SMTP quick **30.9 / F**, full **30.78 / F**;
   POP3 quick **44.24 / F**, full **44.13 / F** (offline Docker templates)
+- Elastichoney **HTTP** lab grades (quick **45.84 / F**, full **45.73 / F**)
+- alexbredo/honeypot-ftp **FTP** lab grades (quick **42.71 / F**, full **42.6 / F**)
+- qeeqbox/honeypots multi-protocol lab grades (SSH/HTTP/FTP/Telnet/SMTP/POP3/MySQL/Postgres/Redis/VNC)
+- Results hub shows GitHub **last push** date per upstream repo
+- Evaluation notes for **Acra** and **Ensnare** (skipped — not standalone protocol honeypots)
+
 
 ## [4.2.2] — 2026-07-28
 

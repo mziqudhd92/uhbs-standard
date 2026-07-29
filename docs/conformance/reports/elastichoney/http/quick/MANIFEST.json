@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "41797d94bd8e9c1d8fbd1f4b507567a5be8ff9cac4bad85999abc704d720de9d"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "41797d94bd8e9c1d8fbd1f4b507567a5be8ff9cac4bad85999abc704d720de9d"
+    },
+    {
+      "path": "report.json",
+      "sha256": "25d83727a42a4761bb8ab7cf0873a9f634078486ed7b9ecf9aa399587b3ac5f4"
+    }
+  ],
+  "extra": {
+    "target": "elastichoney-http",
+    "uhqs": 45.84,
+    "grade": "GRADE F (Fail)"
+  }
+}

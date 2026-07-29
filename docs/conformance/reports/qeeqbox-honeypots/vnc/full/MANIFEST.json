@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "e1740269661767bc17e97a37313efee06cd5e4015ca918981e8951ee5db7f709"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "e1740269661767bc17e97a37313efee06cd5e4015ca918981e8951ee5db7f709"
+    },
+    {
+      "path": "report.json",
+      "sha256": "581cf8ae8a68a01fe277986ead87da130197a8c73240f2e72974baf173bdbdbd"
+    }
+  ],
+  "extra": {
+    "target": "qeeqbox-vnc",
+    "uhqs": 32.81,
+    "grade": "GRADE F (Fail)"
+  }
+}

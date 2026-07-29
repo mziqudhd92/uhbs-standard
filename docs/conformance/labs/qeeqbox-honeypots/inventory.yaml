@@ -1,0 +1,161 @@
+sites:
+  qeeqbox-ftp:
+    kind: generic
+    class: Low-Interaction
+    host: qeeqbox-lab
+    protocol: ftp
+    protocols:
+    - ftp
+    port: 19021
+    ports:
+      ftp: 19021
+    user: test
+    password: test
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/low_interaction_ftp_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+  qeeqbox-ssh:
+    kind: ssh
+    class: Low-Interaction
+    host: qeeqbox-lab
+    protocol: ssh
+    protocols:
+    - ssh
+    port: 19022
+    ports:
+      ssh: 19022
+    user: test
+    password: test
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/low_interaction_ssh_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+  qeeqbox-telnet:
+    kind: generic
+    class: Low-Interaction
+    host: qeeqbox-lab
+    protocol: telnet
+    protocols:
+    - telnet
+    port: 19023
+    ports:
+      telnet: 19023
+    user: test
+    password: test
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/low_interaction_telnet_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+  qeeqbox-smtp:
+    kind: generic
+    class: Low-Interaction
+    host: qeeqbox-lab
+    protocol: smtp
+    protocols:
+    - smtp
+    port: 19025
+    ports:
+      smtp: 19025
+    user: test
+    password: test
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/low_interaction_smtp_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+  qeeqbox-http:
+    kind: generic
+    class: Web-API
+    host: qeeqbox-lab
+    protocol: http
+    protocols:
+    - http
+    port: 19080
+    ports:
+      http: 19080
+    user: test
+    password: test
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/web_api_http_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+  qeeqbox-pop3:
+    kind: generic
+    class: Low-Interaction
+    host: qeeqbox-lab
+    protocol: pop3
+    protocols:
+    - pop3
+    port: 19110
+    ports:
+      pop3: 19110
+    user: test
+    password: test
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/low_interaction_pop3_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+  qeeqbox-mysql:
+    kind: generic
+    class: Database
+    host: qeeqbox-lab
+    protocol: mysql
+    protocols:
+    - mysql
+    port: 19306
+    ports:
+      mysql: 19306
+    user: test
+    password: test
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/database_mysql_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+  qeeqbox-postgres:
+    kind: generic
+    class: Database
+    host: qeeqbox-lab
+    protocol: postgres
+    protocols:
+    - postgres
+    port: 19432
+    ports:
+      postgres: 19432
+    user: test
+    password: test
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/database_postgres_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+  qeeqbox-redis:
+    kind: generic
+    class: Low-Interaction
+    host: qeeqbox-lab
+    protocol: redis
+    protocols:
+    - redis
+    port: 19637
+    ports:
+      redis: 19637
+    user: test
+    password: test
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/low_interaction_redis_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+  qeeqbox-vnc:
+    kind: generic
+    class: Low-Interaction
+    host: qeeqbox-lab
+    protocol: vnc
+    protocols:
+    - vnc
+    port: 19900
+    ports:
+      vnc: 19900
+    user: test
+    password: test
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/low_interaction_vnc_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
