@@ -1,28 +1,62 @@
-# GenAIPot — SMTP
+# genaipot — SMTP
 
-**UHBS:** v4.2.2 · evaluation proof for the `smtp` protocol plugin (Low-Interaction class)  
-**Upstream:** [ls1911/GenAIPot](https://github.com/ls1911/GenAIPot) · zip tree `205ffe4` · Docker Hub `annls/genaipot:latest` (image reports **0.9.2**)
+**Status:** Informative · evaluation proof  
+**UHBS:** v4.2.2 · **Class:** Low-Interaction · **Protocol:** `smtp`  
+**Target id:** `genaipot-smtp` · **Evaluated:** 2026-07-28
 
-| Run | UHQS | Grade | Notes |
-| --- | --- | --- | --- |
-| [Quick](quick/) | **30.9** | F | δ_C 0.56 · offline AI templates |
-| [Full](full/) | **30.78** | F | Prefer full for claim-grade |
+| Run | UHQS | Grade | δ_C | Artifacts |
+| --- | ---: | --- | --- | --- |
+| [Quick](quick/) | **30.9** | F | 0.5625 | [`SCORECARD.txt`](quick/SCORECARD.txt) · [`report.json`](quick/report.json) |
+| [Full](full/) | **30.78** | F | 0.5625 | [`SCORECARD.txt`](full/SCORECARD.txt) · [`report.json`](full/report.json) |
 
-SMTP greeting presents as `220 bankers.gov ESMTP` with EHLO capability ads. Module A stayed low: bad-sequence / unknown-command paths often return **500** instead of RFC 5321 **503**, and `QUIT` was observed as `500 Command unrecognized`. POP3 is graded separately under [../pop3/](../pop3/).
+## Full run — module breakdown (analyst view)
 
-## Reproduce
+| Module | Score | Weight | Status | Notes |
+| --- | ---: | --- | --- | --- |
+| Module A: Protocol Fidelity | 30.0 | 0.30 | PARTIAL | codes=[] (want 503) |
+| Module B: Behavioral Realism | 54.5 | 0.15 | PARTIAL | no codes |
+| Module C: Telemetry Quality | 55.0 | 0.25 | PARTIAL | no STIX objects found |
+| Module D: Safety & Containment (C) | 75.0 | GATE | PASSED | UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes on SSH decoys) |
+| Module E: Scalability & Latency | 100.0 | 0.10 | PASSED | service alive after load (connect 0.2ms) |
+| Module F: Static Code Audit | 69.0 | 0.20 | PARTIAL | POSIX coverage 0% (0/104) |
+| Safety Gate δ_C | 0.5625 | GATE | — | Containment multiplier |
 
-```bash
-docker run -d --name genaipot-lab --network uhbs-lab \
-  -p 127.0.0.1:2525:25 -p 127.0.0.1:1110:110 \
-  annls/genaipot:latest
 
-# Host inventory: .local/genaipot-smtp-inventory.yaml (see TUTORIAL.md)
-UHBS_AIRGAP_ATTESTED=1 UHBS_QUICK=1 \
-uhbs-lab \
-  --inventory .local/genaipot-smtp-inventory.yaml \
-  --target genaipot-smtp \
-  --tps docs/conformance/labs/genaipot/low_interaction_smtp_quick.yaml \
-  --protocol smtp --quick --skip-sast-tools \
-  --out docs/conformance/reports/genaipot/smtp/quick
+## Full scorecard (verbatim)
+
+```text
+====================================================================================
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.2.2
+====================================================================================
+Target System         : genaipot-smtp
+System Profile Class  : Low-Interaction
+Protocols             : smtp
+Evaluation Date       : 2026-07-28
+Evaluation Type       : Full-Spectrum (Static Audit + Dynamic Sandbox)
+Environment           : Isolated Sandbox
+MCP Surface Depth     : unknown
+------------------------------------------------------------------------------------
+EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
+------------------------------------------------------------------------------------
+Module A: Protocol Fidelity         :  30.0/100       0.30     PARTIAL (codes=[] (want 503))
+Module B: Behavioral Realism        :  54.5/100       0.15     PARTIAL (no codes)
+Module C: Telemetry Quality         :  55.0/100       0.25     PARTIAL (no STIX objects found)
+Module D: Safety & Containment (C)  :  75.0/100       GATE     PASSED (UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes on SSH decoys))
+Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service alive after load (connect 0.2ms))
+Module F: Static Code Audit         :  69.0/100       0.20     PARTIAL (POSIX coverage 0% (0/104))
+------------------------------------------------------------------------------------
+SAFETY GATE MULTIPLIER                : δ_C = 0.5625 (C = 75.0 < 95 — exponential penalty)
+FINAL COMPOSITE SCORE (UHQS 4.2.2)      : 30.78 / 100
+OVERALL EVALUATION GRADE              : GRADE F (Fail)
+====================================================================================
 ```
+
+
+## Guides
+
+- Product hub: [`../`](../index.md)
+- [Tutorial](../TUTORIAL.md)
+- [Methodology](../METHODOLOGY.md)
+- Published scorecard page: [`../../../scorecards/genaipot-smtp.md`](../../../scorecards/genaipot-smtp.md)
+
+> Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

@@ -268,6 +268,16 @@ nav:
       - Heralding FTP: scorecards/heralding-ftp.md
       - HoneyHTTPD HTTP: scorecards/honeyhttpd-http.md
       - SHIVA SMTP: scorecards/shiva-smtp.md
+      - sshesame SSH: scorecards/sshesame-ssh.md
+      - ssh-honeypotd SSH: scorecards/ssh-honeypotd-ssh.md
+      - ssh-auth-logger SSH: scorecards/ssh-auth-logger-ssh.md
+      - HellPot HTTP: scorecards/hellpot-http.md
+      - express-honeypot HTTP: scorecards/express-honeypot-http.md
+      - mailoney SMTP: scorecards/mailoney-smtp.md
+      - pghoney PostgreSQL: scorecards/pghoney-postgres.md
+      - mysql-honeypotd MySQL: scorecards/mysql-honeypotd-mysql.md
+      - Log4Pot HTTP: scorecards/log4pot-http.md
+      - node-ftp-honeypot FTP: scorecards/node-ftp-honeypot-ftp.md
       - qeeqbox ssh: scorecards/qeeqbox-ssh.md
       - qeeqbox http: scorecards/qeeqbox-http.md
       - qeeqbox ftp: scorecards/qeeqbox-ftp.md
