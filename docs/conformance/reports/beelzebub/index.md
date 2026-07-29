@@ -15,3 +15,26 @@
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 
 > Named product is evaluation proof only — not a UHBS endorsement.
+
+
+## What this decoy is
+
+Multi-protocol honeypot including SSH/HTTP/Telnet/Redis and MCP surfaces in UHBS labs.
+
+## For CTI analysts
+
+- Protocol mix supports correlating the same source IP across SSH and HTTP/MCP lures.
+- MCP grades are about decoy tool/JSON-RPC behavior — not endorsement of AI gateway products.
+
+**Primary signals:** Per-protocol sessions; MCP tool/list and JSON-RPC exchanges when enabled.
+
+## For blue teams / detection engineering
+
+- Enable only needed listeners; review MCP tool allowlists carefully.
+- Use per-protocol report hubs when tuning detections.
+
+## Trust & limitations
+
+- Evaluation proof under UHBS 4.2.2 — not a certification or endorsement.
+- Prefer **full/** over **quick/** for decisions.
+- Reading guide: [READING-UHQS.md](../READING-UHQS.md).

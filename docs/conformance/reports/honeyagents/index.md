@@ -14,3 +14,24 @@
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 
 > Named product is evaluation proof only — not a UHBS endorsement.
+
+
+## What this decoy is
+
+Agent-oriented honeypot graded primarily on SSH in UHBS labs.
+
+## For CTI analysts
+
+- SSH-focused telemetry similar to other low/medium interaction SSH decoys depending on config.
+
+**Primary signals:** SSH auth/session events as configured.
+
+## For blue teams / detection engineering
+
+- Review which protocols are actually enabled before expecting multi-protocol coverage.
+
+## Trust & limitations
+
+- Evaluation proof under UHBS 4.2.2 — not a certification or endorsement.
+- Prefer **full/** over **quick/** for decisions.
+- Reading guide: [READING-UHQS.md](../READING-UHQS.md).

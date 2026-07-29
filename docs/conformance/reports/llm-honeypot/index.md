@@ -13,3 +13,24 @@
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 
 > Named product is evaluation proof only — not a UHBS endorsement.
+
+
+## What this decoy is
+
+LLM-augmented SSH honeypot (Palisade) graded on SSH in UHBS labs.
+
+## For CTI analysts
+
+- Post-auth dialogue may be LLM-generated — valuable for studying how actors probe “smart” shells, with prompt-injection caveats.
+
+**Primary signals:** SSH sessions and command dialogue under LLM responses.
+
+## For blue teams / detection engineering
+
+- Control outbound model API access; treat LLM backends as part of the attack surface.
+
+## Trust & limitations
+
+- Evaluation proof under UHBS 4.2.2 — not a certification or endorsement.
+- Prefer **full/** over **quick/** for decisions.
+- Reading guide: [READING-UHQS.md](../READING-UHQS.md).

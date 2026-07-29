@@ -52,6 +52,32 @@ OVERALL EVALUATION GRADE              : GRADE D (Needs Remediation)
 ```
 
 
+
+## CTI & blue-team reading
+
+Multi-protocol honeypot framework; UHBS published selected overlapping protocol grades.
+
+### Module interpretation (this protocol)
+
+| Module | Score | Analyst reading |
+| --- | ---: | --- |
+| A — Protocol Fidelity | 70.6 | Protocol speak / banner-handshake quality for keeping automated clients engaged. |
+| B — Behavioral Realism | 6.2 | Post-connect realism (auth/session). Low often means credential-only or reject-by-design. **CTI:** treat primarily as auth/connection intelligence. |
+| C — Telemetry Quality | 55.0 | How much useful telemetry the *graded lab* exposed to UHBS — not your SIEM maturity. |
+| D — Safety & Containment (C) | 100.0 | Containment/Safety Gate. Below threshold collapses UHQS via δ_C. Safety Gate passed in this lab configuration. |
+| E — Scalability & Latency | 100.0 | Latency vs profile P95. Low can mean timeouts, tarpits, or slow handlers. |
+| F — Static Code Audit | 69.0 | Static audit of the lab source tree — hygiene signal, not a full CVE program. |
+| δ_C | 1.0 | Safety Gate multiplier applied to composite UHQS. |
+
+- Protocol-by-protocol results vary widely — use per-protocol hubs, not a single composite “qeeqbox score”.
+
+- Enable only needed protocols; each listener expands attack surface on the decoy host.
+- Compare UHBS plugin coverage vs qeeqbox capabilities — unsupported protocols were not graded.
+
+**Signals:** Per-protocol auth/banner telemetry depending on enabled services.
+
+See product hub for full analyst notes and [READING-UHQS.md](../../READING-UHQS.md).
+
 ## Guides
 
 - Product hub: [`../`](../index.md)

@@ -6,6 +6,8 @@ UHBS is **vendor-neutral**: decoy **classes** and **protocols** are the normativ
 
 Full artifacts (tutorials, methodology, `SCORECARD.txt`, `report.json`) live under [Conformance lab reports](../conformance/reports/index.md).
 
+**CTI & blue team:** start with [How to read UHBS lab proof](../conformance/reports/READING-UHQS.md). Each scorecard page includes a module interpretation table (what A–F mean for sensors vs tarpits vs credential sinks).
+
 ## Published scorecards (all)
 
 | Scorecard | Class / protocol | Full UHQS | Grade |

@@ -52,6 +52,33 @@ OVERALL EVALUATION GRADE              : GRADE F (Fail)
 ```
 
 
+
+## CTI & blue-team reading
+
+HTTP listener designed to capture Log4Shell (Log4j JNDI) exploitation attempts.
+
+### Module interpretation (this protocol)
+
+| Module | Score | Analyst reading |
+| --- | ---: | --- |
+| A — Protocol Fidelity | 70.6 | Protocol speak / banner-handshake quality for keeping automated clients engaged. |
+| B — Behavioral Realism | 50.5 | Post-connect realism (auth/session). Low often means credential-only or reject-by-design. |
+| C — Telemetry Quality | 55.0 | How much useful telemetry the *graded lab* exposed to UHBS — not your SIEM maturity. |
+| D — Safety & Containment (C) | 75.0 | Containment/Safety Gate. Below threshold collapses UHQS via δ_C. |
+| E — Scalability & Latency | 100.0 | Latency vs profile P95. Low can mean timeouts, tarpits, or slow handlers. |
+| F — Static Code Audit | 69.0 | Static audit of the lab source tree — hygiene signal, not a full CVE program. |
+| δ_C | 0.5625 | Safety Gate multiplier applied to composite UHQS. |
+
+- High value for tracking lingering Log4Shell scanning and callback infrastructure (LDAP/RMI/etc. in payloads).
+- Extract JNDI URLs and staging hosts for CTI sharing; correlate with other HTTP sensors.
+
+- Isolate heavily — payloads try to induce outbound callbacks; block egress except to sinkhole/analysis.
+- Alert on `${jndi:` patterns and similar obfuscations in HTTP headers/bodies.
+
+**Signals:** HTTP requests containing JNDI/Log4Shell exploit strings; callback destinations in payloads.
+
+See product hub for full analyst notes and [READING-UHQS.md](../../READING-UHQS.md).
+
 ## Guides
 
 - Product hub: [`../`](../index.md)

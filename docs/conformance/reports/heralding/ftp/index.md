@@ -56,6 +56,33 @@ OVERALL EVALUATION GRADE              : GRADE F (Fail)
 ```
 
 
+
+## CTI & blue-team reading
+
+Multi-protocol credential-harvesting honeypot; this UHBS proof graded SSH and FTP only.
+
+### Module interpretation (this protocol)
+
+| Module | Score | Analyst reading |
+| --- | ---: | --- |
+| A — Protocol Fidelity | 60.0 | Protocol speak / banner-handshake quality for keeping automated clients engaged. |
+| B — Behavioral Realism | 54.5 | Post-connect realism (auth/session). Low often means credential-only or reject-by-design. |
+| C — Telemetry Quality | 55.0 | How much useful telemetry the *graded lab* exposed to UHBS — not your SIEM maturity. |
+| D — Safety & Containment (C) | 75.0 | Containment/Safety Gate. Below threshold collapses UHQS via δ_C. |
+| E — Scalability & Latency | 100.0 | Latency vs profile P95. Low can mean timeouts, tarpits, or slow handlers. |
+| F — Static Code Audit | 69.0 | Static audit of the lab source tree — hygiene signal, not a full CVE program. |
+| δ_C | 0.5625 | Safety Gate multiplier applied to composite UHQS. |
+
+- Designed to capture credentials across protocols — UHBS shows strong protocol speak (A) but weak post-auth behavior (B) because auth is rejected by design.
+- Interpret low B/C as “credential sink,” not failure to attract scanners.
+
+- Excellent mental model for auth-only sensors: alert on username/password pairs, never on “missing shell”.
+- Protect credential logs as highly sensitive; hash or encrypt at rest per policy.
+
+**Signals:** Rejected auth attempts with captured credentials on SSH/FTP (per Heralding logging).
+
+See product hub for full analyst notes and [READING-UHQS.md](../../READING-UHQS.md).
+
 ## Guides
 
 - Product hub: [`../`](../index.md)

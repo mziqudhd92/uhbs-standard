@@ -4,6 +4,10 @@
 **Upstream:** [https://github.com/qeeqbox/honeypots](https://github.com/qeeqbox/honeypots) · GitHub last push `2025-12-03`  
 **Runtime:** `qeeqbox-honeypots:uhbs-lab` (pip install in Python 3.11)
 
+## What this decoy is
+
+Multi-protocol honeypot framework; UHBS published selected overlapping protocol grades.
+
 ## Protocol survey (graded)
 
 | Surface | UHBS plugin? | Graded? | Quick | Full |
@@ -26,3 +30,21 @@
 \* UHBS has plugins for snmp/ntp/sip/smb/rdp/elastic-as-http but they were not included in this lab batch (UDP/TLS/heavy deps deferred). `elastic` can be graded as `http` in a follow-up.
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+## For CTI analysts
+
+- Protocol-by-protocol results vary widely — use per-protocol hubs, not a single composite “qeeqbox score”.
+
+**Primary signals you can expect (when logging is wired):** Per-protocol auth/banner telemetry depending on enabled services.
+
+## For blue teams / detection engineering
+
+- Enable only needed protocols; each listener expands attack surface on the decoy host.
+- Compare UHBS plugin coverage vs qeeqbox capabilities — unsupported protocols were not graded.
+
+## Trust & limitations
+
+- This page is **evaluation proof** under UHBS 4.2.2 — not a certification or vendor ranking.
+- Prefer **full/** artifacts over **quick/** for operational decisions.
+- Re-run via [TUTORIAL.md](TUTORIAL.md); environment notes in [METHODOLOGY.md](METHODOLOGY.md).
+- How to read modules: [READING-UHQS.md](../READING-UHQS.md)

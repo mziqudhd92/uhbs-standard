@@ -4,6 +4,11 @@
 **Upstream:** [https://github.com/ThalesGroup/dd-honeypot](https://github.com/ThalesGroup/dd-honeypot) · commit `7a906e11a0b19e75a32fead2ddd9a8b2b341beec`  
 **Product name:** DataTrap — data-driven AI honeypot (dataset + optional AWS Bedrock LLM)
 
+
+## What this decoy is
+
+Multi-protocol decoy suite graded across SSH/HTTP/MySQL/Redis/Telnet/PostgreSQL in UHBS labs.
+
 ## Protocol survey
 
 | DataTrap protocol | UHBS plugin? | Graded? | Quick | Full |
@@ -19,3 +24,19 @@
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 
 > Named product is evaluation proof only — not a UHBS endorsement.
+
+## For CTI analysts
+
+- Cross-protocol correlation from one product family aids campaign tracking.
+
+**Primary signals:** Per-protocol auth/session telemetry.
+
+## For blue teams / detection engineering
+
+- Use per-protocol hubs; tune alerts per service risk.
+
+## Trust & limitations
+
+- Evaluation proof under UHBS 4.2.2 — not a certification or endorsement.
+- Prefer **full/** over **quick/** for decisions.
+- Reading guide: [READING-UHQS.md](../READING-UHQS.md).

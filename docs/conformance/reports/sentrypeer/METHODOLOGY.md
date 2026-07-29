@@ -16,3 +16,11 @@
 - Evaluation proof only — not an endorsement
 - Single-protocol surface graded where noted in the hub
 - Air-gap attested via `UHBS_AIRGAP_ATTESTED=1` for local lab runs
+
+## Analyst trust notes
+
+- **Role:** SIP/VoIP honeypot oriented at toll-fraud and SIP abuse telemetry.
+- **Evidence primary sources:** `full/SCORECARD.txt`, `full/report.json`, this methodology, and the tutorial commands.
+- **Air-gap / Safety:** lab runs used `UHBS_AIRGAP_ATTESTED=1` where noted; still isolate honeypot networks in real deployments.
+- **Not in scope:** UHBS does not certify detection content packs, MITRE mappings, or production SIEM pipelines.
+- **Reading guide:** [READING-UHQS.md](../READING-UHQS.md)

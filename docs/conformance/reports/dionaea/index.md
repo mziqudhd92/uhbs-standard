@@ -13,3 +13,24 @@
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 
 > Named product is evaluation proof only — not a UHBS endorsement.
+
+
+## What this decoy is
+
+Malware-capture oriented honeypot; UHBS graded selected FTP/HTTP/SMB surfaces.
+
+## For CTI analysts
+
+- Strong for malware drop and exploit payload capture on graded protocols.
+
+**Primary signals:** Exploits/payloads and protocol sessions on enabled services.
+
+## For blue teams / detection engineering
+
+- Isolate sample storage; automate submission to malware analysis — not manual open-on-host.
+
+## Trust & limitations
+
+- Evaluation proof under UHBS 4.2.2 — not a certification or endorsement.
+- Prefer **full/** over **quick/** for decisions.
+- Reading guide: [READING-UHQS.md](../READING-UHQS.md).

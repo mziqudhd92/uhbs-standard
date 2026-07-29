@@ -52,6 +52,33 @@ OVERALL EVALUATION GRADE              : GRADE F (Fail)
 ```
 
 
+
+## CTI & blue-team reading
+
+Small Express-based HTTP honeypot oriented at LFI/RFI-style web probing.
+
+### Module interpretation (this protocol)
+
+| Module | Score | Analyst reading |
+| --- | ---: | --- |
+| A — Protocol Fidelity | 100.0 | Protocol speak / banner-handshake quality for keeping automated clients engaged. |
+| B — Behavioral Realism | 82.5 | Post-connect realism (auth/session). Low often means credential-only or reject-by-design. |
+| C — Telemetry Quality | 55.0 | How much useful telemetry the *graded lab* exposed to UHBS — not your SIEM maturity. |
+| D — Safety & Containment (C) | 75.0 | Containment/Safety Gate. Below threshold collapses UHQS via δ_C. |
+| E — Scalability & Latency | 100.0 | Latency vs profile P95. Low can mean timeouts, tarpits, or slow handlers. |
+| F — Static Code Audit | 69.0 | Static audit of the lab source tree — hygiene signal, not a full CVE program. |
+| δ_C | 0.5625 | Safety Gate multiplier applied to composite UHQS. |
+
+- Captures web exploit reconnaissance (path traversal / inclusion style probes) against a lightweight Node surface.
+- Useful for tracking scanner campaigns that spray LFI/RFI payloads across IP space.
+
+- Review application logs for payload strings; feed IOC extraction (paths, encoded traversals) into detections.
+- Keep Node runtime patched; the decoy app is still an attack surface on the honeypot host.
+
+**Signals:** HTTP request lines, LFI/RFI-like parameters, scanner User-Agents.
+
+See product hub for full analyst notes and [READING-UHQS.md](../../READING-UHQS.md).
+
 ## Guides
 
 - Product hub: [`../`](../index.md)

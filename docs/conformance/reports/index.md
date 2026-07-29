@@ -9,6 +9,9 @@
 
 ## How to use this directory
 
+**New here?** Read [How to read UHBS lab proof (CTI & blue team)](READING-UHQS.md) before comparing grades.
+
+
 1. Open a honeypot folder (for example [`espot/`](espot/index.md)).
 2. Read the **tutorial** (exact commands we ran).
 3. Compare **`quick/`** vs **`full/`** artifacts (scorecards, `report.json`, logs, SAST).

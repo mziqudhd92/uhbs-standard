@@ -44,3 +44,25 @@ Sanitized fixture (full): [`../../fixtures/conpot-ics-scada.scorecard.json`](../
 3. [`full/SCORECARD.txt`](full/SCORECARD.txt) / [`full/report.json`](full/report.json)  
 
 Back to the [reports index](../index.md).
+
+
+## What this decoy is
+
+ICS/SCADA honeypot; UHBS published Modbus proof among others.
+
+## For CTI analysts
+
+- Supports intel on ICS protocol scanners and unsafe Internet exposure of industrial protocols.
+
+**Primary signals:** ICS protocol requests (e.g., Modbus) against the decoy.
+
+## For blue teams / detection engineering
+
+- Never bridge ICS honeypots to production OT networks.
+- Treat any Modbus/S7-like traffic to the decoy as hostile reconnaissance.
+
+## Trust & limitations
+
+- Evaluation proof under UHBS 4.2.2 — not a certification or endorsement.
+- Prefer **full/** over **quick/** for decisions.
+- Reading guide: [READING-UHQS.md](../READING-UHQS.md).

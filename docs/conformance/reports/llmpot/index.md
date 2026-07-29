@@ -6,6 +6,11 @@
 
 LLM-based ICS honeypot (ByT5 Modbus/S7 emulation + WAGO PLC web decoy).
 
+
+## What this decoy is
+
+LLM-assisted industrial/protocol honeypot; UHBS graded Modbus/S7comm/HTTP surfaces.
+
 ## Protocol survey
 
 | Surface | UHBS plugin? | Graded? | Quick | Full |
@@ -18,3 +23,19 @@ LLM-based ICS honeypot (ByT5 Modbus/S7 emulation + WAGO PLC web decoy).
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 
 > Named product is evaluation proof only — not a UHBS endorsement.
+
+## For CTI analysts
+
+- ICS + HTTP mix supports intel on both OT scanners and web probes against the same lure family.
+
+**Primary signals:** Modbus/S7/HTTP interactions per graded listeners.
+
+## For blue teams / detection engineering
+
+- Isolate OT protocol listeners from real plants; LLM features may need egress — constrain tightly.
+
+## Trust & limitations
+
+- Evaluation proof under UHBS 4.2.2 — not a certification or endorsement.
+- Prefer **full/** over **quick/** for decisions.
+- Reading guide: [READING-UHQS.md](../READING-UHQS.md).

@@ -55,3 +55,24 @@ Full measures telemetry honestly (C=55), runs SAST (F capped at 70), and records
 4. Compare against [`quick/`](quick/) to see which knobs change the grade.
 
 Back to the [reports index](../index.md).
+
+
+## What this decoy is
+
+Elasticsearch HTTP honeypot (Node) for ES exploit probing.
+
+## For CTI analysts
+
+- Historic CVE-era ES exploitation still appears in scans — useful for residual campaign tracking.
+
+**Primary signals:** HTTP ES-like API probes and exploit attempts.
+
+## For blue teams / detection engineering
+
+- Keep far from real Elasticsearch clusters; no shared credentials.
+
+## Trust & limitations
+
+- Evaluation proof under UHBS 4.2.2 — not a certification or endorsement.
+- Prefer **full/** over **quick/** for decisions.
+- Reading guide: [READING-UHQS.md](../READING-UHQS.md).

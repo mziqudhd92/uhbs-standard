@@ -54,3 +54,25 @@ SAST (F capped at 70), and records a clean gateway canary (D=90, δ_C=0.81).
 3. [`full/SCORECARD.txt`](full/SCORECARD.txt)  
 
 Back to the [reports index](../index.md).
+
+
+## What this decoy is
+
+SSH tarpit that slowly drips banners to stall scanners (not a real SSH stack).
+
+## For CTI analysts
+
+- Useful for measuring sticky scanners; little post-banner CTI compared to interactive SSH honeypots.
+
+**Primary signals:** Connection duration / tarpit engagement; not full SSH sessions.
+
+## For blue teams / detection engineering
+
+- Grade with UHBS `ssh_tarpit` / generic — never Paramiko `ssh` (will hang).
+- Good cheap delay layer in front of real SSH sensors.
+
+## Trust & limitations
+
+- Evaluation proof under UHBS 4.2.2 — not a certification or endorsement.
+- Prefer **full/** over **quick/** for decisions.
+- Reading guide: [READING-UHQS.md](../READING-UHQS.md).

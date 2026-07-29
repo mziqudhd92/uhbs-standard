@@ -41,3 +41,11 @@
 ```bash
 uhbs validate-scorecard docs/conformance/fixtures/espot-web-api.scorecard.json --strict
 ```
+
+## How to read this scorecard (CTI / blue team)
+
+_Module interpretation unavailable (missing full SCORECARD)._
+
+- **CTI:** use module notes + verbatim SCORECARD to judge what attacker activity you can actually observe.
+- **Blue team:** verify Safety Gate (δ_C / Module D) and plan log shipping before Internet exposure.
+- **Guide:** [How to read UHBS lab proof](../conformance/reports/READING-UHQS.md)

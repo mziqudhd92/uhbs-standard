@@ -52,6 +52,33 @@ OVERALL EVALUATION GRADE              : GRADE F (Fail)
 ```
 
 
+
+## CTI & blue-team reading
+
+Zero/low-interaction SSH authentication logger — records auth, does not grant a real shell.
+
+### Module interpretation (this protocol)
+
+| Module | Score | Analyst reading |
+| --- | ---: | --- |
+| A — Protocol Fidelity | 70.6 | Protocol speak / banner-handshake quality for keeping automated clients engaged. |
+| B — Behavioral Realism | 6.2 | Post-connect realism (auth/session). Low often means credential-only or reject-by-design. **CTI:** treat primarily as auth/connection intelligence. |
+| C — Telemetry Quality | 25.0 | How much useful telemetry the *graded lab* exposed to UHBS — not your SIEM maturity. **Blue team:** plan explicit log shipping; do not assume UHBS C equals production visibility. |
+| D — Safety & Containment (C) | 96.0 | Containment/Safety Gate. Below threshold collapses UHQS via δ_C. Safety Gate passed in this lab configuration. |
+| E — Scalability & Latency | 20.0 | Latency vs profile P95. Low can mean timeouts, tarpits, or slow handlers. Expect timeouts or slow responses under probe load. |
+| F — Static Code Audit | 70.0 | Static audit of the lab source tree — hygiene signal, not a full CVE program. |
+| δ_C | 1.0 | Safety Gate multiplier applied to composite UHQS. |
+
+- Optimized for credential and auth-method telemetry (JSON logs) rather than post-auth command capture.
+- Strong fit for CTI pipelines that enrich usernames/passwords/source ASNs from SSH noise.
+
+- Ideal as a pure auth sink: alert on volume, password spraying patterns, and novel client algorithms.
+- Ensure log integrity and retention; these logs often contain cleartext attempted passwords — handle as sensitive.
+
+**Signals:** JSON auth events (user/password/key attempt metadata per upstream design).
+
+See product hub for full analyst notes and [READING-UHQS.md](../../READING-UHQS.md).
+
 ## Guides
 
 - Product hub: [`../`](../index.md)

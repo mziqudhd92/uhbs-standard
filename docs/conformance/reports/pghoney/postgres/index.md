@@ -52,6 +52,33 @@ OVERALL EVALUATION GRADE              : GRADE F (Fail)
 ```
 
 
+
+## CTI & blue-team reading
+
+Low-interaction PostgreSQL decoy focused on auth/handshake capture.
+
+### Module interpretation (this protocol)
+
+| Module | Score | Analyst reading |
+| --- | ---: | --- |
+| A — Protocol Fidelity | 92.0 | Protocol speak / banner-handshake quality for keeping automated clients engaged. |
+| B — Behavioral Realism | 82.5 | Post-connect realism (auth/session). Low often means credential-only or reject-by-design. |
+| C — Telemetry Quality | 55.0 | How much useful telemetry the *graded lab* exposed to UHBS — not your SIEM maturity. |
+| D — Safety & Containment (C) | 75.0 | Containment/Safety Gate. Below threshold collapses UHQS via δ_C. |
+| E — Scalability & Latency | 100.0 | Latency vs profile P95. Low can mean timeouts, tarpits, or slow handlers. |
+| F — Static Code Audit | 69.0 | Static audit of the lab source tree — hygiene signal, not a full CVE program. |
+| δ_C | 0.5625 | Safety Gate multiplier applied to composite UHQS. |
+
+- Tracks database credential guessing and Postgres protocol scanners (startup/SSLRequest patterns).
+- Limited post-auth realism — treat as a DB auth sensor for CTI, not a full query-interaction trap.
+
+- Useful on “fake DB” VLANs adjacent to real data tiers to catch lateral-movement credential stuffing.
+- Monitor for SSLRequest vs cleartext startup mixes as environment fingerprinting.
+
+**Signals:** Postgres StartupMessage / auth failures, client driver fingerprints when logged.
+
+See product hub for full analyst notes and [READING-UHQS.md](../../READING-UHQS.md).
+
 ## Guides
 
 - Product hub: [`../`](../index.md)

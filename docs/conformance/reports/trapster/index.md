@@ -14,3 +14,24 @@
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 
 > Named product is evaluation proof only — not a UHBS endorsement.
+
+
+## What this decoy is
+
+Community multi-protocol honeypot graded on SSH/HTTP/FTP/Telnet in UHBS labs.
+
+## For CTI analysts
+
+- Per-protocol results vary — read each protocol hub.
+
+**Primary signals:** Per-protocol connection/auth events.
+
+## For blue teams / detection engineering
+
+- Enable minimal listeners; verify logging destinations before Internet exposure.
+
+## Trust & limitations
+
+- Evaluation proof under UHBS 4.2.2 — not a certification or endorsement.
+- Prefer **full/** over **quick/** for decisions.
+- Reading guide: [READING-UHQS.md](../READING-UHQS.md).

@@ -25,3 +25,26 @@
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
 
 > Named product is evaluation proof only — not a UHBS endorsement.
+
+
+## What this decoy is
+
+Multi-service canary/honeypot framework (many protocols); UHBS publishes per-protocol grades.
+
+## For CTI analysts
+
+- Per-protocol canaries yield precise “someone touched this fake service” intel for lateral-movement detection.
+- Use protocol-specific hubs — OpenCanary is not a single UHQS number.
+
+**Primary signals:** Per-service connection/auth events as configured.
+
+## For blue teams / detection engineering
+
+- Deploy canaries on sensitive VLANs; any connection is high-signal for blue teams.
+- Integrate OpenCanary alerts into SOAR with asset/context tags to avoid alert fatigue.
+
+## Trust & limitations
+
+- Evaluation proof under UHBS 4.2.2 — not a certification or endorsement.
+- Prefer **full/** over **quick/** for decisions.
+- Reading guide: [READING-UHQS.md](../READING-UHQS.md).

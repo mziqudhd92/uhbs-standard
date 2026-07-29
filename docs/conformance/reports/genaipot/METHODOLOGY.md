@@ -29,3 +29,11 @@
 - Module C lacks STIX/OTel schema evidence
 - Safety Gate WARN path under attestation-heavy Docker labs
 - Grades are evaluation proof, not certification
+
+## Analyst trust notes
+
+- **Role:** AI-assisted mail decoy surfaces graded on SMTP and POP3 in UHBS labs.
+- **Evidence primary sources:** `full/SCORECARD.txt`, `full/report.json`, this methodology, and the tutorial commands.
+- **Air-gap / Safety:** lab runs used `UHBS_AIRGAP_ATTESTED=1` where noted; still isolate honeypot networks in real deployments.
+- **Not in scope:** UHBS does not certify detection content packs, MITRE mappings, or production SIEM pipelines.
+- **Reading guide:** [READING-UHQS.md](../READING-UHQS.md)

@@ -52,6 +52,33 @@ OVERALL EVALUATION GRADE              : GRADE F (Fail)
 ```
 
 
+
+## CTI & blue-team reading
+
+WordPress-themed HTTP honeypot for CMS scanner and plugin/theme probe capture.
+
+### Module interpretation (this protocol)
+
+| Module | Score | Analyst reading |
+| --- | ---: | --- |
+| A — Protocol Fidelity | 70.6 | Protocol speak / banner-handshake quality for keeping automated clients engaged. |
+| B — Behavioral Realism | 82.5 | Post-connect realism (auth/session). Low often means credential-only or reject-by-design. |
+| C — Telemetry Quality | 55.0 | How much useful telemetry the *graded lab* exposed to UHBS — not your SIEM maturity. |
+| D — Safety & Containment (C) | 75.0 | Containment/Safety Gate. Below threshold collapses UHQS via δ_C. |
+| E — Scalability & Latency | 100.0 | Latency vs profile P95. Low can mean timeouts, tarpits, or slow handlers. |
+| F — Static Code Audit | 69.0 | Static audit of the lab source tree — hygiene signal, not a full CVE program. |
+| δ_C | 0.5625 | Safety Gate multiplier applied to composite UHQS. |
+
+- Tracks WordPress attack automation (wp-login, xmlrpc, plugin path probes).
+- Useful for campaign clustering by requested plugin/CVE paths.
+
+- Label clearly as decoy; do not host adjacent to real WordPress with shared DB/creds.
+- Detect xmlrpc multicall and wp-login brute force patterns from the honeypot logs.
+
+**Signals:** HTTP paths for WP admin/login/xmlrpc/plugins; credential posts when logged.
+
+See product hub for full analyst notes and [READING-UHQS.md](../../READING-UHQS.md).
+
 ## Guides
 
 - Product hub: [`../`](../index.md)

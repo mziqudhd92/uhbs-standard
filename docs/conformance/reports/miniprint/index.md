@@ -44,3 +44,24 @@ Sanitized fixture (full): [`../../fixtures/miniprint-low-interaction.scorecard.j
 3. [`full/SCORECARD.txt`](full/SCORECARD.txt) / [`full/report.json`](full/report.json)  
 
 Back to the [reports index](../index.md).
+
+
+## What this decoy is
+
+Printer/PJL-oriented decoy graded via raw/PJL-style interaction.
+
+## For CTI analysts
+
+- Niche but real: attackers and scanners still probe print services.
+
+**Primary signals:** PJL/raw print-path probes.
+
+## For blue teams / detection engineering
+
+- Useful canary on office VLANs where printers belong; any hit is suspicious.
+
+## Trust & limitations
+
+- Evaluation proof under UHBS 4.2.2 — not a certification or endorsement.
+- Prefer **full/** over **quick/** for decisions.
+- Reading guide: [READING-UHQS.md](../READING-UHQS.md).
