@@ -1,15 +1,15 @@
 # Writing a third-party UHBS protocol plugin
 
-> **Status:** Phase 1 / experimental extension point. UHBS is a personal
-> open-source beta framework (see [`AGENTS.md`](https://github.com/mziqudhd92/uhbs-standard/blob/main/AGENTS.md) and
+> **Status:** Phase 1 / experimental extension point. UHBS is an open-source
+> beta-status framework (see [`AGENTS.md`](https://github.com/mziqudhd92/uhbs-standard/blob/main/AGENTS.md) and
 > [`GOVERNANCE.md`](https://github.com/mziqudhd92/uhbs-standard/blob/main/GOVERNANCE.md)) — this page describes what the code
 > does today, not a certified or committee-reviewed plugin API.
 
-UHBS ships 30+ built-in protocol plugins under `src/uhbs_core/protocols/`
-(ssh, http, **mcp**, ftp, redis, modbus, **s7comm**, smb, smtp, **pop3**, telnet, mysql,
-**postgres**, rdp, sip, snmp, ntp, tftp, vnc, git, mongodb, imap, kubernetes, dns,
-bluetooth, dhcp, httpproxy, ipp, irc, ldap, memcache, mssql, oracle, pjl, socks5,
-generic). As of this note, the registry
+UHBS ships **36** built-in protocol plugins under `src/uhbs_core/protocols/`
+(`uhbs lab --list-protocols`): bluetooth, dhcp, dns, ftp, generic, git, http,
+httpproxy, imap, ipp, irc, kubernetes, ldap, mcp, memcache, modbus, mongodb, mssql,
+mysql, ntp, oracle, pjl, pop3, postgres, rdp, redis, s7comm, sip, smb, smtp,
+snmp, socks5, ssh, telnet, tftp, vnc. As of this note, the registry
 (`src/uhbs_core/protocols/registry.py`) can **also** load plugins from an
 installed third-party Python package via
 [`importlib.metadata` entry points](https://packaging.python.org/en/latest/specifications/entry-points/) —

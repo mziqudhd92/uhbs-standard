@@ -29,6 +29,13 @@ uhbs-lab --help
 # uhbs-lab --inventory … --protocol mcp --tps …/mcp_server.yaml --out ./reports/mcp
 ```
 
+Built-in protocols in v4.3.0 (**36**): `bluetooth`, `dhcp`, `dns`, `ftp`,
+`generic`, `git`, `http`, `httpproxy`, `imap`, `ipp`, `irc`, `kubernetes`,
+`ldap`, `mcp`, `memcache`, `modbus`, `mongodb`, `mssql`, `mysql`, `ntp`,
+`oracle`, `pjl`, `pop3`, `postgres`, `rdp`, `redis`, `s7comm`, `sip`, `smb`,
+`smtp`, `snmp`, `socks5`, `ssh`, `telnet`, `tftp`, `vnc` (plus registry aliases
+such as `postgresql`, `pop`, `s7`, …).
+
 MCP honeypot grading is part of `uhbs[lab]` (protocol plugin `mcp`). The separate `uhbs[mcp]` / `uhbs-mcp` entry point is only for AI-host scorecard tools — see [MCP honeypot grading](../architecture/mcp-honeypot-grading.md).
 
 ### MCP server (AI hosts)
@@ -49,16 +56,16 @@ Full guide: [MCP server](mcp.md) · registry metadata: repo-root `server.json`.
 Build once from the repository root:
 
 ```bash
-docker build -t uhbs:4.2.2 .
+docker build -t uhbs:4.3.0 .
 ```
 
 The image entrypoint is `uhbs`. Mount your project at `/work`:
 
 ```bash
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.2.2 --help
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.2.2 \
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.0 --help
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.0 \
   validate-scorecard ./docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.2.2 lab --list-protocols
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.0 lab --list-protocols
 ```
 
 For live Modules A–E probes, point `--target` at a host reachable from the

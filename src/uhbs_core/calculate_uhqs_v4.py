@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Calculate UHQS 4.2.2 from report.json or explicit module scores."""
+"""Calculate UHQS 4.3.0 from report.json or explicit module scores."""
 
 from __future__ import annotations
 
@@ -12,7 +12,7 @@ from uhbs_core.models import compute_uhqs
 
 
 def main() -> int:
-    p = argparse.ArgumentParser(description="UHQS 4.2.2 composite score")
+    p = argparse.ArgumentParser(description="UHQS 4.3.0 composite score")
     p.add_argument("--input", help="report.json with modules[] or scores{}")
     p.add_argument("--output", default="report.json")
     p.add_argument("--protocol", type=float, dest="s_a", help="Module A score")
@@ -60,7 +60,7 @@ def main() -> int:
     out = {**payload, "scores": scores, "uhqs": uhqs.to_dict()}
     Path(args.output).write_text(json.dumps(out, indent=2), encoding="utf-8")
     print(
-        f"UHQS 4.2.2 = {uhqs.uhqs}  grade={uhqs.grade}  δ_C={uhqs.delta_c}  "
+        f"UHQS 4.3.0 = {uhqs.uhqs}  grade={uhqs.grade}  δ_C={uhqs.delta_c}  "
         f"A={uhqs.S_A} B={uhqs.S_B} C_telem={uhqs.S_C} C_gate={uhqs.C} "
         f"E={uhqs.S_E} F={uhqs.S_F} class={uhqs.profile_class}"
     )

@@ -1,10 +1,10 @@
 # UHBS — full agent digest (llms-full.txt)
 
-> Curated plain-text digest of UHBS v4.2.2 for answer engines and coding agents. Prefer the live docs and GitHub sources when they disagree with this file. Last aligned: 2026-07-27.
+> Curated plain-text digest of UHBS v4.3.0 for answer engines and coding agents. Prefer the live docs and GitHub sources when they disagree with this file. Last aligned: 2026-07-27.
 
 ## What UHBS is
 
-UHBS (Universal Honeypot Benchmarking Standard) is a **personal open-source beta evaluation framework** for comparing honeypots and deception systems by **decoy class** and **protocol**, not by vendor brand. Version **4.2.2**. License **Apache-2.0**. Author/maintainer: Moran Zavdi (@mziqudhd92).
+UHBS (Universal Honeypot Benchmarking Standard) is an open-source **beta-status evaluation framework** for comparing honeypots and deception systems by **decoy class** and **protocol**, not by vendor brand. Version **4.3.0**. License **Apache-2.0**. Author/maintainer: Moran Zavdi (@mziqudhd92).
 
 It is **not** a consortium standard, not multi-party governed, and not a mandatory industry requirement. Suggested Production Baseline Profile (RECOMMENDED for internal use): **UHQS > 80** with Module D Safety Gate pass (containment C ≥ 95 → δ_C = 1.0).
 
@@ -51,6 +51,10 @@ uhbs validate-profile templates/profile.yaml
 uhbs validate-scorecard path/to/scorecard.json --strict
 uhbs score --class Low-Interaction --scores scores.json
 uhbs lab --list-protocols
+# 36 built-in protocols in v4.3.0 (bluetooth, dhcp, dns, ftp, generic, git, http,
+# httpproxy, imap, ipp, irc, kubernetes, ldap, mcp, memcache, modbus, mongodb,
+# mssql, mysql, ntp, oracle, pjl, pop3, postgres, rdp, redis, s7comm, sip, smb,
+# smtp, snmp, socks5, ssh, telnet, tftp, vnc)
 # AI hosts (Cursor/Claude/VS Code): configure mcpServers → python -m uhbs_mcp
 # Docs: https://mziqudhd92.github.io/uhbs-standard/mkdocs/tooling/mcp/
 ```
@@ -82,4 +86,4 @@ Published full-lab proof (sanitized fixtures; prefer live fixture JSON if this d
 
 ## Citation note
 
-Cite as a personal beta software/framework (see CITATION.cff). Do not describe UHBS as an adopted industry or academic standard unless Phase 6 roadmap exit criteria are met.
+Cite as a beta-status software/framework (see CITATION.cff). Do not describe UHBS as an adopted industry or academic standard unless Phase 6 roadmap exit criteria are met.

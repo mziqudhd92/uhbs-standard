@@ -34,8 +34,8 @@ logging.basicConfig(stream=sys.stderr, level=logging.INFO, format="%(levelname)s
 log = logging.getLogger("uhbs_mcp")
 
 INSTRUCTIONS = """\
-UHBS (Universal Honeypot Benchmarking Standard) v4.2.2 — personal open-source
-beta evaluation framework for honeypots / deception tech (Apache-2.0).
+UHBS (Universal Honeypot Benchmarking Standard) v4.3.0 — open-source beta-status
+evaluation framework for honeypots / deception tech (Apache-2.0).
 
 Not a consortium or adopted industry standard. Product names appear only under
 docs/conformance/ as evaluation proof.
@@ -384,7 +384,7 @@ def prompt_validate_scorecard(path: str) -> str:
         f"2. Call get_scorecard_summary on the same path.\n"
         f"3. If integrity fails, call compute_uhqs with the module scores and target class.\n"
         f"4. Explain δ_C and the grade using uhqs://docs/scoring-formula.\n"
-        f"Remind the reader UHBS is a personal beta framework, not a consortium standard."
+        f"Remind the reader UHBS is a beta-status framework, not a consortium standard."
     )
 
 

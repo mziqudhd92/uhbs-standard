@@ -2,7 +2,7 @@
 
 > Companion to [`GOVERNANCE.md`](https://github.com/mziqudhd92/uhbs-standard/blob/main/GOVERNANCE.md) §7 and
 > [`ROADMAP.md`](https://github.com/mziqudhd92/uhbs-standard/blob/main/ROADMAP.md) Phase 4 (Integrity / OpenSSF / SLSA).
-> Written for a **personal open-source beta project**, not a certified
+> Written for an open-source **beta-status** project, not a certified
 > supply-chain program — see [`AGENTS.md`](https://github.com/mziqudhd92/uhbs-standard/blob/main/AGENTS.md).
 
 ## Aspirational target (not achieved)
@@ -80,7 +80,7 @@ signing” path for PyPI wheels, not a separate cosign step (optional extra).
    - `permissions: { id-token: write, contents: read }`
    - downloads the `python-dist` artifact
    - runs `pypa/gh-action-pypi-publish` **pinned to a commit SHA** (no password)
-6. Tag a release (`v4.2.2`), verify the PyPI project page shows the files **and**
+6. Tag a release (`v4.3.0`), verify the PyPI project page shows the files **and**
    provenance attestations.
 7. Document install as `pip install uhbs` / `pip install 'uhbs[lab]'` and update
    MCP `uvx` docs once the package exists.

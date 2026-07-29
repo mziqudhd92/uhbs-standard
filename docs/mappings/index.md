@@ -16,4 +16,4 @@ Use these mappings when:
 
 ## Trust limits
 
-Mappings are **informative**. They do not replace the verbatim SCORECARD / `report.json` proof for any graded product under `docs/conformance/`. Prefer absolute URLs on the published docs site when sharing externally. UHBS remains a personal open-source beta evaluation framework (Apache-2.0, v4.2.2) — not an adopted industry or academic standard.
+Mappings are **informative**. They do not replace the verbatim SCORECARD / `report.json` proof for any graded product under `docs/conformance/`. Prefer absolute URLs on the published docs site when sharing externally. UHBS remains an open-source beta-status evaluation framework (Apache-2.0, v4.3.0) — not an adopted industry or academic standard.

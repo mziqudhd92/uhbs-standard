@@ -1,5 +1,5 @@
 # UHBS Target Profile — Low-Interaction (SSH / limited shell decoys)
-uhbs_version: "4.2.2"
+uhbs_version: "4.3.0"
 
 target_metadata:
   name: "Example Low-Interaction SSH Decoy"

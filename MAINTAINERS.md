@@ -1,6 +1,6 @@
 # Maintainers
 
-UHBS is a **personal project**. One person maintains the repository today.
+UHBS is an open-source evaluation framework in **beta status**. One person maintains the repository today.
 
 | Role | Person | Contact |
 | --- | --- | --- |

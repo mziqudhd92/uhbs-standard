@@ -3,35 +3,59 @@
 All notable changes to the UHBS specification and tooling are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/). Spec and CLI
-share version **4.2.2** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`).
+share version **4.3.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`).
 
 ## [Unreleased]
 
-### Fixed
-- MkDocs `--strict` Pages deploy was failing on broken scorecard links, leaving stub scorecards live; artifact README/scorecard pages now embed verbatim SCORECARD proof
-- LDAP BER reader caps message size (64 KiB) so a malicious peer cannot force unbounded allocations; Bluetooth soft-skip no longer claims `passed=True`
-- Removed HellPot-copied untracked `labs/lophiid` stubs that could mis-grade HTTP if used
+## [4.3.0] — 2026-07-29
+
+Minor release: fifteen new built-in protocol plugins (registry **36** protocols),
+awesome-honeypots survey grades/skips, analyst-facing report/scorecard pages,
+LDAP/Bluetooth harness hardening, and beta-status project framing (no “personal
+project” posture language).
 
 ### Added
-- Built-in protocol plugins: **mongodb**, **imap**, **kubernetes**, **dns**, **bluetooth**, **dhcp**, **httpproxy**, **ipp**, **irc**, **ldap**, **memcache**, **mssql**, **oracle**, **pjl**, **socks5** (with aliases; Module E P95 defaults; deferred-protocol list updated)
-- CTI/blue-team analyst sections on report hubs + scorecard reading tables; READING-UHQS guide
-- Analyst-facing report/scorecard pages: module tables + verbatim SCORECARD; scorecards index lists all published proofs
-- Awesome-honeypots survey triage + deferred/skipped lists under `docs/conformance/awesome-honeypots/`
-- Batch lab grades (quick+full): sshesame, ssh-honeypotd, HellPot, express-honeypot, mailoney, pghoney, mysql-honeypotd, Log4Pot, node-ftp-honeypot, SentryPeer, wordpot, MockSSH, Heralding (SSH/FTP), HoneyHTTPD, SHIVA
-- Results UI: name/repo search + paginated list view
-- ssh-auth-logger full grade + droberson/ssh-honeypot skip note (Docker base unavailable)
-- Built-in **`pop3`** protocol plugin (RFC 1939 greeting / pre-auth STAT|LIST
-  reject / CAPA / unknown-command; aliases `pop`, `pop-3`) with Module E P95
-  default
+- Built-in protocol plugins: **mongodb**, **imap**, **kubernetes**, **dns**,
+  **bluetooth**, **dhcp**, **httpproxy**, **ipp**, **irc**, **ldap**,
+  **memcache**, **mssql**, **oracle**, **pjl**, **socks5** (with aliases;
+  Module E P95 defaults; deferred-protocol list updated)
+- Built-in protocol count is now **36** via `uhbs lab --list-protocols`
+  / `list_protocols()` (includes prior ssh/http/mcp/…/generic set)
+- CTI/blue-team analyst sections on report hubs + scorecard reading tables;
+  READING-UHQS guide
+- Analyst-facing report/scorecard pages: module tables + verbatim SCORECARD;
+  scorecards index lists all published proofs
+- Awesome-honeypots survey triage + deferred/skipped lists under
+  `docs/conformance/awesome-honeypots/`
+- Batch lab grades (quick+full): sshesame, ssh-honeypotd, HellPot,
+  express-honeypot, mailoney, pghoney, mysql-honeypotd, Log4Pot,
+  node-ftp-honeypot, SentryPeer, wordpot, MockSSH, Heralding (SSH/FTP),
+  HoneyHTTPD, SHIVA, and additional Batch A–D publishes / skip notes
+- Results UI: name/repo search + paginated list view; GitHub last-push dates
+- ssh-auth-logger full grade + droberson/ssh-honeypot skip note
+- Built-in **`pop3`** protocol plugin (RFC 1939; aliases `pop`, `pop-3`) with
+  Module E P95 default
 - GenAIPot (ls1911) **SMTP** + **POP3** published lab grades
-  — SMTP quick **30.9 / F**, full **30.78 / F**;
-  POP3 quick **44.24 / F**, full **44.13 / F** (offline Docker templates)
-- Elastichoney **HTTP** lab grades (quick **45.84 / F**, full **45.73 / F**)
-- alexbredo/honeypot-ftp **FTP** lab grades (quick **42.71 / F**, full **42.6 / F**)
-- qeeqbox/honeypots multi-protocol lab grades (SSH/HTTP/FTP/Telnet/SMTP/POP3/MySQL/Postgres/Redis/VNC)
-- Results hub shows GitHub **last push** date per upstream repo
-- Evaluation notes for **Acra** and **Ensnare** (skipped — not standalone protocol honeypots)
+- Elastichoney **HTTP**, alexbredo/honeypot-ftp **FTP**, and
+  qeeqbox/honeypots multi-protocol lab grades
+- Evaluation notes for **Acra** and **Ensnare** (skipped — not standalone
+  protocol honeypots)
 
+### Fixed
+- MkDocs `--strict` Pages deploy was failing on broken scorecard links /
+  missing `uhbs-run.log` links; published pages embed verbatim SCORECARD proof
+- CI Validate: ruff import/line-length in socks5 tests; tests no longer read
+  gitignored `.local/plugin-patches/`
+- LDAP BER reader caps message size (64 KiB); Bluetooth soft-skip no longer
+  claims `passed=True` when the RFCOMM path is unavailable
+- Removed HellPot-copied untracked `labs/lophiid` stubs that could mis-grade
+  HTTP if used
+
+### Changed
+- Package / schemas / fixtures / docs / Docker tags advertise **4.3.0**
+- Project posture language: open-source **beta-status** evaluation framework
+  (removed “personal project” framing from docs, landing, MCP, discovery files)
+- Plugin-authoring documents lab-target safety for proxy/DNS/DHCP/IMAP probes
 
 ## [4.2.2] — 2026-07-28
 

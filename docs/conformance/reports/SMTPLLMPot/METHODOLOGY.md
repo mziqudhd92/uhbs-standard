@@ -21,4 +21,4 @@ Informative only · UHBS 4.2.2 · not an endorsement. Isolate honeypot networks 
 
 ## Environment note
 
-Skip notes do not imply the upstream project is low quality — only that a reproducible UHBS lab grade was not completed under the constraints of this round (missing API keys, missing companion services, or unbuildable base images). Re-queue when a hermetic recipe exists. Prefer absolute docs-site URLs when sharing externally. UHBS remains a personal open-source beta evaluation framework (Apache-2.0, v4.2.2).
+Skip notes do not imply the upstream project is low quality — only that a reproducible UHBS lab grade was not completed under the constraints of this round (missing API keys, missing companion services, or unbuildable base images). Re-queue when a hermetic recipe exists. Prefer absolute docs-site URLs when sharing externally. UHBS remains an open-source beta-status evaluation framework (Apache-2.0, v4.2.2).

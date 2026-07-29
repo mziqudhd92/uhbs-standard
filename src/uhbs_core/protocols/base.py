@@ -1,4 +1,4 @@
-"""Protocol plugin interface — UHBS v4.2.2 Module A/B hooks."""
+"""Protocol plugin interface — UHBS v4.3.0 Module A/B hooks."""
 
 from __future__ import annotations
 

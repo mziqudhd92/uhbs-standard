@@ -1,20 +1,20 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.mziqudhd92/uhbs",
-  "description": "UHBS validators and UHQS scoring for AI hosts (stdio). Personal beta honeypot evaluation framework — validate scorecards/profiles, recompute UHQS/δ_C, list conformance fixtures. No remote lab execution.",
+  "description": "UHBS validators and UHQS scoring for AI hosts (stdio). Beta honeypot evaluation framework — validate scorecards/profiles, recompute UHQS/δ_C, list conformance fixtures. No remote lab execution.",
   "title": "UHBS (Universal Honeypot Benchmarking Standard)",
   "websiteUrl": "https://mziqudhd92.github.io/uhbs-standard/mkdocs/tooling/mcp/",
   "repository": {
     "url": "https://github.com/mziqudhd92/uhbs-standard",
     "source": "github"
   },
-  "version": "4.2.2",
+  "version": "4.3.0",
   "packages": [
     {
       "registryType": "pypi",
       "registryBaseUrl": "https://pypi.org",
       "identifier": "uhbs",
-      "version": "4.2.2",
+      "version": "4.3.0",
       "runtimeHint": "uvx",
       "transport": {
         "type": "stdio"

@@ -10,7 +10,7 @@ Cursor, Claude Desktop, VS Code Copilot, ChatGPT connectors, and similar hosts
 can **validate scorecards**, **recompute UHQS**, and **read schemas** without
 inventing math.
 
-UHBS remains a **personal open-source beta** framework — not a consortium
+UHBS remains an open-source **beta-status** framework — not a consortium
 standard. MCP is optional tooling for agents; the CLI and Docker lab stay the
 primary human workflows ([CLI guide](cli.md)).
 
@@ -121,7 +121,7 @@ Until PyPI publish, prefer the editable git install above.
 
 ### Docker grading image
 
-The published `uhbs:4.2.2` / `uhbs:4.2.2-full` images install `uhbs[lab]` only
+The published `uhbs:4.3.0` / `uhbs:4.3.0-full` images install `uhbs[lab]` only
 (CLI + harness). They do **not** ship `uhbs-mcp`. Run the MCP server on the host
 (or a dedicated venv) next to your AI client.
 

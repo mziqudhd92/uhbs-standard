@@ -7,10 +7,10 @@ Contact: GitHub private contact / Security Advisories (no project email domain y
 Standards: HTML5, Markdown, MkDocs Material
 Language: en-US
 Doctype: HTML5
-Software: UHBS v4.2.2 (Apache-2.0)
+Software: UHBS v4.3.0 (Apache-2.0)
 
 /* Notes */
-UHBS is a personal beta evaluation framework — not a consortium standard.
+UHBS is a beta-status evaluation framework — not a consortium standard.
 Preferred AI/agent entrypoints (site root after deploy):
   /llms.txt · /llms-full.txt · /humans.txt · /server.json (MCP) · /.well-known/security.txt
 MkDocs mirrors: /mkdocs/llms.txt · /mkdocs/tooling/mcp/

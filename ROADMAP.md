@@ -1,10 +1,10 @@
 # UHBS Maturity Roadmap
 
 > **Lock document.** Execution must follow this roadmap. Do not invent parallel plans.
-> Spec version: **4.2.2** · Status: **Beta / Experimental** · Last updated: 2026-07-28
+> Spec version: **4.3.0** · Status: **Beta / Experimental** · Last updated: 2026-07-28
 >
-> **What this is today:** a **personal open-source project** publishing a beta,
-> vendor-neutral **evaluation framework** (spec + schemas + harness + fixtures).
+> **What this is today:** an open-source **beta-status**, vendor-neutral
+> **evaluation framework** (spec + schemas + harness + fixtures).
 > It is **not** yet an industry or academic standard, a consortium, or a
 > multi-party governed body.
 
@@ -24,7 +24,7 @@ A mature UHBS would have all five pillars:
 
 | # | Pillar | Current state |
 | --- | --- | --- |
-| 1 | Normative spec (RFC 2119, document status) | Done for v4.2.2 Beta |
+| 1 | Normative spec (RFC 2119, document status) | Done for v4.3.0 Beta |
 | 2 | Machine-readable contracts (profile, scorecard, evidence) | Done |
 | 3 | Reference implementation (runnable harness) | Done — `uhbs_core` / `uhbs[lab]` |
 | 4 | Conformance suite (golden inputs → expected UHQS) | Done — public fixtures |
@@ -42,7 +42,7 @@ lab inventory and product-specific signal overlays stay out of tree.
 
 | Component | Role |
 | --- | --- |
-| `run_benchmark.py` | UHBS v4.2.2 orchestrator (phases 1–5) |
+| `run_benchmark.py` | UHBS v4.3.0 orchestrator (phases 1–5) |
 | `test_stealth.py` | Module A — Protocol & Syntax Fidelity |
 | `test_realism.py` | Module B — Behavioral & Stateful Realism |
 | `test_telemetry.py` | Module C — Telemetry Quality |
@@ -98,7 +98,7 @@ tables only. Do not publish proprietary lab signal overlays or private host path
 
 | Repo | Role |
 | --- | --- |
-| `uhbs-standard` (public, personal account today) | Spec, schemas, `uhbs_core`, conformance fixtures, docs, CLI |
+| `uhbs-standard` (public, public GitHub repository today) | Spec, schemas, `uhbs_core`, conformance fixtures, docs, CLI |
 | Private lab (optional) | Site inventory, product-specific signal overlays; consumes `uhbs[lab]` |
 
 ---
@@ -132,7 +132,7 @@ tables only. Do not publish proprietary lab signal overlays or private host path
 
 - [x] Extract vendor-neutral core (protocols, models, modules)
 - [x] Leave proprietary signals / lab inventory private
-- [x] Package as installable `uhbs[lab]` / `uhbs-lab`, version == spec `4.2.2`
+- [x] Package as installable `uhbs[lab]` / `uhbs-lab`, version == spec `4.3.0`
 - [x] Wire public docs to class-/protocol-based quickstart
 
 ### Phase 4 — Integrity (OpenSSF / SLSA)
@@ -193,7 +193,7 @@ maturity** additionally requires:
 - [x] Zenodo DOI (v4.0.1 → `10.5281/zenodo.21631156`)
 - [ ] Signed PyPI releases (Trusted Publishing + Sigstore)
 
-Until then, describe UHBS as a **personal beta framework**, not as an adopted
+Until then, describe UHBS as a **beta-status framework**, not as an adopted
 industry or academic standard.
 
 ---

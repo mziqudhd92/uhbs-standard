@@ -8,4 +8,4 @@ No `uhbs-lab` commands are published for this product in batch A because the lab
 - Confirm Safety Gate / δ_C before citing a composite score externally.
 - Wire your own log shipping — Module C is harness visibility, not SIEM coverage.
 - Re-run after upstream or TPS changes; keep class/protocol/target ids aligned with inventory.
-- UHBS 4.2.2 remains a personal open-source beta evaluation framework (Apache-2.0) — informative proof only.
+- UHBS 4.2.2 remains an open-source beta-status evaluation framework (Apache-2.0) — informative proof only.

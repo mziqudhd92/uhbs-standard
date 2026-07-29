@@ -16,7 +16,7 @@ This page exists so reviewers can answer: *Who graded what, with which bits, und
 | Manifests include SHA-256 digests for key artifacts | That Docker Desktop networking equals a production air-gap |
 | Grades follow normative UHQS / δ_C math in `uhqs_math.py` | That UHBS is an industry consortium standard |
 
-UHBS is a **personal beta** framework. Product names appear only under `docs/conformance/` as proof labels.
+UHBS is a **beta-status** framework. Product names appear only under `docs/conformance/` as proof labels.
 
 ---
 

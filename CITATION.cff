@@ -6,7 +6,7 @@ authors:
   - family-names: "Zavdi"
     given-names: "Moran"
     website: "https://github.com/mziqudhd92"
-version: "4.2.2"
+version: "4.3.0"
 date-released: "2026-07-27"
 license: Apache-2.0
 repository-code: "https://github.com/mziqudhd92/uhbs-standard"
@@ -16,12 +16,12 @@ doi: "10.5281/zenodo.21631156"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.21631156"
-    description: "This version (v4.2.2)"
+    description: "This version (v4.3.0)"
   - type: doi
     value: "10.5281/zenodo.21631155"
     description: "Concept DOI (all versions)"
 abstract: >-
-  UHBS v4.2.2 is a personal open-source beta framework for vendor-neutral,
+  UHBS v4.3.0 is an open-source beta-status framework for vendor-neutral,
   objective, repeatable evaluation of honeypots and deception technology. It
   defines six evaluation modules (A–F), a composite UHQS score (0–100) with a
   recommended production baseline UHQS > 80, a non-linear Safety Gate,
@@ -38,14 +38,14 @@ keywords:
   - GenAI
 preferred-citation:
   type: software
-  title: "Universal Honeypot Benchmarking Standard (UHBS) v4.2.2 (2026)"
+  title: "Universal Honeypot Benchmarking Standard (UHBS) v4.3.0 (2026)"
   authors:
     - family-names: "Zavdi"
       given-names: "Moran"
   year: 2026
-  version: "4.2.2"
+  version: "4.3.0"
   doi: "10.5281/zenodo.21631156"
   url: "https://doi.org/10.5281/zenodo.21631156"
   notes: >-
-    Personal beta framework. Multi-party governance and adopters are ROADMAP
+    Beta-status framework. Multi-party governance and adopters are ROADMAP
     Phase 6 aspirations, not current claims.

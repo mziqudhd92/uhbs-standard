@@ -1,4 +1,4 @@
-# Universal Scoring Methodology (UHQS 4.2.2)
+# Universal Scoring Methodology (UHQS 4.3.0)
 
 **Status:** Normative
 
