@@ -2,11 +2,9 @@
 
 from __future__ import annotations
 
-import json
 import socket
 import struct
 import threading
-from pathlib import Path
 
 from uhbs_core.models import TargetSpec
 from uhbs_core.protocols.mssql import (
@@ -20,8 +18,6 @@ from uhbs_core.protocols.mssql import (
 from uhbs_core.protocols.registry import get_plugin, register
 from uhbs_core.tps import TPS
 
-_REPO = Path(__file__).resolve().parents[1]
-
 
 def test_mssql_plugin_resolves() -> None:
     register(MssqlPlugin())
@@ -30,9 +26,10 @@ def test_mssql_plugin_resolves() -> None:
     assert p.name == "mssql"
 
 
-def test_mssql_patch_lists_aliases() -> None:
-    patch = json.loads((_REPO / ".local/plugin-patches/mssql.json").read_text())
-    assert set(patch["aliases"]) >= {"tds", "sqlserver", "sql-server"}
+def test_mssql_aliases_resolve() -> None:
+    register(MssqlPlugin())
+    for alias in ("tds", "sqlserver", "sql-server"):
+        assert get_plugin(alias).name == "mssql"
 
 
 def test_prelogin_framing_and_parse_roundtrip() -> None:

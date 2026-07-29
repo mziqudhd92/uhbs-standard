@@ -2,11 +2,9 @@
 
 from __future__ import annotations
 
-import json
 import socket
 import struct
 import threading
-from pathlib import Path
 
 from uhbs_core.models import TargetSpec
 from uhbs_core.protocols import get_plugin
@@ -29,12 +27,7 @@ def test_ipp_plugin_resolves_and_aliases() -> None:
     p = get_plugin("ipp")
     assert isinstance(p, IppPlugin)
     assert p.name == "ipp"
-    patch = json.loads(
-        (Path(__file__).resolve().parents[1] / ".local/plugin-patches/ipp.json").read_text(
-            encoding="utf-8"
-        )
-    )
-    assert "ipps" in patch["aliases"]
+    assert get_plugin("ipps").name == "ipp"
 
 
 def test_ipp_framing_helpers_offline() -> None:
