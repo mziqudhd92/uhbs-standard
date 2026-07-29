@@ -3,7 +3,7 @@
 **Status:** Skipped for UHBS grading this round.  
 **Upstream:** [droberson/ssh-honeypot](https://github.com/droberson/ssh-honeypot)
 
-Upstream `docker/Dockerfile` depends on the missing base image `nlss/base-alpine:3.12`, so a reproducible lab container could not be built for quick/full UHQS runs. See the evaluation note at [`docs/conformance/reports/ssh-honeypot/index.md`](../reports/ssh-honeypot/index.md).
+Upstream `docker/Dockerfile` depends on the missing base image `nlss/base-alpine:3.12`, so a reproducible lab container could not be built for quick/full UHQS runs. See the evaluation note at [`docs/conformance/reports/ssh-honeypot/index.md`](../../reports/ssh-honeypot/index.md).
 
 ## Lab packaging note
 
