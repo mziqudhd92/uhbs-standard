@@ -10,6 +10,10 @@ from uhbs_core.models import TargetSpec
 from uhbs_core.protocols import get_plugin
 from uhbs_core.protocols.registry import register
 from uhbs_core.protocols.socks5 import (
+    METHOD_NO_ACCEPTABLE,
+    METHOD_NO_AUTH,
+    REP_CONNECTION_REFUSED,
+    SOCKS5_VERSION,
     SOCKS5Plugin,
     build_client_greeting,
     build_connect_ipv4,
@@ -17,10 +21,6 @@ from uhbs_core.protocols.socks5 import (
     parse_connect_reply,
     parse_method_select,
     parse_socks4_reply,
-    REP_CONNECTION_REFUSED,
-    METHOD_NO_ACCEPTABLE,
-    METHOD_NO_AUTH,
-    SOCKS5_VERSION,
 )
 from uhbs_core.tps import TPS
 
@@ -70,7 +70,9 @@ def test_socks5_unreachable_does_not_raise() -> None:
         assert checks
 
 
-def _serve_socks5(*, refuse_methods: set[int] | None = None) -> tuple[str, int, threading.Event, socket.socket]:
+def _serve_socks5(
+    *, refuse_methods: set[int] | None = None
+) -> tuple[str, int, threading.Event, socket.socket]:
     """Minimal RFC 1928 stub: greeting → method → CONNECT → synthetic REP."""
     refuse = refuse_methods or set()
     srv = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
