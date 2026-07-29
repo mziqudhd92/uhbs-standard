@@ -1,0 +1,13 @@
+sites:
+  sticky_elephant-postgres:
+    kind: generic
+    class: Low-Interaction
+    host: sticky_elephant-lab
+    protocol: postgres
+    protocols: [postgres]
+    port: 5432
+    ports: {postgres: 5432}
+    source_root: /app
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/sticky_elephant/database_postgres_full.yaml
+    container_image: sticky_elephant:uhbs-lab

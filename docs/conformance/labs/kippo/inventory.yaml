@@ -1,0 +1,15 @@
+sites:
+  kippo-ssh:
+    kind: ssh
+    class: Low-Interaction
+    host: kippo-lab
+    protocol: ssh
+    protocols: [ssh]
+    port: 2222
+    ports: {ssh: 2222}
+    user: root
+    password: "123456"
+    source_root: /app
+    telemetry_dir: /app/log
+    tps: /work/docs/conformance/labs/kippo/low_interaction_ssh_full.yaml
+    container_image: kippo:uhbs-lab

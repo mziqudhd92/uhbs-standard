@@ -1,0 +1,13 @@
+sites:
+  pyrdp-rdp:
+    kind: generic
+    class: Low-Interaction
+    host: pyrdp-lab
+    protocol: rdp
+    protocols: [rdp]
+    port: 3389
+    ports: {rdp: 3389}
+    source_root: /pyrdp
+    telemetry_dir: /home/pyrdp/pyrdp_output
+    tps: /work/docs/conformance/labs/pyrdp/low_interaction_rdp_full.yaml
+    container_image: pyrdp:uhbs-lab

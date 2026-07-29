@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "6d780041bd5e4747f44a9164f653f4d7fa61ffaea6fd282723c2aa1ebacd3680"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "6d780041bd5e4747f44a9164f653f4d7fa61ffaea6fd282723c2aa1ebacd3680"
+    },
+    {
+      "path": "report.json",
+      "sha256": "3eb8a9767cc64fa9c717b2dd66d00ff9b0e5fbb8abd3416139fa7a4e117f3291"
+    }
+  ],
+  "extra": {
+    "target": "kippo-ssh",
+    "uhqs": 35.64,
+    "grade": "GRADE F (Fail)"
+  }
+}

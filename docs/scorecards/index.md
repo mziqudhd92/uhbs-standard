@@ -58,6 +58,11 @@ Full artifacts (tutorials, methodology, `SCORECARD.txt`, `report.json`) live und
 | [fortigate-vpn-ssl — http](fortigate-vpn-ssl-http.md) | Web-API · http | **46.78** | F |
 | [honeytrap — ssh](honeytrap-ssh.md) | Low-Interaction · ssh | **44.38** | F |
 | [portlurker — generic](portlurker-generic.md) | Low-Interaction · generic | **39.84** | F |
+| [sticky_elephant — postgres](sticky_elephant-postgres.md) | Low-Interaction · postgres | **38.06** | F |
+| [kippo — ssh](kippo-ssh.md) | Low-Interaction · ssh | **35.64** | F |
+| [nosqlpot — redis](nosqlpot-redis.md) | Low-Interaction · redis | **40.08** | F |
+| [pyRDP — rdp](pyrdp-rdp.md) | Low-Interaction · rdp | **33.93** | F |
+| [Artillery — generic](artillery-generic.md) | Low-Interaction · generic | **37.55** | F |
 | [heralding — ssh](heralding-ssh.md) | Low-Interaction · ssh | **44.18** | F |
 | [HoneyAgents — SSH :2222](honeyagents-ssh.md) | Low-Interaction · SSH | **65.24** | D |
 | [honeyhttpd — http](honeyhttpd-http.md) | Web-API · http | **45.73** | F |

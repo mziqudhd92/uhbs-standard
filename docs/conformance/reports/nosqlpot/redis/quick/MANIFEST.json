@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "ab2bc5fe1b5986f0534807a6861cec703d961708b68c8c89a02da4e702ffd1c8"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "ab2bc5fe1b5986f0534807a6861cec703d961708b68c8c89a02da4e702ffd1c8"
+    },
+    {
+      "path": "report.json",
+      "sha256": "1ad16b283c02da57882672122f979a895fad7ad077673ef5ca26efbda25d5a81"
+    }
+  ],
+  "extra": {
+    "target": "nosqlpot-redis",
+    "uhqs": 42.37,
+    "grade": "GRADE F (Fail)"
+  }
+}

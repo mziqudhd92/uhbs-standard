@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "5a75576e943c2e2c92540c01e34ab549b77595a6fb22f90f7acd5f82cfb80a4c"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "5a75576e943c2e2c92540c01e34ab549b77595a6fb22f90f7acd5f82cfb80a4c"
+    },
+    {
+      "path": "report.json",
+      "sha256": "173e95ebffbf13c0dedcba9852c55685a17315b7911322101c4cb7b9b45e23b7"
+    }
+  ],
+  "extra": {
+    "target": "pyrdp-rdp",
+    "uhqs": 33.93,
+    "grade": "GRADE F (Fail)"
+  }
+}

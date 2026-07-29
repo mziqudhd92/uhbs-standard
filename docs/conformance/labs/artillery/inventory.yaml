@@ -1,0 +1,13 @@
+sites:
+  artillery-generic:
+    kind: generic
+    class: Low-Interaction
+    host: artillery-lab
+    protocol: generic
+    protocols: [generic]
+    port: 8080
+    ports: {generic: 8080}
+    source_root: /var/artillery
+    telemetry_dir: /var/artillery/logs
+    tps: /work/docs/conformance/labs/artillery/low_interaction_generic_full.yaml
+    container_image: artillery:uhbs-lab

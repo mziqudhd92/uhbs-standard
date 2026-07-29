@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "7dcd17d5100eace80c600b55ce298f716dc2c94b3484e0db943a2c3046ad2f02"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "7dcd17d5100eace80c600b55ce298f716dc2c94b3484e0db943a2c3046ad2f02"
+    },
+    {
+      "path": "report.json",
+      "sha256": "6698ba1f6e44bc7256eb97b94f6e285d1a8e79f88e37996fbd8eee5f8070162b"
+    }
+  ],
+  "extra": {
+    "target": "artillery-generic",
+    "uhqs": 39.84,
+    "grade": "GRADE F (Fail)"
+  }
+}

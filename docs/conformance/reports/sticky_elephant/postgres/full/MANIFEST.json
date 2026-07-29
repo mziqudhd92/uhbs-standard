@@ -1,0 +1,22 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "1d00347b1c993d3cc2a4963b763b095975733a28e3745383f0d4b4700210c781"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "1d00347b1c993d3cc2a4963b763b095975733a28e3745383f0d4b4700210c781"
+    },
+    {
+      "path": "report.json",
+      "sha256": "c0973e3437cf7f88d3335cda0fd07d10cda79f5d358406dc4bf188458378de4f"
+    }
+  ],
+  "extra": {
+    "target": "sticky_elephant-postgres",
+    "uhqs": 38.06,
+    "grade": "GRADE F (Fail)"
+  }
+}

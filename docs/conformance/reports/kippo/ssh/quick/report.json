@@ -1,0 +1,712 @@
+{
+  "framework": "Universal Honeypot Benchmarking Standard (UHBS) v4.2.2",
+  "evaluation_type": "Full-Spectrum (Static Audit + Dynamic Sandbox)",
+  "target": {
+    "name": "kippo-ssh",
+    "kind": "ssh",
+    "host": "127.0.0.1",
+    "port": 12228,
+    "source_root": "/Users/mz/UHBS/.local/labs/kippo",
+    "profile_class": "Low-Interaction",
+    "protocols": [
+      "ssh"
+    ],
+    "ports_map": {
+      "ssh": 12228
+    }
+  },
+  "baseline": null,
+  "uhqs": {
+    "target": "kippo-ssh",
+    "S_A": 41.51,
+    "S_B": 6.25,
+    "S_C": 25.0,
+    "C": 96.0,
+    "S_E": 20.0,
+    "S_F": 70.0,
+    "delta_c": 1.0,
+    "uhqs": 35.64,
+    "weights": {
+      "protocol": 0.3,
+      "behavior": 0.15,
+      "telemetry": 0.25,
+      "scale": 0.1,
+      "static": 0.2
+    },
+    "profile_class": "Low-Interaction",
+    "grade": "GRADE F (Fail)",
+    "phase": "profile+static+sandbox+dynamic+score",
+    "version": "4.2.2",
+    "containment_measured": true
+  },
+  "hqs": {
+    "target": "kippo-ssh",
+    "S_A": 41.51,
+    "S_B": 6.25,
+    "S_C": 25.0,
+    "C": 96.0,
+    "S_E": 20.0,
+    "S_F": 70.0,
+    "delta_c": 1.0,
+    "uhqs": 35.64,
+    "weights": {
+      "protocol": 0.3,
+      "behavior": 0.15,
+      "telemetry": 0.25,
+      "scale": 0.1,
+      "static": 0.2
+    },
+    "profile_class": "Low-Interaction",
+    "grade": "GRADE F (Fail)",
+    "phase": "profile+static+sandbox+dynamic+score",
+    "version": "4.2.2",
+    "containment_measured": true
+  },
+  "modules": [
+    {
+      "module": "SANDBOX",
+      "dimension": "sandbox",
+      "score": 70.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "sandbox.reach.ssh",
+          "team": "blue",
+          "passed": true,
+          "detail": "127.0.0.1:12228 open",
+          "score": 25.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "sandbox.airgap_attested",
+          "team": "blue",
+          "passed": true,
+          "detail": "operator attested air-gapped sandbox (UHBS_AIRGAP_ATTESTED=1)",
+          "score": 25.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "sandbox.egress_deny_tooling",
+          "team": "blue",
+          "passed": false,
+          "detail": "host-egress-deny.sh not found",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "sandbox.gateway_log_configured",
+          "team": "blue",
+          "passed": false,
+          "detail": "gateway log path not set",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {
+        "reachable_protocols": 1
+      },
+      "notes": [
+        "Phase 3 preflight \u2014 does not replace real air-gap deployment"
+      ],
+      "error": null
+    },
+    {
+      "module": "F",
+      "dimension": "static",
+      "score": 70.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "white.static_private_keys",
+          "team": "white",
+          "passed": true,
+          "detail": "0 static private keys",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.hardcoded_ssh_banners",
+          "team": "white",
+          "passed": true,
+          "detail": "0 hardcoded SSH banners",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.predictable_seeds",
+          "team": "white",
+          "passed": true,
+          "detail": "0 predictable PRNG seeds",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.hardcoded_macs",
+          "team": "white",
+          "passed": true,
+          "detail": "0 hardcoded MAC addresses",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.prompt_corpus_present",
+          "team": "white",
+          "passed": true,
+          "detail": "no prompt corpus (N/A for non-LLM)",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.prompt_boundaries",
+          "team": "white",
+          "passed": true,
+          "detail": "no weak delimiter/extract patterns",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.fallback_strings",
+          "team": "white",
+          "passed": true,
+          "detail": "no plain-text LLM fallback artifacts",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.sast_tools",
+          "team": "white",
+          "passed": true,
+          "detail": "SAST tools skipped by flag",
+          "score": 15.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.vfs_posix_coverage",
+          "team": "white",
+          "passed": false,
+          "detail": "POSIX coverage 0% (0/104)",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "white.blocking_calls",
+          "team": "white",
+          "passed": true,
+          "detail": "sleep/blocking markers in non-test code\u22480",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {
+        "source_root": "/Users/mz/UHBS/.local/labs/kippo"
+      },
+      "notes": [
+        "Module F white-box audit (keys/prompts/SAST/VFS)"
+      ],
+      "error": null
+    },
+    {
+      "module": "A",
+      "dimension": "protocol",
+      "score": 41.51,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "rfc4253.identification_crlf",
+          "team": "blue",
+          "passed": true,
+          "detail": "SSH-2.0-OpenSSH_5.1p1 Debian-5",
+          "score": 100.0,
+          "evidence": [
+            "5353482d322e302d4f70656e5353485f352e3170312044656269616e2d350d0a"
+          ],
+          "critical": false
+        },
+        {
+          "id": "rfc4253.kexinit_after_id",
+          "team": "blue",
+          "passed": false,
+          "detail": "no KEXINIT",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "rfc4253.legacy_version_handling",
+          "team": "blue",
+          "passed": true,
+          "detail": "handled SSH-1.5 probe without hang",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "rfc4253.reject_null_in_id",
+          "team": "red",
+          "passed": true,
+          "detail": "null in client ID did not proceed to KEX",
+          "score": 100.0,
+          "evidence": [
+            "5353482d322e302d4f70656e5353485f352e3170312044656269616e2d350d0a"
+          ],
+          "critical": false
+        },
+        {
+          "id": "rfc4253.identification_crlf",
+          "team": "blue",
+          "passed": true,
+          "detail": "SSH-2.0-OpenSSH_5.1p1 Debian-5",
+          "score": 100.0,
+          "evidence": [
+            "5353482d322e302d4f70656e5353485f352e3170312044656269616e2d350d0a"
+          ],
+          "critical": false
+        },
+        {
+          "id": "rfc4253.kexinit_after_id",
+          "team": "blue",
+          "passed": false,
+          "detail": "no KEXINIT",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "ssh.nego.hassh",
+          "team": "blue",
+          "passed": false,
+          "detail": "HASSH parse failed",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "ssh.timing.sample_size",
+          "team": "blue",
+          "passed": true,
+          "detail": "n=50 requested=50 errors=0",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "ssh.timing.iat_jitter",
+          "team": "red",
+          "passed": true,
+          "detail": "median=0.461ms pstdev=0.218ms (target jitter often <2ms vs native)",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "ssh.module_a.composite",
+          "team": "blue",
+          "passed": false,
+          "detail": "fsm=27 nego=3 timing=100",
+          "score": 41.5138,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "ssh": 41.51
+        },
+        "protocols": [
+          "ssh"
+        ],
+        "timing_samples": 50,
+        "available_plugins": [
+          "ftp",
+          "generic",
+          "git",
+          "http",
+          "mcp",
+          "modbus",
+          "mysql",
+          "ntp",
+          "pop3",
+          "postgres",
+          "rdp",
+          "redis",
+          "s7comm",
+          "sip",
+          "smb",
+          "smtp",
+          "snmp",
+          "ssh",
+          "telnet",
+          "tftp",
+          "vnc"
+        ]
+      },
+      "notes": [
+        "UHBS Module A \u2014 plugins=['ssh']",
+        "class=Low-Interaction strict_rfc=True"
+      ],
+      "error": null
+    },
+    {
+      "module": "B",
+      "dimension": "behavior",
+      "score": 6.25,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "ssh.state.cross_session",
+          "team": "blue",
+          "passed": false,
+          "detail": "Negotiation failed.",
+          "score": 0.0,
+          "evidence": [
+            "",
+            ""
+          ],
+          "critical": false
+        },
+        {
+          "id": "ssh.payload.echo",
+          "team": "red",
+          "passed": false,
+          "detail": "Negotiation failed.",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "ssh.fuzz.non_utf8",
+          "team": "red",
+          "passed": false,
+          "detail": "Negotiation failed.",
+          "score": 25.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "ssh": 6.25
+        },
+        "class": "Low-Interaction",
+        "surface_depth": "unknown"
+      },
+      "notes": [
+        "UHBS Module B class=Low-Interaction"
+      ],
+      "error": null
+    },
+    {
+      "module": "C",
+      "dimension": "telemetry",
+      "score": 25.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "c2.inject_0",
+          "team": "red",
+          "passed": false,
+          "detail": "Negotiation failed.",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "c2.inject_1",
+          "team": "red",
+          "passed": false,
+          "detail": "Negotiation failed.",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "c2.inject_2",
+          "team": "red",
+          "passed": false,
+          "detail": "Negotiation failed.",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "c2.inject_3",
+          "team": "red",
+          "passed": false,
+          "detail": "Negotiation failed.",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "c2.parser_survival",
+          "team": "red",
+          "passed": false,
+          "detail": "0/4 injections survived without client crash",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "c1.json_parse_clean",
+          "team": "blue",
+          "passed": true,
+          "detail": "0 malformed / 0 records",
+          "score": 20.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "c1.stix_2_1",
+          "team": "blue",
+          "passed": false,
+          "detail": "no STIX objects found",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "c1.otel_or_ecs",
+          "team": "blue",
+          "passed": false,
+          "detail": "otel_docs=0 ecs_docs=0",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "c1.payload_hashes",
+          "team": "blue",
+          "passed": false,
+          "detail": "no md5/sha256 fields",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "c1.mitre_mapping",
+          "team": "blue",
+          "passed": false,
+          "detail": "no MITRE tags",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {},
+      "notes": [
+        "UHBS C1 schema: STIX 2.1 / OTel / ECS best-effort validators"
+      ],
+      "error": null
+    },
+    {
+      "module": "D",
+      "dimension": "containment",
+      "score": 96.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "d1.egress_icmp",
+          "team": "blue",
+          "passed": true,
+          "detail": "egress blocked",
+          "score": 12.0,
+          "evidence": [
+            ""
+          ],
+          "critical": false
+        },
+        {
+          "id": "d1.egress_dns",
+          "team": "blue",
+          "passed": true,
+          "detail": "egress blocked",
+          "score": 12.0,
+          "evidence": [
+            ""
+          ],
+          "critical": false
+        },
+        {
+          "id": "d1.egress_tcp",
+          "team": "blue",
+          "passed": true,
+          "detail": "egress blocked",
+          "score": 12.0,
+          "evidence": [
+            ""
+          ],
+          "critical": false
+        },
+        {
+          "id": "d1.egress_https",
+          "team": "blue",
+          "passed": true,
+          "detail": "egress blocked",
+          "score": 12.0,
+          "evidence": [
+            ""
+          ],
+          "critical": false
+        },
+        {
+          "id": "d1.egress_http",
+          "team": "blue",
+          "passed": true,
+          "detail": "egress blocked",
+          "score": 12.0,
+          "evidence": [
+            ""
+          ],
+          "critical": false
+        },
+        {
+          "id": "d1.egress_gateway_log",
+          "team": "blue",
+          "passed": true,
+          "detail": "UHBS_EGRESS_GATEWAY_LOG unset \u2014 gateway evidence not attached (lab)",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "d2.docker_sock",
+          "team": "blue",
+          "passed": true,
+          "detail": "no docker.sock",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "d2.cgroup_escape_surface",
+          "team": "blue",
+          "passed": true,
+          "detail": "cgroup surface ok",
+          "score": 8.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "d3.prompt_injection",
+          "team": "red",
+          "passed": true,
+          "detail": "no prompt/policy leak",
+          "score": 8.0,
+          "evidence": [
+            "Negotiation failed."
+          ],
+          "critical": false
+        },
+        {
+          "id": "d3.context_exhaustion",
+          "team": "red",
+          "passed": false,
+          "detail": "Negotiation failed.",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {
+        "breakout": false,
+        "allowed_outbound_traffic": false,
+        "shell_exec": true
+      },
+      "notes": [
+        "UHBS: C\u226595 required for \u03b4_C=1.0; set UHBS_EGRESS_GATEWAY_LOG for gateway proof"
+      ],
+      "error": null
+    },
+    {
+      "module": "E",
+      "dimension": "scale",
+      "score": 20.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "e1.p95_vs_tps",
+          "team": "blue",
+          "passed": false,
+          "detail": "P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=3000.0ms proto=ssh",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "e1.error_rate",
+          "team": "blue",
+          "passed": false,
+          "detail": "errors=15/15 rate=100.00%",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "e2.exhaustion_input",
+          "team": "red",
+          "passed": true,
+          "detail": "completed exhaustion/fuzz blast",
+          "score": 15.0,
+          "evidence": [],
+          "critical": false
+        },
+        {
+          "id": "e2.circuit_breaker_alive",
+          "team": "blue",
+          "passed": false,
+          "detail": "Negotiation failed.",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false
+        }
+      ],
+      "metrics": {
+        "p50_ms": 0.0,
+        "p95_ms": 0.0,
+        "p99_ms": 0.0,
+        "p95_limit_ms": 3000.0,
+        "errors": 15,
+        "concurrency": 5,
+        "requests": 15,
+        "wall_s": 0.01,
+        "protocol": "ssh"
+      },
+      "notes": [],
+      "error": null
+    }
+  ],
+  "extras": {
+    "target_scores": {
+      "protocol": 41.51,
+      "behavior": 6.25,
+      "telemetry": 25.0,
+      "containment": 96.0,
+      "scale": 20.0,
+      "static": 70.0
+    },
+    "uhqs_version": "4.2.2",
+    "tps": {
+      "name": "kippo-ssh-quick",
+      "class": "Low-Interaction",
+      "protocols": [
+        "ssh"
+      ],
+      "expected_p95_latency_ms": 3000.0
+    },
+    "surface_depth": "unknown"
+  }
+}
