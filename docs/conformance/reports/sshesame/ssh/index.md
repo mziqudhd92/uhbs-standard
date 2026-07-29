@@ -21,7 +21,6 @@
 | Module F: Static Code Audit | 70.0 | 0.20 | PASSED | POSIX coverage 0% (0/104) |
 | Safety Gate δ_C | 1.0 | GATE | — | Containment multiplier |
 
-
 ## Full scorecard (verbatim)
 
 ```text
@@ -51,33 +50,25 @@ OVERALL EVALUATION GRADE              : GRADE D (Needs Remediation)
 ====================================================================================
 ```
 
-
-
 ## CTI & blue-team reading
 
-Low-interaction SSH decoy that accepts sessions and logs activity without executing host commands.
+This page is the protocol-level proof hub for **sshesame** on **ssh**. Prefer the **full** run over quick for operational decisions. Numbers without the verbatim SCORECARD (or `report.json`) are not trustworthy citations.
 
 ### Module interpretation (this protocol)
 
 | Module | Score | Analyst reading |
 | --- | ---: | --- |
 | A — Protocol Fidelity | 57.1 | Protocol speak / banner-handshake quality for keeping automated clients engaged. |
-| B — Behavioral Realism | 41.2 | Post-connect realism (auth/session). Low often means credential-only or reject-by-design. |
-| C — Telemetry Quality | 55.0 | How much useful telemetry the *graded lab* exposed to UHBS — not your SIEM maturity. |
+| B — Behavioral Realism | 41.2 | Post-connect realism (auth/session). Low often means credential-only or reject-by-design. **CTI:** treat primarily as auth/connection intelligence. |
+| C — Telemetry Quality | 55.0 | How much useful telemetry the *graded lab* exposed to UHBS — not your SIEM maturity. **Blue team:** plan explicit log shipping; do not assume UHBS C equals production visibility. |
 | D — Safety & Containment (C) | 100.0 | Containment/Safety Gate. Below threshold collapses UHQS via δ_C. Safety Gate passed in this lab configuration. |
 | E — Scalability & Latency | 100.0 | Latency vs profile P95. Low can mean timeouts, tarpits, or slow handlers. |
 | F — Static Code Audit | 70.0 | Static audit of the lab source tree — hygiene signal, not a full CVE program. |
 | δ_C | 1.0 | Safety Gate multiplier applied to composite UHQS. |
 
-- Useful for collecting SSH brute-force / credential-stuffing attempts and client banners from opportunistic Internet noise.
-- Expect session metadata and command attempts as logged by the decoy — not a full high-interaction filesystem for malware drop analysis unless you add other tooling.
-
-- Deploy only on isolated decoy segments; treat accepted credentials as poisoned (never reuse on real assets).
-- Forward decoy logs to SIEM with clear `honeypot=sshesame` labels to avoid false-positive incident escalations.
-
-**Signals:** SSH auth attempts, channel/request activity, client versions — as emitted by sshesame logging.
-
-See product hub for full analyst notes and [READING-UHQS.md](../../READING-UHQS.md).
+- **CTI:** use Module A/B to judge engagement depth (scanner noise vs post-auth TTPs). Low B usually means credential/connection intelligence, not interactive malware staging.
+- **Blue team:** verify Safety Gate (Module D / δ_C) before Internet exposure; wire SIEM shipping yourself — Module C is harness visibility, not your pipeline.
+- **Replication:** commands live in the product tutorial; environment limits in the methodology.
 
 ## Guides
 
@@ -85,5 +76,6 @@ See product hub for full analyst notes and [READING-UHQS.md](../../READING-UHQS.
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
 - Published scorecard page: [`../../../../scorecards/sshesame-ssh.md`](../../../../scorecards/sshesame-ssh.md)
+- How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

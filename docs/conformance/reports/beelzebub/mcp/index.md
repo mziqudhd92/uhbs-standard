@@ -1,26 +1,82 @@
-# Beelzebub — MCP
+# beelzebub — MCP
 
-**UHBS:** v4.2.2 · evaluation proof for the `mcp` protocol plugin (Web-API class)
+**Status:** Informative · evaluation proof  
+**UHBS:** v4.2.2 · **Class:** Web-API · **Protocol:** `mcp`  
+**Target id:** `beelzebub-mcp` · **Evaluated:** 2026-07-28
 
-| Run | UHQS | Grade | Notes |
-| --- | --- | --- | --- |
-| [Quick](quick/README.md) | **43.04** | F | δ_C 0.56 · `surface_depth=interactive` |
-| [Full](full/README.md) | **42.93** | F | Prefer full for claim-grade |
+| Run | UHQS | Grade | δ_C | Artifacts |
+| --- | ---: | --- | --- | --- |
+| [Quick](quick/README.md) | **43.04** | F | 0.5625 | [`SCORECARD.txt`](quick/SCORECARD.txt) · [`report.json`](quick/report.json) |
+| [Full](full/README.md) | **42.93** | F | 0.5625 | [`SCORECARD.txt`](full/SCORECARD.txt) · [`report.json`](full/report.json) |
 
-MCP grading differs from classic HTTP: JSON-RPC lifecycle, tool allowlists, and `surface_depth`. See [architecture/mcp-honeypot-grading.md](../../../../architecture/mcp-honeypot-grading.md) and [METHODOLOGY.md](../METHODOLOGY.md).
+## Full run — module breakdown (analyst view)
 
-Safety Gate dominated the composite (Module D C=75 → δ_C=0.5625) despite strong Module B (~94).
+| Module | Score | Weight | Status | Notes |
+| --- | ---: | --- | --- | --- |
+| Module A: Protocol Fidelity | 70.6 | 0.25 | PASSED | allowed tools/list before notifications/initialized |
+| Module B: Behavioral Realism | 94.3 | 0.20 | PASSED | survived binary blast |
+| Module C: Telemetry Quality | 55.0 | 0.20 | PARTIAL | no STIX objects found |
+| Module D: Safety & Containment (C) | 75.0 | GATE | PASSED | UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes on SSH decoys) |
+| Module E: Scalability & Latency | 100.0 | 0.15 | PASSED | service alive after load (connect 0.2ms) |
+| Module F: Static Code Audit | 69.0 | 0.20 | PARTIAL | POSIX coverage 0% (0/104) |
+| Safety Gate δ_C | 0.5625 | GATE | — | Containment multiplier |
 
-## Reproduce
+## Full scorecard (verbatim)
 
-```bash
-# After Beelzebub exposes MCP on :8000 (see labs/beelzebub/configurations/services/mcp-8000.yaml)
-docker run --rm -v "$PWD:/work" -w /work --network uhbs-lab \
-  -e UHBS_AIRGAP_ATTESTED=1 -e UHBS_QUICK=1 \
-  uhbs:4.2.2 lab \
-  --inventory /work/docs/conformance/labs/beelzebub/inventory.yaml \
-  --target beelzebub-mcp \
-  --tps /work/docs/conformance/labs/beelzebub/web_api_mcp_quick.yaml \
-  --protocol mcp --quick --skip-sast-tools \
-  --out /work/docs/conformance/reports/beelzebub/mcp/quick
+```text
+====================================================================================
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.2.1
+====================================================================================
+Target System         : beelzebub-mcp
+System Profile Class  : Web-API
+Protocols             : mcp
+Evaluation Date       : 2026-07-28
+Evaluation Type       : Full-Spectrum (Static Audit + Dynamic Sandbox)
+Environment           : Isolated Sandbox
+MCP Surface Depth     : interactive
+MCP Surface Reason    : exercised allowlisted tool tool:system-log
+------------------------------------------------------------------------------------
+EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
+------------------------------------------------------------------------------------
+Module A: Protocol Fidelity         :  70.6/100       0.25     PASSED (allowed tools/list before notifications/initialized)
+Module B: Behavioral Realism        :  94.3/100       0.20     PASSED (survived binary blast)
+Module C: Telemetry Quality         :  55.0/100       0.20     PARTIAL (no STIX objects found)
+Module D: Safety & Containment (C)  :  75.0/100       GATE     PASSED (UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes on SSH decoys))
+Module E: Scalability & Latency     : 100.0/100       0.15     PASSED (service alive after load (connect 0.2ms))
+Module F: Static Code Audit         :  69.0/100       0.20     PARTIAL (POSIX coverage 0% (0/104))
+------------------------------------------------------------------------------------
+SAFETY GATE MULTIPLIER                : δ_C = 0.5625 (C = 75.0 < 95 — exponential penalty)
+FINAL COMPOSITE SCORE (UHQS 4.2.1)      : 42.93 / 100
+OVERALL EVALUATION GRADE              : GRADE F (Fail)
+====================================================================================
 ```
+
+## CTI & blue-team reading
+
+This page is the protocol-level proof hub for **beelzebub** on **mcp**. Prefer the **full** run over quick for operational decisions. Numbers without the verbatim SCORECARD (or `report.json`) are not trustworthy citations.
+
+### Module interpretation (this protocol)
+
+| Module | Score | Analyst reading |
+| --- | ---: | --- |
+| A — Protocol Fidelity | 70.6 | Protocol speak / banner-handshake quality for keeping automated clients engaged. |
+| B — Behavioral Realism | 94.3 | Post-connect realism (auth/session). Low often means credential-only or reject-by-design. **CTI:** treat primarily as auth/connection intelligence. |
+| C — Telemetry Quality | 55.0 | How much useful telemetry the *graded lab* exposed to UHBS — not your SIEM maturity. **Blue team:** plan explicit log shipping; do not assume UHBS C equals production visibility. |
+| D — Safety & Containment (C) | 75.0 | Containment/Safety Gate. Below threshold collapses UHQS via δ_C. Check δ_C carefully. |
+| E — Scalability & Latency | 100.0 | Latency vs profile P95. Low can mean timeouts, tarpits, or slow handlers. |
+| F — Static Code Audit | 69.0 | Static audit of the lab source tree — hygiene signal, not a full CVE program. |
+| δ_C | 0.5625 | Safety Gate multiplier applied to composite UHQS. |
+
+- **CTI:** use Module A/B to judge engagement depth (scanner noise vs post-auth TTPs). Low B usually means credential/connection intelligence, not interactive malware staging.
+- **Blue team:** verify Safety Gate (Module D / δ_C) before Internet exposure; wire SIEM shipping yourself — Module C is harness visibility, not your pipeline.
+- **Replication:** commands live in the product tutorial; environment limits in the methodology.
+
+## Guides
+
+- Product hub: [`../`](../index.md)
+- [Tutorial](../TUTORIAL.md)
+- [Methodology](../METHODOLOGY.md)
+- Published scorecard page: [`../../../../scorecards/beelzebub-mcp.md`](../../../../scorecards/beelzebub-mcp.md)
+- How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
+
+> Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

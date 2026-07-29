@@ -48,3 +48,6 @@ OVERALL EVALUATION GRADE              : GRADE F (Fail)
 
 Parent protocol hub: [`../index.md`](../index.md)
 
+## Analyst note
+
+This artifact folder is the **proof bundle** for one UHBS run (quick or full). Open `SCORECARD.txt` for the verbatim module table and UHQS; use `report.json` for automation. Prefer the sibling **full** folder when making operational comparisons. See the protocol hub and [READING-UHQS.md](../../../READING-UHQS.md) for CTI / blue-team interpretation. Do not cite the letter grade without the SCORECARD body.

@@ -21,7 +21,6 @@
 | Module F: Static Code Audit | 69.0 | 0.20 | PARTIAL | POSIX coverage 0% (0/104) |
 | Safety Gate δ_C | 0.5625 | GATE | — | Containment multiplier |
 
-
 ## Full scorecard (verbatim)
 
 ```text
@@ -51,33 +50,25 @@ OVERALL EVALUATION GRADE              : GRADE F (Fail)
 ====================================================================================
 ```
 
-
-
 ## CTI & blue-team reading
 
-HTTP tarpit that keeps aggressive bots reading endless generated content (delay/exhaustion decoy).
+This page is the protocol-level proof hub for **HellPot** on **http**. Prefer the **full** run over quick for operational decisions. Numbers without the verbatim SCORECARD (or `report.json`) are not trustworthy citations.
 
 ### Module interpretation (this protocol)
 
 | Module | Score | Analyst reading |
 | --- | ---: | --- |
 | A — Protocol Fidelity | 86.8 | Protocol speak / banner-handshake quality for keeping automated clients engaged. |
-| B — Behavioral Realism | 82.5 | Post-connect realism (auth/session). Low often means credential-only or reject-by-design. |
-| C — Telemetry Quality | 55.0 | How much useful telemetry the *graded lab* exposed to UHBS — not your SIEM maturity. |
-| D — Safety & Containment (C) | 75.0 | Containment/Safety Gate. Below threshold collapses UHQS via δ_C. |
+| B — Behavioral Realism | 82.5 | Post-connect realism (auth/session). Low often means credential-only or reject-by-design. **CTI:** treat primarily as auth/connection intelligence. |
+| C — Telemetry Quality | 55.0 | How much useful telemetry the *graded lab* exposed to UHBS — not your SIEM maturity. **Blue team:** plan explicit log shipping; do not assume UHBS C equals production visibility. |
+| D — Safety & Containment (C) | 75.0 | Containment/Safety Gate. Below threshold collapses UHQS via δ_C. Check δ_C carefully. |
 | E — Scalability & Latency | 100.0 | Latency vs profile P95. Low can mean timeouts, tarpits, or slow handlers. |
 | F — Static Code Audit | 69.0 | Static audit of the lab source tree — hygiene signal, not a full CVE program. |
 | δ_C | 0.5625 | Safety Gate multiplier applied to composite UHQS. |
 
-- Not a content-management decoy — value is observing bots that follow infinite/slow HTTP responses.
-- Useful for separating “curious scanners” from “sticky crawlers” that burn time/bandwidth.
-
-- Place behind careful rate controls so tarpit traffic cannot DoS shared egress or upstream WAF budgets.
-- Instrument connection duration and bytes-out as the primary KPIs; UHBS HTTP plugin times out by design.
-
-**Signals:** Long-lived HTTP sessions, User-Agents, request paths that hit the tarpit handler.
-
-See product hub for full analyst notes and [READING-UHQS.md](../../READING-UHQS.md).
+- **CTI:** use Module A/B to judge engagement depth (scanner noise vs post-auth TTPs). Low B usually means credential/connection intelligence, not interactive malware staging.
+- **Blue team:** verify Safety Gate (Module D / δ_C) before Internet exposure; wire SIEM shipping yourself — Module C is harness visibility, not your pipeline.
+- **Replication:** commands live in the product tutorial; environment limits in the methodology.
 
 ## Guides
 
@@ -85,5 +76,6 @@ See product hub for full analyst notes and [READING-UHQS.md](../../READING-UHQS.
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
 - Published scorecard page: [`../../../../scorecards/hellpot-http.md`](../../../../scorecards/hellpot-http.md)
+- How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.
