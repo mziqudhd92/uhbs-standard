@@ -74,9 +74,9 @@ Traceback (most recent call last):
   File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/packet.py", line 395, in readline
     buf += self._read_timeout(timeout)
            ~~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/packet.py", line 670, in _read_timeout
-    raise EOFError()
-EOFError
+  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/packet.py", line 673, in _read_timeout
+    raise socket.timeout()
+TimeoutError
 
 During handling of the above exception, another exception occurred:
 
@@ -97,9 +97,9 @@ Traceback (most recent call last):
   File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/packet.py", line 395, in readline
     buf += self._read_timeout(timeout)
            ~~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/packet.py", line 670, in _read_timeout
-    raise EOFError()
-EOFError
+  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/packet.py", line 673, in _read_timeout
+    raise socket.timeout()
+TimeoutError
 
 During handling of the above exception, another exception occurred:
 
@@ -159,118 +159,32 @@ Traceback (most recent call last):
     )
 paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
 
-Exception (client): Error reading SSH protocol banner
-Traceback (most recent call last):
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/transport.py", line 2213, in _check_banner
-    buf = self.packetizer.readline(timeout)
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/packet.py", line 395, in readline
-    buf += self._read_timeout(timeout)
-           ~~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/packet.py", line 670, in _read_timeout
-    raise EOFError()
-EOFError
+==> UHBS v4 target=ssh-auth-logger-ssh class=Low-Interaction protocols=['ssh'] phases=['profile', 'static', 'dynamic', 'score']
+    plugins available: ftp, generic, git, http, mcp, modbus, mysql, ntp, pop3, postgres, rdp, redis, s7comm, sip, smb, smtp, snmp, ssh, telnet, tftp, vnc
+====================================================================================
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.2.2
+====================================================================================
+Target System         : ssh-auth-logger-ssh
+System Profile Class  : Low-Interaction
+Protocols             : ssh
+Evaluation Date       : 2026-07-29
+Evaluation Type       : Full-Spectrum (Static Audit + Dynamic Sandbox)
+Environment           : Isolated Sandbox / air-gapped lab
+MCP Surface Depth     : unknown
+------------------------------------------------------------------------------------
+EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
+------------------------------------------------------------------------------------
+Module A: Protocol Fidelity         :  70.6/100       0.30     PASSED (accepted null ID)
+Module B: Behavioral Realism        :   6.2/100       0.15     PARTIAL (No existing session)
+Module C: Telemetry Quality         :  25.0/100       0.25     PARTIAL (Error reading SSH protocol banner)
+Module D: Safety & Containment (C)  :  96.0/100       GATE     PASSED (Authentication failed.)
+Module E: Scalability & Latency     :  20.0/100       0.10     PARTIAL (P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=3000.0ms proto=ssh)
+Module F: Static Code Audit         :  70.0/100       0.20     PASSED (POSIX coverage 0% (0/104))
+------------------------------------------------------------------------------------
+SAFETY GATE MULTIPLIER                : δ_C = 1.0 (Containment Score C = 96.0 >= 95)
+FINAL COMPOSITE SCORE (UHQS 4.2.2)      : 44.38 / 100
+OVERALL EVALUATION GRADE              : GRADE F (Fail)
+====================================================================================
 
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/transport.py", line 2029, in run
-    self._check_banner()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/transport.py", line 2217, in _check_banner
-    raise SSHException(
-        "Error reading SSH protocol banner" + str(e)
-    )
-paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
-
-Exception (client): Error reading SSH protocol banner
-Traceback (most recent call last):
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/transport.py", line 2213, in _check_banner
-    buf = self.packetizer.readline(timeout)
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/packet.py", line 395, in readline
-    buf += self._read_timeout(timeout)
-           ~~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/packet.py", line 670, in _read_timeout
-    raise EOFError()
-EOFError
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/transport.py", line 2029, in run
-    self._check_banner()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/transport.py", line 2217, in _check_banner
-    raise SSHException(
-        "Error reading SSH protocol banner" + str(e)
-    )
-paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
-
-Exception (client): Error reading SSH protocol banner
-Traceback (most recent call last):
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/transport.py", line 2213, in _check_banner
-    buf = self.packetizer.readline(timeout)
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/packet.py", line 395, in readline
-    buf += self._read_timeout(timeout)
-           ~~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/packet.py", line 670, in _read_timeout
-    raise EOFError()
-EOFError
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/transport.py", line 2029, in run
-    self._check_banner()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/transport.py", line 2217, in _check_banner
-    raise SSHException(
-        "Error reading SSH protocol banner" + str(e)
-    )
-paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
-
-Exception (client): Error reading SSH protocol banner
-Traceback (most recent call last):
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/transport.py", line 2213, in _check_banner
-    buf = self.packetizer.readline(timeout)
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/packet.py", line 395, in readline
-    buf += self._read_timeout(timeout)
-           ~~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/packet.py", line 670, in _read_timeout
-    raise EOFError()
-EOFError
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/transport.py", line 2029, in run
-    self._check_banner()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/transport.py", line 2217, in _check_banner
-    raise SSHException(
-        "Error reading SSH protocol banner" + str(e)
-    )
-paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
-
-Exception (client): Error reading SSH protocol banner
-Traceback (most recent call last):
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/transport.py", line 2213, in _check_banner
-    buf = self.packetizer.readline(timeout)
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/packet.py", line 395, in readline
-    buf += self._read_timeout(timeout)
-           ~~~~~~~~~~~~~~~~~~^^^^^^^^^
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/packet.py", line 670, in _read_timeout
-    raise EOFError()
-EOFError
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/transport.py", line 2029, in run
-    self._check_banner()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "/Users/mz/UHBS/.venv/lib/python3.14/site-packages/paramiko/transport.py", line 2217, in _check_banner
-    raise SSHException(
-        "Error reading SSH protocol banner" + str(e)
-    )
-paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
-
+Wrote docs/conformance/reports/ssh-auth-logger/ssh/full/report.json
+Wrote docs/conformance/reports/ssh-auth-logger/ssh/full/MANIFEST.json

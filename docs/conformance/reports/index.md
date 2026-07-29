@@ -42,11 +42,13 @@
 | [HoneyHTTPD](honeyhttpd/index.md) | Web-API | HTTP `:8080` | [45.84 / F](honeyhttpd/http/quick/) | [45.73 / F](honeyhttpd/http/full/) | [Step-by-step](honeyhttpd/TUTORIAL.md) |
 | [SHIVA](shiva/index.md) | Low-Interaction | SMTP `:2525` | [45.07 / F](shiva/smtp/quick/) | [44.96 / F](shiva/smtp/full/) | [Step-by-step](shiva/TUTORIAL.md) |
 | [Acra (skipped)](acra/index.md) | — | DB proxy / poison records (not a protocol honeypot) | — | — | [Note](acra/TUTORIAL.md) |
+| [ssh-honeypot / droberson (skipped)](ssh-honeypot/index.md) | — | SSH (Docker base image unavailable) | — | — | [Note](ssh-honeypot/index.md) |
 | [Ensnare (skipped)](ensnare/index.md) | — | Rails gem HTTP traps (not standalone) | — | — | [Note](ensnare/TUTORIAL.md) |
 | [snare (skipped)](snare/index.md) | — | Needs Tanner + page clone | — | — | [Note](snare/TUTORIAL.md) |
 | [Trapster Community](trapster/index.md) | multi | SSH / HTTP / FTP / Telnet | see hub | see hub | [Step-by-step](trapster/TUTORIAL.md) |
-| [sshesame](sshesame/index.md) | Low-Interaction | SSH | [65.13 / D](sshesame/ssh/quick/) | [65.13 / D](sshesame/ssh/full/) | [Step-by-step](sshesame/TUTORIAL.md) |
-| [ssh-honeypotd](ssh-honeypotd/index.md) | Low-Interaction | SSH | [44.38 / F](ssh-honeypotd/ssh/quick/) | [33.04 / F](ssh-honeypotd/ssh/full/) | [Step-by-step](ssh-honeypotd/TUTORIAL.md) |
+| [sshesame](sshesame/index.md) | Low-Interaction | SSH | [65.13 / D](sshesame/ssh/quick/) | [61.06 / D](sshesame/ssh/full/) | [Step-by-step](sshesame/TUTORIAL.md) |
+| [ssh-auth-logger](ssh-auth-logger/index.md) | Low-Interaction | SSH | [44.38 / F](ssh-auth-logger/ssh/quick/) | [44.38 / F](ssh-auth-logger/ssh/full/) | [Step-by-step](ssh-auth-logger/TUTORIAL.md) |
+| [ssh-honeypotd](ssh-honeypotd/index.md) | Low-Interaction | SSH | [44.38 / F](ssh-honeypotd/ssh/quick/) | [44.38 / F](ssh-honeypotd/ssh/full/) | [Step-by-step](ssh-honeypotd/TUTORIAL.md) |
 | [HellPot](HellPot/index.md) | Web-API | HTTP | [43.98 / F](HellPot/http/quick/) | [43.87 / F](HellPot/http/full/) | [Step-by-step](HellPot/TUTORIAL.md) |
 | [express-honeypot](express-honeypot/index.md) | Web-API | HTTP | [45.84 / F](express-honeypot/http/quick/) | [45.73 / F](express-honeypot/http/full/) | [Step-by-step](express-honeypot/TUTORIAL.md) |
 | [mailoney](mailoney/index.md) | Low-Interaction | SMTP | [38.8 / F](mailoney/smtp/quick/) | [38.69 / F](mailoney/smtp/full/) | [Step-by-step](mailoney/TUTORIAL.md) |

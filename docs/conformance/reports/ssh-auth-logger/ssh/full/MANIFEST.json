@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.2.2",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "cf1db291adbac6f5ce9a811b4cceafc7c74cb10b080c7d75b49c6e3177cc430d"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "cf1db291adbac6f5ce9a811b4cceafc7c74cb10b080c7d75b49c6e3177cc430d"
+    },
+    {
+      "path": "report.json",
+      "sha256": "ba3f7e0ddf3b5be0f246f5192b4755a8e2b4a0954303f3d38c30566655c60ea6"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "9c1ea04f39aa40faaf2be23836745ea90c9bec2fc8dc2ff2ef636ef6de7bfc10"
+    }
+  ],
+  "extra": {
+    "target": "ssh-auth-logger-ssh",
+    "uhqs": 44.38,
+    "grade": "GRADE F (Fail)"
+  }
+}

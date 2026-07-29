@@ -1,18 +1,6 @@
-# Methodology: sshesame
+# Methodology: sshesame UHBS lab
 
-**Status:** Informative · evaluation proof  
-**UHBS version:** 4.2.2  
-**Upstream:** [https://github.com/jaksi/sshesame](https://github.com/jaksi/sshesame) (`pushed_at` `2024-10-21`)
+**UHBS:** 4.2.2 · Graded **SSH** Low-Interaction decoy.  
+Runtime: official `ghcr.io/jaksi/sshesame` image; host inventory maps `127.0.0.1:12022` → container `:2022`. Accepts any password (medium session surface vs auth-only honeypots).
 
-## Environment
-
-- Docker network `uhbs-lab`; inventory host `127.0.0.1` with published lab port
-- Harness: local `uhbs-lab` from editable install (`pip install -e ".[dev,lab,mcp]"`)
-- Quick: `UHBS_QUICK=1`, `--skip-sast-tools`
-- Full: formal TPS timing samples, `--skip-sast-tools` (SAST optional follow-up)
-
-## Limitations
-
-- Evaluation proof only — not an endorsement
-- Single-protocol surface graded where noted in the hub
-- Air-gap attested via `UHBS_AIRGAP_ATTESTED=1` for local lab runs
+Quick **65.13 / D**, full **61.06 / D**.

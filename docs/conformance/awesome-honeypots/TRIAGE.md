@@ -59,6 +59,6 @@ See also: [PLAN.md](PLAN.md) Â· [DEFERRED-PROTOCOLS.md](DEFERRED-PROTOCOLS.md) Â
 
 ## Graded this batch (quick + full published)
 
-sshesame, ssh-honeypotd, HellPot, express-honeypot, mailoney, pghoney, mysql-honeypotd, Log4Pot, node-ftp-honeypot, SentryPeer, wordpot, MockSSH, Heralding (SSH+FTP), HoneyHTTPD, SHIVA; ssh-auth-logger (in progress / flaky banner).
+sshesame, ssh-honeypotd, ssh-auth-logger, HellPot, express-honeypot, mailoney, pghoney, mysql-honeypotd, Log4Pot, node-ftp-honeypot, SentryPeer, wordpot, MockSSH, Heralding (SSH+FTP), HoneyHTTPD, SHIVA. droberson/ssh-honeypot skipped (missing Docker base image).
 
 Remaining **grade_now** entries stay queued for follow-up sessions (FaPro, glutton, sticky_elephant, Krawl, flux/galah/lophiid, etc.).

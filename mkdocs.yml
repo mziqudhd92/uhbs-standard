@@ -197,6 +197,7 @@ nav:
       - ssh-auth-logger tutorial: conformance/reports/ssh-auth-logger/TUTORIAL.md
       - Awesome honeypots triage: conformance/awesome-honeypots/TRIAGE.md
       - Awesome deferred protocols: conformance/awesome-honeypots/DEFERRED-PROTOCOLS.md
+      - ssh-honeypot skip note: conformance/reports/ssh-honeypot/index.md
       - Acra skip note: conformance/reports/acra/index.md
       - Ensnare skip note: conformance/reports/ensnare/index.md
       - snare skip note: conformance/reports/snare/index.md

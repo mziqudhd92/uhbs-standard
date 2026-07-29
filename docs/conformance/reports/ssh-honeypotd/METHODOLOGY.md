@@ -1,18 +1,6 @@
-# Methodology: ssh-honeypotd
+# Methodology: ssh-honeypotd UHBS lab
 
-**Status:** Informative · evaluation proof  
-**UHBS version:** 4.2.2  
-**Upstream:** [https://github.com/sjinks/ssh-honeypotd](https://github.com/sjinks/ssh-honeypotd) (`pushed_at` `2026-07-28`)
+**UHBS:** 4.2.2 · Graded **SSH** Low-Interaction auth-logging decoy.  
+Runtime: `wildwildangel/ssh-honeypotd:latest`; host inventory maps `127.0.0.1:12023` → container `:22`. Auth always fails (by design) → Module B/E stay low vs session-accepting honeypots.
 
-## Environment
-
-- Docker network `uhbs-lab`; inventory host `127.0.0.1` with published lab port
-- Harness: local `uhbs-lab` from editable install (`pip install -e ".[dev,lab,mcp]"`)
-- Quick: `UHBS_QUICK=1`, `--skip-sast-tools`
-- Full: formal TPS timing samples, `--skip-sast-tools` (SAST optional follow-up)
-
-## Limitations
-
-- Evaluation proof only — not an endorsement
-- Single-protocol surface graded where noted in the hub
-- Air-gap attested via `UHBS_AIRGAP_ATTESTED=1` for local lab runs
+Quick **44.38 / F**, full **44.38 / F**.
