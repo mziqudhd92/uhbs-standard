@@ -239,6 +239,8 @@ nav:
       - ssh-honeypotd tutorial: conformance/reports/ssh-honeypotd/TUTORIAL.md
       - HellPot report hub: conformance/reports/HellPot/index.md
       - HellPot tutorial: conformance/reports/HellPot/TUTORIAL.md
+      - HoneyWire report hub: conformance/reports/HoneyWire/index.md
+      - HoneyWire tutorial: conformance/reports/HoneyWire/TUTORIAL.md
       - express-honeypot report hub: conformance/reports/express-honeypot/index.md
       - express-honeypot tutorial: conformance/reports/express-honeypot/TUTORIAL.md
       - mailoney report hub: conformance/reports/mailoney/index.md
@@ -345,6 +347,7 @@ nav:
       - ssh-honeypotd SSH: scorecards/ssh-honeypotd-ssh.md
       - ssh-auth-logger SSH: scorecards/ssh-auth-logger-ssh.md
       - HellPot HTTP: scorecards/hellpot-http.md
+      - HoneyWire HTTP: scorecards/honeywire-http.md
       - express-honeypot HTTP: scorecards/express-honeypot-http.md
       - mailoney SMTP: scorecards/mailoney-smtp.md
       - pghoney PostgreSQL: scorecards/pghoney-postgres.md

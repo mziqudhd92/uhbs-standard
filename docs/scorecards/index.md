@@ -47,6 +47,7 @@ Full artifacts (tutorials, methodology, `SCORECARD.txt`, `report.json`) live und
 | [genaipot — pop3](genaipot-pop3.md) | Low-Interaction · pop3 | **44.13** | F |
 | [genaipot — smtp](genaipot-smtp.md) | Low-Interaction · smtp | **30.78** | F |
 | [HellPot — http](hellpot-http.md) | Web-API · http | **43.87** | F |
+| [HoneyWire — http](honeywire-http.md) | Web-API · http | **45.84** | F |
 | [heralding — ftp](heralding-ftp.md) | Low-Interaction · ftp | **35.85** | F |
 | [heralding — smtp](heralding-smtp.md) | Low-Interaction · smtp | **45.07** | F |
 | [owasp-python-honeypot — http](owasp-python-honeypot-http.md) | Web-API · http | **43.98** | F |

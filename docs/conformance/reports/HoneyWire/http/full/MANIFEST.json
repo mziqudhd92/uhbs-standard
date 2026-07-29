@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.3.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "98552de5ec618e51c89e514d7055e2265b162ef5078203116b875bb2d61006f9"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "98552de5ec618e51c89e514d7055e2265b162ef5078203116b875bb2d61006f9"
+    },
+    {
+      "path": "report.json",
+      "sha256": "d77687cfc317b1485d4d4c36234f6fa94e4e4984a8d0fce57ac07fecefadc750"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "extra": {
+    "target": "HoneyWire-http",
+    "uhqs": 45.84,
+    "grade": "GRADE F (Fail)"
+  }
+}

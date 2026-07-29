@@ -7,6 +7,10 @@ share version **4.3.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[
 
 ## [Unreleased]
 
+### Added
+- HoneyWire (andreicscs) **HTTP** lab grades for official WebRouterDecoy
+  (quick **45.84 / F**, full **45.84 / F**)
+
 ## [4.3.0] — 2026-07-29
 
 Minor release: fifteen new built-in protocol plugins (registry **36** protocols),

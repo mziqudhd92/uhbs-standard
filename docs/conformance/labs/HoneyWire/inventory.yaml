@@ -1,0 +1,16 @@
+# HoneyWire WebRouterDecoy lab inventory (host-mapped ports for local uhbs-lab).
+# Hub: ghcr.io/andreicscs/honeywire-hub  · Sensor: honeywire-webrouterdecoy
+# Map container :8081 → host 127.0.0.1:18081; mount source → --source-root, logs → telemetry.
+sites:
+  HoneyWire-http:
+    kind: generic
+    class: Web-API
+    host: 127.0.0.1
+    protocol: http
+    protocols: [http]
+    port: 18081
+    ports: {http: 18081}
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/HoneyWire/web_api_http_full.yaml
+    container_image: ghcr.io/andreicscs/honeywire-webrouterdecoy:latest

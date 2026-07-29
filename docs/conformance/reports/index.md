@@ -53,6 +53,7 @@
 | [ssh-auth-logger](ssh-auth-logger/index.md) | Low-Interaction | SSH | [44.38 / F](ssh-auth-logger/ssh/quick/) | [44.38 / F](ssh-auth-logger/ssh/full/) | [Step-by-step](ssh-auth-logger/TUTORIAL.md) |
 | [ssh-honeypotd](ssh-honeypotd/index.md) | Low-Interaction | SSH | [44.38 / F](ssh-honeypotd/ssh/quick/) | [44.38 / F](ssh-honeypotd/ssh/full/) | [Step-by-step](ssh-honeypotd/TUTORIAL.md) |
 | [HellPot](HellPot/index.md) | Web-API | HTTP | [43.98 / F](HellPot/http/quick/) | [43.87 / F](HellPot/http/full/) | [Step-by-step](HellPot/TUTORIAL.md) |
+| [HoneyWire](HoneyWire/index.md) | Web-API | HTTP (WebRouterDecoy) | [45.84 / F](HoneyWire/http/quick/) | [45.84 / F](HoneyWire/http/full/) | [Step-by-step](HoneyWire/TUTORIAL.md) |
 | [express-honeypot](express-honeypot/index.md) | Web-API | HTTP | [45.84 / F](express-honeypot/http/quick/) | [45.73 / F](express-honeypot/http/full/) | [Step-by-step](express-honeypot/TUTORIAL.md) |
 | [mailoney](mailoney/index.md) | Low-Interaction | SMTP | [38.8 / F](mailoney/smtp/quick/) | [38.69 / F](mailoney/smtp/full/) | [Step-by-step](mailoney/TUTORIAL.md) |
 | [pghoney](pghoney/index.md) | Low-Interaction | PostgreSQL | [43.72 / F](pghoney/postgres/quick/) | [43.61 / F](pghoney/postgres/full/) | [Step-by-step](pghoney/TUTORIAL.md) |

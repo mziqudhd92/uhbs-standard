@@ -1,0 +1,63 @@
+{
+  "uhbs_version": "4.3.0",
+  "target": {
+    "name": "HoneyWire WebRouterDecoy (andreicscs)",
+    "class": "Web-API",
+    "profile_ref": "docs/conformance/labs/HoneyWire/web_api_http_full.yaml"
+  },
+  "evaluated_at": "2026-07-29",
+  "auditor": "UHBS-Lab Docker lab (Hub + WebRouterDecoy sensor; SAST skipped; Hub-posted events not STIX)",
+  "modules": {
+    "A": {
+      "score": 100.0,
+      "status": "PASSED",
+      "weight": 0.25,
+      "notes": "fsm=100 nego=100 timing=100"
+    },
+    "B": {
+      "score": 82.5,
+      "status": "PASSED",
+      "weight": 0.2,
+      "notes": "survived binary blast"
+    },
+    "C": {
+      "score": 55.0,
+      "status": "PARTIAL",
+      "weight": 0.2,
+      "notes": "no STIX objects found (events go to HoneyWire Hub API, not harness telemetry schemas)"
+    },
+    "D": {
+      "score": 75.0,
+      "status": "GATE FAILED",
+      "notes": "UHBS_AIRGAP_ATTESTED=1; Safety Gate not fully cleared (C<95)"
+    },
+    "E": {
+      "score": 100.0,
+      "status": "PASSED",
+      "weight": 0.15,
+      "notes": "service alive after load"
+    },
+    "F": {
+      "score": 70.0,
+      "status": "PASSED",
+      "weight": 0.2,
+      "notes": "POSIX coverage 0% (0/104); SAST tools skipped"
+    }
+  },
+  "weights": {
+    "w_A": 0.25,
+    "w_B": 0.2,
+    "w_C": 0.2,
+    "w_E": 0.15,
+    "w_F": 0.2
+  },
+  "safety_gate": {
+    "containment_score": 75.0,
+    "delta_c": 0.5625,
+    "passed": false,
+    "unauthorized_egress_leaks": 0
+  },
+  "uhqs": 45.84,
+  "grade": "F",
+  "notes": "Graded surface is the official WebRouterDecoy sensor (Netgear router lure), not the Hub UI. TcpTarpit / FileCanary / ICMP / NetworkScanDetector were not graded in this round. Product name is evaluation proof only."
+}
