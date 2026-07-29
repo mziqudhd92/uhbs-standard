@@ -15,6 +15,6 @@ the Hub dashboard.
 | Quick | 45.84 | F | 0.5625 | [quick/](quick/README.md) |
 | **Full (authoritative)** | **45.84** | **F** | **0.5625** | [full/](full/README.md) |
 
-Parent hub: [HoneyWire](../index.md) · [Tutorial](../TUTORIAL.md) · [Methodology](../METHODOLOGY.md) · [Scorecard](../../../scorecards/honeywire-http.md)
+Parent hub: [HoneyWire](../index.md) · [Tutorial](../TUTORIAL.md) · [Methodology](../METHODOLOGY.md) · [Scorecard](../../../../scorecards/honeywire-http.md)
 
 > Named product is evaluation proof only — not a UHBS endorsement.
