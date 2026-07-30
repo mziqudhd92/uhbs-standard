@@ -145,6 +145,8 @@ tables only. Do not publish proprietary lab signal overlays or private host path
 ### Phase 5 — Interoperability mappings
 
 - [x] ATT&CK / NIST CSF / IEC 62443 mappings under `docs/mappings/`
+- [x] MITRE D3FEND (Deceive) + Engage goal mappings under `docs/mappings/`
+- [x] Optional scorecard `framework_refs` (D3FEND / Engage; display-only)
 - [x] Citation metadata (`CITATION.cff`) + Zenodo DOI placeholder notes
 - [x] Actual Zenodo DOI deposit (`10.5281/zenodo.21631156`, concept `10.5281/zenodo.21631155`)
 
@@ -170,6 +172,8 @@ These items are **future goals**. The repo must **not** claim they are complete.
 - [ ] At least **one independent reproduction** of a public fixture by someone other
       than the author
 - [x] Expand the evaluation corpus (≥5 open-source deception targets across classes)
+- [ ] Prioritize D3FEND Decoy Object types beyond network listeners (decoy files /
+      credentials / personas — corpus is listener-heavy today)
 - [ ] Optional: peer-reviewed or workshop paper / preprint with weight sensitivity notes
 
 #### Registry & distribution

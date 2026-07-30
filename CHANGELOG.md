@@ -13,6 +13,12 @@ share version **4.3.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[
 - README lab demo GIF (`docs/assets/uhbs-lab-demo.gif`) — install Cowrie/Conpot,
   start decoys, full UHQS for Cowrie · Conpot · HellPot
 - HellPot sanitized scorecard fixture (`hellpot-web-api.scorecard.json`)
+- Informative [MITRE D3FEND](docs/mappings/d3fend.md) and
+  [MITRE Engage](docs/mappings/engage.md) mappings
+- Optional scorecard `framework_refs` (ATT&CK technique IDs + D3FEND technique
+  IDs + Engage goals; display-only, ignored by UHQS math) on Cowrie / Conpot /
+  HellPot fixtures — formalizes the "scorecards MAY attach ATT&CK IDs" note in
+  [docs/mappings/attack.md](docs/mappings/attack.md)
 
 ### Fixed
 - Ship JSON Schemas inside the `uhbs` wheel (`uhbs_cli/schemas/`) so

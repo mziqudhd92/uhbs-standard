@@ -59,5 +59,10 @@
   },
   "uhqs": 61.37,
   "grade": "D",
-  "notes": "Evaluation proof only. Live Cowrie SSH full lab (aliases cowrie-ssh fixture). Regraded 2026-07-27."
+  "notes": "Evaluation proof only. Live Cowrie SSH full lab (aliases cowrie-ssh fixture). Regraded 2026-07-27.",
+  "framework_refs": {
+    "attack": ["T1595", "T1059", "T1105"],
+    "d3fend": ["D3-DNR", "D3-SHN"],
+    "engage_goals": ["Elicit", "Expose"]
+  }
 }

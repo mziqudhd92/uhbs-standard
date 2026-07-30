@@ -27,6 +27,8 @@ taxonomies.
 
 ## Using this mapping
 
-1. When publishing a UHBS scorecard, **MAY** attach ATT&CK IDs for failed checks.
+1. When publishing a UHBS scorecard, **MAY** attach ATT&CK IDs for failed checks
+   via the optional `framework_refs.attack` array (e.g. `["T1595", "T1041"]`) —
+   display-only, ignored by UHQS math. See the [Mapping Index](index.md).
 2. Module C **SHOULD** emit MITRE technique IDs in CTI when `mitre_attack_mapping: true`.
 3. Mappings are **Informative**; UHQS math does not depend on them.

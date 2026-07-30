@@ -62,5 +62,10 @@
   },
   "uhqs": 55.4,
   "grade": "D",
-  "notes": "Evaluation proof only. Conpot product name is not a UHBS requirement. Modbus-primary grade on container :5020; other default listeners not scored. Artifacts: docs/conformance/reports/conpot/."
+  "notes": "Evaluation proof only. Conpot product name is not a UHBS requirement. Modbus-primary grade on container :5020; other default listeners not scored. Artifacts: docs/conformance/reports/conpot/.",
+  "framework_refs": {
+    "attack": ["T1595", "T1040"],
+    "d3fend": ["D3-DNR", "D3-SHN"],
+    "engage_goals": ["Expose", "Elicit"]
+  }
 }

@@ -115,6 +115,43 @@
     },
     "notes": {
       "type": "string"
+    },
+    "framework_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Optional informative tags for MITRE ATT&CK / D3FEND / Engage (display-only; ignored by UHQS math).",
+      "properties": {
+        "attack": {
+          "type": "array",
+          "description": "ATT&CK technique IDs observed or exercised (e.g. T1595, T1041, T1059.004).",
+          "items": {
+            "type": "string",
+            "pattern": "^T[0-9]{4}(\\.[0-9]{3})?$"
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "d3fend": {
+          "type": "array",
+          "description": "D3FEND technique IDs (e.g. D3-DNR, D3-SHN).",
+          "items": {
+            "type": "string",
+            "pattern": "^D3-[A-Z0-9]+$"
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "engage_goals": {
+          "type": "array",
+          "description": "MITRE Engage goals for this evaluation's design intent.",
+          "items": {
+            "type": "string",
+            "enum": ["Prepare", "Expose", "Affect", "Elicit", "Understand"]
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        }
+      }
     }
   },
   "$defs": {

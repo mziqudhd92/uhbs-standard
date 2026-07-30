@@ -280,6 +280,8 @@ nav:
   - Mappings:
       - Index: mappings/index.md
       - ATT&CK: mappings/attack.md
+      - D3FEND: mappings/d3fend.md
+      - Engage: mappings/engage.md
       - NIST: mappings/nist.md
       - IEC 62443: mappings/iec-62443.md
   - Registry: registry.md

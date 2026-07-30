@@ -59,5 +59,10 @@
   },
   "uhqs": 43.87,
   "grade": "F",
-  "notes": "Evaluation proof only. HellPot product name is not a UHBS requirement. Full lab artifacts: docs/conformance/reports/HellPot/."
+  "notes": "Evaluation proof only. HellPot product name is not a UHBS requirement. Full lab artifacts: docs/conformance/reports/HellPot/.",
+  "framework_refs": {
+    "attack": ["T1595", "T1499"],
+    "d3fend": ["D3-DNR", "D3-SHN"],
+    "engage_goals": ["Affect", "Expose"]
+  }
 }
