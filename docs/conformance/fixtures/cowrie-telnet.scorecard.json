@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.3.0",
+  "uhbs_version": "4.3.5",
   "target": {
     "name": "Cowrie (Telnet :2223)",
     "class": "Low-Interaction",

@@ -1,18 +1,21 @@
 #!/usr/bin/env python3
-"""Calculate UHQS 4.3.0 from report.json or explicit module scores."""
+"""Calculate UHQS 4.3.5 from report.json or explicit module scores."""
 
 from __future__ import annotations
 
 import argparse
 import json
-import sys
 from pathlib import Path
 
 from uhbs_core.models import compute_uhqs
 
 
 def main() -> int:
-    p = argparse.ArgumentParser(description="UHQS 4.3.0 composite score")
+    from uhbs_core.notices import print_lab_sandbox_notice
+
+    print_lab_sandbox_notice()
+
+    p = argparse.ArgumentParser(description="UHQS 4.3.5 composite score")
     p.add_argument("--input", help="report.json with modules[] or scores{}")
     p.add_argument("--output", default="report.json")
     p.add_argument("--protocol", type=float, dest="s_a", help="Module A score")
@@ -53,14 +56,18 @@ def main() -> int:
             scores[key] = val
 
     if not scores:
-        print("no scores provided", file=sys.stderr)
+        from uhbs_core.termui import echo_error
+
+        echo_error("no scores provided")
         return 2
 
     uhqs = compute_uhqs(scores, target=args.target, profile_class=args.profile_class)
     out = {**payload, "scores": scores, "uhqs": uhqs.to_dict()}
     Path(args.output).write_text(json.dumps(out, indent=2), encoding="utf-8")
-    print(
-        f"UHQS 4.3.0 = {uhqs.uhqs}  grade={uhqs.grade}  δ_C={uhqs.delta_c}  "
+    from uhbs_core.termui import echo_ok
+
+    echo_ok(
+        f"UHQS 4.3.5 = {uhqs.uhqs}  grade={uhqs.grade}  δ_C={uhqs.delta_c}  "
         f"A={uhqs.S_A} B={uhqs.S_B} C_telem={uhqs.S_C} C_gate={uhqs.C} "
         f"E={uhqs.S_E} F={uhqs.S_F} class={uhqs.profile_class}"
     )

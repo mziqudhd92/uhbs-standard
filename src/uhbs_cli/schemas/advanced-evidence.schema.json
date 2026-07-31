@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mziqudhd92/uhbs-standard/raw/main/schemas/advanced-evidence.schema.json",
+  "title": "UHBS Advanced Evidence Profile — Addendum",
+  "description": "Calculated AEP metrics with uncertainty. Informative only; never mutates UHQS.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "aep_version",
+    "uhbs_version",
+    "experiment_id",
+    "status",
+    "control_status",
+    "metrics",
+    "sample",
+    "provenance",
+    "uhqs_unchanged",
+    "warnings"
+  ],
+  "properties": {
+    "aep_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "uhbs_version": {
+      "type": "string",
+      "const": "4.3.5"
+    },
+    "experiment_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": ["valid", "inconclusive", "control_failed"]
+    },
+    "control_status": {
+      "type": "string",
+      "enum": ["passed", "failed", "not_required", "missing"]
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "vod": { "$ref": "#/$defs/metricBlock" },
+        "dtdr": { "$ref": "#/$defs/metricBlock" },
+        "eer": { "$ref": "#/$defs/metricBlock" },
+        "fsv": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "layers": {
+              "type": "object",
+              "additionalProperties": { "$ref": "#/$defs/fsvLayer" }
+            },
+            "global_scalar_emitted": {
+              "type": "boolean",
+              "const": false
+            },
+            "notes": { "type": "string" }
+          }
+        }
+      }
+    },
+    "sample": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["per_arm", "censoring_rate"],
+      "properties": {
+        "per_arm": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["n", "censored"],
+            "properties": {
+              "n": { "type": "integer", "minimum": 0 },
+              "censored": { "type": "integer", "minimum": 0 }
+            }
+          }
+        },
+        "censoring_rate": { "type": "number", "minimum": 0, "maximum": 1 },
+        "exclusions": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tool", "tool_version", "analysis_seed", "generated_at"],
+      "properties": {
+        "tool": { "type": "string", "const": "uhbs aep" },
+        "tool_version": { "type": "string", "minLength": 1 },
+        "analysis_seed": { "type": "integer" },
+        "generated_at": { "type": "string", "format": "date-time" },
+        "experiment_path": { "type": ["string", "null"] },
+        "trials_path": { "type": ["string", "null"] },
+        "scorecard_ref": { "type": ["string", "null"] },
+        "bootstrap_samples": { "type": "integer", "minimum": 0 },
+        "confidence": { "type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 1 }
+      }
+    },
+    "uhqs_unchanged": {
+      "type": "boolean",
+      "const": true,
+      "description": "AEP never mutates the linked scorecard or UHQS."
+    },
+    "interpretation": {
+      "type": "string"
+    },
+    "limitations": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "warnings": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "$defs": {
+    "interval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["low", "high", "confidence"],
+      "properties": {
+        "low": { "type": ["number", "null"] },
+        "high": { "type": ["number", "null"] },
+        "confidence": { "type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 1 }
+      }
+    },
+    "metricBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "unit", "n", "status"],
+      "properties": {
+        "value": { "type": ["number", "null"] },
+        "unit": { "type": "string" },
+        "n": { "type": "integer", "minimum": 0 },
+        "interval": { "$ref": "#/$defs/interval" },
+        "status": {
+          "type": "string",
+          "enum": ["valid", "inconclusive", "control_failed", "not_computed"]
+        },
+        "details": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "notes": { "type": "string" }
+      }
+    },
+    "fsvLayer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["n", "tpr", "fpr", "balanced_accuracy", "status"],
+      "properties": {
+        "n": { "type": "integer", "minimum": 0 },
+        "tp": { "type": "integer", "minimum": 0 },
+        "fp": { "type": "integer", "minimum": 0 },
+        "tn": { "type": "integer", "minimum": 0 },
+        "fn": { "type": "integer", "minimum": 0 },
+        "tpr": { "type": ["number", "null"] },
+        "fpr": { "type": ["number", "null"] },
+        "balanced_accuracy": { "type": ["number", "null"] },
+        "interval_tpr": { "$ref": "#/$defs/interval" },
+        "interval_fpr": { "$ref": "#/$defs/interval" },
+        "status": {
+          "type": "string",
+          "enum": ["valid", "inconclusive", "control_failed", "not_computed"]
+        }
+      }
+    }
+  }
+}

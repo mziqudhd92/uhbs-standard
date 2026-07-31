@@ -8,6 +8,18 @@ official JSON Schemas, enforces class→weight tables, and recomputes UHQS.
 For the full executable Modules A–F harness, see
 [Reference Implementation](../reference-implementation.md).
 
+When a command runs, the CLI prints this notice on **stderr** (stdout stays clean
+for JSON / machine output):
+
+```text
+NOTICE: UHBS/AEP are for lab/sandbox evaluation of decoys. Do not run them against production or unauthorized real services.
+```
+
+Human-facing lines (NOTICE / OK / ERROR) use ANSI colors when stderr/stdout is a
+TTY. Disable with `NO_COLOR=1`; force with `FORCE_COLOR=1`. No extra color
+library is required (Click is already a dependency; styling is in
+`uhbs_core.termui`).
+
 ## Install
 
 ```bash
@@ -29,7 +41,7 @@ uhbs-lab --help
 # uhbs-lab --inventory … --protocol mcp --tps …/mcp_server.yaml --out ./reports/mcp
 ```
 
-Built-in protocols in v4.3.0 (**36**): `bluetooth`, `dhcp`, `dns`, `ftp`,
+Built-in protocols in v4.3.5 (**36**): `bluetooth`, `dhcp`, `dns`, `ftp`,
 `generic`, `git`, `http`, `httpproxy`, `imap`, `ipp`, `irc`, `kubernetes`,
 `ldap`, `mcp`, `memcache`, `modbus`, `mongodb`, `mssql`, `mysql`, `ntp`,
 `oracle`, `pjl`, `pop3`, `postgres`, `rdp`, `redis`, `s7comm`, `sip`, `smb`,
@@ -51,21 +63,44 @@ uhbs-mcp   # stdio JSON-RPC (or: python -m uhbs_mcp)
 
 Full guide: [MCP server](mcp.md) · registry metadata: repo-root `server.json`.
 
+### Optional Advanced Evidence Profile (AEP)
+
+Offline analysis of **local** controlled-trial evidence. Does **not** change UHQS
+and never launches attacks, probes, containers, or network connections.
+
+```bash
+pip install -e ".[aep]"   # or: pip install 'uhbs[aep]'
+uhbs aep --help
+uhbs aep example beginner --out aep-beginner   # packaged synthetic fixture
+uhbs aep init --class Web-API --out aep-experiment/
+uhbs aep validate aep-experiment/experiment.yaml
+uhbs aep validate-trials aep-experiment/trials.jsonl --experiment aep-experiment/experiment.yaml
+uhbs aep analyze --experiment aep-experiment/experiment.yaml \
+  --trials aep-experiment/trials.jsonl --out advanced-evidence.json
+uhbs aep report advanced-evidence.json --format markdown --out ADVANCED-EVIDENCE.md
+```
+
+Extras at a glance: `uhbs[lab]` (live harness) · `uhbs[mcp]` (AI-host tools) ·
+`uhbs[aep]` (offline evidence). Full guide:
+[AEP CLI](../advanced-evidence/cli.md) ·
+[Beginner tutorial](../advanced-evidence/tutorial-beginner.md) ·
+[Advanced tutorial](../advanced-evidence/tutorial-advanced.md).
+
 ### Docker image
 
 Build once from the repository root:
 
 ```bash
-docker build -t uhbs:4.3.0 .
+docker build -t uhbs:4.3.5 .
 ```
 
 The image entrypoint is `uhbs`. Mount your project at `/work`:
 
 ```bash
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.0 --help
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.0 \
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.5 --help
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.5 \
   validate-scorecard ./docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.0 lab --list-protocols
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.5 lab --list-protocols
 ```
 
 For live Modules A–E probes, point `--target` at a host reachable from the

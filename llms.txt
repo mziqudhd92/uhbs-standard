@@ -1,6 +1,6 @@
 # Universal Honeypot Benchmarking Standard (UHBS)
 
-> Open-source beta-status framework (v4.3.0, Apache-2.0) for vendor-neutral honeypot / deception evaluation (UHQS 0–100 + Safety Gate). Not a consortium standard.
+> Open-source beta-status framework (v4.3.5, Apache-2.0) for vendor-neutral honeypot / deception evaluation (UHQS 0–100 + Safety Gate). Not a consortium standard.
 
 This file is the **repository** agent index (AEO/GEO for coding assistants). The published site mirror is https://mziqudhd92.github.io/uhbs-standard/llms.txt (landing) · https://mziqudhd92.github.io/uhbs-standard/mkdocs/llms.txt (MkDocs)
 
@@ -20,6 +20,9 @@ This file is the **repository** agent index (AEO/GEO for coding assistants). The
 - [profile.schema.json](https://github.com/mziqudhd92/uhbs-standard/blob/main/schemas/profile.schema.json): TPS schema
 - [scorecard.schema.json](https://github.com/mziqudhd92/uhbs-standard/blob/main/schemas/scorecard.schema.json): Scorecard schema
 - [evidence-pack.schema.json](https://github.com/mziqudhd92/uhbs-standard/blob/main/schemas/evidence-pack.schema.json): Evidence pack schema
+- [aep-experiment.schema.json](https://github.com/mziqudhd92/uhbs-standard/blob/main/schemas/aep-experiment.schema.json): Optional AEP experiment manifest
+- [aep-trial.schema.json](https://github.com/mziqudhd92/uhbs-standard/blob/main/schemas/aep-trial.schema.json): Optional AEP trial event
+- [advanced-evidence.schema.json](https://github.com/mziqudhd92/uhbs-standard/blob/main/schemas/advanced-evidence.schema.json): Optional AEP addendum output
 
 ## Implementation
 
@@ -34,6 +37,10 @@ This file is the **repository** agent index (AEO/GEO for coding assistants). The
 
 ## Optional
 
+- [Advanced Evidence Profile](https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/): Lab-only offline evidence layer (does not change UHQS; not production testing)
+- [AEP research credits](https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/research-foundations/): Zhu 2019 · Collins et al. 2024 · Ersok et al. 2022 · Li et al. 2020
+- [AEP CLI](https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/cli/): `pip install 'uhbs[aep]'` · `uhbs aep …`
+- [Related frameworks](https://mziqudhd92.github.io/uhbs-standard/mkdocs/mappings/related-frameworks/): Evidence-graded comparison vs 14 framework families
 - [AGENTS.md](https://github.com/mziqudhd92/uhbs-standard/blob/main/AGENTS.md): Guidance for coding agents working in this repo
 - [GOVERNANCE.md](https://github.com/mziqudhd92/uhbs-standard/blob/main/GOVERNANCE.md): Honest project notes (no fake committee)
 - [SECURITY.md](https://github.com/mziqudhd92/uhbs-standard/blob/main/SECURITY.md): Report vulns via GitHub Security Advisories

@@ -121,7 +121,7 @@ Until PyPI publish, prefer the editable git install above.
 
 ### Docker grading image
 
-The published `uhbs:4.3.0` / `uhbs:4.3.0-full` images install `uhbs[lab]` only
+The published `uhbs:4.3.5` / `uhbs:4.3.5-full` images install `uhbs[lab]` only
 (CLI + harness). They do **not** ship `uhbs-mcp`. Run the MCP server on the host
 (or a dedicated venv) next to your AI client.
 
@@ -173,5 +173,12 @@ pip install -c constraints.txt -e ".[mcp,dev]"
 pytest tests/test_mcp.py -q
 uhbs validate-scorecard docs/conformance/fixtures/opencanary-web-api.scorecard.json --strict
 ```
+
+### Advanced Evidence Profile (analysis-only boundary)
+
+If AEP is later exposed through MCP, tools must remain **local schema validation,
+deterministic calculation, and report rendering** only — never lab, network,
+shell, container, agent, or attack execution. Today AEP is CLI-only:
+[Advanced Evidence Profile](../advanced-evidence/index.md).
 
 See also: [CLI & Validator](cli.md) · [llms.txt](https://github.com/mziqudhd92/uhbs-standard/blob/main/llms.txt) · [AGENTS.md](https://github.com/mziqudhd92/uhbs-standard/blob/main/AGENTS.md)

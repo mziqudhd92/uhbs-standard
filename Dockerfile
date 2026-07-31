@@ -1,6 +1,6 @@
 # UHBS grading toolkit — validate TPS/scorecards and run the UHBS-Lab harness.
-# Build:  docker build -t uhbs:4.3.0 .
-# Run:    docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.0 validate-scorecard ./scorecard.json
+# Build:  docker build -t uhbs:4.3.5 .
+# Run:    docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.5 validate-scorecard ./scorecard.json
 #
 # MCP (uhbs-mcp) is intentionally NOT in this image — AI hosts should install
 # uhbs[mcp] on the host. See docs/tooling/mcp.md.
@@ -8,7 +8,7 @@ FROM python:3.12-slim-bookworm
 
 LABEL org.opencontainers.image.title="UHBS"
 LABEL org.opencontainers.image.description="Universal Honeypot Benchmarking Standard — CLI + Lab harness"
-LABEL org.opencontainers.image.version="4.3.0"
+LABEL org.opencontainers.image.version="4.3.5"
 LABEL org.opencontainers.image.source="https://github.com/mziqudhd92/uhbs-standard"
 LABEL org.opencontainers.image.licenses="Apache-2.0"
 

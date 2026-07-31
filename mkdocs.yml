@@ -4,7 +4,7 @@ site_url: https://mziqudhd92.github.io/uhbs-standard/mkdocs/
 repo_url: https://github.com/mziqudhd92/uhbs-standard
 repo_name: mziqudhd92/uhbs-standard
 edit_uri: edit/main/docs/
-copyright: UHBS v4.3.0 — beta-status evaluation framework (Apache-2.0)
+copyright: UHBS v4.3.5 — beta-status evaluation framework (Apache-2.0)
 
 theme:
   name: material
@@ -284,6 +284,18 @@ nav:
       - Engage: mappings/engage.md
       - NIST: mappings/nist.md
       - IEC 62443: mappings/iec-62443.md
+      - Related frameworks: mappings/related-frameworks.md
+  - Advanced Evidence (optional):
+      - Overview: advanced-evidence/index.md
+      - Methodology: advanced-evidence/methodology.md
+      - Metrics: advanced-evidence/metrics.md
+      - Runbook: advanced-evidence/runbook.md
+      - Reporting: advanced-evidence/reporting.md
+      - CLI Reference: advanced-evidence/cli.md
+      - Beginner tutorial: advanced-evidence/tutorial-beginner.md
+      - Advanced tutorial: advanced-evidence/tutorial-advanced.md
+      - Research foundations & credits: advanced-evidence/research-foundations.md
+      - Improvement notes: advanced-evidence/improvement-notes.md
   - Registry: registry.md
   - Tooling:
       - CLI & Validator: tooling/cli.md

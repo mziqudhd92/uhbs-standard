@@ -7,231 +7,289 @@
 [![PyPI](https://img.shields.io/pypi/v/uhbs.svg)](https://pypi.org/project/uhbs/)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21631156-blue)](https://doi.org/10.5281/zenodo.21631156)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![Spec](https://img.shields.io/badge/Specification-v4.3.0-indigo.svg)](docs/specification/core-principles.md)
+[![Spec](https://img.shields.io/badge/Specification-v4.3.5-indigo.svg)](docs/specification/core-principles.md)
 [![UHQS](https://img.shields.io/badge/UHQS-0%E2%80%93100-success.svg)](docs/specification/scoring-formula.md)
 
-> An objective, repeatable, quantitative methodology for deception technology evaluation — an open-source **beta-status** framework for comparing and grading honeypots and decoy systems by class and protocol.
+> Open-source **beta** framework for **lab / sandbox** evaluation of honeypots and decoys — vendor-neutral UHQS scoring (0–100) with a non-linear Safety Gate.
 
-**UHBS v4.3.0** is a protocol-agnostic, **vendor-neutral** evaluation framework for measuring deception realism, safety containment, operational scale, and telemetry quality. It is **not** an industry consortium standard or multi-party governed body — see [ROADMAP.md](ROADMAP.md) for what maturity would require.
+**UHBS v4.3.5** measures deception realism, containment, scale, and telemetry quality by **class and protocol**. It is **not** an industry consortium standard or multi-party governed body. See [ROADMAP.md](ROADMAP.md) for maturity goals.
+
+| | |
+| --- | --- |
+| **Docs** | [Landing](https://mziqudhd92.github.io/uhbs-standard/) · [MkDocs](https://mziqudhd92.github.io/uhbs-standard/mkdocs/) |
+| **PyPI** | [`uhbs`](https://pypi.org/project/uhbs/) |
+| **Python** | ≥ 3.11 |
+| **License** | [Apache-2.0](LICENSE) |
+
+> **NOTICE:** UHBS/AEP are for **lab/sandbox evaluation of decoys**. Do **not** run them against production or unauthorized real services. CLI tools print this reminder on stderr when commands run.
+
+## Table of contents
+
+- [Project status](#project-status)
+- [What you get](#what-you-get)
+- [Install](#install)
+- [Quickstart](#quickstart)
+- [Demo](#demo)
+- [Scoring (UHQS)](#scoring-uhqs)
+- [Optional Advanced Evidence Profile (AEP)](#optional-advanced-evidence-profile-aep)
+- [Documentation map](#documentation-map)
+- [Repository layout](#repository-layout)
+- [Contributing](#contributing)
+- [Security](#security)
+- [Citation](#citation)
+- [License](#license)
 
 ## Project status
 
-**Status:** Beta / Experimental ([specification status](docs/specification/status.md)).
+**Status:** Beta / Experimental — [specification status](docs/specification/status.md)
 
-- **Author / maintainer:** [@mziqudhd92](https://github.com/mziqudhd92) — see [MAINTAINERS.md](MAINTAINERS.md)
-- **Governance claims:** no Steering Committee, no independent adopter list yet — those are [roadmap goals](ROADMAP.md#phase-6--community-maturity-aspirational--not-done)
-- **Suggested use:** organizations **MAY** use the Production Baseline Profile (**UHQS > 80** + passing Safety Gate) as an *internal* evaluation gate; that is a recommendation in the beta, not a mandate from any standards body
-
-## Why UHBS?
-
-| Pillar | What it delivers |
+| Topic | Reality today |
 | --- | --- |
-| **Protocol-Agnostic** | Architecture-neutral testing across IT, OT/ICS, AI, and Cloud |
-| **Vendor-Neutral** | Class- and protocol-based evaluation — no product or brand endorsements |
-| **Quantitative Scoring** | Normalized **UHQS 0–100** composite with a non-linear Safety Gate |
-| **Six Evaluation Modules** | Modules A–F covering fidelity, behavior, telemetry, safety, scale, and audit |
-| **Production Baseline** | **UHQS > 80** suggested as an internal gate (RECOMMENDED in the beta) |
+| Maintainer | [@mziqudhd92](https://github.com/mziqudhd92) — [MAINTAINERS.md](MAINTAINERS.md) |
+| Governance | Single maintainer; no Steering Committee yet — [Phase 6 roadmap](ROADMAP.md#phase-6--community-maturity-aspirational--not-done) |
+| Evaluation scope | **Laboratory / sandbox only** |
+| Suggested internal gate | After lab grading, orgs **MAY** use **UHQS > 80** + passing Safety Gate before *they* deploy a decoy — not a standards-body mandate |
 
-> **Vendor-neutral** beta framework: compare any deception by class and protocol.
-> Install from PyPI: `pip install 'uhbs[lab]'` → `uhbs-lab` / `uhbs lab`
-> (`uhbs lab --list-protocols` → **36** built-in protocols in v4.3.0).
-> Named product proof lives only under [conformance fixtures](docs/conformance/index.md).
-> Maturity goals (committee, adopters, neutral org): [ROADMAP.md](ROADMAP.md).
+## What you get
 
-## Demo
+| Capability | Package / surface |
+| --- | --- |
+| Spec + schemas (TPS, scorecard, evidence) | Repo `docs/` · `schemas/` |
+| Validate profiles & scorecards; recompute UHQS | `pip install uhbs` → `uhbs` |
+| Live Modules A–F lab harness (**36** protocols) | `pip install 'uhbs[lab]'` → `uhbs lab` / `uhbs-lab` |
+| AI-host MCP tools (validate/score fixtures; no live probes) | `pip install 'uhbs[mcp]'` → `uhbs-mcp` |
+| Offline Advanced Evidence Profile (optional; does not change UHQS) | `pip install 'uhbs[aep]'` → `uhbs aep` |
+| Published lab grades / fixtures | [docs/conformance/](docs/conformance/index.md) |
 
-Terminal walkthrough: install UHBS + Cowrie/Conpot, start the decoys, then run
-full UHQS grades (Cowrie SSH · Conpot Modbus · HellPot HTTP).
+**Vendor neutrality:** normative docs use classes and protocols. Named products appear only under conformance as evaluation **proof**, not as UHBS requirements.
 
-![UHBS lab demo — install honeypots + full UHQS](docs/assets/uhbs-lab-demo.gif)
+| Pillar | Detail |
+| --- | --- |
+| Protocol-agnostic | IT, OT/ICS, AI, and cloud decoy classes |
+| Quantitative | UHQS 0–100 with Safety Gate \(\delta_C\) from Module D |
+| Dual-plane | Static audit (F) + dynamic Modules A–E |
+| Optional AEP | Lab decoy-vs-reference evidence (VoD, FSV, DTDR, EER) |
 
-Replay source: [`docs/assets/uhbs-lab-demo.cast`](docs/assets/uhbs-lab-demo.cast)
-(`asciinema play docs/assets/uhbs-lab-demo.cast`).
+## Install
+
+```bash
+python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+
+# Core CLI (validate / score)
+pip install uhbs
+
+# Common lab install
+pip install 'uhbs[lab]'
+
+# Optional extras (install only what you need)
+pip install 'uhbs[mcp]'   # AI-host MCP server
+pip install 'uhbs[aep]'   # offline Advanced Evidence Profile
+pip install 'uhbs[all]'   # lab + mcp + scapy (convenience; still not an attack runner)
+```
+
+| Extra | Purpose |
+| --- | --- |
+| *(none)* | Validators + UHQS math |
+| `lab` | Controlled live Modules A–F harness |
+| `mcp` | Local AI-host scorecard tools (stdio MCP) |
+| `aep` | Offline advanced evidence analysis |
+| `scapy` | Optional protocol-encoding backend |
+| `dev` | pytest, ruff, mypy (+ lab/mcp for contributors) |
+| `all` | `lab` + `mcp` + `scapy` |
+
+Development checkout:
+
+```bash
+git clone https://github.com/mziqudhd92/uhbs-standard.git
+cd uhbs-standard
+pip install -e ".[lab,dev]"
+# optional: pip install -e ".[aep,mcp]"
+pytest -q
+```
 
 ## Quickstart
 
-```bash
-# Official PyPI install (CLI + lab harness)
-pip install 'uhbs[lab]'
-
-# Optional: AI-host MCP tools (validate/score fixtures — no live lab probes)
-pip install 'uhbs[mcp]'
-```
-
-Validate a honeypot against a Target Profile Specification (`profile.yaml`):
+### 1. Validate a profile or scorecard
 
 ```bash
-# From a checkout (templates live in the repo) or your own profile file
-cp templates/profile.yaml ./my-honeypot.profile.yaml   # if you cloned the repo
+# From a git checkout (templates ship in the repo)
+cp templates/profile.yaml ./my-honeypot.profile.yaml
 uhbs validate-profile my-honeypot.profile.yaml
-```
 
-From a git checkout (editable / development):
-
-```bash
-pip install -e ".[lab,dev]"
-```
-
-Run a full scorecard validation once your audit harness produces results:
-
-```bash
 uhbs validate-scorecard path/to/scorecard.json
-uhbs score --profile my-honeypot.profile.yaml --scores scores.json
+uhbs score --class Low-Interaction --scores scores.json
 ```
 
-### MCP (AI hosts — Cursor, Claude, VS Code, …)
+### 2. Run the lab harness (isolated decoy only)
 
-Install the optional MCP extra so agents can call validators / UHQS scoring over
-the [Model Context Protocol](https://modelcontextprotocol.io/) (local stdio):
+```bash
+pip install 'uhbs[lab]'
+uhbs lab --list-protocols
+# Example shape — point only at a lab decoy you control:
+# uhbs lab --tps low_interaction --protocol ssh \
+#   --target 127.0.0.1 --port 2222 --out ./.local/bench-reports/my-target
+```
+
+### 3. Optional AEP (offline lab evidence)
+
+```bash
+pip install 'uhbs[aep]'
+uhbs aep example beginner --out aep-beginner
+uhbs aep validate aep-beginner/experiment.yaml
+uhbs aep analyze --experiment aep-beginner/experiment.yaml \
+  --trials aep-beginner/trials.jsonl \
+  --scorecard aep-beginner/linked-scorecard.json \
+  --out advanced-evidence.json
+uhbs aep report advanced-evidence.json --format markdown --out ADVANCED-EVIDENCE.md
+```
+
+### MCP for AI hosts (Cursor, Claude, VS Code, …)
 
 ```bash
 pip install 'uhbs[mcp]'
-# Configure your host — see docs/tooling/mcp.md
-# Cursor / Claude example uses: uhbs-mcp  or  python -m uhbs_mcp
-# Set UHBS_ROOT to a checkout if you need fixtures/docs from the repo
+# Configure the host — see docs/tooling/mcp.md
+# uhbs-mcp   or:  python -m uhbs_mcp
 ```
 
-Registry metadata: [`server.json`](server.json). Live Docker lab probes stay on the CLI (`uhbs lab`), not MCP.
+Registry metadata: [`server.json`](server.json). Live lab probes stay on `uhbs lab`, not the AI-host MCP server.
 
-### Docker (grade without a local Python install)
+Grade **MCP honeypot** surfaces (JSON-RPC over HTTP/SSE) with the in-tree `mcp` **protocol plugin** (`uhbs[lab]`) — different from the AI-host server above. See [MCP honeypot grading](docs/architecture/mcp-honeypot-grading.md).
 
-Build the grading image (CLI + UHBS-Lab harness):
-
-```bash
-docker build -t uhbs:4.3.0 .
-# or: docker compose build
-```
-
-Mount your working directory at `/work` and pass the same `uhbs` commands:
+### Docker
 
 ```bash
-# Validate a scorecard on disk
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.0 \
+docker build -t uhbs:4.3.5 .
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.5 \
   validate-scorecard ./docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
-
-# Compute UHQS from module scores
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.0 \
-  score --class Low-Interaction --scores ./scores.json
-
-# List protocol plugins / run a lab probe against a reachable honeypot
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.0 lab --list-protocols
-docker run --rm -v "$PWD:/work" -w /work \
-  -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 \
-  uhbs:4.3.0 lab \
-    --tps low_interaction \
-    --protocol ssh \
-    --target host.docker.internal --port 2222 \
-    --source-root /work \
-    --phases profile,static,dynamic,score \
-    --quick \
-    --out /work/.local/bench-reports/my-target
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.5 lab --list-protocols
 ```
 
-Compose shorthand: `docker compose run --rm uhbs validate-profile ./my-honeypot.profile.yaml`.
+Compose: `docker compose run --rm uhbs validate-profile ./my-honeypot.profile.yaml`.
 
-Documentation site: **[https://mziqudhd92.github.io/uhbs-standard/](https://mziqudhd92.github.io/uhbs-standard/)** (landing hub) · **[docs / MkDocs](https://mziqudhd92.github.io/uhbs-standard/mkdocs/)**  
-Maturity roadmap: **[ROADMAP.md](ROADMAP.md)** · Reference harness: **[docs/reference-implementation.md](docs/reference-implementation.md)** · CLI guide: **[docs/tooling/cli.md](docs/tooling/cli.md)**
+## Demo
 
-### Discovery for search & AI agents (SEO / AEO / GEO)
+Terminal walkthrough: install UHBS + Cowrie/Conpot, start lab decoys, full UHQS
+(Cowrie SSH · Conpot Modbus · HellPot HTTP).
 
-| File | Purpose |
-| --- | --- |
-| [llms.txt](llms.txt) (repo) · [site llms.txt](https://mziqudhd92.github.io/uhbs-standard/llms.txt) | Curated index for coding / answer agents |
-| [AGENTS.md](AGENTS.md) | Rules for assistants editing this repo |
-| [CITATION.cff](CITATION.cff) | Formal citation metadata |
-| Site [robots.txt](https://mziqudhd92.github.io/uhbs-standard/robots.txt) · [sitemap.xml](https://mziqudhd92.github.io/uhbs-standard/mkdocs/sitemap.xml) | Crawler hints |
+![UHBS lab demo — install honeypots + full UHQS](docs/assets/uhbs-lab-demo.gif)
 
-## Scoring Summary (UHQS 4.3.0)
+Replay: [`docs/assets/uhbs-lab-demo.cast`](docs/assets/uhbs-lab-demo.cast)
+(`asciinema play docs/assets/uhbs-lab-demo.cast`).
 
-The **Universal Honeypot Quality Score (UHQS)** is a normalized composite from **0 to 100**:
+## Scoring (UHQS)
+
+The **Universal Honeypot Quality Score** is a normalized composite **0–100**:
 
 \[
 \mathrm{UHQS} = \delta_C \cdot (w_A S_A + w_B S_B + w_C S_C + w_E S_E + w_F S_F)
 \]
 
-- \(S_A \ldots S_F\) — normalized module scores (0–100)
-- \(w_A \ldots w_F\) — profile-adaptive weights (sum to 1.00)
-- \(\delta_C\) — **Safety Gate** from Module D (Containment):  
-  \(\delta_C = 1.0\) if \(C \ge 95\); otherwise \(\delta_C = (C/100)^2\)
-
-Production deployment requires **UHQS > 80** and a passing Safety Gate. A decoy with excellent deception scores can still fail evaluation if Module D falls below the gate. See [Scoring Formula](docs/specification/scoring-formula.md).
-
-## Audit Workflow (5 Phases)
-
-```text
-┌─────────────┐   ┌─────────────┐   ┌─────────────┐   ┌─────────────┐   ┌─────────────┐
-│  Phase 1    │──▶│  Phase 2    │──▶│  Phase 3    │──▶│  Phase 4    │──▶│  Phase 5    │
-│  Profile &  │   │  Static     │   │  Sandbox    │   │  Dynamic    │   │  Score &    │
-│  Config     │   │  Audit (F)  │   │  Provision  │   │  Modules A–E│   │  Report     │
-└─────────────┘   └─────────────┘   └─────────────┘   └─────────────┘   └─────────────┘
-```
-
-1. **Configuration & Profile Setup** — Define `profile.yaml`, protocol expectations, baselines  
-2. **Static Audit Execution** — Analyze repository, container build manifests, and system prompts  
-3. **Sandbox Environment Provisioning** — Isolated runtime with egress monitors  
-4. **Dynamic Adversarial Execution** — Modules A–E via automated harnesses  
-5. **Score Computation & Reporting** — Apply \(\delta_C\) and emit the standard scorecard  
-
-## Repository Layout
-
-```text
-uhbs-standard/
-├── docs/                 # Website + Docs-as-Code (MkDocs → GitHub Pages)
-│   └── conformance/
-│       ├── fixtures/     # Sanitized scorecard JSON
-│       └── reports/      # Quick + full lab artifacts + tutorials (named proof)
-├── schemas/              # JSON Schemas for profiles & scorecards
-├── templates/            # Starter profile.yaml for framework users
-├── src/uhbs_cli/         # Validation CLI
-├── src/uhbs_core/        # UHBS-Lab reference harness
-├── Dockerfile            # Grading image (uhbs CLI + lab)
-├── Dockerfile.full       # Grading image + Module F SAST tools
-├── docker-compose.yml    # Mount-cwd helper for the grading image
-├── GOVERNANCE.md         # Project notes (current maintainer; not a committee)
-├── SECURITY.md           # Vulnerability disclosure policy
-└── CITATION.cff          # Citation metadata
-```
-
-## Modules at a Glance
+| Symbol | Meaning |
+| --- | --- |
+| \(S_A \ldots S_F\) | Module scores 0–100 |
+| \(w_A \ldots w_F\) | Profile-adaptive weights (sum to 1.00) |
+| \(\delta_C\) | Safety Gate from Module D: \(1.0\) if \(C \ge 95\), else \((C/100)^2\) |
 
 | Module | Focus |
 | --- | --- |
-| **A** | Protocol & Syntax Fidelity |
-| **B** | Behavioral & Stateful Realism |
-| **C** | Telemetry Quality & Pipeline Resilience |
-| **D** | Safety, Containment & Boundary Controls (**Safety Gate**) |
-| **E** | Scalability, Latency & Stress Performance |
-| **F** | White-Box Static Code Audit |
+| **A** | Protocol & syntax fidelity |
+| **B** | Behavioral & stateful realism |
+| **C** | Telemetry quality & pipeline resilience |
+| **D** | Safety, containment & boundary controls (**Safety Gate**) |
+| **E** | Scalability, latency & stress |
+| **F** | White-box static code audit |
 
-## Embed Your Grade
+A decoy with strong deception scores can still fail lab evaluation if Module D is weak. Normative math: [`uhqs_math.py`](src/uhbs_core/uhqs_math.py) · [scoring formula](docs/specification/scoring-formula.md).
 
-After publishing an official scorecard, maintainers can embed:
+### Lab audit workflow (5 phases)
+
+```text
+Profile & config → Static audit (F) → Sandbox provision → Dynamic A–E → Score & report
+```
+
+## Optional Advanced Evidence Profile (AEP)
+
+UHQS remains the normative lab grade. **AEP** is an optional, informative layer for
+controlled **lab** decoy-vs-reference experiments. **AEP does not change UHQS.**
+
+| When | Use |
+| --- | --- |
+| Lab release / conformance | UHBS scorecard alone |
+| Comparative lab study | Add AEP (`VoD`, `FSV`, `DTDR`, `EER` + uncertainty) |
+
+- Offline analysis of local experiment/trial files only — no attack launch
+- Status vocabulary: `valid | inconclusive | control_failed` (not letter grades)
+- Packaged examples: `uhbs aep example beginner|advanced|template`
+
+**Academic credit** (citation ≠ endorsement): Zhu (2019), Collins et al. (2024),
+Ersok et al. (2022), Li et al. (2020) — full ledger:
+[Research foundations & credits](https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/research-foundations/).
+
+| Doc | URL |
+| --- | --- |
+| Overview | https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/ |
+| Beginner tutorial | https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/tutorial-beginner/ |
+| CLI | https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/cli/ |
+| Related frameworks | https://mziqudhd92.github.io/uhbs-standard/mkdocs/mappings/related-frameworks/ |
+
+## Documentation map
+
+| Resource | Link |
+| --- | --- |
+| Landing hub | https://mziqudhd92.github.io/uhbs-standard/ |
+| Specification | https://mziqudhd92.github.io/uhbs-standard/mkdocs/specification/core-principles/ |
+| CLI guide | [docs/tooling/cli.md](docs/tooling/cli.md) |
+| MCP (AI hosts) | [docs/tooling/mcp.md](docs/tooling/mcp.md) |
+| Reference harness | [docs/reference-implementation.md](docs/reference-implementation.md) |
+| Conformance & lab reports | [docs/conformance/index.md](docs/conformance/index.md) |
+| Framework mappings | [docs/mappings/index.md](docs/mappings/index.md) |
+| Maturity roadmap | [ROADMAP.md](ROADMAP.md) |
+| Agent / SEO index | [llms.txt](llms.txt) · [AGENTS.md](AGENTS.md) |
+
+## Repository layout
+
+```text
+uhbs-standard/
+├── docs/                      # MkDocs site + conformance proof
+│   ├── advanced-evidence/     # Optional AEP docs
+│   ├── conformance/           # Fixtures, lab reports, tutorials
+│   ├── mappings/              # ATT&CK, D3FEND, Engage, related frameworks
+│   └── specification/         # Normative prose
+├── schemas/                   # JSON Schemas (scorecard, AEP, …)
+├── templates/                 # Starter TPS + AEP templates
+├── examples/advanced-evidence/# Synthetic AEP fixtures (also packaged in wheel)
+├── src/uhbs_cli/              # `uhbs` CLI (+ packaged schemas / AEP data)
+├── src/uhbs_core/             # UHBS-Lab harness + UHQS math
+├── src/uhbs_mcp/              # AI-host MCP server
+├── tests/                     # pytest suite
+├── Dockerfile                 # Grading image
+├── CONTRIBUTING.md · CODE_OF_CONDUCT.md · SECURITY.md · GOVERNANCE.md
+└── CITATION.cff
+```
+
+## Embed a published grade
+
+After you publish a scorecard (conformance / your own report), you can badge it:
 
 ```markdown
-![UHBS v4.3.0](https://img.shields.io/badge/UHBS%20v4.3.0-Grade%20A-brightgreen)
+![UHBS v4.3.5](https://img.shields.io/badge/UHBS%20v4.3.5-Grade%20A-brightgreen)
 ```
-
-## MCP honeypot grading (`uhbs[lab]`)
-
-Grade network-facing MCP decoys (JSON-RPC over HTTP/SSE) with the in-tree `mcp` protocol plugin — distinct from the AI-host MCP server in Quickstart:
-
-```bash
-pip install 'uhbs[lab]'
-uhbs-lab --list-protocols   # includes mcp
-# Lab inventories/TPS live in the git repo (or your own paths):
-uhbs-lab \
-  --inventory docs/conformance/labs/beelzebub/inventory.yaml \
-  --target beelzebub-mcp \
-  --tps docs/conformance/labs/beelzebub/web_api_mcp_quick.yaml \
-  --protocol mcp \
-  --out ./reports/mcp
-```
-
-Details: [docs/architecture/mcp-honeypot-grading.md](docs/architecture/mcp-honeypot-grading.md). PyPI: https://pypi.org/project/uhbs/
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) and [GOVERNANCE.md](GOVERNANCE.md). Specification changes go through an **RFC** process. By contributing, you agree to the [Developer Certificate of Origin (DCO)](https://developercertificate.org/) (sign-off required on commits).
+Contributions are welcome under the project’s governance constraints.
+
+1. Read [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+2. Follow [GOVERNANCE.md](GOVERNANCE.md) — specification changes use an **RFC** process
+3. Sign off commits ([DCO](https://developercertificate.org/))
+4. Run `pytest -q` and `ruff check` on touched Python before opening a PR
+
+## Security
+
+Please report vulnerabilities via [GitHub Security Advisories](https://github.com/mziqudhd92/uhbs-standard/security/advisories/new)
+per [SECURITY.md](SECURITY.md). Do not use UHBS tooling against systems you are
+not authorized to test.
 
 ## Citation
 
@@ -240,19 +298,16 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) and [GOVERNANCE.md](GOVERNANCE.md
   author = {Zavdi, Moran},
   title = {Universal Honeypot Benchmarking Standard (UHBS)},
   year = {2026},
-  version = {4.3.0},
+  version = {4.3.5},
   publisher = {Zenodo},
   doi = {10.5281/zenodo.21631156},
   url = {https://doi.org/10.5281/zenodo.21631156}
 }
 ```
 
-Or use the machine-readable [`CITATION.cff`](CITATION.cff). Concept DOI (always resolves to the latest deposit): [10.5281/zenodo.21631155](https://doi.org/10.5281/zenodo.21631155).
+Machine-readable: [`CITATION.cff`](CITATION.cff). Concept DOI (latest deposit):
+[10.5281/zenodo.21631155](https://doi.org/10.5281/zenodo.21631155).
 
 ## License
 
 Licensed under the [Apache License 2.0](LICENSE).
-
----
-
-An objective, repeatable, quantitative methodology for deception technology evaluation — providing cybersecurity professionals with a non-biased baseline for comparing and grading honeypots and decoy systems.

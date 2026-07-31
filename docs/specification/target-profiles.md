@@ -35,7 +35,7 @@ Profile-adaptive UHQS weights `w_A` … `w_F` that **must sum to 1.00**.
 See the starter template: [`templates/profile.yaml`](https://github.com/mziqudhd92/uhbs-standard/blob/main/templates/profile.yaml).
 
 ```yaml
-uhbs_version: "4.3.0"
+uhbs_version: "4.3.5"
 target_metadata:
   name: "Example POSIX Shell Decoy"
   class: "POSIX-Shell"

@@ -1,0 +1,62 @@
+aep_version: 1.0.0
+uhbs_version: 4.3.5
+experiment_id: aep-template
+name: aep-template
+hypothesis: Under matched task/budget/timeout, the decoy changes dwell time and/or
+  defender utility relative to a matched reference.
+primary_outcome: dtdr
+secondary_outcomes:
+- vod
+- eer
+- fsv
+profile_class: Web-API
+arms:
+  decoy:
+    name: decoy-under-test
+    version: 0.0.0
+    digest: ''
+  reference:
+    name: matched-reference
+    version: 0.0.0
+    digest: ''
+  evaluator_control:
+    name: capability-check
+    version: 0.0.0
+    digest: ''
+attacker_capability_tier: scripted
+task:
+  description: Complete the declared recon/exploitation task.
+  starting_knowledge: Shared starter brief for all arms.
+  success_criteria: Task completion or timeout.
+budget:
+  max_attempts: 20
+  max_unique_capabilities: 10
+  currency_unit: USD
+timeout_seconds: 600
+randomization:
+  method: shuffled_blocks
+  seed: 42
+  notes: Declare the seed used when assigning trial order.
+repetitions:
+  # Template ships one illustrative row per arm; raise both when you add trials.
+  planned_per_arm: 1
+  minimum_per_arm: 1
+utility:
+  name: simple-defender-utility
+  formula: U_D = w_detection*detection + w_intel*intelligence_yield - w_def_cost*defender_infra_cost
+  weights:
+    detection: 1.0
+    intelligence_yield: 0.5
+    defender_infra_cost: -0.1
+  notes: Replace with study-specific utilities. Never use UHQS.
+ethics:
+  human_subjects: false
+  consent_attested: false
+  privacy_minimization: Use subject pseudonyms only.
+attestations:
+  sandbox_only: true
+  no_production_assets: true
+  local_evidence_only: true
+  informative_only: true
+  notes: AEP analyzes local files only; it never launches attacks.
+notes: Fill digests and versions before publishing results.

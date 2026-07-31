@@ -1,0 +1,62 @@
+aep_version: 1.0.0
+uhbs_version: 4.3.5
+experiment_id: advanced-multi-layer
+name: advanced-multi-layer
+hypothesis: Protocol-layer detectors distinguish decoy from reference better than
+  network-layer detectors under matched conditions.
+primary_outcome: fsv
+secondary_outcomes:
+- vod
+- eer
+- fsv
+profile_class: Low-Interaction
+arms:
+  decoy:
+    name: decoy-under-test
+    version: 0.0.0
+    digest: ''
+  reference:
+    name: matched-reference
+    version: 0.0.0
+    digest: ''
+  evaluator_control:
+    name: capability-check
+    version: 0.0.0
+    digest: ''
+attacker_capability_tier: skilled
+task:
+  description: Complete the declared recon/exploitation task.
+  starting_knowledge: Shared starter brief for all arms.
+  success_criteria: Task completion or timeout.
+budget:
+  max_attempts: 20
+  max_unique_capabilities: 12
+  currency_unit: USD
+timeout_seconds: 600
+randomization:
+  method: shuffled_blocks
+  seed: 99
+  notes: Declare the seed used when assigning trial order.
+repetitions:
+  planned_per_arm: 10
+  minimum_per_arm: 5
+utility:
+  name: simple-defender-utility
+  formula: U_D = w_detection*detection + w_intel*intelligence_yield - w_def_cost*defender_infra_cost
+  weights:
+    detection: 1.0
+    intelligence_yield: 0.8
+    attacker_time_seconds: 0.01
+    defender_infra_cost: -0.2
+  notes: Replace with study-specific utilities. Never use UHQS.
+ethics:
+  human_subjects: false
+  consent_attested: false
+  privacy_minimization: Use subject pseudonyms only.
+attestations:
+  sandbox_only: true
+  no_production_assets: true
+  local_evidence_only: true
+  informative_only: true
+  notes: AEP analyzes local files only; it never launches attacks.
+notes: Fill digests and versions before publishing results.

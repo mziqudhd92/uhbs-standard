@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mziqudhd92/uhbs-standard/raw/main/schemas/aep-experiment.schema.json",
+  "title": "UHBS Advanced Evidence Profile — Experiment Manifest",
+  "description": "Offline controlled-experiment design for optional AEP metrics. Informative only; does not affect UHQS.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "aep_version",
+    "uhbs_version",
+    "experiment_id",
+    "name",
+    "hypothesis",
+    "primary_outcome",
+    "profile_class",
+    "arms",
+    "task",
+    "budget",
+    "timeout_seconds",
+    "randomization",
+    "repetitions",
+    "utility",
+    "attestations"
+  ],
+  "properties": {
+    "aep_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "uhbs_version": {
+      "type": "string",
+      "const": "4.3.5"
+    },
+    "experiment_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9._:-]+$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "hypothesis": {
+      "type": "string",
+      "minLength": 1
+    },
+    "primary_outcome": {
+      "type": "string",
+      "enum": ["vod", "fsv", "dtdr", "eer"]
+    },
+    "secondary_outcomes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["vod", "fsv", "dtdr", "eer"]
+      },
+      "uniqueItems": true
+    },
+    "profile_class": {
+      "type": "string",
+      "enum": [
+        "POSIX-Shell",
+        "ICS-SCADA",
+        "Web-API",
+        "Database",
+        "GenAI-Shell",
+        "Low-Interaction"
+      ]
+    },
+    "arms": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["decoy", "reference"],
+      "properties": {
+        "decoy": { "$ref": "#/$defs/armIdentity" },
+        "reference": { "$ref": "#/$defs/armIdentity" },
+        "evaluator_control": { "$ref": "#/$defs/armIdentity" }
+      }
+    },
+    "attacker_capability_tier": {
+      "type": "string",
+      "enum": ["scripted", "skilled", "expert", "adaptive_agent"]
+    },
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["description", "starting_knowledge"],
+      "properties": {
+        "description": { "type": "string", "minLength": 1 },
+        "starting_knowledge": { "type": "string", "minLength": 1 },
+        "success_criteria": { "type": "string" }
+      }
+    },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["max_attempts", "max_unique_capabilities"],
+      "properties": {
+        "max_attempts": { "type": "integer", "minimum": 1 },
+        "max_unique_capabilities": { "type": "integer", "minimum": 1 },
+        "max_token_cost": { "type": "number", "minimum": 0 },
+        "currency_unit": { "type": "string", "minLength": 1 }
+      }
+    },
+    "timeout_seconds": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "randomization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method", "seed"],
+      "properties": {
+        "method": {
+          "type": "string",
+          "enum": ["fixed_order", "shuffled_blocks", "simple_random"]
+        },
+        "seed": { "type": "integer" },
+        "notes": { "type": "string" }
+      }
+    },
+    "repetitions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["planned_per_arm", "minimum_per_arm"],
+      "properties": {
+        "planned_per_arm": { "type": "integer", "minimum": 1 },
+        "minimum_per_arm": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "utility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "formula", "weights"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "formula": {
+          "type": "string",
+          "description": "Human-readable U_D definition. VoD = U_D(decoy) - U_D(reference)."
+        },
+        "weights": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          },
+          "minProperties": 1
+        },
+        "notes": { "type": "string" }
+      }
+    },
+    "ethics": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "human_subjects": { "type": "boolean" },
+        "consent_attested": { "type": "boolean" },
+        "irb_or_ethics_ref": { "type": "string" },
+        "privacy_minimization": { "type": "string" }
+      }
+    },
+    "attestations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sandbox_only",
+        "no_production_assets",
+        "local_evidence_only",
+        "informative_only"
+      ],
+      "properties": {
+        "sandbox_only": { "type": "boolean", "const": true },
+        "no_production_assets": { "type": "boolean", "const": true },
+        "local_evidence_only": { "type": "boolean", "const": true },
+        "informative_only": { "type": "boolean", "const": true },
+        "notes": { "type": "string" }
+      }
+    },
+    "scorecard_ref": {
+      "type": "string",
+      "description": "Local path to the unchanged UHBS scorecard (informational link only)."
+    },
+    "notes": { "type": "string" }
+  },
+  "$defs": {
+    "armIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 },
+        "digest": {
+          "type": "string",
+          "description": "Optional content digest (sha256:…)."
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

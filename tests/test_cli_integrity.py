@@ -151,9 +151,24 @@ def test_cli_score_command() -> None:
             main, ["score", "--class", "Low-Interaction", "--scores", "scores.json"]
         )
     assert result.exit_code == 0, result.output
-    payload = json.loads(result.output)
+    # Lab notice goes to stderr; JSON score payload stays on stdout.
+    assert "lab/sandbox evaluation of decoys" in (result.stderr or "")
+    payload = json.loads(result.stdout)
     assert payload["uhqs"] == 46.97
     assert payload["grade"] == "F"
+
+
+def test_cli_prints_lab_sandbox_notice() -> None:
+    runner = CliRunner()
+    result = runner.invoke(
+        main,
+        ["validate-scorecard", str(FIXTURES / "cowrie-low-interaction.scorecard.json")],
+    )
+    assert result.exit_code == 0, result.output
+    assert "UHBS/AEP are for lab/sandbox evaluation of decoys" in (result.stderr or "")
+    assert "Do not run them against production or unauthorized real services" in (
+        result.stderr or ""
+    )
 
 
 def test_cli_lab_list_protocols() -> None:

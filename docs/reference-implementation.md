@@ -65,6 +65,10 @@ Validate outputs:
 uhbs validate-scorecard path/to/scorecard.json --strict
 ```
 
+Optional offline Advanced Evidence Profile (`uhbs[aep]`) analyzes local trial
+files beside a scorecard and never changes UHQS — see
+[advanced-evidence/](advanced-evidence/index.md).
+
 ## Published evaluation proof
 
 Sanitized fixtures that prove the tools discriminate across classes. Product

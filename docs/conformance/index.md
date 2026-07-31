@@ -7,6 +7,10 @@ harness. Fixtures and **published lab reports** are the only place in the public
 docs where specific deception products are named — as evaluation proof (not as
 UHBS requirements).
 
+Optional controlled comparative evidence (VoD / FSV / DTDR / EER) lives in the
+[Advanced Evidence Profile](../advanced-evidence/index.md) and does **not** alter
+these UHQS fixtures.
+
 ## Lab reports (start here for real runs)
 
 Published quick + full Docker grades, tutorials, and provenance:

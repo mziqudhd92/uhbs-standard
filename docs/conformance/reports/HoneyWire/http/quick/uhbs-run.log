@@ -1,7 +1,7 @@
 ==> UHBS v4 target=HoneyWire-http class=Web-API protocols=['http'] phases=['profile', 'static', 'sandbox', 'dynamic', 'score']
     plugins available: bluetooth, dhcp, dns, ftp, generic, git, http, httpproxy, imap, ipp, irc, kubernetes, ldap, mcp, memcache, modbus, mongodb, mssql, mysql, ntp, oracle, pjl, pop3, postgres, rdp, redis, s7comm, sip, smb, smtp, snmp, socks5, ssh, telnet, tftp, vnc
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.3.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.3.5
 ====================================================================================
 Target System         : HoneyWire-http
 System Profile Class  : Web-API
@@ -21,7 +21,7 @@ Module E: Scalability & Latency     : 100.0/100       0.15     PASSED (service a
 Module F: Static Code Audit         :  70.0/100       0.20     PASSED (POSIX coverage 0% (0/104))
 ------------------------------------------------------------------------------------
 SAFETY GATE MULTIPLIER                : δ_C = 0.5625 (C = 75.0 < 95 — exponential penalty)
-FINAL COMPOSITE SCORE (UHQS 4.3.0)      : 45.84 / 100
+FINAL COMPOSITE SCORE (UHQS 4.3.5)      : 45.84 / 100
 OVERALL EVALUATION GRADE              : GRADE F (Fail)
 ====================================================================================
 

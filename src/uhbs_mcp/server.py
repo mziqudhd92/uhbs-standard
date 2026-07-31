@@ -29,12 +29,34 @@ from uhbs_cli.scoring import (
 from uhbs_mcp import __version__
 from uhbs_mcp.paths import repo_root, resolve_user_path, schema_dir
 
+
 # stdio MCP: never write logs to stdout (corrupts JSON-RPC).
-logging.basicConfig(stream=sys.stderr, level=logging.INFO, format="%(levelname)s %(message)s")
+class _ColorStderrFormatter(logging.Formatter):
+    """Color log levels on stderr when the terminal supports it."""
+
+    def format(self, record: logging.LogRecord) -> str:
+        from uhbs_core.termui import colors_enabled, style
+
+        base = super().format(record)
+        if not colors_enabled(sys.stderr):
+            return base
+        level = record.levelno
+        if level >= logging.ERROR:
+            return style(base, fg="bright_red", bold=True, stream=sys.stderr)
+        if level >= logging.WARNING:
+            return style(base, fg="bright_yellow", stream=sys.stderr)
+        if level >= logging.INFO:
+            return style(base, fg="bright_cyan", stream=sys.stderr)
+        return base
+
+
+_handler = logging.StreamHandler(sys.stderr)
+_handler.setFormatter(_ColorStderrFormatter("%(levelname)s %(message)s"))
+logging.basicConfig(level=logging.INFO, handlers=[_handler], force=True)
 log = logging.getLogger("uhbs_mcp")
 
 INSTRUCTIONS = """\
-UHBS (Universal Honeypot Benchmarking Standard) v4.3.0 — open-source beta-status
+UHBS (Universal Honeypot Benchmarking Standard) v4.3.5 — open-source beta-status
 evaluation framework for honeypots / deception tech (Apache-2.0).
 
 Not a consortium or adopted industry standard. Product names appear only under
@@ -390,7 +412,12 @@ def prompt_validate_scorecard(path: str) -> str:
 
 def main() -> None:
     """Entry point for ``uhbs-mcp`` / ``python -m uhbs_mcp`` (stdio transport)."""
+    from uhbs_core.notices import LAB_SANDBOX_NOTICE, print_lab_sandbox_notice
+
+    # stderr only — stdout is reserved for MCP JSON-RPC.
+    print_lab_sandbox_notice()
     log.info("Starting UHBS MCP server v%s (stdio); root=%s", __version__, repo_root())
+    log.info("%s", LAB_SANDBOX_NOTICE)
     mcp.run(transport="stdio")
 
 

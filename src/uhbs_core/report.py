@@ -1,4 +1,4 @@
-"""UHBS v4.3.0 scorecard + JSON report writer."""
+"""UHBS v4.3.5 scorecard + JSON report writer."""
 
 from __future__ import annotations
 
@@ -44,7 +44,7 @@ def render_card(
     weights = uhqs.weights
     lines = [
         "====================================================================================",
-        "                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.3.0",
+        "                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.3.5",
         "====================================================================================",
         f"Target System         : {target.label}",
         f"System Profile Class  : {uhqs.profile_class}",
@@ -96,7 +96,7 @@ def render_card(
     lines += [
         "------------------------------------------------------------------------------------",
         f"SAFETY GATE MULTIPLIER                : {gate}",
-        f"FINAL COMPOSITE SCORE (UHQS 4.3.0)      : {uhqs.uhqs} / 100",
+        f"FINAL COMPOSITE SCORE (UHQS 4.3.5)      : {uhqs.uhqs} / 100",
         f"OVERALL EVALUATION GRADE              : {uhqs.grade}",
         "====================================================================================",
     ]
@@ -121,7 +121,7 @@ def write_report(
     (out_dir / "REPORT.txt").write_text(card, encoding="utf-8")
     (out_dir / "SCORECARD.txt").write_text(card, encoding="utf-8")
     payload = {
-        "framework": "Universal Honeypot Benchmarking Standard (UHBS) v4.3.0",
+        "framework": "Universal Honeypot Benchmarking Standard (UHBS) v4.3.5",
         "evaluation_type": evaluation_type,
         "target": {
             "name": target.name,

@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mziqudhd92/uhbs-standard/raw/main/schemas/aep-trial.schema.json",
+  "title": "UHBS Advanced Evidence Profile — Trial Event",
+  "description": "One controlled trial observation for offline AEP analysis. Local evidence only.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "aep_version",
+    "experiment_id",
+    "trial_id",
+    "arm",
+    "started_at",
+    "ended_at",
+    "censored",
+    "session_duration_seconds"
+  ],
+  "properties": {
+    "aep_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "experiment_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9._:-]+$"
+    },
+    "trial_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9._:-]+$"
+    },
+    "subject_pseudonym": {
+      "type": "string",
+      "minLength": 1
+    },
+    "arm": {
+      "type": "string",
+      "enum": ["decoy", "reference", "evaluator_control"]
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ended_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "censored": {
+      "type": "boolean",
+      "description": "True when the session hit timeout or was truncated before natural end."
+    },
+    "session_duration_seconds": {
+      "type": "number",
+      "minimum": 0
+    },
+    "exchanges": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "attempts": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "unique_tools": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "unique_credentials": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "unique_payload_families": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "attack_technique_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^T[0-9]{4}(\\.[0-9]{3})?$"
+      },
+      "uniqueItems": true,
+      "description": "Locally declared ATT&CK IDs; not auto-fetched."
+    },
+    "detector": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "layer": {
+          "type": "string",
+          "enum": ["network", "protocol", "system", "state"]
+        },
+        "predicted_decoy": { "type": "boolean" },
+        "actual_is_decoy": { "type": "boolean" },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "defender_outcomes": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "prevented_compromise": { "type": "boolean" },
+        "detection": { "type": "boolean" },
+        "intelligence_yield": { "type": "number" },
+        "notes": { "type": "string" }
+      }
+    },
+    "costs": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "attacker_time_seconds": { "type": "number", "minimum": 0 },
+        "defender_time_seconds": { "type": "number", "minimum": 0 },
+        "attacker_token_cost": { "type": "number", "minimum": 0 },
+        "defender_infra_cost": { "type": "number", "minimum": 0 },
+        "currency_unit": { "type": "string" }
+      }
+    },
+    "evaluator_control_passed": {
+      "type": "boolean",
+      "description": "For evaluator_control arm: whether the evaluator completed the capability check."
+    },
+    "raw_evidence_sha256": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{64}$"
+    },
+    "notes": { "type": "string" }
+  }
+}

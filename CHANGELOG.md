@@ -3,9 +3,16 @@
 All notable changes to the UHBS specification and tooling are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/). Spec and CLI
-share version **4.3.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`).
+share version **4.3.5** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
+AEP as `uhbs[aep]`).
 
 ## [Unreleased]
+
+## [4.3.5] — 2026-07-31
+
+Patch release: optional Advanced Evidence Profile (AEP), related-frameworks
+comparison, lab/sandbox scope notices, human-friendly colored CLI output, and
+README refresh. **UHQS math, weights, and δ_C are unchanged.**
 
 ### Added
 - HoneyWire (andreicscs) **HTTP** lab grades for official WebRouterDecoy
@@ -19,10 +26,33 @@ share version **4.3.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[
   IDs + Engage goals; display-only, ignored by UHQS math) on Cowrie / Conpot /
   HellPot fixtures — formalizes the "scorecards MAY attach ATT&CK IDs" note in
   [docs/mappings/attack.md](docs/mappings/attack.md)
+- Evidence-graded [related frameworks](docs/mappings/related-frameworks.md)
+  comparison (14 framework/model families)
+- Optional **Advanced Evidence Profile (AEP)** — offline `uhbs aep` CLI
+  (`init` / `example` / `validate` / `validate-trials` / `analyze` / `report`),
+  schemas (`aep-experiment`, `aep-trial`, `advanced-evidence`), templates,
+  synthetic examples packaged in the wheel, MkDocs docs, and `uhbs[aep]` extra.
+  Informative only; **does not** change UHQS, weights, δ_C, or letter grades.
+  Trust boundary: local file analysis only (no sockets/HTTP/SSH/subprocess/lab
+  launch); explicitly **lab/sandbox evaluation** (not real-world production
+  testing). Academic credit ledger for Zhu (2019), Collins et al. (2024),
+  Ersok et al. (2022), Li et al. (2020) on docs + landing page
+- Lab/sandbox NOTICE on stderr for `uhbs`, `uhbs-lab`, `uhbs-uhqs`, and
+  `uhbs-mcp` (stdio-safe)
+- ANSI-colored human-facing CLI lines via `uhbs_core.termui` (`NO_COLOR` /
+  `FORCE_COLOR` supported; no extra color dependency)
 
 ### Fixed
 - Ship JSON Schemas inside the `uhbs` wheel (`uhbs_cli/schemas/`) so
   `pip install 'uhbs[lab]'` can `validate-scorecard` without a git checkout
+- AEP analyze without `--scorecard` (null provenance fields)
+- `uhbs aep init --trials 1` and packaged template example strict validation
+
+### Changed
+- README restructured for open-source clarity (lab scope, extras matrix, AEP,
+  security / CoC / citation)
+- Docs and landing page emphasize lab/sandbox-only evaluation vs real-world
+  production testing
 
 ## [4.3.0] — 2026-07-29
 

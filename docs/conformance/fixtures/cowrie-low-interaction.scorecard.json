@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.3.0",
+  "uhbs_version": "4.3.5",
   "target": {
     "name": "Cowrie (Low-Interaction / SSH)",
     "class": "Low-Interaction",

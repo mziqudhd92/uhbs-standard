@@ -16,6 +16,10 @@ Use these mappings when:
 - [MITRE Engage](engage.md) — Expose / Affect / Elicit / Understand goals vs UHBS modules
 - [NIST CSF / SP 800-53](nist.md) — informative crosswalk for governance readers
 - [IEC 62443 (OT/ICS)](iec-62443.md) — OT-oriented reading notes for industrial honeypot evaluations
+- [Related deception frameworks](related-frameworks.md) — evidence-graded comparison of 14 framework/model families vs UHBS
+
+For controlled comparative experiments that stay outside UHQS, see the optional
+[Advanced Evidence Profile (AEP)](../advanced-evidence/index.md).
 
 ## Scorecard `framework_refs` (optional)
 
@@ -34,4 +38,4 @@ These tags do **not** affect UHQS, δ_C, or letter grade. See the
 
 ## Trust limits
 
-Mappings are **informative**. They do not replace the verbatim SCORECARD / `report.json` proof for any graded product under `docs/conformance/`. Prefer absolute URLs on the published docs site when sharing externally. UHBS remains an open-source beta-status evaluation framework (Apache-2.0, v4.3.0) — not an adopted industry or academic standard.
+Mappings are **informative**. They do not replace the verbatim SCORECARD / `report.json` proof for any graded product under `docs/conformance/`. Prefer absolute URLs on the published docs site when sharing externally. UHBS remains an open-source beta-status evaluation framework (Apache-2.0, v4.3.5) — not an adopted industry or academic standard.

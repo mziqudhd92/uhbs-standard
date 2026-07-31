@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""UHBS v4.3.0 — Universal Honeypot Benchmarking Standard orchestrator (uhbs-core).
+"""UHBS v4.3.5 — Universal Honeypot Benchmarking Standard orchestrator (uhbs-core).
 
 Phases (§6):
   1) profile  — load TPS
   2) static   — Module F (+ optional capability signals)
   3) sandbox  — air-gap / egress preflight
   4) dynamic  — Modules A–E via protocol plugins
-  5) score    — UHQS 4.3.0 with profile-adaptive weights + δ_C gate
+  5) score    — UHQS 4.3.5 with profile-adaptive weights + δ_C gate
 
 Examples:
   uhbs lab --tps posix_shell_ssh --target 127.0.0.1 --port 2222 \\
@@ -20,7 +20,6 @@ from __future__ import annotations
 
 import argparse
 import os
-import sys
 from collections.abc import Sequence
 from pathlib import Path
 
@@ -185,7 +184,11 @@ def evaluate_one(
 
 
 def main(argv: Sequence[str] | None = None) -> int:
-    p = argparse.ArgumentParser(description="UHBS v4.3.0 Universal Honeypot Benchmark")
+    from uhbs_core.notices import print_lab_sandbox_notice
+
+    print_lab_sandbox_notice()
+
+    p = argparse.ArgumentParser(description="UHBS v4.3.5 Universal Honeypot Benchmark")
     p.add_argument("--inventory", type=Path)
     p.add_argument("--target", required=False, help="required unless --list-protocols")
     p.add_argument("--baseline")
@@ -254,15 +257,18 @@ def main(argv: Sequence[str] | None = None) -> int:
             )
             apply_tps(target, tps)
     except ProtocolConflictError as exc:
-        print(f"ERROR: {exc}", file=sys.stderr)
+        from uhbs_core.termui import echo_error
+
+        echo_error(f"ERROR: {exc}")
         return 2
 
     if not target.protocol_list():
-        print(
+        from uhbs_core.termui import echo_error
+
+        echo_error(
             "ERROR: no protocol configured. Pass --protocol <id> "
             "(e.g. http, pjl, ssh, modbus) or use a TPS that declares protocols "
-            "(e.g. low_interaction_ssh, web_api).",
-            file=sys.stderr,
+            "(e.g. low_interaction_ssh, web_api)."
         )
         return 2
 
@@ -284,11 +290,13 @@ def main(argv: Sequence[str] | None = None) -> int:
     elif "dynamic" in phases_n and "static" not in phases_n:
         eval_type = "Dynamic Adversarial Probing"
 
-    print(
+    from uhbs_core.termui import echo_info, echo_ok
+
+    echo_info(
         f"==> UHBS v4 target={target.label} class={target.profile_class} "
         f"protocols={target.protocol_list()} phases={phases_n}"
     )
-    print(f"    plugins available: {', '.join(list_protocols())}")
+    echo_info(f"    plugins available: {', '.join(list_protocols())}")
 
     t_mods, t_scores = evaluate_one(
         target,
@@ -313,7 +321,7 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     extras = {
         "target_scores": t_scores,
-        "uhqs_version": "4.3.0",
+        "uhqs_version": "4.3.5",
         "tps": {
             "name": tps.name,
             "class": tps.profile_class,
@@ -375,16 +383,16 @@ def main(argv: Sequence[str] | None = None) -> int:
         )
     )
     if baseline and "baseline_uhqs" in extras:
-        print(
-            f"Baseline UHQS 4.3.0: {extras['baseline_uhqs']['uhqs']}  "
+        echo_info(
+            f"Baseline UHQS 4.3.5: {extras['baseline_uhqs']['uhqs']}  "
             f"Δ={extras['delta_uhqs']}"
         )
-    print(f"Wrote {path}")
+    echo_ok(f"Wrote {path}")
     manifest = write_manifest(
         args.out,
         extra={"target": target.label, "uhqs": t_uhqs.uhqs, "grade": t_uhqs.grade},
     )
-    print(f"Wrote {manifest}")
+    echo_ok(f"Wrote {manifest}")
     return 0
 
 

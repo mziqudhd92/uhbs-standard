@@ -8,13 +8,13 @@
     "url": "https://github.com/mziqudhd92/uhbs-standard",
     "source": "github"
   },
-  "version": "4.3.0",
+  "version": "4.3.5",
   "packages": [
     {
       "registryType": "pypi",
       "registryBaseUrl": "https://pypi.org",
       "identifier": "uhbs",
-      "version": "4.3.0",
+      "version": "4.3.5",
       "runtimeHint": "uvx",
       "transport": {
         "type": "stdio"

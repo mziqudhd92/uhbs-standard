@@ -1,11 +1,11 @@
 ---
 title: UHBS — Universal Honeypot Benchmarking Standard
-description: Open-source beta-status framework for vendor-neutral honeypot and deception evaluation (UHQS 0–100 with Safety Gate). Spec v4.3.0. Not a consortium standard.
+description: Open-source beta-status framework for vendor-neutral honeypot and deception evaluation (UHQS 0–100 with Safety Gate). Spec v4.3.5. Not a consortium standard.
 ---
 
 # Universal Honeypot Benchmarking Standard
 
-# UHBS v4.3.0 (2026)
+# UHBS v4.3.5 (2026)
 
 An objective, repeatable, quantitative methodology for deception technology
 evaluation — an open-source **beta-status** framework for comparing and grading
@@ -47,18 +47,44 @@ see [ROADMAP](roadmap.md) for community-maturity goals.
 
     UHQS &gt; 80 suggested as an internal beta recommendation
 
+-   :material-flask-outline: **Optional Advanced Evidence**
+
+    ---
+
+    Lab-only decoy-vs-reference metrics (VoD, FSV, DTDR, EER) — does **not** change UHQS
+
 </div>
+
+!!! warning "Laboratory evaluation framework"
+    UHBS (including UHBS-Lab and optional AEP) is for **lab / sandbox grading** of
+    honeypots and decoys. It is not a real-world attack or production-penetration
+    toolkit. A UHQS &gt; 80 “production baseline” is an optional *internal gate after
+    lab evaluation*, not authorization to test production systems.
+
+## Two layers
+
+| Layer | Answers | Normative? |
+| --- | --- | --- |
+| **Core UHBS** | Modules A–F, UHQS, δ_C, reproducible scorecard (lab) | Yes (for UHBS-Core / UHBS-Lab) |
+| **Optional AEP** | Lab controlled comparative evidence + uncertainty | No — informative addendum only |
+
+See [Advanced Evidence Profile](advanced-evidence/index.md) ·
+[Research foundations & credits](advanced-evidence/research-foundations.md) ·
+[Related frameworks](mappings/related-frameworks.md).
 
 ## Start here
 
 1. Read [Core Principles](specification/core-principles.md) — dual-plane audit and isolation requirements  
 2. Author a [Target Profile Specification](specification/target-profiles.md) (`profile.yaml`)  
-3. Execute [Modules A–F](specification/modules.md) in the five-phase workflow  
+3. Execute [Modules A–F](specification/modules.md) in the five-phase **lab** workflow  
 4. Compute [UHQS](specification/scoring-formula.md) and publish a standard scorecard  
+5. *(Optional)* Add [AEP](advanced-evidence/index.md) for sandboxed lab decoy-vs-reference studies  
+
+
 
 ```bash
 pip install -e .
 uhbs validate-profile templates/profile.yaml
 ```
 
-Specification version **4.3.0** · [GitHub repository](https://github.com/mziqudhd92/uhbs-standard) · [Site landing hub](https://mziqudhd92.github.io/uhbs-standard/) (this MkDocs tree is served under `/mkdocs/`)
+Specification version **4.3.5** · [GitHub repository](https://github.com/mziqudhd92/uhbs-standard) · [Site landing hub](https://mziqudhd92.github.io/uhbs-standard/) (this MkDocs tree is served under `/mkdocs/`)
