@@ -1,0 +1,186 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mziqudhd92/uhbs-standard/raw/main/schemas/aep-slm.schema.json",
+  "title": "UHBS AEP SLM Evaluator Config (Alpha)",
+  "description": "Opt-in alpha Small Language Model evaluator for generating AEP trial evidence. Disabled by default. Does not affect UHQS.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "aep_slm_version",
+    "status",
+    "enabled",
+    "activation",
+    "provider",
+    "model",
+    "task",
+    "generation",
+    "paths",
+    "safety"
+  ],
+  "properties": {
+    "aep_slm_version": {
+      "type": "string",
+      "const": "0.1.0-alpha"
+    },
+    "status": {
+      "type": "string",
+      "const": "alpha",
+      "description": "Feature maturity marker. Alpha means unstable API and no normative scoring impact."
+    },
+    "enabled": {
+      "type": "boolean",
+      "description": "Must be explicitly set to true in the config file. Defaults / templates ship as false."
+    },
+    "activation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unlock_phrase",
+        "acknowledge_alpha",
+        "lab_sandbox_only",
+        "no_production_targets",
+        "no_uhqs_scoring_impact",
+        "allow_local_model_calls"
+      ],
+      "properties": {
+        "unlock_phrase": {
+          "type": "string",
+          "description": "Must equal I_ENABLE_AEP_SLM_ALPHA to unlock generation."
+        },
+        "acknowledge_alpha": { "type": "boolean" },
+        "lab_sandbox_only": { "type": "boolean" },
+        "no_production_targets": { "type": "boolean" },
+        "no_uhqs_scoring_impact": { "type": "boolean" },
+        "allow_local_model_calls": {
+          "type": "boolean",
+          "description": "Required true for provider=openai_compatible (loopback HTTP). Mock and recorded may keep this false."
+        }
+      }
+    },
+    "provider": {
+      "type": "string",
+      "enum": ["mock", "openai_compatible", "recorded"],
+      "description": "mock=deterministic offline; openai_compatible=local loopback HTTP only; recorded=replay local JSONL responses."
+    },
+    "model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "digest": { "type": "string" },
+        "quantization": { "type": "string" },
+        "context_window": { "type": "integer", "minimum": 1 },
+        "notes": { "type": "string" }
+      }
+    },
+    "endpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "base_url": {
+          "type": "string",
+          "description": "Local OpenAI-compatible base URL. Only loopback hosts are accepted."
+        },
+        "api_path": {
+          "type": "string",
+          "default": "/v1/chat/completions"
+        },
+        "timeout_seconds": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "default": 60
+        }
+      }
+    },
+    "recorded_responses_path": {
+      "type": "string",
+      "description": "Local JSONL of pre-recorded model responses (provider=recorded)."
+    },
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["prompt_id", "system_prompt", "user_prompt_template"],
+      "properties": {
+        "prompt_id": { "type": "string", "minLength": 1 },
+        "system_prompt": { "type": "string", "minLength": 1 },
+        "user_prompt_template": {
+          "type": "string",
+          "minLength": 1,
+          "description": "May include {arm}, {trial_index}, {seed}."
+        }
+      }
+    },
+    "generation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["trials_per_arm", "seed", "temperature"],
+      "properties": {
+        "trials_per_arm": { "type": "integer", "minimum": 1 },
+        "seed": { "type": "integer" },
+        "temperature": { "type": "number", "minimum": 0, "maximum": 2 },
+        "max_tokens": { "type": "integer", "minimum": 1, "default": 256 },
+        "arms": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["decoy", "reference", "evaluator_control"]
+          },
+          "uniqueItems": true,
+          "default": ["decoy", "reference", "evaluator_control"]
+        }
+      }
+    },
+    "paths": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["experiment", "output_trials", "output_run"],
+      "properties": {
+        "experiment": {
+          "type": "string",
+          "description": "Local path to AEP experiment.yaml"
+        },
+        "output_trials": {
+          "type": "string",
+          "description": "Local path for generated trials JSONL"
+        },
+        "output_run": {
+          "type": "string",
+          "description": "Local path for slm-run.json provenance"
+        }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "loopback_only",
+        "forbid_tools",
+        "forbid_network_targets",
+        "write_local_files_only"
+      ],
+      "properties": {
+        "loopback_only": {
+          "type": "boolean",
+          "const": true,
+          "description": "openai_compatible endpoints must be loopback."
+        },
+        "forbid_tools": {
+          "type": "boolean",
+          "const": true,
+          "description": "Model tool/function calling is forbidden."
+        },
+        "forbid_network_targets": {
+          "type": "boolean",
+          "const": true,
+          "description": "Adapter never probes honeypot/production hosts."
+        },
+        "write_local_files_only": {
+          "type": "boolean",
+          "const": true
+        }
+      }
+    },
+    "notes": { "type": "string" }
+  }
+}

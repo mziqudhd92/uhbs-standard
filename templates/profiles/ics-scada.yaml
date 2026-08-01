@@ -1,5 +1,5 @@
 # UHBS Target Profile — ICS / SCADA (Modbus-class)
-uhbs_version: "4.3.5"
+uhbs_version: "4.3.6"
 
 target_metadata:
   name: "Example ICS Modbus Decoy"

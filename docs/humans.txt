@@ -7,11 +7,15 @@ Contact: GitHub private contact / Security Advisories (no project email domain y
 Standards: HTML5, Markdown, MkDocs Material
 Language: en-US
 Doctype: HTML5
-Software: UHBS v4.3.5 (Apache-2.0)
+Software: UHBS v4.3.6 (Apache-2.0)
 
 /* Notes */
 UHBS is a beta-status evaluation framework — not a consortium standard.
 Preferred AI/agent entrypoints (site root after deploy):
-  /llms.txt · /llms-full.txt · /humans.txt · /server.json (MCP) · /.well-known/security.txt
-MkDocs mirrors: /mkdocs/llms.txt · /mkdocs/tooling/mcp/
+  /llms.txt · /llms-full.txt · /humans.txt · /server.json (MCP)
+  /sitemap.xml · /sitemap-landing.xml · /.well-known/security.txt
+MkDocs mirrors: /mkdocs/llms.txt · /mkdocs/llms-full.txt · /mkdocs/tooling/mcp/
+Optional AEP: /mkdocs/advanced-evidence/
+AEP SLM (alpha, opt-in): /mkdocs/advanced-evidence/slm-alpha/
+Landing hub: https://mziqudhd92.github.io/uhbs-standard/
 /* https://humanstxt.org */

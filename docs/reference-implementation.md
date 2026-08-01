@@ -67,7 +67,9 @@ uhbs validate-scorecard path/to/scorecard.json --strict
 
 Optional offline Advanced Evidence Profile (`uhbs[aep]`) analyzes local trial
 files beside a scorecard and never changes UHQS — see
-[advanced-evidence/](advanced-evidence/index.md).
+[advanced-evidence/](advanced-evidence/index.md). An optional alpha SLM helper
+(`uhbs[aep-slm]` / `uhbs aep slm`) can draft trial JSONL but stays **off until
+you edit** `aep-slm.yaml` — see [slm-alpha](advanced-evidence/slm-alpha.md).
 
 ## Published evaluation proof
 

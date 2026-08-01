@@ -6,8 +6,8 @@ authors:
   - family-names: "Zavdi"
     given-names: "Moran"
     website: "https://github.com/mziqudhd92"
-version: "4.3.5"
-date-released: "2026-07-27"
+version: "4.3.6"
+date-released: "2026-08-01"
 license: Apache-2.0
 repository-code: "https://github.com/mziqudhd92/uhbs-standard"
 url: "https://mziqudhd92.github.io/uhbs-standard/"
@@ -16,34 +16,38 @@ doi: "10.5281/zenodo.21631156"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.21631156"
-    description: "This version (v4.3.5)"
+    description: "This version (v4.3.6)"
   - type: doi
     value: "10.5281/zenodo.21631155"
     description: "Concept DOI (all versions)"
 abstract: >-
-  UHBS v4.3.5 is an open-source beta-status framework for vendor-neutral,
+  UHBS v4.3.6 is an open-source beta-status framework for vendor-neutral,
   objective, repeatable evaluation of honeypots and deception technology. It
   defines six evaluation modules (A–F), a composite UHQS score (0–100) with a
   recommended production baseline UHQS > 80, a non-linear Safety Gate,
-  machine-readable schemas, and a UHBS-Lab reference harness (uhbs_core) with
-  conformance fixtures. It is not an industry consortium standard.
+  machine-readable schemas, a UHBS-Lab reference harness (uhbs_core) with
+  conformance fixtures, an optional Advanced Evidence Profile (AEP), and an
+  opt-in alpha AEP SLM trial helper. It is not an industry consortium standard.
 keywords:
   - honeypot
   - deception-technology
   - cybersecurity
   - benchmarking
   - evaluation-framework
+  - AEP
+  - SLM
+  - MCP
   - OT
   - ICS
   - GenAI
 preferred-citation:
   type: software
-  title: "Universal Honeypot Benchmarking Standard (UHBS) v4.3.5 (2026)"
+  title: "Universal Honeypot Benchmarking Standard (UHBS) v4.3.6 (2026)"
   authors:
     - family-names: "Zavdi"
       given-names: "Moran"
   year: 2026
-  version: "4.3.5"
+  version: "4.3.6"
   doi: "10.5281/zenodo.21631156"
   url: "https://doi.org/10.5281/zenodo.21631156"
   notes: >-

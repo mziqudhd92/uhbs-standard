@@ -1,6 +1,6 @@
 # HoneyWire — HTTP (WebRouterDecoy)
 
-**Class:** Web-API · **Protocol:** http · **UHBS:** 4.3.5  
+**Class:** Web-API · **Protocol:** http · **UHBS:** 4.3.6  
 **Upstream sensor:** [WebRouterDecoy](https://github.com/andreicscs/HoneyWire/tree/main/Sensors/official/WebRouterDecoy)
 
 This protocol hub collects UHBS-Lab artifacts for HoneyWire’s fake router-admin

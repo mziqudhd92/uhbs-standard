@@ -5,14 +5,27 @@
   {{ super() }}
   <meta name="author" content="Moran Zavdi">
   <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="keywords" content="UHBS, honeypot, deception, UHQS, AEP, Advanced Evidence Profile, SLM, MCP, cybersecurity, lab evaluation, benchmarking">
   <link rel="alternate" type="text/plain" title="llms.txt" href="{{ config.site_url }}llms.txt">
   <link rel="alternate" type="text/plain" title="llms-full.txt" href="{{ config.site_url }}llms-full.txt">
   <link type="text/plain" rel="author" href="{{ config.site_url }}humans.txt">
+  <link rel="sitemap" type="application/xml" title="MkDocs sitemap" href="{{ config.site_url }}sitemap.xml">
+  <link rel="sitemap" type="application/xml" title="Site sitemap index" href="https://mziqudhd92.github.io/uhbs-standard/sitemap.xml">
 
   {% set desc = config.site_description %}
   {% if page and page.meta and page.meta.description %}
     {% set desc = page.meta.description %}
   {% endif %}
+
+  <meta property="og:site_name" content="UHBS">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  {% if page and page.canonical_url %}
+  <meta property="og:url" content="{{ page.canonical_url }}">
+  <meta property="og:title" content="{{ page.title if page.title else config.site_name }}">
+  <meta property="og:description" content="{{ desc }}">
+  {% endif %}
+  <meta name="twitter:card" content="summary">
 
   <script type="application/ld+json">
   {
@@ -32,20 +45,24 @@
         "@id": "{{ config.site_url }}#software",
         "name": "UHBS",
         "alternateName": "Universal Honeypot Benchmarking Standard",
-        "softwareVersion": "4.3.5",
+        "softwareVersion": "4.3.6",
         "applicationCategory": "SecurityApplication",
         "operatingSystem": "Any",
         "license": "https://www.apache.org/licenses/LICENSE-2.0",
         "url": "{{ config.site_url }}",
-        "downloadUrl": "https://github.com/mziqudhd92/uhbs-standard",
+        "downloadUrl": "https://pypi.org/project/uhbs/",
         "codeRepository": "https://github.com/mziqudhd92/uhbs-standard",
-        "description": "Open-source beta-status framework for vendor-neutral honeypot and deception evaluation using UHQS (0–100) and a non-linear Safety Gate. Not a consortium standard.",
+        "description": "Open-source beta-status framework for vendor-neutral honeypot and deception evaluation using UHQS (0–100) and a non-linear Safety Gate. Optional Advanced Evidence Profile and alpha SLM trial helper. Not a consortium standard.",
         "author": { "@id": "{{ config.site_url }}#person" },
         "creativeWorkStatus": "Beta",
         "keywords": [
           "honeypot",
           "deception technology",
           "UHQS",
+          "AEP",
+          "Advanced Evidence Profile",
+          "SLM",
+          "MCP",
           "benchmarking",
           "cybersecurity",
           "evaluation framework"

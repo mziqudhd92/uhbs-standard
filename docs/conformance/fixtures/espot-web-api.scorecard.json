@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.3.5",
+  "uhbs_version": "4.3.6",
   "target": {
     "name": "ESPot (mycert Elasticsearch honeypot)",
     "class": "Web-API",

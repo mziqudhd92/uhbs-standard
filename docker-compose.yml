@@ -12,7 +12,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: uhbs:4.3.5
+    image: uhbs:4.3.6
     working_dir: /work
     volumes:
       - ./:/work

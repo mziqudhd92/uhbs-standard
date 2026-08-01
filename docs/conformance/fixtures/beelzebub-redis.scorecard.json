@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.3.5",
+  "uhbs_version": "4.3.6",
   "target": {
     "name": "Beelzebub (Redis :6379)",
     "class": "Low-Interaction",

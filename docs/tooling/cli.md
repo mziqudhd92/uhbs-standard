@@ -41,7 +41,7 @@ uhbs-lab --help
 # uhbs-lab --inventory … --protocol mcp --tps …/mcp_server.yaml --out ./reports/mcp
 ```
 
-Built-in protocols in v4.3.5 (**36**): `bluetooth`, `dhcp`, `dns`, `ftp`,
+Built-in protocols in v4.3.6 (**36**): `bluetooth`, `dhcp`, `dns`, `ftp`,
 `generic`, `git`, `http`, `httpproxy`, `imap`, `ipp`, `irc`, `kubernetes`,
 `ldap`, `mcp`, `memcache`, `modbus`, `mongodb`, `mssql`, `mysql`, `ntp`,
 `oracle`, `pjl`, `pop3`, `postgres`, `rdp`, `redis`, `s7comm`, `sip`, `smb`,
@@ -81,26 +81,45 @@ uhbs aep report advanced-evidence.json --format markdown --out ADVANCED-EVIDENCE
 ```
 
 Extras at a glance: `uhbs[lab]` (live harness) · `uhbs[mcp]` (AI-host tools) ·
-`uhbs[aep]` (offline evidence). Full guide:
+`uhbs[aep]` (offline evidence) · `uhbs[aep-slm]` (alpha SLM helper, **off by
+default**). Full guide:
 [AEP CLI](../advanced-evidence/cli.md) ·
 [Beginner tutorial](../advanced-evidence/tutorial-beginner.md) ·
-[Advanced tutorial](../advanced-evidence/tutorial-advanced.md).
+[Advanced tutorial](../advanced-evidence/tutorial-advanced.md) ·
+[SLM evaluator (alpha)](../advanced-evidence/slm-alpha.md).
+
+#### AEP SLM (alpha · opt-in)
+
+Optional helper to draft local AEP trial JSONL (`mock` / `recorded` / loopback
+`openai_compatible`). **Not activated by install** — edit `aep-slm.yaml` unlock
+gates. Does not change UHQS; not available via AI-host MCP.
+
+```bash
+pip install 'uhbs[aep-slm]'
+uhbs aep slm init --out aep-slm.yaml
+uhbs aep slm status aep-slm.yaml
+# After editing the YAML unlock gates:
+# uhbs aep slm generate aep-slm.yaml
+```
+
+Published guide:
+https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/
 
 ### Docker image
 
 Build once from the repository root:
 
 ```bash
-docker build -t uhbs:4.3.5 .
+docker build -t uhbs:4.3.6 .
 ```
 
 The image entrypoint is `uhbs`. Mount your project at `/work`:
 
 ```bash
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.5 --help
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.5 \
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.6 --help
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.6 \
   validate-scorecard ./docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.5 lab --list-protocols
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.6 lab --list-protocols
 ```
 
 For live Modules A–E probes, point `--target` at a host reachable from the

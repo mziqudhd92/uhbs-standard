@@ -124,6 +124,31 @@
       "type": "boolean",
       "description": "For evaluator_control arm: whether the evaluator completed the capability check."
     },
+    "evaluator": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Optional evaluator provenance (e.g. alpha SLM). Informative only.",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": ["slm", "human", "script", "other"]
+        },
+        "status": {
+          "type": "string",
+          "enum": ["alpha", "experimental", "stable"]
+        },
+        "provider": { "type": "string" },
+        "model_name": { "type": "string" },
+        "model_digest": { "type": "string" },
+        "prompt_id": { "type": "string" },
+        "seed": { "type": "integer" },
+        "temperature": { "type": "number" },
+        "raw_response_sha256": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{64}$"
+        }
+      }
+    },
     "raw_evidence_sha256": {
       "type": "string",
       "pattern": "^[a-fA-F0-9]{64}$"

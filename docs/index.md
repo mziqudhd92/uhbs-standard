@@ -1,11 +1,11 @@
 ---
 title: UHBS — Universal Honeypot Benchmarking Standard
-description: Open-source beta-status framework for vendor-neutral honeypot and deception evaluation (UHQS 0–100 with Safety Gate). Spec v4.3.5. Not a consortium standard.
+description: Open-source beta-status framework for vendor-neutral honeypot and deception evaluation (UHQS 0–100 with Safety Gate). Spec v4.3.6. Not a consortium standard.
 ---
 
 # Universal Honeypot Benchmarking Standard
 
-# UHBS v4.3.5 (2026)
+# UHBS v4.3.6 (2026)
 
 An objective, repeatable, quantitative methodology for deception technology
 evaluation — an open-source **beta-status** framework for comparing and grading
@@ -53,6 +53,12 @@ see [ROADMAP](roadmap.md) for community-maturity goals.
 
     Lab-only decoy-vs-reference metrics (VoD, FSV, DTDR, EER) — does **not** change UHQS
 
+-   :material-brain: **AEP SLM (alpha, opt-in)**
+
+    ---
+
+    Draft AEP trial JSONL via mock/local SLM — [off by default](advanced-evidence/slm-alpha.md)
+
 </div>
 
 !!! warning "Laboratory evaluation framework"
@@ -67,8 +73,10 @@ see [ROADMAP](roadmap.md) for community-maturity goals.
 | --- | --- | --- |
 | **Core UHBS** | Modules A–F, UHQS, δ_C, reproducible scorecard (lab) | Yes (for UHBS-Core / UHBS-Lab) |
 | **Optional AEP** | Lab controlled comparative evidence + uncertainty | No — informative addendum only |
+| **AEP SLM (alpha)** | Opt-in helper to draft AEP trial JSONL (mock/local) | No — **off by default**; never changes UHQS |
 
 See [Advanced Evidence Profile](advanced-evidence/index.md) ·
+[SLM evaluator (alpha)](advanced-evidence/slm-alpha.md) ·
 [Research foundations & credits](advanced-evidence/research-foundations.md) ·
 [Related frameworks](mappings/related-frameworks.md).
 
@@ -79,6 +87,8 @@ See [Advanced Evidence Profile](advanced-evidence/index.md) ·
 3. Execute [Modules A–F](specification/modules.md) in the five-phase **lab** workflow  
 4. Compute [UHQS](specification/scoring-formula.md) and publish a standard scorecard  
 5. *(Optional)* Add [AEP](advanced-evidence/index.md) for sandboxed lab decoy-vs-reference studies  
+6. *(Optional, alpha)* [AEP SLM](advanced-evidence/slm-alpha.md) only if you need mock/local trial drafting — edit config to unlock  
+
 
 
 
@@ -87,4 +97,4 @@ pip install -e .
 uhbs validate-profile templates/profile.yaml
 ```
 
-Specification version **4.3.5** · [GitHub repository](https://github.com/mziqudhd92/uhbs-standard) · [Site landing hub](https://mziqudhd92.github.io/uhbs-standard/) (this MkDocs tree is served under `/mkdocs/`)
+Specification version **4.3.6** · [GitHub repository](https://github.com/mziqudhd92/uhbs-standard) · [Site landing hub](https://mziqudhd92.github.io/uhbs-standard/) (this MkDocs tree is served under `/mkdocs/`)

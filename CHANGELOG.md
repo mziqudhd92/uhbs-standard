@@ -3,10 +3,39 @@
 All notable changes to the UHBS specification and tooling are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/). Spec and CLI
-share version **4.3.5** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
-AEP as `uhbs[aep]`).
+share version **4.3.6** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
+AEP as `uhbs[aep]`; AEP SLM alpha as `uhbs[aep-slm]`).
 
 ## [Unreleased]
+
+## [4.3.6] — 2026-08-01
+
+Patch release: optional **AEP SLM evaluator (alpha)** plus SEO/AEO/GEO discovery
+refresh. **UHQS math, weights, and δ_C are unchanged.**
+
+### Added
+- Optional **AEP SLM evaluator (alpha)** — opt-in helper that can synthesize
+  local AEP trial JSONL for offline `uhbs aep analyze`. Commands:
+  `uhbs aep slm init|validate|status|generate`. Schema
+  [`aep-slm.schema.json`](schemas/aep-slm.schema.json); disabled-by-default
+  templates under [`examples/advanced-evidence/slm/`](examples/advanced-evidence/slm/);
+  marker extra `uhbs[aep-slm]`. **Off until you edit** `aep-slm.yaml`
+  (`enabled`, unlock phrase `I_ENABLE_AEP_SLM_ALPHA`, activation attestations).
+  Providers: offline `mock` (default), local `recorded`, or loopback-only
+  `openai_compatible` (no HTTP redirects; size-capped responses; strict JSON
+  types). Writes trials + `slm-run.json` provenance only; **does not** change
+  UHQS; not exposed via AI-host MCP.
+  - Docs (MkDocs / GitHub Pages):
+    [SLM evaluator (alpha)](https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/)
+  - Repo guide: [docs/advanced-evidence/slm-alpha.md](docs/advanced-evidence/slm-alpha.md)
+  - Landing hub (AEP section): https://mziqudhd92.github.io/uhbs-standard/#advanced-evidence
+  - CLI cross-links: [AEP CLI](docs/advanced-evidence/cli.md) ·
+    [tooling CLI](docs/tooling/cli.md)
+
+### Changed
+- SEO / GEO / AEO discovery surfaces updated for v4.3.6 (landing meta + JSON-LD,
+  root sitemap index, robots/humans/llms, MkDocs structured data)
+- Spec/package/schema/`uhbs_version` fixtures aligned to **4.3.6**
 
 ## [4.3.5] — 2026-07-31
 

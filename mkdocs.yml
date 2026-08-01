@@ -1,10 +1,10 @@
 site_name: Universal Honeypot Benchmarking Standard (UHBS)
-site_description: Open-source beta-status framework for vendor-neutral honeypot and deception evaluation (UHQS 0–100, Safety Gate). Not a consortium standard.
+site_description: Open-source beta-status framework for vendor-neutral honeypot and deception evaluation (UHQS 0–100, Safety Gate). Optional AEP and alpha SLM trial helper. Spec v4.3.6. Not a consortium standard.
 site_url: https://mziqudhd92.github.io/uhbs-standard/mkdocs/
 repo_url: https://github.com/mziqudhd92/uhbs-standard
 repo_name: mziqudhd92/uhbs-standard
 edit_uri: edit/main/docs/
-copyright: UHBS v4.3.5 — beta-status evaluation framework (Apache-2.0)
+copyright: UHBS v4.3.6 — beta-status evaluation framework (Apache-2.0)
 
 theme:
   name: material
@@ -36,6 +36,7 @@ theme:
 
 plugins:
   - search
+  # MkDocs emits sitemap.xml under site_dir by default when using Material.
 
 hooks:
   - hooks.py
@@ -292,6 +293,7 @@ nav:
       - Runbook: advanced-evidence/runbook.md
       - Reporting: advanced-evidence/reporting.md
       - CLI Reference: advanced-evidence/cli.md
+      - SLM evaluator (alpha): advanced-evidence/slm-alpha.md
       - Beginner tutorial: advanced-evidence/tutorial-beginner.md
       - Advanced tutorial: advanced-evidence/tutorial-advanced.md
       - Research foundations & credits: advanced-evidence/research-foundations.md

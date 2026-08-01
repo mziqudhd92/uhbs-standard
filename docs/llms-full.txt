@@ -1,10 +1,10 @@
 # UHBS — full agent digest (llms-full.txt)
 
-> Curated plain-text digest of UHBS v4.3.5 for answer engines and coding agents. Prefer the live docs and GitHub sources when they disagree with this file. Last aligned: 2026-07-27.
+> Curated plain-text digest of UHBS v4.3.6 for answer engines and coding agents. Prefer the live docs and GitHub sources when they disagree with this file. Last aligned: 2026-08-01.
 
 ## What UHBS is
 
-UHBS (Universal Honeypot Benchmarking Standard) is an open-source **beta-status evaluation framework** for comparing honeypots and deception systems by **decoy class** and **protocol**, not by vendor brand. Version **4.3.5**. License **Apache-2.0**. Author/maintainer: Moran Zavdi (@mziqudhd92).
+UHBS (Universal Honeypot Benchmarking Standard) is an open-source **beta-status evaluation framework** for comparing honeypots and deception systems by **decoy class** and **protocol**, not by vendor brand. Version **4.3.6**. License **Apache-2.0**. Author/maintainer: Moran Zavdi (@mziqudhd92).
 
 It is **not** a consortium standard, not multi-party governed, and not a mandatory industry requirement. Suggested Production Baseline Profile (RECOMMENDED for internal use): **UHQS > 80** with Module D Safety Gate pass (containment C ≥ 95 → δ_C = 1.0).
 
@@ -43,23 +43,28 @@ Single source of scoring math in package: `uhbs_core.uhqs_math` (CLI, MCP, and h
 - **UHBS-Lab:** UHBS-Core + Modules A–F harness (`uhbs[lab]` / `uhbs-lab`) + MANIFEST digests
 - **UHBS-MCP:** optional stdio MCP server (`uhbs[mcp]` / `uhbs-mcp`) wrapping Core validators — no live lab exec
 - **AEP (optional):** offline Advanced Evidence Profile (`uhbs[aep]` / `uhbs aep`) — informative VoD/FSV/DTDR/EER from local **lab** trial files; never changes UHQS; never launches attacks; **lab/sandbox only** (not real-world production testing). Research credits: Zhu 2019 DOI 10.1145/3314058.3314067; Collins et al. 2024 arXiv:2401.13815; Ersok et al. 2022 DOI 10.1109/ICCC202255925.2022.9922853; Li et al. 2020 DOI 10.1109/OJCS.2020.3030825 (citation ≠ endorsement).
+- **AEP SLM (alpha, opt-in):** `uhbs[aep-slm]` / `uhbs aep slm` — draft AEP trial JSONL (`mock` / `recorded` / loopback `openai_compatible`). **Disabled by default**; unlock only by editing `aep-slm.yaml`. Never changes UHQS; not exposed via AI-host MCP. Docs: https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/
 
 ## Install & commands
 
 ```bash
 pip install -e ".[lab,mcp,aep]"
+# optional alpha: pip install -e ".[aep-slm]"  # still off until you edit aep-slm.yaml
 uhbs validate-profile templates/profile.yaml
 uhbs validate-scorecard path/to/scorecard.json --strict
 uhbs score --class Low-Interaction --scores scores.json
 uhbs lab --list-protocols
 uhbs aep --help   # offline only; local experiment.yaml + trials.jsonl
-# 36 built-in protocols in v4.3.5 (bluetooth, dhcp, dns, ftp, generic, git, http,
+uhbs aep slm --help   # alpha; generate blocked until config unlock
+# 36 built-in protocols in v4.3.6 (bluetooth, dhcp, dns, ftp, generic, git, http,
 # httpproxy, imap, ipp, irc, kubernetes, ldap, mcp, memcache, modbus, mongodb,
 # mssql, mysql, ntp, oracle, pjl, pop3, postgres, rdp, redis, s7comm, sip, smb,
 # smtp, snmp, socks5, ssh, telnet, tftp, vnc)
 # AI hosts (Cursor/Claude/VS Code): configure mcpServers → python -m uhbs_mcp
 # Docs: https://mziqudhd92.github.io/uhbs-standard/mkdocs/tooling/mcp/
 # AEP: https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/
+# AEP SLM (alpha): https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/
+# Landing AEP: https://mziqudhd92.github.io/uhbs-standard/#advanced-evidence
 # Related frameworks: https://mziqudhd92.github.io/uhbs-standard/mkdocs/mappings/related-frameworks/
 ```
 

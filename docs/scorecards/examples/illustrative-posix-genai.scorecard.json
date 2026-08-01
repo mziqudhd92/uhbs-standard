@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.3.5",
+  "uhbs_version": "4.3.6",
   "target": {
     "name": "Illustrative POSIX-Shell GenAI Decoy",
     "class": "POSIX-Shell",

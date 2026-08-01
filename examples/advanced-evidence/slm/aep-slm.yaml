@@ -1,0 +1,44 @@
+aep_slm_version: 0.1.0-alpha
+status: alpha
+enabled: false
+activation:
+  unlock_phrase: CHANGE_ME_SEE_DOCS
+  acknowledge_alpha: false
+  lab_sandbox_only: false
+  no_production_targets: false
+  no_uhqs_scoring_impact: false
+  allow_local_model_calls: false
+provider: mock
+model:
+  name: uhbs-mock-slm
+  notes: Deterministic offline mock. Replace only after unlocking.
+task:
+  prompt_id: aep-slm-alpha-v1
+  system_prompt: You are a lab-only honeypot engagement evaluator. Reply with a single
+    JSON object describing a synthetic trial outcome. Never suggest contacting production
+    systems.
+  user_prompt_template: 'Arm={arm} trial_index={trial_index} seed={seed}. Return JSON
+    with keys: session_duration_seconds, exchanges, attempts, predicted_decoy (bool),
+    confidence (0-1), evaluator_control_passed (bool).'
+generation:
+  trials_per_arm: 5
+  seed: 42
+  temperature: 0.0
+  max_tokens: 256
+  arms:
+  - decoy
+  - reference
+  - evaluator_control
+paths:
+  experiment: experiment.yaml
+  output_trials: slm-trials.jsonl
+  output_run: slm-run.json
+safety:
+  loopback_only: true
+  forbid_tools: true
+  forbid_network_targets: true
+  write_local_files_only: true
+notes: 'ALPHA / DISABLED BY DEFAULT. To activate, edit this file: set enabled=true,
+  unlock_phrase=''I_ENABLE_AEP_SLM_ALPHA'', and every activation.* boolean to true
+  (for openai_compatible also set allow_local_model_calls=true). Then: uhbs aep slm
+  validate && uhbs aep slm generate. Does not change UHQS.'

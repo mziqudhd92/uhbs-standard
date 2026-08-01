@@ -1,7 +1,7 @@
 # UHBS Maturity Roadmap
 
 > **Lock document.** Execution must follow this roadmap. Do not invent parallel plans.
-> Spec version: **4.3.5** · Status: **Beta / Experimental** · Last updated: 2026-07-28
+> Spec version: **4.3.6** · Status: **Beta / Experimental** · Last updated: 2026-08-01
 >
 > **What this is today:** an open-source **beta-status**, vendor-neutral
 > **evaluation framework** (spec + schemas + harness + fixtures).
@@ -24,7 +24,7 @@ A mature UHBS would have all five pillars:
 
 | # | Pillar | Current state |
 | --- | --- | --- |
-| 1 | Normative spec (RFC 2119, document status) | Done for v4.3.5 Beta |
+| 1 | Normative spec (RFC 2119, document status) | Done for v4.3.6 Beta |
 | 2 | Machine-readable contracts (profile, scorecard, evidence) | Done |
 | 3 | Reference implementation (runnable harness) | Done — `uhbs_core` / `uhbs[lab]` |
 | 4 | Conformance suite (golden inputs → expected UHQS) | Done — public fixtures |
@@ -42,7 +42,7 @@ lab inventory and product-specific signal overlays stay out of tree.
 
 | Component | Role |
 | --- | --- |
-| `run_benchmark.py` | UHBS v4.3.5 orchestrator (phases 1–5) |
+| `run_benchmark.py` | UHBS v4.3.6 orchestrator (phases 1–5) |
 | `test_stealth.py` | Module A — Protocol & Syntax Fidelity |
 | `test_realism.py` | Module B — Behavioral & Stateful Realism |
 | `test_telemetry.py` | Module C — Telemetry Quality |
@@ -132,7 +132,7 @@ tables only. Do not publish proprietary lab signal overlays or private host path
 
 - [x] Extract vendor-neutral core (protocols, models, modules)
 - [x] Leave proprietary signals / lab inventory private
-- [x] Package as installable `uhbs[lab]` / `uhbs-lab`, version == spec `4.3.5`
+- [x] Package as installable `uhbs[lab]` / `uhbs-lab`, version == spec `4.3.6`
 - [x] Wire public docs to class-/protocol-based quickstart
 
 ### Phase 4 — Integrity (OpenSSF / SLSA)
@@ -150,6 +150,9 @@ tables only. Do not publish proprietary lab signal overlays or private host path
 - [x] Evidence-graded related-frameworks comparison (`docs/mappings/related-frameworks.md`)
 - [x] Optional Advanced Evidence Profile (AEP) docs + offline `uhbs aep` analyzer
       (informative only — does **not** change UHQS / weights / δ_C)
+- [x] Optional AEP SLM evaluator (**alpha**, opt-in, off by default) —
+      `uhbs aep slm` + docs at `advanced-evidence/slm-alpha.md` (does **not**
+      change UHQS; not MCP-exposed)
 - [x] Citation metadata (`CITATION.cff`) + Zenodo DOI placeholder notes
 - [x] Actual Zenodo DOI deposit (`10.5281/zenodo.21631156`, concept `10.5281/zenodo.21631155`)
 

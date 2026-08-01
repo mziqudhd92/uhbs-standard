@@ -17,6 +17,7 @@ Plain `pip install uhbs` stays base-only. Related extras:
 | `uhbs[lab]` | Controlled live Modules A–F harness |
 | `uhbs[mcp]` | Local AI-host scorecard tools |
 | `uhbs[aep]` | Offline advanced evidence analysis |
+| `uhbs[aep-slm]` | Alpha SLM trial generator (marker extra; **disabled until you edit config**) — [full guide](slm-alpha.md) |
 | `uhbs[all]` | Convenience meta-extra (`lab`+`mcp`+`scapy`) — still not an attack runner for AEP |
 
 ## Command-safety matrix
@@ -73,7 +74,7 @@ uhbs aep validate-trials aep-experiment/trials.jsonl \
 
 Checks trial schema, IDs, timestamps, arm balance, and experiment cross-links.
 
-### `uhbs aep analyze`
+### `uhbs aep analyze` {#uhbs-aep-analyze}
 
 ```bash
 uhbs aep analyze \
@@ -98,6 +99,27 @@ uhbs aep report out/advanced-evidence.json \
 ```
 
 `--format json` re-emits the validated addendum.
+
+### AEP SLM commands (alpha, opt-in) {#aep-slm}
+
+Full guide (what / why / unlock checklist / providers):
+[SLM evaluator (alpha)](slm-alpha.md) ·
+[GitHub Pages](https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/).
+
+Install does **not** activate it. Purpose: draft AEP trial JSONL for offline
+analyze (dry-runs, recorded replay, or loopback local models). Does **not**
+change UHQS.
+
+```bash
+uhbs aep slm init --out aep-slm.yaml
+uhbs aep slm status aep-slm.yaml
+uhbs aep slm validate aep-slm.yaml
+# After editing the YAML unlock gates (enabled + phrase + attestations):
+uhbs aep slm generate aep-slm.yaml
+```
+
+`generate` refuses default/locked configs. Providers: `mock` (default, offline),
+`recorded`, or loopback-only `openai_compatible` (redirects refused; body capped).
 
 ## Exit codes
 

@@ -113,11 +113,11 @@ Full artifacts (tutorials, methodology, `SCORECARD.txt`, `report.json`) live und
 After an official evaluation, maintainers can embed:
 
 ```markdown
-![UHBS v4.3.5 Grade A](https://img.shields.io/badge/UHBS%20v4.3.5-Grade%20A-brightgreen)
-![UHBS v4.3.5 Grade B](https://img.shields.io/badge/UHBS%20v4.3.5-Grade%20B-yellowgreen)
-![UHBS v4.3.5 Grade C](https://img.shields.io/badge/UHBS%20v4.3.5-Grade%20C-yellow)
-![UHBS v4.3.5 Grade D](https://img.shields.io/badge/UHBS%20v4.3.5-Grade%20D-orange)
-![UHBS v4.3.5 Grade F](https://img.shields.io/badge/UHBS%20v4.3.5-Grade%20F-red)
+![UHBS v4.3.6 Grade A](https://img.shields.io/badge/UHBS%20v4.3.6-Grade%20A-brightgreen)
+![UHBS v4.3.6 Grade B](https://img.shields.io/badge/UHBS%20v4.3.6-Grade%20B-yellowgreen)
+![UHBS v4.3.6 Grade C](https://img.shields.io/badge/UHBS%20v4.3.6-Grade%20C-yellow)
+![UHBS v4.3.6 Grade D](https://img.shields.io/badge/UHBS%20v4.3.6-Grade%20D-orange)
+![UHBS v4.3.6 Grade F](https://img.shields.io/badge/UHBS%20v4.3.6-Grade%20F-red)
 ```
 
 ## Submitting a Scorecard

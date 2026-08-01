@@ -1,4 +1,4 @@
-"""UHQS scoring helpers for UHBS v4.3.5 (CLI / scorecard validation).
+"""UHQS scoring helpers for UHBS v4.3.6 (CLI / scorecard validation).
 
 Normative math lives in ``uhbs_core.uhqs_math`` — this module re-exports the
 CLI-facing API and adds scorecard integrity checks.

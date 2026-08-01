@@ -7,12 +7,12 @@
 [![PyPI](https://img.shields.io/pypi/v/uhbs.svg)](https://pypi.org/project/uhbs/)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21631156-blue)](https://doi.org/10.5281/zenodo.21631156)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![Spec](https://img.shields.io/badge/Specification-v4.3.5-indigo.svg)](docs/specification/core-principles.md)
+[![Spec](https://img.shields.io/badge/Specification-v4.3.6-indigo.svg)](docs/specification/core-principles.md)
 [![UHQS](https://img.shields.io/badge/UHQS-0%E2%80%93100-success.svg)](docs/specification/scoring-formula.md)
 
 > Open-source **beta** framework for **lab / sandbox** evaluation of honeypots and decoys — vendor-neutral UHQS scoring (0–100) with a non-linear Safety Gate.
 
-**UHBS v4.3.5** measures deception realism, containment, scale, and telemetry quality by **class and protocol**. It is **not** an industry consortium standard or multi-party governed body. See [ROADMAP.md](ROADMAP.md) for maturity goals.
+**UHBS v4.3.6** measures deception realism, containment, scale, and telemetry quality by **class and protocol**. It is **not** an industry consortium standard or multi-party governed body. See [ROADMAP.md](ROADMAP.md) for maturity goals.
 
 | | |
 | --- | --- |
@@ -59,6 +59,7 @@
 | Live Modules A–F lab harness (**36** protocols) | `pip install 'uhbs[lab]'` → `uhbs lab` / `uhbs-lab` |
 | AI-host MCP tools (validate/score fixtures; no live probes) | `pip install 'uhbs[mcp]'` → `uhbs-mcp` |
 | Offline Advanced Evidence Profile (optional; does not change UHQS) | `pip install 'uhbs[aep]'` → `uhbs aep` |
+| AEP SLM trial generator (alpha; **off until you edit config**) | `pip install 'uhbs[aep-slm]'` → `uhbs aep slm` |
 | Published lab grades / fixtures | [docs/conformance/](docs/conformance/index.md) |
 
 **Vendor neutrality:** normative docs use classes and protocols. Named products appear only under conformance as evaluation **proof**, not as UHBS requirements.
@@ -84,8 +85,9 @@ pip install 'uhbs[lab]'
 
 # Optional extras (install only what you need)
 pip install 'uhbs[mcp]'   # AI-host MCP server
-pip install 'uhbs[aep]'   # offline Advanced Evidence Profile
-pip install 'uhbs[all]'   # lab + mcp + scapy (convenience; still not an attack runner)
+pip install 'uhbs[aep]'       # offline Advanced Evidence Profile
+pip install 'uhbs[aep-slm]'   # alpha SLM trial helper (still off until you edit config)
+pip install 'uhbs[all]'       # lab + mcp + scapy (convenience; still not an attack runner)
 ```
 
 | Extra | Purpose |
@@ -94,6 +96,7 @@ pip install 'uhbs[all]'   # lab + mcp + scapy (convenience; still not an attack 
 | `lab` | Controlled live Modules A–F harness |
 | `mcp` | Local AI-host scorecard tools (stdio MCP) |
 | `aep` | Offline advanced evidence analysis |
+| `aep-slm` | Alpha AEP SLM trial generator (**disabled until you edit `aep-slm.yaml`**) |
 | `scapy` | Optional protocol-encoding backend |
 | `dev` | pytest, ruff, mypy (+ lab/mcp for contributors) |
 | `all` | `lab` + `mcp` + `scapy` |
@@ -144,6 +147,20 @@ uhbs aep analyze --experiment aep-beginner/experiment.yaml \
 uhbs aep report advanced-evidence.json --format markdown --out ADVANCED-EVIDENCE.md
 ```
 
+### 3b. Optional AEP SLM alpha (off by default)
+
+Draft AEP trial JSONL with a deterministic mock or a loopback-only local model.
+**Install does not enable it** — edit `aep-slm.yaml` first. Does not change UHQS.
+Guide: [SLM evaluator (alpha)](https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/).
+
+```bash
+pip install 'uhbs[aep-slm]'
+uhbs aep slm init --out aep-slm.yaml
+uhbs aep slm status aep-slm.yaml          # shows LOCKED until you edit the file
+# Edit aep-slm.yaml: enabled + unlock phrase + attestations (see docs)
+# uhbs aep slm generate aep-slm.yaml
+```
+
 ### MCP for AI hosts (Cursor, Claude, VS Code, …)
 
 ```bash
@@ -159,10 +176,10 @@ Grade **MCP honeypot** surfaces (JSON-RPC over HTTP/SSE) with the in-tree `mcp` 
 ### Docker
 
 ```bash
-docker build -t uhbs:4.3.5 .
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.5 \
+docker build -t uhbs:4.3.6 .
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.6 \
   validate-scorecard ./docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.5 lab --list-protocols
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.3.6 lab --list-protocols
 ```
 
 Compose: `docker compose run --rm uhbs validate-profile ./my-honeypot.profile.yaml`.
@@ -231,6 +248,8 @@ Ersok et al. (2022), Li et al. (2020) — full ledger:
 | Overview | https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/ |
 | Beginner tutorial | https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/tutorial-beginner/ |
 | CLI | https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/cli/ |
+| SLM evaluator (alpha, opt-in) | https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/ |
+| Landing hub (AEP section) | https://mziqudhd92.github.io/uhbs-standard/#advanced-evidence |
 | Related frameworks | https://mziqudhd92.github.io/uhbs-standard/mkdocs/mappings/related-frameworks/ |
 
 ## Documentation map
@@ -239,13 +258,15 @@ Ersok et al. (2022), Li et al. (2020) — full ledger:
 | --- | --- |
 | Landing hub | https://mziqudhd92.github.io/uhbs-standard/ |
 | Specification | https://mziqudhd92.github.io/uhbs-standard/mkdocs/specification/core-principles/ |
+| Sitemap index (SEO) | https://mziqudhd92.github.io/uhbs-standard/sitemap.xml |
 | CLI guide | [docs/tooling/cli.md](docs/tooling/cli.md) |
 | MCP (AI hosts) | [docs/tooling/mcp.md](docs/tooling/mcp.md) |
+| AEP SLM (alpha) | https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/ |
 | Reference harness | [docs/reference-implementation.md](docs/reference-implementation.md) |
 | Conformance & lab reports | [docs/conformance/index.md](docs/conformance/index.md) |
 | Framework mappings | [docs/mappings/index.md](docs/mappings/index.md) |
 | Maturity roadmap | [ROADMAP.md](ROADMAP.md) |
-| Agent / SEO index | [llms.txt](llms.txt) · [AGENTS.md](AGENTS.md) |
+| Agent / SEO / AEO index | [llms.txt](llms.txt) · [AGENTS.md](AGENTS.md) · [humans.txt](docs/humans.txt) |
 
 ## Repository layout
 
@@ -273,7 +294,7 @@ uhbs-standard/
 After you publish a scorecard (conformance / your own report), you can badge it:
 
 ```markdown
-![UHBS v4.3.5](https://img.shields.io/badge/UHBS%20v4.3.5-Grade%20A-brightgreen)
+![UHBS v4.3.6](https://img.shields.io/badge/UHBS%20v4.3.6-Grade%20A-brightgreen)
 ```
 
 ## Contributing
@@ -298,7 +319,7 @@ not authorized to test.
   author = {Zavdi, Moran},
   title = {Universal Honeypot Benchmarking Standard (UHBS)},
   year = {2026},
-  version = {4.3.5},
+  version = {4.3.6},
   publisher = {Zenodo},
   doi = {10.5281/zenodo.21631156},
   url = {https://doi.org/10.5281/zenodo.21631156}

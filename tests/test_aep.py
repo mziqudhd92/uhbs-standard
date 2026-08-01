@@ -44,6 +44,7 @@ def test_packaged_aep_schemas_exist() -> None:
     for name in (
         "aep-experiment.schema.json",
         "aep-trial.schema.json",
+        "aep-slm.schema.json",
         "advanced-evidence.schema.json",
     ):
         assert (schema_dir / name).is_file(), name

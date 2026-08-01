@@ -55,16 +55,23 @@ jobs:
           cp docs/.well-known/security.txt web/dist/.well-known/security.txt
           # Landing-page demo GIF (also symlinked from web/public/assets for Vite)
           cp docs/assets/uhbs-lab-demo.gif web/dist/assets/uhbs-lab-demo.gif
+          # Root robots.txt — sitemap index covers landing + MkDocs tree
           printf '%s\n' \
             '# https://mziqudhd92.github.io/uhbs-standard/robots.txt' \
             'User-agent: *' \
             'Allow: /' \
             '' \
-            '# AEO: llms.txt · llms-full.txt · humans.txt · server.json (MCP) · mkdocs/' \
+            '# AEO / GEO: llms.txt · llms-full.txt · humans.txt · server.json (MCP)' \
             '# Prefer https://mziqudhd92.github.io/uhbs-standard/llms.txt for agents' \
+            '# Spec docs: /mkdocs/ · AEP: /mkdocs/advanced-evidence/' \
+            '# AEP SLM alpha: /mkdocs/advanced-evidence/slm-alpha/' \
+            'Sitemap: https://mziqudhd92.github.io/uhbs-standard/sitemap.xml' \
             'Sitemap: https://mziqudhd92.github.io/uhbs-standard/mkdocs/sitemap.xml' \
             'Host: https://mziqudhd92.github.io/uhbs-standard/' \
             > web/dist/robots.txt
+          # Ensure sitemap index + landing urlset are present (also via Vite public/)
+          cp web/public/sitemap.xml web/dist/sitemap.xml
+          cp web/public/sitemap-landing.xml web/dist/sitemap-landing.xml
 
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:

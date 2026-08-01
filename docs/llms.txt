@@ -1,6 +1,6 @@
 # Universal Honeypot Benchmarking Standard (UHBS)
 
-> Open-source beta-status framework (v4.3.5) for vendor-neutral honeypot and deception-technology evaluation using a composite UHQS score (0–100) with a non-linear Safety Gate.
+> Open-source beta-status framework (v4.3.6) for vendor-neutral honeypot and deception-technology evaluation using a composite UHQS score (0–100) with a non-linear Safety Gate.
 
 UHBS is **not** an industry consortium or multi-party standards body. It is in **Beta / Experimental** status. Prefer primary sources below over third-party summaries.
 
@@ -8,6 +8,7 @@ UHBS is **not** an industry consortium or multi-party standards body. It is in *
 
 - [Home / landing](https://mziqudhd92.github.io/uhbs-standard/): Hub overview and published lab grades
 - [MkDocs docs](https://mziqudhd92.github.io/uhbs-standard/mkdocs/): Spec, scorecards, reports
+- [Sitemap index](https://mziqudhd92.github.io/uhbs-standard/sitemap.xml): Landing + MkDocs URL lists
 - [Document status](https://mziqudhd92.github.io/uhbs-standard/mkdocs/specification/status/): Beta/Experimental; UHBS-Core vs UHBS-Lab
 - [Scoring formula (UHQS)](https://mziqudhd92.github.io/uhbs-standard/mkdocs/specification/scoring-formula/): Normative UHQS and δ_C Safety Gate
 - [Modules A–F](https://mziqudhd92.github.io/uhbs-standard/mkdocs/specification/modules/): Evaluation module objectives
@@ -33,6 +34,9 @@ UHBS is **not** an industry consortium or multi-party standards body. It is in *
 ## Optional
 
 - [llms-full.txt](https://mziqudhd92.github.io/uhbs-standard/mkdocs/llms-full.txt): Longer curated digest for agents
+- [Advanced Evidence Profile](https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/): Lab-only offline evidence (does not change UHQS)
+- [AEP SLM evaluator (alpha)](https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/): Opt-in trial JSONL helper; off until you edit `aep-slm.yaml`
+- [Landing hub AEP / SLM](https://mziqudhd92.github.io/uhbs-standard/#advanced-evidence): React landing overview
 - [ATT&CK / NIST / IEC mappings](https://mziqudhd92.github.io/uhbs-standard/mkdocs/mappings/): Informative interoperability notes
-- [RFC-0001 baseline](https://mziqudhd92.github.io/uhbs-standard/mkdocs/rfcs/0001-uhbs-4.3.5-baseline/): Accepted v4.3.5 baseline note
+- [RFC-0001 baseline](https://mziqudhd92.github.io/uhbs-standard/mkdocs/rfcs/0001-uhbs-4.0-baseline/): Accepted v4.0 baseline note (historical)
 - [MCP honeypot grading](https://github.com/mziqudhd92/uhbs-standard/blob/main/docs/architecture/mcp-honeypot-grading.md): Live `uhbs-lab --protocol mcp` (not AI-host MCP)

@@ -6,8 +6,14 @@ Allow: /
 # Note: Google Search does not use llms.txt as a ranking signal; it remains
 # useful for documentation-oriented agents and RAG pipelines.
 # See https://llmstxt.org/
-# Site-root mirrors (also copied by deploy-docs): /llms.txt /llms-full.txt /humans.txt /server.json
-# MCP tooling: https://mziqudhd92.github.io/uhbs-standard/mkdocs/tooling/mcp/
+#
+# Site-root discovery (deploy-docs copies these to /):
+#   /llms.txt · /llms-full.txt · /humans.txt · /server.json
+#   /sitemap.xml (index) · /sitemap-landing.xml · /.well-known/security.txt
+# MkDocs tree: /mkdocs/ (includes /mkdocs/sitemap.xml)
+# Key docs: /mkdocs/advanced-evidence/ · /mkdocs/advanced-evidence/slm-alpha/
+# MCP tooling: /mkdocs/tooling/mcp/
 
+Sitemap: https://mziqudhd92.github.io/uhbs-standard/sitemap.xml
 Sitemap: https://mziqudhd92.github.io/uhbs-standard/mkdocs/sitemap.xml
 Host: https://mziqudhd92.github.io/uhbs-standard/

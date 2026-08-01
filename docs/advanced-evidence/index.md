@@ -1,7 +1,7 @@
 # Advanced Evidence Profile (AEP)
 
 **Status:** Optional · informative · offline analysis only  
-**UHBS version:** 4.3.5 · **AEP schema version:** 1.0.0  
+**UHBS version:** 4.3.6 · **AEP schema version:** 1.0.0  
 **Evaluation scope:** Laboratory / sandbox only — **not** real-world production testing
 
 !!! danger "Lab evaluation only"
@@ -67,15 +67,31 @@ evaluators comparing LLM / ICS / tarpit behavior in **sandboxed lab studies**.
 
 AEP reports `valid | inconclusive | control_failed` — **not** pass/fail grades.
 
+## Optional SLM evaluator (alpha)
+
+For labs that want help **drafting** AEP trial JSONL with a small/local model
+(or a deterministic mock) before offline analyze:
+
+- **[SLM evaluator (alpha)](slm-alpha.md)** — what it is for, activation checklist,
+  providers (`mock` / `recorded` / loopback `openai_compatible`)
+- **Default: off.** Install does not enable it; you must edit `aep-slm.yaml`.
+- **Does not change UHQS.** Not exposed via AI-host MCP.
+- Published: https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/
+
+Most users should start with ordinary AEP tutorials and skip SLM until they need it.
+
 ## Start here
 
 1. [Beginner tutorial](tutorial-beginner.md) — `uhbs aep example beginner` then analyze
 2. [CLI reference](cli.md) — `pip install 'uhbs[aep]'`
 3. [Methodology](methodology.md) · [Metrics](metrics.md) · [Runbook](runbook.md)
 4. [Research foundations](research-foundations.md)
+5. Optional: [SLM evaluator (alpha)](slm-alpha.md) — **off by default**; edit
+   `aep-slm.yaml` to unlock (does not change UHQS)
 
 ## Related
 
 - [Related deception frameworks](../mappings/related-frameworks.md)
 - [CLI & Validator](../tooling/cli.md)
 - [Improvement notes (informative)](improvement-notes.md)
+- Landing hub: [Advanced Evidence Profile](https://mziqudhd92.github.io/uhbs-standard/#advanced-evidence)

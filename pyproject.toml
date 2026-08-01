@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "uhbs"
-version = "4.3.5"
+version = "4.3.6"
 description = "Universal Honeypot Benchmarking Standard (UHBS) — validators and UHBS-Lab reference core"
 readme = "README.md"
 license = "Apache-2.0"
@@ -49,6 +49,11 @@ mcp = [
 # networking, attack, agent, browser, cloud, container, or protocol-probing
 # packages. The extra exists for discoverability (`pip install 'uhbs[aep]'`).
 aep = []
+# Alpha AEP Small Language Model evaluator (opt-in; disabled by default).
+# No extra runtime deps — uses stdlib urllib for optional loopback-only
+# openai_compatible provider after the user edits aep-slm.yaml unlock gates.
+# Discoverability: pip install 'uhbs[aep-slm]' (or uhbs[aep]).
+"aep-slm" = []
 # Convenience meta-extra (still does not install attack runners into AEP).
 all = [
   "paramiko>=3.0",
@@ -106,6 +111,7 @@ uhbs_cli = [
   "data/advanced-evidence/beginner/*",
   "data/advanced-evidence/advanced/*",
   "data/advanced-evidence/template/*",
+  "data/advanced-evidence/slm/*",
 ]
 
 [tool.ruff]

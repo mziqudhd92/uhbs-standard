@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.3.5",
+  "uhbs_version": "4.3.6",
   "target": {
     "name": "OpenCanary (FTP :21)",
     "class": "Low-Interaction",

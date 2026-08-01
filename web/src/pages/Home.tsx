@@ -63,7 +63,7 @@ const Hero = () => {
         
         <motion.h1 variants={fadeUpVariant} className="text-5xl md:text-7xl font-bold leading-tight mb-6 max-w-4xl text-foreground font-sans tracking-tight">
           Universal Honeypot Benchmarking Standard <br className="hidden md:block"/>
-          <span className="text-muted-foreground font-mono text-4xl md:text-6xl tracking-tighter">(UHBS) v4.3.5 <span className="text-primary/70">· 2026</span></span>
+          <span className="text-muted-foreground font-mono text-4xl md:text-6xl tracking-tighter">(UHBS) v4.3.6 <span className="text-primary/70">· 2026</span></span>
         </motion.h1>
         
         <motion.p variants={fadeUpVariant} className="text-xl md:text-2xl text-secondary-foreground max-w-3xl mb-8 font-light leading-relaxed">
@@ -148,7 +148,7 @@ const ScopeAndApplicability = () => {
             </h2>
             <div className="prose prose-invert prose-lg text-secondary-foreground font-light leading-relaxed">
               <p>
-                The UHBS v4.3.5 framework provides a rigorous technical foundation for evaluating the efficacy, safety, and realism of deception assets prior to deployment.
+                The UHBS v4.3.6 framework provides a rigorous technical foundation for evaluating the efficacy, safety, and realism of deception assets prior to deployment.
               </p>
               <p className="mt-4">
                 Historically, deception technology has been evaluated subjectively. UHBS introduces a verifiable, deterministic mathematical model designed to expose flaws in protocol state machines, containment boundaries, and behavioral realism.
@@ -161,7 +161,7 @@ const ScopeAndApplicability = () => {
                 <div>
                   <h4 className="text-primary font-semibold font-mono mb-2 uppercase tracking-wide text-sm">Vendor-Neutral Beta Baseline</h4>
                   <p className="text-secondary-foreground text-sm">
-                    UHBS v4.3.5 is an open-source beta-status framework for comparing and grading honeypots by class and protocol — mathematically reproducible, not a consortium or adopted industry standard.
+                    UHBS v4.3.6 is an open-source beta-status framework for comparing and grading honeypots by class and protocol — mathematically reproducible, not a consortium or adopted industry standard.
                   </p>
                 </div>
               </div>
@@ -399,7 +399,7 @@ const FiveDimensionComparison = () => {
       module: "Module F",
       moduleName: "White-Box Static Code Audit",
       color: "text-success",
-      expansion: "New in UHBS v4.3.5: Scans repository code, container build manifests, and system prompts for SAST flaws, default keys, and unhandled command stubs.",
+      expansion: "New in UHBS v4.3.6: Scans repository code, container build manifests, and system prompts for SAST flaws, default keys, and unhandled command stubs.",
       isNew: true,
     },
   ];
@@ -409,25 +409,25 @@ const FiveDimensionComparison = () => {
       num: "01",
       title: "Dual-Plane Audit vs. Runtime-Only",
       left: { label: "5-Dimension Framework", text: "Functions purely as an operational runtime framework, observing honeypot behavior during active exposure." },
-      right: { label: "UHBS v4.3.5", text: "Employs a Dual-Plane Audit Philosophy — requires pre-deployment static code analysis (Module F) to catch hardcoded SSH keys, static seeds, or vulnerable command wrappers before dynamic sandbox probing begins." },
+      right: { label: "UHBS v4.3.6", text: "Employs a Dual-Plane Audit Philosophy — requires pre-deployment static code analysis (Module F) to catch hardcoded SSH keys, static seeds, or vulnerable command wrappers before dynamic sandbox probing begins." },
     },
     {
       num: "02",
       title: "Non-Linear Safety Gate vs. Linear Averaging",
       left: { label: "5-Dimension Framework", text: "Aggregates metrics using simple linear weighted averages. A high interaction score can mask a serious containment flaw, allowing dangerous decoys to pass evaluation." },
-      right: { label: "UHBS v4.3.5", text: "Implements a strict Safety Gate Multiplier (δ_C). If Module D containment drops below 95/100, an exponential penalty degrades the entire UHQS score regardless of performance elsewhere." },
+      right: { label: "UHBS v4.3.6", text: "Implements a strict Safety Gate Multiplier (δ_C). If Module D containment drops below 95/100, an exponential penalty degrades the entire UHQS score regardless of performance elsewhere." },
     },
     {
       num: "03",
       title: "Profile-Adaptive Context (TPS) vs. Static Metrics",
       left: { label: "5-Dimension Framework", text: "Applies identical static metric weights across all honeypot classes — a SCADA PLC and an SSH shell are evaluated with the same emphasis." },
-      right: { label: "UHBS v4.3.5", text: "Target Profile Specification (profile.yaml) adjusts evaluation weights. ICS-SCADA weights protocol fidelity at w_A = 0.35, while POSIX shells emphasize state behavior at w_B = 0.25." },
+      right: { label: "UHBS v4.3.6", text: "Target Profile Specification (profile.yaml) adjusts evaluation weights. ICS-SCADA weights protocol fidelity at w_A = 0.35, while POSIX shells emphasize state behavior at w_B = 0.25." },
     },
     {
       num: "04",
       title: "GenAI & Cloud Coverage vs. Traditional IT Only",
       left: { label: "5-Dimension Framework", text: "Designed around traditional IT OS and network service emulators — SSH servers, HTTP endpoints, and network stacks." },
-      right: { label: "UHBS v4.3.5", text: "Explicitly tests next-generation decoys: indirect prompt injections, system prompt leaks, context exhaustion attacks, and cloud API boundary breaches across public-cloud control planes and container orchestration surfaces." },
+      right: { label: "UHBS v4.3.6", text: "Explicitly tests next-generation decoys: indirect prompt injections, system prompt leaks, context exhaustion attacks, and cloud API boundary breaches across public-cloud control planes and container orchestration surfaces." },
     },
   ];
 
@@ -447,10 +447,10 @@ const FiveDimensionComparison = () => {
         <motion.div variants={fadeUpVariant} className="mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-sans mb-4 flex items-center gap-3">
             <GitCommit className="text-primary w-8 h-8" />
-            UHBS v4.3.5 vs. 5-Dimension Framework
+            UHBS v4.3.6 vs. 5-Dimension Framework
           </h2>
           <p className="text-secondary-foreground max-w-3xl">
-            Proposed five-dimension honeypot metrics (interaction, data quality, resource efficiency, stealth, fingerprinting resistance) are a useful conceptual lens—not an adopted industry standard. UHBS v4.3.5 operationalizes overlapping axes with dual-plane auditing, a non-linear Safety Gate, and coverage for modern decoy classes. For the full evidence-graded comparison against fourteen framework/model families, see the{" "}
+            Proposed five-dimension honeypot metrics (interaction, data quality, resource efficiency, stealth, fingerprinting resistance) are a useful conceptual lens—not an adopted industry standard. UHBS v4.3.6 operationalizes overlapping axes with dual-plane auditing, a non-linear Safety Gate, and coverage for modern decoy classes. For the full evidence-graded comparison against fourteen framework/model families, see the{" "}
             <a href="mkdocs/mappings/related-frameworks/" className="text-primary hover:underline">
               related frameworks
             </a>{" "}
@@ -465,8 +465,8 @@ const FiveDimensionComparison = () => {
             <thead>
               <tr className="border-b border-border text-muted-foreground">
                 <th className="py-3 pr-6 font-normal w-1/4">5-Dimension Metric</th>
-                <th className="py-3 pr-6 font-normal w-1/5">UHBS v4.3.5 Module</th>
-                <th className="py-3 font-normal">Key Expansion in UHBS v4.3.5</th>
+                <th className="py-3 pr-6 font-normal w-1/5">UHBS v4.3.6 Module</th>
+                <th className="py-3 font-normal">Key Expansion in UHBS v4.3.6</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border/30">
@@ -512,7 +512,7 @@ const FiveDimensionComparison = () => {
                     </div>
                     <p className="text-sm text-secondary-foreground leading-relaxed">{diff.left.text}</p>
                   </div>
-                  {/* Right: UHBS v4.3.5 */}
+                  {/* Right: UHBS v4.3.6 */}
                   <div className="p-6 bg-[#0f1629]/50">
                     <div className="flex items-center gap-2 mb-3">
                       <CheckCircle className="w-4 h-4 text-primary shrink-0" />
@@ -532,7 +532,7 @@ const FiveDimensionComparison = () => {
           <div>
             <h4 className="font-semibold text-primary font-mono text-sm uppercase tracking-wide mb-2">Bottom Line for Security Leadership</h4>
             <p className="text-sm text-secondary-foreground leading-relaxed">
-              Five-dimension proposals provide a useful conceptual lens for categorizing honeypot quality. UHBS v4.3.5 turns overlapping concerns into a machine-verifiable evaluation — adding a pre-deployment code audit plane (Module F), a non-linear safety gate that makes containment failures non-maskable, and explicit support for GenAI and OT/ICS decoy classes. See the{" "}
+              Five-dimension proposals provide a useful conceptual lens for categorizing honeypot quality. UHBS v4.3.6 turns overlapping concerns into a machine-verifiable evaluation — adding a pre-deployment code audit plane (Module F), a non-linear safety gate that makes containment failures non-maskable, and explicit support for GenAI and OT/ICS decoy classes. See the{" "}
               <a href="mkdocs/mappings/related-frameworks/" className="text-primary hover:underline">
                 evidence-based framework comparison
               </a>{" "}
@@ -567,7 +567,7 @@ const ScoringMethodology = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <motion.div variants={fadeUpVariant} className="lg:col-span-7 bg-card border border-border p-4 md:p-6">
             <div className="flex flex-wrap items-center justify-between gap-3 mb-4 px-2">
-              <h3 className="font-mono text-primary text-sm uppercase tracking-wider">The UHQS 4.3.5 Formula</h3>
+              <h3 className="font-mono text-primary text-sm uppercase tracking-wider">The UHQS 4.3.6 Formula</h3>
               <UhqsHumanExplainerTrigger />
             </div>
             <div className="uhqs-katex uhqs-katex-display space-y-4">
@@ -853,12 +853,71 @@ const AdvancedEvidenceProfile = () => {
           </p>
         </motion.div>
 
+        <motion.div
+          variants={fadeUpVariant}
+          id="aep-slm-alpha"
+          className="mb-10 border border-border/60 bg-card/50 p-6"
+        >
+          <div className="flex flex-wrap items-center gap-3 mb-3">
+            <span className="font-mono text-[10px] uppercase tracking-widest px-2 py-1 border border-warning/40 text-warning/90">
+              Alpha · off by default
+            </span>
+            <h3 className="font-mono text-xs text-muted-foreground uppercase tracking-wider">
+              Optional AEP SLM evaluator
+            </h3>
+          </div>
+          <p className="text-sm text-secondary-foreground max-w-3xl leading-relaxed mb-4">
+            An opt-in helper for labs that want a small / local language model (or a deterministic{" "}
+            <span className="font-mono text-foreground">mock</span>) to draft{" "}
+            <span className="text-foreground font-medium">AEP trial JSONL</span> for offline{" "}
+            <span className="font-mono text-foreground">uhbs aep analyze</span>. Installing UHBS does{" "}
+            <span className="text-foreground font-medium">not</span> turn it on — you must edit a local{" "}
+            <span className="font-mono text-foreground">aep-slm.yaml</span> (enable flag, unlock phrase, and
+            attestations). It never changes UHQS, never launches probes, and is not exposed over the AI-host MCP
+            server.
+          </p>
+          <ul className="text-sm font-mono text-foreground space-y-2 mb-5">
+            <li>
+              <span className="text-primary">pip install &apos;uhbs[aep-slm]&apos;</span> →{" "}
+              <span className="text-secondary-foreground">uhbs aep slm init|validate|status|generate</span>
+            </li>
+            <li>
+              Providers: <span className="text-secondary-foreground">mock</span> (offline) ·{" "}
+              <span className="text-secondary-foreground">recorded</span> · loopback-only{" "}
+              <span className="text-secondary-foreground">openai_compatible</span>
+            </li>
+            <li className="text-secondary-foreground">
+              Purpose: experiment dry-runs / local replay — not certification, not production testing
+            </li>
+          </ul>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="mkdocs/advanced-evidence/slm-alpha/"
+              className="inline-flex items-center gap-2 px-4 py-2 border border-primary/40 bg-primary/10 text-primary font-mono text-xs hover:bg-primary/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            >
+              How to use SLM (alpha) <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+            </a>
+            <a
+              href="mkdocs/advanced-evidence/cli/#aep-slm"
+              className="inline-flex items-center gap-2 px-4 py-2 border border-border text-secondary-foreground font-mono text-xs hover:border-primary/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            >
+              CLI reference
+            </a>
+          </div>
+        </motion.div>
+
         <motion.div variants={fadeUpVariant} className="flex flex-wrap gap-4">
           <a
             href="mkdocs/advanced-evidence/"
             className="inline-flex items-center gap-2 px-5 py-3 border border-primary/40 bg-primary/10 text-primary font-mono text-sm hover:bg-primary/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
             AEP overview <ArrowRight className="w-4 h-4" aria-hidden="true" />
+          </a>
+          <a
+            href="mkdocs/advanced-evidence/slm-alpha/"
+            className="inline-flex items-center gap-2 px-5 py-3 border border-border text-secondary-foreground font-mono text-sm hover:border-primary/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          >
+            SLM evaluator (alpha)
           </a>
           <a
             href="mkdocs/advanced-evidence/research-foundations/"
@@ -3269,7 +3328,7 @@ const Footer = () => {
           <Shield className="w-6 h-6" />
         </div>
         <div className="font-mono text-sm text-secondary-foreground mb-4">
-          Universal Honeypot Benchmarking Standard <span className="text-primary/70">·</span> v4.3.5 <span className="text-primary/70">·</span> 2026
+          Universal Honeypot Benchmarking Standard <span className="text-primary/70">·</span> v4.3.6 <span className="text-primary/70">·</span> 2026
         </div>
         <p className="text-xs text-muted-foreground max-w-lg mx-auto mb-6">
           Open-source beta-status evaluation framework (Apache-2.0). Not a consortium, Steering Committee, or adopted industry standard.

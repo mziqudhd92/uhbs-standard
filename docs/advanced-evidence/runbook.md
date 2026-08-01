@@ -31,7 +31,7 @@
 
 ## Reproducibility checklist
 
-- [ ] Scorecard validates under UHBS 4.3.5 (UHQS unchanged after AEP)
+- [ ] Scorecard validates under UHBS 4.3.6 (UHQS unchanged after AEP)
 - [ ] Experiment attestations all `true` (sandbox, no production, local-only, informative)
 - [ ] Digests/versions recorded for decoy and reference
 - [ ] Randomization seed and analysis seed declared
@@ -42,6 +42,11 @@
 - [ ] Warnings reviewed (low n, failed controls, high censoring)
 
 ## Safety boundary
+
+!!! note "Optional SLM (alpha)"
+    To draft trials with a mock/local SLM instead of hand-written JSONL, see
+    [SLM evaluator (alpha)](slm-alpha.md) — **off by default**; edit
+    `aep-slm.yaml` to unlock. Then continue from validate-trials / analyze above.
 
 `uhbs aep` accepts **local paths only**. It refuses URL / `host:port` style
 inputs and never imports sockets, HTTP, SSH, subprocess, Docker, or `uhbs-lab`.

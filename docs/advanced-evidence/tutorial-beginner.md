@@ -94,3 +94,5 @@ The scorecard UHQS/grade must match the pre-AEP values.
 
 - [Advanced tutorial](tutorial-advanced.md)
 - [Methodology](methodology.md) · [Metrics](metrics.md)
+- Optional alpha: [SLM evaluator](slm-alpha.md) if you want mock/local trial drafting
+  (**off by default** — skip unless you need it)
