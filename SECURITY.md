@@ -4,8 +4,9 @@
 
 | Version | Supported |
 | --- | --- |
-| 4.2.x | Yes |
-| 4.0.x | Security fixes only (please upgrade to 4.2.x) |
+| 4.3.x | Yes (current) |
+| 4.2.x | Security fixes only (please upgrade to 4.3.x) |
+| 4.0.x | No |
 | < 4.0.0 | No |
 
 ## Reporting a Vulnerability
@@ -24,7 +25,8 @@ Please report vulnerabilities privately via:
 There is no project security email address at this time.
 
 Machine-readable policy: [`docs/.well-known/security.txt`](docs/.well-known/security.txt)
-(published at `https://mziqudhd92.github.io/uhbs-standard/mkdocs/.well-known/security.txt`).
+(published at `https://mziqudhd92.github.io/uhbs-standard/.well-known/security.txt`
+and mirrored under `/mkdocs/.well-known/` when docs deploy).
 
 Include:
 
