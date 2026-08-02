@@ -6,8 +6,8 @@ description: Opt-in alpha Small Language Model helper that can synthesize AEP tr
 # AEP SLM evaluator (alpha)
 
 **Status:** alpha · **Default:** **off** · **UHQS impact:** none  
-**Extra:** [`uhbs[aep-slm]`](https://github.com/mziqudhd92/uhbs-standard/blob/main/pyproject.toml) (marker extra; same runtime deps as [`uhbs[aep]`](cli.md))  
-**Published docs:** [this page on GitHub Pages](https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/)
+**Extra:** [`uhbs[aep-slm]`](https://github.com/uhbs/uhbs-standard/blob/main/pyproject.toml) (marker extra; same runtime deps as [`uhbs[aep]`](cli.md))  
+**Published docs:** [this page on GitHub Pages](https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/)
 
 !!! danger "Opt-in alpha — not activated by install"
     Installing UHBS or `uhbs[aep]` / `uhbs[aep-slm]` does **not** enable the
@@ -139,9 +139,9 @@ uhbs aep slm generate aep-slm.yaml
 
 | Artifact | Location |
 | --- | --- |
-| Config schema | [`schemas/aep-slm.schema.json`](https://github.com/mziqudhd92/uhbs-standard/blob/main/schemas/aep-slm.schema.json) |
-| Trial schema (optional `evaluator`) | [`schemas/aep-trial.schema.json`](https://github.com/mziqudhd92/uhbs-standard/blob/main/schemas/aep-trial.schema.json) |
-| Locked template (repo) | [`examples/advanced-evidence/slm/`](https://github.com/mziqudhd92/uhbs-standard/tree/main/examples/advanced-evidence/slm) |
+| Config schema | [`schemas/aep-slm.schema.json`](https://github.com/uhbs/uhbs-standard/blob/main/schemas/aep-slm.schema.json) |
+| Trial schema (optional `evaluator`) | [`schemas/aep-trial.schema.json`](https://github.com/uhbs/uhbs-standard/blob/main/schemas/aep-trial.schema.json) |
+| Locked template (repo) | [`examples/advanced-evidence/slm/`](https://github.com/uhbs/uhbs-standard/tree/main/examples/advanced-evidence/slm) |
 | Run provenance | `slm-run.json` (`uhqs_unchanged: true`, model/prompt/seed) |
 
 Generated trials may include `evaluator.kind: slm` and `evaluator.status: alpha`
@@ -156,9 +156,9 @@ for provenance only.
 
 ## Related
 
-- [AEP overview](index.md) · [MkDocs AEP home](https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/)
+- [AEP overview](index.md) · [MkDocs AEP home](https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/)
 - [AEP CLI reference](cli.md)
 - [Beginner tutorial](tutorial-beginner.md) (ordinary AEP without SLM)
 - [CLI & validator](../tooling/cli.md)
-- [Changelog (Unreleased)](https://github.com/mziqudhd92/uhbs-standard/blob/main/CHANGELOG.md)
-- Landing hub section: [Advanced Evidence Profile](https://mziqudhd92.github.io/uhbs-standard/#advanced-evidence)
+- [Changelog (Unreleased)](https://github.com/uhbs/uhbs-standard/blob/main/CHANGELOG.md)
+- Landing hub section: [Advanced Evidence Profile](https://uhbs.github.io/uhbs-standard/#advanced-evidence)

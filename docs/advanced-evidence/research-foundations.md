@@ -91,6 +91,6 @@ sandbox use**:
 
 ## Suggested citation of UHBS when using AEP
 
-When publishing an AEP addendum, cite UHBS (see root [`CITATION.cff`](https://github.com/mziqudhd92/uhbs-standard/blob/main/CITATION.cff))
+When publishing an AEP addendum, cite UHBS (see root [`CITATION.cff`](https://github.com/uhbs/uhbs-standard/blob/main/CITATION.cff))
 **and** cite the primary papers above that your study relies on. Do not imply
 those authors endorse your results.

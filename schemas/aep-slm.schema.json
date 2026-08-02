@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/mziqudhd92/uhbs-standard/raw/main/schemas/aep-slm.schema.json",
+  "$id": "https://github.com/uhbs/uhbs-standard/raw/main/schemas/aep-slm.schema.json",
   "title": "UHBS AEP SLM Evaluator Config (Alpha)",
   "description": "Opt-in alpha Small Language Model evaluator for generating AEP trial evidence. Disabled by default. Does not affect UHQS.",
   "type": "object",

@@ -8,6 +8,12 @@ AEP as `uhbs[aep]`; AEP SLM alpha as `uhbs[aep-slm]`).
 
 ## [Unreleased]
 
+### Changed
+- Repository and GitHub Pages moved to the **uhbs** organization:
+  https://github.com/uhbs/uhbs-standard ·
+  https://uhbs.github.io/uhbs-standard/
+  (old `mziqudhd92/uhbs-standard` GitHub URL redirects; user Pages URL does not)
+
 ## [4.3.6] — 2026-08-01
 
 Patch release: optional **AEP SLM evaluator (alpha)** plus SEO/AEO/GEO discovery
@@ -26,9 +32,9 @@ refresh. **UHQS math, weights, and δ_C are unchanged.**
   types). Writes trials + `slm-run.json` provenance only; **does not** change
   UHQS; not exposed via AI-host MCP.
   - Docs (MkDocs / GitHub Pages):
-    [SLM evaluator (alpha)](https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/)
+    [SLM evaluator (alpha)](https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/)
   - Repo guide: [docs/advanced-evidence/slm-alpha.md](docs/advanced-evidence/slm-alpha.md)
-  - Landing hub (AEP section): https://mziqudhd92.github.io/uhbs-standard/#advanced-evidence
+  - Landing hub (AEP section): https://uhbs.github.io/uhbs-standard/#advanced-evidence
   - CLI cross-links: [AEP CLI](docs/advanced-evidence/cli.md) ·
     [tooling CLI](docs/tooling/cli.md)
 

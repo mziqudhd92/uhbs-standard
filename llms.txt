@@ -2,50 +2,50 @@
 
 > Open-source beta-status framework (v4.3.6, Apache-2.0) for vendor-neutral honeypot / deception evaluation (UHQS 0–100 + Safety Gate). Not a consortium standard.
 
-This file is the **repository** agent index (AEO/GEO for coding assistants). The published site mirror is https://mziqudhd92.github.io/uhbs-standard/llms.txt (landing) · https://mziqudhd92.github.io/uhbs-standard/mkdocs/llms.txt (MkDocs)
+This file is the **repository** agent index (AEO/GEO for coding assistants). The published site mirror is https://uhbs.github.io/uhbs-standard/llms.txt (landing) · https://uhbs.github.io/uhbs-standard/mkdocs/llms.txt (MkDocs)
 
 ## Essential
 
-- [README](https://github.com/mziqudhd92/uhbs-standard/blob/main/README.md): Project posture and quickstart
-- [ROADMAP](https://github.com/mziqudhd92/uhbs-standard/blob/main/ROADMAP.md): Maturity plan; Phase 6 community goals unchecked
-- [MAINTAINERS](https://github.com/mziqudhd92/uhbs-standard/blob/main/MAINTAINERS.md): Single maintainer today
-- [Landing hub](https://mziqudhd92.github.io/uhbs-standard/): React overview + published lab grades
-- [MkDocs docs](https://mziqudhd92.github.io/uhbs-standard/mkdocs/): Specification, scorecards, conformance reports
-- [Sitemap index](https://mziqudhd92.github.io/uhbs-standard/sitemap.xml): Landing + MkDocs sitemaps (SEO)
-- [CITATION.cff](https://github.com/mziqudhd92/uhbs-standard/blob/main/CITATION.cff): How to cite
+- [README](https://github.com/uhbs/uhbs-standard/blob/main/README.md): Project posture and quickstart
+- [ROADMAP](https://github.com/uhbs/uhbs-standard/blob/main/ROADMAP.md): Maturity plan; Phase 6 community goals unchecked
+- [MAINTAINERS](https://github.com/uhbs/uhbs-standard/blob/main/MAINTAINERS.md): Single maintainer today
+- [Landing hub](https://uhbs.github.io/uhbs-standard/): React overview + published lab grades
+- [MkDocs docs](https://uhbs.github.io/uhbs-standard/mkdocs/): Specification, scorecards, conformance reports
+- [Sitemap index](https://uhbs.github.io/uhbs-standard/sitemap.xml): Landing + MkDocs sitemaps (SEO)
+- [CITATION.cff](https://github.com/uhbs/uhbs-standard/blob/main/CITATION.cff): How to cite
 
 ## Normative / machine-readable
 
-- [Scoring formula](https://github.com/mziqudhd92/uhbs-standard/blob/main/docs/specification/scoring-formula.md): UHQS + δ_C
-- [uhqs_math.py](https://github.com/mziqudhd92/uhbs-standard/blob/main/src/uhbs_core/uhqs_math.py): Single source of UHQS math
-- [profile.schema.json](https://github.com/mziqudhd92/uhbs-standard/blob/main/schemas/profile.schema.json): TPS schema
-- [scorecard.schema.json](https://github.com/mziqudhd92/uhbs-standard/blob/main/schemas/scorecard.schema.json): Scorecard schema
-- [evidence-pack.schema.json](https://github.com/mziqudhd92/uhbs-standard/blob/main/schemas/evidence-pack.schema.json): Evidence pack schema
-- [aep-experiment.schema.json](https://github.com/mziqudhd92/uhbs-standard/blob/main/schemas/aep-experiment.schema.json): Optional AEP experiment manifest
-- [aep-trial.schema.json](https://github.com/mziqudhd92/uhbs-standard/blob/main/schemas/aep-trial.schema.json): Optional AEP trial event
-- [aep-slm.schema.json](https://github.com/mziqudhd92/uhbs-standard/blob/main/schemas/aep-slm.schema.json): Alpha AEP SLM config (opt-in; disabled by default)
-- [advanced-evidence.schema.json](https://github.com/mziqudhd92/uhbs-standard/blob/main/schemas/advanced-evidence.schema.json): Optional AEP addendum output
+- [Scoring formula](https://github.com/uhbs/uhbs-standard/blob/main/docs/specification/scoring-formula.md): UHQS + δ_C
+- [uhqs_math.py](https://github.com/uhbs/uhbs-standard/blob/main/src/uhbs_core/uhqs_math.py): Single source of UHQS math
+- [profile.schema.json](https://github.com/uhbs/uhbs-standard/blob/main/schemas/profile.schema.json): TPS schema
+- [scorecard.schema.json](https://github.com/uhbs/uhbs-standard/blob/main/schemas/scorecard.schema.json): Scorecard schema
+- [evidence-pack.schema.json](https://github.com/uhbs/uhbs-standard/blob/main/schemas/evidence-pack.schema.json): Evidence pack schema
+- [aep-experiment.schema.json](https://github.com/uhbs/uhbs-standard/blob/main/schemas/aep-experiment.schema.json): Optional AEP experiment manifest
+- [aep-trial.schema.json](https://github.com/uhbs/uhbs-standard/blob/main/schemas/aep-trial.schema.json): Optional AEP trial event
+- [aep-slm.schema.json](https://github.com/uhbs/uhbs-standard/blob/main/schemas/aep-slm.schema.json): Alpha AEP SLM config (opt-in; disabled by default)
+- [advanced-evidence.schema.json](https://github.com/uhbs/uhbs-standard/blob/main/schemas/advanced-evidence.schema.json): Optional AEP addendum output
 
 ## Implementation
 
-- [uhbs_cli](https://github.com/mziqudhd92/uhbs-standard/tree/main/src/uhbs_cli): Validator CLI
-- [uhbs_core](https://github.com/mziqudhd92/uhbs-standard/tree/main/src/uhbs_core): UHBS-Lab Modules A–F harness
-- [uhbs_mcp](https://github.com/mziqudhd92/uhbs-standard/tree/main/src/uhbs_mcp): MCP server for AI hosts (stdio validate/score/fixtures)
-- [CLI guide](https://github.com/mziqudhd92/uhbs-standard/blob/main/docs/tooling/cli.md): Commands and integrity checks
-- [MCP guide](https://github.com/mziqudhd92/uhbs-standard/blob/main/docs/tooling/mcp.md): Cursor / Claude / VS Code config
-- [MCP honeypot grading](https://github.com/mziqudhd92/uhbs-standard/blob/main/docs/architecture/mcp-honeypot-grading.md): Live `uhbs-lab --protocol mcp` (not AI-host MCP)
-- [server.json](https://github.com/mziqudhd92/uhbs-standard/blob/main/server.json): MCP Registry metadata (stdio)
-- [Conformance fixtures](https://github.com/mziqudhd92/uhbs-standard/tree/main/docs/conformance/fixtures): Proof scorecards only
+- [uhbs_cli](https://github.com/uhbs/uhbs-standard/tree/main/src/uhbs_cli): Validator CLI
+- [uhbs_core](https://github.com/uhbs/uhbs-standard/tree/main/src/uhbs_core): UHBS-Lab Modules A–F harness
+- [uhbs_mcp](https://github.com/uhbs/uhbs-standard/tree/main/src/uhbs_mcp): MCP server for AI hosts (stdio validate/score/fixtures)
+- [CLI guide](https://github.com/uhbs/uhbs-standard/blob/main/docs/tooling/cli.md): Commands and integrity checks
+- [MCP guide](https://github.com/uhbs/uhbs-standard/blob/main/docs/tooling/mcp.md): Cursor / Claude / VS Code config
+- [MCP honeypot grading](https://github.com/uhbs/uhbs-standard/blob/main/docs/architecture/mcp-honeypot-grading.md): Live `uhbs-lab --protocol mcp` (not AI-host MCP)
+- [server.json](https://github.com/uhbs/uhbs-standard/blob/main/server.json): MCP Registry metadata (stdio)
+- [Conformance fixtures](https://github.com/uhbs/uhbs-standard/tree/main/docs/conformance/fixtures): Proof scorecards only
 
 ## Optional
 
-- [Advanced Evidence Profile](https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/): Lab-only offline evidence layer (does not change UHQS; not production testing)
-- [AEP SLM evaluator (alpha)](https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/): Opt-in trial JSONL helper; **off until you edit `aep-slm.yaml`**; never changes UHQS
-- [Landing hub AEP section](https://mziqudhd92.github.io/uhbs-standard/#advanced-evidence): Overview + SLM alpha callout
-- [AEP research credits](https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/research-foundations/): Zhu 2019 · Collins et al. 2024 · Ersok et al. 2022 · Li et al. 2020
-- [AEP CLI](https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/cli/): `pip install 'uhbs[aep]'` · `uhbs aep …` · `uhbs aep slm …`
-- [Related frameworks](https://mziqudhd92.github.io/uhbs-standard/mkdocs/mappings/related-frameworks/): Evidence-graded comparison vs 14 framework families
-- [AGENTS.md](https://github.com/mziqudhd92/uhbs-standard/blob/main/AGENTS.md): Guidance for coding agents working in this repo
-- [GOVERNANCE.md](https://github.com/mziqudhd92/uhbs-standard/blob/main/GOVERNANCE.md): Honest project notes (no fake committee)
-- [SECURITY.md](https://github.com/mziqudhd92/uhbs-standard/blob/main/SECURITY.md): Report vulns via GitHub Security Advisories
-- [Published site MCP docs](https://mziqudhd92.github.io/uhbs-standard/mkdocs/tooling/mcp/): Install + host config
+- [Advanced Evidence Profile](https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/): Lab-only offline evidence layer (does not change UHQS; not production testing)
+- [AEP SLM evaluator (alpha)](https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/): Opt-in trial JSONL helper; **off until you edit `aep-slm.yaml`**; never changes UHQS
+- [Landing hub AEP section](https://uhbs.github.io/uhbs-standard/#advanced-evidence): Overview + SLM alpha callout
+- [AEP research credits](https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/research-foundations/): Zhu 2019 · Collins et al. 2024 · Ersok et al. 2022 · Li et al. 2020
+- [AEP CLI](https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/cli/): `pip install 'uhbs[aep]'` · `uhbs aep …` · `uhbs aep slm …`
+- [Related frameworks](https://uhbs.github.io/uhbs-standard/mkdocs/mappings/related-frameworks/): Evidence-graded comparison vs 14 framework families
+- [AGENTS.md](https://github.com/uhbs/uhbs-standard/blob/main/AGENTS.md): Guidance for coding agents working in this repo
+- [GOVERNANCE.md](https://github.com/uhbs/uhbs-standard/blob/main/GOVERNANCE.md): Honest project notes (no fake committee)
+- [SECURITY.md](https://github.com/uhbs/uhbs-standard/blob/main/SECURITY.md): Report vulns via GitHub Security Advisories
+- [Published site MCP docs](https://uhbs.github.io/uhbs-standard/mkdocs/tooling/mcp/): Install + host config

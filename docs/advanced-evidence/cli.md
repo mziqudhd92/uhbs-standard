@@ -104,7 +104,7 @@ uhbs aep report out/advanced-evidence.json \
 
 Full guide (what / why / unlock checklist / providers):
 [SLM evaluator (alpha)](slm-alpha.md) ·
-[GitHub Pages](https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/).
+[GitHub Pages](https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/).
 
 Install does **not** activate it. Purpose: draft AEP trial JSONL for offline
 analyze (dry-runs, recorded replay, or loopback local models). Does **not**

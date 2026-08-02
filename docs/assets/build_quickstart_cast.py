@@ -289,7 +289,7 @@ def build() -> None:
     c.out_line("  Conpot   UHQS 55.40   GRADE D   δ_C=0.81", 0.18)
     c.out_line("  HellPot  UHQS 43.87   GRADE F   δ_C=0.5625", 0.18)
     c.nl(0.25)
-    c.out_line("# Docs: https://mziqudhd92.github.io/uhbs-standard/", 0.4)
+    c.out_line("# Docs: https://uhbs.github.io/uhbs-standard/", 0.4)
     c.nl(0.2)
     c.pause(2.5)
 

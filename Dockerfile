@@ -9,7 +9,7 @@ FROM python:3.12-slim-bookworm
 LABEL org.opencontainers.image.title="UHBS"
 LABEL org.opencontainers.image.description="Universal Honeypot Benchmarking Standard — CLI + Lab harness"
 LABEL org.opencontainers.image.version="4.3.6"
-LABEL org.opencontainers.image.source="https://github.com/mziqudhd92/uhbs-standard"
+LABEL org.opencontainers.image.source="https://github.com/uhbs/uhbs-standard"
 LABEL org.opencontainers.image.licenses="Apache-2.0"
 
 ENV PYTHONDONTWRITEBYTECODE=1 \

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/mziqudhd92/uhbs-standard/raw/main/schemas/aep-experiment.schema.json",
+  "$id": "https://github.com/uhbs/uhbs-standard/raw/main/schemas/aep-experiment.schema.json",
   "title": "UHBS Advanced Evidence Profile — Experiment Manifest",
   "description": "Offline controlled-experiment design for optional AEP metrics. Informative only; does not affect UHQS.",
   "type": "object",

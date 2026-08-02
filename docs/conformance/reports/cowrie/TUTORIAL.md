@@ -9,7 +9,7 @@ Cowrie documentation describes SSH and Telnet frontends; SFTP/SCP are SSH featur
 ## 0. Prerequisites
 
 ```bash
-git clone https://github.com/mziqudhd92/uhbs-standard.git
+git clone https://github.com/uhbs/uhbs-standard.git
 cd uhbs-standard
 docker build -t uhbs:4.0.1 .
 docker build -f Dockerfile.full -t uhbs:4.0.1-full .

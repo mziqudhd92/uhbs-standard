@@ -81,6 +81,6 @@ def test_validate_profile_template() -> None:
 
 def test_server_json_present() -> None:
     data = json.loads((ROOT / "server.json").read_text(encoding="utf-8"))
-    assert data["name"] == "io.github.mziqudhd92/uhbs"
+    assert data["name"] == "io.github.uhbs/uhbs"
     assert data["version"] == "4.3.6"
     assert data["packages"][0]["transport"]["type"] == "stdio"

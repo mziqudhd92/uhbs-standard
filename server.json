@@ -1,11 +1,11 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.mziqudhd92/uhbs",
+  "name": "io.github.uhbs/uhbs",
   "description": "UHBS validators and UHQS scoring for AI hosts (stdio). Beta honeypot evaluation framework — validate scorecards/profiles, recompute UHQS/δ_C, list conformance fixtures. No remote lab execution.",
   "title": "UHBS (Universal Honeypot Benchmarking Standard)",
-  "websiteUrl": "https://mziqudhd92.github.io/uhbs-standard/mkdocs/tooling/mcp/",
+  "websiteUrl": "https://uhbs.github.io/uhbs-standard/mkdocs/tooling/mcp/",
   "repository": {
-    "url": "https://github.com/mziqudhd92/uhbs-standard",
+    "url": "https://github.com/uhbs/uhbs-standard",
     "source": "github"
   },
   "version": "4.3.6",
@@ -38,7 +38,7 @@
       "maturity": "beta",
       "transport": "stdio-only",
       "deferred": ["streamable-http", "lab-exec"],
-      "docs": "https://mziqudhd92.github.io/uhbs-standard/mkdocs/tooling/mcp/",
+      "docs": "https://uhbs.github.io/uhbs-standard/mkdocs/tooling/mcp/",
       "install_extra": "mcp",
       "entry_points": ["uhbs-mcp", "python -m uhbs_mcp"],
       "note": "Publish to PyPI before submitting to the official MCP Registry; until then use a local editable install from git."

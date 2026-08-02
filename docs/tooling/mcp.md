@@ -37,7 +37,7 @@ the same helpers as `uhbs score` / `uhbs validate-scorecard`.
 From a UHBS checkout:
 
 ```bash
-git clone https://github.com/mziqudhd92/uhbs-standard.git
+git clone https://github.com/uhbs/uhbs-standard.git
 cd uhbs-standard
 python -m venv .venv
 source .venv/bin/activate
@@ -53,7 +53,7 @@ Extras:
 - Keep using `uhbs[lab]` / Docker for live Modules A–F grades
 
 Registry metadata (for a future official MCP Registry publish after PyPI):  
-[`server.json`](https://github.com/mziqudhd92/uhbs-standard/blob/main/server.json) at the repo root.
+[`server.json`](https://github.com/uhbs/uhbs-standard/blob/main/server.json) at the repo root.
 
 ---
 
@@ -159,7 +159,7 @@ The published `uhbs:4.3.6` / `uhbs:4.3.6-full` images install `uhbs[lab]` only
 ## Publishing to the MCP Registry
 
 1. Publish the `uhbs` distribution to PyPI (with the `mcp` extra).  
-2. Confirm [`server.json`](https://github.com/mziqudhd92/uhbs-standard/blob/main/server.json) `packages[].identifier` / version.  
+2. Confirm [`server.json`](https://github.com/uhbs/uhbs-standard/blob/main/server.json) `packages[].identifier` / version.  
 3. Follow the official registry publish flow:  
    https://github.com/modelcontextprotocol/registry  
 4. Keep **stdio-only** until auth and Safety Gate policy for remote/lab tools are defined.
@@ -181,4 +181,4 @@ deterministic calculation, and report rendering** only — never lab, network,
 shell, container, agent, or attack execution. Today AEP is CLI-only:
 [Advanced Evidence Profile](../advanced-evidence/index.md).
 
-See also: [CLI & Validator](cli.md) · [llms.txt](https://github.com/mziqudhd92/uhbs-standard/blob/main/llms.txt) · [AGENTS.md](https://github.com/mziqudhd92/uhbs-standard/blob/main/AGENTS.md)
+See also: [CLI & Validator](cli.md) · [llms.txt](https://github.com/uhbs/uhbs-standard/blob/main/llms.txt) · [AGENTS.md](https://github.com/uhbs/uhbs-standard/blob/main/AGENTS.md)

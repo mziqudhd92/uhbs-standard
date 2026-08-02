@@ -93,9 +93,9 @@ uhbs-mcp = "uhbs_mcp.server:main"
 # coap = "my_uhbs_coap_plugin.plugin:CoAPPlugin"
 
 [project.urls]
-Homepage = "https://github.com/mziqudhd92/uhbs-standard"
-Documentation = "https://mziqudhd92.github.io/uhbs-standard/"
-Repository = "https://github.com/mziqudhd92/uhbs-standard"
+Homepage = "https://github.com/uhbs/uhbs-standard"
+Documentation = "https://uhbs.github.io/uhbs-standard/"
+Repository = "https://github.com/uhbs/uhbs-standard"
 
 [tool.setuptools.packages.find]
 where = ["src"]

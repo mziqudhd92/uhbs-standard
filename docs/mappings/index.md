@@ -34,7 +34,7 @@ Sanitized fixtures **MAY** include a display-only `framework_refs` object:
 ```
 
 These tags do **not** affect UHQS, δ_C, or letter grade. See the
-[scorecard schema](https://github.com/mziqudhd92/uhbs-standard/blob/main/schemas/scorecard.schema.json).
+[scorecard schema](https://github.com/uhbs/uhbs-standard/blob/main/schemas/scorecard.schema.json).
 
 ## Trust limits
 

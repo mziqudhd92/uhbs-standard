@@ -8,7 +8,7 @@ Guidance for coding assistants and automated agents working in this repository.
 - **Not** a consortium, Steering Committee, or adopted industry/academic standard.
 - Spec / package version: **4.3.6** · License: **Apache-2.0**
 - Maintainer: see `MAINTAINERS.md` (single author today).
-- Docs site: https://mziqudhd92.github.io/uhbs-standard/ (landing) · https://mziqudhd92.github.io/uhbs-standard/mkdocs/ (MkDocs)
+- Docs site: https://uhbs.github.io/uhbs-standard/ (landing) · https://uhbs.github.io/uhbs-standard/mkdocs/ (MkDocs)
 
 ## Where truth lives
 

@@ -169,8 +169,9 @@ These items are **future goals**. The repo must **not** claim they are complete.
 
 #### Neutral hosting
 
-- [ ] Transfer the repository to a **neutral GitHub organization** (e.g. `uhbs-standard`)
-- [ ] Update clone URLs, Pages, badges, and `CITATION.cff` after transfer
+- [x] Transfer the repository to a **neutral GitHub organization** (`uhbs/uhbs-standard`)
+- [x] Update clone URLs, Pages, badges, and `CITATION.cff` after transfer
+      (site: https://uhbs.github.io/uhbs-standard/)
 
 #### Independent adopters & evaluations
 

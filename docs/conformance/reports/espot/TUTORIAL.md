@@ -16,7 +16,7 @@ This is the exact workflow used to produce the artifacts under
 - ~2 GB disk for Node 10 + UHBS images  
 
 ```bash
-git clone https://github.com/mziqudhd92/uhbs-standard.git
+git clone https://github.com/uhbs/uhbs-standard.git
 cd uhbs-standard
 
 # Base grader (CLI + lab)

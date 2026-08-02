@@ -1,8 +1,8 @@
 # Universal Honeypot Benchmarking Standard (UHBS)
 
-[![CI](https://github.com/mziqudhd92/uhbs-standard/actions/workflows/ci-validate.yml/badge.svg)](https://github.com/mziqudhd92/uhbs-standard/actions/workflows/ci-validate.yml)
-[![Docs](https://github.com/mziqudhd92/uhbs-standard/actions/workflows/deploy-docs.yml/badge.svg)](https://mziqudhd92.github.io/uhbs-standard/)
-[![CodeQL](https://github.com/mziqudhd92/uhbs-standard/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/mziqudhd92/uhbs-standard/actions/workflows/codeql-analysis.yml)
+[![CI](https://github.com/uhbs/uhbs-standard/actions/workflows/ci-validate.yml/badge.svg)](https://github.com/uhbs/uhbs-standard/actions/workflows/ci-validate.yml)
+[![Docs](https://github.com/uhbs/uhbs-standard/actions/workflows/deploy-docs.yml/badge.svg)](https://uhbs.github.io/uhbs-standard/)
+[![CodeQL](https://github.com/uhbs/uhbs-standard/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/uhbs/uhbs-standard/actions/workflows/codeql-analysis.yml)
 [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/13853/badge)](https://www.bestpractices.dev/projects/13853)
 [![PyPI](https://img.shields.io/pypi/v/uhbs.svg)](https://pypi.org/project/uhbs/)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21631156-blue)](https://doi.org/10.5281/zenodo.21631156)
@@ -18,7 +18,7 @@
 
 | | |
 | --- | --- |
-| **Docs** | [Landing](https://mziqudhd92.github.io/uhbs-standard/) · [MkDocs](https://mziqudhd92.github.io/uhbs-standard/mkdocs/) |
+| **Docs** | [Landing](https://uhbs.github.io/uhbs-standard/) · [MkDocs](https://uhbs.github.io/uhbs-standard/mkdocs/) |
 | **PyPI** | [`uhbs`](https://pypi.org/project/uhbs/) |
 | **Python** | ≥ 3.11 |
 | **License** | [Apache-2.0](LICENSE) |
@@ -106,7 +106,7 @@ pip install 'uhbs[all]'       # lab + mcp + scapy (convenience; still not an att
 Development checkout:
 
 ```bash
-git clone https://github.com/mziqudhd92/uhbs-standard.git
+git clone https://github.com/uhbs/uhbs-standard.git
 cd uhbs-standard
 pip install -e ".[lab,dev]"
 # optional: pip install -e ".[aep,mcp]"
@@ -153,7 +153,7 @@ uhbs aep report advanced-evidence.json --format markdown --out ADVANCED-EVIDENCE
 
 Draft AEP trial JSONL with a deterministic mock or a loopback-only local model.
 **Install does not enable it** — edit `aep-slm.yaml` first. Does not change UHQS.
-Guide: [SLM evaluator (alpha)](https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/).
+Guide: [SLM evaluator (alpha)](https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/).
 
 ```bash
 pip install 'uhbs[aep-slm]'
@@ -243,27 +243,27 @@ controlled **lab** decoy-vs-reference experiments. **AEP does not change UHQS.**
 
 **Academic credit** (citation ≠ endorsement): Zhu (2019), Collins et al. (2024),
 Ersok et al. (2022), Li et al. (2020) — full ledger:
-[Research foundations & credits](https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/research-foundations/).
+[Research foundations & credits](https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/research-foundations/).
 
 | Doc | URL |
 | --- | --- |
-| Overview | https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/ |
-| Beginner tutorial | https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/tutorial-beginner/ |
-| CLI | https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/cli/ |
-| SLM evaluator (alpha, opt-in) | https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/ |
-| Landing hub (AEP section) | https://mziqudhd92.github.io/uhbs-standard/#advanced-evidence |
-| Related frameworks | https://mziqudhd92.github.io/uhbs-standard/mkdocs/mappings/related-frameworks/ |
+| Overview | https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/ |
+| Beginner tutorial | https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/tutorial-beginner/ |
+| CLI | https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/cli/ |
+| SLM evaluator (alpha, opt-in) | https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/ |
+| Landing hub (AEP section) | https://uhbs.github.io/uhbs-standard/#advanced-evidence |
+| Related frameworks | https://uhbs.github.io/uhbs-standard/mkdocs/mappings/related-frameworks/ |
 
 ## Documentation map
 
 | Resource | Link |
 | --- | --- |
-| Landing hub | https://mziqudhd92.github.io/uhbs-standard/ |
-| Specification | https://mziqudhd92.github.io/uhbs-standard/mkdocs/specification/core-principles/ |
-| Sitemap index (SEO) | https://mziqudhd92.github.io/uhbs-standard/sitemap.xml |
+| Landing hub | https://uhbs.github.io/uhbs-standard/ |
+| Specification | https://uhbs.github.io/uhbs-standard/mkdocs/specification/core-principles/ |
+| Sitemap index (SEO) | https://uhbs.github.io/uhbs-standard/sitemap.xml |
 | CLI guide | [docs/tooling/cli.md](docs/tooling/cli.md) |
 | MCP (AI hosts) | [docs/tooling/mcp.md](docs/tooling/mcp.md) |
-| AEP SLM (alpha) | https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/ |
+| AEP SLM (alpha) | https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/ |
 | Reference harness | [docs/reference-implementation.md](docs/reference-implementation.md) |
 | Conformance & lab reports | [docs/conformance/index.md](docs/conformance/index.md) |
 | Framework mappings | [docs/mappings/index.md](docs/mappings/index.md) |
@@ -310,7 +310,7 @@ Contributions are welcome under the project’s governance constraints.
 
 ## Security
 
-Please report vulnerabilities via [GitHub Security Advisories](https://github.com/mziqudhd92/uhbs-standard/security/advisories/new)
+Please report vulnerabilities via [GitHub Security Advisories](https://github.com/uhbs/uhbs-standard/security/advisories/new)
 per [SECURITY.md](SECURITY.md). Do not use UHBS tooling against systems you are
 not authorized to test.
 

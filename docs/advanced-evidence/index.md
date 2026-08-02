@@ -76,7 +76,7 @@ For labs that want help **drafting** AEP trial JSONL with a small/local model
   providers (`mock` / `recorded` / loopback `openai_compatible`)
 - **Default: off.** Install does not enable it; you must edit `aep-slm.yaml`.
 - **Does not change UHQS.** Not exposed via AI-host MCP.
-- Published: https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/
+- Published: https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/
 
 Most users should start with ordinary AEP tutorials and skip SLM until they need it.
 
@@ -94,4 +94,4 @@ Most users should start with ordinary AEP tutorials and skip SLM until they need
 - [Related deception frameworks](../mappings/related-frameworks.md)
 - [CLI & Validator](../tooling/cli.md)
 - [Improvement notes (informative)](improvement-notes.md)
-- Landing hub: [Advanced Evidence Profile](https://mziqudhd92.github.io/uhbs-standard/#advanced-evidence)
+- Landing hub: [Advanced Evidence Profile](https://uhbs.github.io/uhbs-standard/#advanced-evidence)

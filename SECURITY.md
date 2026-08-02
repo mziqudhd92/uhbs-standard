@@ -16,7 +16,7 @@ Do **not** open a public GitHub issue for security vulnerabilities in this repos
 Please report vulnerabilities privately via:
 
 1. **GitHub Security Advisories** — preferred:
-   [Private vulnerability reporting](https://github.com/mziqudhd92/uhbs-standard/security/advisories/new)
+   [Private vulnerability reporting](https://github.com/uhbs/uhbs-standard/security/advisories/new)
    on this repository.
 2. If advisory reporting is unavailable, contact the maintainer privately via
    [GitHub](https://github.com/mziqudhd92) (profile contact / private message).
@@ -25,7 +25,7 @@ Please report vulnerabilities privately via:
 There is no project security email address at this time.
 
 Machine-readable policy: [`docs/.well-known/security.txt`](docs/.well-known/security.txt)
-(published at `https://mziqudhd92.github.io/uhbs-standard/.well-known/security.txt`
+(published at `https://uhbs.github.io/uhbs-standard/.well-known/security.txt`
 and mirrored under `/mkdocs/.well-known/` when docs deploy).
 
 Include:

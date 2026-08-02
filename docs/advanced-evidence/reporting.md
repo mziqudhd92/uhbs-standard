@@ -12,9 +12,9 @@ Keep AEP outputs **separate** from the UHQS scorecard:
 
 Schemas:
 
-- [`aep-experiment.schema.json`](https://github.com/mziqudhd92/uhbs-standard/blob/main/schemas/aep-experiment.schema.json)
-- [`aep-trial.schema.json`](https://github.com/mziqudhd92/uhbs-standard/blob/main/schemas/aep-trial.schema.json)
-- [`advanced-evidence.schema.json`](https://github.com/mziqudhd92/uhbs-standard/blob/main/schemas/advanced-evidence.schema.json)
+- [`aep-experiment.schema.json`](https://github.com/uhbs/uhbs-standard/blob/main/schemas/aep-experiment.schema.json)
+- [`aep-trial.schema.json`](https://github.com/uhbs/uhbs-standard/blob/main/schemas/aep-trial.schema.json)
+- [`advanced-evidence.schema.json`](https://github.com/uhbs/uhbs-standard/blob/main/schemas/advanced-evidence.schema.json)
 
 ## Interpretation wording
 

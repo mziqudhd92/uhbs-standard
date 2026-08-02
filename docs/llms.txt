@@ -6,37 +6,37 @@ UHBS is **not** an industry consortium or multi-party standards body. It is in *
 
 ## Essential
 
-- [Home / landing](https://mziqudhd92.github.io/uhbs-standard/): Hub overview and published lab grades
-- [MkDocs docs](https://mziqudhd92.github.io/uhbs-standard/mkdocs/): Spec, scorecards, reports
-- [Sitemap index](https://mziqudhd92.github.io/uhbs-standard/sitemap.xml): Landing + MkDocs URL lists
-- [Document status](https://mziqudhd92.github.io/uhbs-standard/mkdocs/specification/status/): Beta/Experimental; UHBS-Core vs UHBS-Lab
-- [Scoring formula (UHQS)](https://mziqudhd92.github.io/uhbs-standard/mkdocs/specification/scoring-formula/): Normative UHQS and δ_C Safety Gate
-- [Modules A–F](https://mziqudhd92.github.io/uhbs-standard/mkdocs/specification/modules/): Evaluation module objectives
-- [GitHub repository](https://github.com/mziqudhd92/uhbs-standard): Source, schemas, CLI, UHBS-Lab harness
+- [Home / landing](https://uhbs.github.io/uhbs-standard/): Hub overview and published lab grades
+- [MkDocs docs](https://uhbs.github.io/uhbs-standard/mkdocs/): Spec, scorecards, reports
+- [Sitemap index](https://uhbs.github.io/uhbs-standard/sitemap.xml): Landing + MkDocs URL lists
+- [Document status](https://uhbs.github.io/uhbs-standard/mkdocs/specification/status/): Beta/Experimental; UHBS-Core vs UHBS-Lab
+- [Scoring formula (UHQS)](https://uhbs.github.io/uhbs-standard/mkdocs/specification/scoring-formula/): Normative UHQS and δ_C Safety Gate
+- [Modules A–F](https://uhbs.github.io/uhbs-standard/mkdocs/specification/modules/): Evaluation module objectives
+- [GitHub repository](https://github.com/uhbs/uhbs-standard): Source, schemas, CLI, UHBS-Lab harness
 
 ## Specification
 
-- [Core principles](https://mziqudhd92.github.io/uhbs-standard/mkdocs/specification/core-principles/): Dual-plane audit and isolation
-- [Target profiles (TPS)](https://mziqudhd92.github.io/uhbs-standard/mkdocs/specification/target-profiles/): profile.yaml classes and weights
-- [CLI & validator](https://mziqudhd92.github.io/uhbs-standard/mkdocs/tooling/cli/): uhbs validate-profile / validate-scorecard / score
-- [MCP server (AI hosts)](https://mziqudhd92.github.io/uhbs-standard/mkdocs/tooling/mcp/): stdio tools for Cursor / Claude / VS Code — validate, UHQS, fixtures
-- [Reference implementation](https://mziqudhd92.github.io/uhbs-standard/mkdocs/reference-implementation/): uhbs_core Modules A–F harness
+- [Core principles](https://uhbs.github.io/uhbs-standard/mkdocs/specification/core-principles/): Dual-plane audit and isolation
+- [Target profiles (TPS)](https://uhbs.github.io/uhbs-standard/mkdocs/specification/target-profiles/): profile.yaml classes and weights
+- [CLI & validator](https://uhbs.github.io/uhbs-standard/mkdocs/tooling/cli/): uhbs validate-profile / validate-scorecard / score
+- [MCP server (AI hosts)](https://uhbs.github.io/uhbs-standard/mkdocs/tooling/mcp/): stdio tools for Cursor / Claude / VS Code — validate, UHQS, fixtures
+- [Reference implementation](https://uhbs.github.io/uhbs-standard/mkdocs/reference-implementation/): uhbs_core Modules A–F harness
 
 ## Evidence & maturity
 
-- [Conformance fixtures](https://mziqudhd92.github.io/uhbs-standard/mkdocs/conformance/): Named product proof scorecards only
-- [Lab reports](https://mziqudhd92.github.io/uhbs-standard/mkdocs/conformance/reports/): Published quick+full grades (ESPot, miniprint, Conpot, Cowrie, OpenCanary)
-- [Roadmap](https://mziqudhd92.github.io/uhbs-standard/mkdocs/roadmap/): Technical done vs Phase 6 community goals
-- [Maintainers](https://github.com/mziqudhd92/uhbs-standard/blob/main/MAINTAINERS.md): Single author today
-- [Citation](https://github.com/mziqudhd92/uhbs-standard/blob/main/CITATION.cff): How to cite this beta
-- [MCP server.json](https://github.com/mziqudhd92/uhbs-standard/blob/main/server.json): Registry metadata (publish after PyPI)
+- [Conformance fixtures](https://uhbs.github.io/uhbs-standard/mkdocs/conformance/): Named product proof scorecards only
+- [Lab reports](https://uhbs.github.io/uhbs-standard/mkdocs/conformance/reports/): Published quick+full grades (ESPot, miniprint, Conpot, Cowrie, OpenCanary)
+- [Roadmap](https://uhbs.github.io/uhbs-standard/mkdocs/roadmap/): Technical done vs Phase 6 community goals
+- [Maintainers](https://github.com/uhbs/uhbs-standard/blob/main/MAINTAINERS.md): Single author today
+- [Citation](https://github.com/uhbs/uhbs-standard/blob/main/CITATION.cff): How to cite this beta
+- [MCP server.json](https://github.com/uhbs/uhbs-standard/blob/main/server.json): Registry metadata (publish after PyPI)
 
 ## Optional
 
-- [llms-full.txt](https://mziqudhd92.github.io/uhbs-standard/mkdocs/llms-full.txt): Longer curated digest for agents
-- [Advanced Evidence Profile](https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/): Lab-only offline evidence (does not change UHQS)
-- [AEP SLM evaluator (alpha)](https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/): Opt-in trial JSONL helper; off until you edit `aep-slm.yaml`
-- [Landing hub AEP / SLM](https://mziqudhd92.github.io/uhbs-standard/#advanced-evidence): React landing overview
-- [ATT&CK / NIST / IEC mappings](https://mziqudhd92.github.io/uhbs-standard/mkdocs/mappings/): Informative interoperability notes
-- [RFC-0001 baseline](https://mziqudhd92.github.io/uhbs-standard/mkdocs/rfcs/0001-uhbs-4.0-baseline/): Accepted v4.0 baseline note (historical)
-- [MCP honeypot grading](https://github.com/mziqudhd92/uhbs-standard/blob/main/docs/architecture/mcp-honeypot-grading.md): Live `uhbs-lab --protocol mcp` (not AI-host MCP)
+- [llms-full.txt](https://uhbs.github.io/uhbs-standard/mkdocs/llms-full.txt): Longer curated digest for agents
+- [Advanced Evidence Profile](https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/): Lab-only offline evidence (does not change UHQS)
+- [AEP SLM evaluator (alpha)](https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/): Opt-in trial JSONL helper; off until you edit `aep-slm.yaml`
+- [Landing hub AEP / SLM](https://uhbs.github.io/uhbs-standard/#advanced-evidence): React landing overview
+- [ATT&CK / NIST / IEC mappings](https://uhbs.github.io/uhbs-standard/mkdocs/mappings/): Informative interoperability notes
+- [RFC-0001 baseline](https://uhbs.github.io/uhbs-standard/mkdocs/rfcs/0001-uhbs-4.0-baseline/): Accepted v4.0 baseline note (historical)
+- [MCP honeypot grading](https://github.com/uhbs/uhbs-standard/blob/main/docs/architecture/mcp-honeypot-grading.md): Live `uhbs-lab --protocol mcp` (not AI-host MCP)

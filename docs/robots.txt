@@ -1,4 +1,4 @@
-# https://mziqudhd92.github.io/uhbs-standard/mkdocs/robots.txt
+# https://uhbs.github.io/uhbs-standard/mkdocs/robots.txt
 User-agent: *
 Allow: /
 
@@ -14,6 +14,6 @@ Allow: /
 # Key docs: /mkdocs/advanced-evidence/ · /mkdocs/advanced-evidence/slm-alpha/
 # MCP tooling: /mkdocs/tooling/mcp/
 
-Sitemap: https://mziqudhd92.github.io/uhbs-standard/sitemap.xml
-Sitemap: https://mziqudhd92.github.io/uhbs-standard/mkdocs/sitemap.xml
-Host: https://mziqudhd92.github.io/uhbs-standard/
+Sitemap: https://uhbs.github.io/uhbs-standard/sitemap.xml
+Sitemap: https://uhbs.github.io/uhbs-standard/mkdocs/sitemap.xml
+Host: https://uhbs.github.io/uhbs-standard/

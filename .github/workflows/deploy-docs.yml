@@ -57,17 +57,17 @@ jobs:
           cp docs/assets/uhbs-lab-demo.gif web/dist/assets/uhbs-lab-demo.gif
           # Root robots.txt — sitemap index covers landing + MkDocs tree
           printf '%s\n' \
-            '# https://mziqudhd92.github.io/uhbs-standard/robots.txt' \
+            '# https://uhbs.github.io/uhbs-standard/robots.txt' \
             'User-agent: *' \
             'Allow: /' \
             '' \
             '# AEO / GEO: llms.txt · llms-full.txt · humans.txt · server.json (MCP)' \
-            '# Prefer https://mziqudhd92.github.io/uhbs-standard/llms.txt for agents' \
+            '# Prefer https://uhbs.github.io/uhbs-standard/llms.txt for agents' \
             '# Spec docs: /mkdocs/ · AEP: /mkdocs/advanced-evidence/' \
             '# AEP SLM alpha: /mkdocs/advanced-evidence/slm-alpha/' \
-            'Sitemap: https://mziqudhd92.github.io/uhbs-standard/sitemap.xml' \
-            'Sitemap: https://mziqudhd92.github.io/uhbs-standard/mkdocs/sitemap.xml' \
-            'Host: https://mziqudhd92.github.io/uhbs-standard/' \
+            'Sitemap: https://uhbs.github.io/uhbs-standard/sitemap.xml' \
+            'Sitemap: https://uhbs.github.io/uhbs-standard/mkdocs/sitemap.xml' \
+            'Host: https://uhbs.github.io/uhbs-standard/' \
             > web/dist/robots.txt
           # Ensure sitemap index + landing urlset are present (also via Vite public/)
           cp web/public/sitemap.xml web/dist/sitemap.xml

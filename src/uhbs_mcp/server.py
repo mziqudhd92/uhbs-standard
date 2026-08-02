@@ -71,7 +71,7 @@ validate_scorecard over inventing grades. Live Docker lab grading is CLI-only
 mcp = FastMCP(
     "uhbs",
     instructions=INSTRUCTIONS,
-    website_url="https://mziqudhd92.github.io/uhbs-standard/",
+    website_url="https://uhbs.github.io/uhbs-standard/",
 )
 
 

@@ -32,7 +32,7 @@ Profile-adaptive UHQS weights `w_A` … `w_F` that **must sum to 1.00**.
 
 ## Example
 
-See the starter template: [`templates/profile.yaml`](https://github.com/mziqudhd92/uhbs-standard/blob/main/templates/profile.yaml).
+See the starter template: [`templates/profile.yaml`](https://github.com/uhbs/uhbs-standard/blob/main/templates/profile.yaml).
 
 ```yaml
 uhbs_version: "4.3.6"
@@ -56,7 +56,7 @@ module_weights:
 
 ## Validation
 
-Profiles are validated against [`schemas/profile.schema.json`](https://github.com/mziqudhd92/uhbs-standard/blob/main/schemas/profile.schema.json):
+Profiles are validated against [`schemas/profile.schema.json`](https://github.com/uhbs/uhbs-standard/blob/main/schemas/profile.schema.json):
 
 ```bash
 uhbs validate-profile path/to/profile.yaml

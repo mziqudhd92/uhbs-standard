@@ -80,7 +80,7 @@ const Hero = () => {
           <a href="#mcp" className="inline-flex items-center gap-2 bg-card border border-border px-5 py-2.5 font-mono text-sm hover:border-primary/50 transition-colors">
             MCP
           </a>
-          <a href="https://github.com/mziqudhd92/uhbs-standard" className="inline-flex items-center gap-2 bg-card border border-border px-5 py-2.5 font-mono text-sm hover:border-primary/50 transition-colors">
+          <a href="https://github.com/uhbs/uhbs-standard" className="inline-flex items-center gap-2 bg-card border border-border px-5 py-2.5 font-mono text-sm hover:border-primary/50 transition-colors">
             GitHub
           </a>
         </motion.div>
@@ -105,7 +105,7 @@ const Hero = () => {
               Demo · install + full UHQS
             </p>
             <a
-              href="https://github.com/mziqudhd92/uhbs-standard/blob/main/docs/assets/uhbs-lab-demo.cast"
+              href="https://github.com/uhbs/uhbs-standard/blob/main/docs/assets/uhbs-lab-demo.cast"
               className="font-mono text-xs text-secondary-foreground hover:text-primary transition-colors"
             >
               asciinema cast →
@@ -3307,7 +3307,7 @@ const McpForAgents = () => {
           <a href="mkdocs/tooling/mcp/" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 hover:opacity-90">
             MCP install guide <ArrowRight className="w-4 h-4" />
           </a>
-          <a href="https://github.com/mziqudhd92/uhbs-standard/blob/main/server.json" className="inline-flex items-center gap-2 border border-border px-4 py-2 hover:border-primary/50">
+          <a href="https://github.com/uhbs/uhbs-standard/blob/main/server.json" className="inline-flex items-center gap-2 border border-border px-4 py-2 hover:border-primary/50">
             server.json
           </a>
           <a href="llms.txt" className="inline-flex items-center gap-2 border border-border px-4 py-2 hover:border-primary/50">
@@ -3339,7 +3339,7 @@ const Footer = () => {
           <a href="#mcp" className="hover:text-primary transition-colors">MCP</a>
           <a href="mkdocs/scorecards/" className="hover:text-primary transition-colors">Scorecards</a>
           <a href="mkdocs/conformance/reports/" className="hover:text-primary transition-colors">Lab reports</a>
-          <a href="https://github.com/mziqudhd92/uhbs-standard" className="hover:text-primary transition-colors">GitHub</a>
+          <a href="https://github.com/uhbs/uhbs-standard" className="hover:text-primary transition-colors">GitHub</a>
           <a href="#scoring" className="hover:text-primary transition-colors">UHQS &gt; 80 beta gate</a>
         </div>
       </div>

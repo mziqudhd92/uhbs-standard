@@ -1,6 +1,6 @@
 # Official Benchmark Scorecards
 
-Auditors must publish results using the standard scorecard layout validated by [`schemas/scorecard.schema.json`](https://github.com/mziqudhd92/uhbs-standard/blob/main/schemas/scorecard.schema.json).
+Auditors must publish results using the standard scorecard layout validated by [`schemas/scorecard.schema.json`](https://github.com/uhbs/uhbs-standard/blob/main/schemas/scorecard.schema.json).
 
 UHBS is **vendor-neutral**: decoy **classes** and **protocols** are the normative vocabulary. Named products appear only as **evaluation proof** (not requirements or endorsements).
 

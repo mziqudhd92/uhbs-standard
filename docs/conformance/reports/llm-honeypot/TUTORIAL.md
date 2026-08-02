@@ -7,7 +7,7 @@
 ## 0. Prerequisites
 
 ```bash
-git clone https://github.com/mziqudhd92/uhbs-standard.git
+git clone https://github.com/uhbs/uhbs-standard.git
 cd uhbs-standard
 pip install -c constraints.txt -e ".[dev,lab]"
 docker pull cowrie/cowrie:latest

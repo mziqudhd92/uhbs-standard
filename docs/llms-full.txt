@@ -9,11 +9,11 @@ UHBS (Universal Honeypot Benchmarking Standard) is an open-source **beta-status 
 It is **not** a consortium standard, not multi-party governed, and not a mandatory industry requirement. Suggested Production Baseline Profile (RECOMMENDED for internal use): **UHQS > 80** with Module D Safety Gate pass (containment C ≥ 95 → δ_C = 1.0).
 
 Primary URLs:
-- Landing: https://mziqudhd92.github.io/uhbs-standard/
-- MkDocs: https://mziqudhd92.github.io/uhbs-standard/mkdocs/
-- Repo: https://github.com/mziqudhd92/uhbs-standard
-- Spec status: https://mziqudhd92.github.io/uhbs-standard/mkdocs/specification/status/
-- MCP for AI hosts: https://mziqudhd92.github.io/uhbs-standard/mkdocs/tooling/mcp/
+- Landing: https://uhbs.github.io/uhbs-standard/
+- MkDocs: https://uhbs.github.io/uhbs-standard/mkdocs/
+- Repo: https://github.com/uhbs/uhbs-standard
+- Spec status: https://uhbs.github.io/uhbs-standard/mkdocs/specification/status/
+- MCP for AI hosts: https://uhbs.github.io/uhbs-standard/mkdocs/tooling/mcp/
 
 ## Normative UHQS formula
 
@@ -43,7 +43,7 @@ Single source of scoring math in package: `uhbs_core.uhqs_math` (CLI, MCP, and h
 - **UHBS-Lab:** UHBS-Core + Modules A–F harness (`uhbs[lab]` / `uhbs-lab`) + MANIFEST digests
 - **UHBS-MCP:** optional stdio MCP server (`uhbs[mcp]` / `uhbs-mcp`) wrapping Core validators — no live lab exec
 - **AEP (optional):** offline Advanced Evidence Profile (`uhbs[aep]` / `uhbs aep`) — informative VoD/FSV/DTDR/EER from local **lab** trial files; never changes UHQS; never launches attacks; **lab/sandbox only** (not real-world production testing). Research credits: Zhu 2019 DOI 10.1145/3314058.3314067; Collins et al. 2024 arXiv:2401.13815; Ersok et al. 2022 DOI 10.1109/ICCC202255925.2022.9922853; Li et al. 2020 DOI 10.1109/OJCS.2020.3030825 (citation ≠ endorsement).
-- **AEP SLM (alpha, opt-in):** `uhbs[aep-slm]` / `uhbs aep slm` — draft AEP trial JSONL (`mock` / `recorded` / loopback `openai_compatible`). **Disabled by default**; unlock only by editing `aep-slm.yaml`. Never changes UHQS; not exposed via AI-host MCP. Docs: https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/
+- **AEP SLM (alpha, opt-in):** `uhbs[aep-slm]` / `uhbs aep slm` — draft AEP trial JSONL (`mock` / `recorded` / loopback `openai_compatible`). **Disabled by default**; unlock only by editing `aep-slm.yaml`. Never changes UHQS; not exposed via AI-host MCP. Docs: https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/
 
 ## Install & commands
 
@@ -61,16 +61,16 @@ uhbs aep slm --help   # alpha; generate blocked until config unlock
 # mssql, mysql, ntp, oracle, pjl, pop3, postgres, rdp, redis, s7comm, sip, smb,
 # smtp, snmp, socks5, ssh, telnet, tftp, vnc)
 # AI hosts (Cursor/Claude/VS Code): configure mcpServers → python -m uhbs_mcp
-# Docs: https://mziqudhd92.github.io/uhbs-standard/mkdocs/tooling/mcp/
-# AEP: https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/
-# AEP SLM (alpha): https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/
-# Landing AEP: https://mziqudhd92.github.io/uhbs-standard/#advanced-evidence
-# Related frameworks: https://mziqudhd92.github.io/uhbs-standard/mkdocs/mappings/related-frameworks/
+# Docs: https://uhbs.github.io/uhbs-standard/mkdocs/tooling/mcp/
+# AEP: https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/
+# AEP SLM (alpha): https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/
+# Landing AEP: https://uhbs.github.io/uhbs-standard/#advanced-evidence
+# Related frameworks: https://uhbs.github.io/uhbs-standard/mkdocs/mappings/related-frameworks/
 ```
 
 ## MCP (Model Context Protocol)
 
-Industry open standard for AI tool calling (AAIF / Linux Foundation). UHBS exposes local stdio tools: validate_scorecard, validate_profile, compute_uhqs, list_conformance_fixtures, get_scorecard_summary, list_lab_reports, plus schema/scoring resources. Metadata: https://github.com/mziqudhd92/uhbs-standard/blob/main/server.json
+Industry open standard for AI tool calling (AAIF / Linux Foundation). UHBS exposes local stdio tools: validate_scorecard, validate_profile, compute_uhqs, list_conformance_fixtures, get_scorecard_summary, list_lab_reports, plus schema/scoring resources. Metadata: https://github.com/uhbs/uhbs-standard/blob/main/server.json
 
 ## Vendor neutrality
 
@@ -87,11 +87,11 @@ Published full-lab proof (sanitized fixtures; prefer live fixture JSON if this d
 
 ## Machine-readable artifacts
 
-- Schemas: https://github.com/mziqudhd92/uhbs-standard/tree/main/schemas
-- CITATION.cff: https://github.com/mziqudhd92/uhbs-standard/blob/main/CITATION.cff
-- ROADMAP: https://github.com/mziqudhd92/uhbs-standard/blob/main/ROADMAP.md
-- Repo llms.txt: https://github.com/mziqudhd92/uhbs-standard/blob/main/llms.txt
-- MCP server.json: https://github.com/mziqudhd92/uhbs-standard/blob/main/server.json
+- Schemas: https://github.com/uhbs/uhbs-standard/tree/main/schemas
+- CITATION.cff: https://github.com/uhbs/uhbs-standard/blob/main/CITATION.cff
+- ROADMAP: https://github.com/uhbs/uhbs-standard/blob/main/ROADMAP.md
+- Repo llms.txt: https://github.com/uhbs/uhbs-standard/blob/main/llms.txt
+- MCP server.json: https://github.com/uhbs/uhbs-standard/blob/main/server.json
 
 ## Citation note
 

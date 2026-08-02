@@ -1,6 +1,6 @@
 /* Team */
 Author: Moran Zavdi (@mziqudhd92)
-Maintainer: see https://github.com/mziqudhd92/uhbs-standard/blob/main/MAINTAINERS.md
+Maintainer: see https://github.com/uhbs/uhbs-standard/blob/main/MAINTAINERS.md
 Contact: GitHub private contact / Security Advisories (no project email domain yet)
 
 /* Site */
@@ -17,5 +17,5 @@ Preferred AI/agent entrypoints (site root after deploy):
 MkDocs mirrors: /mkdocs/llms.txt · /mkdocs/llms-full.txt · /mkdocs/tooling/mcp/
 Optional AEP: /mkdocs/advanced-evidence/
 AEP SLM (alpha, opt-in): /mkdocs/advanced-evidence/slm-alpha/
-Landing hub: https://mziqudhd92.github.io/uhbs-standard/
+Landing hub: https://uhbs.github.io/uhbs-standard/
 /* https://humanstxt.org */

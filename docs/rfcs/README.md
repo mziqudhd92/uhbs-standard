@@ -7,7 +7,7 @@ Normative specification changes for UHBS are proposed here as RFCs (request for 
 1. Copy [`0000-template.md`](0000-template.md) to a new numbered file when opening a proposal.
 2. Describe the problem, the proposed change to UHQS / schemas / protocols, and migration impact.
 3. Keep math truth in `src/uhbs_core/uhqs_math.py` if scoring changes; do not invent a second UHQS implementation.
-4. Reference [GOVERNANCE.md](https://github.com/mziqudhd92/uhbs-standard/blob/main/GOVERNANCE.md) in the repository root for maintainer expectations.
+4. Reference [GOVERNANCE.md](https://github.com/uhbs/uhbs-standard/blob/main/GOVERNANCE.md) in the repository root for maintainer expectations.
 
 ## What analysts should know
 

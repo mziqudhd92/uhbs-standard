@@ -1,8 +1,8 @@
 # Writing a third-party UHBS protocol plugin
 
 > **Status:** Phase 1 / experimental extension point. UHBS is an open-source
-> beta-status framework (see [`AGENTS.md`](https://github.com/mziqudhd92/uhbs-standard/blob/main/AGENTS.md) and
-> [`GOVERNANCE.md`](https://github.com/mziqudhd92/uhbs-standard/blob/main/GOVERNANCE.md)) — this page describes what the code
+> beta-status framework (see [`AGENTS.md`](https://github.com/uhbs/uhbs-standard/blob/main/AGENTS.md) and
+> [`GOVERNANCE.md`](https://github.com/uhbs/uhbs-standard/blob/main/GOVERNANCE.md)) — this page describes what the code
 > does today, not a certified or committee-reviewed plugin API.
 
 UHBS ships **36** built-in protocol plugins under `src/uhbs_core/protocols/`
@@ -85,7 +85,7 @@ being tested (including the "broken plugin doesn't crash discovery" case).
 
 ## 4. Maturity expectations
 
-Per [`GOVERNANCE.md`](https://github.com/mziqudhd92/uhbs-standard/blob/main/GOVERNANCE.md), a plugin registered only via an
+Per [`GOVERNANCE.md`](https://github.com/uhbs/uhbs-standard/blob/main/GOVERNANCE.md), a plugin registered only via an
 entry point is **`Experimental`** by default — UHBS performs basic
 presence/type checks on load, not a security or protocol-fidelity audit.
 See `GOVERNANCE.md`'s plugin maturity lifecycle section for what it takes
@@ -121,4 +121,4 @@ allocations in the harness process.
 - Not schema/Pydantic-enforced at the interface boundary yet — see
   `docs/architecture/plugin-contracts.md` for the current (dataclass +
   advisory validator) state and the tracked Pydantic v2 follow-up in
-  [`ROADMAP.md`](https://github.com/mziqudhd92/uhbs-standard/blob/main/ROADMAP.md).
+  [`ROADMAP.md`](https://github.com/uhbs/uhbs-standard/blob/main/ROADMAP.md).

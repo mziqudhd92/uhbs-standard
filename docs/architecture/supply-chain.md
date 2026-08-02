@@ -1,9 +1,9 @@
 # Supply-chain hygiene — concrete steps taken vs. aspirational target
 
-> Companion to [`GOVERNANCE.md`](https://github.com/mziqudhd92/uhbs-standard/blob/main/GOVERNANCE.md) §7 and
-> [`ROADMAP.md`](https://github.com/mziqudhd92/uhbs-standard/blob/main/ROADMAP.md) Phase 4 (Integrity / OpenSSF / SLSA).
+> Companion to [`GOVERNANCE.md`](https://github.com/uhbs/uhbs-standard/blob/main/GOVERNANCE.md) §7 and
+> [`ROADMAP.md`](https://github.com/uhbs/uhbs-standard/blob/main/ROADMAP.md) Phase 4 (Integrity / OpenSSF / SLSA).
 > Written for an open-source **beta-status** project, not a certified
-> supply-chain program — see [`AGENTS.md`](https://github.com/mziqudhd92/uhbs-standard/blob/main/AGENTS.md).
+> supply-chain program — see [`AGENTS.md`](https://github.com/uhbs/uhbs-standard/blob/main/AGENTS.md).
 
 ## Aspirational target (not achieved)
 
@@ -65,7 +65,7 @@ signing” path for PyPI wheels, not a separate cosign step (optional extra).
 
 1. Create a PyPI account and reserve the project name `uhbs` (or confirm ownership).
 2. On PyPI → project **Publishing** settings, add a **Trusted Publisher**:
-   - Owner: `mziqudhd92`
+   - Owner: `uhbs`
    - Repository: `uhbs-standard`
    - Workflow filename: `release.yml` (exact name under `.github/workflows/`)
    - Environment: `pypi` (recommended)

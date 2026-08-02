@@ -1,6 +1,6 @@
 # UHBS Web (GitHub Pages landing)
 
-React hub at the Pages **root** (`https://mziqudhd92.github.io/uhbs-standard/`),
+React hub at the Pages **root** (`https://uhbs.github.io/uhbs-standard/`),
 styled like the UHBS reference landing. Full MkDocs docs deploy under **`/mkdocs/`**.
 
 ```bash

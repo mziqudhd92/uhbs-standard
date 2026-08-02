@@ -23,7 +23,7 @@ library is required (Click is already a dependency; styling is in
 ## Install
 
 ```bash
-git clone https://github.com/mziqudhd92/uhbs-standard.git
+git clone https://github.com/uhbs/uhbs-standard.git
 cd uhbs-standard
 python -m venv .venv
 source .venv/bin/activate
@@ -103,7 +103,7 @@ uhbs aep slm status aep-slm.yaml
 ```
 
 Published guide:
-https://mziqudhd92.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/
+https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/
 
 ### Docker image
 

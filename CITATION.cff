@@ -9,9 +9,9 @@ authors:
 version: "4.3.6"
 date-released: "2026-08-01"
 license: Apache-2.0
-repository-code: "https://github.com/mziqudhd92/uhbs-standard"
-url: "https://mziqudhd92.github.io/uhbs-standard/"
-# Spec docs also at https://mziqudhd92.github.io/uhbs-standard/mkdocs/
+repository-code: "https://github.com/uhbs/uhbs-standard"
+url: "https://uhbs.github.io/uhbs-standard/"
+# Spec docs also at https://uhbs.github.io/uhbs-standard/mkdocs/
 doi: "10.5281/zenodo.21631156"
 identifiers:
   - type: doi
