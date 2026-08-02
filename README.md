@@ -12,6 +12,8 @@
 
 > Open-source **beta** framework for **lab / sandbox** evaluation of honeypots and decoys — vendor-neutral UHQS scoring (0–100) with a non-linear Safety Gate.
 
+*Moved to organization uhbs to be more clean*
+
 **UHBS v4.3.6** measures deception realism, containment, scale, and telemetry quality by **class and protocol**. It is **not** an industry consortium standard or multi-party governed body. See [ROADMAP.md](ROADMAP.md) for maturity goals.
 
 | | |
