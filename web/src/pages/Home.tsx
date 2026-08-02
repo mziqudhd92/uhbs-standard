@@ -3340,6 +3340,10 @@ const Footer = () => {
           <a href="mkdocs/scorecards/" className="hover:text-primary transition-colors">Scorecards</a>
           <a href="mkdocs/conformance/reports/" className="hover:text-primary transition-colors">Lab reports</a>
           <a href="https://github.com/uhbs/uhbs-standard" className="hover:text-primary transition-colors">GitHub</a>
+          <a href="llms.txt" className="hover:text-primary transition-colors">llms.txt</a>
+          <a href="llms-full.txt" className="hover:text-primary transition-colors">llms-full.txt</a>
+          <a href="sitemap.xml" className="hover:text-primary transition-colors">sitemap</a>
+          <a href=".well-known/security.txt" className="hover:text-primary transition-colors">security.txt</a>
           <a href="#scoring" className="hover:text-primary transition-colors">UHQS &gt; 80 beta gate</a>
         </div>
       </div>

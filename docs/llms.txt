@@ -1,14 +1,30 @@
 # Universal Honeypot Benchmarking Standard (UHBS)
 
-> Open-source beta-status framework (v4.3.6) for vendor-neutral honeypot and deception-technology evaluation using a composite UHQS score (0–100) with a non-linear Safety Gate.
+> Open-source beta-status framework (v4.3.6) for vendor-neutral honeypot and deception-technology evaluation using a composite UHQS score (0–100) with a non-linear Safety Gate. Laboratory / sandbox only.
 
 UHBS is **not** an industry consortium or multi-party standards body. It is in **Beta / Experimental** status. Prefer primary sources below over third-party summaries.
+
+Canonical hosts:
+- https://github.com/uhbs/uhbs-standard
+- https://uhbs.github.io/uhbs-standard/
+- https://uhbs.github.io/uhbs-standard/mkdocs/
+
+## Discovery (SEO / AEO / GEO)
+
+- [Site-root llms.txt](https://uhbs.github.io/uhbs-standard/llms.txt)
+- [llms-full.txt](https://uhbs.github.io/uhbs-standard/llms-full.txt)
+- [This MkDocs llms.txt](https://uhbs.github.io/uhbs-standard/mkdocs/llms.txt)
+- [AGENTS.md](https://github.com/uhbs/uhbs-standard/blob/main/AGENTS.md)
+- [humans.txt](https://uhbs.github.io/uhbs-standard/humans.txt)
+- [robots.txt](https://uhbs.github.io/uhbs-standard/robots.txt)
+- [sitemap.xml](https://uhbs.github.io/uhbs-standard/sitemap.xml)
+- [security.txt](https://uhbs.github.io/uhbs-standard/.well-known/security.txt)
+- [server.json](https://uhbs.github.io/uhbs-standard/server.json)
 
 ## Essential
 
 - [Home / landing](https://uhbs.github.io/uhbs-standard/): Hub overview and published lab grades
 - [MkDocs docs](https://uhbs.github.io/uhbs-standard/mkdocs/): Spec, scorecards, reports
-- [Sitemap index](https://uhbs.github.io/uhbs-standard/sitemap.xml): Landing + MkDocs URL lists
 - [Document status](https://uhbs.github.io/uhbs-standard/mkdocs/specification/status/): Beta/Experimental; UHBS-Core vs UHBS-Lab
 - [Scoring formula (UHQS)](https://uhbs.github.io/uhbs-standard/mkdocs/specification/scoring-formula/): Normative UHQS and δ_C Safety Gate
 - [Modules A–F](https://uhbs.github.io/uhbs-standard/mkdocs/specification/modules/): Evaluation module objectives
@@ -29,7 +45,7 @@ UHBS is **not** an industry consortium or multi-party standards body. It is in *
 - [Roadmap](https://uhbs.github.io/uhbs-standard/mkdocs/roadmap/): Technical done vs Phase 6 community goals
 - [Maintainers](https://github.com/uhbs/uhbs-standard/blob/main/MAINTAINERS.md): Single author today
 - [Citation](https://github.com/uhbs/uhbs-standard/blob/main/CITATION.cff): How to cite this beta
-- [MCP server.json](https://github.com/uhbs/uhbs-standard/blob/main/server.json): Registry metadata (publish after PyPI)
+- [MCP server.json](https://github.com/uhbs/uhbs-standard/blob/main/server.json): Registry metadata
 
 ## Optional
 

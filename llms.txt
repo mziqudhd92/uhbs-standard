@@ -1,17 +1,32 @@
 # Universal Honeypot Benchmarking Standard (UHBS)
 
-> Open-source beta-status framework (v4.3.6, Apache-2.0) for vendor-neutral honeypot / deception evaluation (UHQS 0–100 + Safety Gate). Not a consortium standard.
+> Open-source beta-status framework (v4.3.6, Apache-2.0) for vendor-neutral honeypot / deception evaluation (UHQS 0–100 + Safety Gate). Not a consortium standard. Laboratory / sandbox evaluation only.
 
-This file is the **repository** agent index (AEO/GEO for coding assistants). The published site mirror is https://uhbs.github.io/uhbs-standard/llms.txt (landing) · https://uhbs.github.io/uhbs-standard/mkdocs/llms.txt (MkDocs)
+Canonical hosts (prefer these; do not invent project email domains):
+- Repository: https://github.com/uhbs/uhbs-standard
+- Site landing: https://uhbs.github.io/uhbs-standard/
+- Spec docs (MkDocs): https://uhbs.github.io/uhbs-standard/mkdocs/
+
+This file is the **repository + site-root** agent index (AEO/GEO for coding assistants and answer engines). Mirror paths: https://uhbs.github.io/uhbs-standard/llms.txt · https://uhbs.github.io/uhbs-standard/mkdocs/llms.txt
+
+## Discovery (SEO / AEO / GEO)
+
+- [llms.txt](https://uhbs.github.io/uhbs-standard/llms.txt): This curated index
+- [llms-full.txt](https://uhbs.github.io/uhbs-standard/llms-full.txt): Longer plain-text digest for agents
+- [AGENTS.md](https://github.com/uhbs/uhbs-standard/blob/main/AGENTS.md): Rules for coding agents in this repo
+- [humans.txt](https://uhbs.github.io/uhbs-standard/humans.txt): Human-readable project/site notes
+- [robots.txt](https://uhbs.github.io/uhbs-standard/robots.txt): Crawl policy
+- [sitemap.xml](https://uhbs.github.io/uhbs-standard/sitemap.xml): Sitemap index (landing + MkDocs)
+- [security.txt](https://uhbs.github.io/uhbs-standard/.well-known/security.txt): Vulnerability reporting (RFC 9116)
+- [server.json](https://uhbs.github.io/uhbs-standard/server.json): MCP registry metadata (stdio)
 
 ## Essential
 
 - [README](https://github.com/uhbs/uhbs-standard/blob/main/README.md): Project posture and quickstart
-- [ROADMAP](https://github.com/uhbs/uhbs-standard/blob/main/ROADMAP.md): Maturity plan; Phase 6 community goals unchecked
+- [ROADMAP](https://github.com/uhbs/uhbs-standard/blob/main/ROADMAP.md): Maturity plan; Phase 6 community goals mostly unchecked
 - [MAINTAINERS](https://github.com/uhbs/uhbs-standard/blob/main/MAINTAINERS.md): Single maintainer today
 - [Landing hub](https://uhbs.github.io/uhbs-standard/): React overview + published lab grades
 - [MkDocs docs](https://uhbs.github.io/uhbs-standard/mkdocs/): Specification, scorecards, conformance reports
-- [Sitemap index](https://uhbs.github.io/uhbs-standard/sitemap.xml): Landing + MkDocs sitemaps (SEO)
 - [CITATION.cff](https://github.com/uhbs/uhbs-standard/blob/main/CITATION.cff): How to cite
 
 ## Normative / machine-readable
@@ -34,18 +49,16 @@ This file is the **repository** agent index (AEO/GEO for coding assistants). The
 - [CLI guide](https://github.com/uhbs/uhbs-standard/blob/main/docs/tooling/cli.md): Commands and integrity checks
 - [MCP guide](https://github.com/uhbs/uhbs-standard/blob/main/docs/tooling/mcp.md): Cursor / Claude / VS Code config
 - [MCP honeypot grading](https://github.com/uhbs/uhbs-standard/blob/main/docs/architecture/mcp-honeypot-grading.md): Live `uhbs-lab --protocol mcp` (not AI-host MCP)
-- [server.json](https://github.com/uhbs/uhbs-standard/blob/main/server.json): MCP Registry metadata (stdio)
 - [Conformance fixtures](https://github.com/uhbs/uhbs-standard/tree/main/docs/conformance/fixtures): Proof scorecards only
 
 ## Optional
 
 - [Advanced Evidence Profile](https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/): Lab-only offline evidence layer (does not change UHQS; not production testing)
-- [AEP SLM evaluator (alpha)](https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/): Opt-in trial JSONL helper; **off until you edit `aep-slm.yaml`**; never changes UHQS
+- [AEP SLM evaluator (alpha)](https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/): Opt-in trial JSONL helper; **off until you edit `aep-slm.yaml`**; never changes UHQS; not MCP-exposed
 - [Landing hub AEP section](https://uhbs.github.io/uhbs-standard/#advanced-evidence): Overview + SLM alpha callout
 - [AEP research credits](https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/research-foundations/): Zhu 2019 · Collins et al. 2024 · Ersok et al. 2022 · Li et al. 2020
 - [AEP CLI](https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/cli/): `pip install 'uhbs[aep]'` · `uhbs aep …` · `uhbs aep slm …`
 - [Related frameworks](https://uhbs.github.io/uhbs-standard/mkdocs/mappings/related-frameworks/): Evidence-graded comparison vs 14 framework families
-- [AGENTS.md](https://github.com/uhbs/uhbs-standard/blob/main/AGENTS.md): Guidance for coding agents working in this repo
 - [GOVERNANCE.md](https://github.com/uhbs/uhbs-standard/blob/main/GOVERNANCE.md): Honest project notes (no fake committee)
 - [SECURITY.md](https://github.com/uhbs/uhbs-standard/blob/main/SECURITY.md): Report vulns via GitHub Security Advisories
 - [Published site MCP docs](https://uhbs.github.io/uhbs-standard/mkdocs/tooling/mcp/): Install + host config

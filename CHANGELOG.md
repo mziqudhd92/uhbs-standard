@@ -13,6 +13,9 @@ AEP as `uhbs[aep]`; AEP SLM alpha as `uhbs[aep-slm]`).
   https://github.com/uhbs/uhbs-standard ·
   https://uhbs.github.io/uhbs-standard/
   (old `mziqudhd92/uhbs-standard` GitHub URL redirects; user Pages URL does not)
+- SEO / AEO / GEO discovery refreshed for the org hosts (`llms.txt` discovery
+  section, richer landing sitemap, PyPI project URLs, agent footer links,
+  `/.well-known/security.txt` publish fix)
 
 ## [4.3.6] — 2026-08-01
 

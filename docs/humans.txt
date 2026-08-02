@@ -11,11 +11,18 @@ Software: UHBS v4.3.6 (Apache-2.0)
 
 /* Notes */
 UHBS is a beta-status evaluation framework — not a consortium standard.
-Preferred AI/agent entrypoints (site root after deploy):
-  /llms.txt · /llms-full.txt · /humans.txt · /server.json (MCP)
-  /sitemap.xml · /sitemap-landing.xml · /.well-known/security.txt
-MkDocs mirrors: /mkdocs/llms.txt · /mkdocs/llms-full.txt · /mkdocs/tooling/mcp/
-Optional AEP: /mkdocs/advanced-evidence/
-AEP SLM (alpha, opt-in): /mkdocs/advanced-evidence/slm-alpha/
+Preferred AI/agent entrypoints (absolute):
+  https://uhbs.github.io/uhbs-standard/llms.txt
+  https://uhbs.github.io/uhbs-standard/llms-full.txt
+  https://uhbs.github.io/uhbs-standard/humans.txt
+  https://uhbs.github.io/uhbs-standard/server.json
+  https://uhbs.github.io/uhbs-standard/sitemap.xml
+  https://uhbs.github.io/uhbs-standard/.well-known/security.txt
+  https://github.com/uhbs/uhbs-standard/blob/main/AGENTS.md
+MkDocs: https://uhbs.github.io/uhbs-standard/mkdocs/
+  https://uhbs.github.io/uhbs-standard/mkdocs/llms.txt
+  https://uhbs.github.io/uhbs-standard/mkdocs/tooling/mcp/
+Optional AEP: https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/
+AEP SLM (alpha): https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/
 Landing hub: https://uhbs.github.io/uhbs-standard/
 /* https://humanstxt.org */

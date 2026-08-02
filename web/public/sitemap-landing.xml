@@ -8,21 +8,51 @@
   <url>
     <loc>https://uhbs.github.io/uhbs-standard/llms.txt</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://uhbs.github.io/uhbs-standard/llms-full.txt</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://uhbs.github.io/uhbs-standard/humans.txt</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://uhbs.github.io/uhbs-standard/server.json</loc>
     <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://uhbs.github.io/uhbs-standard/robots.txt</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://uhbs.github.io/uhbs-standard/.well-known/security.txt</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://uhbs.github.io/uhbs-standard/mkdocs/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://uhbs.github.io/uhbs-standard/mkdocs/tooling/mcp/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
