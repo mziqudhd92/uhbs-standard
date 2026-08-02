@@ -1,0 +1,6 @@
+Contact: https://github.com/uhbs/uhbs-standard/security/advisories/new
+Policy: https://github.com/uhbs/uhbs-standard/blob/main/SECURITY.md
+Acknowledgments: https://github.com/uhbs/uhbs-standard/security/advisories
+Preferred-Languages: en
+Canonical: https://uhbs.github.io/uhbs-standard/.well-known/security.txt
+Expires: 2027-08-01T00:00:00.000Z
