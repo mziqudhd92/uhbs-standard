@@ -6,7 +6,7 @@ Guidance for coding assistants and automated agents working in this repository.
 
 - **UHBS** = open-source **beta-status** evaluation framework for honeypots / deception tech.
 - **Not** a consortium, Steering Committee, or adopted industry/academic standard.
-- Spec / package version: **4.4.4** · License: **Apache-2.0**
+- Spec / package version: **4.4.5** · License: **Apache-2.0**
 - Maintainer: see `MAINTAINERS.md` (single author today).
 - Docs site: https://uhbs.github.io/uhbs-standard/ (landing) · https://uhbs.github.io/uhbs-standard/mkdocs/ (MkDocs)
 
@@ -34,7 +34,7 @@ Guidance for coding assistants and automated agents working in this repository.
 7. Run `pytest -q` and `ruff check` on touched Python before finishing.
 8. When bumping the UHBS version string, **do not** bulk-replace inside
    `web/package-lock.json` (or other lockfiles) — that can rewrite npm package
-   versions (e.g. `debug@4.4.3` → nonexistent `debug@4.4.4`) and break Pages
+   versions (e.g. `debug@4.4.3` → nonexistent `debug@4.4.5`) and break Pages
    deploy. Exclude lockfiles; run `npm ci` in `web/` after intentional lock changes.
 
 ## Install / verify
@@ -46,8 +46,8 @@ uhbs validate-scorecard docs/conformance/fixtures/cowrie-low-interaction.scoreca
 # MCP (stdio) for AI hosts — see docs/tooling/mcp.md
 python -c "from uhbs_mcp.server import list_profile_classes; print(list_profile_classes()['ok'])"
 # optional Docker grading image:
-docker build -t uhbs:4.4.4 .
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.4.4 validate-scorecard docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
+docker build -t uhbs:4.4.5 .
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.4.5 validate-scorecard docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
 ```
 
 ## Discovery files (absolute URLs preferred)

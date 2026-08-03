@@ -1,7 +1,7 @@
 # Related Deception Frameworks (Informative)
 
 **Status:** Informative · evidence-graded comparison  
-**UHBS version:** 4.4.4
+**UHBS version:** 4.4.5
 
 This page compares UHBS with fourteen deception-evaluation frameworks, taxonomies,
 and research model families. Entries are **not** all adopted standards. Each row

@@ -3,10 +3,19 @@
 All notable changes to the UHBS specification and tooling are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/). Spec and CLI
-share version **4.4.4** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
+share version **4.4.5** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
 AEP as `uhbs[aep]`; AEP SLM alpha as `uhbs[aep-slm]`).
 
 ## [Unreleased]
+
+## [4.4.5] — 2026-08-03
+
+Patch release: Snyk Security badge, CI/docs hardening from the 4.4.4 follow-ups.
+**UHQS math unchanged.**
+
+### Added
+- README / PyPI hero: **Snyk Security** badge (second after CI), linking
+  https://snyk.io/test/github/uhbs/uhbs-standard
 
 ### Fixed
 - Restore `web/package-lock.json` `debug@4.4.3` after a bulk UHBS version bump
@@ -18,6 +27,7 @@ AEP as `uhbs[aep]`; AEP SLM alpha as `uhbs[aep-slm]`).
 ### Changed
 - CI Validate also runs `npm ci` in `web/` so lockfile breakage fails before
   (or with) docs deploy
+- Spec/package/schema/`uhbs_version` fixtures aligned to **4.4.5**
 
 ## [4.4.4] — 2026-08-03
 

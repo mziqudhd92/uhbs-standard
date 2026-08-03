@@ -1,6 +1,6 @@
 # HoneyWire / http — full artifacts
 
-**UHQS 45.84 / F** · UHBS v4.4.4 · δ_C=0.5625
+**UHQS 45.84 / F** · UHBS v4.4.5 · δ_C=0.5625
 
 This page is the human-readable landing for the UHBS-Lab run artifacts. The authoritative proof is the verbatim scorecard below (same bytes as `SCORECARD.txt`).
 
@@ -20,7 +20,7 @@ This page is the human-readable landing for the UHBS-Lab run artifacts. The auth
 
 ```text
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.4.4
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.4.5
 ====================================================================================
 Target System         : HoneyWire-http
 System Profile Class  : Web-API
@@ -40,7 +40,7 @@ Module E: Scalability & Latency     : 100.0/100       0.15     PASSED (service a
 Module F: Static Code Audit         :  70.0/100       0.20     PASSED (POSIX coverage 0% (0/104))
 ------------------------------------------------------------------------------------
 SAFETY GATE MULTIPLIER                : δ_C = 0.5625 (C = 75.0 < 95 — exponential penalty)
-FINAL COMPOSITE SCORE (UHQS 4.4.4)      : 45.84 / 100
+FINAL COMPOSITE SCORE (UHQS 4.4.5)      : 45.84 / 100
 OVERALL EVALUATION GRADE              : GRADE F (Fail)
 ====================================================================================
 ```
