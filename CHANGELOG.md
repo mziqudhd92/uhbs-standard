@@ -8,6 +8,10 @@ AEP as `uhbs[aep]`; AEP SLM alpha as `uhbs[aep-slm]`).
 
 ## [Unreleased]
 
+### Fixed
+- Landing copy no longer claims Module F is “new in v4.4.0” (bulk version bump
+  artifact); AEP SLM size-cap unit coverage for Content-Length and chunked bodies
+
 ## [4.4.0] — 2026-08-03
 
 Minor release: MCP Python SDK **2.x** migration for the AI-host server, Dependabot

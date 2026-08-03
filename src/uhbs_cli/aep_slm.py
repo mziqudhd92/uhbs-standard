@@ -13,6 +13,7 @@ Trust boundary:
 
 from __future__ import annotations
 
+import contextlib
 import hashlib
 import json
 import random
@@ -342,6 +343,10 @@ def _read_limited(resp: Any, *, max_bytes: int = MAX_MODEL_RESPONSE_BYTES) -> by
             except (TypeError, ValueError):
                 declared = -1
             if declared > max_bytes:
+                close = getattr(resp, "close", None)
+                if callable(close):
+                    with contextlib.suppress(OSError):
+                        close()
                 raise AepSlmError(
                     f"local model response exceeds {max_bytes} bytes "
                     "(refusing unbounded body)"

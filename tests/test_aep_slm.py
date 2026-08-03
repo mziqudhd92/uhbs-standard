@@ -310,12 +310,43 @@ def test_openai_compatible_refuses_redirect() -> None:
         server.server_close()
 
 
+def test_read_limited_refuses_content_length() -> None:
+    from email.message import Message
+    from io import BytesIO
+
+    class FakeResp:
+        def __init__(self, data: bytes, length: str | None) -> None:
+            self._bio = BytesIO(data)
+            self.headers = Message()
+            if length is not None:
+                self.headers["Content-Length"] = length
+            self.closed = False
+
+        def read(self, n: int = -1) -> bytes:
+            return self._bio.read(n)
+
+        def close(self) -> None:
+            self.closed = True
+
+    over = FakeResp(b"x" * 16, str(slm.MAX_MODEL_RESPONSE_BYTES + 1))
+    with pytest.raises(slm.AepSlmError, match="exceeds"):
+        slm._read_limited(over)
+    assert over.closed is True
+    assert over._bio.tell() == 0  # refused before reading body
+
+    streamed = FakeResp(b"x" * (slm.MAX_MODEL_RESPONSE_BYTES + 64), None)
+    with pytest.raises(slm.AepSlmError, match="exceeds"):
+        slm._read_limited(streamed)
+
+    ok = FakeResp(b'{"choices":[]}', "14")
+    assert slm._read_limited(ok) == b'{"choices":[]}'
+
+
 def test_openai_compatible_caps_response_body() -> None:
-    # Slightly over the cap so the client aborts early; keep the body modest so
-    # the ThreadingHTTPServer write does not race the client close as hard.
+    # Content-Length oversize (early refuse) + chunked/no-CL streaming oversize.
     huge = b"x" * (slm.MAX_MODEL_RESPONSE_BYTES + 4096)
 
-    class Handler(BaseHTTPRequestHandler):
+    class LengthHandler(BaseHTTPRequestHandler):
         def do_POST(self) -> None:  # noqa: N802
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
@@ -324,31 +355,52 @@ def test_openai_compatible_caps_response_body() -> None:
             try:
                 self.wfile.write(huge)
             except (BrokenPipeError, ConnectionResetError):
-                # Client closed after the size-cap refusal — expected.
                 return
 
         def log_message(self, format: str, *args: object) -> None:  # noqa: A003
             return
 
-    server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
-    thread = threading.Thread(target=server.serve_forever, daemon=True)
-    thread.start()
-    try:
-        port = server.server_address[1]
-        cfg = _unlock(slm.default_config_template())
-        cfg["provider"] = "openai_compatible"
-        cfg["activation"]["allow_local_model_calls"] = True
-        cfg["endpoint"] = {
-            "base_url": f"http://127.0.0.1:{port}",
-            "timeout_seconds": 2,
-        }
-        with pytest.raises(slm.AepSlmError, match="exceeds"):
-            slm._call_openai_compatible(
-                cfg, system_prompt="sys", user_prompt="user"
-            )
-    finally:
-        server.shutdown()
-        server.server_close()
+    class ChunkedHandler(BaseHTTPRequestHandler):
+        protocol_version = "HTTP/1.1"
+
+        def do_POST(self) -> None:  # noqa: N802
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Transfer-Encoding", "chunked")
+            self.end_headers()
+            try:
+                # Emit one oversized chunk without Content-Length.
+                chunk = huge
+                self.wfile.write(f"{len(chunk):x}\r\n".encode() + chunk + b"\r\n0\r\n\r\n")
+            except (BrokenPipeError, ConnectionResetError):
+                return
+
+        def log_message(self, format: str, *args: object) -> None:  # noqa: A003
+            return
+
+    def _call(handler: type[BaseHTTPRequestHandler]) -> None:
+        server = ThreadingHTTPServer(("127.0.0.1", 0), handler)
+        thread = threading.Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        try:
+            port = server.server_address[1]
+            cfg = _unlock(slm.default_config_template())
+            cfg["provider"] = "openai_compatible"
+            cfg["activation"]["allow_local_model_calls"] = True
+            cfg["endpoint"] = {
+                "base_url": f"http://127.0.0.1:{port}",
+                "timeout_seconds": 2,
+            }
+            with pytest.raises(slm.AepSlmError, match="exceeds"):
+                slm._call_openai_compatible(
+                    cfg, system_prompt="sys", user_prompt="user"
+                )
+        finally:
+            server.shutdown()
+            server.server_close()
+
+    _call(LengthHandler)
+    _call(ChunkedHandler)
 
 
 def test_status_cli_json_locked(tmp_path: Path) -> None:

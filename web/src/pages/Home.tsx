@@ -399,7 +399,7 @@ const FiveDimensionComparison = () => {
       module: "Module F",
       moduleName: "White-Box Static Code Audit",
       color: "text-success",
-      expansion: "New in UHBS v4.4.0: Scans repository code, container build manifests, and system prompts for SAST flaws, default keys, and unhandled command stubs.",
+      expansion: "Module F (white-box): Scans repository code, container build manifests, and system prompts for SAST flaws, default keys, and unhandled command stubs.",
       isNew: true,
     },
   ];
