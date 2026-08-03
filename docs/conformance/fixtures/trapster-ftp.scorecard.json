@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.4.2",
+  "uhbs_version": "4.4.3",
   "target": {
     "name": "Trapster Community (FTP :2121)",
     "class": "Low-Interaction",

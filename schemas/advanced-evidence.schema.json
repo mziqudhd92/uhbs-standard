@@ -24,7 +24,7 @@
     },
     "uhbs_version": {
       "type": "string",
-      "const": "4.4.2"
+      "const": "4.4.3"
     },
     "experiment_id": {
       "type": "string",

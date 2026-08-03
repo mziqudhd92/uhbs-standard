@@ -49,6 +49,6 @@ This tutorial reproduces the published UHBS evaluation proof for analysts who ne
 
 ## Trust limits
 
-- UHBS 4.4.2 evaluation proof is **informative** — not a certification, endorsement, or ranking.
+- UHBS 4.4.3 evaluation proof is **informative** — not a certification, endorsement, or ranking.
 - Product names appear only under `docs/conformance/` as evaluation evidence.
 - Re-run after upstream or TPS changes; do not invent scores without regenerating artifacts.

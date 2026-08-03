@@ -3,7 +3,7 @@
 **Status:** Informative  
 **Purpose:** Published, reproducible UHBS-Lab outputs for named honeypots / decoys so the community can **audit**, **replicate**, and **compare** grades — not so UHBS can endorse products.
 
-> UHBS is an open-source **beta-status** evaluation framework (v4.4.2).  
+> UHBS is an open-source **beta-status** evaluation framework (v4.4.3).  
 > Named products appear **only** under `docs/conformance/` as evaluation proof.  
 > A grade is not a certification, badge program, or consortium verdict.
 

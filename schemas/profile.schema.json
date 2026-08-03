@@ -15,7 +15,7 @@
   "properties": {
     "uhbs_version": {
       "type": "string",
-      "const": "4.4.2",
+      "const": "4.4.3",
       "description": "Specification version this profile targets."
     },
     "target_metadata": {

@@ -1,10 +1,10 @@
 site_name: Universal Honeypot Benchmarking Standard (UHBS)
-site_description: Open-source beta-status framework for vendor-neutral honeypot and deception evaluation (UHQS 0–100, Safety Gate). Optional AEP and alpha SLM trial helper. Spec v4.4.2. Not a consortium standard.
+site_description: Open-source beta-status framework for vendor-neutral honeypot and deception evaluation (UHQS 0–100, Safety Gate). Optional AEP and alpha SLM trial helper. Spec v4.4.3. Not a consortium standard.
 site_url: https://uhbs.github.io/uhbs-standard/mkdocs/
 repo_url: https://github.com/uhbs/uhbs-standard
 repo_name: uhbs/uhbs-standard
 edit_uri: edit/main/docs/
-copyright: UHBS v4.4.2 — beta-status evaluation framework (Apache-2.0)
+copyright: UHBS v4.4.3 — beta-status evaluation framework (Apache-2.0)
 
 theme:
   name: material

@@ -3,10 +3,21 @@
 All notable changes to the UHBS specification and tooling are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/). Spec and CLI
-share version **4.4.2** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
+share version **4.4.3** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
 AEP as `uhbs[aep]`; AEP SLM alpha as `uhbs[aep-slm]`).
 
 ## [Unreleased]
+
+## [4.4.3] — 2026-08-03
+
+Patch release: PyPI-safe HTML badges for License / Spec / UHQS. **UHQS math unchanged.**
+
+### Fixed
+- README Spec / UHQS / License badges use raw HTML `<a href><img>` so Warehouse
+  cannot mis-resolve nested Markdown badge links under `pypi.org/project/uhbs/…`
+
+### Changed
+- Spec/package/schema/`uhbs_version` fixtures aligned to **4.4.3**
 
 ## [4.4.2] — 2026-08-03
 

@@ -1,3 +1,3 @@
 """UHBS CLI package."""
 
-__version__ = "4.4.2"
+__version__ = "4.4.3"
