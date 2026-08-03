@@ -16,7 +16,7 @@ Projects from the awesome-honeypots fresh queue that **are honeypots** but canno
 
 ## Plugins added (re-queue grading)
 
-The following protocol plugins are now built into UHBS **4.4.0**. Matching deferred projects can move to the grade queue when a hermetic lab recipe exists:
+The following protocol plugins are now built into UHBS **4.4.1**. Matching deferred projects can move to the grade queue when a hermetic lab recipe exists:
 
 | Plugin | Previously deferred examples |
 | --- | --- |

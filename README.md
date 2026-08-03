@@ -6,15 +6,15 @@
 [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/13853/badge)](https://www.bestpractices.dev/projects/13853)
 [![PyPI](https://img.shields.io/pypi/v/uhbs.svg)](https://pypi.org/project/uhbs/)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21631156-blue)](https://doi.org/10.5281/zenodo.21631156)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![Spec](https://img.shields.io/badge/Specification-v4.4.0-indigo.svg)](docs/specification/core-principles.md)
-[![UHQS](https://img.shields.io/badge/UHQS-0%E2%80%93100-success.svg)](docs/specification/scoring-formula.md)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/uhbs/uhbs-standard/blob/main/LICENSE)
+[![Spec](https://img.shields.io/badge/Specification-v4.4.1-indigo.svg)](https://uhbs.github.io/uhbs-standard/mkdocs/specification/core-principles/)
+[![UHQS](https://img.shields.io/badge/UHQS-0%E2%80%93100-success.svg)](https://uhbs.github.io/uhbs-standard/mkdocs/specification/scoring-formula/)
 
 > Open-source **beta** framework for **lab / sandbox** evaluation of honeypots and decoys — vendor-neutral UHQS scoring (0–100) with a non-linear Safety Gate.
 
 *Moved to organization uhbs to be more clean*
 
-**UHBS v4.4.0** measures deception realism, containment, scale, and telemetry quality by **class and protocol**. It is **not** an industry consortium standard or multi-party governed body. See [ROADMAP.md](ROADMAP.md) for maturity goals.
+**UHBS v4.4.1** measures deception realism, containment, scale, and telemetry quality by **class and protocol**. It is **not** an industry consortium standard or multi-party governed body. See [ROADMAP.md](ROADMAP.md) for maturity goals.
 
 | | |
 | --- | --- |
@@ -178,10 +178,10 @@ Grade **MCP honeypot** surfaces (JSON-RPC over HTTP/SSE) with the in-tree `mcp` 
 ### Docker
 
 ```bash
-docker build -t uhbs:4.4.0 .
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.4.0 \
+docker build -t uhbs:4.4.1 .
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.4.1 \
   validate-scorecard ./docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.4.0 lab --list-protocols
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.4.1 lab --list-protocols
 ```
 
 Compose: `docker compose run --rm uhbs validate-profile ./my-honeypot.profile.yaml`.
@@ -296,7 +296,7 @@ uhbs-standard/
 After you publish a scorecard (conformance / your own report), you can badge it:
 
 ```markdown
-![UHBS v4.4.0](https://img.shields.io/badge/UHBS%20v4.4.0-Grade%20A-brightgreen)
+![UHBS v4.4.1](https://img.shields.io/badge/UHBS%20v4.4.1-Grade%20A-brightgreen)
 ```
 
 ## Contributing
@@ -321,7 +321,7 @@ not authorized to test.
   author = {Zavdi, Moran},
   title = {Universal Honeypot Benchmarking Standard (UHBS)},
   year = {2026},
-  version = {4.4.0},
+  version = {4.4.1},
   publisher = {Zenodo},
   doi = {10.5281/zenodo.21631156},
   url = {https://doi.org/10.5281/zenodo.21631156}

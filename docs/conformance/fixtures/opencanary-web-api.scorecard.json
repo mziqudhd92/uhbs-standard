@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.4.0",
+  "uhbs_version": "4.4.1",
   "target": {
     "name": "OpenCanary (HTTP :80)",
     "class": "Web-API",

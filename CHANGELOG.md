@@ -3,14 +3,24 @@
 All notable changes to the UHBS specification and tooling are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/). Spec and CLI
-share version **4.4.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
+share version **4.4.1** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
 AEP as `uhbs[aep]`; AEP SLM alpha as `uhbs[aep-slm]`).
 
 ## [Unreleased]
 
+## [4.4.1] — 2026-08-03
+
+Patch release: fix PyPI README badge links. **UHQS math unchanged.**
+
 ### Fixed
+- README badge targets for License / Spec / UHQS use absolute URLs so they work
+  on PyPI (relative `docs/...` links previously resolved under
+  `pypi.org/project/uhbs/…`)
 - Landing copy no longer claims Module F is “new in v4.4.0” (bulk version bump
   artifact); AEP SLM size-cap unit coverage for Content-Length and chunked bodies
+
+### Changed
+- Spec/package/schema/`uhbs_version` fixtures aligned to **4.4.1**
 
 ## [4.4.0] — 2026-08-03
 

@@ -1,5 +1,5 @@
 aep_version: 1.0.0
-uhbs_version: 4.4.0
+uhbs_version: 4.4.1
 experiment_id: beginner-web-api
 name: Beginner Web-API dwell comparison
 hypothesis: Decoy sessions last longer than a matched reference under the same task.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Module A — Protocol & Syntax Fidelity (UHBS v4.4.0).
+"""Module A — Protocol & Syntax Fidelity (UHBS v4.4.1).
 
 Protocol-agnostic via plugins (ssh/smtp/http/telnet/modbus/generic/…).
 Steps: A1 FSM · A2 negotiation · A3 timing/IAT.

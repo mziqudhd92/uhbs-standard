@@ -27,4 +27,4 @@
 - Sensors refuse to start without `HW_HUB_ENDPOINT`, `HW_HUB_KEY`, and `HW_SENSOR_ID`.
 - Do not treat Hub UI reachability as decoy fidelity — grade the sensor listeners.
 
-Informative only · UHBS 4.4.0 · not an endorsement.
+Informative only · UHBS 4.4.1 · not an endorsement.
