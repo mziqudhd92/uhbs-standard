@@ -1,7 +1,7 @@
 # Universal Honeypot Benchmarking Standard (UHBS)
 
 <a href="https://github.com/uhbs/uhbs-standard/actions/workflows/ci-validate.yml"><img alt="CI" src="https://github.com/uhbs/uhbs-standard/actions/workflows/ci-validate.yml/badge.svg"></a>
-<a href="https://snyk.io/test/github/uhbs/uhbs-standard"><img alt="Snyk Security" src="https://snyk.io/test/github/uhbs/uhbs-standard/badge.svg"></a>
+<a href="https://snyk.io/test/github/uhbs/uhbs-standard?targetFile=web/package.json"><img alt="Snyk Security" src="https://snyk.io/test/github/uhbs/uhbs-standard/badge.svg?targetFile=web/package.json"></a>
 <a href="https://uhbs.github.io/uhbs-standard/"><img alt="Docs" src="https://img.shields.io/badge/docs-uhbs.github.io-blue"></a>
 <a href="https://pypi.org/project/uhbs/"><img alt="PyPI" src="https://img.shields.io/pypi/v/uhbs.svg"></a>
 <a href="https://www.bestpractices.dev/projects/13853"><img alt="OpenSSF Best Practices" src="https://www.bestpractices.dev/projects/13853/badge"></a>
