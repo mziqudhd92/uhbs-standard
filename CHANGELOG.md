@@ -3,12 +3,30 @@
 All notable changes to the UHBS specification and tooling are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/). Spec and CLI
-share version **4.3.6** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
+share version **4.4.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
 AEP as `uhbs[aep]`; AEP SLM alpha as `uhbs[aep-slm]`).
 
 ## [Unreleased]
 
+## [4.4.0] — 2026-08-03
+
+Minor release: MCP Python SDK **2.x** migration for the AI-host server, Dependabot
+CI action bumps, and org-host AEO/GEO discovery polish. **UHQS math, weights, and
+δ_C are unchanged.**
+
 ### Changed
+- AI-host MCP server (`uhbs[mcp]`) now requires **`mcp>=2,<3`** (pinned
+  `mcp==2.0.0` in `constraints.txt`). Migrated from `FastMCP` to
+  `MCPServer` (`from mcp.server import MCPServer`) per the official SDK v2
+  migration guide. Decorator tools/resources/prompts and stdio transport are
+  unchanged for hosts.
+- GitHub Actions dependency updates (Dependabot #7–#12, applied on `main`):
+  - `mcp` 1.28.1 → 2.0.0 (with code migration above)
+  - `github/codeql-action` → **v4.37.4** (init / autobuild / analyze / upload-sarif)
+  - `ossf/scorecard-action` → **v2.4.4**
+  - `actions/upload-artifact` → **v7.0.1** and
+    `actions/download-artifact` → **v8.0.0** (paired for release artifacts)
+  - `softprops/action-gh-release` → **v3.0.2**
 - Repository and GitHub Pages moved to the **uhbs** organization:
   https://github.com/uhbs/uhbs-standard ·
   https://uhbs.github.io/uhbs-standard/
@@ -16,6 +34,12 @@ AEP as `uhbs[aep]`; AEP SLM alpha as `uhbs[aep-slm]`).
 - SEO / AEO / GEO discovery refreshed for the org hosts (`llms.txt` discovery
   section, richer landing sitemap, PyPI project URLs, agent footer links,
   `/.well-known/security.txt` publish fix)
+- Spec/package/schema/`uhbs_version` fixtures aligned to **4.4.0**
+
+### Fixed
+- AEP SLM alpha oversized-response test: treat peer connection reset after the
+  size-cap abort as an oversize refusal (avoids flaky CI
+  `ConnectionResetError` on `tests/test_aep_slm.py`)
 
 ## [4.3.6] — 2026-08-01
 

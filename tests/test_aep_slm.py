@@ -311,7 +311,9 @@ def test_openai_compatible_refuses_redirect() -> None:
 
 
 def test_openai_compatible_caps_response_body() -> None:
-    huge = b"x" * (slm.MAX_MODEL_RESPONSE_BYTES + 1024)
+    # Slightly over the cap so the client aborts early; keep the body modest so
+    # the ThreadingHTTPServer write does not race the client close as hard.
+    huge = b"x" * (slm.MAX_MODEL_RESPONSE_BYTES + 4096)
 
     class Handler(BaseHTTPRequestHandler):
         def do_POST(self) -> None:  # noqa: N802
@@ -319,7 +321,11 @@ def test_openai_compatible_caps_response_body() -> None:
             self.send_header("Content-Type", "application/json")
             self.send_header("Content-Length", str(len(huge)))
             self.end_headers()
-            self.wfile.write(huge)
+            try:
+                self.wfile.write(huge)
+            except (BrokenPipeError, ConnectionResetError):
+                # Client closed after the size-cap refusal — expected.
+                return
 
         def log_message(self, format: str, *args: object) -> None:  # noqa: A003
             return

@@ -331,10 +331,30 @@ def _parse_model_json(text: str) -> dict[str, Any]:
 
 
 def _read_limited(resp: Any, *, max_bytes: int = MAX_MODEL_RESPONSE_BYTES) -> bytes:
+    # Prefer Content-Length so we refuse before streaming a multi-MiB body
+    # (avoids peer ConnectionResetError races when the client aborts mid-read).
+    headers = getattr(resp, "headers", None)
+    if headers is not None:
+        raw_len = headers.get("Content-Length")
+        if raw_len is not None:
+            try:
+                declared = int(raw_len)
+            except (TypeError, ValueError):
+                declared = -1
+            if declared > max_bytes:
+                raise AepSlmError(
+                    f"local model response exceeds {max_bytes} bytes "
+                    "(refusing unbounded body)"
+                )
     chunks: list[bytes] = []
     total = 0
     while True:
-        chunk = resp.read(65536)
+        try:
+            chunk = resp.read(65536)
+        except (ConnectionResetError, BrokenPipeError, TimeoutError) as exc:
+            raise AepSlmError(
+                f"local model connection failed while reading body: {exc}"
+            ) from exc
         if not chunk:
             break
         total += len(chunk)

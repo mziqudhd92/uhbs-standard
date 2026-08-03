@@ -1,7 +1,7 @@
 # Versioning Policy
 
 UHBS uses [Semantic Versioning](https://semver.org/) for the **specification** and
-the **Python package** (`uhbs` / `uhbs_core`), which share version **4.3.6** until
+the **Python package** (`uhbs` / `uhbs_core`), which share version **4.4.0** until
 a future split is RFCd.
 
 | Change type | Version bump | Examples |

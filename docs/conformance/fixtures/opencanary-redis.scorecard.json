@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.3.6",
+  "uhbs_version": "4.4.0",
   "target": {
     "name": "OpenCanary (REDIS :6379)",
     "class": "Low-Interaction",

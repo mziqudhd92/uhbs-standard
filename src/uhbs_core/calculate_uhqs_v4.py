@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Calculate UHQS 4.3.6 from report.json or explicit module scores."""
+"""Calculate UHQS 4.4.0 from report.json or explicit module scores."""
 
 from __future__ import annotations
 
@@ -15,7 +15,7 @@ def main() -> int:
 
     print_lab_sandbox_notice()
 
-    p = argparse.ArgumentParser(description="UHQS 4.3.6 composite score")
+    p = argparse.ArgumentParser(description="UHQS 4.4.0 composite score")
     p.add_argument("--input", help="report.json with modules[] or scores{}")
     p.add_argument("--output", default="report.json")
     p.add_argument("--protocol", type=float, dest="s_a", help="Module A score")
@@ -67,7 +67,7 @@ def main() -> int:
     from uhbs_core.termui import echo_ok
 
     echo_ok(
-        f"UHQS 4.3.6 = {uhqs.uhqs}  grade={uhqs.grade}  δ_C={uhqs.delta_c}  "
+        f"UHQS 4.4.0 = {uhqs.uhqs}  grade={uhqs.grade}  δ_C={uhqs.delta_c}  "
         f"A={uhqs.S_A} B={uhqs.S_B} C_telem={uhqs.S_C} C_gate={uhqs.C} "
         f"E={uhqs.S_E} F={uhqs.S_F} class={uhqs.profile_class}"
     )

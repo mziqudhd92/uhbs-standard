@@ -16,7 +16,7 @@ from typing import Any
 
 import yaml
 from jsonschema import Draft202012Validator
-from mcp.server.fastmcp import FastMCP
+from mcp.server import MCPServer
 
 from uhbs_cli.scoring import (
     PROFILE_WEIGHTS,
@@ -55,8 +55,8 @@ _handler.setFormatter(_ColorStderrFormatter("%(levelname)s %(message)s"))
 logging.basicConfig(level=logging.INFO, handlers=[_handler], force=True)
 log = logging.getLogger("uhbs_mcp")
 
-INSTRUCTIONS = """\
-UHBS (Universal Honeypot Benchmarking Standard) v4.3.6 — open-source beta-status
+INSTRUCTIONS = f"""\
+UHBS (Universal Honeypot Benchmarking Standard) v{__version__} — open-source beta-status
 evaluation framework for honeypots / deception tech (Apache-2.0).
 
 Not a consortium or adopted industry standard. Product names appear only under
@@ -68,10 +68,11 @@ validate_scorecard over inventing grades. Live Docker lab grading is CLI-only
 (uhbs lab) — not exposed here.
 """
 
-mcp = FastMCP(
+mcp = MCPServer(
     "uhbs",
     instructions=INSTRUCTIONS,
     website_url="https://uhbs.github.io/uhbs-standard/",
+    version=__version__,
 )
 
 

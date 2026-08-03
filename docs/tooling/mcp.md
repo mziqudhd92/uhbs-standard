@@ -2,6 +2,7 @@
 
 **Status:** Informative · tooling  
 **Package:** `uhbs[mcp]` · entry points `uhbs-mcp` / `python -m uhbs_mcp`  
+**SDK:** Model Context Protocol Python SDK **`mcp>=2,<3`** (`MCPServer`; was `FastMCP` on 1.x)  
 **Transport:** local **stdio** only (no remote HTTP / no `uhbs lab` execution)
 
 The [Model Context Protocol](https://modelcontextprotocol.io/) (MCP) is the open
@@ -121,7 +122,7 @@ Until PyPI publish, prefer the editable git install above.
 
 ### Docker grading image
 
-The published `uhbs:4.3.6` / `uhbs:4.3.6-full` images install `uhbs[lab]` only
+The published `uhbs:4.4.0` / `uhbs:4.4.0-full` images install `uhbs[lab]` only
 (CLI + harness). They do **not** ship `uhbs-mcp`. Run the MCP server on the host
 (or a dedicated venv) next to your AI client.
 

@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""UHBS v4.3.6 — Universal Honeypot Benchmarking Standard orchestrator (uhbs-core).
+"""UHBS v4.4.0 — Universal Honeypot Benchmarking Standard orchestrator (uhbs-core).
 
 Phases (§6):
   1) profile  — load TPS
   2) static   — Module F (+ optional capability signals)
   3) sandbox  — air-gap / egress preflight
   4) dynamic  — Modules A–E via protocol plugins
-  5) score    — UHQS 4.3.6 with profile-adaptive weights + δ_C gate
+  5) score    — UHQS 4.4.0 with profile-adaptive weights + δ_C gate
 
 Examples:
   uhbs lab --tps posix_shell_ssh --target 127.0.0.1 --port 2222 \\
@@ -188,7 +188,7 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     print_lab_sandbox_notice()
 
-    p = argparse.ArgumentParser(description="UHBS v4.3.6 Universal Honeypot Benchmark")
+    p = argparse.ArgumentParser(description="UHBS v4.4.0 Universal Honeypot Benchmark")
     p.add_argument("--inventory", type=Path)
     p.add_argument("--target", required=False, help="required unless --list-protocols")
     p.add_argument("--baseline")
@@ -321,7 +321,7 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     extras = {
         "target_scores": t_scores,
-        "uhqs_version": "4.3.6",
+        "uhqs_version": "4.4.0",
         "tps": {
             "name": tps.name,
             "class": tps.profile_class,
@@ -384,7 +384,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     )
     if baseline and "baseline_uhqs" in extras:
         echo_info(
-            f"Baseline UHQS 4.3.6: {extras['baseline_uhqs']['uhqs']}  "
+            f"Baseline UHQS 4.4.0: {extras['baseline_uhqs']['uhqs']}  "
             f"Δ={extras['delta_uhqs']}"
         )
     echo_ok(f"Wrote {path}")

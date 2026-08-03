@@ -4,8 +4,9 @@
 
 | Version | Supported |
 | --- | --- |
-| 4.3.x | Yes (current) |
-| 4.2.x | Security fixes only (please upgrade to 4.3.x) |
+| 4.4.x | Yes (current) |
+| 4.3.x | Security fixes only (please upgrade to 4.4.x) |
+| 4.2.x | No |
 | 4.0.x | No |
 | < 4.0.0 | No |
 

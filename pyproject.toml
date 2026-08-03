@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "uhbs"
-version = "4.3.6"
+version = "4.4.0"
 description = "Universal Honeypot Benchmarking Standard (UHBS) — validators and UHBS-Lab reference core"
 readme = "README.md"
 license = "Apache-2.0"
@@ -42,7 +42,7 @@ lab = [
   "paramiko>=3.0",
 ]
 mcp = [
-  "mcp>=1.28,<2",
+  "mcp>=2,<3",
 ]
 # Advanced Evidence Profile (AEP): offline statistical analysis only.
 # Implemented with the stdlib + existing click/jsonschema/pyyaml deps — no
@@ -57,7 +57,7 @@ aep = []
 # Convenience meta-extra (still does not install attack runners into AEP).
 all = [
   "paramiko>=3.0",
-  "mcp>=1.28,<2",
+  "mcp>=2,<3",
   "scapy>=2.7,<3",
 ]
 # Optional protocol-encoding backend (architecture review round 2, item 4):
@@ -74,7 +74,7 @@ dev = [
   "ruff>=0.5",
   "mypy>=1.10",
   "paramiko>=3.0",
-  "mcp>=1.28,<2",
+  "mcp>=2,<3",
 ]
 
 [project.scripts]
