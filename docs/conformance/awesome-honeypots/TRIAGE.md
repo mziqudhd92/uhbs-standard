@@ -1,7 +1,7 @@
 # Triage: awesome-honeypots fresh queue (2026-07-29)
 
 **Source:** [paralax/awesome-honeypots](https://github.com/paralax/awesome-honeypots) · age filter last push ≥ 2021-07-29  
-**UHBS:** 4.4.1 (no bump)  
+**UHBS:** 4.4.2 (no bump)  
 **Counts:** grade_now **45** · skip **34** · deferred_unsupported **12** · total **91**
 
 See also: [PLAN.md](PLAN.md) · [DEFERRED-PROTOCOLS.md](DEFERRED-PROTOCOLS.md) · [SKIPPED.md](SKIPPED.md)

@@ -7,21 +7,21 @@
 [![PyPI](https://img.shields.io/pypi/v/uhbs.svg)](https://pypi.org/project/uhbs/)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21631156-blue)](https://doi.org/10.5281/zenodo.21631156)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/uhbs/uhbs-standard/blob/main/LICENSE)
-[![Spec](https://img.shields.io/badge/Specification-v4.4.1-indigo.svg)](https://uhbs.github.io/uhbs-standard/mkdocs/specification/core-principles/)
+[![Spec](https://img.shields.io/badge/Specification-v4.4.2-indigo.svg)](https://uhbs.github.io/uhbs-standard/mkdocs/specification/core-principles/)
 [![UHQS](https://img.shields.io/badge/UHQS-0%E2%80%93100-success.svg)](https://uhbs.github.io/uhbs-standard/mkdocs/specification/scoring-formula/)
 
 > Open-source **beta** framework for **lab / sandbox** evaluation of honeypots and decoys — vendor-neutral UHQS scoring (0–100) with a non-linear Safety Gate.
 
 *Moved to organization uhbs to be more clean*
 
-**UHBS v4.4.1** measures deception realism, containment, scale, and telemetry quality by **class and protocol**. It is **not** an industry consortium standard or multi-party governed body. See [ROADMAP.md](ROADMAP.md) for maturity goals.
+**UHBS v4.4.2** measures deception realism, containment, scale, and telemetry quality by **class and protocol**. It is **not** an industry consortium standard or multi-party governed body. See [ROADMAP.md](https://github.com/uhbs/uhbs-standard/blob/main/ROADMAP.md) for maturity goals.
 
 | | |
 | --- | --- |
 | **Docs** | [Landing](https://uhbs.github.io/uhbs-standard/) · [MkDocs](https://uhbs.github.io/uhbs-standard/mkdocs/) |
 | **PyPI** | [`uhbs`](https://pypi.org/project/uhbs/) |
 | **Python** | ≥ 3.11 |
-| **License** | [Apache-2.0](LICENSE) |
+| **License** | [Apache-2.0](https://github.com/uhbs/uhbs-standard/blob/main/LICENSE) |
 
 > **NOTICE:** UHBS/AEP are for **lab/sandbox evaluation of decoys**. Do **not** run them against production or unauthorized real services. CLI tools print this reminder on stderr when commands run.
 
@@ -43,12 +43,12 @@
 
 ## Project status
 
-**Status:** Beta / Experimental — [specification status](docs/specification/status.md)
+**Status:** Beta / Experimental — [specification status](https://uhbs.github.io/uhbs-standard/mkdocs/specification/status/)
 
 | Topic | Reality today |
 | --- | --- |
-| Maintainer | [@mziqudhd92](https://github.com/mziqudhd92) — [MAINTAINERS.md](MAINTAINERS.md) |
-| Governance | Single maintainer; no Steering Committee yet — [Phase 6 roadmap](ROADMAP.md#phase-6--community-maturity-aspirational--not-done) |
+| Maintainer | [@mziqudhd92](https://github.com/mziqudhd92) — [MAINTAINERS.md](https://github.com/uhbs/uhbs-standard/blob/main/MAINTAINERS.md) |
+| Governance | Single maintainer; no Steering Committee yet — [Phase 6 roadmap](https://github.com/uhbs/uhbs-standard/blob/main/ROADMAP.md#phase-6--community-maturity-aspirational--not-done) |
 | Evaluation scope | **Laboratory / sandbox only** |
 | Suggested internal gate | After lab grading, orgs **MAY** use **UHQS > 80** + passing Safety Gate before *they* deploy a decoy — not a standards-body mandate |
 
@@ -62,7 +62,7 @@
 | AI-host MCP tools (validate/score fixtures; no live probes) | `pip install 'uhbs[mcp]'` → `uhbs-mcp` |
 | Offline Advanced Evidence Profile (optional; does not change UHQS) | `pip install 'uhbs[aep]'` → `uhbs aep` |
 | AEP SLM trial generator (alpha; **off until you edit config**) | `pip install 'uhbs[aep-slm]'` → `uhbs aep slm` |
-| Published lab grades / fixtures | [docs/conformance/](docs/conformance/index.md) |
+| Published lab grades / fixtures | [docs/conformance/](https://uhbs.github.io/uhbs-standard/mkdocs/conformance/) |
 
 **Vendor neutrality:** normative docs use classes and protocols. Named products appear only under conformance as evaluation **proof**, not as UHBS requirements.
 
@@ -171,17 +171,17 @@ pip install 'uhbs[mcp]'
 # uhbs-mcp   or:  python -m uhbs_mcp
 ```
 
-Registry metadata: [`server.json`](server.json). Live lab probes stay on `uhbs lab`, not the AI-host MCP server.
+Registry metadata: [`server.json`](https://github.com/uhbs/uhbs-standard/blob/main/server.json). Live lab probes stay on `uhbs lab`, not the AI-host MCP server.
 
-Grade **MCP honeypot** surfaces (JSON-RPC over HTTP/SSE) with the in-tree `mcp` **protocol plugin** (`uhbs[lab]`) — different from the AI-host server above. See [MCP honeypot grading](docs/architecture/mcp-honeypot-grading.md).
+Grade **MCP honeypot** surfaces (JSON-RPC over HTTP/SSE) with the in-tree `mcp` **protocol plugin** (`uhbs[lab]`) — different from the AI-host server above. See [MCP honeypot grading](https://github.com/uhbs/uhbs-standard/blob/main/docs/architecture/mcp-honeypot-grading.md).
 
 ### Docker
 
 ```bash
-docker build -t uhbs:4.4.1 .
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.4.1 \
+docker build -t uhbs:4.4.2 .
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.4.2 \
   validate-scorecard ./docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.4.1 lab --list-protocols
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.4.2 lab --list-protocols
 ```
 
 Compose: `docker compose run --rm uhbs validate-profile ./my-honeypot.profile.yaml`.
@@ -191,9 +191,9 @@ Compose: `docker compose run --rm uhbs validate-profile ./my-honeypot.profile.ya
 Terminal walkthrough: install UHBS + Cowrie/Conpot, start lab decoys, full UHQS
 (Cowrie SSH · Conpot Modbus · HellPot HTTP).
 
-![UHBS lab demo — install honeypots + full UHQS](docs/assets/uhbs-lab-demo.gif)
+![UHBS lab demo — install honeypots + full UHQS](https://github.com/uhbs/uhbs-standard/blob/main/docs/assets/uhbs-lab-demo.gif)
 
-Replay: [`docs/assets/uhbs-lab-demo.cast`](docs/assets/uhbs-lab-demo.cast)
+Replay: [`docs/assets/uhbs-lab-demo.cast`](https://github.com/uhbs/uhbs-standard/blob/main/docs/assets/uhbs-lab-demo.cast)
 (`asciinema play docs/assets/uhbs-lab-demo.cast`).
 
 ## Scoring (UHQS)
@@ -219,7 +219,7 @@ The **Universal Honeypot Quality Score** is a normalized composite **0–100**:
 | **E** | Scalability, latency & stress |
 | **F** | White-box static code audit |
 
-A decoy with strong deception scores can still fail lab evaluation if Module D is weak. Normative math: [`uhqs_math.py`](src/uhbs_core/uhqs_math.py) · [scoring formula](docs/specification/scoring-formula.md).
+A decoy with strong deception scores can still fail lab evaluation if Module D is weak. Normative math: [`uhqs_math.py`](https://github.com/uhbs/uhbs-standard/blob/main/src/uhbs_core/uhqs_math.py) · [scoring formula](https://uhbs.github.io/uhbs-standard/mkdocs/specification/scoring-formula/).
 
 ### Lab audit workflow (5 phases)
 
@@ -261,14 +261,14 @@ Ersok et al. (2022), Li et al. (2020) — full ledger:
 | Landing hub | https://uhbs.github.io/uhbs-standard/ |
 | Specification | https://uhbs.github.io/uhbs-standard/mkdocs/specification/core-principles/ |
 | Sitemap index (SEO) | https://uhbs.github.io/uhbs-standard/sitemap.xml |
-| CLI guide | [docs/tooling/cli.md](docs/tooling/cli.md) |
-| MCP (AI hosts) | [docs/tooling/mcp.md](docs/tooling/mcp.md) |
+| CLI guide | [docs/tooling/cli.md](https://uhbs.github.io/uhbs-standard/mkdocs/tooling/cli/) |
+| MCP (AI hosts) | [docs/tooling/mcp.md](https://uhbs.github.io/uhbs-standard/mkdocs/tooling/mcp/) |
 | AEP SLM (alpha) | https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/ |
-| Reference harness | [docs/reference-implementation.md](docs/reference-implementation.md) |
-| Conformance & lab reports | [docs/conformance/index.md](docs/conformance/index.md) |
-| Framework mappings | [docs/mappings/index.md](docs/mappings/index.md) |
-| Maturity roadmap | [ROADMAP.md](ROADMAP.md) |
-| Agent / SEO / AEO index | [llms.txt](llms.txt) · [AGENTS.md](AGENTS.md) · [humans.txt](docs/humans.txt) |
+| Reference harness | [docs/reference-implementation.md](https://uhbs.github.io/uhbs-standard/mkdocs/reference-implementation/) |
+| Conformance & lab reports | [docs/conformance/index.md](https://uhbs.github.io/uhbs-standard/mkdocs/conformance/) |
+| Framework mappings | [docs/mappings/index.md](https://uhbs.github.io/uhbs-standard/mkdocs/mappings/) |
+| Maturity roadmap | [ROADMAP.md](https://github.com/uhbs/uhbs-standard/blob/main/ROADMAP.md) |
+| Agent / SEO / AEO index | [llms.txt](https://uhbs.github.io/uhbs-standard/llms.txt) · [AGENTS.md](https://github.com/uhbs/uhbs-standard/blob/main/AGENTS.md) · [humans.txt](https://uhbs.github.io/uhbs-standard/humans.txt) |
 
 ## Repository layout
 
@@ -296,22 +296,22 @@ uhbs-standard/
 After you publish a scorecard (conformance / your own report), you can badge it:
 
 ```markdown
-![UHBS v4.4.1](https://img.shields.io/badge/UHBS%20v4.4.1-Grade%20A-brightgreen)
+![UHBS v4.4.2](https://img.shields.io/badge/UHBS%20v4.4.2-Grade%20A-brightgreen)
 ```
 
 ## Contributing
 
 Contributions are welcome under the project’s governance constraints.
 
-1. Read [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
-2. Follow [GOVERNANCE.md](GOVERNANCE.md) — specification changes use an **RFC** process
+1. Read [CONTRIBUTING.md](https://github.com/uhbs/uhbs-standard/blob/main/CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](https://github.com/uhbs/uhbs-standard/blob/main/CODE_OF_CONDUCT.md)
+2. Follow [GOVERNANCE.md](https://github.com/uhbs/uhbs-standard/blob/main/GOVERNANCE.md) — specification changes use an **RFC** process
 3. Sign off commits ([DCO](https://developercertificate.org/))
 4. Run `pytest -q` and `ruff check` on touched Python before opening a PR
 
 ## Security
 
 Please report vulnerabilities via [GitHub Security Advisories](https://github.com/uhbs/uhbs-standard/security/advisories/new)
-per [SECURITY.md](SECURITY.md). Do not use UHBS tooling against systems you are
+per [SECURITY.md](https://github.com/uhbs/uhbs-standard/blob/main/SECURITY.md). Do not use UHBS tooling against systems you are
 not authorized to test.
 
 ## Citation
@@ -321,16 +321,16 @@ not authorized to test.
   author = {Zavdi, Moran},
   title = {Universal Honeypot Benchmarking Standard (UHBS)},
   year = {2026},
-  version = {4.4.1},
+  version = {4.4.2},
   publisher = {Zenodo},
   doi = {10.5281/zenodo.21631156},
   url = {https://doi.org/10.5281/zenodo.21631156}
 }
 ```
 
-Machine-readable: [`CITATION.cff`](CITATION.cff). Concept DOI (latest deposit):
+Machine-readable: [`CITATION.cff`](https://github.com/uhbs/uhbs-standard/blob/main/CITATION.cff). Concept DOI (latest deposit):
 [10.5281/zenodo.21631155](https://doi.org/10.5281/zenodo.21631155).
 
 ## License
 
-Licensed under the [Apache License 2.0](LICENSE).
+Licensed under the [Apache License 2.0](https://github.com/uhbs/uhbs-standard/blob/main/LICENSE).

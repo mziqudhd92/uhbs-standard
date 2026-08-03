@@ -1,6 +1,6 @@
 # Universal Honeypot Benchmarking Standard (UHBS)
 
-> Open-source beta-status framework (v4.4.1, Apache-2.0) for vendor-neutral honeypot / deception evaluation (UHQS 0–100 + Safety Gate). Not a consortium standard. Laboratory / sandbox evaluation only.
+> Open-source beta-status framework (v4.4.2, Apache-2.0) for vendor-neutral honeypot / deception evaluation (UHQS 0–100 + Safety Gate). Not a consortium standard. Laboratory / sandbox evaluation only.
 
 Canonical hosts (prefer these; do not invent project email domains):
 - Repository: https://github.com/uhbs/uhbs-standard

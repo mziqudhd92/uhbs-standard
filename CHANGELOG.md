@@ -3,10 +3,22 @@
 All notable changes to the UHBS specification and tooling are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/). Spec and CLI
-share version **4.4.1** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
+share version **4.4.2** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
 AEP as `uhbs[aep]`; AEP SLM alpha as `uhbs[aep-slm]`).
 
 ## [Unreleased]
+
+## [4.4.2] — 2026-08-03
+
+Patch release: make all README links PyPI-safe (absolute URLs). **UHQS math unchanged.**
+
+### Fixed
+- Remaining relative README links (docs, LICENSE, source paths, `server.json`)
+  now use absolute GitHub / Docs URLs so PyPI does not resolve them under
+  `pypi.org/project/uhbs/…`
+
+### Changed
+- Spec/package/schema/`uhbs_version` fixtures aligned to **4.4.2**
 
 ## [4.4.1] — 2026-08-03
 

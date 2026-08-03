@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Module E — Scalability, Latency & Stress (UHBS v4.4.1).
+"""Module E — Scalability, Latency & Stress (UHBS v4.4.2).
 
 E1: connection saturation — P50/P95/P99 vs TPS expected_p95_latency_ms
 E2: resource exhaustion + circuit-breaker liveness
