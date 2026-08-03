@@ -32,6 +32,10 @@ Guidance for coding assistants and automated agents working in this repository.
 5. Do **not** expose `uhbs lab` / network attack tools via MCP without explicit Safety Gate design.
 6. Do **not** expose `uhbs aep slm` / model-calling paths via MCP; keep SLM opt-in via local config unlock only.
 7. Run `pytest -q` and `ruff check` on touched Python before finishing.
+8. When bumping the UHBS version string, **do not** bulk-replace inside
+   `web/package-lock.json` (or other lockfiles) — that can rewrite npm package
+   versions (e.g. `debug@4.4.3` → nonexistent `debug@4.4.4`) and break Pages
+   deploy. Exclude lockfiles; run `npm ci` in `web/` after intentional lock changes.
 
 ## Install / verify
 

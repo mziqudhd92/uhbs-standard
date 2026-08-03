@@ -8,6 +8,15 @@ AEP as `uhbs[aep]`; AEP SLM alpha as `uhbs[aep-slm]`).
 
 ## [Unreleased]
 
+### Fixed
+- Restore `web/package-lock.json` `debug@4.4.3` after a bulk UHBS version bump
+  rewrote it to nonexistent `debug@4.4.4` and broke Pages `npm ci`
+- Restore OpenSSF Best Practices badge on the README / PyPI hero
+
+### Changed
+- CI Validate also runs `npm ci` in `web/` so lockfile breakage fails before
+  (or with) docs deploy
+
 ## [4.4.4] — 2026-08-03
 
 Patch release: clean up PyPI/README hero presentation. **UHQS math unchanged.**

@@ -3,6 +3,7 @@
 <a href="https://github.com/uhbs/uhbs-standard/actions/workflows/ci-validate.yml"><img alt="CI" src="https://github.com/uhbs/uhbs-standard/actions/workflows/ci-validate.yml/badge.svg"></a>
 <a href="https://uhbs.github.io/uhbs-standard/"><img alt="Docs" src="https://img.shields.io/badge/docs-uhbs.github.io-blue"></a>
 <a href="https://pypi.org/project/uhbs/"><img alt="PyPI" src="https://img.shields.io/pypi/v/uhbs.svg"></a>
+<a href="https://www.bestpractices.dev/projects/13853"><img alt="OpenSSF Best Practices" src="https://www.bestpractices.dev/projects/13853/badge"></a>
 <a href="https://github.com/uhbs/uhbs-standard/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"></a>
 <a href="https://uhbs.github.io/uhbs-standard/mkdocs/specification/core-principles/"><img alt="Spec" src="https://img.shields.io/badge/Specification-v4.4.4-indigo.svg"></a>
 <a href="https://uhbs.github.io/uhbs-standard/mkdocs/specification/scoring-formula/"><img alt="UHQS" src="https://img.shields.io/badge/UHQS-0--100-success.svg"></a>
