@@ -30,7 +30,7 @@ and decoy systems. It measures:
 
 ### 1.2 Universal Applicability
 
-Framework **v4.4.3** is 100% protocol-agnostic, architecture-neutral, and **vendor-neutral**. It provides standard testing procedures for:
+Framework **v4.4.4** is 100% protocol-agnostic, architecture-neutral, and **vendor-neutral**. It provides standard testing procedures for:
 
 | Domain | Examples |
 | --- | --- |

@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.4.3",
+  "uhbs_version": "4.4.4",
   "target": {
     "name": "Trapster Community (Telnet :2323)",
     "class": "Low-Interaction",

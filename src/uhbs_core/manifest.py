@@ -19,7 +19,7 @@ def sha256_file(path: Path) -> str:
 def write_manifest(
     out_dir: Path,
     *,
-    uhbs_version: str = "4.4.3",
+    uhbs_version: str = "4.4.4",
     extra: dict[str, Any] | None = None,
 ) -> Path:
     """Write MANIFEST.json with SHA-256 digests of artifacts in out_dir."""

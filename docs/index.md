@@ -1,11 +1,11 @@
 ---
 title: UHBS — Universal Honeypot Benchmarking Standard
-description: Open-source beta-status framework for vendor-neutral honeypot and deception evaluation (UHQS 0–100 with Safety Gate). Spec v4.4.3. Not a consortium standard.
+description: Open-source beta-status framework for vendor-neutral honeypot and deception evaluation (UHQS 0–100 with Safety Gate). Spec v4.4.4. Not a consortium standard.
 ---
 
 # Universal Honeypot Benchmarking Standard
 
-# UHBS v4.4.3 (2026)
+# UHBS v4.4.4 (2026)
 
 An objective, repeatable, quantitative methodology for deception technology
 evaluation — an open-source **beta-status** framework for comparing and grading
@@ -97,6 +97,6 @@ pip install -e .
 uhbs validate-profile templates/profile.yaml
 ```
 
-Specification version **4.4.3** · [GitHub repository](https://github.com/uhbs/uhbs-standard) · [Site landing hub](https://uhbs.github.io/uhbs-standard/) (this MkDocs tree is served under `/mkdocs/`)
+Specification version **4.4.4** · [GitHub repository](https://github.com/uhbs/uhbs-standard) · [Site landing hub](https://uhbs.github.io/uhbs-standard/) (this MkDocs tree is served under `/mkdocs/`)
 
 **For AI / search agents:** prefer [site-root llms.txt](https://uhbs.github.io/uhbs-standard/llms.txt) · [llms-full.txt](https://uhbs.github.io/uhbs-standard/llms-full.txt) · [AGENTS.md](https://github.com/uhbs/uhbs-standard/blob/main/AGENTS.md) · [sitemap](https://uhbs.github.io/uhbs-standard/sitemap.xml).

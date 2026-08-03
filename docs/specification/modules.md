@@ -1,6 +1,6 @@
 # Evaluation Modules (A–F)
 
-UHBS v4.4.3 defines six evaluation modules. Module **D** is the **Safety Gate**; a containment score below 95 applies an exponential penalty to the composite UHQS.
+UHBS v4.4.4 defines six evaluation modules. Module **D** is the **Safety Gate**; a containment score below 95 applies an exponential penalty to the composite UHQS.
 
 ---
 

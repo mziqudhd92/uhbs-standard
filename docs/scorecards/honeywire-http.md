@@ -1,7 +1,7 @@
 # Scorecard: HoneyWire — http
 
 **Status:** Informative · evaluation proof (not an endorsement)  
-**UHBS:** **4.4.3** · **Class:** Web-API · **Protocol / surface:** `http` (WebRouterDecoy)  
+**UHBS:** **4.4.4** · **Class:** Web-API · **Protocol / surface:** `http` (WebRouterDecoy)  
 **Target id (lab):** `HoneyWire-http` · **Evaluation date:** 2026-07-29
 
 | Run | UHQS | Grade | δ_C | Proof artifacts |
@@ -47,7 +47,7 @@ These numbers are copied from the lab `SCORECARD.txt` produced by `uhbs-lab` —
 
 ```text
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.4.3
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.4.4
 ====================================================================================
 Target System         : HoneyWire-http
 System Profile Class  : Web-API
@@ -67,7 +67,7 @@ Module E: Scalability & Latency     : 100.0/100       0.15     PASSED (service a
 Module F: Static Code Audit         :  70.0/100       0.20     PASSED (POSIX coverage 0% (0/104))
 ------------------------------------------------------------------------------------
 SAFETY GATE MULTIPLIER                : δ_C = 0.5625 (C = 75.0 < 95 — exponential penalty)
-FINAL COMPOSITE SCORE (UHQS 4.4.3)      : 45.84 / 100
+FINAL COMPOSITE SCORE (UHQS 4.4.4)      : 45.84 / 100
 OVERALL EVALUATION GRADE              : GRADE F (Fail)
 ====================================================================================
 ```

@@ -41,7 +41,7 @@ uhbs-lab --help
 # uhbs-lab --inventory … --protocol mcp --tps …/mcp_server.yaml --out ./reports/mcp
 ```
 
-Built-in protocols in v4.4.3 (**36**): `bluetooth`, `dhcp`, `dns`, `ftp`,
+Built-in protocols in v4.4.4 (**36**): `bluetooth`, `dhcp`, `dns`, `ftp`,
 `generic`, `git`, `http`, `httpproxy`, `imap`, `ipp`, `irc`, `kubernetes`,
 `ldap`, `mcp`, `memcache`, `modbus`, `mongodb`, `mssql`, `mysql`, `ntp`,
 `oracle`, `pjl`, `pop3`, `postgres`, `rdp`, `redis`, `s7comm`, `sip`, `smb`,
@@ -110,16 +110,16 @@ https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/
 Build once from the repository root:
 
 ```bash
-docker build -t uhbs:4.4.3 .
+docker build -t uhbs:4.4.4 .
 ```
 
 The image entrypoint is `uhbs`. Mount your project at `/work`:
 
 ```bash
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.4.3 --help
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.4.3 \
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.4.4 --help
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.4.4 \
   validate-scorecard ./docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.4.3 lab --list-protocols
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.4.4 lab --list-protocols
 ```
 
 For live Modules A–E probes, point `--target` at a host reachable from the

@@ -1,4 +1,4 @@
-"""UHQS 4.4.3 scoring helpers."""
+"""UHQS 4.4.4 scoring helpers."""
 
 from __future__ import annotations
 

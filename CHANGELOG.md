@@ -3,10 +3,19 @@
 All notable changes to the UHBS specification and tooling are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/). Spec and CLI
-share version **4.4.3** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
+share version **4.4.4** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
 AEP as `uhbs[aep]`; AEP SLM alpha as `uhbs[aep-slm]`).
 
 ## [Unreleased]
+
+## [4.4.4] — 2026-08-03
+
+Patch release: clean up PyPI/README hero presentation. **UHQS math unchanged.**
+
+### Changed
+- README intro for PyPI: remove informal org-move note, fewer clearer HTML
+  badges, tighter summary links and metadata table
+- Spec/package/schema/`uhbs_version` fixtures aligned to **4.4.4**
 
 ## [4.4.3] — 2026-08-03
 

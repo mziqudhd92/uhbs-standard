@@ -1,25 +1,21 @@
 # Universal Honeypot Benchmarking Standard (UHBS)
 
-[![CI](https://github.com/uhbs/uhbs-standard/actions/workflows/ci-validate.yml/badge.svg)](https://github.com/uhbs/uhbs-standard/actions/workflows/ci-validate.yml)
-[![Docs](https://github.com/uhbs/uhbs-standard/actions/workflows/deploy-docs.yml/badge.svg)](https://uhbs.github.io/uhbs-standard/)
-[![CodeQL](https://github.com/uhbs/uhbs-standard/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/uhbs/uhbs-standard/actions/workflows/codeql-analysis.yml)
-[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/13853/badge)](https://www.bestpractices.dev/projects/13853)
-[![PyPI](https://img.shields.io/pypi/v/uhbs.svg)](https://pypi.org/project/uhbs/)
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21631156-blue)](https://doi.org/10.5281/zenodo.21631156)
+<a href="https://github.com/uhbs/uhbs-standard/actions/workflows/ci-validate.yml"><img alt="CI" src="https://github.com/uhbs/uhbs-standard/actions/workflows/ci-validate.yml/badge.svg"></a>
+<a href="https://uhbs.github.io/uhbs-standard/"><img alt="Docs" src="https://img.shields.io/badge/docs-uhbs.github.io-blue"></a>
+<a href="https://pypi.org/project/uhbs/"><img alt="PyPI" src="https://img.shields.io/pypi/v/uhbs.svg"></a>
 <a href="https://github.com/uhbs/uhbs-standard/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"></a>
-<a href="https://uhbs.github.io/uhbs-standard/mkdocs/specification/core-principles/"><img alt="Spec" src="https://img.shields.io/badge/Specification-v4.4.3-indigo.svg"></a>
+<a href="https://uhbs.github.io/uhbs-standard/mkdocs/specification/core-principles/"><img alt="Spec" src="https://img.shields.io/badge/Specification-v4.4.4-indigo.svg"></a>
 <a href="https://uhbs.github.io/uhbs-standard/mkdocs/specification/scoring-formula/"><img alt="UHQS" src="https://img.shields.io/badge/UHQS-0--100-success.svg"></a>
+<a href="https://doi.org/10.5281/zenodo.21631156"><img alt="DOI" src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21631156-blue"></a>
 
-> Open-source **beta** framework for **lab / sandbox** evaluation of honeypots and decoys — vendor-neutral UHQS scoring (0–100) with a non-linear Safety Gate.
+Open-source **beta** framework for **lab / sandbox** evaluation of honeypots and decoys — vendor-neutral **UHQS** scoring (0–100) with a non-linear Safety Gate.
 
-*Moved to organization uhbs to be more clean*
+**UHBS v4.4.4** measures deception realism, containment, scale, and telemetry quality by **class and protocol**. It is **not** an industry consortium standard or multi-party governed body. Source and docs: [github.com/uhbs/uhbs-standard](https://github.com/uhbs/uhbs-standard) · [uhbs.github.io/uhbs-standard](https://uhbs.github.io/uhbs-standard/) · [ROADMAP](https://github.com/uhbs/uhbs-standard/blob/main/ROADMAP.md).
 
-**UHBS v4.4.3** measures deception realism, containment, scale, and telemetry quality by **class and protocol**. It is **not** an industry consortium standard or multi-party governed body. See [ROADMAP.md](https://github.com/uhbs/uhbs-standard/blob/main/ROADMAP.md) for maturity goals.
-
-| | |
+| | Link |
 | --- | --- |
 | **Docs** | [Landing](https://uhbs.github.io/uhbs-standard/) · [MkDocs](https://uhbs.github.io/uhbs-standard/mkdocs/) |
-| **PyPI** | [`uhbs`](https://pypi.org/project/uhbs/) |
+| **Install** | `pip install uhbs` · extras: `lab`, `mcp`, `aep` |
 | **Python** | ≥ 3.11 |
 | **License** | [Apache-2.0](https://github.com/uhbs/uhbs-standard/blob/main/LICENSE) |
 
@@ -178,10 +174,10 @@ Grade **MCP honeypot** surfaces (JSON-RPC over HTTP/SSE) with the in-tree `mcp` 
 ### Docker
 
 ```bash
-docker build -t uhbs:4.4.3 .
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.4.3 \
+docker build -t uhbs:4.4.4 .
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.4.4 \
   validate-scorecard ./docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.4.3 lab --list-protocols
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.4.4 lab --list-protocols
 ```
 
 Compose: `docker compose run --rm uhbs validate-profile ./my-honeypot.profile.yaml`.
@@ -296,7 +292,7 @@ uhbs-standard/
 After you publish a scorecard (conformance / your own report), you can badge it:
 
 ```markdown
-![UHBS v4.4.3](https://img.shields.io/badge/UHBS%20v4.4.3-Grade%20A-brightgreen)
+![UHBS v4.4.4](https://img.shields.io/badge/UHBS%20v4.4.4-Grade%20A-brightgreen)
 ```
 
 ## Contributing
@@ -321,7 +317,7 @@ not authorized to test.
   author = {Zavdi, Moran},
   title = {Universal Honeypot Benchmarking Standard (UHBS)},
   year = {2026},
-  version = {4.4.3},
+  version = {4.4.4},
   publisher = {Zenodo},
   doi = {10.5281/zenodo.21631156},
   url = {https://doi.org/10.5281/zenodo.21631156}

@@ -1,6 +1,6 @@
 # Informative UHBS Improvements (No Normative Scoring Change)
 
-**Status:** Informative RFC-style notes · UHBS 4.4.3 unchanged
+**Status:** Informative RFC-style notes · UHBS 4.4.4 unchanged
 
 These improvements are recommended **without** changing UHQS, weights, δ_C, or
 letter grades. Normative scoring changes require a separate RFC with corpus

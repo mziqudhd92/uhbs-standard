@@ -1,5 +1,5 @@
 {
-  "framework": "Universal Honeypot Benchmarking Standard (UHBS) v4.4.3",
+  "framework": "Universal Honeypot Benchmarking Standard (UHBS) v4.4.4",
   "evaluation_type": "Full-Spectrum (Static Audit + Dynamic Sandbox)",
   "target": {
     "name": "HoneyWire-http",
@@ -36,7 +36,7 @@
     "profile_class": "Web-API",
     "grade": "GRADE F (Fail)",
     "phase": "profile+static+sandbox+dynamic+score",
-    "version": "4.4.3",
+    "version": "4.4.4",
     "containment_measured": true
   },
   "hqs": {
@@ -59,7 +59,7 @@
     "profile_class": "Web-API",
     "grade": "GRADE F (Fail)",
     "phase": "profile+static+sandbox+dynamic+score",
-    "version": "4.4.3",
+    "version": "4.4.4",
     "containment_measured": true
   },
   "modules": [
@@ -580,7 +580,7 @@
       "scale": 100.0,
       "static": 70.0
     },
-    "uhqs_version": "4.4.3",
+    "uhqs_version": "4.4.4",
     "tps": {
       "name": "web_api_http-full",
       "class": "Web-API",

@@ -27,7 +27,7 @@ PLUGINS = (
 
 COWRIE_CARD = """\
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.4.3
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.4.4
 ====================================================================================
 Target System         : cowrie-ssh
 System Profile Class  : Low-Interaction
@@ -44,13 +44,13 @@ Module E: Scalability & Latency     :  75.0/100       0.10     PASSED
 Module F: Static Code Audit         :  70.0/100       0.20     PASSED
 ------------------------------------------------------------------------------------
 SAFETY GATE MULTIPLIER                : δ_C = 1.0
-FINAL COMPOSITE SCORE (UHQS 4.4.3)      : 61.37 / 100
+FINAL COMPOSITE SCORE (UHQS 4.4.4)      : 61.37 / 100
 OVERALL EVALUATION GRADE              : GRADE D (Needs Remediation)
 ===================================================================================="""
 
 CONPOT_CARD = """\
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.4.3
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.4.4
 ====================================================================================
 Target System         : conpot
 System Profile Class  : ICS-SCADA
@@ -67,13 +67,13 @@ Module E: Scalability & Latency     : 100.0/100       0.10     PASSED
 Module F: Static Code Audit         :  70.0/100       0.20     PASSED
 ------------------------------------------------------------------------------------
 SAFETY GATE MULTIPLIER                : δ_C = 0.81
-FINAL COMPOSITE SCORE (UHQS 4.4.3)      : 55.4 / 100
+FINAL COMPOSITE SCORE (UHQS 4.4.4)      : 55.4 / 100
 OVERALL EVALUATION GRADE              : GRADE D (Needs Remediation)
 ===================================================================================="""
 
 HELLPOT_CARD = """\
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.4.3
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.4.4
 ====================================================================================
 Target System         : HellPot-http
 System Profile Class  : Web-API
@@ -90,7 +90,7 @@ Module E: Scalability & Latency     : 100.0/100       0.15     PASSED
 Module F: Static Code Audit         :  69.0/100       0.20     PARTIAL
 ------------------------------------------------------------------------------------
 SAFETY GATE MULTIPLIER                : δ_C = 0.5625
-FINAL COMPOSITE SCORE (UHQS 4.4.3)      : 43.87 / 100
+FINAL COMPOSITE SCORE (UHQS 4.4.4)      : 43.87 / 100
 OVERALL EVALUATION GRADE              : GRADE F (Fail)
 ===================================================================================="""
 

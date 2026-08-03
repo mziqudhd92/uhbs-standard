@@ -1,4 +1,4 @@
-"""Shared check-list aggregation for UHBS Module A/B (v4.4.3 architecture fix).
+"""Shared check-list aggregation for UHBS Module A/B (v4.4.4 architecture fix).
 
 Prior behavior (pre-2026-07-27): a check-list was reduced to a plain
 arithmetic mean of scores. This let a single catastrophic failure (score
