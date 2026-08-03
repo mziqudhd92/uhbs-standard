@@ -12,6 +12,8 @@ AEP as `uhbs[aep]`; AEP SLM alpha as `uhbs[aep-slm]`).
 - Restore `web/package-lock.json` `debug@4.4.3` after a bulk UHBS version bump
   rewrote it to nonexistent `debug@4.4.4` and broke Pages `npm ci`
 - Restore OpenSSF Best Practices badge on the README / PyPI hero
+- AEP SLM size-cap: treat mid-read connection reset after a large partial body
+  as oversize; drop flaky chunked HTTP integration case (unit-tested via FakeResp)
 
 ### Changed
 - CI Validate also runs `npm ci` in `web/` so lockfile breakage fails before

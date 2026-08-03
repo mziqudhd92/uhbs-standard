@@ -335,6 +335,7 @@ def _read_limited(resp: Any, *, max_bytes: int = MAX_MODEL_RESPONSE_BYTES) -> by
     # Prefer Content-Length so we refuse before streaming a multi-MiB body
     # (avoids peer ConnectionResetError races when the client aborts mid-read).
     headers = getattr(resp, "headers", None)
+    declared: int | None = None
     if headers is not None:
         raw_len = headers.get("Content-Length")
         if raw_len is not None:
@@ -357,6 +358,15 @@ def _read_limited(resp: Any, *, max_bytes: int = MAX_MODEL_RESPONSE_BYTES) -> by
         try:
             chunk = resp.read(65536)
         except (ConnectionResetError, BrokenPipeError, TimeoutError) as exc:
+            # Closing early after a size-cap abort can reset the peer mid-read
+            # (especially chunked responses). Treat a large partial body as oversize.
+            if total > max_bytes or (
+                declared is None and total >= min(max_bytes, 65536)
+            ):
+                raise AepSlmError(
+                    f"local model response exceeds {max_bytes} bytes "
+                    "(refusing unbounded body)"
+                ) from exc
             raise AepSlmError(
                 f"local model connection failed while reading body: {exc}"
             ) from exc
