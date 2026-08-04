@@ -125,12 +125,33 @@ class S7commPlugin(ProtocolPlugin):
     def _strict(tps: TPS | None) -> bool:
         return tps is None or tps.strict_rfc_enforcement
 
+    @staticmethod
+    def _probe_timeout(tps: TPS | None, default: float) -> float:
+        """Optional TPS override (``performance_baseline.probe_timeout_sec``).
+
+        Mirrors the OT/ICS Modbus hardening knob so operators can tune S7comm
+        socket timeouts (slow real PLCs, rate-limited decoys) without a code
+        change. Missing/malformed values keep the existing per-call default.
+        """
+        if tps is None:
+            return default
+        raw = tps.raw or {}
+        perf = raw.get("performance_baseline") or {}
+        value = perf.get("probe_timeout_sec")
+        if value is None:
+            return default
+        try:
+            return float(value)
+        except (TypeError, ValueError):
+            return default
+
     def probe_fsm(
         self, host: str, port: int, target: TargetSpec, tps: TPS | None
     ) -> list[CheckResult]:
+        timeout = self._probe_timeout(tps, 3.0)
         # Truncated TPKT length claim — must not hang.
         junk = b"\x03\x00\x00\x10\x11"  # claims 16 bytes, only 1 follows
-        raw, _, err = tcp_transact(host, port, junk, timeout=3.0, recv_first=False)
+        raw, _, err = tcp_transact(host, port, junk, timeout=timeout, recv_first=False)
         if err and not raw and "timed out" in err.lower():
             ok = False
         elif not raw and not err:
@@ -155,8 +176,9 @@ class S7commPlugin(ProtocolPlugin):
         self, host: str, port: int, target: TargetSpec, tps: TPS | None
     ) -> list[CheckResult]:
         strict = self._strict(tps)
+        timeout = self._probe_timeout(tps, 4.0)
         cr = build_cotp_cr()
-        raw, _, err = tcp_transact(host, port, cr, timeout=4.0, recv_first=False)
+        raw, _, err = tcp_transact(host, port, cr, timeout=timeout, recv_first=False)
         ok = is_cotp_cc(raw) or (is_tpkt(raw) and b"\xd0" in raw[:16])
         detail = raw[:40].hex() if raw else (err or "no COTP CC")
         if ok:
@@ -193,12 +215,16 @@ class S7commPlugin(ProtocolPlugin):
         soft-scores decoys that only speak COTP (or ignore S7 PDUs).
         """
         strict = self._strict(tps)
+        connect_timeout = self._probe_timeout(tps, 8.0)
+        recv_timeout = self._probe_timeout(tps, 6.0)
         last_err = "no COTP CC before Setup"
         for _attempt in range(2):
             try:
-                with socket.create_connection((host, int(port)), timeout=8.0) as s:
+                with socket.create_connection(
+                    (host, int(port)), timeout=connect_timeout
+                ) as s:
                     s.sendall(build_cotp_cr())
-                    cc = _recv_all(s, timeout=6.0)
+                    cc = _recv_all(s, timeout=recv_timeout)
                     if not (is_cotp_cc(cc) or (is_tpkt(cc) and b"\xd0" in cc[:16])):
                         last_err = (
                             f"no COTP CC before Setup: "
@@ -206,7 +232,7 @@ class S7commPlugin(ProtocolPlugin):
                         )
                         continue
                     s.sendall(build_s7_setup_communication())
-                    setup = _recv_all(s, timeout=6.0)
+                    setup = _recv_all(s, timeout=recv_timeout)
                     ok = is_s7_setup_ack(setup)
                     return [
                         CheckResult(

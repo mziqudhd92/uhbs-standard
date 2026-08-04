@@ -106,7 +106,7 @@ def _init_params() -> dict[str, Any]:
     return {
         "protocolVersion": "2024-11-05",
         "capabilities": {},
-        "clientInfo": {"name": "uhbs-mcp-grader", "version": "4.4.5"},
+        "clientInfo": {"name": "uhbs-mcp-grader", "version": "4.5.0"},
     }
 
 

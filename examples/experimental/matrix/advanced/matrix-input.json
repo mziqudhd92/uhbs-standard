@@ -1,0 +1,10 @@
+{
+  "notes": "Advanced fixture with all five dimensions scored.",
+  "dimensions": {
+    "fingerprinting_resistance": {"status": "scored", "score": 88.0, "confidence": 0.9, "sample_count": 100, "source": "lab"},
+    "interaction_depth": {"status": "scored", "score": 70.0, "confidence": 0.75, "sample_count": 30, "source": "aep"},
+    "artifact_protocol_fidelity": {"status": "scored", "score": 92.0, "confidence": 0.95, "sample_count": 20, "source": "lab"},
+    "data_quality_actionability": {"status": "scored", "score": 78.0, "confidence": 0.85, "sample_count": 200, "source": "lab"},
+    "resource_overhead": {"status": "scored", "score": 60.0, "confidence": 0.7, "sample_count": 10, "source": "operator"}
+  }
+}

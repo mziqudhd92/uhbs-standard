@@ -1,0 +1,17 @@
+target_metadata:
+  name: "ICS-S7comm-Decoy"
+  class: "ICS-SCADA"
+  protocol: "s7comm"
+  protocols: ["s7comm"]
+
+performance_baseline:
+  expected_p95_latency_ms: 300
+  strict_rfc_enforcement: true
+  timing_samples: 40
+  probe_timeout_sec: 6.0
+  strict_frame_validation: true
+  inter_probe_delay_ms: 0
+
+safety_boundary:
+  allowed_outbound_traffic: false
+  allow_local_code_execution: false

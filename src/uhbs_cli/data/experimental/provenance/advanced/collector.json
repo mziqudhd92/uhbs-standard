@@ -1,0 +1,6 @@
+{
+  "name": "synthetic-collector",
+  "placement": "sandbox_host",
+  "platform": "linux",
+  "threat_model": "container_root"
+}

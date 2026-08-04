@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/uhbs/uhbs-standard/raw/main/schemas/experimental-provenance.schema.json",
+  "title": "UHBS Experimental Host Provenance Summary",
+  "description": "Collector-neutral, rate-limited host provenance summary. Informative only; does not change UHQS.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "uhbs_version",
+    "status",
+    "uhqs_unchanged",
+    "collector",
+    "summary",
+    "digest"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0.0" },
+    "uhbs_version": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": ["experimental", "not_applicable", "incomplete"]
+    },
+    "uhqs_unchanged": { "type": "boolean", "const": true },
+    "generated_at": { "type": "string" },
+    "collector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "placement"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "version": { "type": "string" },
+        "placement": {
+          "type": "string",
+          "enum": ["sandbox_host", "sidecar", "unknown"]
+        },
+        "platform": { "type": "string" },
+        "threat_model": {
+          "type": "string",
+          "enum": ["container_root", "host_root", "unspecified"]
+        }
+      }
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "max_events": { "type": "integer", "minimum": 1 },
+        "max_bytes": { "type": "integer", "minimum": 1 },
+        "aggregation": {
+          "type": "string",
+          "enum": ["none", "by_type", "ring_buffer"]
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_counts", "accepted", "dropped"],
+      "properties": {
+        "event_counts": {
+          "type": "object",
+          "additionalProperties": { "type": "integer", "minimum": 0 }
+        },
+        "accepted": { "type": "integer", "minimum": 0 },
+        "dropped": { "type": "integer", "minimum": 0 },
+        "overflow": { "type": "boolean" },
+        "correlated_probe_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "digest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["algorithm", "value", "chain_root"],
+      "properties": {
+        "algorithm": { "type": "string", "const": "sha256" },
+        "value": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "chain_root": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "signed_envelope": {
+          "type": "object",
+          "description": "Optional future in-toto / COSE / DSSE envelope (not required for MVP).",
+          "additionalProperties": true
+        }
+      }
+    },
+    "notes": { "type": "string" }
+  }
+}

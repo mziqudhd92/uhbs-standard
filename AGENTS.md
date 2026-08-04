@@ -6,7 +6,7 @@ Guidance for coding assistants and automated agents working in this repository.
 
 - **UHBS** = open-source **beta-status** evaluation framework for honeypots / deception tech.
 - **Not** a consortium, Steering Committee, or adopted industry/academic standard.
-- Spec / package version: **4.4.5** · License: **Apache-2.0**
+- Spec / package version: **4.5.0** · License: **Apache-2.0**
 - Maintainer: see `MAINTAINERS.md` (single author today).
 - Docs site: https://uhbs.github.io/uhbs-standard/ (landing) · https://uhbs.github.io/uhbs-standard/mkdocs/ (MkDocs)
 
@@ -20,6 +20,7 @@ Guidance for coding assistants and automated agents working in this repository.
 | MCP tools for AI hosts | `src/uhbs_mcp/` · docs `docs/tooling/mcp.md` · `server.json` |
 | AEP offline analysis | `src/uhbs_cli/aep.py` · docs `docs/advanced-evidence/` |
 | AEP SLM (alpha, opt-in) | `src/uhbs_cli/aep_slm.py` · docs `docs/advanced-evidence/slm-alpha.md` (off until config edit; do **not** expose via MCP) |
+| Experimental matrix / provenance / genai-bench | `src/uhbs_cli/{matrix,provenance,genai_bench}.py` · `docs/experimental/` (informative; do **not** expose lab probes via MCP) |
 | Maturity / future governance | `ROADMAP.md` only (do not claim Phase 6 done) |
 | Vendor-neutrality | Classes/protocols in docs; product names only under `docs/conformance/` |
 
@@ -31,10 +32,11 @@ Guidance for coding assistants and automated agents working in this repository.
 4. Prefer absolute URLs when editing `llms.txt` / site discovery files.
 5. Do **not** expose `uhbs lab` / network attack tools via MCP without explicit Safety Gate design.
 6. Do **not** expose `uhbs aep slm` / model-calling paths via MCP; keep SLM opt-in via local config unlock only.
-7. Run `pytest -q` and `ruff check` on touched Python before finishing.
-8. When bumping the UHBS version string, **do not** bulk-replace inside
+7. Do **not** expose `uhbs genai-bench` live probes or provenance collectors via MCP.
+8. Run `pytest -q` and `ruff check` on touched Python before finishing.
+9. When bumping the UHBS version string, **do not** bulk-replace inside
    `web/package-lock.json` (or other lockfiles) — that can rewrite npm package
-   versions (e.g. `debug@4.4.3` → nonexistent `debug@4.4.5`) and break Pages
+   versions (e.g. `debug@4.4.3` → nonexistent `debug@4.4.4`) and break Pages
    deploy. Exclude lockfiles; run `npm ci` in `web/` after intentional lock changes.
 
 ## Install / verify
@@ -46,8 +48,8 @@ uhbs validate-scorecard docs/conformance/fixtures/cowrie-low-interaction.scoreca
 # MCP (stdio) for AI hosts — see docs/tooling/mcp.md
 python -c "from uhbs_mcp.server import list_profile_classes; print(list_profile_classes()['ok'])"
 # optional Docker grading image:
-docker build -t uhbs:4.4.5 .
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.4.5 validate-scorecard docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
+docker build -t uhbs:4.5.0 .
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.5.0 validate-scorecard docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
 ```
 
 ## Discovery files (absolute URLs preferred)

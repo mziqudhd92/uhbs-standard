@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "uhbs"
-version = "4.4.5"
+version = "4.5.0"
 description = "Universal Honeypot Benchmarking Standard (UHBS) — validators and UHBS-Lab reference core"
 readme = "README.md"
 license = "Apache-2.0"
@@ -54,6 +54,11 @@ aep = []
 # openai_compatible provider after the user edits aep-slm.yaml unlock gates.
 # Discoverability: pip install 'uhbs[aep-slm]' (or uhbs[aep]).
 "aep-slm" = []
+# Experimental offline matrix / provenance / genai-bench analysis (stdlib).
+# Live GenAI/OT probes still require uhbs[lab]. Does not change UHQS.
+experimental = []
+# Discoverability alias for experimental GenAI/MCP offline analysis.
+"genai-bench" = []
 # Convenience meta-extra (still does not install attack runners into AEP).
 all = [
   "paramiko>=3.0",
@@ -114,6 +119,15 @@ uhbs_cli = [
   "data/advanced-evidence/advanced/*",
   "data/advanced-evidence/template/*",
   "data/advanced-evidence/slm/*",
+  "data/experimental/matrix/beginner/*",
+  "data/experimental/matrix/advanced/*",
+  "data/experimental/matrix/template/*",
+  "data/experimental/genai-mcp/beginner/*",
+  "data/experimental/genai-mcp/advanced/*",
+  "data/experimental/genai-mcp/template/*",
+  "data/experimental/provenance/beginner/*",
+  "data/experimental/provenance/advanced/*",
+  "data/experimental/provenance/template/*",
 ]
 
 [tool.ruff]

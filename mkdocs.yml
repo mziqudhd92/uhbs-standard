@@ -1,10 +1,10 @@
 site_name: Universal Honeypot Benchmarking Standard (UHBS)
-site_description: Open-source beta-status framework for vendor-neutral honeypot and deception evaluation (UHQS 0–100, Safety Gate). Optional AEP and alpha SLM trial helper. Spec v4.4.5. Not a consortium standard.
+site_description: Open-source beta-status framework for vendor-neutral honeypot and deception evaluation (UHQS 0–100, Safety Gate). Optional AEP and alpha SLM trial helper. Spec v4.5.0. Not a consortium standard.
 site_url: https://uhbs.github.io/uhbs-standard/mkdocs/
 repo_url: https://github.com/uhbs/uhbs-standard
 repo_name: uhbs/uhbs-standard
 edit_uri: edit/main/docs/
-copyright: UHBS v4.4.5 — beta-status evaluation framework (Apache-2.0)
+copyright: UHBS v4.5.0 — beta-status evaluation framework (Apache-2.0)
 
 theme:
   name: material
@@ -298,6 +298,18 @@ nav:
       - Advanced tutorial: advanced-evidence/tutorial-advanced.md
       - Research foundations & credits: advanced-evidence/research-foundations.md
       - Improvement notes: advanced-evidence/improvement-notes.md
+  - Experimental (optional):
+      - Overview: experimental/index.md
+      - Matrix CLI: experimental/cli-matrix.md
+      - GenAI/MCP CLI: experimental/cli-genai-bench.md
+      - Provenance CLI: experimental/cli-provenance.md
+      - Matrix beginner tutorial: experimental/tutorial-matrix-beginner.md
+      - Matrix advanced tutorial: experimental/tutorial-matrix-advanced.md
+      - GenAI beginner tutorial: experimental/tutorial-genai-beginner.md
+      - GenAI advanced tutorial: experimental/tutorial-genai-advanced.md
+      - Provenance beginner tutorial: experimental/tutorial-provenance-beginner.md
+      - Architecture: architecture/experimental-benchmarks.md
+      - RFC 0002: rfcs/0002-experimental-benchmark-extensions.md
   - Registry: registry.md
   - Tooling:
       - CLI & Validator: tooling/cli.md

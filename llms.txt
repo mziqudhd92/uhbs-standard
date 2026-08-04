@@ -1,6 +1,6 @@
 # Universal Honeypot Benchmarking Standard (UHBS)
 
-> Open-source beta-status framework (v4.4.5, Apache-2.0) for vendor-neutral honeypot / deception evaluation (UHQS 0–100 + Safety Gate). Not a consortium standard. Laboratory / sandbox evaluation only.
+> Open-source beta-status framework (v4.5.0, Apache-2.0) for vendor-neutral honeypot / deception evaluation (UHQS 0–100 + Safety Gate). Not a consortium standard. Laboratory / sandbox evaluation only.
 
 Canonical hosts (prefer these; do not invent project email domains):
 - Repository: https://github.com/uhbs/uhbs-standard
@@ -54,6 +54,8 @@ This file is the **repository + site-root** agent index (AEO/GEO for coding assi
 ## Optional
 
 - [Advanced Evidence Profile](https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/): Lab-only offline evidence layer (does not change UHQS; not production testing)
+- [Experimental extensions](https://uhbs.github.io/uhbs-standard/mkdocs/experimental/): matrix · genai-bench · provenance (informative; UHQS unchanged)
+- [Latest changes (landing)](https://uhbs.github.io/uhbs-standard/#latest): Website summary with tutorial links
 - [AEP SLM evaluator (alpha)](https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/): Opt-in trial JSONL helper; **off until you edit `aep-slm.yaml`**; never changes UHQS; not MCP-exposed
 - [Landing hub AEP section](https://uhbs.github.io/uhbs-standard/#advanced-evidence): Overview + SLM alpha callout
 - [AEP research credits](https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/research-foundations/): Zhu 2019 · Collins et al. 2024 · Ersok et al. 2022 · Li et al. 2020

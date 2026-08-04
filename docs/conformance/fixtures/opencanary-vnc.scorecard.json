@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.4.5",
+  "uhbs_version": "4.5.0",
   "target": {
     "name": "OpenCanary (VNC :5900)",
     "class": "Low-Interaction",

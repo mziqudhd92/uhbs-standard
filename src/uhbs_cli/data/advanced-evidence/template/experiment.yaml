@@ -1,5 +1,5 @@
 aep_version: 1.0.0
-uhbs_version: 4.4.5
+uhbs_version: 4.5.0
 experiment_id: aep-template
 name: aep-template
 hypothesis: Under matched task/budget/timeout, the decoy changes dwell time and/or

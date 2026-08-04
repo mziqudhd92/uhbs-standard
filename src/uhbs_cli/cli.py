@@ -204,7 +204,7 @@ def score_cmd(
     click.echo(
         json.dumps(
             {
-                "uhbs_version": "4.4.5",
+                "uhbs_version": "4.5.0",
                 "profile_class": profile_class,
                 "delta_c": result.delta_c,
                 "uhqs": result.uhqs,
@@ -693,6 +693,280 @@ def aep_slm_generate(config: Path, force: bool) -> None:
         "Next (offline): uhbs aep validate-trials … && uhbs aep analyze … "
         "(UHQS unchanged)"
     )
+
+
+@main.group("matrix")
+def matrix_group() -> None:
+    """Experimental five-dimension matrix — offline informative analysis.
+
+    Does not change UHQS, weights, or δ_C. Missing dimensions stay missing.
+    """
+
+
+@matrix_group.command("example")
+@click.argument("name", type=click.Choice(["beginner", "advanced", "template"]))
+@click.option("--out", "out_dir", type=click.Path(path_type=Path), default=None)
+@click.option("--force/--no-force", default=False, show_default=True)
+def matrix_example(name: str, out_dir: Path | None, force: bool) -> None:
+    """Copy a packaged matrix example (works after pip install)."""
+    from uhbs_cli import matrix as matrix_mod
+
+    target = out_dir or Path(f"matrix-{name}")
+    try:
+        written = matrix_mod.export_example_bundle(name, target, force=force)
+    except matrix_mod.MatrixError as exc:
+        raise click.ClickException(str(exc)) from exc
+    echo_ok(f"OK  wrote packaged example '{name}' to {written}")
+
+
+@matrix_group.command("validate")
+@click.argument("input_path", type=click.Path(exists=True, path_type=Path))
+@click.option("--json", "as_json", is_flag=True)
+def matrix_validate(input_path: Path, as_json: bool) -> None:
+    """Validate a matrix input document."""
+    from uhbs_cli import matrix as matrix_mod
+
+    try:
+        data = matrix_mod.load_json(input_path)
+        errors = matrix_mod.validate_input(data)
+    except matrix_mod.MatrixError as exc:
+        raise click.ClickException(str(exc)) from exc
+    if as_json:
+        click.echo(json.dumps({"ok": not errors, "errors": errors}, indent=2))
+    elif errors:
+        for err in errors:
+            echo_error(f"ERROR {err}")
+        sys.exit(1)
+    else:
+        echo_ok(f"OK  {input_path} — valid experimental matrix input")
+    if errors:
+        sys.exit(1)
+
+
+@matrix_group.command("analyze")
+@click.argument("input_path", type=click.Path(exists=True, path_type=Path))
+@click.option("--out", type=click.Path(path_type=Path), default=Path("matrix-report.json"))
+def matrix_analyze(input_path: Path, out: Path) -> None:
+    """Analyze matrix input → experimental report (UHQS unchanged)."""
+    from uhbs_cli import matrix as matrix_mod
+
+    try:
+        data = matrix_mod.load_json(input_path)
+        report = matrix_mod.analyze(data)
+        out.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    except matrix_mod.MatrixError as exc:
+        raise click.ClickException(str(exc)) from exc
+    echo_ok(f"OK  wrote {out} (experimental; UHQS unchanged)")
+
+
+@matrix_group.command("report")
+@click.argument("report_path", type=click.Path(exists=True, path_type=Path))
+@click.option(
+    "--format",
+    "fmt",
+    type=click.Choice(["markdown", "json"]),
+    default="markdown",
+    show_default=True,
+)
+@click.option("--out", type=click.Path(path_type=Path), default=None)
+def matrix_report(report_path: Path, fmt: str, out: Path | None) -> None:
+    """Render an experimental matrix report."""
+    from uhbs_cli import matrix as matrix_mod
+
+    try:
+        report = matrix_mod.load_json(report_path)
+        errors = matrix_mod.validate_report(report)
+        if errors:
+            raise matrix_mod.MatrixError("; ".join(errors[:5]))
+        text = (
+            json.dumps(report, indent=2) + "\n"
+            if fmt == "json"
+            else matrix_mod.render_markdown(report)
+        )
+    except matrix_mod.MatrixError as exc:
+        raise click.ClickException(str(exc)) from exc
+    if out:
+        out.write_text(text, encoding="utf-8")
+        echo_ok(f"OK  wrote {out}")
+    else:
+        click.echo(text, nl=not text.endswith("\n"))
+
+
+@main.group("provenance")
+def provenance_group() -> None:
+    """Experimental host provenance — validate/summarize collector exports.
+
+    Collector-neutral; rate-limits before hashing. Does not change UHQS.
+    Does not load eBPF or expose via MCP.
+    """
+
+
+@provenance_group.command("example")
+@click.argument("name", type=click.Choice(["beginner", "advanced", "template"]))
+@click.option("--out", "out_dir", type=click.Path(path_type=Path), default=None)
+@click.option("--force/--no-force", default=False, show_default=True)
+def provenance_example(name: str, out_dir: Path | None, force: bool) -> None:
+    from uhbs_cli import provenance as prov_mod
+
+    target = out_dir or Path(f"provenance-{name}")
+    try:
+        written = prov_mod.export_example_bundle(name, target, force=force)
+    except prov_mod.ProvenanceError as exc:
+        raise click.ClickException(str(exc)) from exc
+    echo_ok(f"OK  wrote packaged example '{name}' to {written}")
+
+
+@provenance_group.command("summarize")
+@click.argument("events", type=click.Path(exists=True, path_type=Path))
+@click.option("--collector", type=click.Path(exists=True, path_type=Path), default=None)
+@click.option("--max-events", default=5000, show_default=True, type=int)
+@click.option("--max-bytes", default=2_000_000, show_default=True, type=int)
+@click.option(
+    "--aggregation",
+    type=click.Choice(["none", "by_type", "ring_buffer"]),
+    default="by_type",
+    show_default=True,
+)
+@click.option("--platform", default=None, help="e.g. linux (others → not_applicable)")
+@click.option("--out", type=click.Path(path_type=Path), default=Path("provenance-summary.json"))
+def provenance_summarize(
+    events: Path,
+    collector: Path | None,
+    max_events: int,
+    max_bytes: int,
+    aggregation: str,
+    platform: str | None,
+    out: Path,
+) -> None:
+    """Summarize JSONL events with rate limits, then hash."""
+    from uhbs_cli import provenance as prov_mod
+
+    try:
+        rows = prov_mod.load_events_jsonl(events)
+        col = None
+        if collector:
+            with collector.open(encoding="utf-8") as fh:
+                col = json.load(fh)
+        report = prov_mod.summarize_events(
+            rows,
+            collector=col,
+            max_events=max_events,
+            max_bytes=max_bytes,
+            aggregation=aggregation,
+            platform=platform or (col or {}).get("platform"),
+        )
+        out.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    except prov_mod.ProvenanceError as exc:
+        raise click.ClickException(str(exc)) from exc
+    echo_ok(
+        f"OK  wrote {out} (accepted={report['summary']['accepted']} "
+        f"dropped={report['summary']['dropped']})"
+    )
+
+
+@provenance_group.command("validate")
+@click.argument("summary", type=click.Path(exists=True, path_type=Path))
+@click.option("--json", "as_json", is_flag=True)
+def provenance_validate(summary: Path, as_json: bool) -> None:
+    from uhbs_cli import provenance as prov_mod
+
+    try:
+        with summary.open(encoding="utf-8") as fh:
+            report = json.load(fh)
+        errors = prov_mod.validate_report(report)
+    except prov_mod.ProvenanceError as exc:
+        raise click.ClickException(str(exc)) from exc
+    if as_json:
+        click.echo(json.dumps({"ok": not errors, "errors": errors}, indent=2))
+    elif errors:
+        for err in errors:
+            echo_error(f"ERROR {err}")
+        sys.exit(1)
+    else:
+        echo_ok(f"OK  {summary} — valid experimental provenance summary")
+    if errors:
+        sys.exit(1)
+
+
+@provenance_group.command("attach")
+@click.argument("summary", type=click.Path(exists=True, path_type=Path))
+@click.option(
+    "--manifest",
+    type=click.Path(path_type=Path),
+    required=True,
+    help="MANIFEST.json to update (created if missing).",
+)
+@click.option("--out", type=click.Path(path_type=Path), default=None)
+def provenance_attach(summary: Path, manifest: Path, out: Path | None) -> None:
+    """Attach provenance digest refs into MANIFEST.json."""
+    from uhbs_cli import provenance as prov_mod
+
+    try:
+        with summary.open(encoding="utf-8") as fh:
+            report = json.load(fh)
+        errors = prov_mod.validate_report(report)
+        if errors:
+            raise prov_mod.ProvenanceError("; ".join(errors[:5]))
+        updated = prov_mod.attach_digest_to_manifest(manifest, report)
+        dest = out or manifest
+        dest.write_text(json.dumps(updated, indent=2) + "\n", encoding="utf-8")
+    except prov_mod.ProvenanceError as exc:
+        raise click.ClickException(str(exc)) from exc
+    echo_ok(f"OK  wrote {dest}")
+
+
+@main.group("genai-bench")
+def genai_bench_group() -> None:
+    """Experimental GenAI/MCP benchmark — replay-first offline analysis.
+
+    Default CI path is deterministic replay. Live probes are lab-only and are
+    not exposed via uhbs-mcp. Does not change UHQS.
+    """
+
+
+@genai_bench_group.command("example")
+@click.argument("name", type=click.Choice(["beginner", "advanced", "template"]))
+@click.option("--out", "out_dir", type=click.Path(path_type=Path), default=None)
+@click.option("--force/--no-force", default=False, show_default=True)
+def genai_bench_example(name: str, out_dir: Path | None, force: bool) -> None:
+    from uhbs_cli import genai_bench as gb
+
+    target = out_dir or Path(f"genai-bench-{name}")
+    try:
+        written = gb.export_example_bundle(name, target, force=force)
+    except gb.GenaiBenchError as exc:
+        raise click.ClickException(str(exc)) from exc
+    echo_ok(f"OK  wrote packaged example '{name}' to {written}")
+
+
+@genai_bench_group.command("stub")
+@click.option("--out", type=click.Path(path_type=Path), default=Path("replay.json"))
+@click.option("--force/--no-force", default=False, show_default=True)
+def genai_bench_stub(out: Path, force: bool) -> None:
+    """Write a deterministic replay-buffer stub (CI-safe)."""
+    from uhbs_cli import genai_bench as gb
+
+    try:
+        path = gb.write_stub_replay(out, force=force)
+    except gb.GenaiBenchError as exc:
+        raise click.ClickException(str(exc)) from exc
+    echo_ok(f"OK  wrote replay stub {path}")
+
+
+@genai_bench_group.command("analyze")
+@click.argument("replay", type=click.Path(exists=True, path_type=Path))
+@click.option("--out", type=click.Path(path_type=Path), default=Path("genai-benchmark-report.json"))
+def genai_bench_analyze(replay: Path, out: Path) -> None:
+    """Analyze a replay buffer → experimental GenAI/MCP report."""
+    from uhbs_cli import genai_bench as gb
+
+    try:
+        data = gb.load_replay(replay)
+        report = gb.analyze_replay(data)
+        out.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    except gb.GenaiBenchError as exc:
+        raise click.ClickException(str(exc)) from exc
+    echo_ok(f"OK  wrote {out} (experimental; UHQS unchanged)")
 
 
 if __name__ == "__main__":

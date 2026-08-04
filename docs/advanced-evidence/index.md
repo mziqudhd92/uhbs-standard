@@ -1,7 +1,7 @@
 # Advanced Evidence Profile (AEP)
 
 **Status:** Optional · informative · offline analysis only  
-**UHBS version:** 4.4.5 · **AEP schema version:** 1.0.0  
+**UHBS version:** 4.5.0 · **AEP schema version:** 1.0.0  
 **Evaluation scope:** Laboratory / sandbox only — **not** real-world production testing
 
 !!! danger "Lab evaluation only"

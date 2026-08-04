@@ -3,10 +3,35 @@
 All notable changes to the UHBS specification and tooling are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/). Spec and CLI
-share version **4.4.5** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
-AEP as `uhbs[aep]`; AEP SLM alpha as `uhbs[aep-slm]`).
+share version **4.5.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
+AEP as `uhbs[aep]`; AEP SLM alpha as `uhbs[aep-slm]`; experimental as
+`uhbs[experimental]` / `uhbs[genai-bench]`).
 
 ## [Unreleased]
+
+## [4.5.0] — 2026-08-04
+
+Minor release: experimental benchmark extensions (matrix, GenAI/MCP replay bench,
+host provenance, OT plugins). **UHQS math unchanged.**
+
+### Added
+
+- **Experimental benchmark extensions** (informative; **UHQS math unchanged**):
+  - `uhbs matrix` — five-dimension calculator with missing-dimension handling and leave-one-out sensitivity
+  - `uhbs genai-bench` — deterministic replay-buffer GenAI/MCP metrics (CLR/SCR/TTFT); tarpit-aware TTFT
+  - `uhbs provenance` — collector-neutral host provenance summarize/validate/attach with rate limits before hashing
+  - Pip extras: `uhbs[experimental]`, `uhbs[genai-bench]` (discoverability; stdlib)
+  - Schemas: `experimental-matrix`, `experimental-provenance`, `genai-benchmark-report`
+  - Optional scorecard `informative_refs` (display-only)
+  - Docs/tutorials under `docs/experimental/`; RFC 0002; landing-page **Latest changes**
+  - Packaged examples via `uhbs … example` (also under `examples/experimental/`)
+- Protocol plugins: **bacnet**, **mqtt**, **coap** (built-in count **39**)
+- Packaged TPS `ics_s7comm.yaml`; Modbus TPS timeouts / register / unit overrides
+
+### Changed
+
+- Discovery / MkDocs nav include Experimental section and absolute tutorial links from the site Latest changes section
+- Spec/package/schema/`uhbs_version` fixtures aligned to **4.5.0**
 
 ## [4.4.5] — 2026-08-03
 

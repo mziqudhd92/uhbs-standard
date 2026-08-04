@@ -14,7 +14,7 @@ from uhbs_core.tps import PROFILES_DIR, load_tps, resolve_tps_path
 
 
 def test_version_matches_spec() -> None:
-    assert __version__ == "4.4.5"
+    assert __version__ == "4.5.0"
 
 
 def test_protocol_plugins_registered() -> None:
@@ -25,6 +25,9 @@ def test_protocol_plugins_registered() -> None:
         "mcp",
         "modbus",
         "s7comm",
+        "bacnet",
+        "mqtt",
+        "coap",
         "generic",
         "mysql",
         "postgres",
@@ -101,7 +104,7 @@ def test_manifest_writer(tmp_path: Path) -> None:
     (tmp_path / "SCORECARD.txt").write_text("UHQS\n", encoding="utf-8")
     dest = write_manifest(tmp_path, extra={"target": "unit"})
     data = json.loads(dest.read_text(encoding="utf-8"))
-    assert data["uhbs_version"] == "4.4.5"
+    assert data["uhbs_version"] == "4.5.0"
     paths = {a["path"] for a in data["artifacts"]}
     assert "report.json" in paths
     assert "SCORECARD.txt" in paths

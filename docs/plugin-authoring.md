@@ -5,9 +5,9 @@
 > [`GOVERNANCE.md`](https://github.com/uhbs/uhbs-standard/blob/main/GOVERNANCE.md)) — this page describes what the code
 > does today, not a certified or committee-reviewed plugin API.
 
-UHBS ships **36** built-in protocol plugins under `src/uhbs_core/protocols/`
-(`uhbs lab --list-protocols`): bluetooth, dhcp, dns, ftp, generic, git, http,
-httpproxy, imap, ipp, irc, kubernetes, ldap, mcp, memcache, modbus, mongodb, mssql,
+UHBS ships **39** built-in protocol plugins under `src/uhbs_core/protocols/`
+(`uhbs lab --list-protocols`): bacnet, bluetooth, coap, dhcp, dns, ftp, generic, git, http,
+httpproxy, imap, ipp, irc, kubernetes, ldap, mcp, memcache, modbus, mongodb, mqtt, mssql,
 mysql, ntp, oracle, pjl, pop3, postgres, rdp, redis, s7comm, sip, smb, smtp,
 snmp, socks5, ssh, telnet, tftp, vnc. As of this note, the registry
 (`src/uhbs_core/protocols/registry.py`) can **also** load plugins from an
@@ -27,14 +27,14 @@ for the smallest working example, and
 against without subclassing anything.
 
 ```python
-# my_uhbs_coap_plugin/plugin.py
+# my_uhbs_acme_plugin/plugin.py
 from uhbs_core.models import CheckResult, TargetSpec
 from uhbs_core.protocols.base import ProtocolPlugin
 from uhbs_core.tps import TPS
 
 
-class CoAPPlugin(ProtocolPlugin):
-    name = "coap"
+class AcmeProtocolPlugin(ProtocolPlugin):
+    name = "acme-protocol"
     families = ("iot",)
 
     def probe_fsm(self, host: str, port: int, target: TargetSpec, tps: TPS | None):
@@ -58,7 +58,7 @@ an entry point under the `uhbs.plugins` group pointing at your plugin class:
 
 ```toml
 [project.entry-points."uhbs.plugins"]
-coap = "my_uhbs_coap_plugin.plugin:CoAPPlugin"
+acme-protocol = "my_uhbs_acme_plugin.plugin:AcmeProtocolPlugin"
 ```
 
 When your package is `pip install`-ed alongside `uhbs`, the registry
@@ -70,7 +70,7 @@ are no first-party third-party plugins to register yet):
 ```toml
 # Third-party plugin authors register here in *their own* project, not here:
 # [project.entry-points."uhbs.plugins"]
-# coap = "my_uhbs_coap_plugin.plugin:CoAPPlugin"
+# acme-protocol = "my_uhbs_acme_plugin.plugin:AcmeProtocolPlugin"
 ```
 
 ## 3. Failure isolation

@@ -1,0 +1,3 @@
+{"type": "exec", "ts": "2026-08-04T12:00:00Z", "pid": 1, "probe_id": "d1.egress", "redacted": true}
+{"type": "connect", "ts": "2026-08-04T12:00:01Z", "pid": 42, "probe_id": "d1.egress", "cgroup": "docker/abc", "redacted": true}
+{"type": "file_mutation", "ts": "2026-08-04T12:00:02Z", "pid": 42, "redacted": true}

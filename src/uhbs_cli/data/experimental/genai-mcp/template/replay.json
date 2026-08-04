@@ -1,0 +1,13 @@
+{
+  "mode": "replay",
+  "timing_intent": "unspecified",
+  "canary": {
+    "token_id": "t",
+    "nonce": "n",
+    "embedded_in": "tool_arg"
+  },
+  "leak_probes": [],
+  "coherence_turns": [],
+  "ttft_ms": [],
+  "injection_probes": []
+}

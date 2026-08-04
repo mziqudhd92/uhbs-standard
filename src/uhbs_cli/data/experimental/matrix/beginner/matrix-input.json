@@ -1,0 +1,36 @@
+{
+  "notes": "Beginner synthetic matrix input — some dimensions missing on purpose.",
+  "scorecard_ref": "linked-scorecard.json",
+  "dimensions": {
+    "fingerprinting_resistance": {
+      "status": "scored",
+      "score": 72.0,
+      "confidence": 0.8,
+      "sample_count": 40,
+      "source": "module_a_checks",
+      "notes": "Mapped from protocol anomaly / timing checks"
+    },
+    "interaction_depth": {
+      "status": "missing",
+      "notes": "Requires AEP session trials"
+    },
+    "artifact_protocol_fidelity": {
+      "status": "scored",
+      "score": 81.0,
+      "confidence": 0.9,
+      "sample_count": 12,
+      "source": "module_b_checks"
+    },
+    "data_quality_actionability": {
+      "status": "scored",
+      "score": 65.0,
+      "confidence": 0.7,
+      "sample_count": 100,
+      "source": "module_c_checks"
+    },
+    "resource_overhead": {
+      "status": "not_applicable",
+      "notes": "Not collected in beginner fixture"
+    }
+  }
+}

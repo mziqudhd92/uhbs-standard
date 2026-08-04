@@ -17,7 +17,38 @@ from uhbs_core.protocols.s7comm import (
     is_s7_setup_ack,
     is_tpkt,
 )
-from uhbs_core.tps import TPS
+from uhbs_core.tps import TPS, resolve_tps_path
+
+
+def test_ics_s7comm_tps_packaged() -> None:
+    path = resolve_tps_path("ics_s7comm")
+    assert path is not None
+    from uhbs_core.tps import load_tps
+
+    tps = load_tps(path)
+    assert tps.protocol == "s7comm"
+    assert tps.profile_class == "ICS-SCADA"
+    assert tps.raw.get("performance_baseline", {}).get("probe_timeout_sec") == 6.0
+
+
+def test_s7comm_probe_timeout_override_from_tps() -> None:
+    tps = TPS(
+        name="s7-stub",
+        profile_class="ICS-SCADA",
+        protocol="s7comm",
+        protocols=["s7comm"],
+        raw={"performance_baseline": {"probe_timeout_sec": 1.5}},
+    )
+    assert S7commPlugin._probe_timeout(tps, 3.0) == 1.5
+    # Missing/None TPS keeps the per-call default.
+    assert S7commPlugin._probe_timeout(None, 3.0) == 3.0
+    tps_no_override = TPS(
+        name="s7-stub",
+        profile_class="ICS-SCADA",
+        protocol="s7comm",
+        protocols=["s7comm"],
+    )
+    assert S7commPlugin._probe_timeout(tps_no_override, 3.0) == 3.0
 
 
 def test_s7comm_plugin_resolves_and_aliases() -> None:

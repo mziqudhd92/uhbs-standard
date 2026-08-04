@@ -7,7 +7,9 @@ from importlib import metadata as _importlib_metadata
 
 from uhbs_core.protocols.base import ProtocolPlugin
 
+from .bacnet import BACnetPlugin
 from .bluetooth import BluetoothPlugin
+from .coap import CoAPPlugin
 from .dhcp import DHCPPlugin
 from .dns import DNSPlugin
 from .ftp import FTPPlugin
@@ -24,6 +26,7 @@ from .mcp import MCPPlugin
 from .memcache import MemcachePlugin
 from .modbus import ModbusPlugin
 from .mongodb import MongoDBPlugin
+from .mqtt import MQTTPlugin
 from .mssql import MssqlPlugin
 from .mysql import MySQLPlugin
 from .ntp import NTPPlugin
@@ -91,6 +94,12 @@ def get_plugin(name: str) -> ProtocolPlugin:
         key = "postgres"
     if key in {"s7", "iso-tsap", "isotp", "iso_on_tcp"}:
         key = "s7comm"
+    if key in {"bacnet/ip", "bacnet-ip"}:
+        key = "bacnet"
+    if key in {"mqtts"}:
+        key = "mqtt"
+    if key in {"coaps"}:
+        key = "coap"
     if key in {"pop-3", "pop"}:
         key = "pop3"
     if key in {"mongo", "mongodb-wire"}:
@@ -189,6 +198,9 @@ def _bootstrap() -> None:
         TelnetPlugin(),
         ModbusPlugin(),
         S7commPlugin(),
+        BACnetPlugin(),
+        MQTTPlugin(),
+        CoAPPlugin(),
         FTPPlugin(),
         RedisPlugin(),
         SMBPlugin(),

@@ -1,0 +1,10 @@
+{
+  "notes": "Empty template — fill dimensions before analyze.",
+  "dimensions": {
+    "fingerprinting_resistance": {"status": "missing"},
+    "interaction_depth": {"status": "missing"},
+    "artifact_protocol_fidelity": {"status": "missing"},
+    "data_quality_actionability": {"status": "missing"},
+    "resource_overhead": {"status": "missing"}
+  }
+}
