@@ -1,3 +1,3 @@
 """UHBS-Lab reference core — vendor-neutral Modules A–F harness."""
 
-__version__ = "4.5.0"
+__version__ = "4.5.1"

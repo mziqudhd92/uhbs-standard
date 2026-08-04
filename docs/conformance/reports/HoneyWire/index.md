@@ -37,7 +37,7 @@ A lightweight Go HTTP lure that mimics router admin login pages, captures reconn
 
 ## Trust & limitations
 
-- This page is **evaluation proof** under UHBS 4.5.0 — not a certification or vendor ranking.
+- This page is **evaluation proof** under UHBS 4.5.1 — not a certification or vendor ranking.
 - Prefer **full/** artifacts over **quick/** for operational decisions (scores matched in this run).
 - Re-run via [TUTORIAL.md](TUTORIAL.md); environment notes in [METHODOLOGY.md](METHODOLOGY.md).
 - How to read modules: [READING-UHQS.md](../READING-UHQS.md)

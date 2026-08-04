@@ -3,11 +3,22 @@
 All notable changes to the UHBS specification and tooling are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/). Spec and CLI
-share version **4.5.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
+share version **4.5.1** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
 AEP as `uhbs[aep]`; AEP SLM alpha as `uhbs[aep-slm]`; experimental as
 `uhbs[experimental]` / `uhbs[genai-bench]`).
 
 ## [Unreleased]
+
+## [4.5.1] — 2026-08-04
+
+Patch release: fix CI ruff failure from the 4.5.0 MQTT stub helper.
+**UHQS math unchanged.**
+
+### Fixed
+- `tests/test_mqtt_protocol.py`: use `contextlib.suppress(OSError)` so CI Validate lint passes
+
+### Changed
+- Spec/package/schema/`uhbs_version` fixtures aligned to **4.5.1**
 
 ## [4.5.0] — 2026-08-04
 

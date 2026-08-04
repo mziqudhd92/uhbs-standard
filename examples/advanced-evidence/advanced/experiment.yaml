@@ -1,5 +1,5 @@
 aep_version: 1.0.0
-uhbs_version: 4.5.0
+uhbs_version: 4.5.1
 experiment_id: advanced-multi-layer
 name: advanced-multi-layer
 hypothesis: Protocol-layer detectors distinguish decoy from reference better than

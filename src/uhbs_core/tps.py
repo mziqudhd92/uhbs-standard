@@ -1,4 +1,4 @@
-"""Target Profile Specification (TPS) loader — UHBS v4.5.0 §3.
+"""Target Profile Specification (TPS) loader — UHBS v4.5.1 §3.
 
 Protocol-agnostic rules:
   - Class weights and performance baselines come from the TPS.

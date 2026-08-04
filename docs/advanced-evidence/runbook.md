@@ -31,7 +31,7 @@
 
 ## Reproducibility checklist
 
-- [ ] Scorecard validates under UHBS 4.5.0 (UHQS unchanged after AEP)
+- [ ] Scorecard validates under UHBS 4.5.1 (UHQS unchanged after AEP)
 - [ ] Experiment attestations all `true` (sandbox, no production, local-only, informative)
 - [ ] Digests/versions recorded for decoy and reference
 - [ ] Randomization seed and analysis seed declared

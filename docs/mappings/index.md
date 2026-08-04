@@ -38,4 +38,4 @@ These tags do **not** affect UHQS, δ_C, or letter grade. See the
 
 ## Trust limits
 
-Mappings are **informative**. They do not replace the verbatim SCORECARD / `report.json` proof for any graded product under `docs/conformance/`. Prefer absolute URLs on the published docs site when sharing externally. UHBS remains an open-source beta-status evaluation framework (Apache-2.0, v4.5.0) — not an adopted industry or academic standard.
+Mappings are **informative**. They do not replace the verbatim SCORECARD / `report.json` proof for any graded product under `docs/conformance/`. Prefer absolute URLs on the published docs site when sharing externally. UHBS remains an open-source beta-status evaluation framework (Apache-2.0, v4.5.1) — not an adopted industry or academic standard.

@@ -13,7 +13,7 @@
     "manifest"
   ],
   "properties": {
-    "uhbs_version": { "type": "string", "const": "4.5.0" },
+    "uhbs_version": { "type": "string", "const": "4.5.1" },
     "target": {
       "type": "object",
       "additionalProperties": false,

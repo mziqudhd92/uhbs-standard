@@ -1,6 +1,6 @@
 # Universal Honeypot Benchmarking Standard (UHBS)
 
-> Open-source beta-status framework (v4.5.0) for vendor-neutral honeypot and deception-technology evaluation using a composite UHQS score (0–100) with a non-linear Safety Gate. Laboratory / sandbox only.
+> Open-source beta-status framework (v4.5.1) for vendor-neutral honeypot and deception-technology evaluation using a composite UHQS score (0–100) with a non-linear Safety Gate. Laboratory / sandbox only.
 
 UHBS is **not** an industry consortium or multi-party standards body. It is in **Beta / Experimental** status. Prefer primary sources below over third-party summaries.
 

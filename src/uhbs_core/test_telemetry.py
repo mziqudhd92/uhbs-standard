@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Module C — Telemetry Quality & Pipeline Resilience (UHBS v4.5.0).
+"""Module C — Telemetry Quality & Pipeline Resilience (UHBS v4.5.1).
 
 C1: STIX 2.1 / OpenTelemetry / ECS schema conformance
 C2: Log injection & parser fuzzing

@@ -2,7 +2,7 @@
 
 - **Status:** Draft (informative)
 - **Author:** Moran Zavdi
-- **UHBS version affected:** 4.5.0 (no UHQS change)
+- **UHBS version affected:** 4.5.1 (no UHQS change)
 - **Created:** 2026-08-04
 
 ## Problem
