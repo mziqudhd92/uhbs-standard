@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import contextlib
 import socket
 import threading
 
@@ -48,10 +49,8 @@ def _start_tcp_stub(handler) -> tuple[socket.socket, str, int, threading.Event, 
                 continue
             with conn:
                 conn.settimeout(2.0)
-                try:
+                with contextlib.suppress(OSError):
                     handler(conn)
-                except OSError:
-                    pass
         srv.close()
 
     th = threading.Thread(target=_loop, daemon=True)
